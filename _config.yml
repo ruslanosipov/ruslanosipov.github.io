@@ -22,6 +22,7 @@ defaults:
       type: "post"
     values:
       author: "Ruslan Osipov"
+      comments: true
       layout: "post"
 
 # ----------------------- #
