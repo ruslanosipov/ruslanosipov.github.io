@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="Today I had to merge changes from one repository into another. Let&rsquo;s assume you want to merge beta into alpha. Operations are performed in repo &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/posts/9">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/git-merge-two-repositories/">Git: merge two repositories</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-21T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/git-merge-two-repositories/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/git-merge-two-repositories/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I had to merge changes from one repository into another. Let&rsquo;s assume you want to merge <code>beta</code> into <code>alpha</code>.</p>
+
+<p>Operations are performed in repo alpha:</p>
+
+<pre><code>git remote add beta_repo git@rosipov.com:beta.git
+git fetch beta_repo
+git merge beta_repo/master
+</code></pre>
+
+<p>In this case, <code>beta_repo</code> is the name you pick for remote.</p>
+
+<p>If you just need to cherry-pick a certain commit from <code>beta</code> you can omit the last step and replace it with the cherry-pick.</p>
+
+<p>More on the topic of remotes: <a href="http://git-scm.com/book/ch2-5.html">http://git-scm.com/book/ch2-5.html</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/gpg-usage/">GPG Usage</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-26T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/gpg-usage/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/gpg-usage/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>To encrypt and decrypt files in Linux there is a utility called <code>gpg</code> (Gnu Privacy Guard). This is a short GPG tutorial.</p>
+
+<h2>Quick usage example</h2>
+
+<pre><code>gpg -c foo.txt
+</code></pre>
+
+<p>It will prompt you for the passphrase and a confirmation. Now you will have the encrypted <code>foo.txt.gpg</code> file. To decrypt a file:</p>
+
+<pre><code>gpg -d foo.txt.gpg
+</code></pre>
+
+<p>This will forward the output to the console. You can output it into a file:</p>
+
+<p>gpg -d foo.txt.gpg > foo.txt</p>
+
+<h2>GPG keyring</h2>
+
+<p>This is all secure, but not quite enough if you are paranoid. Keys are what makes <code>gpg</code> great. Let&rsquo;s generate a private key:</p>
+
+<pre><code>gpg --gen-key
+</code></pre>
+
+<p>And create an ASCII version of a public key:</p>
+
+<pre><code>gpg --armor --export "John Doe" --output johndoe.txt
+</code></pre>
+
+<p>Public key <code>johndoe.txt</code> can be freely distributed. Now you can encrypt files for yourself only:</p>
+
+<pre><code>gpg -e -r "John Doe" foo.txt
+</code></pre>
+
+<p>Now if you decrypt a file it will require the passphrase you specified while generating a key.
+To encrypt a file for someone else you should have this person&rsquo;s public key.</p>
+
+<p>Let&rsquo;s assume Stan Smith sent you a key, <code>stansmith.txt</code>. You import it using:</p>
+
+<pre><code>gpg --import stansmith.txt
+</code></pre>
+
+<p>And encrypt the file:</p>
+
+<pre><code>gpg -e -r "Stan Smith" foo.txt
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/create-gitolite-repository/">Create gitolite repository</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/create-gitolite-repository/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/create-gitolite-repository/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A reminder on how to initialize a fresh gitolite repository, assuming that gitolite has already been set up.</p>
+
+<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code> is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite hostname. Command <code>vi</code> stands for the text editor, but you may use whichever editor you prefer.</p>
+
+<pre><code>cd ~/gitolite-admin
+vi conf/gitolite.conf
+</code></pre>
+
+<p>Add lines (obviously you may want to use individual users instead of @all):</p>
+
+<pre><code>repo foo
+    RW+ = @all
+</code></pre>
+
+<p>Save it. Next:</p>
+
+<pre><code>git add conf/gitolite.conf
+git commit -m "Add foo repo for @all"
+git pull --rebase &amp;amp;&amp;amp; git push
+mkdir ~/foo
+cd ~/foo
+git init
+git remote add origin git@rosipov.com:foo.git
+</code></pre>
+
+<p>Add some files at this point. In this example, only <code>.gitkeep</code> is added.</p>
+
+<pre><code>git add .gitkeep
+git commit -m "Initialize repo"
+git push origin master
+</code></pre>
+
+<p>The new repository is all set up now.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/c-strtok-usage-example/">C strtok usage example</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/c-strtok-usage-example/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/c-strtok-usage-example/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I had some issues with the <code>strtok</code> function. Here&rsquo;s a detailed explanation and usage for it.</p>
+
+<p>The <code>strtok</code> function is used to tokenize a string and thus separates it into multiple strings divided by a delimiter.</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    int j, i = 0;
+    char delim[4];
+    char user_input[81], *token[80];
+    user_input[0] = 0;  // set first byte to 0 to detect empty string
+
+    // validate the string length
+    while (strlen(user_input) &lt;= 1 || strlen(user_input) &gt; 82) {
+        printf("Feed me a string to tokenize: ");
+        fgets(user_input, sizeof(user_input), stdin);
+    }
+
+    printf("And a delimiter (up to 4 chars): ");
+    fgets(delim, sizeof(delim), stdin);
+
+    token[0] = strtok(user_input, delim);  // first call returns pointer
+                                           // to first part of user_input
+                                           // separated by delim
+    while (token[i] != NULL) {
+        i++;
+        token[i] = strtok(NULL, delim);  // every call with NULL uses
+                                         // saved user_input value and
+                                         // returns next substring
+    }
+
+    for (j=0; j&lt;=i-1; j++) {
+        printf("%sn", token[j]);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Let&rsquo;s compile and execute it:</p>
+
+<pre><code>Feed me a string to tokenize: foo/bar/baz
+And a delimiter: /
+foo
+bar
+baz
+</code></pre>
+
+<p>The first call to <code>strtok</code> returns the pointer to the first substring. All the next calls with the first argument being <code>NULL</code> use the string passed at the first call and return the next substring. The function returns <code>NULL</code> if no more substrings are available.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/gui-git-difftool-for-windows/">GUI git difftool for Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/gui-git-difftool-for-windows/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A quick note on how to set up GUI difftool to use with git on Windows (Git Bash, Cygwin, etc&hellip;).</p>
+
+<p>Download and install GUI diff tool of your choice, get the path to executable.</p>
+
+<p>Create <code>difftool.sh</code> in directory included in your path (for example <code>C:\Users\{username}\bin</code> in Git Bash). Let&rsquo;s take SourceGear&rsquo;s DiffMerge as an example.</p>
+
+<pre><code>#!/bin/sh
+"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe" "$1" "$2" | cat
+</code></pre>
+
+<p>And in your ~/.gitconfig:</p>
+
+<pre><code>[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    difftool.sh "$LOCAL" "$REMOTE"
+</code></pre>
+
+<p>And difftool is available via <code>git difftool</code> command now.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/10">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/8">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

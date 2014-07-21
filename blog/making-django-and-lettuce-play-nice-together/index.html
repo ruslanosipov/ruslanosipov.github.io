@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Making Django and Lettuce play nice together - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Making Django and Lettuce play nice together</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-30T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very comprehensive, and at the moment current version (0.2.19) has some issues integrating with the latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get to a comprehensive tutorial.</p>
+
+<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control, and you already have a working project configured. Your project is called &ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
+
+<h2>Setup</h2>
+
+<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current released version (0.2.19) has an error integrating with Django, so we&rsquo;ll install current development version. Releases 0.2.20 and up should include the fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
+
+<pre><code>pip install -e \
+    git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
+pip install django-nose splinter
+pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>First line downloads lettuce package from the github repository and installs missing dependencies. You can replace <code>cccc397</code> with the current commit. Technically commit can be omitted, but we don&rsquo;t want to have an unstable ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code> since nose assertions come in handy while writing Lettuce steps, as well as <code>splinter</code>, which is a great tool for testing web application.</p>
+
+<p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
+
+<pre><code>INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    # ... third party apps ...
+    'lettuce.django',
+    'myproject',
+    'polls',
+)
+</code></pre>
+
+<p>You also have to explicitly specify the apps you want to use with lettuce:</p>
+
+<pre><code>LETTUCE_APPS = (
+    'polls',
+)
+</code></pre>
+
+<p>By default, lettuce will run its&#8217; tests against your default database. But we want to use test database for that, so we have to add few more settings:</p>
+
+<pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
+LETTUCE_SERVER_PORT = 9000
+</code></pre>
+
+<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different from port 8000 so you won&rsquo;t have issues running the development server via <code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
+
+<p>You also have to create a <code>features</code> directories inside the apps you want to test with Lettuce:</p>
+
+<pre><code>/myproject
+    /myproject
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+    /polls
+        /features
+            /steps
+                __init__.py
+                polls_list.py
+            polls_list.feature
+        __init__.py
+        models.py
+        tests.py
+        views.py
+    manage.py
+    requirements.txt
+    terrain.py
+</code></pre>
+
+<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the same directory as a <code>manage.py</code>:</p>
+
+<pre><code>from django.core.management import call_command
+from django.conf import settings
+from lettuce import before, after, world
+from splinter.browser import Browser
+
+@before.each_scenario
+def flush_database(scenario):
+    call_command('flush', interactive=False, verbosity=0)
+
+@before.each_scenario
+def prepare_browser(scenario):
+    world.browser = Browser()
+
+@after.each_scenario
+def destroy_browser(scenario):
+    world.browser.quit()
+</code></pre>
+
+<p>This code flushes the database before each scenario, as well as prepares and destroys the <code>splinter</code> browser.</p>
+
+<h2>Writing the features</h2>
+
+<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in <code>polls/features/polls_list.feature</code>:</p>
+
+<pre><code>Feature: Polls list
+
+    Scenario: Polls list without any polls
+        When I access the "polls list" url
+        Then I see a text "We didn't find any polls!"
+
+    Scenario: Polls list with one poll
+        Given a poll with the title "Hello world"
+        When I access the "polls list" url
+        Then I see a text "Hello world"
+        And I do not see a text "We didn't find any polls!"
+</code></pre>
+
+<p>Now describe the steps in <code>polls/features/steps/polls_list.py</code>:</p>
+
+<pre><code>from django.core.urlresolvers import reverse
+from lettuce import step, world
+from lettuce.django import django_url
+from nose.tools import assert_in, assert_not_in
+from polls.models import Poll
+
+PAGES = {
+    "polls list": "polls:list"
+}
+
+@step(r'access the "(.*)" url')
+def access_the_url(step, name):
+    world.browser.visit(django_url(reverse(PAGES[name])))
+
+@step(r'see a text "(.*)"')
+def see_a_text(step, text):
+    assert_in(text, world.browser.html)
+
+@step(r'a poll with the title "(.*)"')
+def create_a_poll_with_the_title(step, title):
+    poll = Poll.objects.create(title=title)
+    polls.save()
+
+@step(r'do not see a text "(.*)"')
+def do_not_see_a_text(step, text):
+    assert_not_in(text, world.browser.html)
+</code></pre>
+
+<h2>Running the tests</h2>
+
+<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you just wrote:</p>
+
+<pre><code>$ python manage.py harvest --test-server
+Creating test database for alias 'default'...
+Django's builtin server is running at 0.0.0.0:9000
+
+Feature: Polls list
+
+  Scenario: Polls list without any polls
+    When I access the "polls list" url
+    Then I see a text "We didn't find any polls!"
+
+  Scenario: Polls list with one poll
+    Given a poll with the title "Hello world"
+    When I access the "polls list" url
+    Then I see a text "Hello world"
+    And I do not see a text "We didn't find any polls!"
+
+1 feature (1 passed)
+2 scenarios (2 passed)
+6 steps (6 passed)
+Destroying test database for alias 'default'...
+</code></pre>
+
+<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests against your default database.</p>
+
+<h2>Sources</h2>
+
+<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
+
+<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
+
+<pre><code>LETTUCE_USE_TEST_DATABASE = True
+</code></pre>
+
+<p>This way you won&rsquo;t end up accidentally erasing your production database after forgetting to add <code>--test-server</code> flag.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-30T00:00:00-08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/open-previously-edited-file-in-vim/" title="Previous Post: Open previously edited file in vim">&laquo; Open previously edited file in vim</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/navigate-files-easily-with-ctrlp-vim/" title="Next Post: Navigate files easily with ctrlp.vim">Navigate files easily with ctrlp.vim &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">"The Pragmatic Programmer"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">"The Elements Of Style"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">"Expert Python Programming" by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug's "Don't Make Me Think"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">"The Design of Everyday Things"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my "To Do" list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

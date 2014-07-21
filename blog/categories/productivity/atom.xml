@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
+  <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
+  <link href="http://ruslanosipov.github.io/"/>
+  <updated>2014-07-20T18:06:57-07:00</updated>
+  <id>http://ruslanosipov.github.io/</id>
+  <author>
+    <name><![CDATA[Ruslan Osipov]]></name>
+    <email><![CDATA[ruslan@rosipov.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
+    <link href="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/"/>
+    <updated>2014-07-19T00:00:00-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki</id>
+    <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a personal Wiki. It&rsquo;s a great idea to have data repository shared between your machines: important notes about people, conversations, events, tasks you&rsquo;ve accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t belong anywhere else. There is plenty of software out there which lets you set up a personal Wiki, and some of it is very lightweight and well polished. However, I prefer to do most of my editing and writing in Vim. As tip #22 from &ldquo;The Pragmatic Programmer&rdquo; states:</p>
+
+<blockquote><p>Use a single editor well</p>
+
+<p>We think it is better to know one editor very well, and use it for all editing tasks: code, documentation, memos, system administration, and so on. Without a single editor, you face a potential modern day Babel of confusion.</p></blockquote>
+
+<p>I fully agree with the above statement and I try to use one editor for the majority of tasks which require typing, without having to remember which editor contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The Pragmatic Programmer&rdquo;:</p>
+
+<blockquote><p>Keep knowledge in plain text</p></blockquote>
+
+<p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
+
+<ul>
+<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a new tab: the rest of the mappings are as intuitive.</li>
+<li>Multiple Wikis support: really handy if you have a number of separate projects for which you want to keep separate entries.</li>
+<li>Diary-like quick notes. You can create an instant page for today by hitting <code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
+<li>Easy link creation: hit enter on a word and it will turn into a link to another page. Hitting enter on a link will transport you to the destination page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as well.</li>
+<li>Navigation: enter to follow a link, backspace to go back.</li>
+<li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
+<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start reading.</li>
+</ul>
+
+
+<p>The list can go on forever, but these are the features I found to be the most useful.</p>
+
+<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your Wikis.</p>
+
+<pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
+</code></pre>
+
+<p>Download it from the GitHub: <a href="https://github.com/vim-scripts/vimwiki">https://github.com/vim-scripts/vimwiki</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Easy commenting with tcomment.vim]]></title>
+    <link href="http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/"/>
+    <updated>2014-07-15T00:00:00-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim</id>
+    <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes forget that it&rsquo;s not a built-in Vim feature.</p>
+
+<p>Link to a GitHub repository: <a href="https://github.com/tomtom/tcomment_vim">https://github.com/tomtom/tcomment_vim</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Zero mail inbox]]></title>
+    <link href="http://ruslanosipov.github.io/blog/zero-mail-inbox/"/>
+    <updated>2014-07-02T00:00:00-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/zero-mail-inbox</id>
+    <content type="html"><![CDATA[<p>I use email a lot. Maybe not as much as some, but I receive and send a fair share of mail each day. You might find it odd, but I love using email. It&rsquo;s a pleasant and calm experience, and sorting through a pile of messages every morning rewards me with a sense of achievement. There are, however, few tricks I have up my sleeve, and I would like to share them today. These tips will not necessarily make you more productive, but they will provide you a with a more pleasant and peaceful experience of managing your inbox.</p>
+
+<p>But first, I would like to set the scene&hellip;</p>
+
+<h2>The wonderful Mailbox app</h2>
+
+<p>I started using iOS email client called <a href="http://www.mailboxapp.com">Mailbox</a> a little over a year ago, shortly after a release. Back then, before it was acquired by Dropbox, you had to wait in order for the company to grow their servers. I patiently waited &ldquo;in line&rdquo; for almost a month and I finally was able to transfer all my accounts to this wonderful mail client.</p>
+
+<p>It was worth waiting for. Right after starting, Mailbox archived all the conversations in my inbox, and presented me with a list of unread emails which looked an awful lot like a To-Do list. You can read and reply, archive the important letters, delete junk, or resend a conversation to yourself after a certain time span as a reminder. This is an extremely simple idea, but it is essentially what anyone&rsquo;s inbox is: a list of things which need to be done. Some emails have to be replied to, some have to be acted upon in some other way. The ones that don&rsquo;t get archived are deleted right away.</p>
+
+<p>Mailbox turned my trash-filled inbox into a clean list of items I need to do.  Since then, there never was an email I forgot to reply to, nor an important thing I forgot to do. Inbox can be referred to as &ldquo;To Do&rdquo;, and an archive as &ldquo;Done&rdquo;. This scheme makes it nearly impossible to miss anything of importance.</p>
+
+<p>Unfortunately, Mailbox is an iOS-only application, and I started noticing the shortcomings of the desktop experience. And I do use desktop mail far more often than mobile. I decided to have a set of rules for managing my inbox; and this is the workflow I have been successfully using for over a year.</p>
+
+<h2>Workflow outside of the Mailbox app</h2>
+
+<p><img src="/images/zero-mail-inbox-in-gmail.png" title="Having clean inbox is rewarding." ></p>
+
+<p>I only use Gmail, and there probably are ways to have the same experience on other platforms. However, the Mailbox app works only with Gmail.</p>
+
+<p>The first thing which needs to be done in order to start using the zero mail inbox workflow &ndash; is to empty it from all the read mail. Thankfully, the Mailbox app archives all your previous conversations the moment you install it.</p>
+
+<p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always times when you can&rsquo;t reply to an email, but don&rsquo;t exactly want to keep it in your inbox (what an eyesore). Gmail does not provide a native way to resend your emails at later times, but I found a Chrome extension called <a href="http://www.mailboxapp.com">&ldquo;Snooze Your Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the Gmail UI.</p>
+
+<p>Now that these two things are taken care of, there is a simple set of rules to be used when a new email comes in:</p>
+
+<ul>
+<li><em>Delete.</em> Is it a notification? Does it require saving for future reference? A lot of things should be deleted. Bills, notifications, messages from robots: these don&rsquo;t have to be saved. Items in Gmail trash live for 30 days, which is enough time to find something in case of an emergency. In addition, most of this information is available from some another source anyway.</li>
+<li><em>Snooze.</em> Do you have time right now to read/reply/act upon this email? Remind yourself about it in a few hours or days instead.</li>
+<li><em>Archive.</em> Conversation with a real person you might want to reference to later? I save all the email chains from humans, just in case I have to search through them at a later date.</li>
+<li><em>Reply and archive.</em> Self-explanatory. Act upon and save for future reference.</li>
+<li><em>Let it be.</em> This is an eyesore version of using the &ldquo;Snooze&rdquo; button. You usually want to do this only if there are more important emails to read and act upon before getting to this one.</li>
+</ul>
+
+
+<p>Ideally, when you keep items in your inbox &ndash; this means they have to be acted upon in some way. There is no reason not to archive or delete conversations which don&rsquo;t require actions.</p>
+
+<h2>Bonus point: labels</h2>
+
+<p>This is a recent addition to my repertoire. I found myself often searching through certain sets of email, and hence Gmail does not support regular expressions it&rsquo;s quite a big pain in the neck for me when I can&rsquo;t remember certain details. I created a set of thematic labels, which group emails by projects, products, and teams. And I started religiously assigning them to all the emails I archive. First it takes a bit of work, but after a while it becomes easy to identify a pattern and create filters to assist yourself with categorization.</p>
+
+<p>As a result, I can  narrow down a search to a thematic subset of emails, saving myself a lot of time and frustration.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Mutt with GPG]]></title>
+    <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
+    <updated>2014-05-28T00:00:00-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
+    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an article on how to use GPG to store your passwords: <a href="http://www.rosipov.com/blog/gpg-usage/">GPG Usage</a>, this is a more practical note about using GPG to store your passwords for mutt. This note implies that you already have installed and configured GPG (which you can learn how to do in above linked article).</p>
+
+<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code> with your password and <code>$ACCOUNT</code> with a desired account alias. You probably want to prefix this command with a space, to avoid writing your password to a history file.</p>
+
+<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
+</code></pre>
+
+<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
+
+<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
+</code></pre>
+
+<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier. Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Elegant Mutt setup for use with Gmail]]></title>
+    <link href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/"/>
+    <updated>2014-05-28T00:00:00-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail</id>
+    <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
+
+<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+
+<pre><code>bind editor &lt;space&gt; noop
+set alias_file        = '~/.mutt/aliases.txt'
+set copy              = no
+set display_filter    = '$HOME/.mutt/aliases.sh'
+set edit_headers
+set editor            = "vim +/^$ ++1"
+set folder            = "imaps://imap.gmail.com/"
+set hostname          = "gmail.com"
+set imap_check_subscribed
+set imap_pass         = "$PASSWORD"
+set imap_user         = "$USERNAME"
+set mail_check        = 5
+set move              = no
+set postponed         = "+[Gmail]/Drafts"
+set spoolfile         = "+INBOX"
+set text_flowed       = yes
+unset imap_passive
+unset record
+
+# Gmail-style keyboard shortcuts
+macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
+macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
+macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
+macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
+macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
+macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
+macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
+
+source $alias_file
+</code></pre>
+
+<p>It is quite self-explanatory, and includes such nice features as:</p>
+
+<ul>
+<li>Automatically adding addresses from read emails to address book (see below).</li>
+<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
+</ul>
+
+
+<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
+
+<pre><code>#!/bin/sh
+
+MESSAGE=$(cat)
+
+AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
+AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
+AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
+
+NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
+
+if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
+    :
+else
+    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
+fi
+
+echo "${MESSAGE}"
+</code></pre>
+
+<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
+]]></content>
+  </entry>
+  
+</feed>

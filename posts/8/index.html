@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="In some extremely rare cases you end up pushing data to the repo with the wrong credentials. If you are the only author and you&rsquo;re as picky as &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/posts/8">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/rename-commit-author-in-git/">Rename commit author in git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-15T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/rename-commit-author-in-git/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/rename-commit-author-in-git/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong credentials. If you are the only author and you&rsquo;re as picky as I am, it can be corrected easily:</p>
+
+<pre><code>git filter-branch -f --env-filter
+"GIT_AUTHOR_NAME='Stan Smith';
+GIT_AUTHOR_EMAIL='stansmith@cia.gov';
+GIT_COMMITTER_NAME='Stan Smith';
+GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
+git push --force
+</code></pre>
+
+<p>In the case of there being multiple people working on a project, you may want to use the following gist posted by anonymous: <a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push --force</code>).</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/read-man-pages-from-vim/">Read man pages from vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-13T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/read-man-pages-from-vim/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/read-man-pages-from-vim/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently discovered an incredibly useful function &ndash; you can look up man pages for keywords by pressing <code>K</code> (read: <code>Shift + k</code>) in normal mode when cursor is over the word you need to look up.</p>
+
+<p>It works with any shell or programming language keywords, as long as vim recognizes the filetype.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/mintty-color-scheme-cygwin/">Mintty color scheme (Cygwin)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-13T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/mintty-color-scheme-cygwin/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/mintty-color-scheme-cygwin/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that has softer colors. Add the following lines to your <code>.minttyrc</code> and restart cygwin in order to apply changes.</p>
+
+<pre><code>ForegroundColour = 131, 148, 150
+BackgroundColour =   0,   0,   0
+CursorColour     = 220,  50,  47
+
+Black            =   7,  54,  66
+BoldBlack        =   0,  43,  54
+Red              = 220,  50,  47
+BoldRed          = 203,  75,  22
+Green            =   0, 200, 132
+BoldGreen        =   0, 200, 132
+Yellow           = 204, 204, 102
+BoldYellow       = 204, 204, 102
+Blue             = 102, 153, 204
+BoldBlue         = 102, 153, 204
+Magenta          = 211,  54, 130
+BoldMagenta      = 108, 113, 196
+Cyan             =  42, 161, 152
+BoldCyan         = 147, 161, 161
+White            = 238, 232, 213
+BoldWhite        = 253, 246, 227
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/rails-and-mongodb-with-cygwin/">Rails and MongoDB with Cygwin</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-11T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/rails-and-mongodb-with-cygwin/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
+
+<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you may want to have more).</p>
+
+<p>The following commands are executed in the cygwin prompt:</p>
+
+<pre><code>git clone git://github.com/rubygems/rubygems.git
+cd rubygems/
+ruby setup.rb
+gem install rails
+</code></pre>
+
+<p>Go to the MongoDB website and download Windows binaries: <a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory to <code>C:\cygwin\usr\local\bin</code>.</p>
+
+<p>Create a directory for the db files (the default MongoDB db files directory is <code>C:\datadb</code>):</p>
+
+<pre><code>cd /cygdrive/c
+mkdir data
+mkdir data/db
+</code></pre>
+
+<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it as you see fit.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/use-vim-commands-in-a-browser/">Use vim commands in a browser</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-24T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/use-vim-commands-in-a-browser/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/use-vim-commands-in-a-browser/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for myself, as it&rsquo;s a faster and more convenient way to go. I am a Chrome user and recently I found an amazing plugin: <a href="http://vimium.github.com/">Vimium</a>.</p>
+
+<p>It does exactly what the name suggests, allowing you to use vim-like commands in your browser. You can freely move, switch between tabs, work with forms and click links using familiar vim key bindings.</p>
+
+<p>A two minute long introductory video explains basic commands and you&rsquo;re all set! I&rsquo;ve been using Vimium for over a week now, an amusing experience which allows you to throw your mouse in a dark corner (well, not exactly: Vimium still has some issues with over-bloated ajax pages, not to mention Flash and other nasty stuff).</p>
+
+<p>Check it out: <a href="http://vimium.github.com/">http://vimium.github.com/</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/9">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/7">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

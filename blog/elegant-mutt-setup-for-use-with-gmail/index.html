@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Elegant Mutt setup for use with Gmail - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Elegant Mutt setup for use with Gmail</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-28T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
+
+<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+
+<pre><code>bind editor &lt;space&gt; noop
+set alias_file        = '~/.mutt/aliases.txt'
+set copy              = no
+set display_filter    = '$HOME/.mutt/aliases.sh'
+set edit_headers
+set editor            = "vim +/^$ ++1"
+set folder            = "imaps://imap.gmail.com/"
+set hostname          = "gmail.com"
+set imap_check_subscribed
+set imap_pass         = "$PASSWORD"
+set imap_user         = "$USERNAME"
+set mail_check        = 5
+set move              = no
+set postponed         = "+[Gmail]/Drafts"
+set spoolfile         = "+INBOX"
+set text_flowed       = yes
+unset imap_passive
+unset record
+
+# Gmail-style keyboard shortcuts
+macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
+macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
+macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
+macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
+macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
+macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
+macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
+
+source $alias_file
+</code></pre>
+
+<p>It is quite self-explanatory, and includes such nice features as:</p>
+
+<ul>
+<li>Automatically adding addresses from read emails to address book (see below).</li>
+<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
+</ul>
+
+
+<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
+
+<pre><code>#!/bin/sh
+
+MESSAGE=$(cat)
+
+AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
+AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
+AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
+
+NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
+
+if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
+    :
+else
+    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
+fi
+
+echo "${MESSAGE}"
+</code></pre>
+
+<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-28T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/productivity/'>productivity</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/navigate-files-easily-with-ctrlp-vim/" title="Previous Post: Navigate files easily with ctrlp.vim">&laquo; Navigate files easily with ctrlp.vim</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/using-mutt-with-gpg/" title="Next Post: Using Mutt with GPG">Using Mutt with GPG &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">"The Pragmatic Programmer"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">"The Elements Of Style"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">"Expert Python Programming" by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug's "Don't Make Me Think"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">"The Design of Everyday Things"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my "To Do" list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

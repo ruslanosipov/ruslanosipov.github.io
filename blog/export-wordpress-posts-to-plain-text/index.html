@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Export WordPress posts to plain text - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Export WordPress posts to plain text</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-02T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in plain text.</p>
+
+<p>I wrote a little Python script which I used to extract an archive of my posts and pages into a bunch of files on my computer. In order to use it, you need to use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR format, and feed the file to the script.</p>
+
+<p>Source code of the script is below (link for downloading the script is at the bottom of this post):</p>
+
+<pre><code>#!/usr/bin/env python
+
+"""This script converts WXR file to a number of plain text files.
+
+WXR stands for "WordPress eXtended RSS", which basically is just a
+regular XML file. This script extracts entries from the WXR file into
+plain text files. Output format: article name prefixed by date for
+posts, article name for pages.
+
+Usage: wxr2txt.py filename [-o output_dir]
+"""
+
+import os
+import re
+import sys
+from xml.etree import ElementTree
+
+NAMESPACES = {
+        'content': 'http://purl.org/rss/1.0/modules/content/',
+        'wp': 'http://wordpress.org/export/1.2/',
+}
+USAGE_STRING = "Usage: wxr2txt.py filename [-o output_dir]"
+
+def main(argv):
+    filename, output_dir = _parse_and_validate_output(argv)
+    try:
+        data = ElementTree.parse(filename).getroot()
+    except ElementTree.ParseError:
+        _error("Invalid input file format. Can not parse the input.")
+    page_counter, post_counter = 0, 0
+    for post in data.find('channel').findall('item'):
+        post_type = post.find('wp:post_type', namespaces=NAMESPACES).text
+        if post_type not in ('post', 'page'):
+            continue
+        content = post.find('content:encoded', namespaces=NAMESPACES).text
+        date = post.find('wp:post_date', namespaces=NAMESPACES).text
+        title = post.find('title').text
+        date = date.split(' ')[0].replace('-', '')
+        title = re.sub(r'[_]+', '_', re.sub(r'[^a-z0-9+]', '_', title.lower()))
+        if post_type == 'post':
+            post_filename = date + '_' + title + '.txt'
+            post_counter += 1
+        else:
+            post_filename = title + '.txt'
+            page_counter += 1
+        with open(os.path.join(output_dir, post_filename), 'w') as post_file:
+            post_file.write(content.encode('utf8'))
+        post_counter += 1
+    print "Saved {} posts and {} pages in directory '{}'.".format(
+            post_counter, page_counter, output_dir)
+
+def _parse_and_validate_output(argv):
+    if len(argv) not in (2, 4):
+        _error("Wrong number of arguments.")
+    filename = argv[1]
+    if not os.path.isfile(filename):
+        _error("Input file does not exist (or not enough permissions).")
+    output_dir = argv[3] if len(argv) == 4 and argv[2] == '-o' else os.getcwd()
+    if not os.path.isdir(output_dir):
+        _error("Output directory does not exist (or not enough permissions).")
+    return filename, output_dir
+
+def _error(text):
+    print text
+    print USAGE_STRING
+    sys.exit(1)
+
+if __name__ == "__main__":
+    main(sys.argv)
+</code></pre>
+
+<p>You can download the script from here: <a href="https://gist.github.com/ruslanosipov/b748a138389db2cda1e8">wxr2txt.py</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-02T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/why-should-you-learn-to-touch-type/" title="Previous Post: Why should you learn to touch type?">&laquo; Why should you learn to touch type?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/why-i-threw-away-my-to-do-list/" title="Next Post: Why I threw away my "To Do" list">Why I threw away my "To Do" list &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">"The Pragmatic Programmer"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">"The Elements Of Style"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">"Expert Python Programming" by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug's "Don't Make Me Think"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">"The Design of Everyday Things"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my "To Do" list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

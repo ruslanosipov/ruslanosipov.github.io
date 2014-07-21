@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Use vimdiff as git mergetool - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="Using vimdiff as a git mergetool can be pretty confusing &ndash; multiple windows and little explanation. This is a short tutorial which explains &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/use-vimdiff-as-git-mergetool">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Use vimdiff as git mergetool</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Using vimdiff as a git mergetool can be pretty confusing &ndash; multiple windows and little explanation. This is a short tutorial which explains basic usage, and what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at least a little bit of basic vim knowledge (how to move, save, and switch between split windows). If you don&rsquo;t, there&rsquo;s a short article for you: <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>. Some basic understanding of git and branching is required as well, obviously.</p>
+
+<h2>Git config</h2>
+
+<p>Prior to doing anything, you need to know how to set vimdiff as a git mergetool. That being said:</p>
+
+<pre><code>git config merge.tool vimdiff
+git config merge.conflictstyle diff3
+git config mergetool.prompt false
+</code></pre>
+
+<p>This will set git as the default merge tool, will display a common ancestor while merging, and will disable the prompt to open the vimdiff.</p>
+
+<h2>Creating merge conflict</h2>
+
+<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work along with the tutorial.</p>
+
+<pre><code>mkdir zoo
+cd zoo
+git init
+vi animals.txt
+</code></pre>
+
+<p>Let&rsquo;s add some animals:</p>
+
+<pre><code>cat
+dog
+octopus
+octocat
+</code></pre>
+
+<p>Save the file.</p>
+
+<pre><code>git add animals.txt
+git commit -m "Initial commit"
+git branch octodog
+git checkout octodog
+vi animals.txt  # let's change octopus to octodog
+git add animals.txt
+git commit -m "Replace octopus with an octodog"
+git checkout master
+vi animals.txt  # let's change octopus to octoman
+git add animals.txt
+git commit -m "Replace octopus with an octoman"
+git merge octodog  # merge octodog into master
+</code></pre>
+
+<p>That&rsquo;s where we get a merge error:</p>
+
+<pre><code>Auto-merging animals.txt
+CONFLICT (content): Merge conflict in animals.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+
+<h2>Resolving merge conflict with vimdiff</h2>
+
+<p>Let&rsquo;s resolve the conflict:</p>
+
+<pre><code>git mergetool
+</code></pre>
+
+<p><img src="/images/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom" ></p>
+
+<p>This looks terrifying at first, but let me explain what is going on.</p>
+
+<p>From left to right, top to the bottom:</p>
+
+<p><code>LOCAL</code> &mdash; this is file from the current branch
+<code>BASE</code> &mdash; common ancestor, how file looked before both changes
+<code>REMOTE</code> &mdash; file you are merging into your branch
+<code>MERGED</code> &mdash; merge result, this is what gets saved in the repo</p>
+
+<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that, move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict area and then:</p>
+
+<pre><code>:diffget RE
+</code></pre>
+
+<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You can also:</p>
+
+<pre><code>:diffg RE  " get from REMOTE
+:diffg BA  " get from BASE
+:diffg LO  " get from LOCAL
+</code></pre>
+
+<p>Save the file and quit (a fast way to write and quit multiple files is <code>:wqa</code>).</p>
+
+<p>Run <code>git commit</code> and you are all set!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/productivity/'>productivity</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/use-vimdiff-as-git-mergetool/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/use-vimdiff-as-git-mergetool/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/git-pretty-log-output/" title="Previous Post: Git pretty log output">&laquo; Git pretty log output</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/pygame-font-not-found/" title="Next Post: pygame.font not found">pygame.font not found &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">"The Pragmatic Programmer"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">"The Elements Of Style"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">"Expert Python Programming" by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug's "Don't Make Me Think"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">"The Design of Everyday Things"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my "To Do" list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

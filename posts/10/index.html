@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  <meta name="description" content="Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for programming. Feel free to copy over settings/plugins you find useful, or &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ruslanosipov.github.io/posts/10">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48506044-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ruslan Osipov</a></h1>
+  
+    <h2>Thoughts on software development</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ruslanosipov.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/about/">About</a></li>
+  <li><a href="/blog/archive/">Archive</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/extendedly-basic-vim-setup/">Extendedly basic vim setup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-15T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/extendedly-basic-vim-setup/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/extendedly-basic-vim-setup/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for programming. Feel free to copy over settings/plugins you find useful, or just grab the ready-to-go <a href="http://www.rosipov.com/blog/wp-content/uploads/2012/11/vim.zip">archive</a> with settings and plugins. Unzip it into root directory and you&rsquo;re good to go (<a href="http://ctags.sourceforge.net/">ctags</a> plugin is not included, you may want to get it yourself).</p>
+
+<h2>The .vimrc file</h2>
+
+<pre><code>"""""""""""""""""""""""""""""""""""""""
+" =&gt; Editing
+"""""""""""""""""""""""""""""""""""""""
+
+syntax on
+
+" Indentation settings
+set tabstop=4
+set shiftwidth=4
+set smartindent
+set autoindent
+set expandtab
+
+" Disable backups and .swp files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Ignore case when searching
+set ignorecase
+set smartcase
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Looks
+"""""""""""""""""""""""""""""""""""""""
+
+colorscheme darkburn
+set background=dark
+
+" Set terminal window title
+set title
+
+" Shorten press ENTER to continue messages
+set shortmess=atI
+
+" Show last command
+set showcmd
+
+" Highlight cursor line
+set cursorline
+
+" Ruler (line, column and % at the right bottom)
+set ruler
+
+" Enable wild menu (tab command autocompletion)
+set wildmenu
+set wildmode=list:longest,full
+
+" Warn if exceed 80 columns limit
+if (&amp;ft == 'python')
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /%81v.+/
+endif
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Misc
+"""""""""""""""""""""""""""""""""""""""
+
+" Use Unix as the standart file type
+set ffs=unix,dos,mac
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Plugins
+"""""""""""""""""""""""""""""""""""""""
+
+" EasyMotion: one leader key instead of two
+let g:EasyMotion_leader_key = '&lt;Leader&gt;'
+
+" NERDTree: auto open and close
+autocmd VimEnter * NERDTree
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" NERDTree: focus on text window (left)
+autocmd VimEnter * wincmd l
+autocmd BufNew * wincmd l
+
+" NERDTree: auto close if last window
+function! s:CloseIfOnlyNerdTreeLeft()
+    if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+            if winnr("$") == 1
+                q
+            endif
+        endif
+    endif
+endfunction
+
+" Exuberant Ctags: autogenerate on py file write
+au BufWritePost *.py silent! !ctags -R &amp;
+
+" Pydoc: open in new tab instead of split
+let g:pydoc_open_cmd = 'tabnew'
+
+" Pydoc: disable search term highlight
+let g:pydoc_highlight=0
+</code></pre>
+
+<h2>Plugins</h2>
+
+<p>If you are not planning to use some of the plugins, make sure to remove plugin-specific rules from .vimrc => Plugins.</p>
+
+<p><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>: allows you to generate index of variables, functions and classes to freely move between them. A bit more info on how to use these in article <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>.</p>
+
+<p><a href="http://www.vim.org/scripts/script.php?script_id=625">Colo(u)r Sampler Pack</a> is not really a plugin, but a collection of color shemes. 100 of them, to be precise. Feel free to choose whatever you like.</p>
+
+<p><a href="http://www.vim.org/scripts/script.php?script_id=1488">ScrollColors</a> allows you to try out every theme in visual mode. Just type in <code>:SCROLL</code>.</p>
+
+<p><a href="http://www.vim.org/scripts/script.php?script_id=3526">EasyMotion</a> allows you to move between words, lines and sentences with a lightning speed. Just hit <code>&lt;Leader&gt; + w</code> to jump to one of the words forward or <code>&lt;Leader&gt; + b</code> backward (leader key is a backslash by default &#8220;). It can do more neat things, documentation is pretty self-explanatory.</p>
+
+<p><a href="http://www.vim.org/scripts/script.php?script_id=1658">NERDTree</a> is a directory tree, like in all modern IDEs (but of course better).</p>
+
+<p><a href="http://www.vim.org/scripts/script.php?script_id=1173">tComment</a> allows you to easily comment out blocks of code. Hit <code>gcc</code> to comment a line or <code>gc</code> while selecting a block in <code>V</code>isual mode.</p>
+
+<h2>Source</h2>
+
+<p>You may want to head over to GitHub and grab a version from here: <a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/using-vim-for-writing-code/">Using vim for writing code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-10T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/using-vim-for-writing-code/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/using-vim-for-writing-code/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Vim is a great text editor which can be much more powerful then any GUI editor or IDE. It has its learning curve, but once you are used to it you&rsquo;ll never want to switch to anything else. Here&rsquo;s a quick tutorial on how to use and customize vim for working with code.</p>
+
+<h2>Basics</h2>
+
+<p>Feel free to skip this first part if you are familiar with vim already.</p>
+
+<p>First, let&rsquo;s get the hang of moving around. You can use arrow keys or <code>h</code>, <code>j</code>, <code>k</code> and <code>l</code> to move around. Holding <code>Ctrl</code> while moving will allow you to move between words (separated by spaces, tabulation, or line breaks), holding <code>Shift</code> allows you to do so with all punctuation characters including spaces and line breaks.</p>
+
+<p>Typing <code>:147</code> will get you to the line 147, <code>/foo</code> will get you to the first occurrence of foo, <code>/</code> will repeat the last search.</p>
+
+<p>Hit <code>i</code> to enter insert mode and type in text. Hit <code>Esc</code> to go back. Key <code>a</code> does the same thing, but sets the cursor after the selected character. Hit <code>Insert</code> to switch between insert and replace modes.</p>
+
+<p>Typing in <code>:w</code> will write changes to a file, <code>:q</code> exits the editor, <code>:e &lt;filename&gt;</code> opens another file.</p>
+
+<p>Sometimes you need to do some copy-pasting: copy (yank) line with <code>Y</code> and paste it with <code>p</code>. You should know that vim allows you to prefix the majority of commands with a number: typing in <code>13Y</code> will yank 13 lines, <code>40j</code> will take you 40 lines down, etc.</p>
+
+<p>Command <code>x</code> will delete a character, <code>dd</code> will delete a whole line. Of course, you can prefix it with a number if you need to delete more then one line.</p>
+
+<p><code>:%s/foo/bar</code> will find and replace the first occurrence of foo with bar, <code>:%s/foo/bar/g</code> will do so within the whole file.</p>
+
+<p>Splitting windows is very helpful tool: <code>:split &lt;filename&gt;</code> will split the window horizontally, <code>:vsplit &lt;filename&gt;</code> will do so vertically. Hit <code>Ctrl + w</code>, and then arrow key will select an active view, <code>Ctrl + w, r</code> will swap the views. Simply type <code>:q</code> to close the window.</p>
+
+<h2>Customizing</h2>
+
+<p>Here&rsquo;s example of a ~/.vimrc file, and the basic options necessary for editing code with vim.</p>
+
+<pre><code>syntax on
+
+set tabstop=4
+set shiftwidth=4
+set smartindent
+set autoindent
+set expandtab
+</code></pre>
+
+<p>Option <em>syntax on</em> enables syntax highlight, <em>tabstop</em> sets tab width, <em>shiftwidth</em> sets tab width for auto indentation, <em>smartindent</em>, <em>autoindent</em> enables indentation (smart indentation implies adding an extra indentation level after defining function, starting a loop, etc.), optional is <em>expandtab</em>, which tells vim to treat all tabs as spaces.</p>
+
+<p>If you are fan of limiting line width with n columns &ndash; add option <em>colorcolumn=80</em>, or (if your vim version is below 7.3) add the following lines:</p>
+
+<pre><code>highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /%80v.+/
+</code></pre>
+
+<p>That should highlight all text exceeding the 80 columns limit.</p>
+
+<p>Feel free to experiment with the options and start building up your own .vimrc.</p>
+
+<h2>Using ctags with vim</h2>
+
+<p><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a> allows you to create &ldquo;tags&rdquo; for all your classes, functions, and variables to allow easily jumping between them. After installing ctags (package is also available in major repositories named <em>ctags</em>) generate tags:</p>
+
+<pre><code>$ cd project/
+$ ctags -R *
+</code></pre>
+
+<p>Open the main project file and move your cursor over to some function call. Hit <code>Ctrl + ]</code> to move to function definition, <code>:tn</code> will move you to the next definition for the function. Hitting <code>Ctrl + t</code> will return you back.</p>
+
+<p>Auto completion allows you not to bother with finishing words, variable or function names, and pretty much anything. That being said, <code>Ctrl + n</code> will finish the word for you or allow you to select the desired word from the list.</p>
+
+<p>This is just a basic example of what you can do with vim, for further info you can read <a href="http://www.vim.org/docs.php">vim documentation</a>. I may be posting some more tips and tricks on using vim in future.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/c-reallocating-memory-for-the-array/">C - Reallocating memory for the array</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-02T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/c-reallocating-memory-for-the-array/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/c-reallocating-memory-for-the-array/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I just started delving into C and I had some issues with increasing the memory allocation size for my array. The best way to understand something &ndash; write a detailed explanation of the process. So here we go:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// notice that array is a pointer to a pointer
+int append_array_element(int **array, int *array_length, int element) {
+    *array_length += 1;
+    *array = realloc(*array, *array_length * sizeof(int));
+    (*array)[*array_length - 1] = element; // [] has higher priority
+                                           // then * in C's order of
+    return 0;                              // operations
+}
+</code></pre>
+
+<p>We have a pointer to the pointer to the array, pointer to the array&rsquo;s length, and a value to append to the array. Array is passed as a pointer to pointer so we will be able to &lsquo;repoint&rsquo; the original pointer to a new memory segment.</p>
+
+<p>Let&rsquo;s call the function a few times and see what it gives us.</p>
+
+<pre><code>int main() {
+    int *array = NULL;
+    int array_length = 0;
+
+    append_array_element(&amp;array, &amp;array_length, 142);
+    printf ("Our array with %d elementsn", array_length);
+    printf("%dn", array[0]);
+
+    append_array_element(&amp;array, &amp;array_length, 19);
+    printf ("Our array with %d elementsn", array_length);
+    printf("%dn", array[0]);
+    printf("%dn", array[1]);
+
+    return 0;
+}
+</code></pre>
+
+<p>And the output is:</p>
+
+<pre><code>Our array with 1 elements
+142
+Our array with 2 elements
+142
+19
+</code></pre>
+
+<p>You can never be sure when you work with memory, so let&rsquo;s add some error handling in case the operation fails.</p>
+
+<pre><code>int append_array_element(int **array, int *array_length, int element) {
+    *array_length += 1;
+    // realloc() returns pointer or False if it fails
+    void *_tmp_array = realloc(*array, *array_length * sizeof(int));
+    if (!_tmp_array) {
+        printf("Error while trying to realloc memory!n");
+        return -1;
+    }
+    *array = _tmp_array;
+    (*array)[*array_length - 1] = element;
+
+    return 0;
+}
+</code></pre>
+
+<p>Now we will be able to handle the crash on our own. But reallocation is not a very fast thing, so let&rsquo;s double the amount of reallocated memory every time we run out of allocated memory. We&rsquo;ll need one more variable to track the current allocated memory size.</p>
+
+<pre><code>int append_array_element(int **array, int *array_length,
+                         int *array_alloc_length, int element) {
+    *array_length += 1;
+    if (*array_length &gt; *array_alloc_length) {
+        if (*array_alloc_length == 0) {
+            *array_alloc_length = 1;
+        } else {
+            *array_alloc_length *= 2;
+        }
+
+        void *_tmp_array = realloc(*array, *array_alloc_length * sizeof(int));
+        if (!_tmp_array) {
+            printf("Error while trying to reallocate memory for an array!n");
+            return -1;
+        }
+        *array = _tmp_array;
+    }
+    (*array)[*array_length - 1] = element;
+
+    return 0;
+}
+</code></pre>
+
+<p>Let&rsquo;s call it few times:</p>
+
+<pre><code>int main() {
+    int *array = NULL;
+    int array_length = 0;
+    int array_alloc_length = 0;
+
+    int i;
+    for (i = 0; i &lt; 10; i++) {
+        append_array_element(&amp;array, &amp;array_length, &amp;array_alloc_length, i);
+    }
+
+    printf("Our array with %d elementsn", array_length);
+    for (i = 0; i &lt; 10; i++) {
+        printf("%dn", array[i]);
+    }
+    printf("Array length: %d, allocated elements: %dn",
+           array_length, array_alloc_length);
+
+    return 0;
+}
+
+Our array with 10 elements
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Array length: 10, allocated elements: 16
+</code></pre>
+
+<p>And for the fun of it, let&rsquo;s do the same with 100 elements:</p>
+
+<pre><code>Our array with 100 elements
+0
+1
+2
+...
+97
+98
+99
+Array length: 100, allocated elements: 128
+</code></pre>
+
+<p>Let&rsquo;s improve the function a little bit more &ndash; and we are good to go. Let&rsquo;s say we have a dynamic array with 129 elements &ndash; but we will have allocated memory for 256 elements&hellip; It is 127 more then we need! We don&rsquo;t want to be greedy, so let&rsquo;s find a way to free up the memory.</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt; // I included this just to use boolean values with
+                     // neat true/false aliases
+
+int append_array_element(int **array, int *array_length,
+                         int *array_alloc_length, int element,
+                         bool is_last_element) {
+    *array_length += 1;
+    if (*array_length &gt; *array_alloc_length || is_last_element) {
+        if (is_last_element) {
+            *array_alloc_length = *array_length;
+        }
+        else if (*array_alloc_length == 0) {
+            *array_alloc_length = 1;
+        } else {
+            *array_alloc_length *= 2;
+        }
+
+        void *_tmp_array = realloc(*array, *array_alloc_length * sizeof(int));
+        if (!_tmp_array) {
+            printf("Error while trying to reallocate memory for an array!n");
+            return -1;
+        }
+        *array = _tmp_array;
+    }
+    (*array)[*array_length - 1] = element;
+
+    return 0;
+}
+</code></pre>
+
+<p>That should be pretty straight-forward. And let&rsquo;s call it two more times with 10 and 100 elements:</p>
+
+<pre><code>int main() {
+    int *array = NULL;
+    int array_length = 0;
+    int array_alloc_length = 0;
+    bool is_last_element;
+
+    int i;
+    int i_max = 10;
+    for (i = 0; i &lt; i_max; i++) {
+        if (i == i_max - 1)
+        {
+            is_last_element = true;
+        } else {
+            is_last_element = false;
+        }
+        append_array_element(&amp;array, &amp;array_length, &amp;array_alloc_length,
+                             i, is_last_element);
+    }
+
+    printf("Our array with %d elementsn", array_length);
+    for (i = 0; i &lt; i_max; i++) {
+        printf("%dn", array[i]);
+    }
+    printf("Array length: %d, allocated elements: %dn",
+           array_length, array_alloc_length);
+
+    return 0;
+}
+</code></pre>
+
+<p>And the results are:</p>
+
+<pre><code>Our array with 10 elements
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Array length: 10, allocated elements: 10
+
+Our array with 100 elements
+0
+1
+2
+...
+97
+98
+99
+Array length: 100, allocated elements: 100
+</code></pre>
+
+<p>Pretty neat, huh? Thank you for reading!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/9">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ruslan Osipov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
