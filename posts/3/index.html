@@ -100,7 +100,7 @@
   
 
 
-<time datetime="2014-06-02T00:00:00-07:00" pubdate data-updated="true"></time>
+<time datetime="2014-06-01T20:44:12-07:00" pubdate data-updated="true">Jun 1<sup>st</sup>, 2014</time>
         
            | <a href="/blog/export-wordpress-posts-to-plain-text/#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/">Comments</a>
@@ -216,7 +216,7 @@ if __name__ == "__main__":
   
 
 
-<time datetime="2014-05-31T00:00:00-07:00" pubdate data-updated="true"></time>
+<time datetime="2014-05-31T12:33:15-07:00" pubdate data-updated="true">May 31<sup>st</sup>, 2014</time>
         
            | <a href="/blog/why-should-you-learn-to-touch-type/#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type/">Comments</a>
@@ -271,7 +271,7 @@ if __name__ == "__main__":
   
 
 
-<time datetime="2014-05-30T00:00:00-07:00" pubdate data-updated="true"></time>
+<time datetime="2014-05-29T21:01:29-07:00" pubdate data-updated="true">May 29<sup>th</sup>, 2014</time>
         
            | <a href="/blog/writing-for-the-sake-of-writing/#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing/">Comments</a>
@@ -334,7 +334,7 @@ if __name__ == "__main__":
   
 
 
-<time datetime="2014-05-29T00:00:00-07:00" pubdate data-updated="true"></time>
+<time datetime="2014-05-29T12:20:34-07:00" pubdate data-updated="true">May 29<sup>th</sup>, 2014</time>
         
            | <a href="/blog/python-ignored-context-manager/#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io/blog/python-ignored-context-manager/">Comments</a>
@@ -383,7 +383,7 @@ def ignored(*exceptions):
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/using-mutt-with-gpg/">Using Mutt with GPG</a></h1>
+      <h1 class="entry-title"><a href="/blog/elegant-mutt-setup-for-use-with-gmail/">Elegant Mutt setup for use with Gmail</a></h1>
     
     
       <p class="meta">
@@ -399,29 +399,85 @@ def ignored(*exceptions):
   
 
 
-<time datetime="2014-05-28T00:00:00-07:00" pubdate data-updated="true"></time>
+<time datetime="2014-05-28T14:33:55-07:00" pubdate data-updated="true">May 28<sup>th</sup>, 2014</time>
         
-           | <a href="/blog/using-mutt-with-gpg/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/">Comments</a>
+           | <a href="/blog/elegant-mutt-setup-for-use-with-gmail/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Mutt is a great command line email client, but it does not offer a built-in way to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an article on how to use GPG to store your passwords: <a href="http://www.rosipov.com/blog/gpg-usage/">GPG Usage</a>, this is a more practical note about using GPG to store your passwords for mutt. This note implies that you already have installed and configured GPG (which you can learn how to do in above linked article).</p>
+  <div class="entry-content"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
 
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code> with your password and <code>$ACCOUNT</code> with a desired account alias. You probably want to prefix this command with a space, to avoid writing your password to a history file.</p>
+<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
 
-<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
+<pre><code>bind editor &lt;space&gt; noop
+set alias_file        = '~/.mutt/aliases.txt'
+set copy              = no
+set display_filter    = '$HOME/.mutt/aliases.sh'
+set edit_headers
+set editor            = "vim +/^$ ++1"
+set folder            = "imaps://imap.gmail.com/"
+set hostname          = "gmail.com"
+set imap_check_subscribed
+set imap_pass         = "$PASSWORD"
+set imap_user         = "$USERNAME"
+set mail_check        = 5
+set move              = no
+set postponed         = "+[Gmail]/Drafts"
+set spoolfile         = "+INBOX"
+set text_flowed       = yes
+unset imap_passive
+unset record
+
+# Gmail-style keyboard shortcuts
+macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
+macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
+macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
+macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
+macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
+macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
+macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
+
+source $alias_file
 </code></pre>
 
-<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
+<p>It is quite self-explanatory, and includes such nice features as:</p>
 
-<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
+<ul>
+<li>Automatically adding addresses from read emails to address book (see below).</li>
+<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
+</ul>
+
+
+<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
+
+<pre><code>#!/bin/sh
+
+MESSAGE=$(cat)
+
+AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
+AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
+AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
+
+NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
+
+if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
+    :
+else
+    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
+fi
+
+echo "${MESSAGE}"
 </code></pre>
 
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier. Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
+<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
 </div>
   
   

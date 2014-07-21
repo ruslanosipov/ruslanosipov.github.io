@@ -4,193 +4,193 @@
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/the-pragmatic-programmer/</loc>
-    <lastmod>2014-07-19T00:00:00-07:00</lastmod>
+    <lastmod>2014-07-14T18:43:26-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/</loc>
-    <lastmod>2014-07-19T00:00:00-07:00</lastmod>
+    <lastmod>2014-07-07T21:14:21-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/</loc>
-    <lastmod>2014-07-15T00:00:00-07:00</lastmod>
+    <lastmod>2014-07-07T20:22:08-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/zero-mail-inbox/</loc>
-    <lastmod>2014-07-02T00:00:00-07:00</lastmod>
+    <lastmod>2014-07-02T13:36:42-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews/</loc>
-    <lastmod>2014-06-25T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-24T18:16:13-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/the-elements-of-style/</loc>
-    <lastmod>2014-06-20T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-20T10:58:35-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/</loc>
-    <lastmod>2014-06-20T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-19T19:33:38-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think/</loc>
-    <lastmod>2014-06-17T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-16T20:42:51-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/the-design-of-everyday-things/</loc>
-    <lastmod>2014-06-15T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-15T14:23:50-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/</loc>
-    <lastmod>2014-06-07T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-07T12:11:54-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/</loc>
-    <lastmod>2014-06-02T00:00:00-07:00</lastmod>
+    <lastmod>2014-06-01T20:44:12-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type/</loc>
-    <lastmod>2014-05-31T00:00:00-07:00</lastmod>
+    <lastmod>2014-05-31T12:33:15-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing/</loc>
-    <lastmod>2014-05-30T00:00:00-07:00</lastmod>
+    <lastmod>2014-05-29T21:01:29-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/python-ignored-context-manager/</loc>
-    <lastmod>2014-05-29T00:00:00-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://ruslanosipov.github.io/blog/using-mutt-with-gpg/</loc>
-    <lastmod>2014-05-28T00:00:00-07:00</lastmod>
+    <lastmod>2014-05-29T12:20:34-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/</loc>
-    <lastmod>2014-05-28T00:00:00-07:00</lastmod>
+    <lastmod>2014-05-28T14:33:55-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://ruslanosipov.github.io/blog/using-mutt-with-gpg/</loc>
+    <lastmod>2014-05-28T12:11:52-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/navigate-files-easily-with-ctrlp-vim/</loc>
-    <lastmod>2014-01-13T00:00:00-08:00</lastmod>
+    <lastmod>2014-01-12T17:10:34-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/</loc>
-    <lastmod>2013-12-30T00:00:00-08:00</lastmod>
+    <lastmod>2013-12-30T10:48:31-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim/</loc>
-    <lastmod>2013-11-25T00:00:00-08:00</lastmod>
+    <lastmod>2013-11-24T16:39:34-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim/</loc>
-    <lastmod>2013-11-24T00:00:00-08:00</lastmod>
+    <lastmod>2013-11-23T20:14:19-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/pasting-with-vim-and-indentation-issues/</loc>
-    <lastmod>2013-11-17T00:00:00-08:00</lastmod>
+    <lastmod>2013-11-16T17:02:30-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/remap-your-caps-lock/</loc>
-    <lastmod>2013-09-12T00:00:00-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest/</loc>
-    <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    <lastmod>2013-09-11T18:26:15-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug/</loc>
-    <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    <lastmod>2013-07-22T07:57:29-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest/</loc>
+    <lastmod>2013-07-22T07:47:47-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/pygame-font-not-found/</loc>
-    <lastmod>2013-06-27T00:00:00-07:00</lastmod>
+    <lastmod>2013-06-27T06:51:11-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/use-vimdiff-as-git-mergetool/</loc>
-    <lastmod>2013-06-14T00:00:00-07:00</lastmod>
+    <lastmod>2013-06-13T19:18:16-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/git-pretty-log-output/</loc>
-    <lastmod>2013-06-14T00:00:00-07:00</lastmod>
+    <lastmod>2013-06-13T18:31:02-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/download-gists-from-prompt/</loc>
-    <lastmod>2013-05-17T00:00:00-07:00</lastmod>
+    <lastmod>2013-05-17T11:52:02-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/my-most-used-bash-commands/</loc>
-    <lastmod>2013-04-24T00:00:00-07:00</lastmod>
+    <lastmod>2013-04-24T09:47:11-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/colorless-week-results/</loc>
-    <lastmod>2013-04-17T00:00:00-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://ruslanosipov.github.io/blog/editing-bash-command-in-vim/</loc>
-    <lastmod>2013-04-01T00:00:00-07:00</lastmod>
+    <lastmod>2013-04-17T11:32:46-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/a-week-without-colorful-prompt/</loc>
-    <lastmod>2013-04-01T00:00:00-07:00</lastmod>
+    <lastmod>2013-04-01T11:10:31-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://ruslanosipov.github.io/blog/editing-bash-command-in-vim/</loc>
+    <lastmod>2013-04-01T00:34:28-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -202,112 +202,112 @@
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/irssi-ignore-all-from-everyone/</loc>
-    <lastmod>2013-03-27T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-27T08:37:10-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/vim-movement-cheatsheet/</loc>
-    <lastmod>2013-03-21T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-21T14:57:37-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/rename-commit-author-in-git/</loc>
-    <lastmod>2013-03-15T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-14T17:09:02-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/read-man-pages-from-vim/</loc>
-    <lastmod>2013-03-13T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-13T16:50:56-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/mintty-color-scheme-cygwin/</loc>
-    <lastmod>2013-03-13T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-13T12:35:28-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/rails-and-mongodb-with-cygwin/</loc>
-    <lastmod>2013-03-11T00:00:00-07:00</lastmod>
+    <lastmod>2013-03-11T12:38:30-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/use-vim-commands-in-a-browser/</loc>
-    <lastmod>2013-02-24T00:00:00-08:00</lastmod>
+    <lastmod>2013-02-23T21:35:27-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/git-merge-two-repositories/</loc>
-    <lastmod>2013-02-21T00:00:00-08:00</lastmod>
+    <lastmod>2013-02-21T12:09:07-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/gpg-usage/</loc>
-    <lastmod>2012-12-26T00:00:00-08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://ruslanosipov.github.io/blog/create-gitolite-repository/</loc>
-    <lastmod>2012-12-10T00:00:00-08:00</lastmod>
+    <lastmod>2012-12-26T12:00:22-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/c-strtok-usage-example/</loc>
-    <lastmod>2012-12-10T00:00:00-08:00</lastmod>
+    <lastmod>2012-12-10T10:36:05-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://ruslanosipov.github.io/blog/create-gitolite-repository/</loc>
+    <lastmod>2012-12-09T20:11:23-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/gui-git-difftool-for-windows/</loc>
-    <lastmod>2012-12-06T00:00:00-08:00</lastmod>
+    <lastmod>2012-12-06T12:02:24-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/extendedly-basic-vim-setup/</loc>
-    <lastmod>2012-11-15T00:00:00-08:00</lastmod>
+    <lastmod>2012-11-15T11:06:33-08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/using-vim-for-writing-code/</loc>
-    <lastmod>2012-10-10T00:00:00-07:00</lastmod>
+    <lastmod>2012-10-09T21:16:52-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/c-reallocating-memory-for-the-array/</loc>
-    <lastmod>2012-09-02T00:00:00-07:00</lastmod>
+    <lastmod>2012-09-01T18:54:36-07:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/archive/</loc>
-    <lastmod>2014-07-20T18:06:57-07:00</lastmod>
+    <lastmod>2014-07-20T18:43:14-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/</loc>
-    <lastmod>2014-07-20T18:06:57-07:00</lastmod>
+    <lastmod>2014-07-20T18:43:14-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/about/</loc>
-    <lastmod>2014-07-20T18:06:57-07:00</lastmod>
+    <lastmod>2014-07-20T18:43:14-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

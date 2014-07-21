@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-20T18:06:57-07:00</updated>
+  <updated>2014-07-20T18:43:14-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
     <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
-    <updated>2014-06-02T00:00:00-07:00</updated>
+    <updated>2014-06-01T20:44:12-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
     <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in plain text.</p>
 
@@ -102,7 +102,7 @@ if __name__ == "__main__":
   <entry>
     <title type="html"><![CDATA[Python: "ignored" context manager]]></title>
     <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
-    <updated>2014-05-29T00:00:00-07:00</updated>
+    <updated>2014-05-29T12:20:34-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
     <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger: <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the following often-occurring pattern:</p>
 
@@ -137,7 +137,7 @@ def ignored(*exceptions):
   <entry>
     <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
     <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
-    <updated>2013-12-30T00:00:00-08:00</updated>
+    <updated>2013-12-30T10:48:31-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
     <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very comprehensive, and at the moment current version (0.2.19) has some issues integrating with the latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get to a comprehensive tutorial.</p>
 
@@ -322,9 +322,58 @@ Destroying test database for alias 'default'...
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Python doctests and decorators bug]]></title>
+    <link href="http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug/"/>
+    <updated>2013-07-22T07:57:29-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug</id>
+    <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is a workaround.</p>
+
+<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator to import docstrings into a decorator scope.</p>
+
+<pre><code>#!/usr/bin/env python
+
+from functools import wraps
+
+def decorator(func):
+    @wraps(func)
+    def wrapper():
+        return func()
+    return wrapper
+
+@decorator
+def foo():
+    """
+    &gt;&gt;&gt; foo()
+    False
+    """
+    return True
+
+import doctest
+doctest.testmod()
+</code></pre>
+
+<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
+
+<pre><code>**********************************************************************
+File "decorator.py", line 12, in __main__.foo
+Failed example:
+    foo()
+Expected:
+    False
+Got:
+    True
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.foo
+***Test Failed*** 1 failures.
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Python tests with doctest and unittest]]></title>
     <link href="http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest/"/>
-    <updated>2013-07-22T00:00:00-07:00</updated>
+    <updated>2013-07-22T07:47:47-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest</id>
     <content type="html"><![CDATA[<p>When it comes to tests, <code>doctest</code> is a great simple module to write tests for your application. However it is pretty basic and does not have any extended features like, for example, centralized unit tests. If you have multiple modules with doctests (and you probably do) you most likely want to be able to run all doctests recursively from one place. That&rsquo;s where <code>unittest</code> comes in.</p>
 
@@ -422,55 +471,6 @@ Got:
 Ran 3 tests in 0.009s
 
 FAILED (failures=1)
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python doctests and decorators bug]]></title>
-    <link href="http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug/"/>
-    <updated>2013-07-22T00:00:00-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug</id>
-    <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is a workaround.</p>
-
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator to import docstrings into a decorator scope.</p>
-
-<pre><code>#!/usr/bin/env python
-
-from functools import wraps
-
-def decorator(func):
-    @wraps(func)
-    def wrapper():
-        return func()
-    return wrapper
-
-@decorator
-def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return True
-
-import doctest
-doctest.testmod()
-</code></pre>
-
-<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
-
-<pre><code>**********************************************************************
-File "decorator.py", line 12, in __main__.foo
-Failed example:
-    foo()
-Expected:
-    False
-Got:
-    True
-**********************************************************************
-1 items had failures:
-   1 of   1 in __main__.foo
-***Test Failed*** 1 failures.
 </code></pre>
 ]]></content>
   </entry>

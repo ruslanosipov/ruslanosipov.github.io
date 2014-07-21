@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-20T18:06:57-07:00</updated>
+  <updated>2014-07-20T18:43:14-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA["The Pragmatic Programmer"]]></title>
     <link href="http://ruslanosipov.github.io/blog/the-pragmatic-programmer/"/>
-    <updated>2014-07-19T00:00:00-07:00</updated>
+    <updated>2014-07-14T18:43:26-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-pragmatic-programmer</id>
     <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as well be a fantastic marketing trick for their consulting agency, but the value it brings to the reader is hard to underestimate.</p>
 
@@ -37,7 +37,7 @@
   <entry>
     <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
     <link href="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/"/>
-    <updated>2014-07-19T00:00:00-07:00</updated>
+    <updated>2014-07-07T21:14:21-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki</id>
     <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a personal Wiki. It&rsquo;s a great idea to have data repository shared between your machines: important notes about people, conversations, events, tasks you&rsquo;ve accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t belong anywhere else. There is plenty of software out there which lets you set up a personal Wiki, and some of it is very lightweight and well polished. However, I prefer to do most of my editing and writing in Vim. As tip #22 from &ldquo;The Pragmatic Programmer&rdquo; states:</p>
 
@@ -76,7 +76,7 @@
   <entry>
     <title type="html"><![CDATA[Easy commenting with tcomment.vim]]></title>
     <link href="http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/"/>
-    <updated>2014-07-15T00:00:00-07:00</updated>
+    <updated>2014-07-07T20:22:08-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim</id>
     <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes forget that it&rsquo;s not a built-in Vim feature.</p>
 
@@ -87,7 +87,7 @@
   <entry>
     <title type="html"><![CDATA[Zero mail inbox]]></title>
     <link href="http://ruslanosipov.github.io/blog/zero-mail-inbox/"/>
-    <updated>2014-07-02T00:00:00-07:00</updated>
+    <updated>2014-07-02T13:36:42-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/zero-mail-inbox</id>
     <content type="html"><![CDATA[<p>I use email a lot. Maybe not as much as some, but I receive and send a fair share of mail each day. You might find it odd, but I love using email. It&rsquo;s a pleasant and calm experience, and sorting through a pile of messages every morning rewards me with a sense of achievement. There are, however, few tricks I have up my sleeve, and I would like to share them today. These tips will not necessarily make you more productive, but they will provide you a with a more pleasant and peaceful experience of managing your inbox.</p>
 
@@ -137,7 +137,7 @@
   <entry>
     <title type="html"><![CDATA[Dark side of technical interviews]]></title>
     <link href="http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews/"/>
-    <updated>2014-06-25T00:00:00-07:00</updated>
+    <updated>2014-06-24T18:16:13-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews</id>
     <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an interviewing scheme which will fit every company. Some companies seem to find processes which work for their size and culture, while others struggle to do so. Human resources management is a complex subject, and it&rsquo;s hard to get right.</p>
 
@@ -184,7 +184,7 @@
   <entry>
     <title type="html"><![CDATA["The Elements Of Style"]]></title>
     <link href="http://ruslanosipov.github.io/blog/the-elements-of-style/"/>
-    <updated>2014-06-20T00:00:00-07:00</updated>
+    <updated>2014-06-20T10:58:35-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-elements-of-style</id>
     <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a software engineering blog. You might even get angry at me for pointing this book in your face. But I have a strong affection towards this guide; I believe everyone who has to write more than a sentence in English should read it. I like to emphasize the communication aspects of a software engineering career as much as coding or management skills.</p>
 
@@ -203,7 +203,7 @@
   <entry>
     <title type="html"><![CDATA["Expert Python Programming" by Tarek Ziade]]></title>
     <link href="http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/"/>
-    <updated>2014-06-20T00:00:00-07:00</updated>
+    <updated>2014-06-19T19:33:38-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade</id>
     <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few shortcomings, I found it to be useful &ndash; Python is a language of choice for me, and I found some valuable tips I could add to my arsenal.</p>
 
@@ -218,7 +218,7 @@
   <entry>
     <title type="html"><![CDATA[Steve Krug's "Don't Make Me Think"]]></title>
     <link href="http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think/"/>
-    <updated>2014-06-17T00:00:00-07:00</updated>
+    <updated>2014-06-16T20:42:51-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think</id>
     <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a long name). I went through the whole book only in under a few hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is full of concrete and valuable tips and advice about usability.</p>
 
@@ -237,7 +237,7 @@
   <entry>
     <title type="html"><![CDATA["The Design of Everyday Things"]]></title>
     <link href="http://ruslanosipov.github.io/blog/the-design-of-everyday-things/"/>
-    <updated>2014-06-15T00:00:00-07:00</updated>
+    <updated>2014-06-15T14:23:50-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-design-of-everyday-things</id>
     <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In the past year I have only read two books, one of which was a technical manual. Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going on: reading blogs, articles, guides, watching keynote talks&hellip; But I did miss the feeling of holding a good book in my hands, turning the pages with the tips of my fingers, seeing the texture of the paper under the print. A few weeks ago I went ahead and ordered one of the books on my reading list: &ldquo;The Design of Everyday Things&rdquo; by Donald A. Norman. I just finished reading it a few hours ago and am eager to share my impressions of the book.</p>
 
@@ -258,7 +258,7 @@
   <entry>
     <title type="html"><![CDATA[Why I threw away my "To Do" list]]></title>
     <link href="http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/"/>
-    <updated>2014-06-07T00:00:00-07:00</updated>
+    <updated>2014-06-07T12:11:54-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list</id>
     <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists, written notes, and just about anything that will let me arrange my tasks instead of actually accomplishing them. I recently stopped writing things down, and the results were pleasantly surprising&hellip;</p>
 
@@ -275,7 +275,7 @@
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
     <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
-    <updated>2014-06-02T00:00:00-07:00</updated>
+    <updated>2014-06-01T20:44:12-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
     <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in plain text.</p>
 
@@ -361,7 +361,7 @@ if __name__ == "__main__":
   <entry>
     <title type="html"><![CDATA[Why should you learn to touch type?]]></title>
     <link href="http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type/"/>
-    <updated>2014-05-31T00:00:00-07:00</updated>
+    <updated>2014-05-31T12:33:15-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type</id>
     <content type="html"><![CDATA[<p>I have a confession to make. Up until recently I did not know how to touch type. I would do what most people around me did: push the keys however which way I felt; make a typo; look down at the keyboard to find the letter I mistyped; repeat the whole process. I would put out up to 50 words per minute with this method, with an embarrassing error rate (which usually went up if I was showing something to someone). I am now terrified to think about those times.</p>
 
@@ -386,7 +386,7 @@ if __name__ == "__main__":
   <entry>
     <title type="html"><![CDATA[Writing for the sake of writing]]></title>
     <link href="http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing/"/>
-    <updated>2014-05-30T00:00:00-07:00</updated>
+    <updated>2014-05-29T21:01:29-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing</id>
     <content type="html"><![CDATA[<p>This is my first article out of what I hope will be many. I started this blog in 2012 and I&rsquo;ve never written a single biased entry: just dry technical manuals, tutorials, and guides. This has lead to a number of page views from programmers in distress, but getting a certain amount of views was never the goal of this blog. To be honest, I am not even sure if I had a goal in mind. Everyone had a blog, and I thought so should I. I was hoping it will assist me in getting a job I will enjoy by increasing my online presence (and it may have). Maybe I was out for some online reputation and (knowing myself) fame. Of course, none of this happened.</p>
 
@@ -419,7 +419,7 @@ if __name__ == "__main__":
   <entry>
     <title type="html"><![CDATA[Python: "ignored" context manager]]></title>
     <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
-    <updated>2014-05-29T00:00:00-07:00</updated>
+    <updated>2014-05-29T12:20:34-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
     <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger: <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the following often-occurring pattern:</p>
 
@@ -452,30 +452,9 @@ def ignored(*exceptions):
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Using Mutt with GPG]]></title>
-    <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
-    <updated>2014-05-28T00:00:00-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
-    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an article on how to use GPG to store your passwords: <a href="http://www.rosipov.com/blog/gpg-usage/">GPG Usage</a>, this is a more practical note about using GPG to store your passwords for mutt. This note implies that you already have installed and configured GPG (which you can learn how to do in above linked article).</p>
-
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code> with your password and <code>$ACCOUNT</code> with a desired account alias. You probably want to prefix this command with a space, to avoid writing your password to a history file.</p>
-
-<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
-</code></pre>
-
-<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
-
-<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
-</code></pre>
-
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier. Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Elegant Mutt setup for use with Gmail]]></title>
     <link href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/"/>
-    <updated>2014-05-28T00:00:00-07:00</updated>
+    <updated>2014-05-28T14:33:55-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail</id>
     <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
 
@@ -550,9 +529,30 @@ echo "${MESSAGE}"
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Using Mutt with GPG]]></title>
+    <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
+    <updated>2014-05-28T12:11:52-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
+    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an article on how to use GPG to store your passwords: <a href="http://www.rosipov.com/blog/gpg-usage/">GPG Usage</a>, this is a more practical note about using GPG to store your passwords for mutt. This note implies that you already have installed and configured GPG (which you can learn how to do in above linked article).</p>
+
+<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code> with your password and <code>$ACCOUNT</code> with a desired account alias. You probably want to prefix this command with a space, to avoid writing your password to a history file.</p>
+
+<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
+</code></pre>
+
+<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
+
+<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
+</code></pre>
+
+<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier. Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Navigate files easily with ctrlp.vim]]></title>
     <link href="http://ruslanosipov.github.io/blog/navigate-files-easily-with-ctrlp-vim/"/>
-    <updated>2014-01-13T00:00:00-08:00</updated>
+    <updated>2014-01-12T17:10:34-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/navigate-files-easily-with-ctrlp-vim</id>
     <content type="html"><![CDATA[<p>Few years ago I used a lightweight IDE called &ldquo;Sublime Text 2&rdquo;. And one of the most compelling features of it was an ability to switch between files by hitting <code>Ctrl</code> + <code>P</code> and typing in a part of the file name.</p>
 
@@ -565,7 +565,7 @@ echo "${MESSAGE}"
   <entry>
     <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
     <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
-    <updated>2013-12-30T00:00:00-08:00</updated>
+    <updated>2013-12-30T10:48:31-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
     <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very comprehensive, and at the moment current version (0.2.19) has some issues integrating with the latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get to a comprehensive tutorial.</p>
 
@@ -752,7 +752,7 @@ Destroying test database for alias 'default'...
   <entry>
     <title type="html"><![CDATA[Open previously edited file in vim]]></title>
     <link href="http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim/"/>
-    <updated>2013-11-25T00:00:00-08:00</updated>
+    <updated>2013-11-24T16:39:34-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim</id>
     <content type="html"><![CDATA[<p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command with a number to go multiple files back. You can also travel forward in &ldquo;file history&rdquo; by using <code>Ctrl-I</code>.</p>
 
@@ -763,7 +763,7 @@ Destroying test database for alias 'default'...
   <entry>
     <title type="html"><![CDATA[Old file version in split with vim]]></title>
     <link href="http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim/"/>
-    <updated>2013-11-24T00:00:00-08:00</updated>
+    <updated>2013-11-23T20:14:19-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim</id>
     <content type="html"><![CDATA[<p>If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command:</p>
 
