@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2013-12-30 18:48:31+00:00
 tags: [django, lettuce, python, splinter]
 title: Making Django and Lettuce play nice together
 ---

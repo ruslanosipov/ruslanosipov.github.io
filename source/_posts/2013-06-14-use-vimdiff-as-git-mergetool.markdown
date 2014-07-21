@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-06-14 02:18:16+00:00
 tags: [git, vim, vimdiff]
 title: Use vimdiff as git mergetool
 ---

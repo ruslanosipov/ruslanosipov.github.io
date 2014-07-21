@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2012-12-10 18:36:05+00:00
 tags: [c]
 title: C strtok usage example
 ---

@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-03-13 19:35:28+00:00
 tags: [cygwin]
 title: Mintty color scheme (Cygwin)
 ---

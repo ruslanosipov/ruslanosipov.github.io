@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-03-21 21:57:37+00:00
 tags: [vim]
 title: Vim movement cheatsheet
 ---

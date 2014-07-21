@@ -1,5 +1,6 @@
 ---
 categories: [Book reviews]
+date: 2014-06-17 03:42:51+00:00
 title: Steve Krug's "Don't Make Me Think"
 ---
 

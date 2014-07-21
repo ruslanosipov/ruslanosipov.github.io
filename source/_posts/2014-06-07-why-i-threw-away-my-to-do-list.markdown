@@ -1,5 +1,6 @@
 ---
 categories: [Notes and rants]
+date: 2014-06-07 19:11:54+00:00
 title: Why I threw away my "To Do" list
 ---
 

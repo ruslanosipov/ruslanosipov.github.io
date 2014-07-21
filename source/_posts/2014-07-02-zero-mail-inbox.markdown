@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2014-07-02 20:36:42+00:00
 tags: [email]
 title: Zero mail inbox
 ---

@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-11-17 01:02:30+00:00
 tags: [vim]
 title: Pasting with vim and indentation issues
 ---

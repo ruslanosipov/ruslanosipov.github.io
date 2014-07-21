@@ -1,6 +1,7 @@
 ---
 categories: [Productivity]
 date: 2013-03-27 21:35:46+00:00
+date: 2013-03-27 21:35:46+00:00
 tags: [git, vim]
 title: Vim, pathogen and git submodules
 ---

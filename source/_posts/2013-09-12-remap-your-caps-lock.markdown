@@ -1,5 +1,6 @@
 ---
 categories: [Notes and rants, Productivity]
+date: 2013-09-12 01:26:15+00:00
 title: Remap your Caps Lock
 ---
 

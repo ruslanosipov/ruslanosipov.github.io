@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2014-01-13 01:10:34+00:00
 tags: [vim]
 title: Navigate files easily with ctrlp.vim
 ---

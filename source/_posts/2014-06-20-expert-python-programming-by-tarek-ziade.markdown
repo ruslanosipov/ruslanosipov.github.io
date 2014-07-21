@@ -1,5 +1,6 @@
 ---
 categories: [Book reviews]
+date: 2014-06-20 02:33:38+00:00
 title: '"Expert Python Programming" by Tarek Ziade'
 ---
 

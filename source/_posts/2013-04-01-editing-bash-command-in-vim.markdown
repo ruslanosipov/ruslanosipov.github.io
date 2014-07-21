@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-04-01 07:34:28+00:00
 tags: [bash, vim]
 title: Editing bash command in vim
 ---

@@ -1,5 +1,6 @@
 ---
 categories: [Notes and rants]
+date: 2013-04-01 18:10:31+00:00
 tags: [bash, git, vim]
 title: A week without colorful prompt
 ---

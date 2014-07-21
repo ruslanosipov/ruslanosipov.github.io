@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2014-05-28 19:11:52+00:00
 tags: [gpg, mutt]
 title: Using Mutt with GPG
 ---

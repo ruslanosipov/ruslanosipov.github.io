@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-06-14 01:31:02+00:00
 tags: [git]
 title: Git pretty log output
 ---

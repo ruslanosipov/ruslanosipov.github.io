@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2012-09-02 01:54:36+00:00
 tags: [c]
 title: C - Reallocating memory for the array
 ---

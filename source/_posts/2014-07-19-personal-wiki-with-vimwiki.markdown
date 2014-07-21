@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2014-07-08 04:14:21+00:00
 tags: [vim]
 title: Personal wiki with vimwiki
 ---

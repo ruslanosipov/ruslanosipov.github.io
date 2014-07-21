@@ -1,5 +1,6 @@
 ---
 categories: [Notes and rants]
+date: 2014-05-30 04:01:29+00:00
 title: Writing for the sake of writing
 ---
 

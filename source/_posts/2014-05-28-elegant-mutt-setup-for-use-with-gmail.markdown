@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2014-05-28 21:33:55+00:00
 tags: [mutt]
 title: Elegant Mutt setup for use with Gmail
 ---

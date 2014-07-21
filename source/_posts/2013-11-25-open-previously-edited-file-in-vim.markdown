@@ -1,5 +1,6 @@
 ---
 categories: [Productivity]
+date: 2013-11-25 00:39:34+00:00
 tags: [vim]
 title: Open previously edited file in vim
 ---

@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2013-07-22 14:47:47+00:00
 tags: [doctest, python, unittest]
 title: Python tests with doctest and unittest
 ---

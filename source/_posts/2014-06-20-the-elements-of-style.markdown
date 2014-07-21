@@ -1,5 +1,6 @@
 ---
 categories: [Book reviews]
+date: 2014-06-20 17:58:35+00:00
 title: '"The Elements Of Style"'
 ---
 

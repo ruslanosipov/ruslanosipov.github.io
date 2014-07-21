@@ -1,5 +1,6 @@
 ---
 categories: [Book reviews]
+date: 2014-06-15 21:23:50+00:00
 title: '"The Design of Everyday Things"'
 ---
 

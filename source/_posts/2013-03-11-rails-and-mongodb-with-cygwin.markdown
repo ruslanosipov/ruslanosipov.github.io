@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2013-03-11 19:38:30+00:00
 tags: [mongodb, rails]
 title: Rails and MongoDB with Cygwin
 ---

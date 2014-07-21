@@ -1,5 +1,6 @@
 ---
 categories: [Programming]
+date: 2013-06-27 13:51:11+00:00
 tags: [pygame, python]
 title: pygame.font not found
 ---
