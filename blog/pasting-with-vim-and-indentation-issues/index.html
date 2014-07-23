@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="If you use vim often &ndash; you probably had to paste something into vim from the outside source. And, if you have corresponding indentation rules, &hellip;">
+  <meta name="description" content="If you use vim often &ndash; you probably had to paste something into vim from the
+outside source. And, if you have corresponding indentation rules, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,7 +108,10 @@
   </header>
 
 
-<div class="entry-content"><p>If you use vim often &ndash; you probably had to paste something into vim from the outside source. And, if you have corresponding indentation rules, they will get applied, turning your nice block of code into something that looks more like a case of stairs:</p>
+<div class="entry-content"><p>If you use vim often &ndash; you probably had to paste something into vim from the
+outside source. And, if you have corresponding indentation rules, they will get
+applied, turning your nice block of code into something that looks more like a
+case of stairs:</p>
 
 <pre><code>def foo(a, b):
         a, b = b, a
@@ -115,7 +119,10 @@
                 return a - b
 </code></pre>
 
-<p>Quite nasty, isn&rsquo;t it? But that&rsquo;s where vim&rsquo;s <code>paste</code> option comes in.  Before pasting, execute <code>:set paste</code>. If you go into insert mode, you&rsquo;ll see the usual mode indicator switch to <code>-- INSERT (paste) --</code>. Try pasting the same block of code now:</p>
+<p>Quite nasty, isn&rsquo;t it? But that&rsquo;s where vim&rsquo;s <code>paste</code> option comes in.  Before
+pasting, execute <code>:set paste</code>. If you go into insert mode, you&rsquo;ll see the usual
+mode indicator switch to <code>-- INSERT (paste) --</code>. Try pasting the same block of
+code now:</p>
 
 <pre><code>def foo(a, b):
     a, b = b, a
@@ -123,7 +130,8 @@
     return a - b
 </code></pre>
 
-<p>Beautiful. Don&rsquo;t forget to switch back to a regular mode by executing <code>:set nopaste</code>.</p>
+<p>Beautiful. Don&rsquo;t forget to switch back to a regular mode by executing <code>:set
+nopaste</code>.</p>
 </div>
 
 

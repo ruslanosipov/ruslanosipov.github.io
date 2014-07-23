@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for myself, as it&rsquo;s a faster and more convenient way to go. I &hellip;">
+  <meta name="description" content="I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for
+myself, as it&rsquo;s a faster and more convenient way to go. I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,13 +111,21 @@
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for myself, as it&rsquo;s a faster and more convenient way to go. I am a Chrome user and recently I found an amazing plugin: <a href="http://vimium.github.com/">Vimium</a>.</p>
+  <div class="entry-content"><p>I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for
+myself, as it&rsquo;s a faster and more convenient way to go. I am a Chrome user and
+recently I found an amazing plugin: <a href="http://vimium.github.com">Vimium</a>.</p>
 
-<p>It does exactly what the name suggests, allowing you to use vim-like commands in your browser. You can freely move, switch between tabs, work with forms and click links using familiar vim key bindings.</p>
+<p>It does exactly what the name suggests, allowing you to use vim-like commands
+in your browser. You can freely move, switch between tabs, work with forms and
+click links using familiar vim key bindings.</p>
 
-<p>A two minute long introductory video explains basic commands and you&rsquo;re all set! I&rsquo;ve been using Vimium for over a week now, an amusing experience which allows you to throw your mouse in a dark corner (well, not exactly: Vimium still has some issues with over-bloated ajax pages, not to mention Flash and other nasty stuff).</p>
+<p>A two minute long introductory video explains basic commands and you&rsquo;re all
+set! I&rsquo;ve been using Vimium for over a week now, an amusing experience which
+allows you to throw your mouse in a dark corner (well, not exactly: Vimium
+still has some issues with over-bloated ajax pages, not to mention Flash and
+other nasty stuff).</p>
 
-<p>Check it out: <a href="http://vimium.github.com/">http://vimium.github.com/</a>.</p>
+<p>Check it out: <a href="http://vimium.github.com">http://vimium.github.com/</a>.</p>
 </div>
   
   
@@ -155,7 +164,8 @@
   </header>
 
 
-  <div class="entry-content"><p>Today I had to merge changes from one repository into another. Let&rsquo;s assume you want to merge <code>beta</code> into <code>alpha</code>.</p>
+  <div class="entry-content"><p>Today I had to merge changes from one repository into another. Let&rsquo;s assume you
+want to merge <code>beta</code> into <code>alpha</code>.</p>
 
 <p>Operations are performed in repo alpha:</p>
 
@@ -166,7 +176,8 @@ git merge beta_repo/master
 
 <p>In this case, <code>beta_repo</code> is the name you pick for remote.</p>
 
-<p>If you just need to cherry-pick a certain commit from <code>beta</code> you can omit the last step and replace it with the cherry-pick.</p>
+<p>If you just need to cherry-pick a certain commit from <code>beta</code> you can omit the
+last step and replace it with the cherry-pick.</p>
 
 <p>More on the topic of remotes: <a href="http://git-scm.com/book/ch2-5.html">http://git-scm.com/book/ch2-5.html</a>.</p>
 </div>
@@ -207,14 +218,16 @@ git merge beta_repo/master
   </header>
 
 
-  <div class="entry-content"><p>To encrypt and decrypt files in Linux there is a utility called <code>gpg</code> (Gnu Privacy Guard). This is a short GPG tutorial.</p>
+  <div class="entry-content"><p>To encrypt and decrypt files in Linux there is a utility called <code>gpg</code> (Gnu
+Privacy Guard). This is a short GPG tutorial.</p>
 
 <h2>Quick usage example</h2>
 
 <pre><code>gpg -c foo.txt
 </code></pre>
 
-<p>It will prompt you for the passphrase and a confirmation. Now you will have the encrypted <code>foo.txt.gpg</code> file. To decrypt a file:</p>
+<p>It will prompt you for the passphrase and a confirmation. Now you will have the
+encrypted <code>foo.txt.gpg</code> file. To decrypt a file:</p>
 
 <pre><code>gpg -d foo.txt.gpg
 </code></pre>
@@ -225,7 +238,8 @@ git merge beta_repo/master
 
 <h2>GPG keyring</h2>
 
-<p>This is all secure, but not quite enough if you are paranoid. Keys are what makes <code>gpg</code> great. Let&rsquo;s generate a private key:</p>
+<p>This is all secure, but not quite enough if you are paranoid. Keys are what
+makes <code>gpg</code> great. Let&rsquo;s generate a private key:</p>
 
 <pre><code>gpg --gen-key
 </code></pre>
@@ -235,13 +249,15 @@ git merge beta_repo/master
 <pre><code>gpg --armor --export "John Doe" --output johndoe.txt
 </code></pre>
 
-<p>Public key <code>johndoe.txt</code> can be freely distributed. Now you can encrypt files for yourself only:</p>
+<p>Public key <code>johndoe.txt</code> can be freely distributed. Now you can encrypt files
+for yourself only:</p>
 
 <pre><code>gpg -e -r "John Doe" foo.txt
 </code></pre>
 
-<p>Now if you decrypt a file it will require the passphrase you specified while generating a key.
-To encrypt a file for someone else you should have this person&rsquo;s public key.</p>
+<p>Now if you decrypt a file it will require the passphrase you specified while
+generating a key. To encrypt a file for someone else you should have this
+person&rsquo;s public key.</p>
 
 <p>Let&rsquo;s assume Stan Smith sent you a key, <code>stansmith.txt</code>. You import it using:</p>
 
@@ -290,9 +306,11 @@ To encrypt a file for someone else you should have this person&rsquo;s public ke
   </header>
 
 
-  <div class="entry-content"><p>I had some issues with the <code>strtok</code> function. Here&rsquo;s a detailed explanation and usage for it.</p>
+  <div class="entry-content"><p>I had some issues with the <code>strtok</code> function. Here&rsquo;s a detailed explanation and
+usage for it.</p>
 
-<p>The <code>strtok</code> function is used to tokenize a string and thus separates it into multiple strings divided by a delimiter.</p>
+<p>The <code>strtok</code> function is used to tokenize a string and thus separates it into
+multiple strings divided by a delimiter.</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
@@ -339,7 +357,10 @@ bar
 baz
 </code></pre>
 
-<p>The first call to <code>strtok</code> returns the pointer to the first substring. All the next calls with the first argument being <code>NULL</code> use the string passed at the first call and return the next substring. The function returns <code>NULL</code> if no more substrings are available.</p>
+<p>The first call to <code>strtok</code> returns the pointer to the first substring. All the
+next calls with the first argument being <code>NULL</code> use the string passed at the
+first call and return the next substring. The function returns <code>NULL</code> if no
+more substrings are available.</p>
 </div>
   
   
@@ -378,9 +399,13 @@ baz
   </header>
 
 
-  <div class="entry-content"><p>A reminder on how to initialize a fresh gitolite repository, assuming that gitolite has already been set up.</p>
+  <div class="entry-content"><p>A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up.</p>
 
-<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code> is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite hostname. Command <code>vi</code> stands for the text editor, but you may use whichever editor you prefer.</p>
+<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code>
+is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite
+hostname. Command <code>vi</code> stands for the text editor, but you may use whichever
+editor you prefer.</p>
 
 <pre><code>cd ~/gitolite-admin
 vi conf/gitolite.conf

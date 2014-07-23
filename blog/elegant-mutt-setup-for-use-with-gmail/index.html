@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. &hellip;">
+  <meta name="description" content="I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
+nor does it extend the amount of time I spend reading email. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,9 +108,14 @@
   </header>
 
 
-<div class="entry-content"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
+<div class="entry-content"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
+nor does it extend the amount of time I spend reading email. For me, the best
+part about Mutt is that it lets me use text editor of my choice &ndash; Vim.
+Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash;
+already exists in Gmail.</p>
 
-<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+<p>I found configuration below to work really well for my needs: all of the
+important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
 
 <pre><code>bind editor &lt;space&gt; noop
 set alias_file        = '~/.mutt/aliases.txt'
@@ -145,16 +151,25 @@ source $alias_file
 <p>It is quite self-explanatory, and includes such nice features as:</p>
 
 <ul>
-<li>Automatically adding addresses from read emails to address book (see below).</li>
-<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
+<li>Automatically adding addresses from read emails to address book (see
+below).</li>
+<li>Using vim as a text editor, with an ability to edit message
+headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
+Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
+respectfully (I am a huge fun of a zero-mail inbox).</li>
 </ul>
 
 
-<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+<p>You might also want to have your password encrypted by GPG as opposed to
+leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
+here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
 
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
+<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
+email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
+the <code>aliases.sh</code> are below:</p>
 
 <pre><code>#!/bin/sh
 
@@ -175,7 +190,8 @@ fi
 echo "${MESSAGE}"
 </code></pre>
 
-<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
+<p>This script will create <code>aliases.txt</code> file containing email addresses for
+search and auto completion of email-addresses.</p>
 </div>
 
 

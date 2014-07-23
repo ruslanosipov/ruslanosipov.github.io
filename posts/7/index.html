@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="A round-up of The Week Without Colorful Prompt I worked with the colors disabled in bash, git, and vim for a week. So how did it go? It is definitely &hellip;">
+  <meta name="description" content="A round-up of The Week Without Colorful Prompt. I worked with the colors disabled in bash, git, and vim for a week. So how did
+it go? It is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,23 +111,35 @@
   </header>
 
 
-  <div class="entry-content"><p>A round-up of <a href="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">The Week Without Colorful Prompt</a></p>
+  <div class="entry-content"><p>A round-up of <a href="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">The Week Without Colorful Prompt</a>.</p>
 
-<p>I worked with the colors disabled in bash, git, and vim for a week. So how did it go? It is definitely an interesting experience, but such a harsh change that it doesn&rsquo;t really work out with everything.</p>
+<p>I worked with the colors disabled in bash, git, and vim for a week. So how did
+it go? It is definitely an interesting experience, but such a harsh change that
+it doesn&rsquo;t really work out with everything.</p>
 
 <h2>Bash</h2>
 
-<p>Disabling colorful PS1 and removing color output for ls commands forced me to concentrate more on the actual text, changing the perception of the general bash workflow. I was more concentrated on the task, missed less details, and generally paid more attention to the output.</p>
+<p>Disabling colorful PS1 and removing color output for ls commands forced me to
+concentrate more on the actual text, changing the perception of the general
+bash workflow. I was more concentrated on the task, missed less details, and
+generally paid more attention to the output.</p>
 
 <h2>Git</h2>
 
-<p>Never repeat my mistake by disabling colors for git diff. Log and status are fairly easy to read, but the disabling of colors noticeably slows down the workflow.</p>
+<p>Never repeat my mistake by disabling colors for git diff. Log and status are
+fairly easy to read, but the disabling of colors noticeably slows down the
+workflow.</p>
 
 <h2>Vim</h2>
 
-<p>Vim without code highlight forces you to remember your code structure more effectively, which is a great thing. Not having a need to rely on color can hint that a programmer has better understanding of the code he/she is writing.</p>
+<p>Vim without code highlight forces you to remember your code structure more
+effectively, which is a great thing. Not having a need to rely on color can
+hint that a programmer has better understanding of the code he/she is writing.</p>
 
-<p>Now that the experiment is over I have mostly returned to using colorful prompt. But I do turn syntax highlight off once in a while &ndash; it allows you to see problems from new angle and work more efficiently at finding a solution. Try it and see for yourself!</p>
+<p>Now that the experiment is over I have mostly returned to using colorful
+prompt. But I do turn syntax highlight off once in a while &ndash; it allows you to
+see problems from new angle and work more efficiently at finding a solution.
+Try it and see for yourself!</p>
 </div>
   
   
@@ -165,11 +178,18 @@
   </header>
 
 
-  <div class="entry-content"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output, diffs, directory and file listings&hellip; It gets worse when using vim &ndash; I feel lost without the cozy syntax highlight guidance.</p>
+  <div class="entry-content"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim &ndash; I feel
+lost without the cozy syntax highlight guidance.</p>
 
-<p>Time to stop using output colors for a week whether in shell, git, or vim, and use only plain text with no fancy colors. Set git config &mdash;global color.ui false and don&rsquo;t use &mdash;color flags in shell. Also, set syntax off and set a simple color scheme for vim.</p>
+<p>Time to stop using output colors for a week whether in shell, git, or vim, and
+use only plain text with no fancy colors. Set git config &mdash;global color.ui
+false and don&rsquo;t use &mdash;color flags in shell. Also, set syntax off and set a
+simple color scheme for vim.</p>
 
-<p>What can I gain from all this? It will definitely reduce my productivity for a few days. However, I have a hint of an idea that changing the visual code representation will give me new insight on what I am currently writing.</p>
+<p>What can I gain from all this? It will definitely reduce my productivity for a
+few days. However, I have a hint of an idea that changing the visual code
+representation will give me new insight on what I am currently writing.</p>
 
 <p><a href="https://github.com/ruslanosipov/dotfiles/commit/b2b592e4f5b4b2f5bb962651a03f9d83b3ab53b7">Link to related commit on GutHub</a>.</p>
 
@@ -212,7 +232,10 @@
   </header>
 
 
-  <div class="entry-content"><p>You can open the current command you are typing for editing in your default text editor by pressing <code>Ctrl + x + e</code>. It will be executed after you write and quit the file. This is perfect for editing long/multi-line commands where typos are likely to occur. Consider something like this:</p>
+  <div class="entry-content"><p>You can open the current command you are typing for editing in your default
+text editor by pressing <code>Ctrl + x + e</code>. It will be executed after you write and
+quit the file. This is perfect for editing long/multi-line commands where typos
+are likely to occur. Consider something like this:</p>
 
 <pre><code>for run in {1..10}
 do
@@ -222,9 +245,16 @@ done
 
 <p>Editing this in vim is much more satisfying, isn&rsquo;t it?</p>
 
-<p>You can also open the last executed command for editing if you execute the <code>fc</code> command. You can also edit the last command starting with a certain pattern using <code>fc [pattern]</code> (you can skip the editor and execute the output of <code>fc</code> by adding the <code>-s</code> option, and a useful tip is to have <code>alias r="fc -s"</code>, which would allow you to execute the last command starting with &ldquo;cc&rdquo; by running <code>r cc</code>).</p>
+<p>You can also open the last executed command for editing if you execute the <code>fc</code>
+command. You can also edit the last command starting with a certain pattern
+using <code>fc [pattern]</code> (you can skip the editor and execute the output of <code>fc</code> by
+adding the <code>-s</code> option, and a useful tip is to have <code>alias r="fc -s"</code>, which
+would allow you to execute the last command starting with &ldquo;cc&rdquo; by running <code>r
+cc</code>).</p>
 
-<p>P.S: In order for this trick to open <code>vim</code> and not any other editor, make sure you have the line <code>EDITOR=vim</code> in your <code>~/.bashrc</code>. Obviously this works with any text editor.</p>
+<p>P.S: In order for this trick to open <code>vim</code> and not any other editor, make sure
+you have the line <code>EDITOR=vim</code> in your <code>~/.bashrc</code>. Obviously this works with
+any text editor.</p>
 </div>
   
   
@@ -263,18 +293,26 @@ done
   </header>
 
 
-  <div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using git, pathogen, and git submodules. This tutorial assumes that you are familiar with git basics, but you don&rsquo;t really need to understand every step in order to follow it. For simplicity, only <code>.vim</code> directory is a repository in this example. You may want to have all your dotfiles under version control and use a script to symlink files to the home directory. For example see <a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+  <div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using
+git, pathogen, and git submodules. This tutorial assumes that you are familiar
+with git basics, but you don&rsquo;t really need to understand every step in order to
+follow it. For simplicity, only <code>.vim</code> directory is a repository in this
+example. You may want to have all your dotfiles under version control and use a
+script to symlink files to the home directory. For example see
+<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
 
 <h2>Setting up</h2>
 
-<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control. Let&rsquo;s initialize a repository.</p>
+<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
+Let&rsquo;s initialize a repository.</p>
 
 <pre><code>cd ~/.vim
 git init
 git remote add origin git@github.com:user/project.git
 </code></pre>
 
-<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a submodule.</p>
+<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
+submodule.</p>
 
 <pre><code>mkdir bundle
 cd bundle
@@ -282,7 +320,8 @@ git submodule add git@github.cfm:tpope/vim-pathogen.git
 bundle/vim-pathogen
 </code></pre>
 
-<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from non-default directory:</p>
+<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
+non-default directory:</p>
 
 <pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -313,7 +352,9 @@ git clone git@github.com:user/project.git .vim
 
 <h2>Maintaining</h2>
 
-<p>Git submodules keep track of specific commits and are not being automatically updated when target repositories have new commits. In order to update plugins you have:</p>
+<p>Git submodules keep track of specific commits and are not being automatically
+updated when target repositories have new commits. In order to update plugins
+you have:</p>
 
 <pre><code>cd ~/.vim
 git submodule foreach git pull
@@ -322,7 +363,8 @@ git commit -m "Updated all the plugins in a bundle"
 git push origin master
 </code></pre>
 
-<p>You probably want to make sure that new versions of plugins are compatible with each other before committing, however.</p>
+<p>You probably want to make sure that new versions of plugins are compatible with
+each other before committing, however.</p>
 </div>
   
   
@@ -361,15 +403,18 @@ git push origin master
   </header>
 
 
-  <div class="entry-content"><p>If you visit noisy IRC channels like the programming ones on freenode, you probably want to ignore all the annoying status messages.</p>
+  <div class="entry-content"><p>If you visit noisy IRC channels like the programming ones on freenode, you
+probably want to ignore all the annoying status messages.</p>
 
-<p>To permanently ignore joins, parts, quits, and nickname changes from every channel in IRSSI:</p>
+<p>To permanently ignore joins, parts, quits, and nickname changes from every
+channel in IRSSI:</p>
 
 <pre><code>/ignore * joins parts quits nicks
 /save
 </code></pre>
 
-<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog post will keep it in my memory.</p>
+<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
+post will keep it in my memory.</p>
 </div>
   
   

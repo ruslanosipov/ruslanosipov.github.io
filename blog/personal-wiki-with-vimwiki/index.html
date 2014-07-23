@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I recently found an interesting way to organize random bits of information: a personal Wiki. It&rsquo;s a great idea to have data repository shared &hellip;">
+  <meta name="description" content="I recently found an interesting way to organize random bits of information: a
+personal Wiki. It&rsquo;s a great idea to have data repository shared &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,32 +108,59 @@
   </header>
 
 
-<div class="entry-content"><p>I recently found an interesting way to organize random bits of information: a personal Wiki. It&rsquo;s a great idea to have data repository shared between your machines: important notes about people, conversations, events, tasks you&rsquo;ve accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t belong anywhere else. There is plenty of software out there which lets you set up a personal Wiki, and some of it is very lightweight and well polished. However, I prefer to do most of my editing and writing in Vim. As tip #22 from &ldquo;The Pragmatic Programmer&rdquo; states:</p>
+<div class="entry-content"><p>I recently found an interesting way to organize random bits of information: a
+personal Wiki. It&rsquo;s a great idea to have data repository shared between your
+machines: important notes about people, conversations, events, tasks you&rsquo;ve
+accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
+belong anywhere else. There is plenty of software out there which lets you set
+up a personal Wiki, and some of it is very lightweight and well polished.
+However, I prefer to do most of my editing and writing in Vim. As tip #22 from
+&ldquo;The Pragmatic Programmer&rdquo; states:</p>
 
 <blockquote><p>Use a single editor well</p>
 
-<p>We think it is better to know one editor very well, and use it for all editing tasks: code, documentation, memos, system administration, and so on. Without a single editor, you face a potential modern day Babel of confusion.</p></blockquote>
+<p>We think it is better to know one editor very well, and use it for all
+editing tasks: code, documentation, memos, system administration, and so
+on. Without a single editor, you face a potential modern day Babel of
+confusion.</p></blockquote>
 
-<p>I fully agree with the above statement and I try to use one editor for the majority of tasks which require typing, without having to remember which editor contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The Pragmatic Programmer&rdquo;:</p>
+<p>I fully agree with the above statement and I try to use one editor for the
+majority of tasks which require typing, without having to remember which editor
+contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
+went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own
+Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
+Pragmatic Programmer&rdquo;:</p>
 
 <blockquote><p>Keep knowledge in plain text</p></blockquote>
 
 <p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
 
 <ul>
-<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a new tab: the rest of the mappings are as intuitive.</li>
-<li>Multiple Wikis support: really handy if you have a number of separate projects for which you want to keep separate entries.</li>
-<li>Diary-like quick notes. You can create an instant page for today by hitting <code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
-<li>Easy link creation: hit enter on a word and it will turn into a link to another page. Hitting enter on a link will transport you to the destination page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as well.</li>
+<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you
+are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a
+new tab: the rest of the mappings are as intuitive.</li>
+<li>Multiple Wikis support: really handy if you have a number of separate
+projects for which you want to keep separate entries.</li>
+<li>Diary-like quick notes. You can create an instant page for today by hitting
+<code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home
+page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
+<li>Easy link creation: hit enter on a word and it will turn into a link to
+another page. Hitting enter on a link will transport you to the destination
+page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as
+well.</li>
 <li>Navigation: enter to follow a link, backspace to go back.</li>
 <li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
-<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start reading.</li>
+<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start
+reading.</li>
 </ul>
 
 
-<p>The list can go on forever, but these are the features I found to be the most useful.</p>
+<p>The list can go on forever, but these are the features I found to be the most
+useful.</p>
 
-<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your Wikis.</p>
+<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
+a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your
+Wikis.</p>
 
 <pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
 </code></pre>

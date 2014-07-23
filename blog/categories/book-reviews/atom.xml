@@ -4,7 +4,7 @@
   <title><![CDATA[Category: book reviews | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/book-reviews/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-22T20:33:46-07:00</updated>
+  <updated>2014-07-22T21:50:05-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -18,19 +18,42 @@
     <link href="http://ruslanosipov.github.io/blog/the-pragmatic-programmer/"/>
     <updated>2014-07-14T18:43:26-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-pragmatic-programmer</id>
-    <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as well be a fantastic marketing trick for their consulting agency, but the value it brings to the reader is hard to underestimate.</p>
+    <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David
+Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as
+well be a fantastic marketing trick for their consulting agency, but the value
+it brings to the reader is hard to underestimate.</p>
 
-<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every major aspect of developing software: be it the choice of a text editor, calculating time complexity, or working effectively on a team.</p>
+<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
+major aspect of developing software: be it the choice of a text editor,
+calculating time complexity, or working effectively on a team.</p>
 
-<p>If you read thematic books and actively follow programming blogs and podcasts &ndash; you may find yourself cheerfully nodding while reading sections of this book.  You may have read about some of the tips online, heard from colleagues, or simply discovered them yourself. You will finish this book with a wide smile of approval, and a sense of validation in regards to your daily work flow or actions.</p>
+<p>If you read thematic books and actively follow programming blogs and podcasts &ndash;
+you may find yourself cheerfully nodding while reading sections of this book.
+You may have read about some of the tips online, heard from colleagues, or
+simply discovered them yourself. You will finish this book with a wide smile of
+approval, and a sense of validation in regards to your daily work flow or
+actions.</p>
 
-<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you can utilize right away, right now, at your workplace. This is what &ldquo;The Pragmatic Programmer&rdquo; essentially is: a collection of practical things regarding getting things done.</p>
+<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
+can utilize right away, right now, at your workplace. This is what &ldquo;The
+Pragmatic Programmer&rdquo; essentially is: a collection of practical things
+regarding getting things done.</p>
 
-<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended reading list out there. And for a solid reason. This is the kind of book you want to re-read every couple of years to absorb every piece of knowledge presented within it. The latest edition of the book even contains a printout with all the tips listed in the book.</p>
+<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
+reading list out there. And for a solid reason. This is the kind of book you
+want to re-read every couple of years to absorb every piece of knowledge
+presented within it. The latest edition of the book even contains a printout
+with all the tips listed in the book.</p>
 
-<p>You should read it after being in the field for a few years. After making mistakes, and figuring some things out on your own. Beginners might not understand some pieces, but will still be able to comprehend a major portion of knowledge contained within this book.</p>
+<p>You should read it after being in the field for a few years. After making
+mistakes, and figuring some things out on your own. Beginners might not
+understand some pieces, but will still be able to comprehend a major portion of
+knowledge contained within this book.</p>
 
-<p>I enthusiastically recommend this book to every software engineer I get to work with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;Code Complete&rdquo; or &ldquo;Art of Computer Programming&rdquo;) and it teaches you how to get things done, the pragmatic way.</p>
+<p>I enthusiastically recommend this book to every software engineer I get to work
+with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;Code Complete&rdquo; or
+&ldquo;Art of Computer Programming&rdquo;) and it teaches you how to get things done, the
+pragmatic way.</p>
 ]]></content>
   </entry>
   
@@ -39,17 +62,38 @@
     <link href="http://ruslanosipov.github.io/blog/the-elements-of-style/"/>
     <updated>2014-06-20T10:58:35-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-elements-of-style</id>
-    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a software engineering blog. You might even get angry at me for pointing this book in your face. But I have a strong affection towards this guide; I believe everyone who has to write more than a sentence in English should read it. I like to emphasize the communication aspects of a software engineering career as much as coding or management skills.</p>
+    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a
+software engineering blog. You might even get angry at me for pointing this
+book in your face. But I have a strong affection towards this guide; I believe
+everyone who has to write more than a sentence in English should read it. I
+like to emphasize the communication aspects of a software engineering career as
+much as coding or management skills.</p>
 
-<p>English is not my native language, and I often struggle with the writing style. I found a number of style tips online and in the books I read, but lately I noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The book is available online free of charge (copyright has expired; it is now in public domain) and takes only an evening to read.</p>
+<p>English is not my native language, and I often struggle with the writing style.
+I found a number of style tips online and in the books I read, but lately I
+noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The
+book is available online free of charge (copyright has expired; it is now in
+public domain) and takes only an evening to read.</p>
 
-<p>What the book gives you is invaluable writing advice. The author provides concrete style rules targeted at increasing the appeal and comprehension rates of your text. Here&rsquo;s my favorite piece of advice:</p>
+<p>What the book gives you is invaluable writing advice. The author provides
+concrete style rules targeted at increasing the appeal and comprehension rates
+of your text. Here&rsquo;s my favorite piece of advice:</p>
 
 <blockquote><p>13. Omit needless words.</p>
 
-<p>Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that he make every word tell.</p></blockquote>
+<p>Vigorous writing is concise. A sentence should contain no unnecessary
+words, a paragraph no unnecessary sentences, for the same reason that a
+drawing should have no unnecessary lines and a machine no unnecessary
+parts. This requires not that the writer make all his sentences short, or
+that he avoid all detail and treat his subjects only in outline, but that
+he make every word tell.</p></blockquote>
 
-<p>&ldquo;The Elements Of Style&rdquo; is a timeless classic; it should be mandatory reading for every speaker or learner of English out there. I immediately applied the rules to technical documentation, email communication, and even this very blog entry. I will probably have to read through the guide multiple times over the course of the following months in order to ensure maximum retention. If you care about being understood by another human being, you should read it too.</p>
+<p>&ldquo;The Elements Of Style&rdquo; is a timeless classic; it should be mandatory reading
+for every speaker or learner of English out there. I immediately applied the
+rules to technical documentation, email communication, and even this very blog
+entry. I will probably have to read through the guide multiple times over the
+course of the following months in order to ensure maximum retention. If you
+care about being understood by another human being, you should read it too.</p>
 ]]></content>
   </entry>
   
@@ -58,13 +102,40 @@
     <link href="http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/"/>
     <updated>2014-06-19T19:33:38-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade</id>
-    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few shortcomings, I found it to be useful &ndash; Python is a language of choice for me, and I found some valuable tips I could add to my arsenal.</p>
+    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
+week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few
+shortcomings, I found it to be useful &ndash; Python is a language of choice for me,
+and I found some valuable tips I could add to my arsenal.</p>
 
-<p>The best thing about this book is that it covers a very wide range of topics: syntax recommendations and code profiling, testing practices and project management, technical writing and design patterns, package distribution and version control&hellip; My favorite chapter covered writing technical documentation: I am very interested in writing in general, and the tips Ziade provided turned out to be very useful for documenting code, writing design documents, and even posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo; moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to look into!&rdquo; scattered throughout the book. This book is very useful for filling in little gaps in knowledge which programmers can have: the author covers an extremely wide variety of Python development aspects.</p>
+<p>The best thing about this book is that it covers a very wide range of topics:
+syntax recommendations and code profiling, testing practices and project
+management, technical writing and design patterns, package distribution and
+version control&hellip; My favorite chapter covered writing technical documentation:
+I am very interested in writing in general, and the tips Ziade provided turned
+out to be very useful for documenting code, writing design documents, and even
+posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo;
+moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to
+look into!&rdquo; scattered throughout the book. This book is very useful for filling
+in little gaps in knowledge which programmers can have: the author covers an
+extremely wide variety of Python development aspects.</p>
 
-<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos in the text and code examples &ndash; it looked like the book was put together sloppily, in haste. Reviewers did not do a very good job evaluating this book. &ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit in as much content (and code) as possible in his book, with no consistent style. Many chapters go into unnecessary details, and the author has tendency to paste completely useless chunks of code, such as a page-long output of an installer. As I have mentioned, the book hops from one topic to another, and covers a wide variety of subjects: this is both a key strength and the biggest weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered across the topics.</p>
+<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
+in the text and code examples &ndash; it looked like the book was put together
+sloppily, in haste. Reviewers did not do a very good job evaluating this book.
+&ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
+in as much content (and code) as possible in his book, with no consistent
+style. Many chapters go into unnecessary details, and the author has tendency
+to paste completely useless chunks of code, such as a page-long output of an
+installer. As I have mentioned, the book hops from one topic to another, and
+covers a wide variety of subjects: this is both a key strength and the biggest
+weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered
+across the topics.</p>
 
-<p>&ldquo;Expert Python Programming&rdquo; will be of best use to, you guessed it, an expert. I found it best to scan through the content and seek out interesting bits of information. Beginners, however, might be completely overwhelmed. While advanced and intermediate Pythonistas will get the most out of this book, it will probably be too hard (and painful) to read to be of real value.</p>
+<p>&ldquo;Expert Python Programming&rdquo; will be of best use to, you guessed it, an expert.
+I found it best to scan through the content and seek out interesting bits of
+information. Beginners, however, might be completely overwhelmed. While
+advanced and intermediate Pythonistas will get the most out of this book, it
+will probably be too hard (and painful) to read to be of real value.</p>
 ]]></content>
   </entry>
   
@@ -73,17 +144,46 @@
     <link href="http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think/"/>
     <updated>2014-06-16T20:42:51-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think</id>
-    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a long name). I went through the whole book only in under a few hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is full of concrete and valuable tips and advice about usability.</p>
+    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think,
+Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a
+long name). I went through the whole book only in under a few hours, and I am
+so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is full of concrete
+and valuable tips and advice about usability.</p>
 
-<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics: web and mobile usability, design, and writing for the web. The advice can be easily used and incorporated into your daily workflow; and the author provides concrete guidelines for applying his tips in the real world.</p>
+<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics:
+web and mobile usability, design, and writing for the web. The advice can be
+easily used and incorporated into your daily workflow; and the author provides
+concrete guidelines for applying his tips in the real world.</p>
 
-<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice) is individual usability testing. I actually performed my first usability test just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with your product (I&rsquo;ll get to the similarities between two of these books in a moment).</p>
+<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice)
+is individual usability testing. I actually performed my first usability test
+just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found
+that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with
+your product (I&rsquo;ll get to the similarities between two of these books in a
+moment).</p>
 
-<p>I asked two of my colleagues, one after another, to visit a website I was working on, and I silently watched them navigate through it. They had never seen the website before, and the results were very shocking to me: they ignored the things most obvious to me, but attempted to click through things which are not even meant to be clicked. I carefully wrote down all of my findings, and delivered the patches with enhancements to improve the biggest areas of struggle these particular users had faced.</p>
+<p>I asked two of my colleagues, one after another, to visit a website I was
+working on, and I silently watched them navigate through it. They had never
+seen the website before, and the results were very shocking to me: they ignored
+the things most obvious to me, but attempted to click through things which are
+not even meant to be clicked. I carefully wrote down all of my findings, and
+delivered the patches with enhancements to improve the biggest areas of
+struggle these particular users had faced.</p>
 
-<p>Usability testing turned out to be invaluable: it pointed out actions that I, as a developer, did not anticipate, and highlighted parts of the system ignored by the users. I now plan to run usability tests regularly, grabbing colleagues from the hallway, and asking them to use my application for a few minutes.</p>
+<p>Usability testing turned out to be invaluable: it pointed out actions that I,
+as a developer, did not anticipate, and highlighted parts of the system ignored
+by the users. I now plan to run usability tests regularly, grabbing colleagues
+from the hallway, and asking them to use my application for a few minutes.</p>
 
-<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but stripped from the extended theoretical part. The book references Norman&rsquo;s work quite a lot, and seems to be heavily influenced by it. It focuses on practical aspects of designing easy to use and understandable user interfaces. It successfully explains why you should be thoughtful of user experience, accessibility, and understanding the way users think. I would recommend reading this book after reading Donald Norman&rsquo;s masterpiece first, since it provides you with the reasoning behind many decisions Steve Krug makes throughout his book.</p>
+<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but
+stripped from the extended theoretical part. The book references Norman&rsquo;s work
+quite a lot, and seems to be heavily influenced by it. It focuses on practical
+aspects of designing easy to use and understandable user interfaces. It
+successfully explains why you should be thoughtful of user experience,
+accessibility, and understanding the way users think. I would recommend reading
+this book after reading Donald Norman&rsquo;s masterpiece first, since it provides
+you with the reasoning behind many decisions Steve Krug makes throughout his
+book.</p>
 ]]></content>
   </entry>
   
@@ -92,19 +192,72 @@
     <link href="http://ruslanosipov.github.io/blog/the-design-of-everyday-things/"/>
     <updated>2014-06-15T14:23:50-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-design-of-everyday-things</id>
-    <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In the past year I have only read two books, one of which was a technical manual. Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going on: reading blogs, articles, guides, watching keynote talks&hellip; But I did miss the feeling of holding a good book in my hands, turning the pages with the tips of my fingers, seeing the texture of the paper under the print. A few weeks ago I went ahead and ordered one of the books on my reading list: &ldquo;The Design of Everyday Things&rdquo; by Donald A. Norman. I just finished reading it a few hours ago and am eager to share my impressions of the book.</p>
+    <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In
+the past year I have only read two books, one of which was a technical manual.
+Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going
+on: reading blogs, articles, guides, watching keynote talks&hellip; But I did miss
+the feeling of holding a good book in my hands, turning the pages with the tips
+of my fingers, seeing the texture of the paper under the print. A few weeks ago
+I went ahead and ordered one of the books on my reading list: &ldquo;The Design of
+Everyday Things&rdquo; by Donald A. Norman. I just finished reading it a few hours
+ago and am eager to share my impressions of the book.</p>
 
-<p>&ldquo;The Design of Everyday Things&rdquo; turned out to be one of the most eye-opening books about design I have ever read (alright, alright, I haven&rsquo;t read any design books before). It&rsquo;s mind blowing to think that I have never considered the points brought up by the authors. Hell, (and I will probably have rotten tomatoes thrown at me for this statement) but I didn&rsquo;t even think design was a &ldquo;real&rdquo; job. Oh dear, how wrong I was.</p>
+<p>&ldquo;The Design of Everyday Things&rdquo; turned out to be one of the most eye-opening
+books about design I have ever read (alright, alright, I haven&rsquo;t read any
+design books before). It&rsquo;s mind blowing to think that I have never considered
+the points brought up by the authors. Hell, (and I will probably have rotten
+tomatoes thrown at me for this statement) but I didn&rsquo;t even think design was a
+&ldquo;real&rdquo; job. Oh dear, how wrong I was.</p>
 
-<p>Norman&rsquo;s masterpiece talks about the psychology of everyday things (which was actually the initial title of the book, but was changed to &ldquo;Design&rdquo; after the first release). The author explains how users make decisions, use objects, make errors &ndash; and so many other factors which should go into the design process. Norman explains fundamental basics of the psychology of human-object interaction, something most people never think about. How hard could it be to design a door? Turns out the answer is &ndash; very hard. And every time you see someone pulling the door instead of pushing and vice versa &ndash; it&rsquo;s a result of a poor design. So many everyday frustrations could have been avoided if designers would have put more thought into usability of their product.</p>
+<p>Norman&rsquo;s masterpiece talks about the psychology of everyday things (which was
+actually the initial title of the book, but was changed to &ldquo;Design&rdquo; after the
+first release). The author explains how users make decisions, use objects, make
+errors &ndash; and so many other factors which should go into the design process.
+Norman explains fundamental basics of the psychology of human-object
+interaction, something most people never think about. How hard could it be to
+design a door? Turns out the answer is &ndash; very hard. And every time you see
+someone pulling the door instead of pushing and vice versa &ndash; it&rsquo;s a result of a
+poor design. So many everyday frustrations could have been avoided if designers
+would have put more thought into usability of their product.</p>
 
-<p>I build software for living, and I was skeptical if I even needed to know anything about good design. I mean, how hard could it be to put together a few pages and forms? &ldquo;I tackle complex software problems, I don&rsquo;t need any of this liberal arts bullshit!&rdquo; &ndash; I thought that way, and I know many people who still do. Well, Norman&rsquo;s book is a great starter for people like me: he does a great job explaining why the design process so important. By the time I finished reading it, I had a pretty solid set of ideas why there are so many things wrong with our industry, and how good, thoughtful design is a way out. The funniest part is &ndash; the book itself is published in the year 1988, over twenty-five years ago. It doesn&rsquo;t talk much about computers, concentrating on objects more common at the time: cars, telephone systems, even stoves and dish washing machines. And here I am, reading this book in the year 2014 &ndash; and the situation did not change at all. Expensive laundry machines are as hard to operate, computer programs are as clunky.</p>
+<p>I build software for living, and I was skeptical if I even needed to know
+anything about good design. I mean, how hard could it be to put together a few
+pages and forms? &ldquo;I tackle complex software problems, I don&rsquo;t need any of this
+liberal arts bullshit!&rdquo; &ndash; I thought that way, and I know many people who still
+do. Well, Norman&rsquo;s book is a great starter for people like me: he does a great
+job explaining why the design process so important. By the time I finished
+reading it, I had a pretty solid set of ideas why there are so many things
+wrong with our industry, and how good, thoughtful design is a way out. The
+funniest part is &ndash; the book itself is published in the year 1988, over
+twenty-five years ago. It doesn&rsquo;t talk much about computers, concentrating on
+objects more common at the time: cars, telephone systems, even stoves and dish
+washing machines. And here I am, reading this book in the year 2014 &ndash; and the
+situation did not change at all. Expensive laundry machines are as hard to
+operate, computer programs are as clunky.</p>
 
-<p>&ldquo;The Design of Everyday Things&rdquo; compels the reader to become a part of the solution to this enormous and bulky design problem the world is stuck with. In the everyday world, for every good case of design out there, you will face a hundred faulty, frustrating, and downright insulting design attempts.</p>
+<p>&ldquo;The Design of Everyday Things&rdquo; compels the reader to become a part of the
+solution to this enormous and bulky design problem the world is stuck with. In
+the everyday world, for every good case of design out there, you will face a
+hundred faulty, frustrating, and downright insulting design attempts.</p>
 
-<p>The book is very easy and pleasant to read, and I went through it in under a week. Most of it is a set of rants about poor design decisions, with suggested improvements and solutions. Throughout the reading process, I had to revisit the systems I built at work and rearrange the components, add more feedback to user&rsquo;s actions, and do many other little and big improvements in order to make make the system image much more transparent to the user. Norman taught me the most obvious truth: a designer is not your typical user of the system. This changes so many things, makes you doubt and rethink a number of design decisions you made along the way &ndash; all in order to build a product that is easy and pleasant to use.</p>
+<p>The book is very easy and pleasant to read, and I went through it in under a
+week. Most of it is a set of rants about poor design decisions, with suggested
+improvements and solutions. Throughout the reading process, I had to revisit
+the systems I built at work and rearrange the components, add more feedback to
+user&rsquo;s actions, and do many other little and big improvements in order to make
+make the system image much more transparent to the user. Norman taught me the
+most obvious truth: a designer is not your typical user of the system. This
+changes so many things, makes you doubt and rethink a number of design
+decisions you made along the way &ndash; all in order to build a product that is easy
+and pleasant to use.</p>
 
-<p>I now consider myself to be blessed with an understanding of the importance of good design, and admitting there is a problem is the first step to fixing it. And believe me, there is a problem. I will now continue learning about the best practices in building systems that are easy to understand and pleasant to operate for the user. My next stop is &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach to Web Usability&rdquo; by Steve Krug. I&rsquo;ve heard a lot about this book, and I will be sure to share my impressions here.</p>
+<p>I now consider myself to be blessed with an understanding of the importance of
+good design, and admitting there is a problem is the first step to fixing it.
+And believe me, there is a problem. I will now continue learning about the best
+practices in building systems that are easy to understand and pleasant to
+operate for the user. My next stop is &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common
+Sense Approach to Web Usability&rdquo; by Steve Krug. I&rsquo;ve heard a lot about this
+book, and I will be sure to share my impressions here.</p>
 ]]></content>
   </entry>
   

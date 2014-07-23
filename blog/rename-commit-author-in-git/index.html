@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="In some extremely rare cases you end up pushing data to the repo with the wrong credentials. If you are the only author and you&rsquo;re as picky as &hellip;">
+  <meta name="description" content="In some extremely rare cases you end up pushing data to the repo with the wrong
+credentials. If you are the only author and you&rsquo;re as picky as &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,7 +108,9 @@
   </header>
 
 
-<div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong credentials. If you are the only author and you&rsquo;re as picky as I am, it can be corrected easily:</p>
+<div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
+credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
+corrected easily:</p>
 
 <pre><code>git filter-branch -f --env-filter
 "GIT_AUTHOR_NAME='Stan Smith';
@@ -117,7 +120,10 @@ GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
 git push --force
 </code></pre>
 
-<p>In the case of there being multiple people working on a project, you may want to use the following gist posted by anonymous: <a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push --force</code>).</p>
+<p>In the case of there being multiple people working on a project, you may want
+to use the following gist posted by anonymous:
+<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
+--force</code>).</p>
 </div>
 
 

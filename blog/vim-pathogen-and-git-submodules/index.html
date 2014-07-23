@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="This is a step by step tutorial on how to organize your vim config files using git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
+  <meta name="description" content="This is a step by step tutorial on how to organize your vim config files using
+git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,18 +108,26 @@
   </header>
 
 
-<div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using git, pathogen, and git submodules. This tutorial assumes that you are familiar with git basics, but you don&rsquo;t really need to understand every step in order to follow it. For simplicity, only <code>.vim</code> directory is a repository in this example. You may want to have all your dotfiles under version control and use a script to symlink files to the home directory. For example see <a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+<div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using
+git, pathogen, and git submodules. This tutorial assumes that you are familiar
+with git basics, but you don&rsquo;t really need to understand every step in order to
+follow it. For simplicity, only <code>.vim</code> directory is a repository in this
+example. You may want to have all your dotfiles under version control and use a
+script to symlink files to the home directory. For example see
+<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
 
 <h2>Setting up</h2>
 
-<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control. Let&rsquo;s initialize a repository.</p>
+<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
+Let&rsquo;s initialize a repository.</p>
 
 <pre><code>cd ~/.vim
 git init
 git remote add origin git@github.com:user/project.git
 </code></pre>
 
-<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a submodule.</p>
+<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
+submodule.</p>
 
 <pre><code>mkdir bundle
 cd bundle
@@ -126,7 +135,8 @@ git submodule add git@github.cfm:tpope/vim-pathogen.git
 bundle/vim-pathogen
 </code></pre>
 
-<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from non-default directory:</p>
+<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
+non-default directory:</p>
 
 <pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -157,7 +167,9 @@ git clone git@github.com:user/project.git .vim
 
 <h2>Maintaining</h2>
 
-<p>Git submodules keep track of specific commits and are not being automatically updated when target repositories have new commits. In order to update plugins you have:</p>
+<p>Git submodules keep track of specific commits and are not being automatically
+updated when target repositories have new commits. In order to update plugins
+you have:</p>
 
 <pre><code>cd ~/.vim
 git submodule foreach git pull
@@ -166,7 +178,8 @@ git commit -m "Updated all the plugins in a bundle"
 git push origin master
 </code></pre>
 
-<p>You probably want to make sure that new versions of plugins are compatible with each other before committing, however.</p>
+<p>You probably want to make sure that new versions of plugins are compatible with
+each other before committing, however.</p>
 </div>
 
 

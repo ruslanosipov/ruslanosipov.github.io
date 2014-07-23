@@ -9,7 +9,9 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I had this lying around for a while now. This is great vim movement commands cheat sheet made by Ted Naleid (link to the original post). It does an &hellip;">
+  <meta name="description" content="I had this lying around for a while now. This is great vim movement commands
+cheat sheet made by Ted Naleid (link to the original post). It does
+an &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -112,7 +114,9 @@
 
   <div class="entry-content"><p><img src="/images/vim-movement-commands-cheatsheet.png" title="A great cheat sheet for Vim movement commands." ></p>
 
-<p>I had this lying around for a while now. This is great vim movement commands cheat sheet made by <a href="http://naleid.com/blog/">Ted Naleid</a> (<a href="http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/">link to the original post</a>). It does an amazing job aiding in the memorization of essential vim movement shortcuts.</p>
+<p>I had this lying around for a while now. This is great vim movement commands
+cheat sheet made by <a href="http://naleid.com/blog/">Ted Naleid</a> (<a href="http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/">link to the original post</a>). It does
+an amazing job aiding in the memorization of essential vim movement shortcuts.</p>
 </div>
   
   
@@ -151,7 +155,9 @@
   </header>
 
 
-  <div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong credentials. If you are the only author and you&rsquo;re as picky as I am, it can be corrected easily:</p>
+  <div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
+credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
+corrected easily:</p>
 
 <pre><code>git filter-branch -f --env-filter
 "GIT_AUTHOR_NAME='Stan Smith';
@@ -161,7 +167,10 @@ GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
 git push --force
 </code></pre>
 
-<p>In the case of there being multiple people working on a project, you may want to use the following gist posted by anonymous: <a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push --force</code>).</p>
+<p>In the case of there being multiple people working on a project, you may want
+to use the following gist posted by anonymous:
+<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
+--force</code>).</p>
 </div>
   
   
@@ -200,9 +209,12 @@ git push --force
   </header>
 
 
-  <div class="entry-content"><p>I recently discovered an incredibly useful function &ndash; you can look up man pages for keywords by pressing <code>K</code> (read: <code>Shift + k</code>) in normal mode when cursor is over the word you need to look up.</p>
+  <div class="entry-content"><p>I recently discovered an incredibly useful function &ndash; you can look up man pages
+for keywords by pressing <code>K</code> (read: <code>Shift + k</code>) in normal mode when cursor is
+over the word you need to look up.</p>
 
-<p>It works with any shell or programming language keywords, as long as vim recognizes the filetype.</p>
+<p>It works with any shell or programming language keywords, as long as vim
+recognizes the filetype.</p>
 </div>
   
   
@@ -241,7 +253,9 @@ git push --force
   </header>
 
 
-  <div class="entry-content"><p>I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that has softer colors. Add the following lines to your <code>.minttyrc</code> and restart cygwin in order to apply changes.</p>
+  <div class="entry-content"><p>I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that
+has softer colors. Add the following lines to your <code>.minttyrc</code> and restart
+cygwin in order to apply changes.</p>
 
 <pre><code>ForegroundColour = 131, 148, 150
 BackgroundColour =   0,   0,   0
@@ -304,7 +318,8 @@ BoldWhite        = 253, 246, 227
 
   <div class="entry-content"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
 
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you may want to have more).</p>
+<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
+may want to have more).</p>
 
 <p>The following commands are executed in the cygwin prompt:</p>
 
@@ -314,16 +329,20 @@ ruby setup.rb
 gem install rails
 </code></pre>
 
-<p>Go to the MongoDB website and download Windows binaries: <a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory to <code>C:\cygwin\usr\local\bin</code>.</p>
+<p>Go to the MongoDB website and download Windows binaries:
+<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
+to <code>C:\cygwin\usr\local\bin</code>.</p>
 
-<p>Create a directory for the db files (the default MongoDB db files directory is <code>C:\datadb</code>):</p>
+<p>Create a directory for the db files (the default MongoDB db files directory is
+<code>C:\datadb</code>):</p>
 
 <pre><code>cd /cygdrive/c
 mkdir data
 mkdir data/db
 </code></pre>
 
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it as you see fit.</p>
+<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
+as you see fit.</p>
 </div>
   
   

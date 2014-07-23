@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I had an issue with pygame not being able to find a dependency for the font module. After quite a time-consuming search the missing package name was &hellip;">
+  <meta name="description" content="I had an issue with pygame not being able to find a dependency for the font
+module. After quite a time-consuming search the missing package name was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,7 +111,9 @@
   </header>
 
 
-  <div class="entry-content"><p>I had an issue with pygame not being able to find a dependency for the font module. After quite a time-consuming search the missing package name was <code>libsdl-ttf2.0-dev</code>.</p>
+  <div class="entry-content"><p>I had an issue with pygame not being able to find a dependency for the font
+module. After quite a time-consuming search the missing package name was
+<code>libsdl-ttf2.0-dev</code>.</p>
 
 <p>Hope this helps someone.</p>
 </div>
@@ -151,22 +154,31 @@
   </header>
 
 
-  <div class="entry-content"><p>Using vimdiff as a git mergetool can be pretty confusing &ndash; multiple windows and little explanation. This is a short tutorial which explains basic usage, and what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at least a little bit of basic vim knowledge (how to move, save, and switch between split windows). If you don&rsquo;t, there&rsquo;s a short article for you: <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>. Some basic understanding of git and branching is required as well, obviously.</p>
+  <div class="entry-content"><p>Using vimdiff as a git mergetool can be pretty confusing &ndash; multiple windows and
+little explanation. This is a short tutorial which explains basic usage, and
+what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at
+least a little bit of basic vim knowledge (how to move, save, and switch
+between split windows). If you don&rsquo;t, there&rsquo;s a short article for you: <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using
+vim for writing code</a>. Some basic understanding of git and branching is
+required as well, obviously.</p>
 
 <h2>Git config</h2>
 
-<p>Prior to doing anything, you need to know how to set vimdiff as a git mergetool. That being said:</p>
+<p>Prior to doing anything, you need to know how to set vimdiff as a git
+mergetool. That being said:</p>
 
 <pre><code>git config merge.tool vimdiff
 git config merge.conflictstyle diff3
 git config mergetool.prompt false
 </code></pre>
 
-<p>This will set git as the default merge tool, will display a common ancestor while merging, and will disable the prompt to open the vimdiff.</p>
+<p>This will set git as the default merge tool, will display a common ancestor
+while merging, and will disable the prompt to open the vimdiff.</p>
 
 <h2>Creating merge conflict</h2>
 
-<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work along with the tutorial.</p>
+<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work
+along with the tutorial.</p>
 
 <pre><code>mkdir zoo
 cd zoo
@@ -212,7 +224,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 <pre><code>git mergetool
 </code></pre>
 
-<p><img src="/images/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom" ></p>
+<p><img src="/images/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff.  Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom." ></p>
 
 <p>This looks terrifying at first, but let me explain what is going on.</p>
 
@@ -223,12 +235,15 @@ Automatic merge failed; fix conflicts and then commit the result.
 <code>REMOTE</code> &mdash; file you are merging into your branch
 <code>MERGED</code> &mdash; merge result, this is what gets saved in the repo</p>
 
-<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that, move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict area and then:</p>
+<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that,
+move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict
+area and then:</p>
 
 <pre><code>:diffget RE
 </code></pre>
 
-<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You can also:</p>
+<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You
+can also:</p>
 
 <pre><code>:diffg RE  " get from REMOTE
 :diffg BA  " get from BASE
@@ -276,11 +291,13 @@ Automatic merge failed; fix conflicts and then commit the result.
   </header>
 
 
-  <div class="entry-content"><p>This alias has been around the web for quite some time, but it does look fantastic indeed.</p>
+  <div class="entry-content"><p>This alias has been around the web for quite some time, but it does look
+fantastic indeed.</p>
 
 <p><img src="/images/git-pretty-log.png" title="An output of `git pretty-log` alias." ></p>
 
-<p>To add the alias <code>git pretty-log</code>, execute the following command (join string prior to executing):</p>
+<p>To add the alias <code>git pretty-log</code>, execute the following command (join string
+prior to executing):</p>
 
 <pre><code>git config alias.pretty-log 'log --graph --pretty=format:"%Cred%h%Creset
 -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset"
@@ -325,13 +342,15 @@ Automatic merge failed; fix conflicts and then commit the result.
 
   <div class="entry-content"><p>I wrote a little script to download gists from the command prompt.</p>
 
-<p>Generate your Github API Token under Settings &ndash;> Applications, change it within a script, and then:</p>
+<p>Generate your Github API Token under Settings &ndash;> Applications, change it within
+a script, and then:</p>
 
 <pre><code>chmod +x shgist.py
 mv shgist.py ~/bin/shgist
 </code></pre>
 
-<p>Where ~/bin is a directory in your path. Now you can use it as shgist file to quickly download your gists (<a href="https://gist.github.com/ruslanosipov/5599377">Gist on Github</a>).</p>
+<p>Where ~/bin is a directory in your path. Now you can use it as shgist file to
+quickly download your gists (<a href="https://gist.github.com/ruslanosipov/5599377">Gist on Github</a>).</p>
 
 <pre><code>#!/usr/bin/env python
 

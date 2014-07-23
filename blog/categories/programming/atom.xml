@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-22T20:33:46-07:00</updated>
+  <updated>2014-07-22T21:50:05-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -18,11 +18,16 @@
     <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
     <updated>2014-06-01T20:44:12-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
-    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in plain text.</p>
+    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
+I find it nice to have an archive of posts lying around in plain text.</p>
 
-<p>I wrote a little Python script which I used to extract an archive of my posts and pages into a bunch of files on my computer. In order to use it, you need to use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR format, and feed the file to the script.</p>
+<p>I wrote a little Python script which I used to extract an archive of my posts
+and pages into a bunch of files on my computer. In order to use it, you need to
+use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR
+format, and feed the file to the script.</p>
 
-<p>Source code of the script is below (link for downloading the script is at the bottom of this post):</p>
+<p>Source code of the script is below (link for downloading the script is at the
+bottom of this post):</p>
 
 <pre><code>#!/usr/bin/env python
 
@@ -104,7 +109,9 @@ if __name__ == "__main__":
     <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
     <updated>2014-05-29T12:20:34-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
-    <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger: <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the following often-occurring pattern:</p>
+    <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
+<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
+following often-occurring pattern:</p>
 
 <pre><code>try:
     os.remove('i_probably_do_not_exist.txt')
@@ -118,7 +125,10 @@ except OSError:
     os.remove('i_probably_do_not_exist')
 </code></pre>
 
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use older version of python in production. That&rsquo;s where this little chunk of code comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add following function:</p>
+<p>Much shorted and prettier. But, as probably most of engineers, you have to use
+older version of python in production. That&rsquo;s where this little chunk of code
+comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
+following function:</p>
 
 <pre><code>import contextlib
 
@@ -139,13 +149,22 @@ def ignored(*exceptions):
     <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
     <updated>2013-12-30T10:48:31-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
-    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very comprehensive, and at the moment current version (0.2.19) has some issues integrating with the latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get to a comprehensive tutorial.</p>
+    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
+Gherkin syntax in python. However the documentation is not very comprehensive,
+and at the moment current version (0.2.19) has some issues integrating with the
+latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
+to a comprehensive tutorial.</p>
 
-<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control, and you already have a working project configured. Your project is called &ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
+<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
+and you already have a working project configured. Your project is called
+&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
 
 <h2>Setup</h2>
 
-<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current released version (0.2.19) has an error integrating with Django, so we&rsquo;ll install current development version. Releases 0.2.20 and up should include the fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
+<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
+released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
+install current development version. Releases 0.2.20 and up should include the
+fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
 
 <pre><code>pip install -e \
     git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
@@ -153,7 +172,12 @@ pip install django-nose splinter
 pip freeze &gt; requirements.txt
 </code></pre>
 
-<p>First line downloads lettuce package from the github repository and installs missing dependencies. You can replace <code>cccc397</code> with the current commit. Technically commit can be omitted, but we don&rsquo;t want to have an unstable ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code> since nose assertions come in handy while writing Lettuce steps, as well as <code>splinter</code>, which is a great tool for testing web application.</p>
+<p>First line downloads lettuce package from the github repository and installs
+missing dependencies. You can replace <code>cccc397</code> with the current commit.
+Technically commit can be omitted, but we don&rsquo;t want to have an unstable
+ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
+since nose assertions come in handy while writing Lettuce steps, as well as
+<code>splinter</code>, which is a great tool for testing web application.</p>
 
 <p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
 
@@ -180,15 +204,20 @@ pip freeze &gt; requirements.txt
 )
 </code></pre>
 
-<p>By default, lettuce will run its' tests against your default database. But we want to use test database for that, so we have to add few more settings:</p>
+<p>By default, lettuce will run its' tests against your default database. But we
+want to use test database for that, so we have to add few more settings:</p>
 
 <pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
 LETTUCE_SERVER_PORT = 9000
 </code></pre>
 
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different from port 8000 so you won&rsquo;t have issues running the development server via <code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
+<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a
+class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
+from port 8000 so you won&rsquo;t have issues running the development server via
+<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
 
-<p>You also have to create a <code>features</code> directories inside the apps you want to test with Lettuce:</p>
+<p>You also have to create a <code>features</code> directories inside the apps you want to
+test with Lettuce:</p>
 
 <pre><code>/myproject
     /myproject
@@ -211,7 +240,8 @@ LETTUCE_SERVER_PORT = 9000
     terrain.py
 </code></pre>
 
-<p>Lettuce has its' own settings file called <code>terrain.py</code>. It has to be in the same directory as a <code>manage.py</code>:</p>
+<p>Lettuce has its' own settings file called <code>terrain.py</code>. It has to be in the
+same directory as a <code>manage.py</code>:</p>
 
 <pre><code>from django.core.management import call_command
 from django.conf import settings
@@ -231,11 +261,13 @@ def destroy_browser(scenario):
     world.browser.quit()
 </code></pre>
 
-<p>This code flushes the database before each scenario, as well as prepares and destroys the <code>splinter</code> browser.</p>
+<p>This code flushes the database before each scenario, as well as prepares and
+destroys the <code>splinter</code> browser.</p>
 
 <h2>Writing the features</h2>
 
-<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in <code>polls/features/polls_list.feature</code>:</p>
+<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
+<code>polls/features/polls_list.feature</code>:</p>
 
 <pre><code>Feature: Polls list
 
@@ -282,7 +314,8 @@ def do_not_see_a_text(step, text):
 
 <h2>Running the tests</h2>
 
-<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you just wrote:</p>
+<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
+just wrote:</p>
 
 <pre><code>$ python manage.py harvest --test-server
 Creating test database for alias 'default'...
@@ -306,18 +339,24 @@ Feature: Polls list
 Destroying test database for alias 'default'...
 </code></pre>
 
-<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests against your default database.</p>
+<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests
+against your default database.</p>
 
 <h2>Sources</h2>
 
-<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
+<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web
+development fun with Lettuce and Django</a>.</p>
 
-<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
+<h2>Update</h2>
+
+<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
+in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
 
 <pre><code>LETTUCE_USE_TEST_DATABASE = True
 </code></pre>
 
-<p>This way you won&rsquo;t end up accidentally erasing your production database after forgetting to add <code>--test-server</code> flag.</p>
+<p>This way you won&rsquo;t end up accidentally erasing your production database after
+forgetting to add <code>--test-server</code> flag.</p>
 ]]></content>
   </entry>
   
@@ -326,9 +365,12 @@ Destroying test database for alias 'default'...
     <link href="http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug/"/>
     <updated>2013-07-22T07:57:29-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug</id>
-    <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is a workaround.</p>
+    <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being
+executed for decorated functions (at least in version 2.7). However, there is a
+workaround.</p>
 
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator to import docstrings into a decorator scope.</p>
+<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
+to import docstrings into a decorator scope.</p>
 
 <pre><code>#!/usr/bin/env python
 
@@ -375,7 +417,11 @@ Got:
     <link href="http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest/"/>
     <updated>2013-07-22T07:47:47-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest</id>
-    <content type="html"><![CDATA[<p>When it comes to tests, <code>doctest</code> is a great simple module to write tests for your application. However it is pretty basic and does not have any extended features like, for example, centralized unit tests. If you have multiple modules with doctests (and you probably do) you most likely want to be able to run all doctests recursively from one place. That&rsquo;s where <code>unittest</code> comes in.</p>
+    <content type="html"><![CDATA[<p>When it comes to tests, <code>doctest</code> is a great simple module to write tests for
+your application. However it is pretty basic and does not have any extended
+features like, for example, centralized unit tests. If you have multiple
+modules with doctests (and you probably do) you most likely want to be able to
+run all doctests recursively from one place. That&rsquo;s where <code>unittest</code> comes in.</p>
 
 <p>Let&rsquo;s assume we store modules in the <code>lib/</code> directory:</p>
 
@@ -433,7 +479,8 @@ for module in files:
 unittest.TextTestRunner(verbosity=1).run(suite)
 </code></pre>
 
-<p>This approach invokes the <code>doctest.DocTestSuite</code> method, which converts doctests strings into unittest suites. Time to run our tests:</p>
+<p>This approach invokes the <code>doctest.DocTestSuite</code> method, which converts
+doctests strings into unittest suites. Time to run our tests:</p>
 
 <pre><code>$ chmod +x runtests.py
 $ ./runtests.py
@@ -444,7 +491,8 @@ Ran 3 tests in 0.008s
 OK
 </code></pre>
 
-<p>And just to be sure that approach actually works, let&rsquo;s make one of the tests fail:</p>
+<p>And just to be sure that approach actually works, let&rsquo;s make one of the tests
+fail:</p>
 
 <pre><code>$ ./runtests.py
 .F.

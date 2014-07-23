@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command: :vsp tmp | &hellip;">
+  <meta name="description" content="If you use git VCS, you can view previous version of the file you are currently
+editing in a split window by executing following command: :vsp tmp | &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,22 +108,29 @@
   </header>
 
 
-<div class="entry-content"><p>If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command:</p>
+<div class="entry-content"><p>If you use git VCS, you can view previous version of the file you are currently
+editing in a split window by executing following command:</p>
 
 <pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
 </code></pre>
 
-<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s extension, like following:</p>
+<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s
+extension, like following:</p>
 
 <pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
 </code></pre>
 
-<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you would like to go back in history by. For example, if you would like to get a version of the file 4 commits ago &ndash; you can do so by executing following command:</p>
+<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to
+the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you
+would like to go back in history by. For example, if you would like to get a
+version of the file 4 commits ago &ndash; you can do so by executing following
+command:</p>
 
 <pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
 </code></pre>
 
-<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the file you are working on.</p>
+<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the
+file you are working on.</p>
 </div>
 
 

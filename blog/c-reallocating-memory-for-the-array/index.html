@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I just started delving into C and I had some issues with increasing the memory allocation size for my array. The best way to understand something & &hellip;">
+  <meta name="description" content="I just started delving into C and I had some issues with increasing the memory
+allocation size for my array. The best way to understand something & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,7 +108,9 @@
   </header>
 
 
-<div class="entry-content"><p>I just started delving into C and I had some issues with increasing the memory allocation size for my array. The best way to understand something &ndash; write a detailed explanation of the process. So here we go:</p>
+<div class="entry-content"><p>I just started delving into C and I had some issues with increasing the memory
+allocation size for my array. The best way to understand something &ndash; write a
+detailed explanation of the process. So here we go:</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -122,7 +125,9 @@ int append_array_element(int **array, int *array_length, int element) {
 }
 </code></pre>
 
-<p>We have a pointer to the pointer to the array, pointer to the array&rsquo;s length, and a value to append to the array. Array is passed as a pointer to pointer so we will be able to &lsquo;repoint&rsquo; the original pointer to a new memory segment.</p>
+<p>We have a pointer to the pointer to the array, pointer to the array&rsquo;s length,
+and a value to append to the array. Array is passed as a pointer to pointer so
+we will be able to &lsquo;repoint&rsquo; the original pointer to a new memory segment.</p>
 
 <p>Let&rsquo;s call the function a few times and see what it gives us.</p>
 
@@ -152,7 +157,8 @@ Our array with 2 elements
 19
 </code></pre>
 
-<p>You can never be sure when you work with memory, so let&rsquo;s add some error handling in case the operation fails.</p>
+<p>You can never be sure when you work with memory, so let&rsquo;s add some error
+handling in case the operation fails.</p>
 
 <pre><code>int append_array_element(int **array, int *array_length, int element) {
     *array_length += 1;
@@ -169,7 +175,10 @@ Our array with 2 elements
 }
 </code></pre>
 
-<p>Now we will be able to handle the crash on our own. But reallocation is not a very fast thing, so let&rsquo;s double the amount of reallocated memory every time we run out of allocated memory. We&rsquo;ll need one more variable to track the current allocated memory size.</p>
+<p>Now we will be able to handle the crash on our own. But reallocation is not a
+very fast thing, so let&rsquo;s double the amount of reallocated memory every time we
+run out of allocated memory. We&rsquo;ll need one more variable to track the current
+allocated memory size.</p>
 
 <pre><code>int append_array_element(int **array, int *array_length,
                          int *array_alloc_length, int element) {
@@ -243,7 +252,10 @@ Array length: 10, allocated elements: 16
 Array length: 100, allocated elements: 128
 </code></pre>
 
-<p>Let&rsquo;s improve the function a little bit more &ndash; and we are good to go. Let&rsquo;s say we have a dynamic array with 129 elements &ndash; but we will have allocated memory for 256 elements&hellip; It is 127 more then we need! We don&rsquo;t want to be greedy, so let&rsquo;s find a way to free up the memory.</p>
+<p>Let&rsquo;s improve the function a little bit more &ndash; and we are good to go. Let&rsquo;s say
+we have a dynamic array with 129 elements &ndash; but we will have allocated memory
+for 256 elements&hellip; It is 127 more then we need! We don&rsquo;t want to be greedy, so
+let&rsquo;s find a way to free up the memory.</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -277,7 +289,8 @@ int append_array_element(int **array, int *array_length,
 }
 </code></pre>
 
-<p>That should be pretty straight-forward. And let&rsquo;s call it two more times with 10 and 100 elements:</p>
+<p>That should be pretty straight-forward. And let&rsquo;s call it two more times with
+10 and 100 elements:</p>
 
 <pre><code>int main() {
     int *array = NULL;

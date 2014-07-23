@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is &hellip;">
+  <meta name="description" content="Now, this as well might be a feature, but doctest strings are not being
+executed for decorated functions (at least in version 2.7). However, there is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,9 +108,12 @@
   </header>
 
 
-<div class="entry-content"><p>Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is a workaround.</p>
+<div class="entry-content"><p>Now, this as well might be a feature, but doctest strings are not being
+executed for decorated functions (at least in version 2.7). However, there is a
+workaround.</p>
 
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator to import docstrings into a decorator scope.</p>
+<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
+to import docstrings into a decorator scope.</p>
 
 <pre><code>#!/usr/bin/env python
 

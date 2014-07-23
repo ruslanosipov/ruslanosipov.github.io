@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="There was a recent fantastic addition to Python 3.4 by Raymond Hettinger: contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hellip;">
+  <meta name="description" content="There was a recent fantastic addition to Python 3.4 by Raymond Hettinger:
+contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,7 +108,9 @@
   </header>
 
 
-<div class="entry-content"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger: <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the following often-occurring pattern:</p>
+<div class="entry-content"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
+<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
+following often-occurring pattern:</p>
 
 <pre><code>try:
     os.remove('i_probably_do_not_exist.txt')
@@ -121,7 +124,10 @@ except OSError:
     os.remove('i_probably_do_not_exist')
 </code></pre>
 
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use older version of python in production. That&rsquo;s where this little chunk of code comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add following function:</p>
+<p>Much shorted and prettier. But, as probably most of engineers, you have to use
+older version of python in production. That&rsquo;s where this little chunk of code
+comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
+following function:</p>
 
 <pre><code>import contextlib
 

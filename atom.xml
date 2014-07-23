@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-22T20:33:46-07:00</updated>
+  <updated>2014-07-22T21:50:05-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -89,19 +89,42 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/the-pragmatic-programmer/"/>
     <updated>2014-07-14T18:43:26-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-pragmatic-programmer</id>
-    <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as well be a fantastic marketing trick for their consulting agency, but the value it brings to the reader is hard to underestimate.</p>
+    <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David
+Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as
+well be a fantastic marketing trick for their consulting agency, but the value
+it brings to the reader is hard to underestimate.</p>
 
-<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every major aspect of developing software: be it the choice of a text editor, calculating time complexity, or working effectively on a team.</p>
+<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
+major aspect of developing software: be it the choice of a text editor,
+calculating time complexity, or working effectively on a team.</p>
 
-<p>If you read thematic books and actively follow programming blogs and podcasts &ndash; you may find yourself cheerfully nodding while reading sections of this book.  You may have read about some of the tips online, heard from colleagues, or simply discovered them yourself. You will finish this book with a wide smile of approval, and a sense of validation in regards to your daily work flow or actions.</p>
+<p>If you read thematic books and actively follow programming blogs and podcasts &ndash;
+you may find yourself cheerfully nodding while reading sections of this book.
+You may have read about some of the tips online, heard from colleagues, or
+simply discovered them yourself. You will finish this book with a wide smile of
+approval, and a sense of validation in regards to your daily work flow or
+actions.</p>
 
-<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you can utilize right away, right now, at your workplace. This is what &ldquo;The Pragmatic Programmer&rdquo; essentially is: a collection of practical things regarding getting things done.</p>
+<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
+can utilize right away, right now, at your workplace. This is what &ldquo;The
+Pragmatic Programmer&rdquo; essentially is: a collection of practical things
+regarding getting things done.</p>
 
-<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended reading list out there. And for a solid reason. This is the kind of book you want to re-read every couple of years to absorb every piece of knowledge presented within it. The latest edition of the book even contains a printout with all the tips listed in the book.</p>
+<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
+reading list out there. And for a solid reason. This is the kind of book you
+want to re-read every couple of years to absorb every piece of knowledge
+presented within it. The latest edition of the book even contains a printout
+with all the tips listed in the book.</p>
 
-<p>You should read it after being in the field for a few years. After making mistakes, and figuring some things out on your own. Beginners might not understand some pieces, but will still be able to comprehend a major portion of knowledge contained within this book.</p>
+<p>You should read it after being in the field for a few years. After making
+mistakes, and figuring some things out on your own. Beginners might not
+understand some pieces, but will still be able to comprehend a major portion of
+knowledge contained within this book.</p>
 
-<p>I enthusiastically recommend this book to every software engineer I get to work with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;Code Complete&rdquo; or &ldquo;Art of Computer Programming&rdquo;) and it teaches you how to get things done, the pragmatic way.</p>
+<p>I enthusiastically recommend this book to every software engineer I get to work
+with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;Code Complete&rdquo; or
+&ldquo;Art of Computer Programming&rdquo;) and it teaches you how to get things done, the
+pragmatic way.</p>
 ]]></content>
   </entry>
   
@@ -110,32 +133,59 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/"/>
     <updated>2014-07-07T21:14:21-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki</id>
-    <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a personal Wiki. It&rsquo;s a great idea to have data repository shared between your machines: important notes about people, conversations, events, tasks you&rsquo;ve accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t belong anywhere else. There is plenty of software out there which lets you set up a personal Wiki, and some of it is very lightweight and well polished. However, I prefer to do most of my editing and writing in Vim. As tip #22 from &ldquo;The Pragmatic Programmer&rdquo; states:</p>
+    <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a
+personal Wiki. It&rsquo;s a great idea to have data repository shared between your
+machines: important notes about people, conversations, events, tasks you&rsquo;ve
+accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
+belong anywhere else. There is plenty of software out there which lets you set
+up a personal Wiki, and some of it is very lightweight and well polished.
+However, I prefer to do most of my editing and writing in Vim. As tip #22 from
+&ldquo;The Pragmatic Programmer&rdquo; states:</p>
 
 <blockquote><p>Use a single editor well</p>
 
-<p>We think it is better to know one editor very well, and use it for all editing tasks: code, documentation, memos, system administration, and so on. Without a single editor, you face a potential modern day Babel of confusion.</p></blockquote>
+<p>We think it is better to know one editor very well, and use it for all
+editing tasks: code, documentation, memos, system administration, and so
+on. Without a single editor, you face a potential modern day Babel of
+confusion.</p></blockquote>
 
-<p>I fully agree with the above statement and I try to use one editor for the majority of tasks which require typing, without having to remember which editor contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The Pragmatic Programmer&rdquo;:</p>
+<p>I fully agree with the above statement and I try to use one editor for the
+majority of tasks which require typing, without having to remember which editor
+contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
+went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own
+Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
+Pragmatic Programmer&rdquo;:</p>
 
 <blockquote><p>Keep knowledge in plain text</p></blockquote>
 
 <p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
 
 <ul>
-<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a new tab: the rest of the mappings are as intuitive.</li>
-<li>Multiple Wikis support: really handy if you have a number of separate projects for which you want to keep separate entries.</li>
-<li>Diary-like quick notes. You can create an instant page for today by hitting <code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
-<li>Easy link creation: hit enter on a word and it will turn into a link to another page. Hitting enter on a link will transport you to the destination page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as well.</li>
+<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you
+are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a
+new tab: the rest of the mappings are as intuitive.</li>
+<li>Multiple Wikis support: really handy if you have a number of separate
+projects for which you want to keep separate entries.</li>
+<li>Diary-like quick notes. You can create an instant page for today by hitting
+<code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home
+page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
+<li>Easy link creation: hit enter on a word and it will turn into a link to
+another page. Hitting enter on a link will transport you to the destination
+page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as
+well.</li>
 <li>Navigation: enter to follow a link, backspace to go back.</li>
 <li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
-<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start reading.</li>
+<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start
+reading.</li>
 </ul>
 
 
-<p>The list can go on forever, but these are the features I found to be the most useful.</p>
+<p>The list can go on forever, but these are the features I found to be the most
+useful.</p>
 
-<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your Wikis.</p>
+<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
+a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your
+Wikis.</p>
 
 <pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
 </code></pre>
@@ -149,7 +199,8 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/"/>
     <updated>2014-07-07T20:22:08-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim</id>
-    <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes forget that it&rsquo;s not a built-in Vim feature.</p>
+    <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
+forget that it&rsquo;s not a built-in Vim feature.</p>
 
 <p>Link to a GitHub repository: <a href="https://github.com/tomtom/tcomment_vim">https://github.com/tomtom/tcomment_vim</a>.</p>
 ]]></content>
@@ -160,48 +211,100 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/zero-mail-inbox/"/>
     <updated>2014-07-02T13:36:42-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/zero-mail-inbox</id>
-    <content type="html"><![CDATA[<p>I use email a lot. Maybe not as much as some, but I receive and send a fair share of mail each day. You might find it odd, but I love using email. It&rsquo;s a pleasant and calm experience, and sorting through a pile of messages every morning rewards me with a sense of achievement. There are, however, few tricks I have up my sleeve, and I would like to share them today. These tips will not necessarily make you more productive, but they will provide you a with a more pleasant and peaceful experience of managing your inbox.</p>
+    <content type="html"><![CDATA[<p>I use email a lot. Maybe not as much as some, but I receive and send a fair
+share of mail each day. You might find it odd, but I love using email. It&rsquo;s a
+pleasant and calm experience, and sorting through a pile of messages every
+morning rewards me with a sense of achievement. There are, however, few tricks
+I have up my sleeve, and I would like to share them today. These tips will not
+necessarily make you more productive, but they will provide you a with a more
+pleasant and peaceful experience of managing your inbox.</p>
 
 <p>But first, I would like to set the scene&hellip;</p>
 
 <h2>The wonderful Mailbox app</h2>
 
-<p>I started using iOS email client called <a href="http://www.mailboxapp.com">Mailbox</a> a little over a year ago, shortly after a release. Back then, before it was acquired by Dropbox, you had to wait in order for the company to grow their servers. I patiently waited &ldquo;in line&rdquo; for almost a month and I finally was able to transfer all my accounts to this wonderful mail client.</p>
+<p>I started using iOS email client called <a href="http://www.mailboxapp.com">Mailbox</a> a little over a year ago,
+shortly after a release. Back then, before it was acquired by Dropbox, you had
+to wait in order for the company to grow their servers. I patiently waited &ldquo;in
+line&rdquo; for almost a month and I finally was able to transfer all my accounts to
+this wonderful mail client.</p>
 
-<p>It was worth waiting for. Right after starting, Mailbox archived all the conversations in my inbox, and presented me with a list of unread emails which looked an awful lot like a To-Do list. You can read and reply, archive the important letters, delete junk, or resend a conversation to yourself after a certain time span as a reminder. This is an extremely simple idea, but it is essentially what anyone&rsquo;s inbox is: a list of things which need to be done. Some emails have to be replied to, some have to be acted upon in some other way. The ones that don&rsquo;t get archived are deleted right away.</p>
+<p>It was worth waiting for. Right after starting, Mailbox archived all the
+conversations in my inbox, and presented me with a list of unread emails which
+looked an awful lot like a To-Do list. You can read and reply, archive the
+important letters, delete junk, or resend a conversation to yourself after a
+certain time span as a reminder. This is an extremely simple idea, but it is
+essentially what anyone&rsquo;s inbox is: a list of things which need to be done.
+Some emails have to be replied to, some have to be acted upon in some other
+way. The ones that don&rsquo;t get archived are deleted right away.</p>
 
-<p>Mailbox turned my trash-filled inbox into a clean list of items I need to do.  Since then, there never was an email I forgot to reply to, nor an important thing I forgot to do. Inbox can be referred to as &ldquo;To Do&rdquo;, and an archive as &ldquo;Done&rdquo;. This scheme makes it nearly impossible to miss anything of importance.</p>
+<p>Mailbox turned my trash-filled inbox into a clean list of items I need to do.
+Since then, there never was an email I forgot to reply to, nor an important
+thing I forgot to do. Inbox can be referred to as &ldquo;To Do&rdquo;, and an archive as
+&ldquo;Done&rdquo;. This scheme makes it nearly impossible to miss anything of importance.</p>
 
-<p>Unfortunately, Mailbox is an iOS-only application, and I started noticing the shortcomings of the desktop experience. And I do use desktop mail far more often than mobile. I decided to have a set of rules for managing my inbox; and this is the workflow I have been successfully using for over a year.</p>
+<p>Unfortunately, Mailbox is an iOS-only application, and I started noticing the
+shortcomings of the desktop experience. And I do use desktop mail far more
+often than mobile. I decided to have a set of rules for managing my inbox; and
+this is the workflow I have been successfully using for over a year.</p>
 
 <h2>Workflow outside of the Mailbox app</h2>
 
 <p><img src="http://ruslanosipov.github.io/images/zero-mail-inbox-in-gmail.png" title="Having clean inbox is rewarding." ></p>
 
-<p>I only use Gmail, and there probably are ways to have the same experience on other platforms. However, the Mailbox app works only with Gmail.</p>
+<p>I only use Gmail, and there probably are ways to have the same experience on
+other platforms. However, the Mailbox app works only with Gmail.</p>
 
-<p>The first thing which needs to be done in order to start using the zero mail inbox workflow &ndash; is to empty it from all the read mail. Thankfully, the Mailbox app archives all your previous conversations the moment you install it.</p>
+<p>The first thing which needs to be done in order to start using the zero mail
+inbox workflow &ndash; is to empty it from all the read mail. Thankfully, the Mailbox
+app archives all your previous conversations the moment you install it.</p>
 
-<p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always times when you can&rsquo;t reply to an email, but don&rsquo;t exactly want to keep it in your inbox (what an eyesore). Gmail does not provide a native way to resend your emails at later times, but I found a Chrome extension called <a href="http://www.mailboxapp.com">&ldquo;Snooze Your Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the Gmail UI.</p>
+<p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always
+times when you can&rsquo;t reply to an email, but don&rsquo;t exactly want to keep it in
+your inbox (what an eyesore). Gmail does not provide a native way to resend
+your emails at later times, but I found a Chrome extension called <a href="https://chrome.google.com/webstore/detail/snooze-your-email-for-gma/pbmfoncgccdhoknelpglaacbgkclcape">&ldquo;Snooze Your
+Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the Gmail UI.</p>
 
-<p>Now that these two things are taken care of, there is a simple set of rules to be used when a new email comes in:</p>
+<p>Now that these two things are taken care of, there is a simple set of rules to
+be used when a new email comes in:</p>
 
 <ul>
-<li><em>Delete.</em> Is it a notification? Does it require saving for future reference? A lot of things should be deleted. Bills, notifications, messages from robots: these don&rsquo;t have to be saved. Items in Gmail trash live for 30 days, which is enough time to find something in case of an emergency. In addition, most of this information is available from some another source anyway.</li>
-<li><em>Snooze.</em> Do you have time right now to read/reply/act upon this email? Remind yourself about it in a few hours or days instead.</li>
-<li><em>Archive.</em> Conversation with a real person you might want to reference to later? I save all the email chains from humans, just in case I have to search through them at a later date.</li>
-<li><em>Reply and archive.</em> Self-explanatory. Act upon and save for future reference.</li>
-<li><em>Let it be.</em> This is an eyesore version of using the &ldquo;Snooze&rdquo; button. You usually want to do this only if there are more important emails to read and act upon before getting to this one.</li>
+<li><em>Delete.</em> Is it a notification? Does it require saving for future
+reference? A lot of things should be deleted. Bills, notifications,
+messages from robots: these don&rsquo;t have to be saved. Items in Gmail trash
+live for 30 days, which is enough time to find something in case of an
+emergency. In addition, most of this information is available from some
+another source anyway.</li>
+<li><em>Snooze.</em> Do you have time right now to read/reply/act upon this email?
+Remind yourself about it in a few hours or days instead.</li>
+<li><em>Archive.</em> Conversation with a real person you might want to reference to
+later? I save all the email chains from humans, just in case I have to
+search through them at a later date.</li>
+<li><em>Reply and archive.</em> Self-explanatory. Act upon and save for future
+reference.</li>
+<li><em>Let it be.</em> This is an eyesore version of using the &ldquo;Snooze&rdquo; button. You
+usually want to do this only if there are more important emails to read and
+act upon before getting to this one.</li>
 </ul>
 
 
-<p>Ideally, when you keep items in your inbox &ndash; this means they have to be acted upon in some way. There is no reason not to archive or delete conversations which don&rsquo;t require actions.</p>
+<p>Ideally, when you keep items in your inbox &ndash; this means they have to be acted
+upon in some way. There is no reason not to archive or delete conversations
+which don&rsquo;t require actions.</p>
 
 <h2>Bonus point: labels</h2>
 
-<p>This is a recent addition to my repertoire. I found myself often searching through certain sets of email, and hence Gmail does not support regular expressions it&rsquo;s quite a big pain in the neck for me when I can&rsquo;t remember certain details. I created a set of thematic labels, which group emails by projects, products, and teams. And I started religiously assigning them to all the emails I archive. First it takes a bit of work, but after a while it becomes easy to identify a pattern and create filters to assist yourself with categorization.</p>
+<p>This is a recent addition to my repertoire. I found myself often searching
+through certain sets of email, and hence Gmail does not support regular
+expressions it&rsquo;s quite a big pain in the neck for me when I can&rsquo;t remember
+certain details. I created a set of thematic labels, which group emails by
+projects, products, and teams. And I started religiously assigning them to all
+the emails I archive. First it takes a bit of work, but after a while it
+becomes easy to identify a pattern and create filters to assist yourself with
+categorization.</p>
 
-<p>As a result, I can  narrow down a search to a thematic subset of emails, saving myself a lot of time and frustration.</p>
+<p>As a result, I can  narrow down a search to a thematic subset of emails, saving
+myself a lot of time and frustration.</p>
 ]]></content>
   </entry>
   
@@ -210,45 +313,117 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews/"/>
     <updated>2014-06-24T18:16:13-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews</id>
-    <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an interviewing scheme which will fit every company. Some companies seem to find processes which work for their size and culture, while others struggle to do so. Human resources management is a complex subject, and it&rsquo;s hard to get right.</p>
+    <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an
+interviewing scheme which will fit every company. Some companies seem to find
+processes which work for their size and culture, while others struggle to do
+so. Human resources management is a complex subject, and it&rsquo;s hard to get
+right.</p>
 
-<p>I have experience with only a small subset of interviewing techniques, but none of the following interview components I employ seem satisfactory.</p>
+<p>I have experience with only a small subset of interviewing techniques, but none
+of the following interview components I employ seem satisfactory.</p>
 
 <h2>Screening</h2>
 
-<p>Screenings are usually done by recruiters, employees whose skills are in seeking and evaluating prospective assets to the company. The first problem here is that <em>recruiters are not team members</em>. Recruiters might do a really good job at, say, finding good recruiters &ndash; since this is their domain, and something they are inherently good at. But they don&rsquo;t develop software. Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the slightest real life idea what managers and leaders want from the potential hire. Hell, the problem is &ndash; most team leads don&rsquo;t even know what kind of person they need. And if they do, they don&rsquo;t have a slightest idea on how to communicate this properly to the recruiters.</p>
+<p>Screenings are usually done by recruiters, employees whose skills are in
+seeking and evaluating prospective assets to the company. The first problem
+here is that <em>recruiters are not team members</em>. Recruiters might do a really
+good job at, say, finding good recruiters &ndash; since this is their domain, and
+something they are inherently good at. But they don&rsquo;t develop software.
+Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the
+slightest real life idea what managers and leaders want from the potential
+hire. Hell, the problem is &ndash; most team leads don&rsquo;t even know what kind of
+person they need. And if they do, they don&rsquo;t have a slightest idea on how to
+communicate this properly to the recruiters.</p>
 
-<p>In an ideal world, software engineers and team leads would do recruiting themselves. But this way they would not have time to do their own job, and would thus become recruiters. Boom, the company lost a good software engineer. So you end up hiring recruiters, who have not the slightest idea what a team needs (&ldquo;person has to be proficient in Blah-blah-blah&rdquo; is like saying that a writer has to be an expert at writing about red cubes).</p>
+<p>In an ideal world, software engineers and team leads would do recruiting
+themselves. But this way they would not have time to do their own job, and
+would thus become recruiters. Boom, the company lost a good software engineer.
+So you end up hiring recruiters, who have not the slightest idea what a team
+needs (&ldquo;person has to be proficient in Blah-blah-blah&rdquo; is like saying that a
+writer has to be an expert at writing about red cubes).</p>
 
-<p>Is there a solution? Probably, maybe, I don&rsquo;t know. Maybe recruiters and software engineers have to communicate more. Set up meetings to discuss team needs, go through training in regards to identifying key traits in prospective engineers. Teams of engineers have to communicate their preferences better. Engineers are hired to fit the culture, not to be a &ldquo;rock star&rdquo;. Geniuses don&rsquo;t go through the HR process, future team members do.</p>
+<p>Is there a solution? Probably, maybe, I don&rsquo;t know. Maybe recruiters and
+software engineers have to communicate more. Set up meetings to discuss team
+needs, go through training in regards to identifying key traits in prospective
+engineers. Teams of engineers have to communicate their preferences better.
+Engineers are hired to fit the culture, not to be a &ldquo;rock star&rdquo;. Geniuses don&rsquo;t
+go through the HR process, future team members do.</p>
 
 <h2>Interview with another engineer</h2>
 
-<p>This, even though it has a good intent, is a big whopping failure. What this originally is meant to do &ndash; is have a potential colleague evaluate the candidate. Sounds like a fantastic idea in theory, and sometimes it even works the way it is intended to.</p>
+<p>This, even though it has a good intent, is a big whopping failure. What this
+originally is meant to do &ndash; is have a potential colleague evaluate the
+candidate. Sounds like a fantastic idea in theory, and sometimes it even works
+the way it is intended to.</p>
 
-<p>Most of the time, however, you end up with a competition-driven technological fanatic bombarding an interviewee with smart-ass obscure trick questions they discovered that one time browsing their favorite language&rsquo;s mailing lists from the year 1990. In the worst-case scenario, the candidate is not able to answer any of those terrible questions, satisfying the interviewer&rsquo;s ego while she cranks out a negative report to a recruiter.</p>
+<p>Most of the time, however, you end up with a competition-driven technological
+fanatic bombarding an interviewee with smart-ass obscure trick questions they
+discovered that one time browsing their favorite language&rsquo;s mailing lists from
+the year 1990. In the worst-case scenario, the candidate is not able to answer
+any of those terrible questions, satisfying the interviewer&rsquo;s ego while she
+cranks out a negative report to a recruiter.</p>
 
-<p>In a slightly better version, an engineer will give a candidate a set of hands-on tasks which rarely have anything to do with the real job responsibilities. One version of this: pair programming segment, on the engineer&rsquo;s machine, under stress and with shaking hands. Are we hiring contestants for a hackathon?</p>
+<p>In a slightly better version, an engineer will give a candidate a set of
+hands-on tasks which rarely have anything to do with the real job
+responsibilities. One version of this: pair programming segment, on the
+engineer&rsquo;s machine, under stress and with shaking hands. Are we hiring
+contestants for a hackathon?</p>
 
-<p>When it comes to software engineering, everyone suddenly forgets that writing code is the smallest portion of the day. This might not be the case for junior programmers, but they are not the ones companies are wasting their hiring resources on. It&rsquo;s the mid-level and senior workers who weren&rsquo;t even evaluated on half of their job responsibilities. How are their human interaction skills? Are they pleasant to work with? Will they have issues with company policies? <em>Will they fit?</em> These questions are as important as one&rsquo;s ability to put together a few lines of code.</p>
+<p>When it comes to software engineering, everyone suddenly forgets that writing
+code is the smallest portion of the day. This might not be the case for junior
+programmers, but they are not the ones companies are wasting their hiring
+resources on. It&rsquo;s the mid-level and senior workers who weren&rsquo;t even evaluated
+on half of their job responsibilities. How are their human interaction skills?
+Are they pleasant to work with? Will they have issues with company policies?
+<em>Will they fit?</em> These questions are as important as one&rsquo;s ability to put
+together a few lines of code.</p>
 
-<p>Maybe interviewers have to spend less time checking how well candidates write code under pressure, and more time evaluating if they will be a good match for the company&rsquo;s culture. How do they react when you point out their mistake? Can they communicate concepts clearly? Are they good at marketing themselves? You hire people, not code generating machines. Unless that&rsquo;s what you need, of course.</p>
+<p>Maybe interviewers have to spend less time checking how well candidates write
+code under pressure, and more time evaluating if they will be a good match for
+the company&rsquo;s culture. How do they react when you point out their mistake? Can
+they communicate concepts clearly? Are they good at marketing themselves? You
+hire people, not code generating machines. Unless that&rsquo;s what you need, of
+course.</p>
 
 <h2>Home assignments</h2>
 
-<p>Home assignments are something I personally like and despise and the same time. And I find it sad that there are a number of big fat minuses with this approach. First, one might find it insulting. &ldquo;What, I have to write code for you in my own time? Couldn&rsquo;t you evaluate me on an interview or something?&rdquo; This method can turn a lot of people off, and unfortunately the ones that stay are not typically the best quality.</p>
+<p>Home assignments are something I personally like and despise and the same time.
+And I find it sad that there are a number of big fat minuses with this
+approach. First, one might find it insulting. &ldquo;What, I have to write code for
+you in my own time? Couldn&rsquo;t you evaluate me on an interview or something?&rdquo;
+This method can turn a lot of people off, and unfortunately the ones that stay
+are not typically the best quality.</p>
 
-<p>As my co-worker wisely pointed out, if you have a choice between two overall equal companies and one requires you to do more work before being considered &ndash; you will naturally pick one that accepts you easier. Any job seeker would feel more appreciated and trusted taking that route.</p>
+<p>As my co-worker wisely pointed out, if you have a choice between two overall
+equal companies and one requires you to do more work before being considered &ndash;
+you will naturally pick one that accepts you easier. Any job seeker would feel
+more appreciated and trusted taking that route.</p>
 
-<p>The honesty factor doesn&rsquo;t play much role here, since you usually can tell if the person did not write everything herself during the one-on-one followup. But the cost does play a role. The interviewer has to come up with a relatively unique assignment, spend time reading and evaluating the written program, give feedback on a follow-up interview. This adds up if you have many candidates.</p>
+<p>The honesty factor doesn&rsquo;t play much role here, since you usually can tell if
+the person did not write everything herself during the one-on-one followup. But
+the cost does play a role. The interviewer has to come up with a relatively
+unique assignment, spend time reading and evaluating the written program, give
+feedback on a follow-up interview. This adds up if you have many candidates.</p>
 
-<p>This technique does make sense when the list of candidates needs to be narrowed down, or when you&rsquo;re at the top of your domain. Who wouldn&rsquo;t complete a day-long homework for Google? Many people will happily spend a sleepless night for an employment opportunity. Even more wouldn&rsquo;t, especially if someone has a number of options lined up in front of them.</p>
+<p>This technique does make sense when the list of candidates needs to be narrowed
+down, or when you&rsquo;re at the top of your domain. Who wouldn&rsquo;t complete a
+day-long homework for Google? Many people will happily spend a sleepless night
+for an employment opportunity. Even more wouldn&rsquo;t, especially if someone has a
+number of options lined up in front of them.</p>
 
 <h2>What about other methods?</h2>
 
-<p>There is a large number of various interviewing techniques out there. Some companies combine the above specified methods to have a bare-bone hiring template. Some make candidates do paid work for a few weeks before being accepted as a new hire. Some don&rsquo;t bother and just decide to wing it.</p>
+<p>There is a large number of various interviewing techniques out there. Some
+companies combine the above specified methods to have a bare-bone hiring
+template. Some make candidates do paid work for a few weeks before being
+accepted as a new hire. Some don&rsquo;t bother and just decide to wing it.</p>
 
-<p>This is still a developing area; I am afraid the solution has to be obtained through the method of trial and error. There seems to be no success recipe which works for everyone. There are, however, a number of alternative solutions. I don&rsquo;t think most companies put enough resources in finding a successful technique, instead opting for whatever method is in season at the moment.</p>
+<p>This is still a developing area; I am afraid the solution has to be obtained
+through the method of trial and error. There seems to be no success recipe
+which works for everyone. There are, however, a number of alternative
+solutions. I don&rsquo;t think most companies put enough resources in finding a
+successful technique, instead opting for whatever method is in season at the
+moment.</p>
 ]]></content>
   </entry>
   
@@ -257,17 +432,38 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/the-elements-of-style/"/>
     <updated>2014-06-20T10:58:35-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-elements-of-style</id>
-    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a software engineering blog. You might even get angry at me for pointing this book in your face. But I have a strong affection towards this guide; I believe everyone who has to write more than a sentence in English should read it. I like to emphasize the communication aspects of a software engineering career as much as coding or management skills.</p>
+    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a
+software engineering blog. You might even get angry at me for pointing this
+book in your face. But I have a strong affection towards this guide; I believe
+everyone who has to write more than a sentence in English should read it. I
+like to emphasize the communication aspects of a software engineering career as
+much as coding or management skills.</p>
 
-<p>English is not my native language, and I often struggle with the writing style. I found a number of style tips online and in the books I read, but lately I noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The book is available online free of charge (copyright has expired; it is now in public domain) and takes only an evening to read.</p>
+<p>English is not my native language, and I often struggle with the writing style.
+I found a number of style tips online and in the books I read, but lately I
+noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The
+book is available online free of charge (copyright has expired; it is now in
+public domain) and takes only an evening to read.</p>
 
-<p>What the book gives you is invaluable writing advice. The author provides concrete style rules targeted at increasing the appeal and comprehension rates of your text. Here&rsquo;s my favorite piece of advice:</p>
+<p>What the book gives you is invaluable writing advice. The author provides
+concrete style rules targeted at increasing the appeal and comprehension rates
+of your text. Here&rsquo;s my favorite piece of advice:</p>
 
 <blockquote><p>13. Omit needless words.</p>
 
-<p>Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that he make every word tell.</p></blockquote>
+<p>Vigorous writing is concise. A sentence should contain no unnecessary
+words, a paragraph no unnecessary sentences, for the same reason that a
+drawing should have no unnecessary lines and a machine no unnecessary
+parts. This requires not that the writer make all his sentences short, or
+that he avoid all detail and treat his subjects only in outline, but that
+he make every word tell.</p></blockquote>
 
-<p>&ldquo;The Elements Of Style&rdquo; is a timeless classic; it should be mandatory reading for every speaker or learner of English out there. I immediately applied the rules to technical documentation, email communication, and even this very blog entry. I will probably have to read through the guide multiple times over the course of the following months in order to ensure maximum retention. If you care about being understood by another human being, you should read it too.</p>
+<p>&ldquo;The Elements Of Style&rdquo; is a timeless classic; it should be mandatory reading
+for every speaker or learner of English out there. I immediately applied the
+rules to technical documentation, email communication, and even this very blog
+entry. I will probably have to read through the guide multiple times over the
+course of the following months in order to ensure maximum retention. If you
+care about being understood by another human being, you should read it too.</p>
 ]]></content>
   </entry>
   
@@ -276,13 +472,40 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/"/>
     <updated>2014-06-19T19:33:38-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade</id>
-    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few shortcomings, I found it to be useful &ndash; Python is a language of choice for me, and I found some valuable tips I could add to my arsenal.</p>
+    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
+week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few
+shortcomings, I found it to be useful &ndash; Python is a language of choice for me,
+and I found some valuable tips I could add to my arsenal.</p>
 
-<p>The best thing about this book is that it covers a very wide range of topics: syntax recommendations and code profiling, testing practices and project management, technical writing and design patterns, package distribution and version control&hellip; My favorite chapter covered writing technical documentation: I am very interested in writing in general, and the tips Ziade provided turned out to be very useful for documenting code, writing design documents, and even posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo; moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to look into!&rdquo; scattered throughout the book. This book is very useful for filling in little gaps in knowledge which programmers can have: the author covers an extremely wide variety of Python development aspects.</p>
+<p>The best thing about this book is that it covers a very wide range of topics:
+syntax recommendations and code profiling, testing practices and project
+management, technical writing and design patterns, package distribution and
+version control&hellip; My favorite chapter covered writing technical documentation:
+I am very interested in writing in general, and the tips Ziade provided turned
+out to be very useful for documenting code, writing design documents, and even
+posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo;
+moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to
+look into!&rdquo; scattered throughout the book. This book is very useful for filling
+in little gaps in knowledge which programmers can have: the author covers an
+extremely wide variety of Python development aspects.</p>
 
-<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos in the text and code examples &ndash; it looked like the book was put together sloppily, in haste. Reviewers did not do a very good job evaluating this book. &ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit in as much content (and code) as possible in his book, with no consistent style. Many chapters go into unnecessary details, and the author has tendency to paste completely useless chunks of code, such as a page-long output of an installer. As I have mentioned, the book hops from one topic to another, and covers a wide variety of subjects: this is both a key strength and the biggest weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered across the topics.</p>
+<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
+in the text and code examples &ndash; it looked like the book was put together
+sloppily, in haste. Reviewers did not do a very good job evaluating this book.
+&ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
+in as much content (and code) as possible in his book, with no consistent
+style. Many chapters go into unnecessary details, and the author has tendency
+to paste completely useless chunks of code, such as a page-long output of an
+installer. As I have mentioned, the book hops from one topic to another, and
+covers a wide variety of subjects: this is both a key strength and the biggest
+weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered
+across the topics.</p>
 
-<p>&ldquo;Expert Python Programming&rdquo; will be of best use to, you guessed it, an expert. I found it best to scan through the content and seek out interesting bits of information. Beginners, however, might be completely overwhelmed. While advanced and intermediate Pythonistas will get the most out of this book, it will probably be too hard (and painful) to read to be of real value.</p>
+<p>&ldquo;Expert Python Programming&rdquo; will be of best use to, you guessed it, an expert.
+I found it best to scan through the content and seek out interesting bits of
+information. Beginners, however, might be completely overwhelmed. While
+advanced and intermediate Pythonistas will get the most out of this book, it
+will probably be too hard (and painful) to read to be of real value.</p>
 ]]></content>
   </entry>
   
@@ -291,17 +514,46 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think/"/>
     <updated>2014-06-16T20:42:51-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think</id>
-    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a long name). I went through the whole book only in under a few hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is full of concrete and valuable tips and advice about usability.</p>
+    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think,
+Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a
+long name). I went through the whole book only in under a few hours, and I am
+so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is full of concrete
+and valuable tips and advice about usability.</p>
 
-<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics: web and mobile usability, design, and writing for the web. The advice can be easily used and incorporated into your daily workflow; and the author provides concrete guidelines for applying his tips in the real world.</p>
+<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics:
+web and mobile usability, design, and writing for the web. The advice can be
+easily used and incorporated into your daily workflow; and the author provides
+concrete guidelines for applying his tips in the real world.</p>
 
-<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice) is individual usability testing. I actually performed my first usability test just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with your product (I&rsquo;ll get to the similarities between two of these books in a moment).</p>
+<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice)
+is individual usability testing. I actually performed my first usability test
+just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found
+that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with
+your product (I&rsquo;ll get to the similarities between two of these books in a
+moment).</p>
 
-<p>I asked two of my colleagues, one after another, to visit a website I was working on, and I silently watched them navigate through it. They had never seen the website before, and the results were very shocking to me: they ignored the things most obvious to me, but attempted to click through things which are not even meant to be clicked. I carefully wrote down all of my findings, and delivered the patches with enhancements to improve the biggest areas of struggle these particular users had faced.</p>
+<p>I asked two of my colleagues, one after another, to visit a website I was
+working on, and I silently watched them navigate through it. They had never
+seen the website before, and the results were very shocking to me: they ignored
+the things most obvious to me, but attempted to click through things which are
+not even meant to be clicked. I carefully wrote down all of my findings, and
+delivered the patches with enhancements to improve the biggest areas of
+struggle these particular users had faced.</p>
 
-<p>Usability testing turned out to be invaluable: it pointed out actions that I, as a developer, did not anticipate, and highlighted parts of the system ignored by the users. I now plan to run usability tests regularly, grabbing colleagues from the hallway, and asking them to use my application for a few minutes.</p>
+<p>Usability testing turned out to be invaluable: it pointed out actions that I,
+as a developer, did not anticipate, and highlighted parts of the system ignored
+by the users. I now plan to run usability tests regularly, grabbing colleagues
+from the hallway, and asking them to use my application for a few minutes.</p>
 
-<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but stripped from the extended theoretical part. The book references Norman&rsquo;s work quite a lot, and seems to be heavily influenced by it. It focuses on practical aspects of designing easy to use and understandable user interfaces. It successfully explains why you should be thoughtful of user experience, accessibility, and understanding the way users think. I would recommend reading this book after reading Donald Norman&rsquo;s masterpiece first, since it provides you with the reasoning behind many decisions Steve Krug makes throughout his book.</p>
+<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but
+stripped from the extended theoretical part. The book references Norman&rsquo;s work
+quite a lot, and seems to be heavily influenced by it. It focuses on practical
+aspects of designing easy to use and understandable user interfaces. It
+successfully explains why you should be thoughtful of user experience,
+accessibility, and understanding the way users think. I would recommend reading
+this book after reading Donald Norman&rsquo;s masterpiece first, since it provides
+you with the reasoning behind many decisions Steve Krug makes throughout his
+book.</p>
 ]]></content>
   </entry>
   
@@ -310,19 +562,72 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/the-design-of-everyday-things/"/>
     <updated>2014-06-15T14:23:50-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/the-design-of-everyday-things</id>
-    <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In the past year I have only read two books, one of which was a technical manual. Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going on: reading blogs, articles, guides, watching keynote talks&hellip; But I did miss the feeling of holding a good book in my hands, turning the pages with the tips of my fingers, seeing the texture of the paper under the print. A few weeks ago I went ahead and ordered one of the books on my reading list: &ldquo;The Design of Everyday Things&rdquo; by Donald A. Norman. I just finished reading it a few hours ago and am eager to share my impressions of the book.</p>
+    <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In
+the past year I have only read two books, one of which was a technical manual.
+Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going
+on: reading blogs, articles, guides, watching keynote talks&hellip; But I did miss
+the feeling of holding a good book in my hands, turning the pages with the tips
+of my fingers, seeing the texture of the paper under the print. A few weeks ago
+I went ahead and ordered one of the books on my reading list: &ldquo;The Design of
+Everyday Things&rdquo; by Donald A. Norman. I just finished reading it a few hours
+ago and am eager to share my impressions of the book.</p>
 
-<p>&ldquo;The Design of Everyday Things&rdquo; turned out to be one of the most eye-opening books about design I have ever read (alright, alright, I haven&rsquo;t read any design books before). It&rsquo;s mind blowing to think that I have never considered the points brought up by the authors. Hell, (and I will probably have rotten tomatoes thrown at me for this statement) but I didn&rsquo;t even think design was a &ldquo;real&rdquo; job. Oh dear, how wrong I was.</p>
+<p>&ldquo;The Design of Everyday Things&rdquo; turned out to be one of the most eye-opening
+books about design I have ever read (alright, alright, I haven&rsquo;t read any
+design books before). It&rsquo;s mind blowing to think that I have never considered
+the points brought up by the authors. Hell, (and I will probably have rotten
+tomatoes thrown at me for this statement) but I didn&rsquo;t even think design was a
+&ldquo;real&rdquo; job. Oh dear, how wrong I was.</p>
 
-<p>Norman&rsquo;s masterpiece talks about the psychology of everyday things (which was actually the initial title of the book, but was changed to &ldquo;Design&rdquo; after the first release). The author explains how users make decisions, use objects, make errors &ndash; and so many other factors which should go into the design process. Norman explains fundamental basics of the psychology of human-object interaction, something most people never think about. How hard could it be to design a door? Turns out the answer is &ndash; very hard. And every time you see someone pulling the door instead of pushing and vice versa &ndash; it&rsquo;s a result of a poor design. So many everyday frustrations could have been avoided if designers would have put more thought into usability of their product.</p>
+<p>Norman&rsquo;s masterpiece talks about the psychology of everyday things (which was
+actually the initial title of the book, but was changed to &ldquo;Design&rdquo; after the
+first release). The author explains how users make decisions, use objects, make
+errors &ndash; and so many other factors which should go into the design process.
+Norman explains fundamental basics of the psychology of human-object
+interaction, something most people never think about. How hard could it be to
+design a door? Turns out the answer is &ndash; very hard. And every time you see
+someone pulling the door instead of pushing and vice versa &ndash; it&rsquo;s a result of a
+poor design. So many everyday frustrations could have been avoided if designers
+would have put more thought into usability of their product.</p>
 
-<p>I build software for living, and I was skeptical if I even needed to know anything about good design. I mean, how hard could it be to put together a few pages and forms? &ldquo;I tackle complex software problems, I don&rsquo;t need any of this liberal arts bullshit!&rdquo; &ndash; I thought that way, and I know many people who still do. Well, Norman&rsquo;s book is a great starter for people like me: he does a great job explaining why the design process so important. By the time I finished reading it, I had a pretty solid set of ideas why there are so many things wrong with our industry, and how good, thoughtful design is a way out. The funniest part is &ndash; the book itself is published in the year 1988, over twenty-five years ago. It doesn&rsquo;t talk much about computers, concentrating on objects more common at the time: cars, telephone systems, even stoves and dish washing machines. And here I am, reading this book in the year 2014 &ndash; and the situation did not change at all. Expensive laundry machines are as hard to operate, computer programs are as clunky.</p>
+<p>I build software for living, and I was skeptical if I even needed to know
+anything about good design. I mean, how hard could it be to put together a few
+pages and forms? &ldquo;I tackle complex software problems, I don&rsquo;t need any of this
+liberal arts bullshit!&rdquo; &ndash; I thought that way, and I know many people who still
+do. Well, Norman&rsquo;s book is a great starter for people like me: he does a great
+job explaining why the design process so important. By the time I finished
+reading it, I had a pretty solid set of ideas why there are so many things
+wrong with our industry, and how good, thoughtful design is a way out. The
+funniest part is &ndash; the book itself is published in the year 1988, over
+twenty-five years ago. It doesn&rsquo;t talk much about computers, concentrating on
+objects more common at the time: cars, telephone systems, even stoves and dish
+washing machines. And here I am, reading this book in the year 2014 &ndash; and the
+situation did not change at all. Expensive laundry machines are as hard to
+operate, computer programs are as clunky.</p>
 
-<p>&ldquo;The Design of Everyday Things&rdquo; compels the reader to become a part of the solution to this enormous and bulky design problem the world is stuck with. In the everyday world, for every good case of design out there, you will face a hundred faulty, frustrating, and downright insulting design attempts.</p>
+<p>&ldquo;The Design of Everyday Things&rdquo; compels the reader to become a part of the
+solution to this enormous and bulky design problem the world is stuck with. In
+the everyday world, for every good case of design out there, you will face a
+hundred faulty, frustrating, and downright insulting design attempts.</p>
 
-<p>The book is very easy and pleasant to read, and I went through it in under a week. Most of it is a set of rants about poor design decisions, with suggested improvements and solutions. Throughout the reading process, I had to revisit the systems I built at work and rearrange the components, add more feedback to user&rsquo;s actions, and do many other little and big improvements in order to make make the system image much more transparent to the user. Norman taught me the most obvious truth: a designer is not your typical user of the system. This changes so many things, makes you doubt and rethink a number of design decisions you made along the way &ndash; all in order to build a product that is easy and pleasant to use.</p>
+<p>The book is very easy and pleasant to read, and I went through it in under a
+week. Most of it is a set of rants about poor design decisions, with suggested
+improvements and solutions. Throughout the reading process, I had to revisit
+the systems I built at work and rearrange the components, add more feedback to
+user&rsquo;s actions, and do many other little and big improvements in order to make
+make the system image much more transparent to the user. Norman taught me the
+most obvious truth: a designer is not your typical user of the system. This
+changes so many things, makes you doubt and rethink a number of design
+decisions you made along the way &ndash; all in order to build a product that is easy
+and pleasant to use.</p>
 
-<p>I now consider myself to be blessed with an understanding of the importance of good design, and admitting there is a problem is the first step to fixing it. And believe me, there is a problem. I will now continue learning about the best practices in building systems that are easy to understand and pleasant to operate for the user. My next stop is &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach to Web Usability&rdquo; by Steve Krug. I&rsquo;ve heard a lot about this book, and I will be sure to share my impressions here.</p>
+<p>I now consider myself to be blessed with an understanding of the importance of
+good design, and admitting there is a problem is the first step to fixing it.
+And believe me, there is a problem. I will now continue learning about the best
+practices in building systems that are easy to understand and pleasant to
+operate for the user. My next stop is &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common
+Sense Approach to Web Usability&rdquo; by Steve Krug. I&rsquo;ve heard a lot about this
+book, and I will be sure to share my impressions here.</p>
 ]]></content>
   </entry>
   
@@ -331,15 +636,39 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/"/>
     <updated>2014-06-07T12:11:54-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list</id>
-    <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists, written notes, and just about anything that will let me arrange my tasks instead of actually accomplishing them. I recently stopped writing things down, and the results were pleasantly surprising&hellip;</p>
+    <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
+written notes, and just about anything that will let me arrange my tasks
+instead of actually accomplishing them. I recently stopped writing things down,
+and the results were pleasantly surprising&hellip;</p>
 
-<p>I was keeping a list of things I would need to complete. I organized it by priorities, and at some point I even used Gina&rsquo;s fancy &ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
+<p>I was keeping a list of things I would need to complete. I organized it by
+priorities, and at some point I even used Gina&rsquo;s fancy
+&ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
 
-<p>What I realized after using such a scheme, is that my list was growing longer and longer with every week. After a while, the number of tasks became hard to manage, and the number of tasks became permanent residents on my task list. Why did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;. Complete a task, check off a check box. There was no mindfulness about it: I was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move to a next one.&rdquo; &ndash; this is what was constantly running through my head. Secondly, by writing down a task on my list in the first place, my brain would register it as being completed, and then I&rsquo;d go on with my day. Needless to say, certain tasks would sit on my list for an indefinite amount of time.</p>
+<p>What I realized after using such a scheme, is that my list was growing longer
+and longer with every week. After a while, the number of tasks became hard to
+manage, and the number of tasks became permanent residents on my task list. Why
+did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
+Complete a task, check off a check box. There was no mindfulness about it: I
+was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
+to a next one.&rdquo; &ndash; this is what was constantly running through my head.
+Secondly, by writing down a task on my list in the first place, my brain would
+register it as being completed, and then I&rsquo;d go on with my day. Needless to
+say, certain tasks would sit on my list for an indefinite amount of time.</p>
 
-<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a simple question: &ldquo;What should I do today to succeed at what I am trying to accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing tasks which provide the biggest impact, dedicating some days just to minor &ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
+<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a
+simple question: &ldquo;What should I do today to succeed at what I am trying to
+accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing
+tasks which provide the biggest impact, dedicating some days just to minor
+&ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
 
-<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful about my day, I know exactly what I need to accomplish in order to succeed. It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t just a list of things to do, but a number of goals you want to reach. By not relying on a written manifesto cluttered with tasks, I am forced to concentrate on the bigger picture, where what I set out to accomplish has the highest possible impact on my life and career.</p>
+<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful
+about my day, I know exactly what I need to accomplish in order to succeed.
+It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t
+just a list of things to do, but a number of goals you want to reach. By not
+relying on a written manifesto cluttered with tasks, I am forced to concentrate
+on the bigger picture, where what I set out to accomplish has the highest
+possible impact on my life and career.</p>
 ]]></content>
   </entry>
   
@@ -348,11 +677,16 @@ the resulting articles.</p>
     <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
     <updated>2014-06-01T20:44:12-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
-    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in plain text.</p>
+    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
+I find it nice to have an archive of posts lying around in plain text.</p>
 
-<p>I wrote a little Python script which I used to extract an archive of my posts and pages into a bunch of files on my computer. In order to use it, you need to use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR format, and feed the file to the script.</p>
+<p>I wrote a little Python script which I used to extract an archive of my posts
+and pages into a bunch of files on my computer. In order to use it, you need to
+use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR
+format, and feed the file to the script.</p>
 
-<p>Source code of the script is below (link for downloading the script is at the bottom of this post):</p>
+<p>Source code of the script is below (link for downloading the script is at the
+bottom of this post):</p>
 
 <pre><code>#!/usr/bin/env python
 
@@ -434,23 +768,70 @@ if __name__ == "__main__":
     <link href="http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type/"/>
     <updated>2014-05-31T12:33:15-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type</id>
-    <content type="html"><![CDATA[<p>I have a confession to make. Up until recently I did not know how to touch type. I would do what most people around me did: push the keys however which way I felt; make a typo; look down at the keyboard to find the letter I mistyped; repeat the whole process. I would put out up to 50 words per minute with this method, with an embarrassing error rate (which usually went up if I was showing something to someone). I am now terrified to think about those times.</p>
+    <content type="html"><![CDATA[<p>I have a confession to make. Up until recently I did not know how to touch
+type. I would do what most people around me did: push the keys however which
+way I felt; make a typo; look down at the keyboard to find the letter I
+mistyped; repeat the whole process. I would put out up to 50 words per minute
+with this method, with an embarrassing error rate (which usually went up if I
+was showing something to someone). I am now terrified to think about those
+times.</p>
 
-<p>It wasn&rsquo;t until I stumbled upon Steve Yegge&rsquo;s article &ldquo;<a href="http://steve-yegge.blogspot.com/2008/09/programmings-dirtiest-little-secret.html">Programming&rsquo;s Dirtiest Little Secret</a>&rdquo;, that I fully understood the implications of not developing proper typing technique.</p>
+<p>It wasn&rsquo;t until I stumbled upon Steve Yegge&rsquo;s article &ldquo;<a href="http://steve-yegge.blogspot.com/2008/09/programmings-dirtiest-little-secret.html">Programming&rsquo;s Dirtiest
+Little Secret</a>&rdquo;, that I fully understood the implications of not developing
+proper typing technique.</p>
 
-<p>Picture the following: programmer Clara is working in a small software company. Clara doesn&rsquo;t use any fancy IDEs nor extendible editors like emacs or vim. Clara uses Windows&#8217; default &ldquo;Notepad&rdquo; program to write and edit her source code. She is defending herself by saying that she doesn&rsquo;t need any advanced features, and that she knows every keyword she needs to use by heart. She spends hours tediously searching for the files on her computer, opening them in Notepad, holding down arrow keys to get to whichever chunk of code she needs to edit (or even worse &ndash; lifts her hands off a keyboard and uses a mouse to navigate the file). Her editor only goes back one step with the &ldquo;undo&rdquo; operation&hellip; But Clara has good memory and she can re-type the code she erased.</p>
+<p>Picture the following: programmer Clara is working in a small software company.
+Clara doesn&rsquo;t use any fancy IDEs nor extendible editors like emacs or vim.
+Clara uses Windows&#8217; default &ldquo;Notepad&rdquo; program to write and edit her source
+code. She is defending herself by saying that she doesn&rsquo;t need any advanced
+features, and that she knows every keyword she needs to use by heart. She
+spends hours tediously searching for the files on her computer, opening them in
+Notepad, holding down arrow keys to get to whichever chunk of code she needs to
+edit (or even worse &ndash; lifts her hands off a keyboard and uses a mouse to
+navigate the file). Her editor only goes back one step with the &ldquo;undo&rdquo;
+operation&hellip; But Clara has good memory and she can re-type the code she erased.</p>
 
-<p>What do you think of Clara? You might say that she is wasting her time and she should learn herself a robust editor. And of course, you will be right.</p>
+<p>What do you think of Clara? You might say that she is wasting her time and she
+should learn herself a robust editor. And of course, you will be right.</p>
 
-<p>One day, Clara&rsquo;s company hired a new tech lead &ndash; Jane. Jane noticed that Clara is very slow at accomplishing tasks assigned to her. So Jane showed Clara how to save a lot of time by using an advanced editor she uses. Suddenly Clara discovered a whole new world in front of her: it became much easier to read the code with parts of it highlighted, and the new text editor showed her when she would make a typo or a big error &ndash; even before Clara compiled the code. And Clara didn&rsquo;t even have to re-invent the code she deleted, she could just travel down the undo tree back to the time when she erased the code: all of a sudden it felt like she had access to a time machine! Jane even told her that there are plugins which can write some code for Clara! How amazing is that? It took a while for Clara to learn how to use the new editor, but after a few months, Clara became almost as fast at doing her job as Jane. Maybe Clara even received a promotion from doing so many things in a short period of time.</p>
+<p>One day, Clara&rsquo;s company hired a new tech lead &ndash; Jane. Jane noticed that Clara
+is very slow at accomplishing tasks assigned to her. So Jane showed Clara how
+to save a lot of time by using an advanced editor she uses. Suddenly Clara
+discovered a whole new world in front of her: it became much easier to read the
+code with parts of it highlighted, and the new text editor showed her when she
+would make a typo or a big error &ndash; even before Clara compiled the code. And
+Clara didn&rsquo;t even have to re-invent the code she deleted, she could just travel
+down the undo tree back to the time when she erased the code: all of a sudden
+it felt like she had access to a time machine! Jane even told her that there
+are plugins which can write some code for Clara! How amazing is that? It took a
+while for Clara to learn how to use the new editor, but after a few months,
+Clara became almost as fast at doing her job as Jane. Maybe Clara even received
+a promotion from doing so many things in a short period of time.</p>
 
-<p>If you don&rsquo;t know how to touch type &ndash; you are Clara. You are wasting your time. You look ridiculous to your colleagues when you stare down at your keyboard while typing. Interviewers secretly laugh at you when you make five errors in a four-letter word. You are frustrated by even the remote possibility of having to write more than you absolutely have to.</p>
+<p>If you don&rsquo;t know how to touch type &ndash; you are Clara. You are wasting your time.
+You look ridiculous to your colleagues when you stare down at your keyboard
+while typing. Interviewers secretly laugh at you when you make five errors in a
+four-letter word. You are frustrated by even the remote possibility of having
+to write more than you absolutely have to.</p>
 
-<p>Writing is a big part of the job as a software engineer. You write code, documentation, ask questions. Most importantly, you have to communicate with your colleagues and users. Most of this interaction is written: it&rsquo;s a great form of communication for the job &ndash; written notes can be saved and searched through later. As a software engineer, you bring value to your company and its users. And due to the arcane nature of the craft, communication becomes crucial. You can be the smartest programmer in the world and you can write the best piece of software out there, but no one will know about it unless you communicate why is it so great, what it does, and how to use it.</p>
+<p>Writing is a big part of the job as a software engineer. You write code,
+documentation, ask questions. Most importantly, you have to communicate with
+your colleagues and users. Most of this interaction is written: it&rsquo;s a great
+form of communication for the job &ndash; written notes can be saved and searched
+through later. As a software engineer, you bring value to your company and its
+users. And due to the arcane nature of the craft, communication becomes
+crucial. You can be the smartest programmer in the world and you can write the
+best piece of software out there, but no one will know about it unless you
+communicate why is it so great, what it does, and how to use it.</p>
 
-<p>By learning how to type properly, you turn a keyboard into an extension of your hand. All you have to do in order to type &ndash; is just think of words and sentences. Your muscle memory does the rest.</p>
+<p>By learning how to type properly, you turn a keyboard into an extension of your
+hand. All you have to do in order to type &ndash; is just think of words and
+sentences. Your muscle memory does the rest.</p>
 
-<p>I now type somewhere between 60 and 80 words per minute with what I find to be a low error rate &ndash; and I have been touch typing now for little over a month. If you care for your craft, you have no excuse for not mastering a proper typing technique.</p>
+<p>I now type somewhere between 60 and 80 words per minute with what I find to be
+a low error rate &ndash; and I have been touch typing now for little over a month. If
+you care for your craft, you have no excuse for not mastering a proper typing
+technique.</p>
 ]]></content>
   </entry>
   
@@ -459,31 +840,84 @@ if __name__ == "__main__":
     <link href="http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing/"/>
     <updated>2014-05-29T21:01:29-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing</id>
-    <content type="html"><![CDATA[<p>This is my first article out of what I hope will be many. I started this blog in 2012 and I&rsquo;ve never written a single biased entry: just dry technical manuals, tutorials, and guides. This has lead to a number of page views from programmers in distress, but getting a certain amount of views was never the goal of this blog. To be honest, I am not even sure if I had a goal in mind. Everyone had a blog, and I thought so should I. I was hoping it will assist me in getting a job I will enjoy by increasing my online presence (and it may have). Maybe I was out for some online reputation and (knowing myself) fame. Of course, none of this happened.</p>
+    <content type="html"><![CDATA[<p>This is my first article out of what I hope will be many. I started this blog
+in 2012 and I&rsquo;ve never written a single biased entry: just dry technical
+manuals, tutorials, and guides. This has lead to a number of page views from
+programmers in distress, but getting a certain amount of views was never the
+goal of this blog. To be honest, I am not even sure if I had a goal in mind.
+Everyone had a blog, and I thought so should I. I was hoping it will assist me
+in getting a job I will enjoy by increasing my online presence (and it may
+have). Maybe I was out for some online reputation and (knowing myself) fame. Of
+course, none of this happened.</p>
 
-<p>What did happen, is that I created a collection of technical notes which no one cares about until they have a problem with something they are working on. And after the issue is resolved they close the page and never open it again, as one would do with a countless number of other programming blogs and tutorial collections.</p>
+<p>What did happen, is that I created a collection of technical notes which no one
+cares about until they have a problem with something they are working on. And
+after the issue is resolved they close the page and never open it again, as one
+would do with a countless number of other programming blogs and tutorial
+collections.</p>
 
 <p>Where am I leading with this?</p>
 
-<p>Lately I have been (multiple times) hit with realization that software engineering is less about writing perfect (or any, for that matter) code, and is more about management and people skills. The very people skills most software engineers lack due to choice of profession (or maybe the other way). I spent some years reading books and articles on how to optimize, refactor, and design code for which any programmer would be praised and renowned for. I have even made some progress in reaching this &ldquo;magic goal&rdquo;.</p>
+<p>Lately I have been (multiple times) hit with realization that software
+engineering is less about writing perfect (or any, for that matter) code, and
+is more about management and people skills. The very people skills most
+software engineers lack due to choice of profession (or maybe the other way). I
+spent some years reading books and articles on how to optimize, refactor, and
+design code for which any programmer would be praised and renowned for. I have
+even made some progress in reaching this &ldquo;magic goal&rdquo;.</p>
 
-<p>Don&rsquo;t get me wrong, writing readable and reusable programs is an essential part of the job, but it is only one scale on which a professional programmer&rsquo;s performance is measured. And it&rsquo;s a relatively small scale, in comparison to others.</p>
+<p>Don&rsquo;t get me wrong, writing readable and reusable programs is an essential part
+of the job, but it is only one scale on which a professional programmer&rsquo;s
+performance is measured. And it&rsquo;s a relatively small scale, in comparison to
+others.</p>
 
-<p>As a professional, you have your skill of assessing priorities, productivity, time management, patience, an active learning process, and of course, the above mentioned communication skills. This post is about just that: transmitting ideas and concepts to readers.</p>
+<p>As a professional, you have your skill of assessing priorities, productivity,
+time management, patience, an active learning process, and of course, the above
+mentioned communication skills. This post is about just that: transmitting
+ideas and concepts to readers.</p>
 
-<p>I am not very good at human interaction. I am an introvert. Even worse, and as many of my colleagues do, I mumble something or smile awkwardly when passing someone in a hallway. What is the social protocol for such an event anyway? Whatever it is, I don&rsquo;t think I am doing it right.</p>
+<p>I am not very good at human interaction. I am an introvert. Even worse, and as
+many of my colleagues do, I mumble something or smile awkwardly when passing
+someone in a hallway. What is the social protocol for such an event anyway?
+Whatever it is, I don&rsquo;t think I am doing it right.</p>
 
-<p>It&rsquo;s hard to evaluate my verbal communication skills. Maybe people have hard time understanding the points I am trying to bring across in conversation. Being a foreigner, some people probably find it challenging to understand every word I say. In addition, with my tendency to slur words when I am tired or excited &ndash; it&rsquo;s probably annoying to talk to me sometimes.</p>
+<p>It&rsquo;s hard to evaluate my verbal communication skills. Maybe people have hard
+time understanding the points I am trying to bring across in conversation.
+Being a foreigner, some people probably find it challenging to understand every
+word I say. In addition, with my tendency to slur words when I am tired or
+excited &ndash; it&rsquo;s probably annoying to talk to me sometimes.</p>
 
-<p>I can say with confidence that my writing skills suck. I spend by far more time than I should composing emails. I write a paragraph and then I delete it. Writing is a big challenge for me. I am quite sure this article is very hard to read. And I have a very strong feeling no one will read this article. Except for maybe, my wife &ndash; who is a fantastic writer and will point out every mistake I&rsquo;ve made. This text will have to be revised many times before it becomes even slightly readable.</p>
+<p>I can say with confidence that my writing skills suck. I spend by far more time
+than I should composing emails. I write a paragraph and then I delete it.
+Writing is a big challenge for me. I am quite sure this article is very hard to
+read. And I have a very strong feeling no one will read this article. Except
+for maybe, my wife &ndash; who is a fantastic writer and will point out every mistake
+I&rsquo;ve made. This text will have to be revised many times before it becomes even
+slightly readable.</p>
 
-<p>I started looking around for ways to improve the way I communicate my thoughts. I found a large number of articles, rules, and techniques which supposedly should instantly make you a better writer. This of course might be true if you are a professional writer or a student majoring in literature. I am neither. I stumbled upon a great article by Jeff Atwood: &ldquo;<a href="http://blog.codinghorror.com/how-to-write-without-writing/">How to write without writing</a>&rdquo;. Reading it gave me the push I needed to get over the embarrassment of the inevitable failure from writing poorly. And I know I am writing poorly, I&rsquo;ve read the stuff I wrote.</p>
+<p>I started looking around for ways to improve the way I communicate my thoughts.
+I found a large number of articles, rules, and techniques which supposedly
+should instantly make you a better writer. This of course might be true if you
+are a professional writer or a student majoring in literature. I am neither. I
+stumbled upon a great article by Jeff Atwood: &ldquo;<a href="http://blog.codinghorror.com/how-to-write-without-writing/">How to write without
+writing</a>&rdquo;. Reading it gave me the push I needed to get over the
+embarrassment of the inevitable failure from writing poorly. And I know I am
+writing poorly, I&rsquo;ve read the stuff I wrote.</p>
 
-<p>You don&rsquo;t expect yourself to wake up one day and write awesome code, do you? No, you wake up, go to work, fail, and maybe after months and years of practice you become better at putting together pieces of code. The same rule applies to writing. Write a lot and often, and read what smart people write. Try to be even better than them. Fail. Repeat.</p>
+<p>You don&rsquo;t expect yourself to wake up one day and write awesome code, do you?
+No, you wake up, go to work, fail, and maybe after months and years of practice
+you become better at putting together pieces of code. The same rule applies to
+writing. Write a lot and often, and read what smart people write. Try to be
+even better than them. Fail. Repeat.</p>
 
-<p>This is why I am starting to write less technical entries. Abstract topics will let me hone my writing skills. All I have to do is just stick to some sort of a writing schedule. I&rsquo;ll come up with things to write about, I am a pretty loud person.</p>
+<p>This is why I am starting to write less technical entries. Abstract topics will
+let me hone my writing skills. All I have to do is just stick to some sort of a
+writing schedule. I&rsquo;ll come up with things to write about, I am a pretty loud
+person.</p>
 
-<p>P.S: My recently acquired touch typing skills have come in handy in composing this. I would have previously never had the patience to finish the wall of text I am looking at right now. Go learn to type faster.</p>
+<p>P.S: My recently acquired touch typing skills have come in handy in composing
+this. I would have previously never had the patience to finish the wall of text
+I am looking at right now. Go learn to type faster.</p>
 ]]></content>
   </entry>
   
@@ -492,7 +926,9 @@ if __name__ == "__main__":
     <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
     <updated>2014-05-29T12:20:34-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
-    <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger: <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the following often-occurring pattern:</p>
+    <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
+<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
+following often-occurring pattern:</p>
 
 <pre><code>try:
     os.remove('i_probably_do_not_exist.txt')
@@ -506,7 +942,10 @@ except OSError:
     os.remove('i_probably_do_not_exist')
 </code></pre>
 
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use older version of python in production. That&rsquo;s where this little chunk of code comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add following function:</p>
+<p>Much shorted and prettier. But, as probably most of engineers, you have to use
+older version of python in production. That&rsquo;s where this little chunk of code
+comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
+following function:</p>
 
 <pre><code>import contextlib
 
@@ -527,9 +966,14 @@ def ignored(*exceptions):
     <link href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/"/>
     <updated>2014-05-28T14:33:55-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail</id>
-    <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
+    <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
+nor does it extend the amount of time I spend reading email. For me, the best
+part about Mutt is that it lets me use text editor of my choice &ndash; Vim.
+Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash;
+already exists in Gmail.</p>
 
-<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+<p>I found configuration below to work really well for my needs: all of the
+important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
 
 <pre><code>bind editor &lt;space&gt; noop
 set alias_file        = '~/.mutt/aliases.txt'
@@ -565,16 +1009,25 @@ source $alias_file
 <p>It is quite self-explanatory, and includes such nice features as:</p>
 
 <ul>
-<li>Automatically adding addresses from read emails to address book (see below).</li>
-<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
+<li>Automatically adding addresses from read emails to address book (see
+below).</li>
+<li>Using vim as a text editor, with an ability to edit message
+headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
+Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
+respectfully (I am a huge fun of a zero-mail inbox).</li>
 </ul>
 
 
-<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+<p>You might also want to have your password encrypted by GPG as opposed to
+leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
+here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
 
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
+<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
+email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
+the <code>aliases.sh</code> are below:</p>
 
 <pre><code>#!/bin/sh
 
@@ -595,7 +1048,8 @@ fi
 echo "${MESSAGE}"
 </code></pre>
 
-<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
+<p>This script will create <code>aliases.txt</code> file containing email addresses for
+search and auto completion of email-addresses.</p>
 ]]></content>
   </entry>
   
@@ -604,9 +1058,17 @@ echo "${MESSAGE}"
     <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
     <updated>2014-05-28T12:11:52-07:00</updated>
     <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
-    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an article on how to use GPG to store your passwords: <a href="http://www.rosipov.com/blog/gpg-usage/">GPG Usage</a>, this is a more practical note about using GPG to store your passwords for mutt. This note implies that you already have installed and configured GPG (which you can learn how to do in above linked article).</p>
+    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way
+to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an
+article on how to use GPG to store your passwords: [GPG Usage], this is a more
+practical note about using GPG to store your passwords for mutt. This note
+implies that you already have installed and configured GPG (which you can learn
+how to do in above linked article).</p>
 
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code> with your password and <code>$ACCOUNT</code> with a desired account alias. You probably want to prefix this command with a space, to avoid writing your password to a history file.</p>
+<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code>
+with your password and <code>$ACCOUNT</code> with a desired account alias. You probably
+want to prefix this command with a space, to avoid writing your password to a
+history file.</p>
 
 <pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
 </code></pre>
@@ -616,7 +1078,8 @@ echo "${MESSAGE}"
 <pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
 </code></pre>
 
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier. Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
+<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier.
+Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
 ]]></content>
   </entry>
   
@@ -625,9 +1088,14 @@ echo "${MESSAGE}"
     <link href="http://ruslanosipov.github.io/blog/navigate-files-easily-with-ctrlp-vim/"/>
     <updated>2014-01-12T17:10:34-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/navigate-files-easily-with-ctrlp-vim</id>
-    <content type="html"><![CDATA[<p>Few years ago I used a lightweight IDE called &ldquo;Sublime Text 2&rdquo;. And one of the most compelling features of it was an ability to switch between files by hitting <code>Ctrl</code> + <code>P</code> and typing in a part of the file name.</p>
+    <content type="html"><![CDATA[<p>Few years ago I used a lightweight IDE called &ldquo;Sublime Text 2&rdquo;. And one of the
+most compelling features of it was an ability to switch between files by
+hitting <code>Ctrl</code> + <code>P</code> and typing in a part of the file name.</p>
 
-<p>This is exactly what <code>ctrlp.vim</code> implements in vim. Usage is extremely simple: install the plugin, hit <code>Ctrl</code> + <code>P</code>, type a part of the file name, select a desired file and hit <code>Enter</code>. You can use arrow keys or <code>Ctrl</code> + <code>J</code> and <code>Ctrl</code> + <code>K</code> to navigate between suggested file list.</p>
+<p>This is exactly what <code>ctrlp.vim</code> implements in vim. Usage is extremely simple:
+install the plugin, hit <code>Ctrl</code> + <code>P</code>, type a part of the file name, select a
+desired file and hit <code>Enter</code>. You can use arrow keys or <code>Ctrl</code> + <code>J</code> and <code>Ctrl</code>
++ <code>K</code> to navigate between suggested file list.</p>
 
 <p>Source: <a href="https://github.com/kien/ctrlp.vim">https://github.com/kien/ctrlp.vim</a>.</p>
 ]]></content>
@@ -638,13 +1106,22 @@ echo "${MESSAGE}"
     <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
     <updated>2013-12-30T10:48:31-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
-    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via Gherkin syntax in python. However the documentation is not very comprehensive, and at the moment current version (0.2.19) has some issues integrating with the latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get to a comprehensive tutorial.</p>
+    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
+Gherkin syntax in python. However the documentation is not very comprehensive,
+and at the moment current version (0.2.19) has some issues integrating with the
+latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
+to a comprehensive tutorial.</p>
 
-<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control, and you already have a working project configured. Your project is called &ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
+<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
+and you already have a working project configured. Your project is called
+&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
 
 <h2>Setup</h2>
 
-<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current released version (0.2.19) has an error integrating with Django, so we&rsquo;ll install current development version. Releases 0.2.20 and up should include the fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
+<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
+released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
+install current development version. Releases 0.2.20 and up should include the
+fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
 
 <pre><code>pip install -e \
     git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
@@ -652,7 +1129,12 @@ pip install django-nose splinter
 pip freeze &gt; requirements.txt
 </code></pre>
 
-<p>First line downloads lettuce package from the github repository and installs missing dependencies. You can replace <code>cccc397</code> with the current commit. Technically commit can be omitted, but we don&rsquo;t want to have an unstable ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code> since nose assertions come in handy while writing Lettuce steps, as well as <code>splinter</code>, which is a great tool for testing web application.</p>
+<p>First line downloads lettuce package from the github repository and installs
+missing dependencies. You can replace <code>cccc397</code> with the current commit.
+Technically commit can be omitted, but we don&rsquo;t want to have an unstable
+ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
+since nose assertions come in handy while writing Lettuce steps, as well as
+<code>splinter</code>, which is a great tool for testing web application.</p>
 
 <p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
 
@@ -679,15 +1161,20 @@ pip freeze &gt; requirements.txt
 )
 </code></pre>
 
-<p>By default, lettuce will run its&#8217; tests against your default database. But we want to use test database for that, so we have to add few more settings:</p>
+<p>By default, lettuce will run its&#8217; tests against your default database. But we
+want to use test database for that, so we have to add few more settings:</p>
 
 <pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
 LETTUCE_SERVER_PORT = 9000
 </code></pre>
 
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different from port 8000 so you won&rsquo;t have issues running the development server via <code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
+<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a
+class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
+from port 8000 so you won&rsquo;t have issues running the development server via
+<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
 
-<p>You also have to create a <code>features</code> directories inside the apps you want to test with Lettuce:</p>
+<p>You also have to create a <code>features</code> directories inside the apps you want to
+test with Lettuce:</p>
 
 <pre><code>/myproject
     /myproject
@@ -710,7 +1197,8 @@ LETTUCE_SERVER_PORT = 9000
     terrain.py
 </code></pre>
 
-<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the same directory as a <code>manage.py</code>:</p>
+<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
+same directory as a <code>manage.py</code>:</p>
 
 <pre><code>from django.core.management import call_command
 from django.conf import settings
@@ -730,11 +1218,13 @@ def destroy_browser(scenario):
     world.browser.quit()
 </code></pre>
 
-<p>This code flushes the database before each scenario, as well as prepares and destroys the <code>splinter</code> browser.</p>
+<p>This code flushes the database before each scenario, as well as prepares and
+destroys the <code>splinter</code> browser.</p>
 
 <h2>Writing the features</h2>
 
-<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in <code>polls/features/polls_list.feature</code>:</p>
+<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
+<code>polls/features/polls_list.feature</code>:</p>
 
 <pre><code>Feature: Polls list
 
@@ -781,7 +1271,8 @@ def do_not_see_a_text(step, text):
 
 <h2>Running the tests</h2>
 
-<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you just wrote:</p>
+<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
+just wrote:</p>
 
 <pre><code>$ python manage.py harvest --test-server
 Creating test database for alias 'default'...
@@ -805,18 +1296,24 @@ Feature: Polls list
 Destroying test database for alias 'default'...
 </code></pre>
 
-<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests against your default database.</p>
+<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests
+against your default database.</p>
 
 <h2>Sources</h2>
 
-<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
+<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web
+development fun with Lettuce and Django</a>.</p>
 
-<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
+<h2>Update</h2>
+
+<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
+in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
 
 <pre><code>LETTUCE_USE_TEST_DATABASE = True
 </code></pre>
 
-<p>This way you won&rsquo;t end up accidentally erasing your production database after forgetting to add <code>--test-server</code> flag.</p>
+<p>This way you won&rsquo;t end up accidentally erasing your production database after
+forgetting to add <code>--test-server</code> flag.</p>
 ]]></content>
   </entry>
   
@@ -825,7 +1322,9 @@ Destroying test database for alias 'default'...
     <link href="http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim/"/>
     <updated>2013-11-24T16:39:34-08:00</updated>
     <id>http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim</id>
-    <content type="html"><![CDATA[<p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command with a number to go multiple files back. You can also travel forward in &ldquo;file history&rdquo; by using <code>Ctrl-I</code>.</p>
+    <content type="html"><![CDATA[<p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command
+with a number to go multiple files back. You can also travel forward in &ldquo;file
+history&rdquo; by using <code>Ctrl-I</code>.</p>
 
 <p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
 ]]></content>

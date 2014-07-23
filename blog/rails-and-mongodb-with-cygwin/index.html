@@ -9,7 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Setting up Ruby on Rails with MongoDB on a Windows machine. You need to have cygwin installed with ruby and git packages (obviously you may want to &hellip;">
+  <meta name="description" content="Setting up Ruby on Rails with MongoDB on a Windows machine. You need to have cygwin installed with ruby and git packages (obviously you
+may want to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -109,7 +110,8 @@
 
 <div class="entry-content"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
 
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you may want to have more).</p>
+<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
+may want to have more).</p>
 
 <p>The following commands are executed in the cygwin prompt:</p>
 
@@ -119,16 +121,20 @@ ruby setup.rb
 gem install rails
 </code></pre>
 
-<p>Go to the MongoDB website and download Windows binaries: <a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory to <code>C:\cygwin\usr\local\bin</code>.</p>
+<p>Go to the MongoDB website and download Windows binaries:
+<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
+to <code>C:\cygwin\usr\local\bin</code>.</p>
 
-<p>Create a directory for the db files (the default MongoDB db files directory is <code>C:\datadb</code>):</p>
+<p>Create a directory for the db files (the default MongoDB db files directory is
+<code>C:\datadb</code>):</p>
 
 <pre><code>cd /cygdrive/c
 mkdir data
 mkdir data/db
 </code></pre>
 
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it as you see fit.</p>
+<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
+as you see fit.</p>
 </div>
 
 
