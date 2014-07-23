@@ -63,10 +63,10 @@ I started looking around for ways to improve the way I communicate my thoughts.
 I found a large number of articles, rules, and techniques which supposedly
 should instantly make you a better writer. This of course might be true if you
 are a professional writer or a student majoring in literature. I am neither. I
-stumbled upon a great article by Jeff Atwood: "[How to write without
-writing][1]". Reading it gave me the push I needed to get over the
-embarrassment of the inevitable failure from writing poorly. And I know I am
-writing poorly, I've read the stuff I wrote.
+stumbled upon a great article by Jeff Atwood:
+"[How to write without writing][1]". Reading it gave me the push I needed to
+get over the embarrassment of the inevitable failure from writing poorly. And I
+know I am writing poorly, I've read the stuff I wrote.
 
 You don't expect yourself to wake up one day and write awesome code, do you?
 No, you wake up, go to work, fail, and maybe after months and years of practice

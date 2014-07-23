@@ -9,9 +9,9 @@ Using vimdiff as a git mergetool can be pretty confusing - multiple windows and
 little explanation. This is a short tutorial which explains basic usage, and
 what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at
 least a little bit of basic vim knowledge (how to move, save, and switch
-between split windows). If you don't, there's a short article for you: [Using
-vim for writing code][1]. Some basic understanding of git and branching is
-required as well, obviously.
+between split windows). If you don't, there's a short article for you:
+[Using vim for writing code][1]. Some basic understanding of git and branching
+is required as well, obviously.
 
 ## Git config
 
@@ -69,7 +69,7 @@ Let's resolve the conflict:
 
     git mergetool
 
-{% img /images/three-way-merge-with-vimdiff.png Three-way merge using vimdiff.  Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom. %}
+{% img /images/three-way-merge-with-vimdiff.png Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom. %}
 
 This looks terrifying at first, but let me explain what is going on.
 

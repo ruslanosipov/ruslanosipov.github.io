@@ -12,9 +12,9 @@ with this method, with an embarrassing error rate (which usually went up if I
 was showing something to someone). I am now terrified to think about those
 times.
 
-It wasn't until I stumbled upon Steve Yegge's article "[Programming's Dirtiest
-Little Secret][1]", that I fully understood the implications of not developing
-proper typing technique.
+It wasn't until I stumbled upon Steve Yegge's article
+"[Programming's Dirtiest Little Secret][1]", that I fully understood the
+implications of not developing proper typing technique.
 
 Picture the following: programmer Clara is working in a small software company.
 Clara doesn't use any fancy IDEs nor extendible editors like emacs or vim.

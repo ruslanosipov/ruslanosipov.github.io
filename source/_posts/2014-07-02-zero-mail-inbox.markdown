@@ -56,8 +56,9 @@ app archives all your previous conversations the moment you install it.
 Next, there has to be a way to implement a "snooze" button. There are always
 times when you can't reply to an email, but don't exactly want to keep it in
 your inbox (what an eyesore). Gmail does not provide a native way to resend
-your emails at later times, but I found a Chrome extension called ["Snooze Your
-Email for Gmail"][2], which adds a simple "Snooze" button to the Gmail UI.
+your emails at later times, but I found a Chrome extension called
+["Snooze Your Email for Gmail"][2], which adds a simple "Snooze" button to the
+Gmail UI.
 
 Now that these two things are taken care of, there is a simple set of rules to
 be used when a new email comes in:

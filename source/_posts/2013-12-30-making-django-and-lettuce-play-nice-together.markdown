@@ -191,8 +191,8 @@ against your default database.
 
 ## Sources
 
-You can find some more details on Lettuce and Django integration here: [Web
-development fun with Lettuce and Django][1].
+You can find some more details on Lettuce and Django integration here:
+[Web development fun with Lettuce and Django][1].
 
 ## Update
 
