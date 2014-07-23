@@ -5,9 +5,12 @@ tags: [decorator, doctest, python]
 title: Python doctests and decorators bug
 ---
 
-Now, this as well might be a feature, but doctest strings are not being executed for decorated functions (at least in version 2.7). However, there is a workaround.
+Now, this as well might be a feature, but doctest strings are not being
+executed for decorated functions (at least in version 2.7). However, there is a
+workaround.
 
-You need to decorate your functions with `functools.wraps` within a decorator to import docstrings into a decorator scope.
+You need to decorate your functions with `functools.wraps` within a decorator
+to import docstrings into a decorator scope.
 
     #!/usr/bin/env python
 

@@ -5,13 +5,15 @@ tags: [gpg, linux]
 title: GPG Usage
 ---
 
-To encrypt and decrypt files in Linux there is a utility called `gpg` (Gnu Privacy Guard). This is a short GPG tutorial.
+To encrypt and decrypt files in Linux there is a utility called `gpg` (Gnu
+Privacy Guard). This is a short GPG tutorial.
 
 ## Quick usage example
 
     gpg -c foo.txt
 
-It will prompt you for the passphrase and a confirmation. Now you will have the encrypted `foo.txt.gpg` file. To decrypt a file:
+It will prompt you for the passphrase and a confirmation. Now you will have the
+encrypted `foo.txt.gpg` file. To decrypt a file:
 
     gpg -d foo.txt.gpg
 
@@ -21,7 +23,8 @@ gpg -d foo.txt.gpg > foo.txt
 
 ## GPG keyring
 
-This is all secure, but not quite enough if you are paranoid. Keys are what makes `gpg` great. Let's generate a private key:
+This is all secure, but not quite enough if you are paranoid. Keys are what
+makes `gpg` great. Let's generate a private key:
 
     gpg --gen-key
 
@@ -29,12 +32,14 @@ And create an ASCII version of a public key:
 
     gpg --armor --export "John Doe" --output johndoe.txt
 
-Public key `johndoe.txt` can be freely distributed. Now you can encrypt files for yourself only:
+Public key `johndoe.txt` can be freely distributed. Now you can encrypt files
+for yourself only:
 
     gpg -e -r "John Doe" foo.txt
 
-Now if you decrypt a file it will require the passphrase you specified while generating a key.
-To encrypt a file for someone else you should have this person's public key.
+Now if you decrypt a file it will require the passphrase you specified while
+generating a key. To encrypt a file for someone else you should have this
+person's public key.
 
 Let's assume Stan Smith sent you a key, `stansmith.txt`. You import it using:
 

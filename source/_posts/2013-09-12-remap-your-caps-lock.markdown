@@ -4,17 +4,29 @@ date: 2013-09-12 01:26:15+00:00
 title: Remap your Caps Lock
 ---
 
-The following three paragraphs are an angry `Caps Lock` rant. Feel free to skip past it or join me by commenting below.
+The following three paragraphs are an angry `Caps Lock` rant. Feel free to skip
+past it or join me by commenting below.
 
-I've had it with `Caps Lock`! How many times did I accidentally press it while hitting the `A` key! How many times did I mean `Tab` or `Shift`! There is an obvious problem with the `Caps Lock` placement, and there being only a millimeter of space to designate it from an adjacent key, it is quite difficult to notice when you accidentally press it.
+I've had it with `Caps Lock`! How many times did I accidentally press it while
+hitting the `A` key! How many times did I mean `Tab` or `Shift`! There is an
+obvious problem with the `Caps Lock` placement, and there being only a
+millimeter of space to designate it from an adjacent key, it is quite difficult
+to notice when you accidentally press it.
 
-Pushing `Caps Lock` is more tolerable when typing, but while using keyboard controlled software it's a real pain; `vim` turns into a beeping ravaging nightmare, `vimperator` messes up all your bookmarks... Same thing with websites supporting keyboard shortcuts.
+Pushing `Caps Lock` is more tolerable when typing, but while using keyboard
+controlled software it's a real pain; `vim` turns into a beeping ravaging
+nightmare, `vimperator` messes up all your bookmarks... Same thing with
+websites supporting keyboard shortcuts.
 
-When was the last time I ever used `Caps Lock`? Over ten years ago, when I was playing a video game that used `Caps Lock` to switch between running and walking. Em... Seriously? Time to put an end this nonsense.
+When was the last time I ever used `Caps Lock`? Over ten years ago, when I was
+playing a video game that used `Caps Lock` to switch between running and
+walking. Em... Seriously? Time to put an end this nonsense.
 
 ## Linux and Mac
 
-Drop this into your `~/bin/capslockremap`, and don't forget to `chmod +x ~/bin/capslockremap`. Now run the script with root privileges (that'll last you until the next restart).
+Drop this into your `~/bin/capslockremap`, and don't forget to `chmod +x
+~/bin/capslockremap`. Now run the script with root privileges (that'll last you
+until the next restart).
 
     #!/bin/sh
 
@@ -45,6 +57,10 @@ Drop this into your `~/bin/capslockremap`, and don't forget to `chmod +x ~/bin/c
 
 ## Windows
 
-Download [Sysinternals Ctrl2Cap v2.0](http://technet.microsoft.com/en-us/sysinternals/bb897578.aspx), run it as Administrator with `install` flag: `ctrl2cap.exe /install`.
+Download [Sysinternals Ctrl2Cap v2.0][1], run it as Administrator with
+`install` flag: `ctrl2cap.exe /install`.
 
-Source [CapsLock Remap Howto - Noah.org](http://www.noah.org/wiki/CapsLock_Remap_Howto).
+Source [CapsLock Remap Howto - Noah.org][2].
+
+[1]: http://technet.microsoft.com/en-us/sysinternals/bb897578.aspx
+[2]: http://www.noah.org/wiki/CapsLock_Remap_Howto

@@ -5,9 +5,13 @@ tags: [git, gitolite]
 title: Create gitolite repository
 ---
 
-A reminder on how to initialize a fresh gitolite repository, assuming that gitolite has already been set up.
+A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up.
 
-All actions are performed on a local machine. In this case: `~/gitolite-admin` is admin repository, `~/foo` is desired repository, `rosipov.com` is gitolite hostname. Command `vi` stands for the text editor, but you may use whichever editor you prefer.
+All actions are performed on a local machine. In this case: `~/gitolite-admin`
+is admin repository, `~/foo` is desired repository, `rosipov.com` is gitolite
+hostname. Command `vi` stands for the text editor, but you may use whichever
+editor you prefer.
 
     cd ~/gitolite-admin
     vi conf/gitolite.conf

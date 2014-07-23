@@ -7,12 +7,14 @@ title: Download gists from prompt
 
 I wrote a little script to download gists from the command prompt.
 
-Generate your Github API Token under Settings -> Applications, change it within a script, and then:
+Generate your Github API Token under Settings -> Applications, change it within
+a script, and then:
 
     chmod +x shgist.py
     mv shgist.py ~/bin/shgist
 
-Where ~/bin is a directory in your path. Now you can use it as shgist file to quickly download your gists ([Gist on Github](https://gist.github.com/ruslanosipov/5599377)).
+Where ~/bin is a directory in your path. Now you can use it as shgist file to
+quickly download your gists ([Gist on Github][1]).
 
     #!/usr/bin/env python
 
@@ -109,3 +111,5 @@ Where ~/bin is a directory in your path. Now you can use it as shgist file to qu
 
     gist = Gist(token)
     gist.find_by_name(argv)
+
+[1]: https://gist.github.com/ruslanosipov/5599377

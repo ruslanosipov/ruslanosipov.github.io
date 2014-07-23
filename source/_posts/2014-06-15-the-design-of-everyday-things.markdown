@@ -4,16 +4,69 @@ date: 2014-06-15 21:23:50+00:00
 title: '"The Design of Everyday Things"'
 ---
 
-Unfortunately, I have not been reading as much as I would love to lately. In the past year I have only read two books, one of which was a technical manual. Don't get me wrong, I still had a lot of personal and professional growth going on: reading blogs, articles, guides, watching keynote talks... But I did miss the feeling of holding a good book in my hands, turning the pages with the tips of my fingers, seeing the texture of the paper under the print. A few weeks ago I went ahead and ordered one of the books on my reading list: "The Design of Everyday Things" by Donald A. Norman. I just finished reading it a few hours ago and am eager to share my impressions of the book.
+Unfortunately, I have not been reading as much as I would love to lately. In
+the past year I have only read two books, one of which was a technical manual.
+Don't get me wrong, I still had a lot of personal and professional growth going
+on: reading blogs, articles, guides, watching keynote talks... But I did miss
+the feeling of holding a good book in my hands, turning the pages with the tips
+of my fingers, seeing the texture of the paper under the print. A few weeks ago
+I went ahead and ordered one of the books on my reading list: "The Design of
+Everyday Things" by Donald A. Norman. I just finished reading it a few hours
+ago and am eager to share my impressions of the book.
 
-"The Design of Everyday Things" turned out to be one of the most eye-opening books about design I have ever read (alright, alright, I haven't read any design books before). It's mind blowing to think that I have never considered the points brought up by the authors. Hell, (and I will probably have rotten tomatoes thrown at me for this statement) but I didn't even think design was a "real" job. Oh dear, how wrong I was.
+"The Design of Everyday Things" turned out to be one of the most eye-opening
+books about design I have ever read (alright, alright, I haven't read any
+design books before). It's mind blowing to think that I have never considered
+the points brought up by the authors. Hell, (and I will probably have rotten
+tomatoes thrown at me for this statement) but I didn't even think design was a
+"real" job. Oh dear, how wrong I was.
 
-Norman's masterpiece talks about the psychology of everyday things (which was actually the initial title of the book, but was changed to "Design" after the first release). The author explains how users make decisions, use objects, make errors - and so many other factors which should go into the design process. Norman explains fundamental basics of the psychology of human-object interaction, something most people never think about. How hard could it be to design a door? Turns out the answer is - very hard. And every time you see someone pulling the door instead of pushing and vice versa - it's a result of a poor design. So many everyday frustrations could have been avoided if designers would have put more thought into usability of their product.
+Norman's masterpiece talks about the psychology of everyday things (which was
+actually the initial title of the book, but was changed to "Design" after the
+first release). The author explains how users make decisions, use objects, make
+errors - and so many other factors which should go into the design process.
+Norman explains fundamental basics of the psychology of human-object
+interaction, something most people never think about. How hard could it be to
+design a door? Turns out the answer is - very hard. And every time you see
+someone pulling the door instead of pushing and vice versa - it's a result of a
+poor design. So many everyday frustrations could have been avoided if designers
+would have put more thought into usability of their product.
 
-I build software for living, and I was skeptical if I even needed to know anything about good design. I mean, how hard could it be to put together a few pages and forms? "I tackle complex software problems, I don't need any of this liberal arts bullshit!" - I thought that way, and I know many people who still do. Well, Norman's book is a great starter for people like me: he does a great job explaining why the design process so important. By the time I finished reading it, I had a pretty solid set of ideas why there are so many things wrong with our industry, and how good, thoughtful design is a way out. The funniest part is - the book itself is published in the year 1988, over twenty-five years ago. It doesn't talk much about computers, concentrating on objects more common at the time: cars, telephone systems, even stoves and dish washing machines. And here I am, reading this book in the year 2014 - and the situation did not change at all. Expensive laundry machines are as hard to operate, computer programs are as clunky.
+I build software for living, and I was skeptical if I even needed to know
+anything about good design. I mean, how hard could it be to put together a few
+pages and forms? "I tackle complex software problems, I don't need any of this
+liberal arts bullshit!" - I thought that way, and I know many people who still
+do. Well, Norman's book is a great starter for people like me: he does a great
+job explaining why the design process so important. By the time I finished
+reading it, I had a pretty solid set of ideas why there are so many things
+wrong with our industry, and how good, thoughtful design is a way out. The
+funniest part is - the book itself is published in the year 1988, over
+twenty-five years ago. It doesn't talk much about computers, concentrating on
+objects more common at the time: cars, telephone systems, even stoves and dish
+washing machines. And here I am, reading this book in the year 2014 - and the
+situation did not change at all. Expensive laundry machines are as hard to
+operate, computer programs are as clunky.
 
-"The Design of Everyday Things" compels the reader to become a part of the solution to this enormous and bulky design problem the world is stuck with. In the everyday world, for every good case of design out there, you will face a hundred faulty, frustrating, and downright insulting design attempts.
+"The Design of Everyday Things" compels the reader to become a part of the
+solution to this enormous and bulky design problem the world is stuck with. In
+the everyday world, for every good case of design out there, you will face a
+hundred faulty, frustrating, and downright insulting design attempts.
 
-The book is very easy and pleasant to read, and I went through it in under a week. Most of it is a set of rants about poor design decisions, with suggested improvements and solutions. Throughout the reading process, I had to revisit the systems I built at work and rearrange the components, add more feedback to user's actions, and do many other little and big improvements in order to make make the system image much more transparent to the user. Norman taught me the most obvious truth: a designer is not your typical user of the system. This changes so many things, makes you doubt and rethink a number of design decisions you made along the way - all in order to build a product that is easy and pleasant to use.
+The book is very easy and pleasant to read, and I went through it in under a
+week. Most of it is a set of rants about poor design decisions, with suggested
+improvements and solutions. Throughout the reading process, I had to revisit
+the systems I built at work and rearrange the components, add more feedback to
+user's actions, and do many other little and big improvements in order to make
+make the system image much more transparent to the user. Norman taught me the
+most obvious truth: a designer is not your typical user of the system. This
+changes so many things, makes you doubt and rethink a number of design
+decisions you made along the way - all in order to build a product that is easy
+and pleasant to use.
 
-I now consider myself to be blessed with an understanding of the importance of good design, and admitting there is a problem is the first step to fixing it. And believe me, there is a problem. I will now continue learning about the best practices in building systems that are easy to understand and pleasant to operate for the user. My next stop is "Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability" by Steve Krug. I've heard a lot about this book, and I will be sure to share my impressions here.
+I now consider myself to be blessed with an understanding of the importance of
+good design, and admitting there is a problem is the first step to fixing it.
+And believe me, there is a problem. I will now continue learning about the best
+practices in building systems that are easy to understand and pleasant to
+operate for the user. My next stop is "Don't Make Me Think, Revisited: A Common
+Sense Approach to Web Usability" by Steve Krug. I've heard a lot about this
+book, and I will be sure to share my impressions here.

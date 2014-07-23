@@ -5,7 +5,9 @@ tags: [c]
 title: C - Reallocating memory for the array
 ---
 
-I just started delving into C and I had some issues with increasing the memory allocation size for my array. The best way to understand something - write a detailed explanation of the process. So here we go:
+I just started delving into C and I had some issues with increasing the memory
+allocation size for my array. The best way to understand something - write a
+detailed explanation of the process. So here we go:
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -19,7 +21,9 @@ I just started delving into C and I had some issues with increasing the memory
         return 0;                              // operations
     }
 
-We have a pointer to the pointer to the array, pointer to the array's length, and a value to append to the array. Array is passed as a pointer to pointer so we will be able to 'repoint' the original pointer to a new memory segment.
+We have a pointer to the pointer to the array, pointer to the array's length,
+and a value to append to the array. Array is passed as a pointer to pointer so
+we will be able to 'repoint' the original pointer to a new memory segment.
 
 Let's call the function a few times and see what it gives us.
 
@@ -47,7 +51,8 @@ And the output is:
     142
     19
 
-You can never be sure when you work with memory, so let's add some error handling in case the operation fails.
+You can never be sure when you work with memory, so let's add some error
+handling in case the operation fails.
 
     int append_array_element(int **array, int *array_length, int element) {
         *array_length += 1;
@@ -63,7 +68,10 @@ You can never be sure when you work with memory, so let's add some error handlin
         return 0;
     }
 
-Now we will be able to handle the crash on our own. But reallocation is not a very fast thing, so let's double the amount of reallocated memory every time we run out of allocated memory. We'll need one more variable to track the current allocated memory size.
+Now we will be able to handle the crash on our own. But reallocation is not a
+very fast thing, so let's double the amount of reallocated memory every time we
+run out of allocated memory. We'll need one more variable to track the current
+allocated memory size.
 
     int append_array_element(int **array, int *array_length,
                              int *array_alloc_length, int element) {
@@ -134,7 +142,10 @@ And for the fun of it, let's do the same with 100 elements:
     99
     Array length: 100, allocated elements: 128
 
-Let's improve the function a little bit more - and we are good to go. Let's say we have a dynamic array with 129 elements - but we will have allocated memory for 256 elements... It is 127 more then we need! We don't want to be greedy, so let's find a way to free up the memory.
+Let's improve the function a little bit more - and we are good to go. Let's say
+we have a dynamic array with 129 elements - but we will have allocated memory
+for 256 elements... It is 127 more then we need! We don't want to be greedy, so
+let's find a way to free up the memory.
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -167,7 +178,8 @@ Let's improve the function a little bit more - and we are good to go. Let's say 
         return 0;
     }
 
-That should be pretty straight-forward. And let's call it two more times with 10 and 100 elements:
+That should be pretty straight-forward. And let's call it two more times with
+10 and 100 elements:
 
     int main() {
         int *array = NULL;

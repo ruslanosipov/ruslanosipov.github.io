@@ -5,9 +5,14 @@ tags: [mutt]
 title: Elegant Mutt setup for use with Gmail
 ---
 
-I have been using Mutt for a while now. Wouldn't say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice - Vim. Everything else - keyboard shortcuts, minimalist design, and simplicity - already exists in Gmail.
+I have been using Mutt for a while now. Wouldn't say that it saves my time, but
+nor does it extend the amount of time I spend reading email. For me, the best
+part about Mutt is that it lets me use text editor of my choice - Vim.
+Everything else - keyboard shortcuts, minimalist design, and simplicity -
+already exists in Gmail.
 
-I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here's my `.muttrc` file:
+I found configuration below to work really well for my needs: all of the
+important for me Gmail features are translated. Here's my `.muttrc` file:
 
     bind editor <space> noop
     set alias_file        = '~/.mutt/aliases.txt'
@@ -41,14 +46,23 @@ I found configuration below to work really well for my needs: all of the importa
 
 It is quite self-explanatory, and includes such nice features as:
 
-  * Automatically adding addresses from read emails to address book (see below).
-  * Using vim as a text editor, with an ability to edit message headers/recipients from within vim.
-  * Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.
-  * Key bindings to delete and archive messages bound to `d` and `y` respectfully (I am a huge fun of a zero-mail inbox).
+  * Automatically adding addresses from read emails to address book (see
+    below).
+  * Using vim as a text editor, with an ability to edit message
+    headers/recipients from within vim.
+  * Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
+    Starred, Trash.
+  * Key bindings to delete and archive messages bound to `d` and `y`
+    respectfully (I am a huge fun of a zero-mail inbox).
 
-You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your `.muttrc` file. You can read how to do this here: [Using Mutt with GPG](http://www.rosipov.com/blog/using-mutt-with-gpg/).
+You might also want to have your password encrypted by GPG as opposed to
+leaving it in plain text in your `.muttrc` file. You can read how to do this
+here: [Using Mutt with GPG](http://www.rosipov.com/blog/using-mutt-with-gpg/).
 
-As you may have noticed, `.muttrc` above sets `display_filter` to `$HOME/.mutt/aliases.sh`. This script is being executed every time you read an email, and it collects email address to `$HOME/.mutt/aliases.txt`. Contents of the `aliases.sh` are below:
+As you may have noticed, `.muttrc` above sets `display_filter` to
+`$HOME/.mutt/aliases.sh`. This script is being executed every time you read an
+email, and it collects email address to `$HOME/.mutt/aliases.txt`. Contents of
+the `aliases.sh` are below:
 
     #!/bin/sh
 
@@ -68,4 +82,5 @@ As you may have noticed, `.muttrc` above sets `display_filter` to `$HOME/.mutt/a
 
     echo "${MESSAGE}"
 
-This script will create `aliases.txt` file containing email addresses for search and auto completion of email-addresses.
+This script will create `aliases.txt` file containing email addresses for
+search and auto completion of email-addresses.

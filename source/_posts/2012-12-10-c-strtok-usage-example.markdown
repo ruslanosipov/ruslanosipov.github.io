@@ -5,9 +5,11 @@ tags: [c]
 title: C strtok usage example
 ---
 
-I had some issues with the `strtok` function. Here's a detailed explanation and usage for it.
+I had some issues with the `strtok` function. Here's a detailed explanation and
+usage for it.
 
-The `strtok` function is used to tokenize a string and thus separates it into multiple strings divided by a delimiter.
+The `strtok` function is used to tokenize a string and thus separates it into
+multiple strings divided by a delimiter.
 
     #include <stdio.h>
     #include <string.h>
@@ -52,4 +54,7 @@ Let's compile and execute it:
     bar
     baz
 
-The first call to `strtok` returns the pointer to the first substring. All the next calls with the first argument being `NULL` use the string passed at the first call and return the next substring. The function returns `NULL` if no more substrings are available.
+The first call to `strtok` returns the pointer to the first substring. All the
+next calls with the first argument being `NULL` use the string passed at the
+first call and return the next substring. The function returns `NULL` if no
+more substrings are available.

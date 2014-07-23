@@ -6,24 +6,33 @@ tags: [git, vim]
 title: Vim, pathogen and git submodules
 ---
 
-This is a step by step tutorial on how to organize your vim config files using git, pathogen, and git submodules. This tutorial assumes that you are familiar with git basics, but you don't really need to understand every step in order to follow it. For simplicity, only `.vim` directory is a repository in this example. You may want to have all your dotfiles under version control and use a script to symlink files to the home directory. For example see [https://github.com/ruslanosipov/dotfiles](https://github.com/ruslanosipov/dotfiles).
+This is a step by step tutorial on how to organize your vim config files using
+git, pathogen, and git submodules. This tutorial assumes that you are familiar
+with git basics, but you don't really need to understand every step in order to
+follow it. For simplicity, only `.vim` directory is a repository in this
+example. You may want to have all your dotfiles under version control and use a
+script to symlink files to the home directory. For example see
+<https://github.com/ruslanosipov/dotfiles>.
 
 ## Setting up
 
-Let's assume your `.vim` directory is a mess and is not under revision control. Let's initialize a repository.
+Let's assume your `.vim` directory is a mess and is not under revision control.
+Let's initialize a repository.
 
     cd ~/.vim
     git init
     git remote add origin git@github.com:user/project.git
 
-Now let's create `.vim/bundle` directory and clone `pathogen` plugin as a submodule.
+Now let's create `.vim/bundle` directory and clone `pathogen` plugin as a
+submodule.
 
     mkdir bundle
     cd bundle
     git submodule add git@github.cfm:tpope/vim-pathogen.git
     bundle/vim-pathogen
 
-Pre-pend the following code to your `~/.vimrc` to load pathogen from non-default directory:
+Pre-pend the following code to your `~/.vimrc` to load pathogen from
+non-default directory:
 
     runtime bundle/vim-pathogen/autoload/pathogen.vim
     execute pathogen#infect()
@@ -50,7 +59,9 @@ And you are done, all plugins are downloaded from their repositories now.
 
 ## Maintaining
 
-Git submodules keep track of specific commits and are not being automatically updated when target repositories have new commits. In order to update plugins you have:
+Git submodules keep track of specific commits and are not being automatically
+updated when target repositories have new commits. In order to update plugins
+you have:
 
     cd ~/.vim
     git submodule foreach git pull
@@ -58,4 +69,5 @@ Git submodules keep track of specific commits and are not being automatically up
     git commit -m "Updated all the plugins in a bundle"
     git push origin master
 
-You probably want to make sure that new versions of plugins are compatible with each other before committing, however.
+You probably want to make sure that new versions of plugins are compatible with
+each other before committing, however.

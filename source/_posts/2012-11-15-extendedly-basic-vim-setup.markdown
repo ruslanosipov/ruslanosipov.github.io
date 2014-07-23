@@ -5,7 +5,11 @@ tags: [vim]
 title: Extendedly basic vim setup
 ---
 
-Ahoy Internet, here's a neat and fairly simple vim configuration for programming. Feel free to copy over settings/plugins you find useful, or just grab the ready-to-go [archive](http://www.rosipov.com/blog/wp-content/uploads/2012/11/vim.zip) with settings and plugins. Unzip it into root directory and you're good to go ([ctags](http://ctags.sourceforge.net/) plugin is not included, you may want to get it yourself).
+Ahoy Internet, here's a neat and fairly simple vim configuration for
+programming. Feel free to copy over settings/plugins you find useful, or just
+grab the ready-to-go [archive][1] with settings and plugins. Unzip it into root
+directory and you're good to go ([ctags][2] plugin is not included, you may
+want to get it yourself).
 
 ## The .vimrc file
 
@@ -114,20 +118,35 @@ Ahoy Internet, here's a neat and fairly simple vim configuration for programming
 
 ## Plugins
 
-If you are not planning to use some of the plugins, make sure to remove plugin-specific rules from .vimrc => Plugins.
+If you are not planning to use some of the plugins, make sure to remove
+plugin-specific rules from .vimrc => Plugins.
 
-[Exuberant Ctags](http://ctags.sourceforge.net/): allows you to generate index of variables, functions and classes to freely move between them. A bit more info on how to use these in article [Using vim for writing code](http://www.rosipov.com/blog/using-vim-for-writing-code/).
-
-[Colo(u)r Sampler Pack](http://www.vim.org/scripts/script.php?script_id=625) is not really a plugin, but a collection of color shemes. 100 of them, to be precise. Feel free to choose whatever you like.
-
-[ScrollColors](http://www.vim.org/scripts/script.php?script_id=1488) allows you to try out every theme in visual mode. Just type in `:SCROLL`.
-
-[EasyMotion](http://www.vim.org/scripts/script.php?script_id=3526) allows you to move between words, lines and sentences with a lightning speed. Just hit `<Leader> + w` to jump to one of the words forward or `<Leader> + b` backward (leader key is a backslash by default ``). It can do more neat things, documentation is pretty self-explanatory.
-
-[NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) is a directory tree, like in all modern IDEs (but of course better).
-
-[tComment](http://www.vim.org/scripts/script.php?script_id=1173) allows you to easily comment out blocks of code. Hit `gcc` to comment a line or `gc` while selecting a block in `V`isual mode.
+* [Exuberant Ctags][2]: allows you to generate index of variables, functions
+  and classes to freely move between them. A bit more info on how to use these
+  in article [Using vim for writing code][3].
+* [Colo(u)r Sampler Pack][4] is not really a plugin, but a collection of color
+  shemes. 100 of them, to be precise. Feel free to choose whatever you like.
+* [ScrollColors][5] allows you to try out every theme in visual mode. Just type
+  in `:SCROLL`.
+* [EasyMotion][6] allows you to move between words, lines and sentences with a
+  lightning speed. Just hit `<Leader> + w` to jump to one of the words forward
+  or `<Leader> + b` backward (leader key is a backslash by default). It can
+  do more neat things, documentation is pretty self-explanatory.
+* [NERDTree][7] is a directory tree, like in all modern IDEs (but of course
+  better).
+* [tComment][8] allows you to easily comment out blocks of code. Hit `gcc` to
+  comment a line or `gc` while selecting a block in `V`isual mode.
 
 ## Source
 
-You may want to head over to GitHub and grab a version from here: [https://github.com/ruslanosipov/dotfiles](https://github.com/ruslanosipov/dotfiles).
+You may want to head over to GitHub and grab a version from here:
+<https://github.com/ruslanosipov/dotfiles>.
+
+[1]: http://www.rosipov.com/blog/wp-content/uploads/2012/11/vim.zip
+[2]: http://ctags.sourceforge.net/
+[3]: http://www.rosipov.com/blog/using-vim-for-writing-code/
+[4]: http://www.vim.org/scripts/script.php?script_id=625
+[5]: http://www.vim.org/scripts/script.php?script_id=1488
+[6]: http://www.vim.org/scripts/script.php?script_id=3526
+[7]: http://www.vim.org/scripts/script.php?script_id=1658
+[8]: http://www.vim.org/scripts/script.php?script_id=1173

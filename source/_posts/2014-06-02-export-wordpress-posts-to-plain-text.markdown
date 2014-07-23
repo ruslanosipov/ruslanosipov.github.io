@@ -5,11 +5,16 @@ tags: [python, wordpress]
 title: Export WordPress posts to plain text
 ---
 
-I prefer to create and edit my posts in plain text. It's a timeless format, and I find it nice to have an archive of posts lying around in plain text.
+I prefer to create and edit my posts in plain text. It's a timeless format, and
+I find it nice to have an archive of posts lying around in plain text.
 
-I wrote a little Python script which I used to extract an archive of my posts and pages into a bunch of files on my computer. In order to use it, you need to use "[WordPress Importer](http://wordpress.org/plugins/wordpress-importer/)" plugin. Export your posts and pages into a WXR format, and feed the file to the script.
+I wrote a little Python script which I used to extract an archive of my posts
+and pages into a bunch of files on my computer. In order to use it, you need to
+use "[WordPress Importer][1]" plugin. Export your posts and pages into a WXR
+format, and feed the file to the script.
 
-Source code of the script is below (link for downloading the script is at the bottom of this post):
+Source code of the script is below (link for downloading the script is at the
+bottom of this post):
 
     #!/usr/bin/env python
 
@@ -81,4 +86,7 @@ Source code of the script is below (link for downloading the script is at the bo
     if __name__ == "__main__":
         main(sys.argv)
 
-You can download the script from here: [wxr2txt.py](https://gist.github.com/ruslanosipov/b748a138389db2cda1e8).
+You can download the script from here: [wxr2txt.py][2].
+
+[1]: http://wordpress.org/plugins/wordpress-importer/
+[2]: https://gist.github.com/ruslanosipov/b748a138389db2cda1e8
