@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-21T12:17:32-07:00</updated>
+  <updated>2014-07-22T20:33:46-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
+    <link href="http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress/"/>
+    <updated>2014-07-22T00:04:15-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress</id>
+    <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
+<a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
+
+<h2>Why the migration?</h2>
+
+<p>WordPress was a great host for me at one point &ndash; the community is fun and no
+work is required for setup (I would rather not waste time fiddling with my blog
+too much). But a number of things are off-putting:</p>
+
+<ul>
+<li>I don&rsquo;t like WYSIWYG editors and I don&rsquo;t like web editors. I try to use my
+favorite editor for everything, including mail, documentation, note taking.
+Even though WordPress allowed me to write my posts using Markdown, I still
+didn&rsquo;t like not being able to use my favorite editor or environment.</li>
+<li>Storing all the entries in a MySQL database is not favorable. I am writing
+text, why would I pick any other format to store what I wrote?</li>
+<li>Over the years my blog became increasingly slow, and in order to have a
+reasonably fast site I needed to pay quite a sum of money. I am not ready for
+such a commitment, since I only occasionally update this blog.</li>
+</ul>
+
+
+<p>On the other hand, Octopress (which is based on Jekyll, a static site
+generator) has all of these concerns covered:</p>
+
+<ul>
+<li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
+write, or how I write. This enables me to use an editor of my choice.</li>
+<li>Plain text is universal. It can be viewed by a human, edited in any piece of
+software, printed out, emailed, piped to a Linux program &ndash; just about
+anything really.</li>
+<li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
+rendering.  The only real speed limit is network latency. In addition, GitHub
+lets you host static sites for free. What else could you ask for?</li>
+</ul>
+
+
+<h2>The process is painless</h2>
+
+<p>Switching from WordPress to Octopress was very easy, and it took me only a few
+hours (spread out throughout one weekend). Some highlights:</p>
+
+<ol>
+<li>Comments in Octopress are handled by <a href="https://disqus.com">Disqus</a>, and I had to set that up
+on my WordPress blog before transitioning in order to transfer all the
+comments.</li>
+<li>I used the <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">WordPress to Jekyll Exporter</a> tool to export all my posts
+from WordPress to Markdown (with meta-data which Octopress understands). I only
+had a bit over 50 posts to worry about, so the process was complete in an
+instant.</li>
+<li>I ran some custom Vim macros to remove and change some excess meta data, as
+well as clean up Markdown formatting. I am a perfectionist, and the exporter
+tool left me with a poorly formatted document. I couldn&rsquo;t let that happen.</li>
+</ol>
+
+
+<h2>Results are breathtaking</h2>
+
+<p>After only a few hours of work, I had a lightning fast, simple, and pragmatic
+blog. There is no excess configuration, comments are handled externally, and
+the source code for the site and articles is available on GitHub. I am able to
+write my posts using Markdown, in my favorite editor, and use git to publish
+the resulting articles.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA["The Pragmatic Programmer"]]></title>
@@ -757,30 +828,6 @@ Destroying test database for alias 'default'...
     <content type="html"><![CDATA[<p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command with a number to go multiple files back. You can also travel forward in &ldquo;file history&rdquo; by using <code>Ctrl-I</code>.</p>
 
 <p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Old file version in split with vim]]></title>
-    <link href="http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim/"/>
-    <updated>2013-11-23T20:14:19-08:00</updated>
-    <id>http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim</id>
-    <content type="html"><![CDATA[<p>If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command:</p>
-
-<pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
-</code></pre>
-
-<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s extension, like following:</p>
-
-<pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
-</code></pre>
-
-<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you would like to go back in history by. For example, if you would like to get a version of the file 4 commits ago &ndash; you can do so by executing following command:</p>
-
-<pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
-</code></pre>
-
-<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the file you are working on.</p>
 ]]></content>
   </entry>
   

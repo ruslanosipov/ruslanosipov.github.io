@@ -9,7 +9,7 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and I find it nice to have an archive of posts lying around in &hellip;">
+  <meta name="description" content="I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists, written notes, and just about anything that will let me arrange &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-07T12:11:54-07:00" pubdate data-updated="true">Jun 7<sup>th</sup>, 2014</time>
+        
+           | <a href="/blog/why-i-threw-away-my-to-do-list/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists, written notes, and just about anything that will let me arrange my tasks instead of actually accomplishing them. I recently stopped writing things down, and the results were pleasantly surprising&hellip;</p>
+
+<p>I was keeping a list of things I would need to complete. I organized it by priorities, and at some point I even used Gina&rsquo;s fancy &ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
+
+<p>What I realized after using such a scheme, is that my list was growing longer and longer with every week. After a while, the number of tasks became hard to manage, and the number of tasks became permanent residents on my task list. Why did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;. Complete a task, check off a check box. There was no mindfulness about it: I was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move to a next one.&rdquo; &ndash; this is what was constantly running through my head. Secondly, by writing down a task on my list in the first place, my brain would register it as being completed, and then I&rsquo;d go on with my day. Needless to say, certain tasks would sit on my list for an indefinite amount of time.</p>
+
+<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a simple question: &ldquo;What should I do today to succeed at what I am trying to accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing tasks which provide the biggest impact, dedicating some days just to minor &ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
+
+<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful about my day, I know exactly what I need to accomplish in order to succeed. It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t just a list of things to do, but a number of goals you want to reach. By not relying on a written manifesto cluttered with tasks, I am forced to concentrate on the bigger picture, where what I set out to accomplish has the highest possible impact on my life and career.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -378,113 +425,6 @@ def ignored(*exceptions):
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/elegant-mutt-setup-for-use-with-gmail/">Elegant Mutt setup for use with Gmail</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-28T14:33:55-07:00" pubdate data-updated="true">May 28<sup>th</sup>, 2014</time>
-        
-           | <a href="/blog/elegant-mutt-setup-for-use-with-gmail/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but nor does it extend the amount of time I spend reading email. For me, the best part about Mutt is that it lets me use text editor of my choice &ndash; Vim. Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash; already exists in Gmail.</p>
-
-<p>I found configuration below to work really well for my needs: all of the important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
-
-<pre><code>bind editor &lt;space&gt; noop
-set alias_file        = '~/.mutt/aliases.txt'
-set copy              = no
-set display_filter    = '$HOME/.mutt/aliases.sh'
-set edit_headers
-set editor            = "vim +/^$ ++1"
-set folder            = "imaps://imap.gmail.com/"
-set hostname          = "gmail.com"
-set imap_check_subscribed
-set imap_pass         = "$PASSWORD"
-set imap_user         = "$USERNAME"
-set mail_check        = 5
-set move              = no
-set postponed         = "+[Gmail]/Drafts"
-set spoolfile         = "+INBOX"
-set text_flowed       = yes
-unset imap_passive
-unset record
-
-# Gmail-style keyboard shortcuts
-macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
-macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
-macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
-macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
-macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
-macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
-macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
-
-source $alias_file
-</code></pre>
-
-<p>It is quite self-explanatory, and includes such nice features as:</p>
-
-<ul>
-<li>Automatically adding addresses from read emails to address book (see below).</li>
-<li>Using vim as a text editor, with an ability to edit message headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox, Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code> respectfully (I am a huge fun of a zero-mail inbox).</li>
-</ul>
-
-
-<p>You might also want to have your password encrypted by GPG as opposed to leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
-
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to <code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of the <code>aliases.sh</code> are below:</p>
-
-<pre><code>#!/bin/sh
-
-MESSAGE=$(cat)
-
-AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
-AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
-AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
-
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
-
-if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
-    :
-else
-    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
-fi
-
-echo "${MESSAGE}"
-</code></pre>
-
-<p>This script will create <code>aliases.txt</code> file containing email addresses for search and auto completion of email-addresses.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -500,6 +440,10 @@ echo "${MESSAGE}"
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
@@ -535,10 +479,6 @@ echo "${MESSAGE}"
     
       <li class="post">
         <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
       </li>
     
   </ul>

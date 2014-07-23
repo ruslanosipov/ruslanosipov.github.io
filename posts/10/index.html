@@ -9,7 +9,7 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for programming. Feel free to copy over settings/plugins you find useful, or &hellip;">
+  <meta name="description" content="A quick note on how to set up GUI difftool to use with git on Windows (Git Bash, Cygwin, etc&hellip;). Download and install GUI diff tool of your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/gui-git-difftool-for-windows/">GUI git difftool for Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T12:02:24-08:00" pubdate data-updated="true">Dec 6<sup>th</sup>, 2012</time>
+        
+           | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/gui-git-difftool-for-windows/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A quick note on how to set up GUI difftool to use with git on Windows (Git Bash, Cygwin, etc&hellip;).</p>
+
+<p>Download and install GUI diff tool of your choice, get the path to executable.</p>
+
+<p>Create <code>difftool.sh</code> in directory included in your path (for example <code>C:\Users\{username}\bin</code> in Git Bash). Let&rsquo;s take SourceGear&rsquo;s DiffMerge as an example.</p>
+
+<pre><code>#!/bin/sh
+"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe" "$1" "$2" | cat
+</code></pre>
+
+<p>And in your ~/.gitconfig:</p>
+
+<pre><code>[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    difftool.sh "$LOCAL" "$REMOTE"
+</code></pre>
+
+<p>And difftool is available via <code>git difftool</code> command now.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -624,6 +681,10 @@ Array length: 100, allocated elements: 100
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
       </li>
     
@@ -657,10 +718,6 @@ Array length: 100, allocated elements: 100
     
       <li class="post">
         <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
       </li>
     
   </ul>

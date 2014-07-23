@@ -9,7 +9,7 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="If you use vim often &ndash; you probably had to paste something into vim from the outside source. And, if you have corresponding indentation rules, &hellip;">
+  <meta name="description" content="If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command: :vsp tmp | &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/old-file-version-in-split-with-vim/">Old file version in split with vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-23T20:14:19-08:00" pubdate data-updated="true">Nov 23<sup>rd</sup>, 2013</time>
+        
+           | <a href="/blog/old-file-version-in-split-with-vim/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/old-file-version-in-split-with-vim/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you use git VCS, you can view previous version of the file you are currently editing in a split window by executing following command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
+</code></pre>
+
+<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s extension, like following:</p>
+
+<pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
+</code></pre>
+
+<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you would like to go back in history by. For example, if you would like to get a version of the file 4 commits ago &ndash; you can do so by executing following command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
+</code></pre>
+
+<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the file you are working on.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -431,47 +485,6 @@ FAILED (failures=1)
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/pygame-font-not-found/">pygame.font not found</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-27T06:51:11-07:00" pubdate data-updated="true">Jun 27<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/pygame-font-not-found/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/pygame-font-not-found/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I had an issue with pygame not being able to find a dependency for the font module. After quite a time-consuming search the missing package name was <code>libsdl-ttf2.0-dev</code>.</p>
-
-<p>Hope this helps someone.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -487,6 +500,10 @@ FAILED (failures=1)
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/the-pragmatic-programmer/">&#8220;The Pragmatic Programmer&#8221;</a>
@@ -522,10 +539,6 @@ FAILED (failures=1)
     
       <li class="post">
         <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/why-i-threw-away-my-to-do-list/">Why I threw away my &#8220;To Do&#8221; list</a>
       </li>
     
   </ul>
