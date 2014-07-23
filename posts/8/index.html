@@ -9,9 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I had this lying around for a while now. This is great vim movement commands
-cheat sheet made by Ted Naleid (link to the original post). It does
-an &hellip;">
+  <meta name="description" content="If you visit noisy IRC channels like the programming ones on freenode, you
+probably want to ignore all the annoying status messages. To permanently &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +79,56 @@ an &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/irssi-ignore-all-from-everyone/">IRSSI - ignore all from everyone</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-27T08:37:10-07:00" pubdate data-updated="true">Mar 27<sup>th</sup>, 2013</time>
+        
+           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/irssi-ignore-all-from-everyone/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you visit noisy IRC channels like the programming ones on freenode, you
+probably want to ignore all the annoying status messages.</p>
+
+<p>To permanently ignore joins, parts, quits, and nickname changes from every
+channel in IRSSI:</p>
+
+<pre><code>/ignore * joins parts quits nicks
+/save
+</code></pre>
+
+<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
+post will keep it in my memory.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -285,71 +334,6 @@ BoldWhite        = 253, 246, 227
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/rails-and-mongodb-with-cygwin/">Rails and MongoDB with Cygwin</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-11T12:38:30-07:00" pubdate data-updated="true">Mar 11<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/rails-and-mongodb-with-cygwin/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
-
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
-may want to have more).</p>
-
-<p>The following commands are executed in the cygwin prompt:</p>
-
-<pre><code>git clone git://github.com/rubygems/rubygems.git
-cd rubygems/
-ruby setup.rb
-gem install rails
-</code></pre>
-
-<p>Go to the MongoDB website and download Windows binaries:
-<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
-to <code>C:\cygwin\usr\local\bin</code>.</p>
-
-<p>Create a directory for the db files (the default MongoDB db files directory is
-<code>C:\datadb</code>):</p>
-
-<pre><code>cd /cygdrive/c
-mkdir data
-mkdir data/db
-</code></pre>
-
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
-as you see fit.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/9">&larr; Older</a>
@@ -365,6 +349,10 @@ as you see fit.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
+      </li>
     
       <li class="post">
         <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
@@ -400,10 +388,6 @@ as you see fit.</p>
     
       <li class="post">
         <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
       </li>
     
   </ul>

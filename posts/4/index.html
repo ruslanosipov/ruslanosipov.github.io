@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
-nor does it extend the amount of time I spend reading email. &hellip;">
+  <meta name="description" content="There was a recent fantastic addition to Python 3.4 by Raymond Hettinger:
+contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,76 @@ nor does it extend the amount of time I spend reading email. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/python-ignored-context-manager/">Python: &#8220;ignored&#8221; context manager</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T12:20:34-07:00" pubdate data-updated="true">May 29<sup>th</sup>, 2014</time>
+        
+           | <a href="/blog/python-ignored-context-manager/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/python-ignored-context-manager/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
+<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
+following often-occurring pattern:</p>
+
+<pre><code>try:
+    os.remove('i_probably_do_not_exist.txt')
+except OSError:
+    pass
+</code></pre>
+
+<p>And turn it into this:</p>
+
+<pre><code>with ignored(OSError):
+    os.remove('i_probably_do_not_exist')
+</code></pre>
+
+<p>Much shorted and prettier. But, as probably most of engineers, you have to use
+older version of python in production. That&rsquo;s where this little chunk of code
+comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
+following function:</p>
+
+<pre><code>import contextlib
+
+@contextlib.contextmanager
+def ignored(*exceptions):
+    try:
+        yield
+    except exceptions:
+        pass
+</code></pre>
+
+<p>Beautiful!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -556,49 +626,6 @@ forgetting to add <code>--test-server</code> flag.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/open-previously-edited-file-in-vim/">Open previously edited file in vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-24T16:39:34-08:00" pubdate data-updated="true">Nov 24<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/open-previously-edited-file-in-vim/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/open-previously-edited-file-in-vim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command
-with a number to go multiple files back. You can also travel forward in &ldquo;file
-history&rdquo; by using <code>Ctrl-I</code>.</p>
-
-<p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -614,6 +641,10 @@ history&rdquo; by using <code>Ctrl-I</code>.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
+      </li>
     
       <li class="post">
         <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
@@ -649,10 +680,6 @@ history&rdquo; by using <code>Ctrl-I</code>.</p>
     
       <li class="post">
         <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/the-design-of-everyday-things/">&#8220;The Design of Everyday Things&#8221;</a>
       </li>
     
   </ul>

@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom/</loc>
+    <lastmod>2014-07-23T14:46:20-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress/</loc>
     <lastmod>2014-07-22T00:04:15-07:00</lastmod>
     <priority>0.8</priority>
@@ -299,28 +305,28 @@
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/</loc>
-    <lastmod>2014-07-22T21:57:44-07:00</lastmod>
+    <lastmod>2014-07-23T16:18:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/</loc>
-    <lastmod>2014-07-22T21:57:44-07:00</lastmod>
+    <lastmod>2014-07-23T16:18:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/archive/</loc>
-    <lastmod>2014-07-22T21:57:44-07:00</lastmod>
+    <lastmod>2014-07-23T16:18:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://ruslanosipov.github.io/blog/about/</loc>
-    <lastmod>2014-07-22T21:57:44-07:00</lastmod>
+    <lastmod>2014-07-23T16:18:45-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

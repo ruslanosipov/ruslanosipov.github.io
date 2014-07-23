@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-22T21:57:44-07:00</updated>
+  <updated>2014-07-23T16:18:45-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
+    <link href="http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom/"/>
+    <updated>2014-07-23T14:46:20-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
+documentation, personal Wiki, keeping work journal, blogging, writing
+challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
+writing prose in Vim might feel a bit unnatural, especially if you have a wide
+screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
+not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
+editing text in Vim sometimes might feel a bit clunky &ndash; with all the extra
+information and high-tech (or low-tech, depending on your perspective) look.</p>
+
+<p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
+Vim plugin which enters distraction-free writing mode, by centering the
+80-character block of text on your screen. It&rsquo;s highly configurable, and I
+found it to look especially pleasing on vertical monitors (which I prefer to
+use for writing). It looks presentable even on smaller screens though, here&rsquo;s a
+screenshot:</p>
+
+<p><img src="/images/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
+
+<p>Install the plugin (use a package manager like Vundle or <a href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Pathogen</a> to
+simplify the task) and add a following line to your <code>.vimrc</code>:</p>
+
+<pre><code>nnoremap &lt;Leader&gt;vr :VimroomToggle&lt;CR&gt;
+</code></pre>
+
+<p>Now, hit <code>&lt;Leader&gt;vr</code> to drop in/out of the VimRoom mode (<code>&lt;Leader</code> is a
+backslash <code>\</code> character by default).</p>
+
+<p>GitHub link: <a href="https://github.com/mikewest/vimroom">https://github.com/mikewest/vimroom</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
@@ -283,36 +319,6 @@ echo "${MESSAGE}"
 
 <p>This script will create <code>aliases.txt</code> file containing email addresses for
 search and auto completion of email-addresses.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using Mutt with GPG]]></title>
-    <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
-    <updated>2014-05-28T12:11:52-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
-    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way
-to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an
-article on how to use GPG to store your passwords: [GPG Usage], this is a more
-practical note about using GPG to store your passwords for mutt. This note
-implies that you already have installed and configured GPG (which you can learn
-how to do in above linked article).</p>
-
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code>
-with your password and <code>$ACCOUNT</code> with a desired account alias. You probably
-want to prefix this command with a space, to avoid writing your password to a
-history file.</p>
-
-<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
-</code></pre>
-
-<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
-
-<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
-</code></pre>
-
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier.
-Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
 ]]></content>
   </entry>
   
