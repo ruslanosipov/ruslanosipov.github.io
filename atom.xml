@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-22T21:50:05-07:00</updated>
+  <updated>2014-07-22T21:57:44-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -262,8 +262,9 @@ app archives all your previous conversations the moment you install it.</p>
 <p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always
 times when you can&rsquo;t reply to an email, but don&rsquo;t exactly want to keep it in
 your inbox (what an eyesore). Gmail does not provide a native way to resend
-your emails at later times, but I found a Chrome extension called <a href="https://chrome.google.com/webstore/detail/snooze-your-email-for-gma/pbmfoncgccdhoknelpglaacbgkclcape">&ldquo;Snooze Your
-Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the Gmail UI.</p>
+your emails at later times, but I found a Chrome extension called
+<a href="https://chrome.google.com/webstore/detail/snooze-your-email-for-gma/pbmfoncgccdhoknelpglaacbgkclcape">&ldquo;Snooze Your Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the
+Gmail UI.</p>
 
 <p>Now that these two things are taken care of, there is a simple set of rules to
 be used when a new email comes in:</p>
@@ -776,9 +777,9 @@ with this method, with an embarrassing error rate (which usually went up if I
 was showing something to someone). I am now terrified to think about those
 times.</p>
 
-<p>It wasn&rsquo;t until I stumbled upon Steve Yegge&rsquo;s article &ldquo;<a href="http://steve-yegge.blogspot.com/2008/09/programmings-dirtiest-little-secret.html">Programming&rsquo;s Dirtiest
-Little Secret</a>&rdquo;, that I fully understood the implications of not developing
-proper typing technique.</p>
+<p>It wasn&rsquo;t until I stumbled upon Steve Yegge&rsquo;s article
+&ldquo;<a href="http://steve-yegge.blogspot.com/2008/09/programmings-dirtiest-little-secret.html">Programming&rsquo;s Dirtiest Little Secret</a>&rdquo;, that I fully understood the
+implications of not developing proper typing technique.</p>
 
 <p>Picture the following: programmer Clara is working in a small software company.
 Clara doesn&rsquo;t use any fancy IDEs nor extendible editors like emacs or vim.
@@ -899,10 +900,10 @@ slightly readable.</p>
 I found a large number of articles, rules, and techniques which supposedly
 should instantly make you a better writer. This of course might be true if you
 are a professional writer or a student majoring in literature. I am neither. I
-stumbled upon a great article by Jeff Atwood: &ldquo;<a href="http://blog.codinghorror.com/how-to-write-without-writing/">How to write without
-writing</a>&rdquo;. Reading it gave me the push I needed to get over the
-embarrassment of the inevitable failure from writing poorly. And I know I am
-writing poorly, I&rsquo;ve read the stuff I wrote.</p>
+stumbled upon a great article by Jeff Atwood:
+&ldquo;<a href="http://blog.codinghorror.com/how-to-write-without-writing/">How to write without writing</a>&rdquo;. Reading it gave me the push I needed to
+get over the embarrassment of the inevitable failure from writing poorly. And I
+know I am writing poorly, I&rsquo;ve read the stuff I wrote.</p>
 
 <p>You don&rsquo;t expect yourself to wake up one day and write awesome code, do you?
 No, you wake up, go to work, fail, and maybe after months and years of practice
@@ -1301,8 +1302,8 @@ against your default database.</p>
 
 <h2>Sources</h2>
 
-<p>You can find some more details on Lettuce and Django integration here: <a href="http://lettuce.it/recipes/django-lxml.html">Web
-development fun with Lettuce and Django</a>.</p>
+<p>You can find some more details on Lettuce and Django integration here:
+<a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
 
 <h2>Update</h2>
 
