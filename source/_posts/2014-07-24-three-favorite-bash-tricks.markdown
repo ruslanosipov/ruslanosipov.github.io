@@ -25,6 +25,9 @@ file:
 
 Replace `vim` with the name of your favorite editor.
 
+Update: It looks like for some machines setting `EDITOR` variable is not
+enough. In this case, you also need to set `VISUAL` environment variable.
+
 ## Edit recent command
 
 You can edit your recent commands in a text editor of your choice by executing
