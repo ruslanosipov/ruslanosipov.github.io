@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-24T22:35:38-07:00</updated>
+  <updated>2014-07-25T15:05:23-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -38,6 +38,9 @@ file:</p>
 </code></pre>
 
 <p>Replace <code>vim</code> with the name of your favorite editor.</p>
+
+<p>Update: It looks like for some machines setting <code>EDITOR</code> variable is not
+enough. In this case, you also need to set <code>VISUAL</code> environment variable.</p>
 
 <h2>Edit recent command</h2>
 
