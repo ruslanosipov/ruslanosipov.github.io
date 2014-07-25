@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="A reminder on how to initialize a fresh gitolite repository, assuming that
-gitolite has already been set up. All actions are performed on a local &hellip;">
+  <meta name="description" content="I had some issues with the strtok function. Here&rsquo;s a detailed explanation and
+usage for it. The strtok function is used to tokenize a string &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,99 @@ gitolite has already been set up. All actions are performed on a local &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/c-strtok-usage-example/">C strtok usage example</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T10:36:05-08:00" pubdate data-updated="true">Dec 10<sup>th</sup>, 2012</time>
+        
+           | <a href="/blog/c-strtok-usage-example/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/c-strtok-usage-example/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I had some issues with the <code>strtok</code> function. Here&rsquo;s a detailed explanation and
+usage for it.</p>
+
+<p>The <code>strtok</code> function is used to tokenize a string and thus separates it into
+multiple strings divided by a delimiter.</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    int j, i = 0;
+    char delim[4];
+    char user_input[81], *token[80];
+    user_input[0] = 0;  // set first byte to 0 to detect empty string
+
+    // validate the string length
+    while (strlen(user_input) &lt;= 1 || strlen(user_input) &gt; 82) {
+        printf("Feed me a string to tokenize: ");
+        fgets(user_input, sizeof(user_input), stdin);
+    }
+
+    printf("And a delimiter (up to 4 chars): ");
+    fgets(delim, sizeof(delim), stdin);
+
+    token[0] = strtok(user_input, delim);  // first call returns pointer
+                                           // to first part of user_input
+                                           // separated by delim
+    while (token[i] != NULL) {
+        i++;
+        token[i] = strtok(NULL, delim);  // every call with NULL uses
+                                         // saved user_input value and
+                                         // returns next substring
+    }
+
+    for (j=0; j&lt;=i-1; j++) {
+        printf("%sn", token[j]);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Let&rsquo;s compile and execute it:</p>
+
+<pre><code>Feed me a string to tokenize: foo/bar/baz
+And a delimiter: /
+foo
+bar
+baz
+</code></pre>
+
+<p>The first call to <code>strtok</code> returns the pointer to the first substring. All the
+next calls with the first argument being <code>NULL</code> use the string passed at the
+first call and return the next substring. The function returns <code>NULL</code> if no
+more substrings are available.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -527,286 +620,9 @@ some more tips and tricks on using vim in future.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/c-reallocating-memory-for-the-array/">C - Reallocating memory for the array</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-01T18:54:36-07:00" pubdate data-updated="true">Sep 1<sup>st</sup>, 2012</time>
-        
-           | <a href="/blog/c-reallocating-memory-for-the-array/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/c-reallocating-memory-for-the-array/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I just started delving into C and I had some issues with increasing the memory
-allocation size for my array. The best way to understand something &ndash; write a
-detailed explanation of the process. So here we go:</p>
-
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-// notice that array is a pointer to a pointer
-int append_array_element(int **array, int *array_length, int element) {
-    *array_length += 1;
-    *array = realloc(*array, *array_length * sizeof(int));
-    (*array)[*array_length - 1] = element; // [] has higher priority
-                                           // then * in C's order of
-    return 0;                              // operations
-}
-</code></pre>
-
-<p>We have a pointer to the pointer to the array, pointer to the array&rsquo;s length,
-and a value to append to the array. Array is passed as a pointer to pointer so
-we will be able to &lsquo;repoint&rsquo; the original pointer to a new memory segment.</p>
-
-<p>Let&rsquo;s call the function a few times and see what it gives us.</p>
-
-<pre><code>int main() {
-    int *array = NULL;
-    int array_length = 0;
-
-    append_array_element(&amp;array, &amp;array_length, 142);
-    printf ("Our array with %d elementsn", array_length);
-    printf("%dn", array[0]);
-
-    append_array_element(&amp;array, &amp;array_length, 19);
-    printf ("Our array with %d elementsn", array_length);
-    printf("%dn", array[0]);
-    printf("%dn", array[1]);
-
-    return 0;
-}
-</code></pre>
-
-<p>And the output is:</p>
-
-<pre><code>Our array with 1 elements
-142
-Our array with 2 elements
-142
-19
-</code></pre>
-
-<p>You can never be sure when you work with memory, so let&rsquo;s add some error
-handling in case the operation fails.</p>
-
-<pre><code>int append_array_element(int **array, int *array_length, int element) {
-    *array_length += 1;
-    // realloc() returns pointer or False if it fails
-    void *_tmp_array = realloc(*array, *array_length * sizeof(int));
-    if (!_tmp_array) {
-        printf("Error while trying to realloc memory!n");
-        return -1;
-    }
-    *array = _tmp_array;
-    (*array)[*array_length - 1] = element;
-
-    return 0;
-}
-</code></pre>
-
-<p>Now we will be able to handle the crash on our own. But reallocation is not a
-very fast thing, so let&rsquo;s double the amount of reallocated memory every time we
-run out of allocated memory. We&rsquo;ll need one more variable to track the current
-allocated memory size.</p>
-
-<pre><code>int append_array_element(int **array, int *array_length,
-                         int *array_alloc_length, int element) {
-    *array_length += 1;
-    if (*array_length &gt; *array_alloc_length) {
-        if (*array_alloc_length == 0) {
-            *array_alloc_length = 1;
-        } else {
-            *array_alloc_length *= 2;
-        }
-
-        void *_tmp_array = realloc(*array, *array_alloc_length * sizeof(int));
-        if (!_tmp_array) {
-            printf("Error while trying to reallocate memory for an array!n");
-            return -1;
-        }
-        *array = _tmp_array;
-    }
-    (*array)[*array_length - 1] = element;
-
-    return 0;
-}
-</code></pre>
-
-<p>Let&rsquo;s call it few times:</p>
-
-<pre><code>int main() {
-    int *array = NULL;
-    int array_length = 0;
-    int array_alloc_length = 0;
-
-    int i;
-    for (i = 0; i &lt; 10; i++) {
-        append_array_element(&amp;array, &amp;array_length, &amp;array_alloc_length, i);
-    }
-
-    printf("Our array with %d elementsn", array_length);
-    for (i = 0; i &lt; 10; i++) {
-        printf("%dn", array[i]);
-    }
-    printf("Array length: %d, allocated elements: %dn",
-           array_length, array_alloc_length);
-
-    return 0;
-}
-
-Our array with 10 elements
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-Array length: 10, allocated elements: 16
-</code></pre>
-
-<p>And for the fun of it, let&rsquo;s do the same with 100 elements:</p>
-
-<pre><code>Our array with 100 elements
-0
-1
-2
-...
-97
-98
-99
-Array length: 100, allocated elements: 128
-</code></pre>
-
-<p>Let&rsquo;s improve the function a little bit more &ndash; and we are good to go. Let&rsquo;s say
-we have a dynamic array with 129 elements &ndash; but we will have allocated memory
-for 256 elements&hellip; It is 127 more then we need! We don&rsquo;t want to be greedy, so
-let&rsquo;s find a way to free up the memory.</p>
-
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdbool.h&gt; // I included this just to use boolean values with
-                     // neat true/false aliases
-
-int append_array_element(int **array, int *array_length,
-                         int *array_alloc_length, int element,
-                         bool is_last_element) {
-    *array_length += 1;
-    if (*array_length &gt; *array_alloc_length || is_last_element) {
-        if (is_last_element) {
-            *array_alloc_length = *array_length;
-        }
-        else if (*array_alloc_length == 0) {
-            *array_alloc_length = 1;
-        } else {
-            *array_alloc_length *= 2;
-        }
-
-        void *_tmp_array = realloc(*array, *array_alloc_length * sizeof(int));
-        if (!_tmp_array) {
-            printf("Error while trying to reallocate memory for an array!n");
-            return -1;
-        }
-        *array = _tmp_array;
-    }
-    (*array)[*array_length - 1] = element;
-
-    return 0;
-}
-</code></pre>
-
-<p>That should be pretty straight-forward. And let&rsquo;s call it two more times with
-10 and 100 elements:</p>
-
-<pre><code>int main() {
-    int *array = NULL;
-    int array_length = 0;
-    int array_alloc_length = 0;
-    bool is_last_element;
-
-    int i;
-    int i_max = 10;
-    for (i = 0; i &lt; i_max; i++) {
-        if (i == i_max - 1)
-        {
-            is_last_element = true;
-        } else {
-            is_last_element = false;
-        }
-        append_array_element(&amp;array, &amp;array_length, &amp;array_alloc_length,
-                             i, is_last_element);
-    }
-
-    printf("Our array with %d elementsn", array_length);
-    for (i = 0; i &lt; i_max; i++) {
-        printf("%dn", array[i]);
-    }
-    printf("Array length: %d, allocated elements: %dn",
-           array_length, array_alloc_length);
-
-    return 0;
-}
-</code></pre>
-
-<p>And the results are:</p>
-
-<pre><code>Our array with 10 elements
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-Array length: 10, allocated elements: 10
-
-Our array with 100 elements
-0
-1
-2
-...
-97
-98
-99
-Array length: 100, allocated elements: 100
-</code></pre>
-
-<p>Pretty neat, huh? Thank you for reading!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/11">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -819,6 +635,10 @@ Array length: 100, allocated elements: 100
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
+      </li>
     
       <li class="post">
         <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
@@ -854,10 +674,6 @@ Array length: 100, allocated elements: 100
     
       <li class="post">
         <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
       </li>
     
   </ul>

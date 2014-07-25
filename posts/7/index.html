@@ -9,8 +9,7 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Shell history can tell a lot about its owner. What&rsquo;s in your shell? history | awk '{CMD[$2]++;count++;}
-END { for (a in CMD)print CMD[a] " " &hellip;">
+  <meta name="description" content="I wrote a little script to download gists from the command prompt. Generate your Github API Token under Settings &ndash;> Applications, change it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +78,152 @@ END { for (a in CMD)print CMD[a] " " &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/download-gists-from-prompt/">Download gists from prompt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-17T11:52:02-07:00" pubdate data-updated="true">May 17<sup>th</sup>, 2013</time>
+        
+           | <a href="/blog/download-gists-from-prompt/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/download-gists-from-prompt/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I wrote a little script to download gists from the command prompt.</p>
+
+<p>Generate your Github API Token under Settings &ndash;> Applications, change it within
+a script, and then:</p>
+
+<pre><code>chmod +x shgist.py
+mv shgist.py ~/bin/shgist
+</code></pre>
+
+<p>Where ~/bin is a directory in your path. Now you can use it as shgist file to
+quickly download your gists (<a href="https://gist.github.com/ruslanosipov/5599377">Gist on Github</a>).</p>
+
+<pre><code>#!/usr/bin/env python
+
+# Ruslan Osipov &lt;ruslan@rosipov.com&gt;
+# Usage: shgist keywords
+# Description: Gists downloader
+
+import urllib
+import urllib2
+import sys
+import json
+
+token = 'Personal API Access Token'  # Github Settings -&gt; Applications
+
+class Gist:
+    def __init__(self, token):
+        """
+        token -- str, github token
+        """
+        self.token = token
+        self.url = 'https://api.github.com'
+
+    def find_by_name(self, keywords):
+        """
+        keywords -- list of strings
+        """
+        gists, urls = self._get_gists()
+        for i, gist in enumerate(gists):
+            for keyword in keywords:
+                if keyword not in gist:
+                    del gists[i]
+                    del urls[i]
+                    break
+        if len(gists) == 0:
+            print "Sorry, no gists matching your description"
+            return
+        if len(gists) == 1:
+            self._download_gist(gists[0], urls[0])
+            return
+        for i, gist in enumerate(gists):
+            print i, gist
+        while True:
+            num = raw_input("Gist number, 'q' to quit: ")
+            if num == 'q':
+                print "Quiting..."
+                return
+            try:
+                num = int(num)
+                if 0 &lt;= num &lt; len(gists):
+                    break
+                print "Number should be within specified range"
+            except:
+                print "Only integers or 'q' are allowed"
+        self._download_gist(gists[num], urls[num])
+
+    def _download_gist(self, name, url):
+        """
+        name -- str, filename
+        url -- str, raw gist url
+        """
+        print "Downloading %s..." % name
+        gist = self._send_get_request(url)
+        open(name, 'wb').write(gist)
+
+    def _get_gists(self):
+        """
+        Returns 2 lists which should be treated as ordered dict
+        """
+        url = '/gists'
+        response = self._send_get_request(self.url + url)
+        response = json.loads(response)
+        gists, urls = [], []
+        for gist in response:
+            for name, meta in gist['files'].items():
+                gists.append(name)
+                urls.append(meta['raw_url'])
+        return gists, urls
+
+    def _send_get_request(self, url):
+        """
+        url -- str
+        """
+        headers = {
+                'Authorization': 'token ' + self.token
+                }
+        request = urllib2.Request(url, headers=headers)
+        response = urllib2.urlopen(request)
+        return response.read()
+
+argv = sys.argv[1:]
+if not len(argv):
+    print "Usage: shgist keywords"
+    sys.exit(0)
+
+gist = Gist(token)
+gist.find_by_name(argv)
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -317,116 +462,6 @@ any text editor.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/vim-pathogen-and-git-submodules/">Vim, pathogen and git submodules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-27T14:35:46-07:00" pubdate data-updated="true">Mar 27<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/vim-pathogen-and-git-submodules/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/vim-pathogen-and-git-submodules/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are familiar
-with git basics, but you don&rsquo;t really need to understand every step in order to
-follow it. For simplicity, only <code>.vim</code> directory is a repository in this
-example. You may want to have all your dotfiles under version control and use a
-script to symlink files to the home directory. For example see
-<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
-
-<h2>Setting up</h2>
-
-<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
-Let&rsquo;s initialize a repository.</p>
-
-<pre><code>cd ~/.vim
-git init
-git remote add origin git@github.com:user/project.git
-</code></pre>
-
-<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
-submodule.</p>
-
-<pre><code>mkdir bundle
-cd bundle
-git submodule add git@github.cfm:tpope/vim-pathogen.git
-bundle/vim-pathogen
-</code></pre>
-
-<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
-non-default directory:</p>
-
-<pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-</code></pre>
-
-<p>Let&rsquo;s add some more plugins as git submodules, for example:</p>
-
-<pre><code>git submodule add git@github.com:Lokaltog/vim-easymotion.git
-bundle/vim-easymotion
-</code></pre>
-
-<p>Now we can add and commit everything and push it to a repository.</p>
-
-<pre><code>git add .
-git commit -m "Use pathogen to keep track of vim plugins"
-git push origin master
-</code></pre>
-
-<h2>Deploying</h2>
-
-<p>Assuming that your repository is located at <code>git@github.com:user/project.git</code>:</p>
-
-<pre><code>cd ~
-git clone git@github.com:user/project.git .vim
-</code></pre>
-
-<p>And you are done, all plugins are downloaded from their repositories now.</p>
-
-<h2>Maintaining</h2>
-
-<p>Git submodules keep track of specific commits and are not being automatically
-updated when target repositories have new commits. In order to update plugins
-you have:</p>
-
-<pre><code>cd ~/.vim
-git submodule foreach git pull
-git add bundle
-git commit -m "Updated all the plugins in a bundle"
-git push origin master
-</code></pre>
-
-<p>You probably want to make sure that new versions of plugins are compatible with
-each other before committing, however.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -442,6 +477,10 @@ each other before committing, however.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
+      </li>
     
       <li class="post">
         <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
@@ -477,10 +516,6 @@ each other before committing, however.</p>
     
       <li class="post">
         <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/steve-krugs-dont-make-me-think/">Steve Krug&#8217;s &#8220;Don&#8217;t Make Me Think&#8221;</a>
       </li>
     
   </ul>

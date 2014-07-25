@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-23T16:18:45-07:00</updated>
+  <updated>2014-07-24T19:48:51-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three favorite bash tricks]]></title>
+    <link href="http://ruslanosipov.github.io/blog/three-favorite-bash-tricks/"/>
+    <updated>2014-07-24T18:41:10-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/three-favorite-bash-tricks</id>
+    <content type="html"><![CDATA[<p>I spend most of my development time in the shell &ndash; be it editing text with Vim
+or executing various console commands. I have quite a number of tricks in my
+daily repertoire, and I would like to share three tips today.</p>
+
+<h2>Edit current command with a text editor</h2>
+
+<p>I often end up having to change a long command I just typed, and using arrow
+keys to get to the correct spot is not favorable. Bash has the feature which
+lets you edit current command in a text editor of your choice. Hit <code>Ctrl + x</code>,
+<code>Ctrl + e</code> (or <code>Ctrl + x + e</code>), and you will be dropped into your text editor.
+Now you are able to edit the command, and it will be executed as soon as your
+write the file and exit the editor.</p>
+
+<p>You can use an editor of your choice by adding following line to your <code>.bashrc</code>
+file:</p>
+
+<pre><code>export EDITOR=vim
+</code></pre>
+
+<p>Replace <code>vim</code> with the name of your favorite editor.</p>
+
+<h2>Edit recent command</h2>
+
+<p>You can edit your recent commands in a text editor of your choice by executing
+<code>fc beginning_of_the_command</code>. For instance, if you run <code>fc l</code>, you will open
+most recent command starting with the letter &ldquo;l&rdquo;.</p>
+
+<p>You can execute <code>fc</code> without any arguments to edit last executed command.</p>
+
+<h2>Bash history autocomplete</h2>
+
+<p>Another great feature &ndash; &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
+your shell, you&rsquo;ll be greeted by the following prompt:</p>
+
+<pre><code>(reverse-i-search)`':
+</code></pre>
+
+<p>Start typing a part of the command from your history, and you&rsquo;ll see suggestions
+popping up. Hit <code>Enter</code> to pick the command (you&rsquo;ll be able to edit it before
+executing), or push <code>Ctrl + g</code> to return back.</p>
+
+<p>Like any of these tips? Have some of your own? Don&rsquo;t hesitate to share those in
+the comments section down below.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
@@ -1135,222 +1186,6 @@ desired file and hit <code>Enter</code>. You can use arrow keys or <code>Ctrl</c
 + <code>K</code> to navigate between suggested file list.</p>
 
 <p>Source: <a href="https://github.com/kien/ctrlp.vim">https://github.com/kien/ctrlp.vim</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
-    <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
-    <updated>2013-12-30T10:48:31-08:00</updated>
-    <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
-    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
-Gherkin syntax in python. However the documentation is not very comprehensive,
-and at the moment current version (0.2.19) has some issues integrating with the
-latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
-to a comprehensive tutorial.</p>
-
-<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
-and you already have a working project configured. Your project is called
-&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
-
-<h2>Setup</h2>
-
-<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
-released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
-install current development version. Releases 0.2.20 and up should include the
-fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
-
-<pre><code>pip install -e \
-    git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
-pip install django-nose splinter
-pip freeze &gt; requirements.txt
-</code></pre>
-
-<p>First line downloads lettuce package from the github repository and installs
-missing dependencies. You can replace <code>cccc397</code> with the current commit.
-Technically commit can be omitted, but we don&rsquo;t want to have an unstable
-ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
-since nose assertions come in handy while writing Lettuce steps, as well as
-<code>splinter</code>, which is a great tool for testing web application.</p>
-
-<p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
-
-<pre><code>INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    # ... third party apps ...
-    'lettuce.django',
-    'myproject',
-    'polls',
-)
-</code></pre>
-
-<p>You also have to explicitly specify the apps you want to use with lettuce:</p>
-
-<pre><code>LETTUCE_APPS = (
-    'polls',
-)
-</code></pre>
-
-<p>By default, lettuce will run its&#8217; tests against your default database. But we
-want to use test database for that, so we have to add few more settings:</p>
-
-<pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
-LETTUCE_SERVER_PORT = 9000
-</code></pre>
-
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a
-class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
-from port 8000 so you won&rsquo;t have issues running the development server via
-<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
-
-<p>You also have to create a <code>features</code> directories inside the apps you want to
-test with Lettuce:</p>
-
-<pre><code>/myproject
-    /myproject
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    /polls
-        /features
-            /steps
-                __init__.py
-                polls_list.py
-            polls_list.feature
-        __init__.py
-        models.py
-        tests.py
-        views.py
-    manage.py
-    requirements.txt
-    terrain.py
-</code></pre>
-
-<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
-same directory as a <code>manage.py</code>:</p>
-
-<pre><code>from django.core.management import call_command
-from django.conf import settings
-from lettuce import before, after, world
-from splinter.browser import Browser
-
-@before.each_scenario
-def flush_database(scenario):
-    call_command('flush', interactive=False, verbosity=0)
-
-@before.each_scenario
-def prepare_browser(scenario):
-    world.browser = Browser()
-
-@after.each_scenario
-def destroy_browser(scenario):
-    world.browser.quit()
-</code></pre>
-
-<p>This code flushes the database before each scenario, as well as prepares and
-destroys the <code>splinter</code> browser.</p>
-
-<h2>Writing the features</h2>
-
-<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
-<code>polls/features/polls_list.feature</code>:</p>
-
-<pre><code>Feature: Polls list
-
-    Scenario: Polls list without any polls
-        When I access the "polls list" url
-        Then I see a text "We didn't find any polls!"
-
-    Scenario: Polls list with one poll
-        Given a poll with the title "Hello world"
-        When I access the "polls list" url
-        Then I see a text "Hello world"
-        And I do not see a text "We didn't find any polls!"
-</code></pre>
-
-<p>Now describe the steps in <code>polls/features/steps/polls_list.py</code>:</p>
-
-<pre><code>from django.core.urlresolvers import reverse
-from lettuce import step, world
-from lettuce.django import django_url
-from nose.tools import assert_in, assert_not_in
-from polls.models import Poll
-
-PAGES = {
-    "polls list": "polls:list"
-}
-
-@step(r'access the "(.*)" url')
-def access_the_url(step, name):
-    world.browser.visit(django_url(reverse(PAGES[name])))
-
-@step(r'see a text "(.*)"')
-def see_a_text(step, text):
-    assert_in(text, world.browser.html)
-
-@step(r'a poll with the title "(.*)"')
-def create_a_poll_with_the_title(step, title):
-    poll = Poll.objects.create(title=title)
-    polls.save()
-
-@step(r'do not see a text "(.*)"')
-def do_not_see_a_text(step, text):
-    assert_not_in(text, world.browser.html)
-</code></pre>
-
-<h2>Running the tests</h2>
-
-<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
-just wrote:</p>
-
-<pre><code>$ python manage.py harvest --test-server
-Creating test database for alias 'default'...
-Django's builtin server is running at 0.0.0.0:9000
-
-Feature: Polls list
-
-  Scenario: Polls list without any polls
-    When I access the "polls list" url
-    Then I see a text "We didn't find any polls!"
-
-  Scenario: Polls list with one poll
-    Given a poll with the title "Hello world"
-    When I access the "polls list" url
-    Then I see a text "Hello world"
-    And I do not see a text "We didn't find any polls!"
-
-1 feature (1 passed)
-2 scenarios (2 passed)
-6 steps (6 passed)
-Destroying test database for alias 'default'...
-</code></pre>
-
-<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests
-against your default database.</p>
-
-<h2>Sources</h2>
-
-<p>You can find some more details on Lettuce and Django integration here:
-<a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
-
-<h2>Update</h2>
-
-<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
-in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
-
-<pre><code>LETTUCE_USE_TEST_DATABASE = True
-</code></pre>
-
-<p>This way you won&rsquo;t end up accidentally erasing your production database after
-forgetting to add <code>--test-server</code> flag.</p>
 ]]></content>
   </entry>
   

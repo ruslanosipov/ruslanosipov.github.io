@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-23T16:18:45-07:00</updated>
+  <updated>2014-07-24T19:48:51-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three favorite bash tricks]]></title>
+    <link href="http://ruslanosipov.github.io/blog/three-favorite-bash-tricks/"/>
+    <updated>2014-07-24T18:41:10-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/three-favorite-bash-tricks</id>
+    <content type="html"><![CDATA[<p>I spend most of my development time in the shell &ndash; be it editing text with Vim
+or executing various console commands. I have quite a number of tricks in my
+daily repertoire, and I would like to share three tips today.</p>
+
+<h2>Edit current command with a text editor</h2>
+
+<p>I often end up having to change a long command I just typed, and using arrow
+keys to get to the correct spot is not favorable. Bash has the feature which
+lets you edit current command in a text editor of your choice. Hit <code>Ctrl + x</code>,
+<code>Ctrl + e</code> (or <code>Ctrl + x + e</code>), and you will be dropped into your text editor.
+Now you are able to edit the command, and it will be executed as soon as your
+write the file and exit the editor.</p>
+
+<p>You can use an editor of your choice by adding following line to your <code>.bashrc</code>
+file:</p>
+
+<pre><code>export EDITOR=vim
+</code></pre>
+
+<p>Replace <code>vim</code> with the name of your favorite editor.</p>
+
+<h2>Edit recent command</h2>
+
+<p>You can edit your recent commands in a text editor of your choice by executing
+<code>fc beginning_of_the_command</code>. For instance, if you run <code>fc l</code>, you will open
+most recent command starting with the letter &ldquo;l&rdquo;.</p>
+
+<p>You can execute <code>fc</code> without any arguments to edit last executed command.</p>
+
+<h2>Bash history autocomplete</h2>
+
+<p>Another great feature &ndash; &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
+your shell, you&rsquo;ll be greeted by the following prompt:</p>
+
+<pre><code>(reverse-i-search)`':
+</code></pre>
+
+<p>Start typing a part of the command from your history, and you&rsquo;ll see suggestions
+popping up. Hit <code>Enter</code> to pick the command (you&rsquo;ll be able to edit it before
+executing), or push <code>Ctrl + g</code> to return back.</p>
+
+<p>Like any of these tips? Have some of your own? Don&rsquo;t hesitate to share those in
+the comments section down below.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
@@ -227,98 +278,6 @@ categorization.</p>
 
 <p>As a result, I can  narrow down a search to a thematic subset of emails, saving
 myself a lot of time and frustration.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Elegant Mutt setup for use with Gmail]]></title>
-    <link href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/"/>
-    <updated>2014-05-28T14:33:55-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail</id>
-    <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
-nor does it extend the amount of time I spend reading email. For me, the best
-part about Mutt is that it lets me use text editor of my choice &ndash; Vim.
-Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash;
-already exists in Gmail.</p>
-
-<p>I found configuration below to work really well for my needs: all of the
-important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
-
-<pre><code>bind editor &lt;space&gt; noop
-set alias_file        = '~/.mutt/aliases.txt'
-set copy              = no
-set display_filter    = '$HOME/.mutt/aliases.sh'
-set edit_headers
-set editor            = "vim +/^$ ++1"
-set folder            = "imaps://imap.gmail.com/"
-set hostname          = "gmail.com"
-set imap_check_subscribed
-set imap_pass         = "$PASSWORD"
-set imap_user         = "$USERNAME"
-set mail_check        = 5
-set move              = no
-set postponed         = "+[Gmail]/Drafts"
-set spoolfile         = "+INBOX"
-set text_flowed       = yes
-unset imap_passive
-unset record
-
-# Gmail-style keyboard shortcuts
-macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
-macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
-macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
-macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
-macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
-macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
-macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
-
-source $alias_file
-</code></pre>
-
-<p>It is quite self-explanatory, and includes such nice features as:</p>
-
-<ul>
-<li>Automatically adding addresses from read emails to address book (see
-below).</li>
-<li>Using vim as a text editor, with an ability to edit message
-headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
-Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
-respectfully (I am a huge fun of a zero-mail inbox).</li>
-</ul>
-
-
-<p>You might also want to have your password encrypted by GPG as opposed to
-leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
-here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
-
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
-<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
-email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
-the <code>aliases.sh</code> are below:</p>
-
-<pre><code>#!/bin/sh
-
-MESSAGE=$(cat)
-
-AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
-AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
-AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
-
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
-
-if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
-    :
-else
-    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
-fi
-
-echo "${MESSAGE}"
-</code></pre>
-
-<p>This script will create <code>aliases.txt</code> file containing email addresses for
-search and auto completion of email-addresses.</p>
 ]]></content>
   </entry>
   
