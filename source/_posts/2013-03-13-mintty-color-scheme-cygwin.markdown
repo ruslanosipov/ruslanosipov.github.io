@@ -5,6 +5,8 @@ tags: [cygwin]
 title: Mintty color scheme (Cygwin)
 ---
 
+{% img /images/mintty-softer-color-scheme.png Softer colors for mintty. %}
+
 I find the default cygwin color palette to be a bit ugly, so here's one that
 has softer colors. Add the following lines to your `.minttyrc` and restart
 cygwin in order to apply changes.
