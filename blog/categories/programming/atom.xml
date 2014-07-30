@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-26T13:20:54-07:00</updated>
+  <updated>2014-07-29T23:49:39-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
+    <link href="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/"/>
+    <updated>2014-07-29T23:00:04-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit</id>
+    <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
+topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
+questions by newbies and odd cases. Most established tech companies have their
+own line length guidelines. These are often dependent on a language, such as in
+the case of Google with their 80 character Python and 100 character Java limits.</p>
+
+<p>In this article, I won&rsquo;t be advocating all the usual arguments, such as easier
+diff with version control software, or the ability to stack windows side by side
+on wide screens. No, I believe that battle to be won quite a long time ago, the
+topic is now closed. But something I didn&rsquo;t find mentioned in any of the
+discussions is an interesting point from the world of writers and designers.</p>
+
+<p>Ever since I started being interested in improving my writing skills, I found
+article after article mention the importance of line length in reading.
+Interestingly enough, this issue was raised in a world of literature. It had
+been resolved long before programmers were fascinated with the desire to use up
+rapidly expanding screen real estate.</p>
+
+<p>I am talking about something known as &ldquo;measure&rdquo; in typography. It seems to be
+the reason newspapers use narrow columns, or books leave such vast margins
+around the text on a page. Here&rsquo;s an exempt from the <a href="http://en.wikipedia.org/wiki/Measure_(typography)">Wikipedia article</a>:</p>
+
+<blockquote><p>Measure (or sometimes &ldquo;The Measure&rdquo;) in typography is the length of a line of
+text. For a single-column design measure should ideally lie between 40 &amp; 80
+characters. Many typographers consider the perfect measure to be 65
+characters. If the lines are too short then the text becomes disjointed, if
+they are too long the content loses rhythm as the reader searches for the
+start of each line. Punctuation should preferably hang outside the measure.</p></blockquote>
+
+<p>Most programming languages use special operators and keywords, which can be
+considered &ldquo;punctuation&rdquo;. Some languages are more verbose (use more
+punctuation), and some aren&rsquo;t. If you remove punctuation, the 80/100/120
+character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p>
+
+<p>Maybe I can use this as an additional argument the next time I have to explain
+to a junior new hire why the character limits are so strictly enforced.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
@@ -408,117 +452,6 @@ Got:
 1 items had failures:
    1 of   1 in __main__.foo
 ***Test Failed*** 1 failures.
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python tests with doctest and unittest]]></title>
-    <link href="http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest/"/>
-    <updated>2013-07-22T07:47:47-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/python-tests-with-doctest-and-unittest</id>
-    <content type="html"><![CDATA[<p>When it comes to tests, <code>doctest</code> is a great simple module to write tests for
-your application. However it is pretty basic and does not have any extended
-features like, for example, centralized unit tests. If you have multiple
-modules with doctests (and you probably do) you most likely want to be able to
-run all doctests recursively from one place. That&rsquo;s where <code>unittest</code> comes in.</p>
-
-<p>Let&rsquo;s assume we store modules in the <code>lib/</code> directory:</p>
-
-<pre><code>$ ls lib/
-__init__.py bar.py foo.py
-</code></pre>
-
-<p>Here are the contents of <code>foo.py</code> and <code>bar.py</code> respectfully:</p>
-
-<pre><code>def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return False
-
-def bar():
-    """
-    &gt;&gt;&gt; bar()
-    True
-    """
-    return True
-
-def baz():
-    """
-    &gt;&gt;&gt; baz()
-    False
-    """
-    return False
-</code></pre>
-
-<p>Now, to run all tests we need a wrapper script. Let&rsquo;s call it: <code>runtests.py</code>:</p>
-
-<pre><code>#!/usr/bin/env python
-
-import unittest
-import doctest
-import os
-
-files = []
-root_dir = 'lib/'
-
-for root, _, filenames in os.walk(root_dir):
-    for filename in filenames:
-        if filename == '__init__.py' or filename[-3:] != '.py':
-            continue
-        f = os.path.join(root, filename)
-        f = f.replace('/', '.')
-        f = f[:-3]
-        files.append(f)
-
-suite = unittest.TestSuite()
-for module in files:
-    suite.addTest(doctest.DocTestSuite(module))
-unittest.TextTestRunner(verbosity=1).run(suite)
-</code></pre>
-
-<p>This approach invokes the <code>doctest.DocTestSuite</code> method, which converts
-doctests strings into unittest suites. Time to run our tests:</p>
-
-<pre><code>$ chmod +x runtests.py
-$ ./runtests.py
-...
-----------------------------------------------------------------------
-Ran 3 tests in 0.008s
-
-OK
-</code></pre>
-
-<p>And just to be sure that approach actually works, let&rsquo;s make one of the tests
-fail:</p>
-
-<pre><code>$ ./runtests.py
-.F.
-======================================================================
-FAIL: baz (lib.bar)
-Doctest: lib.bar.baz
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/doctest.py", line 2201, in runTest
-    raise self.failureException(self.format_failure(new.getvalue()))
-AssertionError: Failed doctest test for lib.bar.baz
-  File "/home/rosipov/unitdoc/lib/bar.py", line 8, in baz
-
-----------------------------------------------------------------------
-File "/home/rosipov/unitdoc/lib/bar.py", line 10, in lib.bar.baz
-Failed example:
-    baz()
-Expected:
-    True
-Got:
-    False
-
-----------------------------------------------------------------------
-Ran 3 tests in 0.009s
-
-FAILED (failures=1)
 </code></pre>
 ]]></content>
   </entry>

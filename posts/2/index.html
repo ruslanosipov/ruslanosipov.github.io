@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="This plugin has been in my .vim directory for a few years, and I sometimes
-forget that it&rsquo;s not a built-in Vim feature. Link to a GitHub &hellip;">
+  <meta name="description" content="I recently found an interesting way to organize random bits of information: a
+personal Wiki. It&rsquo;s a great idea to have data repository shared &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,102 @@ forget that it&rsquo;s not a built-in Vim feature. Link to a GitHub &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-07T21:14:21-07:00" pubdate data-updated="true">Jul 7<sup>th</sup>, 2014</time>
+        
+           | <a href="/blog/personal-wiki-with-vimwiki/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently found an interesting way to organize random bits of information: a
+personal Wiki. It&rsquo;s a great idea to have data repository shared between your
+machines: important notes about people, conversations, events, tasks you&rsquo;ve
+accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
+belong anywhere else. There is plenty of software out there which lets you set
+up a personal Wiki, and some of it is very lightweight and well polished.
+However, I prefer to do most of my editing and writing in Vim. As tip #22 from
+&ldquo;The Pragmatic Programmer&rdquo; states:</p>
+
+<blockquote><p>Use a single editor well</p>
+
+<p>We think it is better to know one editor very well, and use it for all
+editing tasks: code, documentation, memos, system administration, and so
+on. Without a single editor, you face a potential modern day Babel of
+confusion.</p></blockquote>
+
+<p>I fully agree with the above statement and I try to use one editor for the
+majority of tasks which require typing, without having to remember which editor
+contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
+went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own
+Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
+Pragmatic Programmer&rdquo;:</p>
+
+<blockquote><p>Keep knowledge in plain text</p></blockquote>
+
+<p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
+
+<ul>
+<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you
+are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a
+new tab: the rest of the mappings are as intuitive.</li>
+<li>Multiple Wikis support: really handy if you have a number of separate
+projects for which you want to keep separate entries.</li>
+<li>Diary-like quick notes. You can create an instant page for today by hitting
+<code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home
+page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
+<li>Easy link creation: hit enter on a word and it will turn into a link to
+another page. Hitting enter on a link will transport you to the destination
+page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as
+well.</li>
+<li>Navigation: enter to follow a link, backspace to go back.</li>
+<li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
+<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start
+reading.</li>
+</ul>
+
+
+<p>The list can go on forever, but these are the features I found to be the most
+useful.</p>
+
+<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
+a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your
+Wikis.</p>
+
+<pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
+</code></pre>
+
+<p>Download it from the GitHub: <a href="https://github.com/vim-scripts/vimwiki">https://github.com/vim-scripts/vimwiki</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -474,78 +570,6 @@ care about being understood by another human being, you should read it too.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-19T19:33:38-07:00" pubdate data-updated="true">Jun 19<sup>th</sup>, 2014</time>
-        
-           | <a href="/blog/expert-python-programming-by-tarek-ziade/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
-week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few
-shortcomings, I found it to be useful &ndash; Python is a language of choice for me,
-and I found some valuable tips I could add to my arsenal.</p>
-
-<p>The best thing about this book is that it covers a very wide range of topics:
-syntax recommendations and code profiling, testing practices and project
-management, technical writing and design patterns, package distribution and
-version control&hellip; My favorite chapter covered writing technical documentation:
-I am very interested in writing in general, and the tips Ziade provided turned
-out to be very useful for documenting code, writing design documents, and even
-posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo;
-moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to
-look into!&rdquo; scattered throughout the book. This book is very useful for filling
-in little gaps in knowledge which programmers can have: the author covers an
-extremely wide variety of Python development aspects.</p>
-
-<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
-in the text and code examples &ndash; it looked like the book was put together
-sloppily, in haste. Reviewers did not do a very good job evaluating this book.
-&ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
-in as much content (and code) as possible in his book, with no consistent
-style. Many chapters go into unnecessary details, and the author has tendency
-to paste completely useless chunks of code, such as a page-long output of an
-installer. As I have mentioned, the book hops from one topic to another, and
-covers a wide variety of subjects: this is both a key strength and the biggest
-weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered
-across the topics.</p>
-
-<p>&ldquo;Expert Python Programming&rdquo; will be of best use to, you guessed it, an expert.
-I found it best to scan through the content and seek out interesting bits of
-information. Beginners, however, might be completely overwhelmed. While
-advanced and intermediate Pythonistas will get the most out of this book, it
-will probably be too hard (and painful) to read to be of real value.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -561,6 +585,10 @@ will probably be too hard (and painful) to read to be of real value.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
+      </li>
     
       <li class="post">
         <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
@@ -596,10 +624,6 @@ will probably be too hard (and painful) to read to be of real value.</p>
     
       <li class="post">
         <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
       </li>
     
   </ul>

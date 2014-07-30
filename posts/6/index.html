@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Now, this as well might be a feature, but doctest strings are not being
-executed for decorated functions (at least in version 2.7). However, there is &hellip;">
+  <meta name="description" content="The following three paragraphs are an angry Caps Lock rant. Feel free to skip
+past it or join me by commenting below. I&rsquo;ve had it with Caps &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,102 @@ executed for decorated functions (at least in version 2.7). However, there is &h
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/remap-your-caps-lock/">Remap your Caps Lock</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-11T18:26:15-07:00" pubdate data-updated="true">Sep 11<sup>th</sup>, 2013</time>
+        
+           | <a href="/blog/remap-your-caps-lock/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/remap-your-caps-lock/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The following three paragraphs are an angry <code>Caps Lock</code> rant. Feel free to skip
+past it or join me by commenting below.</p>
+
+<p>I&rsquo;ve had it with <code>Caps Lock</code>! How many times did I accidentally press it while
+hitting the <code>A</code> key! How many times did I mean <code>Tab</code> or <code>Shift</code>! There is an
+obvious problem with the <code>Caps Lock</code> placement, and there being only a
+millimeter of space to designate it from an adjacent key, it is quite difficult
+to notice when you accidentally press it.</p>
+
+<p>Pushing <code>Caps Lock</code> is more tolerable when typing, but while using keyboard
+controlled software it&rsquo;s a real pain; <code>vim</code> turns into a beeping ravaging
+nightmare, <code>vimperator</code> messes up all your bookmarks&hellip; Same thing with
+websites supporting keyboard shortcuts.</p>
+
+<p>When was the last time I ever used <code>Caps Lock</code>? Over ten years ago, when I was
+playing a video game that used <code>Caps Lock</code> to switch between running and
+walking. Em&hellip; Seriously? Time to put an end this nonsense.</p>
+
+<h2>Linux and Mac</h2>
+
+<p>Drop this into your <code>~/bin/capslockremap</code>, and don&rsquo;t forget to <code>chmod +x
+~/bin/capslockremap</code>. Now run the script with root privileges (that&rsquo;ll last you
+until the next restart).</p>
+
+<pre><code>#!/bin/sh
+
+# This temporarily remaps the Caps Lock key to a Control key.
+# The keyboard will return to the previous settings after a
+# reboot. The Linux console and the X Window system each
+# handles keypresses separately, so each must be remapped
+# separately. First remap the X keyboard since this does not
+# require root access.
+
+# Remap the Caps Lock key to a Control key for
+# the X Window system.
+if type setxkbmap &gt;/dev/null 2&gt;&amp;1; then
+fi
+
+# You have to be root to remap the console keyboard.
+if [ "$(id -u)" != "0" ]; then
+  echo "This script is not running as root so"
+  echo "the console Caps Lock cannot be remapped."
+  echo "Perhaps you forgot to run this under sudo."
+  echo "Note that this problem does not effect X."
+  echo "This only effects the consoles running on"
+  echo "Alt-f1 through Alt-f6."
+  exit 2
+fi
+# Remap the CapsLock key to a Control key for the console.
+(dumpkeys | grep keymaps; echo "keycode 58 = Control") | loadkeys
+</code></pre>
+
+<h2>Windows</h2>
+
+<p>Download <a href="http://technet.microsoft.com/en-us/sysinternals/bb897578.aspx">Sysinternals Ctrl2Cap v2.0</a>, run it as Administrator with
+<code>install</code> flag: <code>ctrl2cap.exe /install</code>.</p>
+
+<p>Source <a href="http://www.noah.org/wiki/CapsLock_Remap_Howto">CapsLock Remap Howto &ndash; Noah.org</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -483,55 +579,6 @@ can also:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/git-pretty-log-output/">Git pretty log output</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-13T18:31:02-07:00" pubdate data-updated="true">Jun 13<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/git-pretty-log-output/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/git-pretty-log-output/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This alias has been around the web for quite some time, but it does look
-fantastic indeed.</p>
-
-<p><img src="/images/git-pretty-log.png" title="An output of `git pretty-log` alias." ></p>
-
-<p>To add the alias <code>git pretty-log</code>, execute the following command (join string
-prior to executing):</p>
-
-<pre><code>git config alias.pretty-log 'log --graph --pretty=format:"%Cred%h%Creset
--%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset"
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -547,6 +594,10 @@ prior to executing):</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
+      </li>
     
       <li class="post">
         <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
@@ -582,10 +633,6 @@ prior to executing):</p>
     
       <li class="post">
         <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/expert-python-programming-by-tarek-ziade/">&#8220;Expert Python Programming&#8221; by Tarek Ziade</a>
       </li>
     
   </ul>

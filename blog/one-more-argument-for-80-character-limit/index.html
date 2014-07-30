@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python: "ignored" context manager - Ruslan Osipov</title>
+  <title>One more argument for 80 character limit - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="There was a recent fantastic addition to Python 3.4 by Raymond Hettinger:
-contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hellip;">
+  <meta name="description" content="Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
+topic, and there&rsquo;s an overall consensus on the subject, not &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hel
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruslanosipov.github.io/blog/python-ignored-context-manager">
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -82,7 +82,7 @@ contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hel
   
   <header>
     
-      <h1 class="entry-title">Python: "ignored" context manager</h1>
+      <h1 class="entry-title">One more argument for 80 character limit</h1>
     
     
       <p class="meta">
@@ -98,7 +98,7 @@ contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hel
   
 
 
-<time datetime="2014-05-29T12:20:34-07:00" pubdate data-updated="true">May 29<sup>th</sup>, 2014</time>
+<time datetime="2014-07-29T23:00:04-07:00" pubdate data-updated="true">Jul 29<sup>th</sup>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
@@ -108,38 +108,42 @@ contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hel
   </header>
 
 
-<div class="entry-content"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
-<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
-following often-occurring pattern:</p>
+<div class="entry-content"><p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
+topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
+questions by newbies and odd cases. Most established tech companies have their
+own line length guidelines. These are often dependent on a language, such as in
+the case of Google with their 80 character Python and 100 character Java limits.</p>
 
-<pre><code>try:
-    os.remove('i_probably_do_not_exist.txt')
-except OSError:
-    pass
-</code></pre>
+<p>In this article, I won&rsquo;t be advocating all the usual arguments, such as easier
+diff with version control software, or the ability to stack windows side by side
+on wide screens. No, I believe that battle to be won quite a long time ago, the
+topic is now closed. But something I didn&rsquo;t find mentioned in any of the
+discussions is an interesting point from the world of writers and designers.</p>
 
-<p>And turn it into this:</p>
+<p>Ever since I started being interested in improving my writing skills, I found
+article after article mention the importance of line length in reading.
+Interestingly enough, this issue was raised in a world of literature. It had
+been resolved long before programmers were fascinated with the desire to use up
+rapidly expanding screen real estate.</p>
 
-<pre><code>with ignored(OSError):
-    os.remove('i_probably_do_not_exist')
-</code></pre>
+<p>I am talking about something known as &ldquo;measure&rdquo; in typography. It seems to be
+the reason newspapers use narrow columns, or books leave such vast margins
+around the text on a page. Here&rsquo;s an exempt from the <a href="http://en.wikipedia.org/wiki/Measure_(typography)">Wikipedia article</a>:</p>
 
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use
-older version of python in production. That&rsquo;s where this little chunk of code
-comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
-following function:</p>
+<blockquote><p>Measure (or sometimes &ldquo;The Measure&rdquo;) in typography is the length of a line of
+text. For a single-column design measure should ideally lie between 40 &amp; 80
+characters. Many typographers consider the perfect measure to be 65
+characters. If the lines are too short then the text becomes disjointed, if
+they are too long the content loses rhythm as the reader searches for the
+start of each line. Punctuation should preferably hang outside the measure.</p></blockquote>
 
-<pre><code>import contextlib
+<p>Most programming languages use special operators and keywords, which can be
+considered &ldquo;punctuation&rdquo;. Some languages are more verbose (use more
+punctuation), and some aren&rsquo;t. If you remove punctuation, the 80/100/120
+character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p>
 
-@contextlib.contextmanager
-def ignored(*exceptions):
-    try:
-        yield
-    except exceptions:
-        pass
-</code></pre>
-
-<p>Beautiful!</p>
+<p>Maybe I can use this as an additional argument the next time I have to explain
+to a junior new hire why the character limits are so strictly enforced.</p>
 </div>
 
 
@@ -162,12 +166,12 @@ def ignored(*exceptions):
   
 
 
-<time datetime="2014-05-29T12:20:34-07:00" pubdate data-updated="true">May 29<sup>th</sup>, 2014</time>
+<time datetime="2014-07-29T23:00:04-07:00" pubdate data-updated="true">Jul 29<sup>th</sup>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming/'>programming</a>
+    <a class='category' href='/blog/categories/notes-and-rants/'>notes and rants</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
   
 </span>
 
@@ -176,7 +180,7 @@ def ignored(*exceptions):
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/python-ignored-context-manager/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/python-ignored-context-manager/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/" >Tweet</a>
   
   
   
@@ -185,10 +189,8 @@ def ignored(*exceptions):
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/elegant-mutt-setup-for-use-with-gmail/" title="Previous Post: Elegant Mutt setup for use with Gmail">&laquo; Elegant Mutt setup for use with Gmail</a>
+        <a class="basic-alignment left" href="/blog/three-favorite-bash-tricks/" title="Previous Post: Three favorite bash tricks">&laquo; Three favorite bash tricks</a>
       
-      
-        <a class="basic-alignment right" href="/blog/writing-for-the-sake-of-writing/" title="Next Post: Writing for the sake of writing">Writing for the sake of writing &raquo;</a>
       
     </p>
   </footer>
@@ -270,8 +272,8 @@ def ignored(*exceptions):
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ruslanosipov.github.io/blog/python-ignored-context-manager/';
-        var disqus_url = 'http://ruslanosipov.github.io/blog/python-ignored-context-manager/';
+        var disqus_identifier = 'http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/';
+        var disqus_url = 'http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/';
         var disqus_script = 'embed.js';
       
     (function () {
