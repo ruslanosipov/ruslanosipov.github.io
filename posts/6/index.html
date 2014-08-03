@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="The following three paragraphs are an angry Caps Lock rant. Feel free to skip
-past it or join me by commenting below. I&rsquo;ve had it with Caps &hellip;">
+  <meta name="description" content="If you use vim often &ndash; you probably had to paste something into vim from the
+outside source. And, if you have corresponding indentation rules, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,68 @@ past it or join me by commenting below. I&rsquo;ve had it with Caps &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/pasting-with-vim-and-indentation-issues/">Pasting with vim and indentation issues</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-16T17:02:30-08:00" pubdate data-updated="true">Nov 16<sup>th</sup>, 2013</time>
+        
+           | <a href="/blog/pasting-with-vim-and-indentation-issues/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/pasting-with-vim-and-indentation-issues/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you use vim often &ndash; you probably had to paste something into vim from the
+outside source. And, if you have corresponding indentation rules, they will get
+applied, turning your nice block of code into something that looks more like a
+case of stairs:</p>
+
+<pre><code>def foo(a, b):
+        a, b = b, a
+            print "I am doing something important."
+                return a - b
+</code></pre>
+
+<p>Quite nasty, isn&rsquo;t it? But that&rsquo;s where vim&rsquo;s <code>paste</code> option comes in.  Before
+pasting, execute <code>:set paste</code>. If you go into insert mode, you&rsquo;ll see the usual
+mode indicator switch to <code>-- INSERT (paste) --</code>. Try pasting the same block of
+code now:</p>
+
+<pre><code>def foo(a, b):
+    a, b = b, a
+    print "I am doing something important."
+    return a - b
+</code></pre>
+
+<p>Beautiful. Don&rsquo;t forget to switch back to a regular mode by executing <code>:set
+nopaste</code>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -442,143 +504,6 @@ module. After quite a time-consuming search the missing package name was
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/use-vimdiff-as-git-mergetool/">Use vimdiff as git mergetool</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-13T19:18:16-07:00" pubdate data-updated="true">Jun 13<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/use-vimdiff-as-git-mergetool/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/use-vimdiff-as-git-mergetool/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Using vimdiff as a git mergetool can be pretty confusing &ndash; multiple windows and
-little explanation. This is a short tutorial which explains basic usage, and
-what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at
-least a little bit of basic vim knowledge (how to move, save, and switch
-between split windows). If you don&rsquo;t, there&rsquo;s a short article for you:
-<a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>. Some basic understanding of git and branching
-is required as well, obviously.</p>
-
-<h2>Git config</h2>
-
-<p>Prior to doing anything, you need to know how to set vimdiff as a git
-mergetool. That being said:</p>
-
-<pre><code>git config merge.tool vimdiff
-git config merge.conflictstyle diff3
-git config mergetool.prompt false
-</code></pre>
-
-<p>This will set git as the default merge tool, will display a common ancestor
-while merging, and will disable the prompt to open the vimdiff.</p>
-
-<h2>Creating merge conflict</h2>
-
-<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work
-along with the tutorial.</p>
-
-<pre><code>mkdir zoo
-cd zoo
-git init
-vi animals.txt
-</code></pre>
-
-<p>Let&rsquo;s add some animals:</p>
-
-<pre><code>cat
-dog
-octopus
-octocat
-</code></pre>
-
-<p>Save the file.</p>
-
-<pre><code>git add animals.txt
-git commit -m "Initial commit"
-git branch octodog
-git checkout octodog
-vi animals.txt  # let's change octopus to octodog
-git add animals.txt
-git commit -m "Replace octopus with an octodog"
-git checkout master
-vi animals.txt  # let's change octopus to octoman
-git add animals.txt
-git commit -m "Replace octopus with an octoman"
-git merge octodog  # merge octodog into master
-</code></pre>
-
-<p>That&rsquo;s where we get a merge error:</p>
-
-<pre><code>Auto-merging animals.txt
-CONFLICT (content): Merge conflict in animals.txt
-Automatic merge failed; fix conflicts and then commit the result.
-</code></pre>
-
-<h2>Resolving merge conflict with vimdiff</h2>
-
-<p>Let&rsquo;s resolve the conflict:</p>
-
-<pre><code>git mergetool
-</code></pre>
-
-<p><img src="/images/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom." ></p>
-
-<p>This looks terrifying at first, but let me explain what is going on.</p>
-
-<p>From left to right, top to the bottom:</p>
-
-<p><code>LOCAL</code> &mdash; this is file from the current branch
-<code>BASE</code> &mdash; common ancestor, how file looked before both changes
-<code>REMOTE</code> &mdash; file you are merging into your branch
-<code>MERGED</code> &mdash; merge result, this is what gets saved in the repo</p>
-
-<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that,
-move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict
-area and then:</p>
-
-<pre><code>:diffget RE
-</code></pre>
-
-<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You
-can also:</p>
-
-<pre><code>:diffg RE  " get from REMOTE
-:diffg BA  " get from BASE
-:diffg LO  " get from LOCAL
-</code></pre>
-
-<p>Save the file and quit (a fast way to write and quit multiple files is <code>:wqa</code>).</p>
-
-<p>Run <code>git commit</code> and you are all set!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -594,6 +519,10 @@ can also:</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/effective-search-with-mutt/">Effective search with Mutt</a>
+      </li>
     
       <li class="post">
         <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
@@ -629,10 +558,6 @@ can also:</p>
     
       <li class="post">
         <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
       </li>
     
   </ul>

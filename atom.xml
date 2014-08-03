@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-07-29T23:49:39-07:00</updated>
+  <updated>2014-08-03T12:32:00-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Effective search with Mutt]]></title>
+    <link href="http://ruslanosipov.github.io/blog/effective-search-with-mutt/"/>
+    <updated>2014-08-02T13:32:51-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/effective-search-with-mutt</id>
+    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails &ndash; I find smooth non-monospace
+fonts to be more pleasant to the eye, and the visualization my browser offers
+is hard to beat. The main use-case for me is composing long emails: Mutt lets
+me use my favorite text editor, which speeds up the editing of long and
+carefully composed responses.</p>
+
+<p>Recently I added a new use-case to my work flow: searching through emails.
+Mutt has a powerful built-in regular-expressions engine, which is something the
+web Gmail client is missing.</p>
+
+<p>Mutt has two ways of finding things: search and limit. &ldquo;Search&rdquo; just jumps from
+one matching letter to another, something along the lines what <code>/</code> command does
+in <code>less</code>, <code>more</code>, or <code>vim</code>. &ldquo;Limit&rdquo; is something I am more used to with the
+web client, and it&rsquo;s what I use the most.</p>
+
+<h2>Using limits</h2>
+
+<p>Limit works the way regular search works in Gmail: it limits the view to
+conversations matching the query. Hit <code>l</code>, and enter a search query.</p>
+
+<p>By default, Mutt will only search through the subject lines, but this behaviour
+can be changed by prefixing the command with a special identifier. For
+instance, searching for <code>~b oranges</code> will limit the view to all the messages
+which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
+
+<ul>
+<li><code>~b</code> &mdash; Search in the message body.</li>
+<li><code>~B</code> &mdash; Search in the whole message.</li>
+<li><code>~f</code> &mdash; Message originated from the user.</li>
+<li><code>~Q</code> &mdash; Messages which have been replied to.</li>
+</ul>
+
+
+<p>You can find full list in the <a href="http://www.mutt.org/doc/manual/manual-4.html#ss4.2">Mutt Advanced Usage Manual</a>.</p>
+
+<p>Patterns can be chained to produce narrower results: <code>~f joe ~B apples</code>. This
+will search for a message mentioning &ldquo;apples&rdquo; coming from an author whose name
+contains &ldquo;joe&rdquo;.</p>
+
+<h3>Caching mail for faster search</h3>
+
+<p>You may find that searching whole messages is slow, especially if you have more
+than a couple hundred messages to search through. That&rsquo;s because by default
+Mutt does not store messages for local use. This can be changed by specifying
+<code>header_cache</code> and <code>message_cachedir</code> variables in your <code>.muttrc</code> file:</p>
+
+<pre><code>set header_cache     = "$HOME/Mail"
+set message_cachedir = "$HOME/Mail"
+</code></pre>
+
+<p>Now, after you perform your first search, it will cache every message you open,
+making all the consecutive searches lightning fast.</p>
+
+<p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
+sure the cache directory is not shared with anyone but yourself.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
@@ -1185,36 +1248,6 @@ echo "${MESSAGE}"
 
 <p>This script will create <code>aliases.txt</code> file containing email addresses for
 search and auto completion of email-addresses.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using Mutt with GPG]]></title>
-    <link href="http://ruslanosipov.github.io/blog/using-mutt-with-gpg/"/>
-    <updated>2014-05-28T12:11:52-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/using-mutt-with-gpg</id>
-    <content type="html"><![CDATA[<p>Mutt is a great command line email client, but it does not offer a built-in way
-to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an
-article on how to use GPG to store your passwords: [GPG Usage], this is a more
-practical note about using GPG to store your passwords for mutt. This note
-implies that you already have installed and configured GPG (which you can learn
-how to do in above linked article).</p>
-
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code>
-with your password and <code>$ACCOUNT</code> with a desired account alias. You probably
-want to prefix this command with a space, to avoid writing your password to a
-history file.</p>
-
-<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
-</code></pre>
-
-<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
-
-<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
-</code></pre>
-
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier.
-Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
 ]]></content>
   </entry>
   

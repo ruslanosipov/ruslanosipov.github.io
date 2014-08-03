@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="You can open the current command you are typing for editing in your default
-text editor by pressing Ctrl + x + e. It will be executed after you write &hellip;">
+  <meta name="description" content="I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,60 @@ text editor by pressing Ctrl + x + e. It will be executed after you write &helli
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/a-week-without-colorful-prompt/">A week without colorful prompt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T11:10:31-07:00" pubdate data-updated="true">Apr 1<sup>st</sup>, 2013</time>
+        
+           | <a href="/blog/a-week-without-colorful-prompt/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/a-week-without-colorful-prompt/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim &ndash; I feel
+lost without the cozy syntax highlight guidance.</p>
+
+<p>Time to stop using output colors for a week whether in shell, git, or vim, and
+use only plain text with no fancy colors. Set git config &mdash;global color.ui
+false and don&rsquo;t use &mdash;color flags in shell. Also, set syntax off and set a
+simple color scheme for vim.</p>
+
+<p>What can I gain from all this? It will definitely reduce my productivity for a
+few days. However, I have a hint of an idea that changing the visual code
+representation will give me new insight on what I am currently writing.</p>
+
+<p><a href="https://github.com/ruslanosipov/dotfiles/commit/b2b592e4f5b4b2f5bb962651a03f9d83b3ab53b7">Link to related commit on GutHub</a>.</p>
+
+<p>Check back in a week to see how it went!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -344,60 +398,6 @@ an amazing job aiding in the memorization of essential vim movement shortcuts.</
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/rename-commit-author-in-git/">Rename commit author in git</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-14T17:09:02-07:00" pubdate data-updated="true">Mar 14<sup>th</sup>, 2013</time>
-        
-           | <a href="/blog/rename-commit-author-in-git/#disqus_thread"
-             data-disqus-identifier="http://ruslanosipov.github.io/blog/rename-commit-author-in-git/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
-credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
-corrected easily:</p>
-
-<pre><code>git filter-branch -f --env-filter
-"GIT_AUTHOR_NAME='Stan Smith';
-GIT_AUTHOR_EMAIL='stansmith@cia.gov';
-GIT_COMMITTER_NAME='Stan Smith';
-GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
-git push --force
-</code></pre>
-
-<p>In the case of there being multiple people working on a project, you may want
-to use the following gist posted by anonymous:
-<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
---force</code>).</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/9">&larr; Older</a>
@@ -413,6 +413,10 @@ to use the following gist posted by anonymous:
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/effective-search-with-mutt/">Effective search with Mutt</a>
+      </li>
     
       <li class="post">
         <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
@@ -448,10 +452,6 @@ to use the following gist posted by anonymous:
     
       <li class="post">
         <a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a>
       </li>
     
   </ul>
