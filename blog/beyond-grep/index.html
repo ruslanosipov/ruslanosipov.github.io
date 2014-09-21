@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>"The Elements Of Style" - Ruslan Osipov</title>
+  <title>Beyond grep - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="You might wonder what an English language style guide from 1918 is doing in a
-software engineering blog. You might even get angry at me for pointing &hellip;">
+  <meta name="description" content="I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+code. For years grep served as an amazing tool for this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ software engineering blog. You might even get angry at me for pointing &hellip;"
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ruslanosipov.github.io/blog/the-elements-of-style">
+  <link rel="canonical" href="http://ruslanosipov.github.io/blog/beyond-grep">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -82,7 +82,7 @@ software engineering blog. You might even get angry at me for pointing &hellip;"
   
   <header>
     
-      <h1 class="entry-title">"The Elements Of Style"</h1>
+      <h1 class="entry-title">Beyond grep</h1>
     
     
       <p class="meta">
@@ -98,7 +98,7 @@ software engineering blog. You might even get angry at me for pointing &hellip;"
   
 
 
-<time datetime="2014-06-20T10:58:35-07:00" pubdate data-updated="true">Jun 20<sup>th</sup>, 2014</time>
+<time datetime="2014-09-21T12:18:31-07:00" pubdate data-updated="true">Sep 21<sup>st</sup>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://ruslanosipov.github.io">Comments</a>
@@ -108,38 +108,33 @@ software engineering blog. You might even get angry at me for pointing &hellip;"
   </header>
 
 
-<div class="entry-content"><p>You might wonder what an English language style guide from 1918 is doing in a
-software engineering blog. You might even get angry at me for pointing this
-book in your face. But I have a strong affection towards this guide; I believe
-everyone who has to write more than a sentence in English should read it. I
-like to emphasize the communication aspects of a software engineering career as
-much as coding or management skills.</p>
+<div class="entry-content"><p>I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
+yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
+to use <code>grep</code> implementation built to work with large (or not really) code
+trees.</p>
 
-<p>English is not my native language, and I often struggle with the writing style.
-I found a number of style tips online and in the books I read, but lately I
-noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The
-book is available online free of charge (copyright has expired; it is now in
-public domain) and takes only an evening to read.</p>
+<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
+working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
 
-<p>What the book gives you is invaluable writing advice. The author provides
-concrete style rules targeted at increasing the appeal and comprehension rates
-of your text. Here&rsquo;s my favorite piece of advice:</p>
+<p>Amazing thing is &ndash; <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
+arises (<code>ack</code> has a great manual entry).</p>
 
-<blockquote><p>13. Omit needless words.</p>
+<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
 
-<p>Vigorous writing is concise. A sentence should contain no unnecessary
-words, a paragraph no unnecessary sentences, for the same reason that a
-drawing should have no unnecessary lines and a machine no unnecessary
-parts. This requires not that the writer make all his sentences short, or
-that he avoid all detail and treat his subjects only in outline, but that
-he make every word tell.</p></blockquote>
+<pre><code>ack --shell 'gr[ae]y'
+</code></pre>
 
-<p>&ldquo;The Elements Of Style&rdquo; is a timeless classic; it should be mandatory reading
-for every speaker or learner of English out there. I immediately applied the
-rules to technical documentation, email communication, and even this very blog
-entry. I will probably have to read through the guide multiple times over the
-course of the following months in order to ensure maximum retention. If you
-care about being understood by another human being, you should read it too.</p>
+<p>Searches all shell script files in the current code tree for any occurrences of
+&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
+<code>ack</code> will even check shebang lines for you.</p>
+
+<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
+types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
+job at searching through code.</p>
+
+<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
 </div>
 
 
@@ -162,12 +157,12 @@ care about being understood by another human being, you should read it too.</p>
   
 
 
-<time datetime="2014-06-20T10:58:35-07:00" pubdate data-updated="true">Jun 20<sup>th</sup>, 2014</time>
+<time datetime="2014-09-21T12:18:31-07:00" pubdate data-updated="true">Sep 21<sup>st</sup>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/book-reviews/'>book reviews</a>
+    <a class='category' href='/blog/categories/productivity/'>productivity</a>
   
 </span>
 
@@ -176,7 +171,7 @@ care about being understood by another human being, you should read it too.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/the-elements-of-style/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/the-elements-of-style/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ruslanosipov.github.io/blog/beyond-grep/" data-via="antistatuquo" data-counturl="http://ruslanosipov.github.io/blog/beyond-grep/" >Tweet</a>
   
   
   
@@ -185,10 +180,8 @@ care about being understood by another human being, you should read it too.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/expert-python-programming-by-tarek-ziade/" title="Previous Post: "Expert Python Programming" by Tarek Ziade">&laquo; "Expert Python Programming" by Tarek Ziade</a>
+        <a class="basic-alignment left" href="/blog/effective-search-with-mutt/" title="Previous Post: Effective search with Mutt">&laquo; Effective search with Mutt</a>
       
-      
-        <a class="basic-alignment right" href="/blog/dark-side-of-technical-interviews/" title="Next Post: Dark side of technical interviews">Dark side of technical interviews &raquo;</a>
       
     </p>
   </footer>
@@ -270,8 +263,8 @@ care about being understood by another human being, you should read it too.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ruslanosipov.github.io/blog/the-elements-of-style/';
-        var disqus_url = 'http://ruslanosipov.github.io/blog/the-elements-of-style/';
+        var disqus_identifier = 'http://ruslanosipov.github.io/blog/beyond-grep/';
+        var disqus_url = 'http://ruslanosipov.github.io/blog/beyond-grep/';
         var disqus_script = 'embed.js';
       
     (function () {

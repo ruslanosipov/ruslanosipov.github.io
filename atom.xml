@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-08-03T12:32:00-07:00</updated>
+  <updated>2014-09-21T14:07:42-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Beyond grep]]></title>
+    <link href="http://ruslanosipov.github.io/blog/beyond-grep/"/>
+    <updated>2014-09-21T12:18:31-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/beyond-grep</id>
+    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
+yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
+to use <code>grep</code> implementation built to work with large (or not really) code
+trees.</p>
+
+<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
+working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
+
+<p>Amazing thing is &ndash; <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
+arises (<code>ack</code> has a great manual entry).</p>
+
+<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
+
+<pre><code>ack --shell 'gr[ae]y'
+</code></pre>
+
+<p>Searches all shell script files in the current code tree for any occurrences of
+&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
+<code>ack</code> will even check shebang lines for you.</p>
+
+<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
+types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
+job at searching through code.</p>
+
+<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Effective search with Mutt]]></title>
@@ -1156,98 +1191,6 @@ def ignored(*exceptions):
 </code></pre>
 
 <p>Beautiful!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Elegant Mutt setup for use with Gmail]]></title>
-    <link href="http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail/"/>
-    <updated>2014-05-28T14:33:55-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/elegant-mutt-setup-for-use-with-gmail</id>
-    <content type="html"><![CDATA[<p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
-nor does it extend the amount of time I spend reading email. For me, the best
-part about Mutt is that it lets me use text editor of my choice &ndash; Vim.
-Everything else &ndash; keyboard shortcuts, minimalist design, and simplicity &ndash;
-already exists in Gmail.</p>
-
-<p>I found configuration below to work really well for my needs: all of the
-important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
-
-<pre><code>bind editor &lt;space&gt; noop
-set alias_file        = '~/.mutt/aliases.txt'
-set copy              = no
-set display_filter    = '$HOME/.mutt/aliases.sh'
-set edit_headers
-set editor            = "vim +/^$ ++1"
-set folder            = "imaps://imap.gmail.com/"
-set hostname          = "gmail.com"
-set imap_check_subscribed
-set imap_pass         = "$PASSWORD"
-set imap_user         = "$USERNAME"
-set mail_check        = 5
-set move              = no
-set postponed         = "+[Gmail]/Drafts"
-set spoolfile         = "+INBOX"
-set text_flowed       = yes
-unset imap_passive
-unset record
-
-# Gmail-style keyboard shortcuts
-macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
-macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
-macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
-macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
-macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
-macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
-macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
-
-source $alias_file
-</code></pre>
-
-<p>It is quite self-explanatory, and includes such nice features as:</p>
-
-<ul>
-<li>Automatically adding addresses from read emails to address book (see
-below).</li>
-<li>Using vim as a text editor, with an ability to edit message
-headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
-Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
-respectfully (I am a huge fun of a zero-mail inbox).</li>
-</ul>
-
-
-<p>You might also want to have your password encrypted by GPG as opposed to
-leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
-here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
-
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
-<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
-email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
-the <code>aliases.sh</code> are below:</p>
-
-<pre><code>#!/bin/sh
-
-MESSAGE=$(cat)
-
-AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
-AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
-AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
-
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
-
-if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
-    :
-else
-    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
-fi
-
-echo "${MESSAGE}"
-</code></pre>
-
-<p>This script will create <code>aliases.txt</code> file containing email addresses for
-search and auto completion of email-addresses.</p>
 ]]></content>
   </entry>
   

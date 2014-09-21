@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-08-03T12:32:00-07:00</updated>
+  <updated>2014-09-21T14:07:42-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Beyond grep]]></title>
+    <link href="http://ruslanosipov.github.io/blog/beyond-grep/"/>
+    <updated>2014-09-21T12:18:31-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/beyond-grep</id>
+    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
+yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
+to use <code>grep</code> implementation built to work with large (or not really) code
+trees.</p>
+
+<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
+working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
+
+<p>Amazing thing is &ndash; <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
+arises (<code>ack</code> has a great manual entry).</p>
+
+<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
+
+<pre><code>ack --shell 'gr[ae]y'
+</code></pre>
+
+<p>Searches all shell script files in the current code tree for any occurrences of
+&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
+<code>ack</code> will even check shebang lines for you.</p>
+
+<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
+types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
+job at searching through code.</p>
+
+<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Effective search with Mutt]]></title>
@@ -229,18 +264,6 @@ Wikis.</p>
 </code></pre>
 
 <p>Download it from the GitHub: <a href="https://github.com/vim-scripts/vimwiki">https://github.com/vim-scripts/vimwiki</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Easy commenting with tcomment.vim]]></title>
-    <link href="http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/"/>
-    <updated>2014-07-07T20:22:08-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim</id>
-    <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
-forget that it&rsquo;s not a built-in Vim feature.</p>
-
-<p>Link to a GitHub repository: <a href="https://github.com/tomtom/tcomment_vim">https://github.com/tomtom/tcomment_vim</a>.</p>
 ]]></content>
   </entry>
   
