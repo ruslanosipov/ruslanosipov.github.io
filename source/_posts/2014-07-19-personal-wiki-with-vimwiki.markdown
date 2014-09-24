@@ -58,4 +58,4 @@ Wikis.
 
     let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
 
-Download it from the GitHub: <https://github.com/vim-scripts/vimwiki>.
+Download it from the GitHub: <https://github.com/vimwiki/vimwiki>.
