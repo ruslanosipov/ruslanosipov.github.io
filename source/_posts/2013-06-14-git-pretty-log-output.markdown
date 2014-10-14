@@ -14,4 +14,4 @@ To add the alias `git pretty-log`, execute the following command (join string
 prior to executing):
 
     git config alias.pretty-log 'log --graph --pretty=format:"%Cred%h%Creset
-    -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+    -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
