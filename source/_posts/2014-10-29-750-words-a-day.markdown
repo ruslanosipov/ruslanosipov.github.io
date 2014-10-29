@@ -1,0 +1,45 @@
+---
+categories: [Notes and rants]
+date: 2014-10-29 10:51:35 -0700
+title: "750 words a day"
+---
+
+I've had increased interest in writing throughout this year. In addition to
+being a pleasant and fulfilling activity, it shown a number of benefits in my
+everyday life and career:
+
+- Composing emails became faster and easier. When you have to reply to a couple
+  of dozen emails a day, speed and attention to details matters. Writing more
+  taught me to write more concise emails which are easy to read.
+- Writing a lot isn't a problem anymore. If I have to write documentation,
+  comment code, or just put together a very long email - I'm not put off by the
+  idea. I'm excited about it.
+- Typing speed went up. [I already touch type][1], and constant writing practice
+  increases the acquired speed. Fast typing makes life easier, speeding up
+  mundane tasks, freeing up brain power for more costly activities.
+- It's easy to keep a condensed work log to highlight the issues of the day.
+  Tough programming issues, "Eureka!" moments, meeting notes - this historical
+  data saved me hours or even days of repeating my mistakes.
+
+A while ago, I've heard of a thing called ["750 words"][2], a site built around
+a challenge to write 750 words a day in order to improve writing skills and
+unleash creativity. This looked like a great idea, and I decided to give it a
+shot. I prefer to keep my personal entries offline, and I decided not to use the
+provided service, but to keep a set of plain text files on my local machine.
+Which worked out just fine. It's all just text after all.
+
+I lasted for 10 days in a row, which I am proud of (filling up approximately 3
+pages a day was no easy task for me). I started of with silly entries about not
+knowing what to write about, and finished with a piece of a fiction story.
+That's a considerable improvement.
+
+By the end of the challenge I was mentally exhausted. But it taught me a very
+important lesson: the more you write, the better you become. And that's one of
+the main reasons I keep crafting new entries for this blog.
+
+This happened half a year ago, I just never got around to writing about it. I
+will go ahead and start another 750 words spree today. Maybe this time I'll be
+able to make it last for the whole month.
+
+[1]: http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/
+[2]: http://750words.com/
