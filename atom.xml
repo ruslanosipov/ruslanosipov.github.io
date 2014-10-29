@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
   <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-10-14T08:22:22-07:00</updated>
+  <updated>2014-10-29T11:41:57-07:00</updated>
   <id>http://ruslanosipov.github.io/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[750 words a day]]></title>
+    <link href="http://ruslanosipov.github.io/blog/750-words-a-day/"/>
+    <updated>2014-10-29T10:51:35-07:00</updated>
+    <id>http://ruslanosipov.github.io/blog/750-words-a-day</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve had increased interest in writing throughout this year. In addition to
+being a pleasant and fulfilling activity, it shown a number of benefits in my
+everyday life and career:</p>
+
+<ul>
+<li>Composing emails became faster and easier. When you have to reply to a couple
+of dozen emails a day, speed and attention to details matters. Writing more
+taught me to write more concise emails which are easy to read.</li>
+<li>Writing a lot isn&rsquo;t a problem anymore. If I have to write documentation,
+comment code, or just put together a very long email &ndash; I&rsquo;m not put off by the
+idea. I&rsquo;m excited about it.</li>
+<li>Typing speed went up. <a href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/">I already touch type</a>, and constant writing practice
+increases the acquired speed. Fast typing makes life easier, speeding up
+mundane tasks, freeing up brain power for more costly activities.</li>
+<li>It&rsquo;s easy to keep a condensed work log to highlight the issues of the day.
+Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes &ndash; this historical
+data saved me hours or even days of repeating my mistakes.</li>
+</ul>
+
+
+<p>A while ago, I&rsquo;ve heard of a thing called <a href="http://750words.com/">&ldquo;750 words&rdquo;</a>, a site built around
+a challenge to write 750 words a day in order to improve writing skills and
+unleash creativity. This looked like a great idea, and I decided to give it a
+shot. I prefer to keep my personal entries offline, and I decided not to use the
+provided service, but to keep a set of plain text files on my local machine.
+Which worked out just fine. It&rsquo;s all just text after all.</p>
+
+<p>I lasted for 10 days in a row, which I am proud of (filling up approximately 3
+pages a day was no easy task for me). I started of with silly entries about not
+knowing what to write about, and finished with a piece of a fiction story.
+That&rsquo;s a considerable improvement.</p>
+
+<p>By the end of the challenge I was mentally exhausted. But it taught me a very
+important lesson: the more you write, the better you become. And that&rsquo;s one of
+the main reasons I keep crafting new entries for this blog.</p>
+
+<p>This happened half a year ago, I just never got around to writing about it. I
+will go ahead and start another 750 words spree today. Maybe this time I&rsquo;ll be
+able to make it last for the whole month.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Beyond grep]]></title>
@@ -1151,46 +1198,6 @@ person.</p>
 <p>P.S: My recently acquired touch typing skills have come in handy in composing
 this. I would have previously never had the patience to finish the wall of text
 I am looking at right now. Go learn to type faster.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python: "ignored" context manager]]></title>
-    <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
-    <updated>2014-05-29T12:20:34-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
-    <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
-<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
-following often-occurring pattern:</p>
-
-<pre><code>try:
-    os.remove('i_probably_do_not_exist.txt')
-except OSError:
-    pass
-</code></pre>
-
-<p>And turn it into this:</p>
-
-<pre><code>with ignored(OSError):
-    os.remove('i_probably_do_not_exist')
-</code></pre>
-
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use
-older version of python in production. That&rsquo;s where this little chunk of code
-comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
-following function:</p>
-
-<pre><code>import contextlib
-
-@contextlib.contextmanager
-def ignored(*exceptions):
-    try:
-        yield
-    except exceptions:
-        pass
-</code></pre>
-
-<p>Beautiful!</p>
 ]]></content>
   </entry>
   

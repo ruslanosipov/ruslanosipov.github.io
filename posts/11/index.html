@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="A quick note on how to set up GUI difftool to use with git on Windows (Git
-Bash, Cygwin, etc&hellip;). Download and install GUI diff tool of your &hellip;">
+  <meta name="description" content="A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up. All actions are performed on a local &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,81 @@ Bash, Cygwin, etc&hellip;). Download and install GUI diff tool of your &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/create-gitolite-repository/">Create gitolite repository</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-09T20:11:23-08:00" pubdate data-updated="true">Dec 9<sup>th</sup>, 2012</time>
+        
+           | <a href="/blog/create-gitolite-repository/#disqus_thread"
+             data-disqus-identifier="http://ruslanosipov.github.io/blog/create-gitolite-repository/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up.</p>
+
+<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code>
+is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite
+hostname. Command <code>vi</code> stands for the text editor, but you may use whichever
+editor you prefer.</p>
+
+<pre><code>cd ~/gitolite-admin
+vi conf/gitolite.conf
+</code></pre>
+
+<p>Add lines (obviously you may want to use individual users instead of @all):</p>
+
+<pre><code>repo foo
+    RW+ = @all
+</code></pre>
+
+<p>Save it. Next:</p>
+
+<pre><code>git add conf/gitolite.conf
+git commit -m "Add foo repo for @all"
+git pull --rebase &amp;amp;&amp;amp; git push
+mkdir ~/foo
+cd ~/foo
+git init
+git remote add origin git@rosipov.com:foo.git
+</code></pre>
+
+<p>Add some files at this point. In this example, only <code>.gitkeep</code> is added.</p>
+
+<pre><code>git add .gitkeep
+git commit -m "Initialize repo"
+git push origin master
+</code></pre>
+
+<p>The new repository is all set up now.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -746,6 +821,10 @@ Array length: 100, allocated elements: 100
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/750-words-a-day/">750 words a day</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/beyond-grep/">Beyond grep</a>
       </li>
     
@@ -779,10 +858,6 @@ Array length: 100, allocated elements: 100
     
       <li class="post">
         <a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/zero-mail-inbox/">Zero mail inbox</a>
       </li>
     
   </ul>
