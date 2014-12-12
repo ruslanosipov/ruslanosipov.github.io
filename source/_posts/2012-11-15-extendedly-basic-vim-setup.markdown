@@ -7,9 +7,7 @@ title: Extendedly basic vim setup
 
 Ahoy Internet, here's a neat and fairly simple vim configuration for
 programming. Feel free to copy over settings/plugins you find useful, or just
-grab the ready-to-go [archive][1] with settings and plugins. Unzip it into root
-directory and you're good to go ([ctags][2] plugin is not included, you may
-want to get it yourself).
+download a repository from [GitHub][1] with settings and plugins.
 
 ## The .vimrc file
 
@@ -142,7 +140,7 @@ plugin-specific rules from .vimrc => Plugins.
 You may want to head over to GitHub and grab a version from here:
 <https://github.com/ruslanosipov/dotfiles>.
 
-[1]: http://www.rosipov.com/blog/wp-content/uploads/2012/11/vim.zip
+[1]: https://github.com/ruslanosipov/dotfiles
 [2]: http://ctags.sourceforge.net/
 [3]: http://www.rosipov.com/blog/using-vim-for-writing-code/
 [4]: http://www.vim.org/scripts/script.php?script_id=625
