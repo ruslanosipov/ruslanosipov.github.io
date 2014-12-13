@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://ruslanosipov.github.io
+url: http://www.rosipov.com
 title: "Ruslan Osipov"
 subtitle: "Thoughts on software development"
 author: "Ruslan Osipov"
@@ -19,7 +19,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       author: "Ruslan Osipov"
       comments: true
