@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ruslanosipov.github.io/sitemap.xml 
+Sitemap: http://www.rosipov.com/sitemap.xml 

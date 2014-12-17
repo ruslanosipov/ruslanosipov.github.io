@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
-  <link href="http://ruslanosipov.github.io/blog/categories/notes-and-rants/atom.xml" rel="self"/>
-  <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-12-14T01:02:18-08:00</updated>
-  <id>http://ruslanosipov.github.io/</id>
+  <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2014-12-16T21:08:21-08:00</updated>
+  <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
     <email><![CDATA[ruslan@rosipov.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[750 words a day]]></title>
-    <link href="http://ruslanosipov.github.io/blog/750-words-a-day/"/>
+    <link href="http://www.rosipov.com/blog/750-words-a-day/"/>
     <updated>2014-10-29T10:51:35-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/750-words-a-day</id>
+    <id>http://www.rosipov.com/blog/750-words-a-day</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve had increased interest in writing throughout this year. In addition to
 being a pleasant and fulfilling activity, it shown a number of benefits in my
 everyday life and career:</p>
@@ -27,13 +27,13 @@ everyday life and career:</p>
 of dozen emails a day, speed and attention to details matters. Writing more
 taught me to write more concise emails which are easy to read.</li>
 <li>Writing a lot isn&rsquo;t a problem anymore. If I have to write documentation,
-comment code, or just put together a very long email &ndash; I&rsquo;m not put off by the
+comment code, or just put together a very long email - I&rsquo;m not put off by the
 idea. I&rsquo;m excited about it.</li>
 <li>Typing speed went up. <a href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/">I already touch type</a>, and constant writing practice
 increases the acquired speed. Fast typing makes life easier, speeding up
 mundane tasks, freeing up brain power for more costly activities.</li>
 <li>It&rsquo;s easy to keep a condensed work log to highlight the issues of the day.
-Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes &ndash; this historical
+Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes - this historical
 data saved me hours or even days of repeating my mistakes.</li>
 </ul>
 
@@ -62,9 +62,9 @@ able to make it last for the whole month.</p>
   
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
-    <link href="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/"/>
+    <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
     <updated>2014-07-29T23:00:04-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit</id>
+    <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
 questions by newbies and odd cases. Most established tech companies have their
@@ -106,15 +106,15 @@ to a junior new hire why the character limits are so strictly enforced.</p>
   
   <entry>
     <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
-    <link href="http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress/"/>
+    <link href="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/"/>
     <updated>2014-07-22T00:04:15-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress</id>
+    <id>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress</id>
     <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
 <a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
 
 <h2>Why the migration?</h2>
 
-<p>WordPress was a great host for me at one point &ndash; the community is fun and no
+<p>WordPress was a great host for me at one point - the community is fun and no
 work is required for setup (I would rather not waste time fiddling with my blog
 too much). But a number of things are off-putting:</p>
 
@@ -138,7 +138,7 @@ generator) has all of these concerns covered:</p>
 <li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
 write, or how I write. This enables me to use an editor of my choice.</li>
 <li>Plain text is universal. It can be viewed by a human, edited in any piece of
-software, printed out, emailed, piped to a Linux program &ndash; just about
+software, printed out, emailed, piped to a Linux program - just about
 anything really.</li>
 <li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
 rendering.  The only real speed limit is network latency. In addition, GitHub
@@ -177,9 +177,9 @@ the resulting articles.</p>
   
   <entry>
     <title type="html"><![CDATA[Dark side of technical interviews]]></title>
-    <link href="http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews/"/>
+    <link href="http://www.rosipov.com/blog/dark-side-of-technical-interviews/"/>
     <updated>2014-06-24T18:16:13-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews</id>
+    <id>http://www.rosipov.com/blog/dark-side-of-technical-interviews</id>
     <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an
 interviewing scheme which will fit every company. Some companies seem to find
 processes which work for their size and culture, while others struggle to do
@@ -194,11 +194,11 @@ of the following interview components I employ seem satisfactory.</p>
 <p>Screenings are usually done by recruiters, employees whose skills are in
 seeking and evaluating prospective assets to the company. The first problem
 here is that <em>recruiters are not team members</em>. Recruiters might do a really
-good job at, say, finding good recruiters &ndash; since this is their domain, and
+good job at, say, finding good recruiters - since this is their domain, and
 something they are inherently good at. But they don&rsquo;t develop software.
 Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the
 slightest real life idea what managers and leaders want from the potential
-hire. Hell, the problem is &ndash; most team leads don&rsquo;t even know what kind of
+hire. Hell, the problem is - most team leads don&rsquo;t even know what kind of
 person they need. And if they do, they don&rsquo;t have a slightest idea on how to
 communicate this properly to the recruiters.</p>
 
@@ -219,7 +219,7 @@ go through the HR process, future team members do.</p>
 <h2>Interview with another engineer</h2>
 
 <p>This, even though it has a good intent, is a big whopping failure. What this
-originally is meant to do &ndash; is have a potential colleague evaluate the
+originally is meant to do - is have a potential colleague evaluate the
 candidate. Sounds like a fantastic idea in theory, and sometimes it even works
 the way it is intended to.</p>
 
@@ -262,7 +262,7 @@ This method can turn a lot of people off, and unfortunately the ones that stay
 are not typically the best quality.</p>
 
 <p>As my co-worker wisely pointed out, if you have a choice between two overall
-equal companies and one requires you to do more work before being considered &ndash;
+equal companies and one requires you to do more work before being considered -
 you will naturally pick one that accepts you easier. Any job seeker would feel
 more appreciated and trusted taking that route.</p>
 
@@ -296,9 +296,9 @@ moment.</p>
   
   <entry>
     <title type="html"><![CDATA[Why I threw away my "To Do" list]]></title>
-    <link href="http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/"/>
+    <link href="http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/"/>
     <updated>2014-06-07T12:11:54-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list</id>
+    <id>http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list</id>
     <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
 written notes, and just about anything that will let me arrange my tasks
 instead of actually accomplishing them. I recently stopped writing things down,
@@ -314,7 +314,7 @@ manage, and the number of tasks became permanent residents on my task list. Why
 did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
 Complete a task, check off a check box. There was no mindfulness about it: I
 was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
-to a next one.&rdquo; &ndash; this is what was constantly running through my head.
+to a next one.&rdquo; - this is what was constantly running through my head.
 Secondly, by writing down a task on my list in the first place, my brain would
 register it as being completed, and then I&rsquo;d go on with my day. Needless to
 say, certain tasks would sit on my list for an indefinite amount of time.</p>

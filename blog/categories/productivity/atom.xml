@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
-  <link href="http://ruslanosipov.github.io/blog/categories/productivity/atom.xml" rel="self"/>
-  <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-12-14T01:02:18-08:00</updated>
-  <id>http://ruslanosipov.github.io/</id>
+  <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2014-12-16T21:08:21-08:00</updated>
+  <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
     <email><![CDATA[ruslan@rosipov.com]]></email>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Beyond grep]]></title>
-    <link href="http://ruslanosipov.github.io/blog/beyond-grep/"/>
+    <link href="http://www.rosipov.com/blog/beyond-grep/"/>
     <updated>2014-09-21T12:18:31-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/beyond-grep</id>
-    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+    <id>http://www.rosipov.com/blog/beyond-grep</id>
+    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
 code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
 yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
 to use <code>grep</code> implementation built to work with large (or not really) code
@@ -27,7 +27,7 @@ trees.</p>
 <p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
 working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
 
-<p>Amazing thing is &ndash; <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
 natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
 arises (<code>ack</code> has a great manual entry).</p>
 
@@ -50,10 +50,10 @@ job at searching through code.</p>
   
   <entry>
     <title type="html"><![CDATA[Effective search with Mutt]]></title>
-    <link href="http://ruslanosipov.github.io/blog/effective-search-with-mutt/"/>
+    <link href="http://www.rosipov.com/blog/effective-search-with-mutt/"/>
     <updated>2014-08-02T13:32:51-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/effective-search-with-mutt</id>
-    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails &ndash; I find smooth non-monospace
+    <id>http://www.rosipov.com/blog/effective-search-with-mutt</id>
+    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
 fonts to be more pleasant to the eye, and the visualization my browser offers
 is hard to beat. The main use-case for me is composing long emails: Mutt lets
 me use my favorite text editor, which speeds up the editing of long and
@@ -79,10 +79,10 @@ instance, searching for <code>~b oranges</code> will limit the view to all the m
 which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
 
 <ul>
-<li><code>~b</code> &mdash; Search in the message body.</li>
-<li><code>~B</code> &mdash; Search in the whole message.</li>
-<li><code>~f</code> &mdash; Message originated from the user.</li>
-<li><code>~Q</code> &mdash; Messages which have been replied to.</li>
+<li><code>~b</code> &ndash; Search in the message body.</li>
+<li><code>~B</code> &ndash; Search in the whole message.</li>
+<li><code>~f</code> &ndash; Message originated from the user.</li>
+<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
 </ul>
 
 
@@ -113,10 +113,10 @@ sure the cache directory is not shared with anyone but yourself.</p>
   
   <entry>
     <title type="html"><![CDATA[Three favorite bash tricks]]></title>
-    <link href="http://ruslanosipov.github.io/blog/three-favorite-bash-tricks/"/>
+    <link href="http://www.rosipov.com/blog/three-favorite-bash-tricks/"/>
     <updated>2014-07-24T18:41:10-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/three-favorite-bash-tricks</id>
-    <content type="html"><![CDATA[<p>I spend most of my development time in the shell &ndash; be it editing text with Vim
+    <id>http://www.rosipov.com/blog/three-favorite-bash-tricks</id>
+    <content type="html"><![CDATA[<p>I spend most of my development time in the shell - be it editing text with Vim
 or executing various console commands. I have quite a number of tricks in my
 daily repertoire, and I would like to share three tips today.</p>
 
@@ -150,7 +150,7 @@ most recent command starting with the letter &ldquo;l&rdquo;.</p>
 
 <h2>Bash history autocomplete</h2>
 
-<p>Another great feature &ndash; &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
+<p>Another great feature - &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
 your shell, you&rsquo;ll be greeted by the following prompt:</p>
 
 <pre><code>(reverse-i-search)`':
@@ -167,16 +167,16 @@ the comments section down below.</p>
   
   <entry>
     <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
-    <link href="http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom/"/>
+    <link href="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/"/>
     <updated>2014-07-23T14:46:20-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom</id>
+    <id>http://www.rosipov.com/blog/distraction-free-writing-with-vimroom</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
 documentation, personal Wiki, keeping work journal, blogging, writing
 challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
 writing prose in Vim might feel a bit unnatural, especially if you have a wide
 screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
 not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
-editing text in Vim sometimes might feel a bit clunky &ndash; with all the extra
+editing text in Vim sometimes might feel a bit clunky - with all the extra
 information and high-tech (or low-tech, depending on your perspective) look.</p>
 
 <p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
@@ -203,9 +203,9 @@ backslash <code>\</code> character by default).</p>
   
   <entry>
     <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
-    <link href="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/"/>
+    <link href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/"/>
     <updated>2014-07-07T21:14:21-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki</id>
+    <id>http://www.rosipov.com/blog/personal-wiki-with-vimwiki</id>
     <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a
 personal Wiki. It&rsquo;s a great idea to have data repository shared between your
 machines: important notes about people, conversations, events, tasks you&rsquo;ve
@@ -225,7 +225,7 @@ confusion.</p></blockquote>
 <p>I fully agree with the above statement and I try to use one editor for the
 majority of tasks which require typing, without having to remember which editor
 contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
-went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own
+went with <code>vimwiki</code> - a lightweight and clean personal Wiki with it&rsquo;s own
 Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
 Pragmatic Programmer&rdquo;:</p>
 
@@ -257,7 +257,7 @@ reading.</li>
 useful.</p>
 
 <p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
-a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your
+a Dropbox folder - <code>vimwiki</code> lets you specify locations from each one of your
 Wikis.</p>
 
 <pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]

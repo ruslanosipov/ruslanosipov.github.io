@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
-  <link href="http://ruslanosipov.github.io/blog/categories/programming/atom.xml" rel="self"/>
-  <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-12-14T01:02:18-08:00</updated>
-  <id>http://ruslanosipov.github.io/</id>
+  <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2014-12-16T21:08:21-08:00</updated>
+  <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
     <email><![CDATA[ruslan@rosipov.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
-    <link href="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/"/>
+    <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
     <updated>2014-07-29T23:00:04-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit</id>
+    <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
 questions by newbies and odd cases. Most established tech companies have their
@@ -59,9 +59,9 @@ to a junior new hire why the character limits are so strictly enforced.</p>
   
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
-    <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
+    <link href="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/"/>
     <updated>2014-06-01T20:44:12-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
+    <id>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text</id>
     <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
 I find it nice to have an archive of posts lying around in plain text.</p>
 
@@ -150,9 +150,9 @@ if __name__ == "__main__":
   
   <entry>
     <title type="html"><![CDATA[Python: "ignored" context manager]]></title>
-    <link href="http://ruslanosipov.github.io/blog/python-ignored-context-manager/"/>
+    <link href="http://www.rosipov.com/blog/python-ignored-context-manager/"/>
     <updated>2014-05-29T12:20:34-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/python-ignored-context-manager</id>
+    <id>http://www.rosipov.com/blog/python-ignored-context-manager</id>
     <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
 <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
 following often-occurring pattern:</p>
@@ -190,9 +190,9 @@ def ignored(*exceptions):
   
   <entry>
     <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
-    <link href="http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together/"/>
+    <link href="http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/"/>
     <updated>2013-12-30T10:48:31-08:00</updated>
-    <id>http://ruslanosipov.github.io/blog/making-django-and-lettuce-play-nice-together</id>
+    <id>http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together</id>
     <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
 Gherkin syntax in python. However the documentation is not very comprehensive,
 and at the moment current version (0.2.19) has some issues integrating with the
@@ -248,14 +248,14 @@ since nose assertions come in handy while writing Lettuce steps, as well as
 )
 </code></pre>
 
-<p>By default, lettuce will run its' tests against your default database. But we
+<p>By default, lettuce will run its&#8217; tests against your default database. But we
 want to use test database for that, so we have to add few more settings:</p>
 
 <pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
 LETTUCE_SERVER_PORT = 9000
 </code></pre>
 
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> &ndash; a
+<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> - a
 class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
 from port 8000 so you won&rsquo;t have issues running the development server via
 <code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
@@ -284,7 +284,7 @@ test with Lettuce:</p>
     terrain.py
 </code></pre>
 
-<p>Lettuce has its' own settings file called <code>terrain.py</code>. It has to be in the
+<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
 same directory as a <code>manage.py</code>:</p>
 
 <pre><code>from django.core.management import call_command
@@ -383,7 +383,7 @@ Feature: Polls list
 Destroying test database for alias 'default'...
 </code></pre>
 
-<p>Don&rsquo;t forget the <code>--test-server</code> switch &ndash; otherwise Lettuce will run tests
+<p>Don&rsquo;t forget the <code>--test-server</code> switch - otherwise Lettuce will run tests
 against your default database.</p>
 
 <h2>Sources</h2>
@@ -406,9 +406,9 @@ forgetting to add <code>--test-server</code> flag.</p>
   
   <entry>
     <title type="html"><![CDATA[Python doctests and decorators bug]]></title>
-    <link href="http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug/"/>
+    <link href="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/"/>
     <updated>2013-07-22T07:57:29-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/python-doctests-and-decorators-bug</id>
+    <id>http://www.rosipov.com/blog/python-doctests-and-decorators-bug</id>
     <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being
 executed for decorated functions (at least in version 2.7). However, there is a
 workaround.</p>

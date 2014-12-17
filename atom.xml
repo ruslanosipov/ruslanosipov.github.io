@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Ruslan Osipov]]></title>
-  <link href="http://ruslanosipov.github.io/atom.xml" rel="self"/>
-  <link href="http://ruslanosipov.github.io/"/>
-  <updated>2014-12-14T01:02:18-08:00</updated>
-  <id>http://ruslanosipov.github.io/</id>
+  <link href="http://www.rosipov.com/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2014-12-16T21:08:21-08:00</updated>
+  <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
     <email><![CDATA[ruslan@rosipov.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[750 words a day]]></title>
-    <link href="http://ruslanosipov.github.io/blog/750-words-a-day/"/>
+    <link href="http://www.rosipov.com/blog/750-words-a-day/"/>
     <updated>2014-10-29T10:51:35-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/750-words-a-day</id>
+    <id>http://www.rosipov.com/blog/750-words-a-day</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve had increased interest in writing throughout this year. In addition to
 being a pleasant and fulfilling activity, it shown a number of benefits in my
 everyday life and career:</p>
@@ -27,13 +27,13 @@ everyday life and career:</p>
 of dozen emails a day, speed and attention to details matters. Writing more
 taught me to write more concise emails which are easy to read.</li>
 <li>Writing a lot isn&rsquo;t a problem anymore. If I have to write documentation,
-comment code, or just put together a very long email &ndash; I&rsquo;m not put off by the
+comment code, or just put together a very long email - I&rsquo;m not put off by the
 idea. I&rsquo;m excited about it.</li>
 <li>Typing speed went up. <a href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/">I already touch type</a>, and constant writing practice
 increases the acquired speed. Fast typing makes life easier, speeding up
 mundane tasks, freeing up brain power for more costly activities.</li>
 <li>It&rsquo;s easy to keep a condensed work log to highlight the issues of the day.
-Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes &ndash; this historical
+Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes - this historical
 data saved me hours or even days of repeating my mistakes.</li>
 </ul>
 
@@ -62,10 +62,10 @@ able to make it last for the whole month.</p>
   
   <entry>
     <title type="html"><![CDATA[Beyond grep]]></title>
-    <link href="http://ruslanosipov.github.io/blog/beyond-grep/"/>
+    <link href="http://www.rosipov.com/blog/beyond-grep/"/>
     <updated>2014-09-21T12:18:31-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/beyond-grep</id>
-    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse &ndash; someone else&rsquo;s
+    <id>http://www.rosipov.com/blog/beyond-grep</id>
+    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
 code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
 yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
 to use <code>grep</code> implementation built to work with large (or not really) code
@@ -74,7 +74,7 @@ trees.</p>
 <p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
 working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
 
-<p>Amazing thing is &ndash; <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
 natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
 arises (<code>ack</code> has a great manual entry).</p>
 
@@ -97,10 +97,10 @@ job at searching through code.</p>
   
   <entry>
     <title type="html"><![CDATA[Effective search with Mutt]]></title>
-    <link href="http://ruslanosipov.github.io/blog/effective-search-with-mutt/"/>
+    <link href="http://www.rosipov.com/blog/effective-search-with-mutt/"/>
     <updated>2014-08-02T13:32:51-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/effective-search-with-mutt</id>
-    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails &ndash; I find smooth non-monospace
+    <id>http://www.rosipov.com/blog/effective-search-with-mutt</id>
+    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
 fonts to be more pleasant to the eye, and the visualization my browser offers
 is hard to beat. The main use-case for me is composing long emails: Mutt lets
 me use my favorite text editor, which speeds up the editing of long and
@@ -126,10 +126,10 @@ instance, searching for <code>~b oranges</code> will limit the view to all the m
 which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
 
 <ul>
-<li><code>~b</code> &mdash; Search in the message body.</li>
-<li><code>~B</code> &mdash; Search in the whole message.</li>
-<li><code>~f</code> &mdash; Message originated from the user.</li>
-<li><code>~Q</code> &mdash; Messages which have been replied to.</li>
+<li><code>~b</code> &ndash; Search in the message body.</li>
+<li><code>~B</code> &ndash; Search in the whole message.</li>
+<li><code>~f</code> &ndash; Message originated from the user.</li>
+<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
 </ul>
 
 
@@ -160,9 +160,9 @@ sure the cache directory is not shared with anyone but yourself.</p>
   
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
-    <link href="http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit/"/>
+    <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
     <updated>2014-07-29T23:00:04-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/one-more-argument-for-80-character-limit</id>
+    <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
 questions by newbies and odd cases. Most established tech companies have their
@@ -204,10 +204,10 @@ to a junior new hire why the character limits are so strictly enforced.</p>
   
   <entry>
     <title type="html"><![CDATA[Three favorite bash tricks]]></title>
-    <link href="http://ruslanosipov.github.io/blog/three-favorite-bash-tricks/"/>
+    <link href="http://www.rosipov.com/blog/three-favorite-bash-tricks/"/>
     <updated>2014-07-24T18:41:10-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/three-favorite-bash-tricks</id>
-    <content type="html"><![CDATA[<p>I spend most of my development time in the shell &ndash; be it editing text with Vim
+    <id>http://www.rosipov.com/blog/three-favorite-bash-tricks</id>
+    <content type="html"><![CDATA[<p>I spend most of my development time in the shell - be it editing text with Vim
 or executing various console commands. I have quite a number of tricks in my
 daily repertoire, and I would like to share three tips today.</p>
 
@@ -241,7 +241,7 @@ most recent command starting with the letter &ldquo;l&rdquo;.</p>
 
 <h2>Bash history autocomplete</h2>
 
-<p>Another great feature &ndash; &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
+<p>Another great feature - &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
 your shell, you&rsquo;ll be greeted by the following prompt:</p>
 
 <pre><code>(reverse-i-search)`':
@@ -258,16 +258,16 @@ the comments section down below.</p>
   
   <entry>
     <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
-    <link href="http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom/"/>
+    <link href="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/"/>
     <updated>2014-07-23T14:46:20-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/distraction-free-writing-with-vimroom</id>
+    <id>http://www.rosipov.com/blog/distraction-free-writing-with-vimroom</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
 documentation, personal Wiki, keeping work journal, blogging, writing
 challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
 writing prose in Vim might feel a bit unnatural, especially if you have a wide
 screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
 not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
-editing text in Vim sometimes might feel a bit clunky &ndash; with all the extra
+editing text in Vim sometimes might feel a bit clunky - with all the extra
 information and high-tech (or low-tech, depending on your perspective) look.</p>
 
 <p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
@@ -277,7 +277,7 @@ found it to look especially pleasing on vertical monitors (which I prefer to
 use for writing). It looks presentable even on smaller screens though, here&rsquo;s a
 screenshot:</p>
 
-<p><img src="http://ruslanosipov.github.io/images/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
+<p><img src="http://www.rosipov.com/images/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
 
 <p>Install the plugin (use a package manager like Vundle or <a href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Pathogen</a> to
 simplify the task) and add a following line to your <code>.vimrc</code>:</p>
@@ -294,15 +294,15 @@ backslash <code>\</code> character by default).</p>
   
   <entry>
     <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
-    <link href="http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress/"/>
+    <link href="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/"/>
     <updated>2014-07-22T00:04:15-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/abandoning-wordpress-for-octopress</id>
+    <id>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress</id>
     <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
 <a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
 
 <h2>Why the migration?</h2>
 
-<p>WordPress was a great host for me at one point &ndash; the community is fun and no
+<p>WordPress was a great host for me at one point - the community is fun and no
 work is required for setup (I would rather not waste time fiddling with my blog
 too much). But a number of things are off-putting:</p>
 
@@ -326,7 +326,7 @@ generator) has all of these concerns covered:</p>
 <li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
 write, or how I write. This enables me to use an editor of my choice.</li>
 <li>Plain text is universal. It can be viewed by a human, edited in any piece of
-software, printed out, emailed, piped to a Linux program &ndash; just about
+software, printed out, emailed, piped to a Linux program - just about
 anything really.</li>
 <li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
 rendering.  The only real speed limit is network latency. In addition, GitHub
@@ -365,11 +365,11 @@ the resulting articles.</p>
   
   <entry>
     <title type="html"><![CDATA["The Pragmatic Programmer"]]></title>
-    <link href="http://ruslanosipov.github.io/blog/the-pragmatic-programmer/"/>
+    <link href="http://www.rosipov.com/blog/the-pragmatic-programmer/"/>
     <updated>2014-07-14T18:43:26-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/the-pragmatic-programmer</id>
+    <id>http://www.rosipov.com/blog/the-pragmatic-programmer</id>
     <content type="html"><![CDATA[<p>I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and David
-Thomas &ndash; two consultants behind Pragmatic Programmers, LLC. This book might as
+Thomas - two consultants behind Pragmatic Programmers, LLC. This book might as
 well be a fantastic marketing trick for their consulting agency, but the value
 it brings to the reader is hard to underestimate.</p>
 
@@ -377,7 +377,7 @@ it brings to the reader is hard to underestimate.</p>
 major aspect of developing software: be it the choice of a text editor,
 calculating time complexity, or working effectively on a team.</p>
 
-<p>If you read thematic books and actively follow programming blogs and podcasts &ndash;
+<p>If you read thematic books and actively follow programming blogs and podcasts -
 you may find yourself cheerfully nodding while reading sections of this book.
 You may have read about some of the tips online, heard from colleagues, or
 simply discovered them yourself. You will finish this book with a wide smile of
@@ -409,9 +409,9 @@ pragmatic way.</p>
   
   <entry>
     <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
-    <link href="http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki/"/>
+    <link href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/"/>
     <updated>2014-07-07T21:14:21-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/personal-wiki-with-vimwiki</id>
+    <id>http://www.rosipov.com/blog/personal-wiki-with-vimwiki</id>
     <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a
 personal Wiki. It&rsquo;s a great idea to have data repository shared between your
 machines: important notes about people, conversations, events, tasks you&rsquo;ve
@@ -431,7 +431,7 @@ confusion.</p></blockquote>
 <p>I fully agree with the above statement and I try to use one editor for the
 majority of tasks which require typing, without having to remember which editor
 contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
-went with <code>vimwiki</code> &ndash; a lightweight and clean personal Wiki with it&rsquo;s own
+went with <code>vimwiki</code> - a lightweight and clean personal Wiki with it&rsquo;s own
 Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
 Pragmatic Programmer&rdquo;:</p>
 
@@ -463,7 +463,7 @@ reading.</li>
 useful.</p>
 
 <p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
-a Dropbox folder &ndash; <code>vimwiki</code> lets you specify locations from each one of your
+a Dropbox folder - <code>vimwiki</code> lets you specify locations from each one of your
 Wikis.</p>
 
 <pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
@@ -475,9 +475,9 @@ Wikis.</p>
   
   <entry>
     <title type="html"><![CDATA[Easy commenting with tcomment.vim]]></title>
-    <link href="http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim/"/>
+    <link href="http://www.rosipov.com/blog/easy-commenting-with-tcomment-vim/"/>
     <updated>2014-07-07T20:22:08-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/easy-commenting-with-tcomment-vim</id>
+    <id>http://www.rosipov.com/blog/easy-commenting-with-tcomment-vim</id>
     <content type="html"><![CDATA[<p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
 forget that it&rsquo;s not a built-in Vim feature.</p>
 
@@ -487,9 +487,9 @@ forget that it&rsquo;s not a built-in Vim feature.</p>
   
   <entry>
     <title type="html"><![CDATA[Zero mail inbox]]></title>
-    <link href="http://ruslanosipov.github.io/blog/zero-mail-inbox/"/>
+    <link href="http://www.rosipov.com/blog/zero-mail-inbox/"/>
     <updated>2014-07-02T13:36:42-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/zero-mail-inbox</id>
+    <id>http://www.rosipov.com/blog/zero-mail-inbox</id>
     <content type="html"><![CDATA[<p>I use email a lot. Maybe not as much as some, but I receive and send a fair
 share of mail each day. You might find it odd, but I love using email. It&rsquo;s a
 pleasant and calm experience, and sorting through a pile of messages every
@@ -529,13 +529,13 @@ this is the workflow I have been successfully using for over a year.</p>
 
 <h2>Workflow outside of the Mailbox app</h2>
 
-<p><img src="http://ruslanosipov.github.io/images/zero-mail-inbox-in-gmail.png" title="Having clean inbox is rewarding." ></p>
+<p><img src="http://www.rosipov.com/images/zero-mail-inbox-in-gmail.png" title="Having clean inbox is rewarding." ></p>
 
 <p>I only use Gmail, and there probably are ways to have the same experience on
 other platforms. However, the Mailbox app works only with Gmail.</p>
 
 <p>The first thing which needs to be done in order to start using the zero mail
-inbox workflow &ndash; is to empty it from all the read mail. Thankfully, the Mailbox
+inbox workflow - is to empty it from all the read mail. Thankfully, the Mailbox
 app archives all your previous conversations the moment you install it.</p>
 
 <p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always
@@ -568,7 +568,7 @@ act upon before getting to this one.</li>
 </ul>
 
 
-<p>Ideally, when you keep items in your inbox &ndash; this means they have to be acted
+<p>Ideally, when you keep items in your inbox - this means they have to be acted
 upon in some way. There is no reason not to archive or delete conversations
 which don&rsquo;t require actions.</p>
 
@@ -590,9 +590,9 @@ myself a lot of time and frustration.</p>
   
   <entry>
     <title type="html"><![CDATA[Dark side of technical interviews]]></title>
-    <link href="http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews/"/>
+    <link href="http://www.rosipov.com/blog/dark-side-of-technical-interviews/"/>
     <updated>2014-06-24T18:16:13-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/dark-side-of-technical-interviews</id>
+    <id>http://www.rosipov.com/blog/dark-side-of-technical-interviews</id>
     <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an
 interviewing scheme which will fit every company. Some companies seem to find
 processes which work for their size and culture, while others struggle to do
@@ -607,11 +607,11 @@ of the following interview components I employ seem satisfactory.</p>
 <p>Screenings are usually done by recruiters, employees whose skills are in
 seeking and evaluating prospective assets to the company. The first problem
 here is that <em>recruiters are not team members</em>. Recruiters might do a really
-good job at, say, finding good recruiters &ndash; since this is their domain, and
+good job at, say, finding good recruiters - since this is their domain, and
 something they are inherently good at. But they don&rsquo;t develop software.
 Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the
 slightest real life idea what managers and leaders want from the potential
-hire. Hell, the problem is &ndash; most team leads don&rsquo;t even know what kind of
+hire. Hell, the problem is - most team leads don&rsquo;t even know what kind of
 person they need. And if they do, they don&rsquo;t have a slightest idea on how to
 communicate this properly to the recruiters.</p>
 
@@ -632,7 +632,7 @@ go through the HR process, future team members do.</p>
 <h2>Interview with another engineer</h2>
 
 <p>This, even though it has a good intent, is a big whopping failure. What this
-originally is meant to do &ndash; is have a potential colleague evaluate the
+originally is meant to do - is have a potential colleague evaluate the
 candidate. Sounds like a fantastic idea in theory, and sometimes it even works
 the way it is intended to.</p>
 
@@ -675,7 +675,7 @@ This method can turn a lot of people off, and unfortunately the ones that stay
 are not typically the best quality.</p>
 
 <p>As my co-worker wisely pointed out, if you have a choice between two overall
-equal companies and one requires you to do more work before being considered &ndash;
+equal companies and one requires you to do more work before being considered -
 you will naturally pick one that accepts you easier. Any job seeker would feel
 more appreciated and trusted taking that route.</p>
 
@@ -709,9 +709,9 @@ moment.</p>
   
   <entry>
     <title type="html"><![CDATA["The Elements Of Style"]]></title>
-    <link href="http://ruslanosipov.github.io/blog/the-elements-of-style/"/>
+    <link href="http://www.rosipov.com/blog/the-elements-of-style/"/>
     <updated>2014-06-20T10:58:35-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/the-elements-of-style</id>
+    <id>http://www.rosipov.com/blog/the-elements-of-style</id>
     <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a
 software engineering blog. You might even get angry at me for pointing this
 book in your face. But I have a strong affection towards this guide; I believe
@@ -749,12 +749,12 @@ care about being understood by another human being, you should read it too.</p>
   
   <entry>
     <title type="html"><![CDATA["Expert Python Programming" by Tarek Ziade]]></title>
-    <link href="http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade/"/>
+    <link href="http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade/"/>
     <updated>2014-06-19T19:33:38-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/expert-python-programming-by-tarek-ziade</id>
+    <id>http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade</id>
     <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
 week&rsquo;s pick was &ldquo;Expert Python Programming&rdquo; by Tarek Ziade. Besides its few
-shortcomings, I found it to be useful &ndash; Python is a language of choice for me,
+shortcomings, I found it to be useful - Python is a language of choice for me,
 and I found some valuable tips I could add to my arsenal.</p>
 
 <p>The best thing about this book is that it covers a very wide range of topics:
@@ -770,7 +770,7 @@ in little gaps in knowledge which programmers can have: the author covers an
 extremely wide variety of Python development aspects.</p>
 
 <p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
-in the text and code examples &ndash; it looked like the book was put together
+in the text and code examples - it looked like the book was put together
 sloppily, in haste. Reviewers did not do a very good job evaluating this book.
 &ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
 in as much content (and code) as possible in his book, with no consistent
@@ -791,9 +791,9 @@ will probably be too hard (and painful) to read to be of real value.</p>
   
   <entry>
     <title type="html"><![CDATA[Steve Krug's "Don't Make Me Think"]]></title>
-    <link href="http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think/"/>
+    <link href="http://www.rosipov.com/blog/steve-krugs-dont-make-me-think/"/>
     <updated>2014-06-16T20:42:51-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/steve-krugs-dont-make-me-think</id>
+    <id>http://www.rosipov.com/blog/steve-krugs-dont-make-me-think</id>
     <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s &ldquo;Don&rsquo;t Make Me Think,
 Revisited: A Common Sense Approach To Web And Mobile Usability&rdquo; (oh, that&rsquo;s a
 long name). I went through the whole book only in under a few hours, and I am
@@ -839,9 +839,9 @@ book.</p>
   
   <entry>
     <title type="html"><![CDATA["The Design of Everyday Things"]]></title>
-    <link href="http://ruslanosipov.github.io/blog/the-design-of-everyday-things/"/>
+    <link href="http://www.rosipov.com/blog/the-design-of-everyday-things/"/>
     <updated>2014-06-15T14:23:50-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/the-design-of-everyday-things</id>
+    <id>http://www.rosipov.com/blog/the-design-of-everyday-things</id>
     <content type="html"><![CDATA[<p>Unfortunately, I have not been reading as much as I would love to lately. In
 the past year I have only read two books, one of which was a technical manual.
 Don&rsquo;t get me wrong, I still had a lot of personal and professional growth going
@@ -862,26 +862,26 @@ tomatoes thrown at me for this statement) but I didn&rsquo;t even think design w
 <p>Norman&rsquo;s masterpiece talks about the psychology of everyday things (which was
 actually the initial title of the book, but was changed to &ldquo;Design&rdquo; after the
 first release). The author explains how users make decisions, use objects, make
-errors &ndash; and so many other factors which should go into the design process.
+errors - and so many other factors which should go into the design process.
 Norman explains fundamental basics of the psychology of human-object
 interaction, something most people never think about. How hard could it be to
-design a door? Turns out the answer is &ndash; very hard. And every time you see
-someone pulling the door instead of pushing and vice versa &ndash; it&rsquo;s a result of a
+design a door? Turns out the answer is - very hard. And every time you see
+someone pulling the door instead of pushing and vice versa - it&rsquo;s a result of a
 poor design. So many everyday frustrations could have been avoided if designers
 would have put more thought into usability of their product.</p>
 
 <p>I build software for living, and I was skeptical if I even needed to know
 anything about good design. I mean, how hard could it be to put together a few
 pages and forms? &ldquo;I tackle complex software problems, I don&rsquo;t need any of this
-liberal arts bullshit!&rdquo; &ndash; I thought that way, and I know many people who still
+liberal arts bullshit!&rdquo; - I thought that way, and I know many people who still
 do. Well, Norman&rsquo;s book is a great starter for people like me: he does a great
 job explaining why the design process so important. By the time I finished
 reading it, I had a pretty solid set of ideas why there are so many things
 wrong with our industry, and how good, thoughtful design is a way out. The
-funniest part is &ndash; the book itself is published in the year 1988, over
+funniest part is - the book itself is published in the year 1988, over
 twenty-five years ago. It doesn&rsquo;t talk much about computers, concentrating on
 objects more common at the time: cars, telephone systems, even stoves and dish
-washing machines. And here I am, reading this book in the year 2014 &ndash; and the
+washing machines. And here I am, reading this book in the year 2014 - and the
 situation did not change at all. Expensive laundry machines are as hard to
 operate, computer programs are as clunky.</p>
 
@@ -898,7 +898,7 @@ user&rsquo;s actions, and do many other little and big improvements in order to 
 make the system image much more transparent to the user. Norman taught me the
 most obvious truth: a designer is not your typical user of the system. This
 changes so many things, makes you doubt and rethink a number of design
-decisions you made along the way &ndash; all in order to build a product that is easy
+decisions you made along the way - all in order to build a product that is easy
 and pleasant to use.</p>
 
 <p>I now consider myself to be blessed with an understanding of the importance of
@@ -913,9 +913,9 @@ book, and I will be sure to share my impressions here.</p>
   
   <entry>
     <title type="html"><![CDATA[Why I threw away my "To Do" list]]></title>
-    <link href="http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list/"/>
+    <link href="http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/"/>
     <updated>2014-06-07T12:11:54-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/why-i-threw-away-my-to-do-list</id>
+    <id>http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list</id>
     <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
 written notes, and just about anything that will let me arrange my tasks
 instead of actually accomplishing them. I recently stopped writing things down,
@@ -931,7 +931,7 @@ manage, and the number of tasks became permanent residents on my task list. Why
 did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
 Complete a task, check off a check box. There was no mindfulness about it: I
 was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
-to a next one.&rdquo; &ndash; this is what was constantly running through my head.
+to a next one.&rdquo; - this is what was constantly running through my head.
 Secondly, by writing down a task on my list in the first place, my brain would
 register it as being completed, and then I&rsquo;d go on with my day. Needless to
 say, certain tasks would sit on my list for an indefinite amount of time.</p>
@@ -954,9 +954,9 @@ possible impact on my life and career.</p>
   
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
-    <link href="http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text/"/>
+    <link href="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/"/>
     <updated>2014-06-01T20:44:12-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/export-wordpress-posts-to-plain-text</id>
+    <id>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text</id>
     <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
 I find it nice to have an archive of posts lying around in plain text.</p>
 
@@ -1045,9 +1045,9 @@ if __name__ == "__main__":
   
   <entry>
     <title type="html"><![CDATA[Why should you learn to touch type?]]></title>
-    <link href="http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type/"/>
+    <link href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/"/>
     <updated>2014-05-31T12:33:15-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/why-should-you-learn-to-touch-type</id>
+    <id>http://www.rosipov.com/blog/why-should-you-learn-to-touch-type</id>
     <content type="html"><![CDATA[<p>I have a confession to make. Up until recently I did not know how to touch
 type. I would do what most people around me did: push the keys however which
 way I felt; make a typo; look down at the keyboard to find the letter I
@@ -1067,19 +1067,19 @@ code. She is defending herself by saying that she doesn&rsquo;t need any advance
 features, and that she knows every keyword she needs to use by heart. She
 spends hours tediously searching for the files on her computer, opening them in
 Notepad, holding down arrow keys to get to whichever chunk of code she needs to
-edit (or even worse &ndash; lifts her hands off a keyboard and uses a mouse to
+edit (or even worse - lifts her hands off a keyboard and uses a mouse to
 navigate the file). Her editor only goes back one step with the &ldquo;undo&rdquo;
 operation&hellip; But Clara has good memory and she can re-type the code she erased.</p>
 
 <p>What do you think of Clara? You might say that she is wasting her time and she
 should learn herself a robust editor. And of course, you will be right.</p>
 
-<p>One day, Clara&rsquo;s company hired a new tech lead &ndash; Jane. Jane noticed that Clara
+<p>One day, Clara&rsquo;s company hired a new tech lead - Jane. Jane noticed that Clara
 is very slow at accomplishing tasks assigned to her. So Jane showed Clara how
 to save a lot of time by using an advanced editor she uses. Suddenly Clara
 discovered a whole new world in front of her: it became much easier to read the
 code with parts of it highlighted, and the new text editor showed her when she
-would make a typo or a big error &ndash; even before Clara compiled the code. And
+would make a typo or a big error - even before Clara compiled the code. And
 Clara didn&rsquo;t even have to re-invent the code she deleted, she could just travel
 down the undo tree back to the time when she erased the code: all of a sudden
 it felt like she had access to a time machine! Jane even told her that there
@@ -1088,7 +1088,7 @@ while for Clara to learn how to use the new editor, but after a few months,
 Clara became almost as fast at doing her job as Jane. Maybe Clara even received
 a promotion from doing so many things in a short period of time.</p>
 
-<p>If you don&rsquo;t know how to touch type &ndash; you are Clara. You are wasting your time.
+<p>If you don&rsquo;t know how to touch type - you are Clara. You are wasting your time.
 You look ridiculous to your colleagues when you stare down at your keyboard
 while typing. Interviewers secretly laugh at you when you make five errors in a
 four-letter word. You are frustrated by even the remote possibility of having
@@ -1097,7 +1097,7 @@ to write more than you absolutely have to.</p>
 <p>Writing is a big part of the job as a software engineer. You write code,
 documentation, ask questions. Most importantly, you have to communicate with
 your colleagues and users. Most of this interaction is written: it&rsquo;s a great
-form of communication for the job &ndash; written notes can be saved and searched
+form of communication for the job - written notes can be saved and searched
 through later. As a software engineer, you bring value to your company and its
 users. And due to the arcane nature of the craft, communication becomes
 crucial. You can be the smartest programmer in the world and you can write the
@@ -1105,11 +1105,11 @@ best piece of software out there, but no one will know about it unless you
 communicate why is it so great, what it does, and how to use it.</p>
 
 <p>By learning how to type properly, you turn a keyboard into an extension of your
-hand. All you have to do in order to type &ndash; is just think of words and
+hand. All you have to do in order to type - is just think of words and
 sentences. Your muscle memory does the rest.</p>
 
 <p>I now type somewhere between 60 and 80 words per minute with what I find to be
-a low error rate &ndash; and I have been touch typing now for little over a month. If
+a low error rate - and I have been touch typing now for little over a month. If
 you care for your craft, you have no excuse for not mastering a proper typing
 technique.</p>
 ]]></content>
@@ -1117,9 +1117,9 @@ technique.</p>
   
   <entry>
     <title type="html"><![CDATA[Writing for the sake of writing]]></title>
-    <link href="http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing/"/>
+    <link href="http://www.rosipov.com/blog/writing-for-the-sake-of-writing/"/>
     <updated>2014-05-29T21:01:29-07:00</updated>
-    <id>http://ruslanosipov.github.io/blog/writing-for-the-sake-of-writing</id>
+    <id>http://www.rosipov.com/blog/writing-for-the-sake-of-writing</id>
     <content type="html"><![CDATA[<p>This is my first article out of what I hope will be many. I started this blog
 in 2012 and I&rsquo;ve never written a single biased entry: just dry technical
 manuals, tutorials, and guides. This has lead to a number of page views from
@@ -1165,13 +1165,13 @@ Whatever it is, I don&rsquo;t think I am doing it right.</p>
 time understanding the points I am trying to bring across in conversation.
 Being a foreigner, some people probably find it challenging to understand every
 word I say. In addition, with my tendency to slur words when I am tired or
-excited &ndash; it&rsquo;s probably annoying to talk to me sometimes.</p>
+excited - it&rsquo;s probably annoying to talk to me sometimes.</p>
 
 <p>I can say with confidence that my writing skills suck. I spend by far more time
 than I should composing emails. I write a paragraph and then I delete it.
 Writing is a big challenge for me. I am quite sure this article is very hard to
 read. And I have a very strong feeling no one will read this article. Except
-for maybe, my wife &ndash; who is a fantastic writer and will point out every mistake
+for maybe, my wife - who is a fantastic writer and will point out every mistake
 I&rsquo;ve made. This text will have to be revised many times before it becomes even
 slightly readable.</p>
 
