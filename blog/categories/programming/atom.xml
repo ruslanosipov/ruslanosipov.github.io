@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2014-12-16T21:08:21-08:00</updated>
+  <updated>2014-12-16T21:19:47-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
+    <link href="http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/"/>
+    <updated>2014-12-16T21:09:58-08:00</updated>
+    <id>http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog</id>
+    <content type="html"><![CDATA[<p>I had to download my Octopress blog to a new machine today and the process of
+setting up didn&rsquo;t go as smoothly as I expected. At the end of the day the setup
+turned out to be simple, and here are the steps:</p>
+
+<pre><code>git clone -b source https://github.com/username/username.github.io myblog
+cd myblog
+git clone https://github.com/username/username.github.io _deploy
+bundle install
+</code></pre>
+
+<p>In a nutshell, you have to manually add <code>_deploy</code> folder set to track <code>master</code>
+branch of your Octopress repository. Otherwise <code>rake deploy</code> command fails.</p>
+
+<p>Happy writing!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
@@ -401,58 +423,6 @@ in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
 
 <p>This way you won&rsquo;t end up accidentally erasing your production database after
 forgetting to add <code>--test-server</code> flag.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python doctests and decorators bug]]></title>
-    <link href="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/"/>
-    <updated>2013-07-22T07:57:29-07:00</updated>
-    <id>http://www.rosipov.com/blog/python-doctests-and-decorators-bug</id>
-    <content type="html"><![CDATA[<p>Now, this as well might be a feature, but doctest strings are not being
-executed for decorated functions (at least in version 2.7). However, there is a
-workaround.</p>
-
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
-to import docstrings into a decorator scope.</p>
-
-<pre><code>#!/usr/bin/env python
-
-from functools import wraps
-
-def decorator(func):
-    @wraps(func)
-    def wrapper():
-        return func()
-    return wrapper
-
-@decorator
-def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return True
-
-import doctest
-doctest.testmod()
-</code></pre>
-
-<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
-
-<pre><code>**********************************************************************
-File "decorator.py", line 12, in __main__.foo
-Failed example:
-    foo()
-Expected:
-    False
-Got:
-    True
-**********************************************************************
-1 items had failures:
-   1 of   1 in __main__.foo
-***Test Failed*** 1 failures.
-</code></pre>
 ]]></content>
   </entry>
   
