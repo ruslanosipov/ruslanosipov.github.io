@@ -1,313 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.rosipov.com/blog/custom-templates-in-vimwiki/</loc>
+    <lastmod>2015-02-05T10:40:33-08:00</lastmod>
+  </url>
+  <url>
     <loc>http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/</loc>
     <lastmod>2014-12-16T21:09:58-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/750-words-a-day/</loc>
     <lastmod>2014-10-29T10:51:35-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/beyond-grep/</loc>
     <lastmod>2014-09-21T12:18:31-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/effective-search-with-mutt/</loc>
     <lastmod>2014-08-02T13:32:51-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/</loc>
     <lastmod>2014-07-29T23:00:04-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/three-favorite-bash-tricks/</loc>
     <lastmod>2014-07-24T18:41:10-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/</loc>
     <lastmod>2014-07-23T14:46:20-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/</loc>
     <lastmod>2014-07-22T00:04:15-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/the-pragmatic-programmer/</loc>
     <lastmod>2014-07-14T18:43:26-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/personal-wiki-with-vimwiki/</loc>
     <lastmod>2014-07-07T21:14:21-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/easy-commenting-with-tcomment-vim/</loc>
     <lastmod>2014-07-07T20:22:08-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/zero-mail-inbox/</loc>
     <lastmod>2014-07-02T13:36:42-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/dark-side-of-technical-interviews/</loc>
     <lastmod>2014-06-24T18:16:13-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/the-elements-of-style/</loc>
     <lastmod>2014-06-20T10:58:35-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade/</loc>
     <lastmod>2014-06-19T19:33:38-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/steve-krugs-dont-make-me-think/</loc>
     <lastmod>2014-06-16T20:42:51-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/the-design-of-everyday-things/</loc>
     <lastmod>2014-06-15T14:23:50-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/</loc>
     <lastmod>2014-06-07T12:11:54-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/</loc>
     <lastmod>2014-06-01T20:44:12-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/</loc>
     <lastmod>2014-05-31T12:33:15-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/writing-for-the-sake-of-writing/</loc>
     <lastmod>2014-05-29T21:01:29-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/python-ignored-context-manager/</loc>
     <lastmod>2014-05-29T12:20:34-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/</loc>
     <lastmod>2014-05-28T14:33:55-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/using-mutt-with-gpg/</loc>
     <lastmod>2014-05-28T12:11:52-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/navigate-files-easily-with-ctrlp-vim/</loc>
     <lastmod>2014-01-12T17:10:34-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/</loc>
     <lastmod>2013-12-30T10:48:31-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/open-previously-edited-file-in-vim/</loc>
     <lastmod>2013-11-24T16:39:34-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/old-file-version-in-split-with-vim/</loc>
     <lastmod>2013-11-23T20:14:19-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/pasting-with-vim-and-indentation-issues/</loc>
     <lastmod>2013-11-16T17:02:30-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/remap-your-caps-lock/</loc>
     <lastmod>2013-09-11T18:26:15-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/python-doctests-and-decorators-bug/</loc>
     <lastmod>2013-07-22T07:57:29-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/python-tests-with-doctest-and-unittest/</loc>
     <lastmod>2013-07-22T07:47:47-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/pygame-font-not-found/</loc>
     <lastmod>2013-06-27T06:51:11-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/</loc>
     <lastmod>2013-06-13T19:18:16-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/git-pretty-log-output/</loc>
     <lastmod>2013-06-13T18:31:02-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/download-gists-from-prompt/</loc>
     <lastmod>2013-05-17T11:52:02-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/my-most-used-bash-commands/</loc>
     <lastmod>2013-04-24T09:47:11-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/colorless-week-results/</loc>
     <lastmod>2013-04-17T11:32:46-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/a-week-without-colorful-prompt/</loc>
     <lastmod>2013-04-01T11:10:31-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/editing-bash-command-in-vim/</loc>
     <lastmod>2013-04-01T00:34:28-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/</loc>
     <lastmod>2013-03-27T14:35:46-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/</loc>
     <lastmod>2013-03-27T08:37:10-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/vim-movement-cheatsheet/</loc>
     <lastmod>2013-03-21T14:57:37-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/rename-commit-author-in-git/</loc>
     <lastmod>2013-03-14T17:09:02-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/read-man-pages-from-vim/</loc>
     <lastmod>2013-03-13T16:50:56-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/mintty-color-scheme-cygwin/</loc>
     <lastmod>2013-03-13T12:35:28-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/rails-and-mongodb-with-cygwin/</loc>
     <lastmod>2013-03-11T12:38:30-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/use-vim-commands-in-a-browser/</loc>
     <lastmod>2013-02-23T21:35:27-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/git-merge-two-repositories/</loc>
     <lastmod>2013-02-21T12:09:07-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/gpg-usage/</loc>
     <lastmod>2012-12-26T12:00:22-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/c-strtok-usage-example/</loc>
     <lastmod>2012-12-10T10:36:05-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/create-gitolite-repository/</loc>
     <lastmod>2012-12-09T20:11:23-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/gui-git-difftool-for-windows/</loc>
     <lastmod>2012-12-06T12:02:24-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/extendedly-basic-vim-setup/</loc>
     <lastmod>2012-11-15T11:06:33-08:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/using-vim-for-writing-code/</loc>
     <lastmod>2012-10-09T21:16:52-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/c-reallocating-memory-for-the-array/</loc>
     <lastmod>2012-09-01T18:54:36-07:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/archive/</loc>
-    <lastmod>2014-12-16T21:19:47-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2015-02-05T11:06:38-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/</loc>
-    <lastmod>2014-12-16T21:19:47-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2015-02-05T11:06:38-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/</loc>
-    <lastmod>2014-12-16T21:19:47-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2015-02-05T11:06:38-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/archives/</loc>
-    <lastmod>2014-12-16T21:19:47-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2015-02-05T11:06:38-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/about/</loc>
-    <lastmod>2014-12-16T21:19:47-08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2015-02-05T11:06:38-08:00</lastmod>
   </url>
 </urlset>
