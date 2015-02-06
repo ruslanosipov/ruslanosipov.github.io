@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-06T14:18:06-08:00</updated>
+  <updated>2015-02-06T14:21:56-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
-    <link href="http://www.rosipov.com/blog/ode-to-plain-text/"/>
+    <link href="http://www.rosipov.com/blog/power-of-the-command-line/"/>
     <updated>2015-02-06T13:13:49-08:00</updated>
-    <id>http://www.rosipov.com/blog/ode-to-plain-text</id>
+    <id>http://www.rosipov.com/blog/power-of-the-command-line</id>
     <content type="html"><![CDATA[<p><em>Disclaimer: I am not advocating any specific tools or methodologies, I am
 simply sharing workflow I find to be efficient and pleasant.</em></p>
 
@@ -160,8 +160,8 @@ then you probably don&rsquo;t need to worry about this.</p>
 practically guarantee that you will benefit from employing command line tools
 and modal editors over their GUI counterparts.</p>
 
-<p>I&rsquo;ve put together a little table for comparison between two. Indeed, there are
-different times when either GUI and CLI tools excel:</p>
+<p>I&rsquo;ve put together a table for comparison between two. Indeed, there are
+different times when either GUI or CLI tools excel:</p>
 
 <table>
 <thead>
@@ -206,10 +206,10 @@ different times when either GUI and CLI tools excel:</p>
 </table>
 
 
-<p>As you can see - both CLI and GUI programs have their pluses and minuses. It&rsquo;s
-always important to use the right tool for the job. CLI tools seem to appeal to
-experienced users, while GUI tools are great for novice users and do excel in
-representing visual information.</p>
+<p>As you can see - both CLI and GUI programs have their pluses and minuses. CLI
+tools seem to appeal to experienced users, while GUI tools are great for novice
+users and do excel in representing visual information. No matter what kind of
+interface you prefer, it&rsquo;s crucially important to use the right tool for the job.</p>
 ]]></content>
   </entry>
   
