@@ -234,6 +234,15 @@ if you do this often. Now let&rsquo;s try to perform the same task in command li
 commands do is much easier than it looks. Especially with the help of <code>man</code> or,
 even better, <code>bro</code> (see <a href="http://bropages.org">http://bropages.org</a> for latter).</p>
 
+<p>The above example demonstrates one of the biggest advantages of command line
+interfaces: an ability to redirect an output of one program into another,
+chaining the tools together. In this example, we first get a list of all files
+use <code>find</code> tool, and then run <code>sed</code> tool on each of those files in order to
+replace the text.</p>
+
+<p>An output from any CLI tool can be fed into any other CLI tool. This allows for
+countless possibilities and high adaptability to unscripted scenarios.</p>
+
 <h2>Is it worth learning CLI tools over their GUI counterparts?</h2>
 
 <p>This depends on what your intentions are. If you&rsquo;re a power user who writes and
@@ -258,6 +267,11 @@ different times when either GUI or CLI tools excel:</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td> Ability to combine/chain tools    </td>
+<td> Yes </td>
+<td> No  </td>
+</tr>
 <tr>
 <td> Easy to learn                     </td>
 <td> No  </td>
