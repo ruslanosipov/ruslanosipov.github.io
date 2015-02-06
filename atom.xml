@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-05T11:06:38-08:00</updated>
+  <updated>2015-02-06T14:18:06-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -14,6 +14,206 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Power of the command line]]></title>
+    <link href="http://www.rosipov.com/blog/ode-to-plain-text/"/>
+    <updated>2015-02-06T13:13:49-08:00</updated>
+    <id>http://www.rosipov.com/blog/ode-to-plain-text</id>
+    <content type="html"><![CDATA[<p><em>Disclaimer: I am not advocating any specific tools or methodologies, I am
+simply sharing workflow I find to be efficient and pleasant.</em></p>
+
+<p>I am a huge fan of working with CLI applications. I use Vim for editing code,
+composing emails, and various kinds of writing. When I have to manipulate huge
+amounts of email, I use Mutt: it&rsquo;s intuitive tagging and regular expression
+engine are extremely useful for the task. I employ <code>ack</code>, <code>awk</code>, <code>grep</code>, and
+<code>sed</code> - Linux utilities which allow for precise and fast text manipulation.</p>
+
+<p>However, I would not use CLI browsers like <code>elinks</code> or <code>w3m</code>, and the idea of
+reading every email in Mutt gives me crepes. I love the visualization web
+browser offers, something text-based prompt is not able to provide. And it
+doesn&rsquo;t have to.</p>
+
+<p>There are two components to most of the tasks performed on a computer: analyzing
+output and entering input. Certain tasks employ one component more than the
+other. In most modern applications it&rsquo;s rare to have both solid control from
+the user perspective and a pleasant informative UI. With increased visual
+component, it&rsquo;s more time consuming to make the application do what you need,
+especially if your needs are esoteric. With more editing power, visual display
+becomes less complex in order to make editing tasks easier.</p>
+
+<h2>Where visual tools fall short</h2>
+
+<p>What is the alternative? Using multiple programs with different levels of
+control to accomplish one task: to edit text. Each of the programs excels in
+it&rsquo;s own field: word processing software allows for beautiful fonts and document
+presentation, IDE lets you access aggregated meta information about your
+application. But most of the IDEs and word processors lack the powerful tools
+needed to manipulate the foundation of what user is working with - plain text.</p>
+
+<h2>Ode to plain text</h2>
+
+<p>I spend a lot of time writing and editing plain text. Be it source code, emails,
+documentation, or even blog posts. These tasks take up significant amount of my
+day, and it is only logical to substitute some of the visual presentation
+capabilities for effectiveness.</p>
+
+<p>It is hard to mentally process data which is not explicitly and unambiguously
+visible: different levels of headings, hidden meta information. Unlike more
+obscuring formats, plain text is all there is - it has nothing to hide. If you
+don&rsquo;t see it - it&rsquo;s not there. If you do see it - you know exactly what it is.</p>
+
+<p>One of my favorite tips from &ldquo;<a href="http://amzn.to/1yRe6Th">Pragmatic Programmer</a>&rdquo; goes:</p>
+
+<blockquote><p>Use a single editor well</p></blockquote>
+
+<p>So I learned one editor well, and now I use it for all my writing and editing
+needs. I don&rsquo;t have to jump between IDE, browser, and office software. Most of
+the text I edit is manipulated with one editor. There is only one set of key
+bindings to know, one skill to master and hone. Fast, without any additional
+thought, using single text editor and all of it&rsquo;s powerful features is imprinted
+in muscle memory. One less task to worry about.</p>
+
+<p>I write my documents in Markdown format, and later convert them to the desired
+output using <code>pandoc</code>: be it an HTML page, PDF, or a Microsoft Word document. I
+use Vim, so I can rearrange paragraphs or manipulate lines within a couple of
+keystrokes. Since I spend so much time editing text, I also touch type, which
+makes me even more effective at the given task.</p>
+
+<h2>Harness the power of the command line</h2>
+
+<p>When it comes to bulk manipulating files or working with version control -
+there is no better candidate then command line applications. There&rsquo;s no need to
+go through a number of obscure menus, ticking and unticking checkboxes, and
+hoping that your desired result can be achieved with a program&rsquo;s GUI.</p>
+
+<p>Let&rsquo;s look at a few scenarios some users face in their daily workflow.</p>
+
+<h3>Creating a backup</h3>
+
+<p>With GUI, you&rsquo;d have to take multiple steps:</p>
+
+<ol>
+<li>Right click <code>file</code>.</li>
+<li>Left click on &ldquo;Copy&rdquo;.</li>
+<li>Right click on some empty space.</li>
+<li>Left click on &ldquo;Paste&rdquo;.</li>
+<li>Right click on a newly created copy.</li>
+<li>Left click on &ldquo;Rename&rdquo;.</li>
+<li>Switch to a keyboard.</li>
+<li>Type <code>file.bak</code>.</li>
+</ol>
+
+
+<p>The above steps can be sped up using shortcuts like <code>C-c</code> or <code>C-v</code>, but not by
+much. Here&rsquo;s an alternative in bash:</p>
+
+<pre><code>cp file{,.bak}
+</code></pre>
+
+<p>While first variant would do great for a novice or a casual user - the second
+method would be much more preferred by an experienced user whose concern is
+speed.</p>
+
+<h3>Recursively bulk replacing text in a directory</h3>
+
+<p>Let&rsquo;s assume we want to do a bulk replace text in a directory and all it&rsquo;s
+subdirectories. We have our trusted IDE, let&rsquo;s assume this IDE is already
+configured to work with a desired directory.</p>
+
+<ol>
+<li>Open your IDE.</li>
+<li>Select &ldquo;Edit&rdquo; menu.</li>
+<li>Select &ldquo;Find and Replace&rdquo; submenu.</li>
+<li>Click on a &ldquo;Find&rdquo; input field.</li>
+<li>Switch to a keyboard.</li>
+<li>Type <code>function_to_replace</code>.</li>
+<li>Switch to a mouse.</li>
+<li>Click on &ldquo;Replace&rdquo; input field.</li>
+<li>Switch to a keyboard.</li>
+<li>Type <code>new_function_name</code>.</li>
+<li>Switch to a mouse.</li>
+<li>Enable &ldquo;Search in subdirectories&rdquo; checkbox.</li>
+<li>Click &ldquo;OK&rdquo;.</li>
+</ol>
+
+
+<p>Again, this can be shortened a bit with some keyboard shortcuts, but not by
+much. You still have to switch between keyboard and a mouse a total of 4 times,
+and you still have to click through all the menus. This does get time consuming
+if you do this often. Now let&rsquo;s try to perform the same task in command line:</p>
+
+<pre><code>find . -type f | xargs sed -i 's/function_to_replace/new_function_name/g'
+</code></pre>
+
+<p>Much faster, if you&rsquo;re able to memorize the structure. And remembering what the
+commands do is much easier than it looks. Especially with the help of <code>man</code> or,
+even better, <code>bro</code> (see <a href="http://bropages.org">http://bropages.org</a> for latter).</p>
+
+<h2>Is it worth learning CLI tools over their GUI counterparts?</h2>
+
+<p>This depends on what your intentions are. If you&rsquo;re a power user who writes and
+edits a lot of text or manipulates bulk amounts of text on a daily basis - than
+it&rsquo;s definitely worth it. Time spent learning these tools will pay off. But if
+you&rsquo;re a casual user whose needs end with writing an occasional email or two -
+then you probably don&rsquo;t need to worry about this.</p>
+
+<p>Hell, if you&rsquo;ve read this far - this means you&rsquo;re the former case. I can
+practically guarantee that you will benefit from employing command line tools
+and modal editors over their GUI counterparts.</p>
+
+<p>I&rsquo;ve put together a little table for comparison between two. Indeed, there are
+different times when either GUI and CLI tools excel:</p>
+
+<table>
+<thead>
+<tr>
+<th> Factor                            </th>
+<th> CLI </th>
+<th> GUI </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Easy to learn                     </td>
+<td> No  </td>
+<td> Yes </td>
+</tr>
+<tr>
+<td> Efficient for a novice user       </td>
+<td> No  </td>
+<td> Yes </td>
+</tr>
+<tr>
+<td> Efficient for an experienced user </td>
+<td> Yes </td>
+<td> No  </td>
+</tr>
+<tr>
+<td> Good for occasional use           </td>
+<td> No  </td>
+<td> Yes </td>
+</tr>
+<tr>
+<td> Good for repetitive tasks         </td>
+<td> Yes </td>
+<td> No  </td>
+</tr>
+<tr>
+<td> Presents visual information well  </td>
+<td> No  </td>
+<td> Yes </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>As you can see - both CLI and GUI programs have their pluses and minuses. It&rsquo;s
+always important to use the right tool for the job. CLI tools seem to appeal to
+experienced users, while GUI tools are great for novice users and do excel in
+representing visual information.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Custom templates in vimwiki]]></title>
     <link href="http://www.rosipov.com/blog/custom-templates-in-vimwiki/"/>
     <updated>2015-02-05T10:40:33-08:00</updated>
@@ -21,9 +221,9 @@
     <content type="html"><![CDATA[<p>I got myself into a habit of using vimwiki for the past year: it helps me to
 keep track of random bits of information, work and project notes, as well as
 daily goals and achievements. You can read more about vimwiki in an article I
-wrote a while back: <a href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">&ldquo;Personal wiki with vimwiki&rdquo;</a>.</p>
+wrote a while back: &ldquo;<a href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>&rdquo;.</p>
 
-<p><img src="http://www.rosipov.com/images/vimwiki-workflow-habits.png" title="HTML wiki generated by vimwiki with custom navigation bar." ></p>
+<p><img src="http://www.rosipov.com/images/vimwiki-workflow-habits.png" title="HTML page generated by vimwiki with a custom navigation bar." ></p>
 
 <p>One of vimwiki&rsquo;s features I really like is an ability to convert whole wiki to
 HTML with a single command: <code>:VimwikiAll2HTML</code>. There is one annoyance though:
@@ -1027,97 +1227,6 @@ just a list of things to do, but a number of goals you want to reach. By not
 relying on a written manifesto cluttered with tasks, I am forced to concentrate
 on the bigger picture, where what I set out to accomplish has the highest
 possible impact on my life and career.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
-    <link href="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/"/>
-    <updated>2014-06-01T20:44:12-07:00</updated>
-    <id>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text</id>
-    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
-I find it nice to have an archive of posts lying around in plain text.</p>
-
-<p>I wrote a little Python script which I used to extract an archive of my posts
-and pages into a bunch of files on my computer. In order to use it, you need to
-use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR
-format, and feed the file to the script.</p>
-
-<p>Source code of the script is below (link for downloading the script is at the
-bottom of this post):</p>
-
-<pre><code>#!/usr/bin/env python
-
-"""This script converts WXR file to a number of plain text files.
-
-WXR stands for "WordPress eXtended RSS", which basically is just a
-regular XML file. This script extracts entries from the WXR file into
-plain text files. Output format: article name prefixed by date for
-posts, article name for pages.
-
-Usage: wxr2txt.py filename [-o output_dir]
-"""
-
-import os
-import re
-import sys
-from xml.etree import ElementTree
-
-NAMESPACES = {
-        'content': 'http://purl.org/rss/1.0/modules/content/',
-        'wp': 'http://wordpress.org/export/1.2/',
-}
-USAGE_STRING = "Usage: wxr2txt.py filename [-o output_dir]"
-
-def main(argv):
-    filename, output_dir = _parse_and_validate_output(argv)
-    try:
-        data = ElementTree.parse(filename).getroot()
-    except ElementTree.ParseError:
-        _error("Invalid input file format. Can not parse the input.")
-    page_counter, post_counter = 0, 0
-    for post in data.find('channel').findall('item'):
-        post_type = post.find('wp:post_type', namespaces=NAMESPACES).text
-        if post_type not in ('post', 'page'):
-            continue
-        content = post.find('content:encoded', namespaces=NAMESPACES).text
-        date = post.find('wp:post_date', namespaces=NAMESPACES).text
-        title = post.find('title').text
-        date = date.split(' ')[0].replace('-', '')
-        title = re.sub(r'[_]+', '_', re.sub(r'[^a-z0-9+]', '_', title.lower()))
-        if post_type == 'post':
-            post_filename = date + '_' + title + '.txt'
-            post_counter += 1
-        else:
-            post_filename = title + '.txt'
-            page_counter += 1
-        with open(os.path.join(output_dir, post_filename), 'w') as post_file:
-            post_file.write(content.encode('utf8'))
-        post_counter += 1
-    print "Saved {} posts and {} pages in directory '{}'.".format(
-            post_counter, page_counter, output_dir)
-
-def _parse_and_validate_output(argv):
-    if len(argv) not in (2, 4):
-        _error("Wrong number of arguments.")
-    filename = argv[1]
-    if not os.path.isfile(filename):
-        _error("Input file does not exist (or not enough permissions).")
-    output_dir = argv[3] if len(argv) == 4 and argv[2] == '-o' else os.getcwd()
-    if not os.path.isdir(output_dir):
-        _error("Output directory does not exist (or not enough permissions).")
-    return filename, output_dir
-
-def _error(text):
-    print text
-    print USAGE_STRING
-    sys.exit(1)
-
-if __name__ == "__main__":
-    main(sys.argv)
-</code></pre>
-
-<p>You can download the script from here: <a href="https://gist.github.com/ruslanosipov/b748a138389db2cda1e8">wxr2txt.py</a>.</p>
 ]]></content>
   </entry>
   
