@@ -1,8 +1,8 @@
 ---
+title: Git pretty log output
 categories: [Productivity]
 date: 2013-06-14 01:31:02+00:00
 tags: [git]
-title: Git pretty log output
 ---
 
 This alias has been around the web for quite some time, but it does look

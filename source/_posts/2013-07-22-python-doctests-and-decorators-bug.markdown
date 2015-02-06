@@ -1,8 +1,8 @@
 ---
+title: Python doctests and decorators bug
 categories: [Programming]
 date: 2013-07-22 14:57:29+00:00
 tags: [decorator, doctest, python]
-title: Python doctests and decorators bug
 ---
 
 Now, this as well might be a feature, but doctest strings are not being

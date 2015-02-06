@@ -1,13 +1,13 @@
 ---
+title: '"Expert Python Programming" by Tarek Ziade'
 categories: [Book reviews]
 date: 2014-06-20 02:33:38+00:00
-title: '"Expert Python Programming" by Tarek Ziade'
 ---
 
 Recently, I've been trying to read at least one book every week, and this
-week's pick was "Expert Python Programming" by Tarek Ziade. Besides its few
-shortcomings, I found it to be useful - Python is a language of choice for me,
-and I found some valuable tips I could add to my arsenal.
+week's pick was "[Expert Python Programming][1]" by Tarek Ziade. Besides its
+few shortcomings, I found it to be useful - Python is a language of choice for
+me, and I found some valuable tips I could add to my arsenal.
 
 The best thing about this book is that it covers a very wide range of topics:
 syntax recommendations and code profiling, testing practices and project
@@ -33,8 +33,10 @@ covers a wide variety of subjects: this is both a key strength and the biggest
 weakness of the book. There is just "too much stuff" and it's too scattered
 across the topics.
 
-"Expert Python Programming" will be of best use to, you guessed it, an expert.
-I found it best to scan through the content and seek out interesting bits of
-information. Beginners, however, might be completely overwhelmed. While
+"[Expert Python Programming][1]" will be of best use to, you guessed it, an
+expert. I found it best to scan through the content and seek out interesting
+bits of information. Beginners, however, might be completely overwhelmed. While
 advanced and intermediate Pythonistas will get the most out of this book, it
 will probably be too hard (and painful) to read to be of real value.
+
+[1]: http://amzn.to/1yRw7AZ

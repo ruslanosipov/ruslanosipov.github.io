@@ -1,8 +1,8 @@
 ---
+title: Colorless week results
 categories: [Notes and rants]
 date: 2013-04-17 18:32:46+00:00
 tags: [bash, git, vim]
-title: Colorless week results
 ---
 
 A round-up of [The Week Without Colorful Prompt][1].

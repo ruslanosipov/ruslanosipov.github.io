@@ -1,8 +1,8 @@
 ---
+title: Personal wiki with vimwiki
 categories: [Productivity]
 date: 2014-07-08 04:14:21+00:00
 tags: [vim]
-title: Personal wiki with vimwiki
 ---
 
 I recently found an interesting way to organize random bits of information: a

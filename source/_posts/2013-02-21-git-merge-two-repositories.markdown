@@ -1,8 +1,8 @@
 ---
+title: 'Git: merge two repositories'
 categories: [Productivity]
 date: 2013-02-21 20:09:07+00:00
 tags: [git]
-title: 'Git: merge two repositories'
 ---
 
 Today I had to merge changes from one repository into another. Let's assume you

@@ -1,8 +1,8 @@
 ---
+title: Using Mutt with GPG
 categories: [Productivity]
 date: 2014-05-28 19:11:52+00:00
 tags: [gpg, mutt]
-title: Using Mutt with GPG
 ---
 
 Mutt is a great command line email client, but it does not offer a built-in way

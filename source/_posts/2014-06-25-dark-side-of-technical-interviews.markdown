@@ -1,7 +1,7 @@
 ---
+title: Dark side of technical interviews
 categories: [Notes and rants]
 date: 2014-06-25 01:16:13+00:00
-title: Dark side of technical interviews
 ---
 
 It upsets me greatly, since there is no immediate or obvious solution to an

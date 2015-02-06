@@ -1,8 +1,8 @@
 ---
+title: IRSSI - ignore all from everyone
 categories: [Notes and rants]
 date: 2013-03-27 15:37:10+00:00
 tags: [irssi]
-title: IRSSI - ignore all from everyone
 ---
 
 If you visit noisy IRC channels like the programming ones on freenode, you

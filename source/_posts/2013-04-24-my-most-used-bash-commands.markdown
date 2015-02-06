@@ -1,8 +1,8 @@
 ---
+title: My most used bash commands
 categories: [Notes and rants]
 date: 2013-04-24 16:47:11+00:00
 tags: [bash]
-title: My most used bash commands
 ---
 
 Shell history can tell a lot about its owner. What's in your shell?

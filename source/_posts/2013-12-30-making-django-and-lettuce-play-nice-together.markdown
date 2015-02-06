@@ -1,8 +1,8 @@
 ---
+title: Making Django and Lettuce play nice together
 categories: [Programming]
 date: 2013-12-30 18:48:31+00:00
 tags: [django, lettuce, python, splinter]
-title: Making Django and Lettuce play nice together
 ---
 
 Lettuce is a great BDD tool which allows you to parse expressions written via

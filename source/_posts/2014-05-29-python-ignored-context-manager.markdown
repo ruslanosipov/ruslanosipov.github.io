@@ -1,8 +1,8 @@
 ---
+title: 'Python: "ignored" context manager'
 categories: [Programming]
 date: 2014-05-29 19:20:34+00:00
 tags: [contextlib, python]
-title: 'Python: "ignored" context manager'
 ---
 
 There was a recent [fantastic addition to Python 3.4][1] by Raymond Hettinger:

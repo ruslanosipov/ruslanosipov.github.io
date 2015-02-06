@@ -1,8 +1,8 @@
 ---
+title: Rename commit author in git
 categories: [Productivity]
 date: 2013-03-15 00:09:02+00:00
 tags: [git]
-title: Rename commit author in git
 ---
 
 In some extremely rare cases you end up pushing data to the repo with the wrong

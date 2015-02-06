@@ -1,8 +1,8 @@
 ---
+title: Rails and MongoDB with Cygwin
 categories: [Programming]
 date: 2013-03-11 19:38:30+00:00
 tags: [mongodb, rails]
-title: Rails and MongoDB with Cygwin
 ---
 
 Setting up Ruby on Rails with MongoDB on a Windows machine.

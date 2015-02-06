@@ -1,8 +1,8 @@
 ---
+title: Zero mail inbox
 categories: [Productivity]
 date: 2014-07-02 20:36:42+00:00
 tags: [email]
-title: Zero mail inbox
 ---
 
 I use email a lot. Maybe not as much as some, but I receive and send a fair

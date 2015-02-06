@@ -1,8 +1,8 @@
 ---
+title: Python tests with doctest and unittest
 categories: [Programming]
 date: 2013-07-22 14:47:47+00:00
 tags: [doctest, python, unittest]
-title: Python tests with doctest and unittest
 ---
 
 When it comes to tests, `doctest` is a great simple module to write tests for

@@ -1,8 +1,8 @@
 ---
+title: Create gitolite repository
 categories: [Programming]
 date: 2012-12-10 04:11:23+00:00
 tags: [git, gitolite]
-title: Create gitolite repository
 ---
 
 A reminder on how to initialize a fresh gitolite repository, assuming that

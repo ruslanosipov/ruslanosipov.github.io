@@ -1,8 +1,8 @@
 ---
+title: Pasting with vim and indentation issues
 categories: [Productivity]
 date: 2013-11-17 01:02:30+00:00
 tags: [vim]
-title: Pasting with vim and indentation issues
 ---
 
 If you use vim often - you probably had to paste something into vim from the

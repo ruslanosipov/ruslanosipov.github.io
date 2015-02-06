@@ -1,8 +1,8 @@
 ---
+title: C - Reallocating memory for the array
 categories: [Programming]
 date: 2012-09-02 01:54:36+00:00
 tags: [c]
-title: C - Reallocating memory for the array
 ---
 
 I just started delving into C and I had some issues with increasing the memory

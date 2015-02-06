@@ -1,8 +1,8 @@
 ---
+title: Extendedly basic vim setup
 categories: [Productivity]
 date: 2012-11-15 19:06:33+00:00
 tags: [vim]
-title: Extendedly basic vim setup
 ---
 
 Ahoy Internet, here's a neat and fairly simple vim configuration for

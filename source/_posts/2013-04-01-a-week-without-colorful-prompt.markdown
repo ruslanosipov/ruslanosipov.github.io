@@ -1,8 +1,8 @@
 ---
+title: A week without colorful prompt
 categories: [Notes and rants]
 date: 2013-04-01 18:10:31+00:00
 tags: [bash, git, vim]
-title: A week without colorful prompt
 ---
 
 I noticed that I rely on colors in the bash terminal a lot, as in git output,

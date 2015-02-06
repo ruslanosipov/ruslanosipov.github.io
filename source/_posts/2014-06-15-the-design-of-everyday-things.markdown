@@ -1,7 +1,7 @@
 ---
+title: '"The Design of Everyday Things"'
 categories: [Book reviews]
 date: 2014-06-15 21:23:50+00:00
-title: '"The Design of Everyday Things"'
 ---
 
 Unfortunately, I have not been reading as much as I would love to lately. In
@@ -14,12 +14,12 @@ I went ahead and ordered one of the books on my reading list: "The Design of
 Everyday Things" by Donald A. Norman. I just finished reading it a few hours
 ago and am eager to share my impressions of the book.
 
-"The Design of Everyday Things" turned out to be one of the most eye-opening
-books about design I have ever read (alright, alright, I haven't read any
-design books before). It's mind blowing to think that I have never considered
-the points brought up by the authors. Hell, (and I will probably have rotten
-tomatoes thrown at me for this statement) but I didn't even think design was a
-"real" job. Oh dear, how wrong I was.
+"[The Design of Everyday Things][1]" turned out to be one of the most
+eye-opening books about design I have ever read (alright, alright, I haven't
+read any design books before). It's mind blowing to think that I have never
+considered the points brought up by the authors. Hell, (and I will probably
+have rotten tomatoes thrown at me for this statement) but I didn't even think
+design was a "real" job. Oh dear, how wrong I was.
 
 Norman's masterpiece talks about the psychology of everyday things (which was
 actually the initial title of the book, but was changed to "Design" after the
@@ -47,7 +47,7 @@ washing machines. And here I am, reading this book in the year 2014 - and the
 situation did not change at all. Expensive laundry machines are as hard to
 operate, computer programs are as clunky.
 
-"The Design of Everyday Things" compels the reader to become a part of the
+"[The Design of Everyday Things][1]" compels the reader to become a part of the
 solution to this enormous and bulky design problem the world is stuck with. In
 the everyday world, for every good case of design out there, you will face a
 hundred faulty, frustrating, and downright insulting design attempts.
@@ -70,3 +70,5 @@ practices in building systems that are easy to understand and pleasant to
 operate for the user. My next stop is "Don't Make Me Think, Revisited: A Common
 Sense Approach to Web Usability" by Steve Krug. I've heard a lot about this
 book, and I will be sure to share my impressions here.
+
+[1]: http://amzn.to/16ORgF9

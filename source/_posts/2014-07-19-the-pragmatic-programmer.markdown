@@ -1,13 +1,13 @@
 ---
+title: '"The Pragmatic Programmer"'
 categories: [Book reviews]
 date: 2014-07-15 01:43:26+00:00
-title: '"The Pragmatic Programmer"'
 ---
 
-I just finished reading "The Pragmatic Programmer" by Andrew Hunt and David
-Thomas - two consultants behind Pragmatic Programmers, LLC. This book might as
-well be a fantastic marketing trick for their consulting agency, but the value
-it brings to the reader is hard to underestimate.
+I just finished reading "[The Pragmatic Programmer][1]" by Andrew Hunt and
+David Thomas - two consultants behind Pragmatic Programmers, LLC. This book
+might as well be a fantastic marketing trick for their consulting agency, but
+the value it brings to the reader is hard to underestimate.
 
 Hunt and Thomas cover a wide variety of topics, briefly glancing over every
 major aspect of developing software: be it the choice of a text editor,
@@ -37,6 +37,10 @@ understand some pieces, but will still be able to comprehend a major portion of
 knowledge contained within this book.
 
 I enthusiastically recommend this book to every software engineer I get to work
-with. It's easy to read (as opposed to monstrosities like "Code Complete" or
-"Art of Computer Programming") and it teaches you how to get things done, the
-pragmatic way.
+with. It's easy to read (as opposed to monstrosities like "[Code Complete][2]"
+or "[Art of Computer Programming][3]") and it teaches you how to get things
+done, the pragmatic way.
+
+[1]: http://amzn.to/1zXtlQx
+[2]: http://amzn.to/1zGLlv1
+[3]: http://amzn.to/1zGLnDl

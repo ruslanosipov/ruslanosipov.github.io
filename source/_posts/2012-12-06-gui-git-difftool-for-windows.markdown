@@ -1,8 +1,8 @@
 ---
+title: GUI git difftool for Windows
 categories: [Productivity]
 date: 2012-12-06 20:02:24+00:00
 tags: [git, windows]
-title: GUI git difftool for Windows
 ---
 
 A quick note on how to set up GUI difftool to use with git on Windows (Git

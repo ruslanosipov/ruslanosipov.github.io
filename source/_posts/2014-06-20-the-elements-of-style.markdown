@@ -1,7 +1,7 @@
 ---
+title: '"The Elements Of Style"'
 categories: [Book reviews]
 date: 2014-06-20 17:58:35+00:00
-title: '"The Elements Of Style"'
 ---
 
 You might wonder what an English language style guide from 1918 is doing in a
@@ -30,9 +30,12 @@ of your text. Here's my favorite piece of advice:
   > that he avoid all detail and treat his subjects only in outline, but that
   > he make every word tell.
 
-"The Elements Of Style" is a timeless classic; it should be mandatory reading
-for every speaker or learner of English out there. I immediately applied the
-rules to technical documentation, email communication, and even this very blog
-entry. I will probably have to read through the guide multiple times over the
-course of the following months in order to ensure maximum retention. If you
-care about being understood by another human being, you should read it too.
+"[The Elements Of Style][1]" is a timeless classic; it should be mandatory
+reading for every speaker or learner of English out there. I immediately
+applied the rules to technical documentation, email communication, and even
+this very blog entry. I will probably have to read through the guide multiple
+times over the course of the following months in order to ensure maximum
+retention. If you care about being understood by another human being, you
+should read it too.
+
+[1]: http://amzn.to/1v6keFG

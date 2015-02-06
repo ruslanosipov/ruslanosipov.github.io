@@ -1,8 +1,8 @@
 ---
+title: Export WordPress posts to plain text
 categories: [Programming]
 date: 2014-06-02 03:44:12+00:00
 tags: [python, wordpress]
-title: Export WordPress posts to plain text
 ---
 
 I prefer to create and edit my posts in plain text. It's a timeless format, and

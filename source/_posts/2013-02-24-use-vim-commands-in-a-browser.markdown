@@ -1,8 +1,8 @@
 ---
+title: Use vim commands in a browser
 categories: [Productivity]
 date: 2013-02-24 05:35:27+00:00
 tags: [vim, vimium]
-title: Use vim commands in a browser
 ---
 
 I've been giving preference to a keyboard over mouse since I discovered vim for

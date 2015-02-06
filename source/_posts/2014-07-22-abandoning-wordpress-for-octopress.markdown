@@ -1,8 +1,8 @@
 ---
+title: Abandoning WordPress for Octopress
 categories: [Notes and rants]
 date: 2014-07-22 00:04:15 -0700
 tags: [octopress, wordpress]
-title: Abandoning WordPress for Octopress
 ---
 
 I finally did it! I've left the dark corners of WordPress in favor of

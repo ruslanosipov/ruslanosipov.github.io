@@ -1,7 +1,7 @@
 ---
+title: Why should you learn to touch type?
 categories: [Notes and rants]
 date: 2014-05-31 19:33:15+00:00
-title: Why should you learn to touch type?
 ---
 
 I have a confession to make. Up until recently I did not know how to touch

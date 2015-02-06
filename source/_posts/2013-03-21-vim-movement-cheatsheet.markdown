@@ -1,8 +1,8 @@
 ---
+title: Vim movement cheatsheet
 categories: [Productivity]
 date: 2013-03-21 21:57:37+00:00
 tags: [vim]
-title: Vim movement cheatsheet
 ---
 
 {% img /images/vim-movement-commands-cheatsheet.png A great cheat sheet for Vim movement commands. %}

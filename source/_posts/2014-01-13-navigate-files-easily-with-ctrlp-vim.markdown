@@ -1,8 +1,8 @@
 ---
+title: Navigate files easily with ctrlp.vim
 categories: [Productivity]
 date: 2014-01-13 01:10:34+00:00
 tags: [vim]
-title: Navigate files easily with ctrlp.vim
 ---
 
 Few years ago I used a lightweight IDE called "Sublime Text 2". And one of the

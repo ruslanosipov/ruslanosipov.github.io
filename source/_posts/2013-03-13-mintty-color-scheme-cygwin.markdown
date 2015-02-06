@@ -1,8 +1,8 @@
 ---
+title: Mintty color scheme (Cygwin)
 categories: [Productivity]
 date: 2013-03-13 19:35:28+00:00
 tags: [cygwin]
-title: Mintty color scheme (Cygwin)
 ---
 
 {% img /images/mintty-softer-color-scheme.png Softer colors for mintty. %}
