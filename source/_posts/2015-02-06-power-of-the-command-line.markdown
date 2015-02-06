@@ -126,6 +126,15 @@ Much faster, if you're able to memorize the structure. And remembering what the
 commands do is much easier than it looks. Especially with the help of `man` or,
 even better, `bro` (see <http://bropages.org> for latter).
 
+The above example demonstrates one of the biggest advantages of command line
+interfaces: an ability to redirect an output of one program into another,
+chaining the tools together. In this example, we first get a list of all files
+use `find` tool, and then run `sed` tool on each of those files in order to
+replace the text.
+
+An output from any CLI tool can be fed into any other CLI tool. This allows for
+countless possibilities and high adaptability to unscripted scenarios.
+
 ## Is it worth learning CLI tools over their GUI counterparts?
 
 This depends on what your intentions are. If you're a power user who writes and
@@ -143,6 +152,7 @@ different times when either GUI or CLI tools excel:
 
 | Factor                            | CLI | GUI |
 |-----------------------------------|-----|-----|
+| Ability to combine/chain tools    | Yes | No  |
 | Easy to learn                     | No  | Yes |
 | Efficient for a novice user       | No  | Yes |
 | Efficient for an experienced user | Yes | No  |
