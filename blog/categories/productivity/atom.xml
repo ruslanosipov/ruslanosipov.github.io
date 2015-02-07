@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-06T17:18:50-08:00</updated>
+  <updated>2015-02-07T01:23:16-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -28,7 +28,7 @@ engine are extremely useful for the task. I employ <code>ack</code>, <code>awk</
 <code>sed</code> - Linux utilities which allow for precise and fast text manipulation.</p>
 
 <p>However, I would not use CLI browsers like <code>elinks</code> or <code>w3m</code>, and the idea of
-reading every email in Mutt gives me crepes. I love the visualization web
+reading every email in Mutt gives me the creeps. I love the visualization web
 browser offers, something text-based prompt is not able to provide. And it
 doesn&rsquo;t have to.</p>
 
