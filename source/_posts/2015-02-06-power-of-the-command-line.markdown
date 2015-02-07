@@ -4,8 +4,8 @@ date: 2015-02-06 13:13:49 -0800
 categories: [Notes and Rants, Productivity]
 ---
 
-*Disclaimer: I am not advocating any specific tools or methodologies, I am
-simply sharing workflow I find to be efficient and pleasant.*
+*Disclaimer: I am not advocating any specific tools or methodologies, but
+sharing a workflow I find to be efficient and pleasant.*
 
 I am a huge fan of working with CLI applications. I use Vim for editing code,
 composing emails, and various kinds of writing. When I have to manipulate huge
