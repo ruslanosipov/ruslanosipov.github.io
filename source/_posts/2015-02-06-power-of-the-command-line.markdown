@@ -14,7 +14,7 @@ engine are extremely useful for the task. I employ `ack`, `awk`, `grep`, and
 `sed` - Linux utilities which allow for precise and fast text manipulation.
 
 However, I would not use CLI browsers like `elinks` or `w3m`, and the idea of
-reading every email in Mutt gives me crepes. I love the visualization web
+reading every email in Mutt gives me the creeps. I love the visualization web
 browser offers, something text-based prompt is not able to provide. And it
 doesn't have to.
 
