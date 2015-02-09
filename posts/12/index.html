@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for
-programming. Feel free to copy over settings/plugins you find useful, or &hellip;">
+  <meta name="description" content="A quick note on how to set up GUI difftool to use with git on Windows (Git
+Bash, Cygwin, etc&hellip;). Download and install GUI diff tool of your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,59 @@ programming. Feel free to copy over settings/plugins you find useful, or &hellip
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/gui-git-difftool-for-windows/">GUI git difftool for Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-12-06T12:02:24-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:02 pm</span></time>
+        
+           | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/gui-git-difftool-for-windows/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A quick note on how to set up GUI difftool to use with git on Windows (Git
+Bash, Cygwin, etc&hellip;).</p>
+
+<p>Download and install GUI diff tool of your choice, get the path to executable.</p>
+
+<p>Create <code>difftool.sh</code> in directory included in your path (for example
+<code>C:\Users\{username}\bin</code> in Git Bash). Let&rsquo;s take SourceGear&rsquo;s DiffMerge as an
+example.</p>
+
+<pre><code>#!/bin/sh
+"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe" "$1" "$2" | cat
+</code></pre>
+
+<p>And in your ~/.gitconfig:</p>
+
+<pre><code>[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    difftool.sh "$LOCAL" "$REMOTE"
+</code></pre>
+
+<p>And difftool is available via <code>git difftool</code> command now.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -663,6 +716,10 @@ Array length: 100, allocated elements: 100
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/ranger-the-cli-file-manager/">Ranger - the CLI file manager</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/power-of-the-command-line/">Power of the command line</a>
       </li>
     
@@ -696,10 +753,6 @@ Array length: 100, allocated elements: 100
     
       <li class="post">
         <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/abandoning-wordpress-for-octopress/">Abandoning WordPress for Octopress</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-07T01:23:16-08:00</updated>
+  <updated>2015-02-08T23:22:21-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ranger - the CLI file manager]]></title>
+    <link href="http://www.rosipov.com/blog/ranger-the-cli-file-manager/"/>
+    <updated>2015-02-08T19:33:16-08:00</updated>
+    <id>http://www.rosipov.com/blog/ranger-the-cli-file-manager</id>
+    <content type="html"><![CDATA[<p>Ranger is a lightweight but powerful file manager with Vi-like key bindings.
+It shines at exploring file trees, looking for specific files, and performing
+bulk operations on folders and files. Three column layout will be very similar
+to Mac OS X users: center column shows contents of the current directory, left
+column lists contents of a parent directory, and the right column contains
+preview for the selected file or folder.</p>
+
+<p><img src="http://www.rosipov.com/images/ranger-file-preview.png" title="File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column." ></p>
+
+<p>Ranger supports movement with familiar to Vi users <code>h</code>, <code>j</code>, <code>k</code>, and <code>l</code> keys,
+has internal command line which is invoked with <code>:</code>, as well as many other
+features and key bindings similar to Vi. Another great selling point - Ranger
+can be extended with custom commands and key bindings. Utility is written in
+Python, therefore all the commands are nothing more than Python scripts.</p>
+
+<p><img src="http://www.rosipov.com/images/ranger-marking-files.png" title="Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing `:delete` command." ></p>
+
+<h2>Installation</h2>
+
+<p>Ranger is easy to install and can be found in most public repositories, just
+install <code>ranger</code> package using your favorite package manager. While you&rsquo;re at
+it, you may want to install some external utilities to help Ranger properly
+display file previews (list is taken from <a href="https://wiki.archlinux.org/index.php/ranger">ArchWiki page on Ranger</a>):</p>
+
+<ul>
+<li><code>atool</code> for archives.</li>
+<li><code>highlight</code> for syntax highlighting.</li>
+<li><code>libcaca</code> (<code>img2txt</code>) for image previews in ASCII.</li>
+<li><code>lynx</code>, <code>w3m</code> or <code>elinks</code> for HTML.</li>
+<li><code>mediainfo</code> or <code>perl-image-exiftool</code> for media file information.</li>
+<li><code>poppler</code> (<code>pdftotext</code>) for PDF.</li>
+<li><code>transmission-cli</code> for BitTorrent information.</li>
+<li><code>w3m</code> for image previews.</li>
+</ul>
+
+
+<p>After all the dependencies are installed, quickly start up <code>ranger</code>, exit it
+with <code>q</code>, and run <code>ranger --copy-config=all</code> to generate configuration files in
+<code>~/.config/ranger</code>.</p>
+
+<h2>Usage</h2>
+
+<p>Here are a few of the key bindings and commands I found useful:</p>
+
+<ul>
+<li>Use spacebar to select files one by one. By selecting multiple files, you can
+perform bulk operations on them. Use <code>V</code> to perform visual selection.
+Lowercase <code>v</code> reverses current selection. For instance, you can run <code>:delete</code>
+after selecting multiple files and folders.</li>
+<li>As mentioned above, execute <code>:delete</code> to remove currently selected file (or
+files).</li>
+<li>To fullscreen a preview window, hit <code>i</code>. Hit <code>i</code> again to return the preview
+window to it&rsquo;s normal size.</li>
+<li>Vi&rsquo;s <code>gg</code> and <code>G</code> allow you to jump to the top and bottom of the file list
+respectively.</li>
+<li>Hit <code>zh</code> to toggle hidden files display.</li>
+<li>As in Vim, <code>/</code> searches for a file in a current buffer, while <code>n</code> and <code>N</code> let
+you navigate to the next and previous matches respectively.</li>
+<li>Similarly, <code>:filter</code> allows you to only limit your view to the files matching
+a pattern. It&rsquo;s also interactive - changes are applied as you type.</li>
+</ul>
+
+
+<p>If you&rsquo;re an avid Vim user, you&rsquo;ll find using Ranger surprisingly intuitive.
+Otherwise you might get confused and scared away, probably for a good reason.
+Ranger is designed to provide Vi-like feel for file browsing, and it does that
+job well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
@@ -1201,47 +1276,6 @@ practices in building systems that are easy to understand and pleasant to
 operate for the user. My next stop is &ldquo;Don&rsquo;t Make Me Think, Revisited: A Common
 Sense Approach to Web Usability&rdquo; by Steve Krug. I&rsquo;ve heard a lot about this
 book, and I will be sure to share my impressions here.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why I threw away my "To Do" list]]></title>
-    <link href="http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/"/>
-    <updated>2014-06-07T12:11:54-07:00</updated>
-    <id>http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list</id>
-    <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
-written notes, and just about anything that will let me arrange my tasks
-instead of actually accomplishing them. I recently stopped writing things down,
-and the results were pleasantly surprising&hellip;</p>
-
-<p>I was keeping a list of things I would need to complete. I organized it by
-priorities, and at some point I even used Gina&rsquo;s fancy
-&ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
-
-<p>What I realized after using such a scheme, is that my list was growing longer
-and longer with every week. After a while, the number of tasks became hard to
-manage, and the number of tasks became permanent residents on my task list. Why
-did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
-Complete a task, check off a check box. There was no mindfulness about it: I
-was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
-to a next one.&rdquo; - this is what was constantly running through my head.
-Secondly, by writing down a task on my list in the first place, my brain would
-register it as being completed, and then I&rsquo;d go on with my day. Needless to
-say, certain tasks would sit on my list for an indefinite amount of time.</p>
-
-<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a
-simple question: &ldquo;What should I do today to succeed at what I am trying to
-accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing
-tasks which provide the biggest impact, dedicating some days just to minor
-&ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
-
-<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful
-about my day, I know exactly what I need to accomplish in order to succeed.
-It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t
-just a list of things to do, but a number of goals you want to reach. By not
-relying on a written manifesto cluttered with tasks, I am forced to concentrate
-on the bigger picture, where what I set out to accomplish has the highest
-possible impact on my life and career.</p>
 ]]></content>
   </entry>
   

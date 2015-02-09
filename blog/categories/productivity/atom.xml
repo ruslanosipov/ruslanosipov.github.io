@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-07T01:23:16-08:00</updated>
+  <updated>2015-02-08T23:22:21-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ranger - the CLI file manager]]></title>
+    <link href="http://www.rosipov.com/blog/ranger-the-cli-file-manager/"/>
+    <updated>2015-02-08T19:33:16-08:00</updated>
+    <id>http://www.rosipov.com/blog/ranger-the-cli-file-manager</id>
+    <content type="html"><![CDATA[<p>Ranger is a lightweight but powerful file manager with Vi-like key bindings.
+It shines at exploring file trees, looking for specific files, and performing
+bulk operations on folders and files. Three column layout will be very similar
+to Mac OS X users: center column shows contents of the current directory, left
+column lists contents of a parent directory, and the right column contains
+preview for the selected file or folder.</p>
+
+<p><img src="/images/ranger-file-preview.png" title="File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column." ></p>
+
+<p>Ranger supports movement with familiar to Vi users <code>h</code>, <code>j</code>, <code>k</code>, and <code>l</code> keys,
+has internal command line which is invoked with <code>:</code>, as well as many other
+features and key bindings similar to Vi. Another great selling point - Ranger
+can be extended with custom commands and key bindings. Utility is written in
+Python, therefore all the commands are nothing more than Python scripts.</p>
+
+<p><img class="/images/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing" src="<code>:delete</code>&#8221; title=&#8221;command.&#8221; ></p>
+
+<h2>Installation</h2>
+
+<p>Ranger is easy to install and can be found in most public repositories, just
+install <code>ranger</code> package using your favorite package manager. While you&rsquo;re at
+it, you may want to install some external utilities to help Ranger properly
+display file previews (list is taken from <a href="https://wiki.archlinux.org/index.php/ranger">ArchWiki page on Ranger</a>):</p>
+
+<ul>
+<li><code>atool</code> for archives.</li>
+<li><code>highlight</code> for syntax highlighting.</li>
+<li><code>libcaca</code> (<code>img2txt</code>) for image previews in ASCII.</li>
+<li><code>lynx</code>, <code>w3m</code> or <code>elinks</code> for HTML.</li>
+<li><code>mediainfo</code> or <code>perl-image-exiftool</code> for media file information.</li>
+<li><code>poppler</code> (<code>pdftotext</code>) for PDF.</li>
+<li><code>transmission-cli</code> for BitTorrent information.</li>
+<li><code>w3m</code> for image previews.</li>
+</ul>
+
+
+<p>After all the dependencies are installed, quickly start up <code>ranger</code>, exit it
+with <code>q</code>, and run <code>ranger --copy-config=all</code> to generate configuration files in
+<code>~/.config/ranger</code>.</p>
+
+<h2>Usage</h2>
+
+<p>Here are a few of the key bindings and commands I found useful:</p>
+
+<ul>
+<li>Use spacebar to select files one by one. By selecting multiple files, you can
+perform bulk operations on them. Use <code>V</code> to perform visual selection.
+Lowercase <code>v</code> reverses current selection. For instance, you can run <code>:delete</code>
+after selecting multiple files and folders.</li>
+<li>As mentioned above, execute <code>:delete</code> to remove currently selected file (or
+files).</li>
+<li>To fullscreen a preview window, hit <code>i</code>. Hit <code>i</code> again to return the preview
+window to it&rsquo;s normal size.</li>
+<li>Vi&rsquo;s <code>gg</code> and <code>G</code> allow you to jump to the top and bottom of the file list
+respectively.</li>
+<li>Hit <code>zh</code> to toggle hidden files display.</li>
+<li>As in Vim, <code>/</code> searches for a file in a current buffer, while <code>n</code> and <code>N</code> let
+you navigate to the next and previous matches respectively.</li>
+<li>Similarly, <code>:filter</code> allows you to only limit your view to the files matching
+a pattern. It&rsquo;s also interactive - changes are applied as you type.</li>
+</ul>
+
+
+<p>If you&rsquo;re an avid Vim user, you&rsquo;ll find using Ranger surprisingly intuitive.
+Otherwise you might get confused and scared away, probably for a good reason.
+Ranger is designed to provide Vi-like feel for file browsing, and it does that
+job well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
@@ -378,60 +453,6 @@ making all the consecutive searches lightning fast.</p>
 
 <p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
 sure the cache directory is not shared with anyone but yourself.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Three favorite bash tricks]]></title>
-    <link href="http://www.rosipov.com/blog/three-favorite-bash-tricks/"/>
-    <updated>2014-07-24T18:41:10-07:00</updated>
-    <id>http://www.rosipov.com/blog/three-favorite-bash-tricks</id>
-    <content type="html"><![CDATA[<p>I spend most of my development time in the shell - be it editing text with Vim
-or executing various console commands. I have quite a number of tricks in my
-daily repertoire, and I would like to share three tips today.</p>
-
-<h2>Edit current command with a text editor</h2>
-
-<p>I often end up having to change a long command I just typed, and using arrow
-keys to get to the correct spot is not favorable. Bash has the feature which
-lets you edit current command in a text editor of your choice. Hit <code>Ctrl + x</code>,
-<code>Ctrl + e</code> (or <code>Ctrl + x + e</code>), and you will be dropped into your text editor.
-Now you are able to edit the command, and it will be executed as soon as your
-write the file and exit the editor.</p>
-
-<p>You can use an editor of your choice by adding following line to your <code>.bashrc</code>
-file:</p>
-
-<pre><code>export EDITOR=vim
-</code></pre>
-
-<p>Replace <code>vim</code> with the name of your favorite editor.</p>
-
-<p>Update: It looks like for some machines setting <code>EDITOR</code> variable is not
-enough. In this case, you also need to set <code>VISUAL</code> environment variable.</p>
-
-<h2>Edit recent command</h2>
-
-<p>You can edit your recent commands in a text editor of your choice by executing
-<code>fc beginning_of_the_command</code>. For instance, if you run <code>fc l</code>, you will open
-most recent command starting with the letter &ldquo;l&rdquo;.</p>
-
-<p>You can execute <code>fc</code> without any arguments to edit last executed command.</p>
-
-<h2>Bash history autocomplete</h2>
-
-<p>Another great feature - &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
-your shell, you&rsquo;ll be greeted by the following prompt:</p>
-
-<pre><code>(reverse-i-search)`':
-</code></pre>
-
-<p>Start typing a part of the command from your history, and you&rsquo;ll see suggestions
-popping up. Hit <code>Enter</code> to pick the command (you&rsquo;ll be able to edit it before
-executing), or push <code>Ctrl + g</code> to return back.</p>
-
-<p>Like any of these tips? Have some of your own? Don&rsquo;t hesitate to share those in
-the comments section down below.</p>
 ]]></content>
   </entry>
   
