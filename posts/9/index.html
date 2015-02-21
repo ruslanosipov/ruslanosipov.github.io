@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="A round-up of The Week Without Colorful Prompt. I worked with the colors disabled in bash, git, and vim for a week. So how did
-it go? It is &hellip;">
+  <meta name="description" content="Shell history can tell a lot about its owner. What&rsquo;s in your shell? history | awk '{CMD[$2]++;count++;}
+END { for (a in CMD)print CMD[a] " " &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,54 @@ it go? It is &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/my-most-used-bash-commands/">My most used bash commands</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-04-24T09:47:11-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>9:47 am</span></time>
+        
+           | <a href="/blog/my-most-used-bash-commands/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-most-used-bash-commands/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Shell history can tell a lot about its owner. What&rsquo;s in your shell?</p>
+
+<pre><code>history | awk '{CMD[$2]++;count++;}
+END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'
+| grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+
+     1  580  38.0328%    git         # I keep everything under VCS
+     2  202  13.2459%    cd          # Moving around a lot
+     3  171  11.2131%    vi          # Favorite text editor
+     4  127  8.32787%    ls          # I'm a curious person
+     5  43   2.81967%    rm          # I also like when it's clean
+     6  26   1.70492%    usrswitch   # https://gist.github.com/ruslanosipov/5453510
+     7  25   1.63934%    exit        # I don't like hitting the red cross button
+     8  18   1.18033%    source      # Reloading bash configuration files
+     9  17   1.11475%    clear       # Like when it's *really* clean
+    10  15   0.983607%   gitk        # Sometimes it is too messy for git log
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -344,49 +392,6 @@ each other before committing, however.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/irssi-ignore-all-from-everyone/">IRSSI - ignore all from everyone</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-27T08:37:10-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:37 am</span></time>
-        
-           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you visit noisy IRC channels like the programming ones on freenode, you
-probably want to ignore all the annoying status messages.</p>
-
-<p>To permanently ignore joins, parts, quits, and nickname changes from every
-channel in IRSSI:</p>
-
-<pre><code>/ignore * joins parts quits nicks
-/save
-</code></pre>
-
-<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
-post will keep it in my memory.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/10">&larr; Older</a>
@@ -402,6 +407,10 @@ post will keep it in my memory.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a>
+      </li>
     
       <li class="post">
         <a href="/blog/ranger-the-cli-file-manager/">Ranger - the CLI file manager</a>
@@ -437,10 +446,6 @@ post will keep it in my memory.</p>
     
       <li class="post">
         <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/distraction-free-writing-with-vimroom/">Distraction-free writing with VimRoom</a>
       </li>
     
   </ul>
