@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-20T16:56:57-08:00</updated>
+  <updated>2015-04-25T21:42:03-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Impact-driven development]]></title>
+    <link href="http://www.rosipov.com/blog/impact-driven-development/"/>
+    <updated>2015-04-25T18:19:58-07:00</updated>
+    <id>http://www.rosipov.com/blog/impact-driven-development</id>
+    <content type="html"><![CDATA[<p>It is my fifth year working as a professional software engineer, and I think
+it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
+throughout past four years. This is the first article in a series of three,
+and it focuses on development process.</p>
+
+<p>Moving towards becoming a senior engineer, I noticed paying more attention to
+the impact my work produces. These days I would much rather compile a number of
+small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
+complex nice-to-haves. This sounds simple and straight-forward, and some reader
+might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
+of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
+
+<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
+there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
+always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
+
+<h2>Get the priorities right</h2>
+
+<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
+into completing it. Arrange the tasks by this factor.</p>
+
+<p>More often then not you can drop items with low impact/effort ratio.</p>
+
+<h2>Separate what is needed from what is asked</h2>
+
+<p>Know who the stakeholders are for each task, feature, or a project you work
+on.  Understand their underlying motives. Anyone can fall a victim of an
+<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
+stakeholders ask for what they actually need.</p>
+
+<h2>Know when to say &ldquo;No&rdquo;</h2>
+
+<p>In the very beginning of my career I gladly took every single task thrown at me.
+It soon became an issue: work that actually needs to get done is not getting
+done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
+
+<h2>Think about your work</h2>
+
+<p>Beware of routines, repeating the same workflow time after time is damaging when
+it comes to building software. Stop each time before you proceed to the next
+step, and ask yourself if you&rsquo;re performing the task in the best way possible.
+Be mindful about your work.</p>
+
+<h2>Be a catalyst for change</h2>
+
+<p>Be the first to promote the change. Did you notice a poor practice on a
+project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
+role in a team of course). Don&rsquo;t go on telling people how wrong what they use
+is. Show everyone how the new way is better on practice, and your colleagues
+will adopt successful trend.</p>
+
+<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
+people are involved, every member of a group relies on other people to get
+things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
@@ -386,125 +448,6 @@ blog. There is no excess configuration, comments are handled externally, and
 the source code for the site and articles is available on GitHub. I am able to
 write my posts using Markdown, in my favorite editor, and use git to publish
 the resulting articles.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dark side of technical interviews]]></title>
-    <link href="http://www.rosipov.com/blog/dark-side-of-technical-interviews/"/>
-    <updated>2014-06-24T18:16:13-07:00</updated>
-    <id>http://www.rosipov.com/blog/dark-side-of-technical-interviews</id>
-    <content type="html"><![CDATA[<p>It upsets me greatly, since there is no immediate or obvious solution to an
-interviewing scheme which will fit every company. Some companies seem to find
-processes which work for their size and culture, while others struggle to do
-so. Human resources management is a complex subject, and it&rsquo;s hard to get
-right.</p>
-
-<p>I have experience with only a small subset of interviewing techniques, but none
-of the following interview components I employ seem satisfactory.</p>
-
-<h2>Screening</h2>
-
-<p>Screenings are usually done by recruiters, employees whose skills are in
-seeking and evaluating prospective assets to the company. The first problem
-here is that <em>recruiters are not team members</em>. Recruiters might do a really
-good job at, say, finding good recruiters - since this is their domain, and
-something they are inherently good at. But they don&rsquo;t develop software.
-Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the
-slightest real life idea what managers and leaders want from the potential
-hire. Hell, the problem is - most team leads don&rsquo;t even know what kind of
-person they need. And if they do, they don&rsquo;t have a slightest idea on how to
-communicate this properly to the recruiters.</p>
-
-<p>In an ideal world, software engineers and team leads would do recruiting
-themselves. But this way they would not have time to do their own job, and
-would thus become recruiters. Boom, the company lost a good software engineer.
-So you end up hiring recruiters, who have not the slightest idea what a team
-needs (&ldquo;person has to be proficient in Blah-blah-blah&rdquo; is like saying that a
-writer has to be an expert at writing about red cubes).</p>
-
-<p>Is there a solution? Probably, maybe, I don&rsquo;t know. Maybe recruiters and
-software engineers have to communicate more. Set up meetings to discuss team
-needs, go through training in regards to identifying key traits in prospective
-engineers. Teams of engineers have to communicate their preferences better.
-Engineers are hired to fit the culture, not to be a &ldquo;rock star&rdquo;. Geniuses don&rsquo;t
-go through the HR process, future team members do.</p>
-
-<h2>Interview with another engineer</h2>
-
-<p>This, even though it has a good intent, is a big whopping failure. What this
-originally is meant to do - is have a potential colleague evaluate the
-candidate. Sounds like a fantastic idea in theory, and sometimes it even works
-the way it is intended to.</p>
-
-<p>Most of the time, however, you end up with a competition-driven technological
-fanatic bombarding an interviewee with smart-ass obscure trick questions they
-discovered that one time browsing their favorite language&rsquo;s mailing lists from
-the year 1990. In the worst-case scenario, the candidate is not able to answer
-any of those terrible questions, satisfying the interviewer&rsquo;s ego while she
-cranks out a negative report to a recruiter.</p>
-
-<p>In a slightly better version, an engineer will give a candidate a set of
-hands-on tasks which rarely have anything to do with the real job
-responsibilities. One version of this: pair programming segment, on the
-engineer&rsquo;s machine, under stress and with shaking hands. Are we hiring
-contestants for a hackathon?</p>
-
-<p>When it comes to software engineering, everyone suddenly forgets that writing
-code is the smallest portion of the day. This might not be the case for junior
-programmers, but they are not the ones companies are wasting their hiring
-resources on. It&rsquo;s the mid-level and senior workers who weren&rsquo;t even evaluated
-on half of their job responsibilities. How are their human interaction skills?
-Are they pleasant to work with? Will they have issues with company policies?
-<em>Will they fit?</em> These questions are as important as one&rsquo;s ability to put
-together a few lines of code.</p>
-
-<p>Maybe interviewers have to spend less time checking how well candidates write
-code under pressure, and more time evaluating if they will be a good match for
-the company&rsquo;s culture. How do they react when you point out their mistake? Can
-they communicate concepts clearly? Are they good at marketing themselves? You
-hire people, not code generating machines. Unless that&rsquo;s what you need, of
-course.</p>
-
-<h2>Home assignments</h2>
-
-<p>Home assignments are something I personally like and despise and the same time.
-And I find it sad that there are a number of big fat minuses with this
-approach. First, one might find it insulting. &ldquo;What, I have to write code for
-you in my own time? Couldn&rsquo;t you evaluate me on an interview or something?&rdquo;
-This method can turn a lot of people off, and unfortunately the ones that stay
-are not typically the best quality.</p>
-
-<p>As my co-worker wisely pointed out, if you have a choice between two overall
-equal companies and one requires you to do more work before being considered -
-you will naturally pick one that accepts you easier. Any job seeker would feel
-more appreciated and trusted taking that route.</p>
-
-<p>The honesty factor doesn&rsquo;t play much role here, since you usually can tell if
-the person did not write everything herself during the one-on-one followup. But
-the cost does play a role. The interviewer has to come up with a relatively
-unique assignment, spend time reading and evaluating the written program, give
-feedback on a follow-up interview. This adds up if you have many candidates.</p>
-
-<p>This technique does make sense when the list of candidates needs to be narrowed
-down, or when you&rsquo;re at the top of your domain. Who wouldn&rsquo;t complete a
-day-long homework for Google? Many people will happily spend a sleepless night
-for an employment opportunity. Even more wouldn&rsquo;t, especially if someone has a
-number of options lined up in front of them.</p>
-
-<h2>What about other methods?</h2>
-
-<p>There is a large number of various interviewing techniques out there. Some
-companies combine the above specified methods to have a bare-bone hiring
-template. Some make candidates do paid work for a few weeks before being
-accepted as a new hire. Some don&rsquo;t bother and just decide to wing it.</p>
-
-<p>This is still a developing area; I am afraid the solution has to be obtained
-through the method of trial and error. There seems to be no success recipe
-which works for everyone. There are, however, a number of alternative
-solutions. I don&rsquo;t think most companies put enough resources in finding a
-successful technique, instead opting for whatever method is in season at the
-moment.</p>
 ]]></content>
   </entry>
   

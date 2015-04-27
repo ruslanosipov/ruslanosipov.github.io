@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-20T16:56:57-08:00</updated>
+  <updated>2015-04-25T21:42:03-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Impact-driven development]]></title>
+    <link href="http://www.rosipov.com/blog/impact-driven-development/"/>
+    <updated>2015-04-25T18:19:58-07:00</updated>
+    <id>http://www.rosipov.com/blog/impact-driven-development</id>
+    <content type="html"><![CDATA[<p>It is my fifth year working as a professional software engineer, and I think
+it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
+throughout past four years. This is the first article in a series of three,
+and it focuses on development process.</p>
+
+<p>Moving towards becoming a senior engineer, I noticed paying more attention to
+the impact my work produces. These days I would much rather compile a number of
+small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
+complex nice-to-haves. This sounds simple and straight-forward, and some reader
+might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
+of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
+
+<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
+there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
+always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
+
+<h2>Get the priorities right</h2>
+
+<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
+into completing it. Arrange the tasks by this factor.</p>
+
+<p>More often then not you can drop items with low impact/effort ratio.</p>
+
+<h2>Separate what is needed from what is asked</h2>
+
+<p>Know who the stakeholders are for each task, feature, or a project you work
+on.  Understand their underlying motives. Anyone can fall a victim of an
+<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
+stakeholders ask for what they actually need.</p>
+
+<h2>Know when to say &ldquo;No&rdquo;</h2>
+
+<p>In the very beginning of my career I gladly took every single task thrown at me.
+It soon became an issue: work that actually needs to get done is not getting
+done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
+
+<h2>Think about your work</h2>
+
+<p>Beware of routines, repeating the same workflow time after time is damaging when
+it comes to building software. Stop each time before you proceed to the next
+step, and ask yourself if you&rsquo;re performing the task in the best way possible.
+Be mindful about your work.</p>
+
+<h2>Be a catalyst for change</h2>
+
+<p>Be the first to promote the change. Did you notice a poor practice on a
+project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
+role in a team of course). Don&rsquo;t go on telling people how wrong what they use
+is. Show everyone how the new way is better on practice, and your colleagues
+will adopt successful trend.</p>
+
+<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
+people are involved, every member of a group relies on other people to get
+things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
@@ -1211,54 +1273,6 @@ expert. I found it best to scan through the content and seek out interesting
 bits of information. Beginners, however, might be completely overwhelmed. While
 advanced and intermediate Pythonistas will get the most out of this book, it
 will probably be too hard (and painful) to read to be of real value.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Steve Krug's "Don't Make Me Think"]]></title>
-    <link href="http://www.rosipov.com/blog/steve-krugs-dont-make-me-think/"/>
-    <updated>2014-06-16T20:42:51-07:00</updated>
-    <id>http://www.rosipov.com/blog/steve-krugs-dont-make-me-think</id>
-    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s
-&ldquo;<a href="http://amzn.to/1xCNOm4">Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability</a>&rdquo;
-(oh, that&rsquo;s a long name). I went through the whole book only in under a few
-hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is
-full of concrete and valuable tips and advice about usability.</p>
-
-<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics:
-web and mobile usability, design, and writing for the web. The advice can be
-easily used and incorporated into your daily workflow; and the author provides
-concrete guidelines for applying his tips in the real world.</p>
-
-<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice)
-is individual usability testing. I actually performed my first usability test
-just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found
-that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with
-your product (I&rsquo;ll get to the similarities between two of these books in a
-moment).</p>
-
-<p>I asked two of my colleagues, one after another, to visit a website I was
-working on, and I silently watched them navigate through it. They had never
-seen the website before, and the results were very shocking to me: they ignored
-the things most obvious to me, but attempted to click through things which are
-not even meant to be clicked. I carefully wrote down all of my findings, and
-delivered the patches with enhancements to improve the biggest areas of
-struggle these particular users had faced.</p>
-
-<p>Usability testing turned out to be invaluable: it pointed out actions that I,
-as a developer, did not anticipate, and highlighted parts of the system ignored
-by the users. I now plan to run usability tests regularly, grabbing colleagues
-from the hallway, and asking them to use my application for a few minutes.</p>
-
-<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but
-stripped from the extended theoretical part. The book references Norman&rsquo;s work
-quite a lot, and seems to be heavily influenced by it. It focuses on practical
-aspects of designing easy to use and understandable user interfaces. It
-successfully explains why you should be thoughtful of user experience,
-accessibility, and understanding the way users think. I would recommend reading
-this book after reading Donald Norman&rsquo;s masterpiece first, since it provides
-you with the reasoning behind many decisions Steve Krug makes throughout his
-book.</p>
 ]]></content>
   </entry>
   

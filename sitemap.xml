@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.rosipov.com/blog/impact-driven-development/</loc>
+    <lastmod>2015-04-25T18:19:58-07:00</lastmod>
+  </url>
+  <url>
     <loc>http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/</loc>
     <lastmod>2015-02-20T16:25:45-08:00</lastmod>
   </url>
@@ -242,22 +246,29 @@
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/archive/</loc>
-    <lastmod>2015-02-20T16:56:57-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/</loc>
-    <lastmod>2015-02-20T16:56:57-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/</loc>
-    <lastmod>2015-02-20T16:56:57-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/archives/</loc>
-    <lastmod>2015-02-20T16:56:57-08:00</lastmod>
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/about/</loc>
-    <lastmod>2015-02-20T16:56:57-08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://www.rosipov.com/blog/categories/programming/</loc>
+  </url>
+  <url>
+    <loc>http://www.rosipov.com/blog/categories/productivity/</loc>
+  </url>
+  <url>
+    <loc>http://www.rosipov.com/blog/categories/notes-and-rants/</loc>
+  </url>
+  <url>
+    <loc>http://www.rosipov.com/blog/categories/book-reviews/</loc>
   </url>
 </urlset>

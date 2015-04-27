@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="There was a recent fantastic addition to Python 3.4 by Raymond Hettinger:
-contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hellip;">
+  <meta name="description" content="This is my first article out of what I hope will be many. I started this blog
+in 2012 and I&rsquo;ve never written a single biased entry: just dry &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,115 @@ contextlib.ignored. It&rsquo;s a context manager which lets you shorten the &hel
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/writing-for-the-sake-of-writing/">Writing for the sake of writing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-29T21:01:29-07:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:01 pm</span></time>
+        
+           | <a href="/blog/writing-for-the-sake-of-writing/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/writing-for-the-sake-of-writing/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is my first article out of what I hope will be many. I started this blog
+in 2012 and I&rsquo;ve never written a single biased entry: just dry technical
+manuals, tutorials, and guides. This has lead to a number of page views from
+programmers in distress, but getting a certain amount of views was never the
+goal of this blog. To be honest, I am not even sure if I had a goal in mind.
+Everyone had a blog, and I thought so should I. I was hoping it will assist me
+in getting a job I will enjoy by increasing my online presence (and it may
+have). Maybe I was out for some online reputation and (knowing myself) fame. Of
+course, none of this happened.</p>
+
+<p>What did happen, is that I created a collection of technical notes which no one
+cares about until they have a problem with something they are working on. And
+after the issue is resolved they close the page and never open it again, as one
+would do with a countless number of other programming blogs and tutorial
+collections.</p>
+
+<p>Where am I leading with this?</p>
+
+<p>Lately I have been (multiple times) hit with realization that software
+engineering is less about writing perfect (or any, for that matter) code, and
+is more about management and people skills. The very people skills most
+software engineers lack due to choice of profession (or maybe the other way). I
+spent some years reading books and articles on how to optimize, refactor, and
+design code for which any programmer would be praised and renowned for. I have
+even made some progress in reaching this &ldquo;magic goal&rdquo;.</p>
+
+<p>Don&rsquo;t get me wrong, writing readable and reusable programs is an essential part
+of the job, but it is only one scale on which a professional programmer&rsquo;s
+performance is measured. And it&rsquo;s a relatively small scale, in comparison to
+others.</p>
+
+<p>As a professional, you have your skill of assessing priorities, productivity,
+time management, patience, an active learning process, and of course, the above
+mentioned communication skills. This post is about just that: transmitting
+ideas and concepts to readers.</p>
+
+<p>I am not very good at human interaction. I am an introvert. Even worse, and as
+many of my colleagues do, I mumble something or smile awkwardly when passing
+someone in a hallway. What is the social protocol for such an event anyway?
+Whatever it is, I don&rsquo;t think I am doing it right.</p>
+
+<p>It&rsquo;s hard to evaluate my verbal communication skills. Maybe people have hard
+time understanding the points I am trying to bring across in conversation.
+Being a foreigner, some people probably find it challenging to understand every
+word I say. In addition, with my tendency to slur words when I am tired or
+excited - it&rsquo;s probably annoying to talk to me sometimes.</p>
+
+<p>I can say with confidence that my writing skills suck. I spend by far more time
+than I should composing emails. I write a paragraph and then I delete it.
+Writing is a big challenge for me. I am quite sure this article is very hard to
+read. And I have a very strong feeling no one will read this article. Except
+for maybe, my wife - who is a fantastic writer and will point out every mistake
+I&rsquo;ve made. This text will have to be revised many times before it becomes even
+slightly readable.</p>
+
+<p>I started looking around for ways to improve the way I communicate my thoughts.
+I found a large number of articles, rules, and techniques which supposedly
+should instantly make you a better writer. This of course might be true if you
+are a professional writer or a student majoring in literature. I am neither. I
+stumbled upon a great article by Jeff Atwood:
+&ldquo;<a href="http://blog.codinghorror.com/how-to-write-without-writing/">How to write without writing</a>&rdquo;. Reading it gave me the push I needed to
+get over the embarrassment of the inevitable failure from writing poorly. And I
+know I am writing poorly, I&rsquo;ve read the stuff I wrote.</p>
+
+<p>You don&rsquo;t expect yourself to wake up one day and write awesome code, do you?
+No, you wake up, go to work, fail, and maybe after months and years of practice
+you become better at putting together pieces of code. The same rule applies to
+writing. Write a lot and often, and read what smart people write. Try to be
+even better than them. Fail. Repeat.</p>
+
+<p>This is why I am starting to write less technical entries. Abstract topics will
+let me hone my writing skills. All I have to do is just stick to some sort of a
+writing schedule. I&rsquo;ll come up with things to write about, I am a pretty loud
+person.</p>
+
+<p>P.S: My recently acquired touch typing skills have come in handy in composing
+this. I would have previously never had the patience to finish the wall of text
+I am looking at right now. Go learn to type faster.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/python-ignored-context-manager/">Python: &#8220;ignored&#8221; context manager</a></h1>
     
     
@@ -136,6 +245,9 @@ def ignored(*exceptions):
 </code></pre>
 
 <p>Beautiful!</p>
+
+<p>UPDATE: As Andy pointed out in comments, this context manager has been renamed
+to <code>contextlib.supress</code> (<a href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a>).</p>
 </div>
   
   
@@ -352,245 +464,6 @@ desired file and hit <code>Enter</code>. You can use arrow keys or <code>Ctrl</c
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/making-django-and-lettuce-play-nice-together/">Making Django and Lettuce play nice together</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-12-30T10:48:31-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:48 am</span></time>
-        
-           | <a href="/blog/making-django-and-lettuce-play-nice-together/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Lettuce is a great BDD tool which allows you to parse expressions written via
-Gherkin syntax in python. However the documentation is not very comprehensive,
-and at the moment current version (0.2.19) has some issues integrating with the
-latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
-to a comprehensive tutorial.</p>
-
-<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
-and you already have a working project configured. Your project is called
-&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
-
-<h2>Setup</h2>
-
-<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
-released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
-install current development version. Releases 0.2.20 and up should include the
-fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
-
-<pre><code>pip install -e \
-    git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
-pip install django-nose splinter
-pip freeze &gt; requirements.txt
-</code></pre>
-
-<p>First line downloads lettuce package from the github repository and installs
-missing dependencies. You can replace <code>cccc397</code> with the current commit.
-Technically commit can be omitted, but we don&rsquo;t want to have an unstable
-ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
-since nose assertions come in handy while writing Lettuce steps, as well as
-<code>splinter</code>, which is a great tool for testing web application.</p>
-
-<p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
-
-<pre><code>INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    # ... third party apps ...
-    'lettuce.django',
-    'myproject',
-    'polls',
-)
-</code></pre>
-
-<p>You also have to explicitly specify the apps you want to use with lettuce:</p>
-
-<pre><code>LETTUCE_APPS = (
-    'polls',
-)
-</code></pre>
-
-<p>By default, lettuce will run its&#8217; tests against your default database. But we
-want to use test database for that, so we have to add few more settings:</p>
-
-<pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
-LETTUCE_SERVER_PORT = 9000
-</code></pre>
-
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> - a
-class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
-from port 8000 so you won&rsquo;t have issues running the development server via
-<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
-
-<p>You also have to create a <code>features</code> directories inside the apps you want to
-test with Lettuce:</p>
-
-<pre><code>/myproject
-    /myproject
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    /polls
-        /features
-            /steps
-                __init__.py
-                polls_list.py
-            polls_list.feature
-        __init__.py
-        models.py
-        tests.py
-        views.py
-    manage.py
-    requirements.txt
-    terrain.py
-</code></pre>
-
-<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
-same directory as a <code>manage.py</code>:</p>
-
-<pre><code>from django.core.management import call_command
-from django.conf import settings
-from lettuce import before, after, world
-from splinter.browser import Browser
-
-@before.each_scenario
-def flush_database(scenario):
-    call_command('flush', interactive=False, verbosity=0)
-
-@before.each_scenario
-def prepare_browser(scenario):
-    world.browser = Browser()
-
-@after.each_scenario
-def destroy_browser(scenario):
-    world.browser.quit()
-</code></pre>
-
-<p>This code flushes the database before each scenario, as well as prepares and
-destroys the <code>splinter</code> browser.</p>
-
-<h2>Writing the features</h2>
-
-<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
-<code>polls/features/polls_list.feature</code>:</p>
-
-<pre><code>Feature: Polls list
-
-    Scenario: Polls list without any polls
-        When I access the "polls list" url
-        Then I see a text "We didn't find any polls!"
-
-    Scenario: Polls list with one poll
-        Given a poll with the title "Hello world"
-        When I access the "polls list" url
-        Then I see a text "Hello world"
-        And I do not see a text "We didn't find any polls!"
-</code></pre>
-
-<p>Now describe the steps in <code>polls/features/steps/polls_list.py</code>:</p>
-
-<pre><code>from django.core.urlresolvers import reverse
-from lettuce import step, world
-from lettuce.django import django_url
-from nose.tools import assert_in, assert_not_in
-from polls.models import Poll
-
-PAGES = {
-    "polls list": "polls:list"
-}
-
-@step(r'access the "(.*)" url')
-def access_the_url(step, name):
-    world.browser.visit(django_url(reverse(PAGES[name])))
-
-@step(r'see a text "(.*)"')
-def see_a_text(step, text):
-    assert_in(text, world.browser.html)
-
-@step(r'a poll with the title "(.*)"')
-def create_a_poll_with_the_title(step, title):
-    poll = Poll.objects.create(title=title)
-    polls.save()
-
-@step(r'do not see a text "(.*)"')
-def do_not_see_a_text(step, text):
-    assert_not_in(text, world.browser.html)
-</code></pre>
-
-<h2>Running the tests</h2>
-
-<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
-just wrote:</p>
-
-<pre><code>$ python manage.py harvest --test-server
-Creating test database for alias 'default'...
-Django's builtin server is running at 0.0.0.0:9000
-
-Feature: Polls list
-
-  Scenario: Polls list without any polls
-    When I access the "polls list" url
-    Then I see a text "We didn't find any polls!"
-
-  Scenario: Polls list with one poll
-    Given a poll with the title "Hello world"
-    When I access the "polls list" url
-    Then I see a text "Hello world"
-    And I do not see a text "We didn't find any polls!"
-
-1 feature (1 passed)
-2 scenarios (2 passed)
-6 steps (6 passed)
-Destroying test database for alias 'default'...
-</code></pre>
-
-<p>Don&rsquo;t forget the <code>--test-server</code> switch - otherwise Lettuce will run tests
-against your default database.</p>
-
-<h2>Sources</h2>
-
-<p>You can find some more details on Lettuce and Django integration here:
-<a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
-
-<h2>Update</h2>
-
-<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
-in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
-
-<pre><code>LETTUCE_USE_TEST_DATABASE = True
-</code></pre>
-
-<p>This way you won&rsquo;t end up accidentally erasing your production database after
-forgetting to add <code>--test-server</code> flag.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -606,6 +479,10 @@ forgetting to add <code>--test-server</code> flag.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/impact-driven-development/">Impact-driven development</a>
+      </li>
     
       <li class="post">
         <a href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a>
@@ -641,10 +518,6 @@ forgetting to add <code>--test-server</code> flag.</p>
     
       <li class="post">
         <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/three-favorite-bash-tricks/">Three favorite bash tricks</a>
       </li>
     
   </ul>

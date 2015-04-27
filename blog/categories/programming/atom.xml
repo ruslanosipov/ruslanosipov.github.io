@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-02-20T16:56:57-08:00</updated>
+  <updated>2015-04-25T21:42:03-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -207,6 +207,9 @@ def ignored(*exceptions):
 </code></pre>
 
 <p>Beautiful!</p>
+
+<p>UPDATE: As Andy pointed out in comments, this context manager has been renamed
+to <code>contextlib.supress</code> (<a href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a>).</p>
 ]]></content>
   </entry>
   
