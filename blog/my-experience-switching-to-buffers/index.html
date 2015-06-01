@@ -104,20 +104,24 @@ Vim tabs and buffers. The author emphasized that tabs are merely window &hellip;
 <div class="entry-content"><p>About a year ago I stumbled upon an article explaining the difference between
 Vim tabs and buffers. The author emphasized that tabs are merely window
 layouts, and therefore one-file-per-tab idea I was used to at the moment just
-wasn&rsquo;t proper. Instead, author suggested the use of buffers to switch between
-multiple files. I decided to give it a shot, and here are some ideas I would
-like to share after switching to the use of buffers.</p>
+wasn&rsquo;t proper. Instead, author suggested the use of buffer commands to switch
+between multiple files. I decided to give it a shot, and here are some ideas I
+would like to share after switching to the use of buffers.</p>
 
-<p>Buffers are open files, but they&rsquo;re not necessarily visible at any given
-moment. In Vim, windows are not linked to any particular buffer, so you can
-easily cycle through buffers from within any window.</p>
+<p>Buffers are open files (they also may not be associated with any files), but
+they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
+linked to any particular buffer, so you can easily cycle through buffers from
+within any window.</p>
 
 <p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
 
 <ul>
 <li>Use <code>:ls</code> to list all buffers for this session.</li>
 <li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
-<li>Use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific buffer.</li>
+<li>Use <code>:b partial_buffer_name</code> for navigating to the buffer of your choice.
+Buffer name auto-complete is supported.</li>
+<li>You can also use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific
+buffer.</li>
 <li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
 </ul>
 
@@ -146,6 +150,9 @@ achieved high level of awareness about my editing sessions. It didn&rsquo;t make
 editing process any faster, but instead much more satisfying.</p>
 
 <p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
+
+<p>UPDATE: Made a few corrections and added a <code>:b partial_buffer_name</code> command
+thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&rsquo;s <a href="http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni">Reddit comment</a>.</p>
 </div>
 
 
