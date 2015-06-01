@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-04-25T21:42:03-07:00</updated>
+  <updated>2015-06-01T06:30:45-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My experience switching to buffers]]></title>
+    <link href="http://www.rosipov.com/blog/my-experience-switching-to-buffers/"/>
+    <updated>2015-06-01T06:28:42-07:00</updated>
+    <id>http://www.rosipov.com/blog/my-experience-switching-to-buffers</id>
+    <content type="html"><![CDATA[<p>About a year ago I stumbled upon an article explaining the difference between
+Vim tabs and buffers. The author emphasized that tabs are merely window
+layouts, and therefore one-file-per-tab idea I was used to at the moment just
+wasn&rsquo;t proper. Instead, author suggested the use of buffers to switch between
+multiple files. I decided to give it a shot, and here are some ideas I would
+like to share after switching to the use of buffers.</p>
+
+<p>Buffers are open files, but they&rsquo;re not necessarily visible at any given
+moment. In Vim, windows are not linked to any particular buffer, so you can
+easily cycle through buffers from within any window.</p>
+
+<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
+
+<ul>
+<li>Use <code>:ls</code> to list all buffers for this session.</li>
+<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
+<li>Use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific buffer.</li>
+<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
+</ul>
+
+
+<p><img src="/images/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
+
+<p>The hardest thing about stopping to use tabs and switching to buffers instead
+is not having the visual aid: I was used to having a list of files always
+available at a glance, at the top of my screen. To check what files I&rsquo;m working
+on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
+
+<p>Not surprisingly, this taught me to be more mindful about my editing
+experience. I usually have a clear structure of the files I&rsquo;m working on in my
+head. And if the list is getting to long to easily remember, then I&rsquo;m probably
+doing something wrong: time to take a break and reset my Vim session.</p>
+
+<p>The experience overall reminded me of my recent switch to blank keyboard key
+caps: with no inscriptions to aid you, I first felt a bit at loss, especially
+with they keys I couldn&rsquo;t find without looking: like function keys or special
+symbols. But after some time with the blank key caps, I improved my typing
+skill, and know where even the most obscure characters hide. The switch helped
+me to improve my typing experience overall.</p>
+
+<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
+achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
+editing process any faster, but instead much more satisfying.</p>
+
+<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
@@ -412,41 +465,6 @@ to my default template:</p>
 <p>Now it&rsquo;s much easier to jump between wiki entries. Of course, customization
 doesn&rsquo;t end there: you can change styles, add JavaScript and make your wiki all
 fancy and advanced.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beyond grep]]></title>
-    <link href="http://www.rosipov.com/blog/beyond-grep/"/>
-    <updated>2014-09-21T12:18:31-07:00</updated>
-    <id>http://www.rosipov.com/blog/beyond-grep</id>
-    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
-code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
-yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
-to use <code>grep</code> implementation built to work with large (or not really) code
-trees.</p>
-
-<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
-working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
-
-<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
-natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
-arises (<code>ack</code> has a great manual entry).</p>
-
-<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
-
-<pre><code>ack --shell 'gr[ae]y'
-</code></pre>
-
-<p>Searches all shell script files in the current code tree for any occurrences of
-&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
-<code>ack</code> will even check shebang lines for you.</p>
-
-<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
-types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
-job at searching through code.</p>
-
-<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
 ]]></content>
   </entry>
   

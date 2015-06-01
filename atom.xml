@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-04-25T21:42:03-07:00</updated>
+  <updated>2015-06-01T06:30:45-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My experience switching to buffers]]></title>
+    <link href="http://www.rosipov.com/blog/my-experience-switching-to-buffers/"/>
+    <updated>2015-06-01T06:28:42-07:00</updated>
+    <id>http://www.rosipov.com/blog/my-experience-switching-to-buffers</id>
+    <content type="html"><![CDATA[<p>About a year ago I stumbled upon an article explaining the difference between
+Vim tabs and buffers. The author emphasized that tabs are merely window
+layouts, and therefore one-file-per-tab idea I was used to at the moment just
+wasn&rsquo;t proper. Instead, author suggested the use of buffers to switch between
+multiple files. I decided to give it a shot, and here are some ideas I would
+like to share after switching to the use of buffers.</p>
+
+<p>Buffers are open files, but they&rsquo;re not necessarily visible at any given
+moment. In Vim, windows are not linked to any particular buffer, so you can
+easily cycle through buffers from within any window.</p>
+
+<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
+
+<ul>
+<li>Use <code>:ls</code> to list all buffers for this session.</li>
+<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
+<li>Use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific buffer.</li>
+<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
+</ul>
+
+
+<p><img src="http://www.rosipov.com/images/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
+
+<p>The hardest thing about stopping to use tabs and switching to buffers instead
+is not having the visual aid: I was used to having a list of files always
+available at a glance, at the top of my screen. To check what files I&rsquo;m working
+on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
+
+<p>Not surprisingly, this taught me to be more mindful about my editing
+experience. I usually have a clear structure of the files I&rsquo;m working on in my
+head. And if the list is getting to long to easily remember, then I&rsquo;m probably
+doing something wrong: time to take a break and reset my Vim session.</p>
+
+<p>The experience overall reminded me of my recent switch to blank keyboard key
+caps: with no inscriptions to aid you, I first felt a bit at loss, especially
+with they keys I couldn&rsquo;t find without looking: like function keys or special
+symbols. But after some time with the blank key caps, I improved my typing
+skill, and know where even the most obscure characters hide. The switch helped
+me to improve my typing experience overall.</p>
+
+<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
+achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
+editing process any faster, but instead much more satisfying.</p>
+
+<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Impact-driven development]]></title>
@@ -1231,48 +1284,6 @@ this very blog entry. I will probably have to read through the guide multiple
 times over the course of the following months in order to ensure maximum
 retention. If you care about being understood by another human being, you
 should read it too.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA["Expert Python Programming" by Tarek Ziade]]></title>
-    <link href="http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade/"/>
-    <updated>2014-06-19T19:33:38-07:00</updated>
-    <id>http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade</id>
-    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
-week&rsquo;s pick was &ldquo;<a href="http://amzn.to/1yRw7AZ">Expert Python Programming</a>&rdquo; by Tarek Ziade. Besides its
-few shortcomings, I found it to be useful - Python is a language of choice for
-me, and I found some valuable tips I could add to my arsenal.</p>
-
-<p>The best thing about this book is that it covers a very wide range of topics:
-syntax recommendations and code profiling, testing practices and project
-management, technical writing and design patterns, package distribution and
-version control&hellip; My favorite chapter covered writing technical documentation:
-I am very interested in writing in general, and the tips Ziade provided turned
-out to be very useful for documenting code, writing design documents, and even
-posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo;
-moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to
-look into!&rdquo; scattered throughout the book. This book is very useful for filling
-in little gaps in knowledge which programmers can have: the author covers an
-extremely wide variety of Python development aspects.</p>
-
-<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
-in the text and code examples - it looked like the book was put together
-sloppily, in haste. Reviewers did not do a very good job evaluating this book.
-&ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
-in as much content (and code) as possible in his book, with no consistent
-style. Many chapters go into unnecessary details, and the author has tendency
-to paste completely useless chunks of code, such as a page-long output of an
-installer. As I have mentioned, the book hops from one topic to another, and
-covers a wide variety of subjects: this is both a key strength and the biggest
-weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered
-across the topics.</p>
-
-<p>&ldquo;<a href="http://amzn.to/1yRw7AZ">Expert Python Programming</a>&rdquo; will be of best use to, you guessed it, an
-expert. I found it best to scan through the content and seek out interesting
-bits of information. Beginners, however, might be completely overwhelmed. While
-advanced and intermediate Pythonistas will get the most out of this book, it
-will probably be too hard (and painful) to read to be of real value.</p>
 ]]></content>
   </entry>
   

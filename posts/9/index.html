@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I wrote a little script to download gists from the command prompt. Generate your Github API Token under Settings -> Applications, change it within
-a &hellip;&#8221;>
+  <meta name="description" content="This alias has been around the web for quite some time, but it does look
+fantastic indeed. To add the alias git pretty-log, execute the following &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,48 @@ a &hellip;&#8221;>
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/git-pretty-log-output/">Git pretty log output</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-13T18:31:02-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>6:31 pm</span></time>
+        
+           | <a href="/blog/git-pretty-log-output/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/git-pretty-log-output/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This alias has been around the web for quite some time, but it does look
+fantastic indeed.</p>
+
+<p><img src="/images/git-pretty-log.png" title="An output of `git pretty-log` alias." ></p>
+
+<p>To add the alias <code>git pretty-log</code>, execute the following command (join string
+prior to executing):</p>
+
+<pre><code>git config alias.pretty-log 'log --graph --pretty=format:"%Cred%h%Creset
+-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset"'
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -374,60 +416,6 @@ representation will give me new insight on what I am currently writing.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/editing-bash-command-in-vim/">Editing bash command in vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-04-01T00:34:28-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>12:34 am</span></time>
-        
-           | <a href="/blog/editing-bash-command-in-vim/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/editing-bash-command-in-vim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You can open the current command you are typing for editing in your default
-text editor by pressing <code>Ctrl + x + e</code>. It will be executed after you write and
-quit the file. This is perfect for editing long/multi-line commands where typos
-are likely to occur. Consider something like this:</p>
-
-<pre><code>for run in {1..10}
-do
-    echo "Print me ten times"
-done
-</code></pre>
-
-<p>Editing this in vim is much more satisfying, isn&rsquo;t it?</p>
-
-<p>You can also open the last executed command for editing if you execute the <code>fc</code>
-command. You can also edit the last command starting with a certain pattern
-using <code>fc [pattern]</code> (you can skip the editor and execute the output of <code>fc</code> by
-adding the <code>-s</code> option, and a useful tip is to have <code>alias r="fc -s"</code>, which
-would allow you to execute the last command starting with &ldquo;cc&rdquo; by running <code>r
-cc</code>).</p>
-
-<p>P.S: In order for this trick to open <code>vim</code> and not any other editor, make sure
-you have the line <code>EDITOR=vim</code> in your <code>~/.bashrc</code>. Obviously this works with
-any text editor.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/10">&larr; Older</a>
@@ -443,6 +431,10 @@ any text editor.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
+      </li>
     
       <li class="post">
         <a href="/blog/impact-driven-development/">Impact-driven development</a>
@@ -478,10 +470,6 @@ any text editor.</p>
     
       <li class="post">
         <a href="/blog/effective-search-with-mutt/">Effective search with Mutt</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/one-more-argument-for-80-character-limit/">One more argument for 80 character limit</a>
       </li>
     
   </ul>
