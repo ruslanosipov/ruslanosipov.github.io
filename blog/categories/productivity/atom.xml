@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-01T07:44:53-07:00</updated>
+  <updated>2015-06-05T09:08:54-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -29,6 +29,9 @@ would like to share after switching to the use of buffers.</p>
 they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
 linked to any particular buffer, so you can easily cycle through buffers from
 within any window.</p>
+
+<p>First and foremost, you probably want to add <code>set hidden</code> to your <code>.vimrc</code>.
+This option lets you switch between buffers without having to save files.</p>
 
 <p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
 
