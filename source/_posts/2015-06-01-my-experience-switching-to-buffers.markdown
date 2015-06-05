@@ -8,19 +8,26 @@ tags: [vim]
 About a year ago I stumbled upon an article explaining the difference between
 Vim tabs and buffers. The author emphasized that tabs are merely window
 layouts, and therefore one-file-per-tab idea I was used to at the moment just
-wasn't proper. Instead, author suggested the use of buffers to switch between
-multiple files. I decided to give it a shot, and here are some ideas I would
-like to share after switching to the use of buffers.
+wasn't proper. Instead, author suggested the use of buffer commands to switch
+between multiple files. I decided to give it a shot, and here are some ideas I
+would like to share after switching to the use of buffers.
 
-Buffers are open files, but they're not necessarily visible at any given
-moment. In Vim, windows are not linked to any particular buffer, so you can
-easily cycle through buffers from within any window.
+Buffers are open files (they also may not be associated with any files), but
+they're not necessarily visible at any given moment. In Vim, windows are not
+linked to any particular buffer, so you can easily cycle through buffers from
+within any window.
+
+First and foremost, you probably want to add `set hidden` to your `.vimrc`.
+This option lets you switch between buffers without having to save files.
 
 At it's basics, you only need few commands for operating buffers:
 
 * Use `:ls` to list all buffers for this session.
 * To move between next and previous buffers use `:bn` and `:bp` respectively.
-* Use `:bN`, where `N` is a buffer number to jump to a specific buffer.
+* Use `:b partial_buffer_name` for navigating to the buffer of your choice.
+  Buffer name auto-complete is supported.
+* You can also use `:bN`, where `N` is a buffer number to jump to a specific
+  buffer.
 * Get in a habit of closing buffers you will not use with `:bd`.
 
 
@@ -48,3 +55,9 @@ achieved high level of awareness about my editing sessions. It didn't make the
 editing process any faster, but instead much more satisfying.
 
 But you already new that, since Vim isn't really about speed.
+
+UPDATE: Made a few corrections and added a `:b partial_buffer_name` command
+thanks to [/u/\_\_\_violet\_\_\_][1]'s [Reddit comment][2].
+
+[1]: http://www.reddit.com/user/___violet___
+[2]: http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni
