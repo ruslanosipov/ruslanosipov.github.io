@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="You can open the current command you are typing for editing in your default
-text editor by pressing Ctrl + x + e. It will be executed after you write &hellip;">
+  <meta name="description" content="I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,53 @@ text editor by pressing Ctrl + x + e. It will be executed after you write &helli
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/a-week-without-colorful-prompt/">A week without colorful prompt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-04-01T11:10:31-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>11:10 am</span></time>
+        
+           | <a href="/blog/a-week-without-colorful-prompt/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim - I feel
+lost without the cozy syntax highlight guidance.</p>
+
+<p>Time to stop using output colors for a week whether in shell, git, or vim, and
+use only plain text with no fancy colors. Set git config &ndash;global color.ui
+false and don&rsquo;t use &ndash;color flags in shell. Also, set syntax off and set a
+simple color scheme for vim.</p>
+
+<p>What can I gain from all this? It will definitely reduce my productivity for a
+few days. However, I have a hint of an idea that changing the visual code
+representation will give me new insight on what I am currently writing.</p>
+
+<p><a href="https://github.com/ruslanosipov/dotfiles/commit/b2b592e4f5b4b2f5bb962651a03f9d83b3ab53b7">Link to related commit on GutHub</a>.</p>
+
+<p>Check back in a week to see how it went!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -316,53 +363,6 @@ an amazing job aiding in the memorization of essential vim movement shortcuts.</
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/rename-commit-author-in-git/">Rename commit author in git</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-14T17:09:02-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>5:09 pm</span></time>
-        
-           | <a href="/blog/rename-commit-author-in-git/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/rename-commit-author-in-git/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
-credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
-corrected easily:</p>
-
-<pre><code>git filter-branch -f --env-filter
-"GIT_AUTHOR_NAME='Stan Smith';
-GIT_AUTHOR_EMAIL='stansmith@cia.gov';
-GIT_COMMITTER_NAME='Stan Smith';
-GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
-git push --force
-</code></pre>
-
-<p>In the case of there being multiple people working on a project, you may want
-to use the following gist posted by anonymous:
-<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
---force</code>).</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/11">&larr; Older</a>
@@ -378,6 +378,10 @@ to use the following gist posted by anonymous:
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
+      </li>
     
       <li class="post">
         <a href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
@@ -413,10 +417,6 @@ to use the following gist posted by anonymous:
     
       <li class="post">
         <a href="/blog/beyond-grep/">Beyond grep</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/effective-search-with-mutt/">Effective search with Mutt</a>
       </li>
     
   </ul>

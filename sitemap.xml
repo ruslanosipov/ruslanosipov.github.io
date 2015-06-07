@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.rosipov.com/blog/gundo-tree-for-vim/</loc>
+    <lastmod>2015-06-07T13:10:15-07:00</lastmod>
+  </url>
+  <url>
     <loc>http://www.rosipov.com/blog/my-experience-switching-to-buffers/</loc>
     <lastmod>2015-06-01T06:28:42-07:00</lastmod>
   </url>
@@ -274,41 +278,5 @@
   </url>
   <url>
     <loc>http://www.rosipov.com/blog/categories/book-reviews/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/2/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/3/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/4/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/5/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/6/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/7/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/8/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/9/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/10/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/11/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/12/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/13/</loc>
   </url>
 </urlset>

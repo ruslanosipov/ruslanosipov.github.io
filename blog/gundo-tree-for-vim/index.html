@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>GPG Usage - Ruslan Osipov</title>
+  <title>Gundo tree for Vim - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="To encrypt and decrypt files in Linux there is a utility called gpg (Gnu
-Privacy Guard). This is a short GPG tutorial. Quick usage example gpg -c foo &hellip;">
+  <meta name="description" content="One of the obscure, but tremendously useful features of Vim is an undo tree.
+You would expect Vim to have a simple stack for undo and redo actions, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ Privacy Guard). This is a short GPG tutorial. Quick usage example gpg -c foo &he
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/gpg-usage">
+  <link rel="canonical" href="http://www.rosipov.com/blog/gundo-tree-for-vim">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -82,7 +82,7 @@ Privacy Guard). This is a short GPG tutorial. Quick usage example gpg -c foo &he
   
   <header>
     
-      <h1 class="entry-title">GPG Usage</h1>
+      <h1 class="entry-title">Gundo tree for Vim</h1>
     
     
       <p class="meta">
@@ -91,7 +91,7 @@ Privacy Guard). This is a short GPG tutorial. Quick usage example gpg -c foo &he
 
 
 
-<time class='entry-date' datetime='2012-12-26T12:00:22-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:00 pm</span></time>
+<time class='entry-date' datetime='2015-06-07T13:10:15-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:10 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -101,56 +101,29 @@ Privacy Guard). This is a short GPG tutorial. Quick usage example gpg -c foo &he
   </header>
 
 
-<div class="entry-content"><p>To encrypt and decrypt files in Linux there is a utility called <code>gpg</code> (Gnu
-Privacy Guard). This is a short GPG tutorial.</p>
+<div class="entry-content"><p>One of the obscure, but tremendously useful features of Vim is an undo tree.
+You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
+much more complex than that: Vim keeps track of every change you made in the
+current session, making it possible to access change history beyond basic <code>u</code>
+and <code>C-r</code> commands.</p>
 
-<h2>Quick usage example</h2>
+<p>Default interface for accessing far out branches of the undo tree leaves to be
+desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
 
-<pre><code>gpg -c foo.txt
+<p><img src="/images/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
+
+<p>Gundo provides an easy to use interface for navigating history branches. In the
+screenshot above, I am previewing a diff in one of the undo tree branches
+inaccessible via <code>u</code> command.</p>
+
+<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
+convenient to me:</p>
+
+<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
 </code></pre>
 
-<p>It will prompt you for the passphrase and a confirmation. Now you will have the
-encrypted <code>foo.txt.gpg</code> file. To decrypt a file:</p>
-
-<pre><code>gpg -d foo.txt.gpg
-</code></pre>
-
-<p>This will forward the output to the console. You can output it into a file:</p>
-
-<p>gpg -d foo.txt.gpg > foo.txt</p>
-
-<h2>GPG keyring</h2>
-
-<p>This is all secure, but not quite enough if you are paranoid. Keys are what
-makes <code>gpg</code> great. Let&rsquo;s generate a private key:</p>
-
-<pre><code>gpg --gen-key
-</code></pre>
-
-<p>And create an ASCII version of a public key:</p>
-
-<pre><code>gpg --armor --export "John Doe" --output johndoe.txt
-</code></pre>
-
-<p>Public key <code>johndoe.txt</code> can be freely distributed. Now you can encrypt files
-for yourself only:</p>
-
-<pre><code>gpg -e -r "John Doe" foo.txt
-</code></pre>
-
-<p>Now if you decrypt a file it will require the passphrase you specified while
-generating a key. To encrypt a file for someone else you should have this
-person&rsquo;s public key.</p>
-
-<p>Let&rsquo;s assume Stan Smith sent you a key, <code>stansmith.txt</code>. You import it using:</p>
-
-<pre><code>gpg --import stansmith.txt
-</code></pre>
-
-<p>And encrypt the file:</p>
-
-<pre><code>gpg -e -r "Stan Smith" foo.txt
-</code></pre>
+<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
+to travel through changes. Enter key applies the changes.</p>
 </div>
 
 
@@ -166,7 +139,7 @@ person&rsquo;s public key.</p>
 
 
 
-<time class='entry-date' datetime='2012-12-26T12:00:22-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:00 pm</span></time>
+<time class='entry-date' datetime='2015-06-07T13:10:15-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:10 pm</span></time>
       
 
 <span class="categories">
@@ -180,7 +153,7 @@ person&rsquo;s public key.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/gpg-usage/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/gpg-usage/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/gundo-tree-for-vim/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/gundo-tree-for-vim/" >Tweet</a>
   
   
   
@@ -189,10 +162,8 @@ person&rsquo;s public key.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/c-strtok-usage-example/" title="Previous Post: C strtok usage example">&laquo; C strtok usage example</a>
+        <a class="basic-alignment left" href="/blog/my-experience-switching-to-buffers/" title="Previous Post: My experience switching to buffers">&laquo; My experience switching to buffers</a>
       
-      
-        <a class="basic-alignment right" href="/blog/git-merge-two-repositories/" title="Next Post: Git: merge two repositories">Git: merge two repositories &raquo;</a>
       
     </p>
   </footer>
@@ -274,8 +245,8 @@ person&rsquo;s public key.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/gpg-usage/';
-        var disqus_url = 'http://www.rosipov.com/blog/gpg-usage/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/gundo-tree-for-vim/';
+        var disqus_url = 'http://www.rosipov.com/blog/gundo-tree-for-vim/';
         var disqus_script = 'embed.js';
       
     (function () {

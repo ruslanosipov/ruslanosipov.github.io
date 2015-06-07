@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-05T09:08:54-07:00</updated>
+  <updated>2015-06-07T13:34:01-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gundo tree for Vim]]></title>
+    <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
+    <updated>2015-06-07T13:10:15-07:00</updated>
+    <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
+    <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
+You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
+much more complex than that: Vim keeps track of every change you made in the
+current session, making it possible to access change history beyond basic <code>u</code>
+and <code>C-r</code> commands.</p>
+
+<p>Default interface for accessing far out branches of the undo tree leaves to be
+desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
+
+<p><img src="http://www.rosipov.com/images/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
+
+<p>Gundo provides an easy to use interface for navigating history branches. In the
+screenshot above, I am previewing a diff in one of the undo tree branches
+inaccessible via <code>u</code> command.</p>
+
+<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
+convenient to me:</p>
+
+<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
+</code></pre>
+
+<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
+to travel through changes. Enter key applies the changes.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My experience switching to buffers]]></title>
@@ -1253,47 +1284,6 @@ which works for everyone. There are, however, a number of alternative
 solutions. I don&rsquo;t think most companies put enough resources in finding a
 successful technique, instead opting for whatever method is in season at the
 moment.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA["The Elements Of Style"]]></title>
-    <link href="http://www.rosipov.com/blog/the-elements-of-style/"/>
-    <updated>2014-06-20T10:58:35-07:00</updated>
-    <id>http://www.rosipov.com/blog/the-elements-of-style</id>
-    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a
-software engineering blog. You might even get angry at me for pointing this
-book in your face. But I have a strong affection towards this guide; I believe
-everyone who has to write more than a sentence in English should read it. I
-like to emphasize the communication aspects of a software engineering career as
-much as coding or management skills.</p>
-
-<p>English is not my native language, and I often struggle with the writing style.
-I found a number of style tips online and in the books I read, but lately I
-noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The
-book is available online free of charge (copyright has expired; it is now in
-public domain) and takes only an evening to read.</p>
-
-<p>What the book gives you is invaluable writing advice. The author provides
-concrete style rules targeted at increasing the appeal and comprehension rates
-of your text. Here&rsquo;s my favorite piece of advice:</p>
-
-<blockquote><p>13. Omit needless words.</p>
-
-<p>Vigorous writing is concise. A sentence should contain no unnecessary
-words, a paragraph no unnecessary sentences, for the same reason that a
-drawing should have no unnecessary lines and a machine no unnecessary
-parts. This requires not that the writer make all his sentences short, or
-that he avoid all detail and treat his subjects only in outline, but that
-he make every word tell.</p></blockquote>
-
-<p>&ldquo;<a href="http://amzn.to/1v6keFG">The Elements Of Style</a>&rdquo; is a timeless classic; it should be mandatory
-reading for every speaker or learner of English out there. I immediately
-applied the rules to technical documentation, email communication, and even
-this very blog entry. I will probably have to read through the guide multiple
-times over the course of the following months in order to ensure maximum
-retention. If you care about being understood by another human being, you
-should read it too.</p>
 ]]></content>
   </entry>
   
