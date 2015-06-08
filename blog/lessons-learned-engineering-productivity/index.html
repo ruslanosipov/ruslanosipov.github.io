@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruslan Osipov</title>
+  <title>Lessons learned: engineering productivity - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -19,7 +19,7 @@ without sacrificing quality - the better. Below are few ideas on the &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com">
+  <link rel="canonical" href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -77,15 +77,12 @@ without sacrificing quality - the better. Below are few ideas on the &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a></h1>
+      <h1 class="entry-title">Lessons learned: engineering productivity</h1>
     
     
       <p class="meta">
@@ -96,15 +93,15 @@ without sacrificing quality - the better. Below are few ideas on the &hellip;">
 
 <time class='entry-date' datetime='2015-06-08T15:03:58-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:03 pm</span></time>
         
-           | <a href="/blog/lessons-learned-engineering-productivity/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>I enjoy optimizing the way I work: the less time I can spend on something
+<div class="entry-content"><p>I enjoy optimizing the way I work: the less time I can spend on something
 without sacrificing quality - the better. Below are few ideas on the subject of
 engineering productivity I&rsquo;ve successfully applied in my career.</p>
 
@@ -246,325 +243,58 @@ programmers limit themselves to.</p>
 <a href="http://blog.codinghorror.com/programmers-dont-read-books-but-you-should/">&ldquo;Programmers Don&rsquo;t Read Books - But You Should&rdquo;</a>, pick up one of the
 timeless books - not affected by changing technologies and processes.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-06-07T13:10:15-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:10 pm</span></time>
-        
-           | <a href="/blog/gundo-tree-for-vim/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/gundo-tree-for-vim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One of the obscure, but tremendously useful features of Vim is an undo tree.
-You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
-much more complex than that: Vim keeps track of every change you made in the
-current session, making it possible to access change history beyond basic <code>u</code>
-and <code>C-r</code> commands.</p>
-
-<p>Default interface for accessing far out branches of the undo tree leaves to be
-desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
-
-<p><img src="/images/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
-
-<p>Gundo provides an easy to use interface for navigating history branches. In the
-screenshot above, I am previewing a diff in one of the undo tree branches
-inaccessible via <code>u</code> command.</p>
-
-<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
-convenient to me:</p>
-
-<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
-</code></pre>
-
-<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
-to travel through changes. Enter key applies the changes.</p>
-</div>
-  
   
 
+<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
 
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
 
-<time class='entry-date' datetime='2015-06-01T06:28:42-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>6:28 am</span></time>
-        
-           | <a href="/blog/my-experience-switching-to-buffers/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/my-experience-switching-to-buffers/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>About a year ago I stumbled upon an article explaining the difference between
-Vim tabs and buffers. The author emphasized that tabs are merely window
-layouts, and therefore one-file-per-tab idea I was used to at the moment just
-wasn&rsquo;t proper. Instead, author suggested the use of buffer commands to switch
-between multiple files. I decided to give it a shot, and here are some ideas I
-would like to share after switching to the use of buffers.</p>
-
-<p>Buffers are open files (they also may not be associated with any files), but
-they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
-linked to any particular buffer, so you can easily cycle through buffers from
-within any window.</p>
-
-<p>First and foremost, you probably want to add <code>set hidden</code> to your <code>.vimrc</code>.
-This option lets you switch between buffers without having to save files.</p>
-
-<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
-
-<ul>
-<li>Use <code>:ls</code> to list all buffers for this session.</li>
-<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
-<li>Use <code>:b partial_buffer_name</code> for navigating to the buffer of your choice.
-Buffer name auto-complete is supported.</li>
-<li>You can also use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific
-buffer.</li>
-<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
-</ul>
-
-
-<p><img src="/images/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
-
-<p>The hardest thing about stopping to use tabs and switching to buffers instead
-is not having the visual aid: I was used to having a list of files always
-available at a glance, at the top of my screen. To check what files I&rsquo;m working
-on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
-
-<p>Not surprisingly, this taught me to be more mindful about my editing
-experience. I usually have a clear structure of the files I&rsquo;m working on in my
-head. And if the list is getting to long to easily remember, then I&rsquo;m probably
-doing something wrong: time to take a break and reset my Vim session.</p>
-
-<p>The experience overall reminded me of my recent switch to blank keyboard key
-caps: with no inscriptions to aid you, I first felt a bit at loss, especially
-with they keys I couldn&rsquo;t find without looking: like function keys or special
-symbols. But after some time with the blank key caps, I improved my typing
-skill, and know where even the most obscure characters hide. The switch helped
-me to improve my typing experience overall.</p>
-
-<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
-achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
-editing process any faster, but instead much more satisfying.</p>
-
-<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
-
-<p>UPDATE: Made a few corrections and added a <code>:b partial_buffer_name</code> command
-thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&rsquo;s <a href="http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni">Reddit comment</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time class='entry-date' datetime='2015-06-08T15:03:58-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:03 pm</span></time>
       
-  <header>
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/notes-and-rants/'>notes and rants</a>
+  
+</span>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/impact-driven-development/">Impact-driven development</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-04-25T18:19:58-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:19 pm</span></time>
-        
-           | <a href="/blog/impact-driven-development/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/impact-driven-development/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It is my fifth year working as a professional software engineer, and I think
-it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
-throughout past four years. This is the first article in a series of three,
-and it focuses on development process.</p>
-
-<p>Moving towards becoming a senior engineer, I noticed paying more attention to
-the impact my work produces. These days I would much rather compile a number of
-small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
-complex nice-to-haves. This sounds simple and straight-forward, and some reader
-might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
-of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
-
-<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
-there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
-always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
-
-<h2>Get the priorities right</h2>
-
-<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
-into completing it. Arrange the tasks by this factor.</p>
-
-<p>More often then not you can drop items with low impact/effort ratio.</p>
-
-<h2>Separate what is needed from what is asked</h2>
-
-<p>Know who the stakeholders are for each task, feature, or a project you work
-on.  Understand their underlying motives. Anyone can fall a victim of an
-<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
-stakeholders ask for what they actually need.</p>
-
-<h2>Know when to say &ldquo;No&rdquo;</h2>
-
-<p>In the very beginning of my career I gladly took every single task thrown at me.
-It soon became an issue: work that actually needs to get done is not getting
-done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
-
-<h2>Think about your work</h2>
-
-<p>Beware of routines, repeating the same workflow time after time is damaging when
-it comes to building software. Stop each time before you proceed to the next
-step, and ask yourself if you&rsquo;re performing the task in the best way possible.
-Be mindful about your work.</p>
-
-<h2>Be a catalyst for change</h2>
-
-<p>Be the first to promote the change. Did you notice a poor practice on a
-project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
-role in a team of course). Don&rsquo;t go on telling people how wrong what they use
-is. Show everyone how the new way is better on practice, and your colleagues
-will adopt successful trend.</p>
-
-<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
-people are involved, every member of a group relies on other people to get
-things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/gundo-tree-for-vim/" title="Previous Post: Gundo tree for Vim">&laquo; Gundo tree for Vim</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-<time class='entry-date' datetime='2015-02-20T16:25:45-08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:25 pm</span></time>
-        
-           | <a href="/blog/managing-cd-bookmarks-with-apparix/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A couple of months ago I discovered apparix: a set of commands which augment
-<code>cd</code> with bookmarks. It really is an amazing feeling when you zap between
-multiple directories far away just with a couple of keystrokes! Apparix
-provides three commands I use daily: <code>to</code>, <code>bm</code>, and <code>apparix</code> (program
-suggests aliasing last one to <code>als</code>). Here&rsquo;s how I use it:</p>
-
-<pre><code>$ pwd
-/Users/ruslan
-$ apparix
---- portals
---- expansions
---- bookmarks
-j dotfiles     /Users/ruslan/.dotfiles
-j blog         /Users/ruslan/Projects/ruslanosipov.github.io
-$ to blog
-$ pwd
-/Users/ruslan/Projects/ruslanosipov.github.io
-$ cd source/_posts
-$ bm posts
-added: posts -&gt; /Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
-$ to dotfiles
-$ pwd
-/Users/ruslan/.dotfiles
-$ to posts
-$ pwd
-/Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
-</code></pre>
-
-<p>The example above is self explanatory: you can see how over the span of a year
-apparix saves hours of navigating directories you frequent.</p>
-
-<h2>Installation</h2>
-
-<p>If you don&rsquo;t like reading manuals, installation might be a confusing. But in
-reality it&rsquo;s straightforward, you just need to add some functions or aliases to
-your shell&rsquo;s configuration file.</p>
-
-<p>Install <code>apparix</code> using your favorite package manager, and then pipe examples
-apparix offers into your shell&rsquo;s <code>rc</code> file.</p>
-
-<pre><code>apparix --shell-examples &gt;&gt; ~/.bashrc
-</code></pre>
-
-<p>Open your <code>.bashrc</code> (or another corresponding configuration file), and pick the
-preferred way of using apparix: you&rsquo;ll see functions for bash and aliases for
-csh given as examples. Pick whatever works for your shell, source your <code>rc</code>
-file, and you&rsquo;re all set!</p>
-
-<p>Happy jumping!</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/posts/2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -617,6 +347,7 @@ file, and you&rsquo;re all set!</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -631,7 +362,10 @@ file, and you&rsquo;re all set!</p>
       var disqus_shortname = 'rosipov';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.rosipov.com/blog/lessons-learned-engineering-productivity/';
+        var disqus_url = 'http://www.rosipov.com/blog/lessons-learned-engineering-productivity/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-07T13:34:01-07:00</updated>
+  <updated>2015-06-08T14:08:15-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,155 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lessons learned: engineering productivity]]></title>
+    <link href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/"/>
+    <updated>2015-06-08T15:03:58-07:00</updated>
+    <id>http://www.rosipov.com/blog/lessons-learned-engineering-productivity</id>
+    <content type="html"><![CDATA[<p>I enjoy optimizing the way I work: the less time I can spend on something
+without sacrificing quality - the better. Below are few ideas on the subject of
+engineering productivity I&rsquo;ve successfully applied in my career.</p>
+
+<h2>Don&rsquo;t work long hours</h2>
+
+<p>A fascinating paper was released in 2011 by a group of Israeli researchers, who
+studied the factors which affect if prisoners were given a parole or not
+(source: <a href="http://www.pnas.org/content/108/17/6889.abstract">Extraneous factors in judicial decisions</a>.</p>
+
+<p>First prisoner in a morning has approximately 65% chance of being released. With
+every next case, the chance dropped significantly, reaching nearly 0% starting
+with the third case. After returning from a lunch break, odds of a prisoner
+being released went back up to 65%. And once again, with each new prisoner the
+odds decline rapidly.</p>
+
+<p><img src="/images/israeli-parole-study.gif" title="A graph of favorable parole decisions given by the judges." ></p>
+
+<p>Authors of the paper suggest that making decisions depletes a limited mental
+facility. People start looking for shortcuts and making mistakes.</p>
+
+<p>Working long hours is something we&rsquo;ve all done more than once. Be it an upcoming
+deadline, fascinating problem, or a personal project. The problem with working
+too long is that you&rsquo;re doing a poor job without realizing it.</p>
+
+<p>I try to avoid working more than 7 hours a day, and there are people who get an
+incredible amount of work done under an even shorter amount of time.</p>
+
+<p>This is probably explained by a phenomenon called &ldquo;ego depletion&rdquo;: the idea that
+self-control or willpower draw upon a pool of limited mental resources that can
+be used up. When the energy for mental activity is low, self-control is
+typically impaired, which is what is considered to be a state of ego depletion.</p>
+
+<h2>Dangers of burning out</h2>
+
+<p>Another problem with working too long - is a possibility of a burnout.</p>
+
+<p>A while back I worked as a freelancer for a client of mine. I worked long hours
+from home office. This was my first time working from home for such a long
+period of time, and I made a number of mistakes in the beginning. One of which
+was working too much.</p>
+
+<p>I&rsquo;ve put in a number of 12-hour marathons in order to get more work done. I was
+on call most of the time. I became overwhelmed with all the work I had to get
+done. I started losing interest in work and feeling like things are getting out
+of my control. Every day felt like a bad day.</p>
+
+<p>Those are the symptoms of a burnout. Feeling of life spinning out of control
+and feeling like nothing you do makes any impact.</p>
+
+<p>I broke out of a mental prison of a burnout by getting a better work-life
+balance, enforcing exercise routine, and never working more than 8 hours a day.
+7 in most cases.</p>
+
+<h2>Work-life balance</h2>
+
+<p>Another thing I learned from working from home is how to keep a work-life
+balance. Not having a separate office and living in a 1-bedroom apartment with
+my wife, I had to barricade myself in a far corner of a bedroom and turn it into
+a physically separated office space. That was the space I worked in, and it
+remained empty after I was done and until I started the next work day.</p>
+
+<p>Work-life balance deserves a special say: it&rsquo;s the difference between doing an
+amazing job and going insane. Set aside time and place for work, and never allow
+a bleed-through. Don&rsquo;t be on call if you can avoid it. Don&rsquo;t open or reply to
+work-related emails at your spare time. Office is for work and home is for
+family.</p>
+
+<h2>Distraction-free environment</h2>
+
+<p>Everybody is aware that interruptions hamper productivity, but not everyone
+actively avoids interruptions during work. Replying to a text message, quickly
+checking your social network notifications, or looking up that one thing you&rsquo;ve
+been forgetting to look up for days - all of this impairs your mental ability to
+complete the task within a desired time frame and, more importantly, with high
+quality.</p>
+
+<p>According to various studies it takes from 20 to 30 minutes to get regain the
+same level of concentration and productivity after a single act of disruption. A
+<a href="http://hfs.sagepub.com/content/56/7/1262">2014 study from George Mason University</a> found that students composed lower
+quality essays when interrupted only a few times throughout both planning and
+writing phases. Distracted students performed considerably worse, even though
+they were given additional time to complete an assignment in order to make up
+for the interruptions.</p>
+
+<h2>Know your tools</h2>
+
+<blockquote><p>Use a single editor well</p></blockquote>
+
+<ul>
+<li><a href="http://amzn.to/1B1PWw8">Pragmatic Programmer</a>, Tip #22.</li>
+</ul>
+
+
+<p>This is lower level tip than the rest, but something I find utterly important in
+my daily work. We, the software engineers, spend at least half the time editing
+some sort of text - code, email, documentation. Taking time to improve the
+knowledge of the software you use every day pays off.</p>
+
+<ul>
+<li>Using Gmail? Learn the keyboard shortcuts.</li>
+<li>Use Eclispe? Do the same. Search for plugins which can make your everyday work
+faster and easier.</li>
+<li>Use command shell for daily work? Practice your shell scripting skills, find
+the tools that let you do more work with lesser amount of typing.</li>
+<li>Pick up touch typing. It&rsquo;s also a part of your toolbox. Why think about keying
+words in? Lower error rate while typing - you need to go back less.</li>
+</ul>
+
+
+<p>For instance, I do all my work in shell. I use <a href="http://tmux.sourceforge.net">Tmux</a> for creating and
+navigating multiple sessions. I use Vim for all my editing needs - code,
+documentation, blogging, composing long emails (via <a href="http://www.mutt.org">Mutt</a>). I touch type, so
+working in a text mode is easy.</p>
+
+<p>Over the years I accumulated aliases for all the frequently used shell commands.
+All the Vim and Tmux shortcuts are a part of a muscle memory. Jumping from file
+to file or from one place to another within a file doesn&rsquo;t take any mental
+effort and is accomplished with only a couple of keystrokes.</p>
+
+<p>By eliminating the need to think about or spend too much time working with low
+level concepts - you free up the mental bandwidth for higher level reasoning and
+problem solving.</p>
+
+<h2>Read, don&rsquo;t stop learning</h2>
+
+<p>As per DeMarco and Lister, authors of
+<a href="http://amzn.to/1D2csza">&ldquo;Peopleware: Productive Projects and Teams&rdquo;</a> - one book is more than most
+programmers read each year. This is the same point Steve McConnell&rsquo;s
+<a href="http://amzn.to/1D2cB5K">&ldquo;Code Complete&rdquo;</a> emphasizes.</p>
+
+<p>A lot of programmers don&rsquo;t read books. A few even don&rsquo;t follow relevant blogs
+or websites. Don&rsquo;t do what software engineers had to do in the olden days:
+coding by error in isolation from the rest of the industry. Read a book, learn
+something you don&rsquo;t know about. A single book read from beginning to end
+contains wider array of information compared to disjointed articles some
+programmers limit themselves to.</p>
+
+<p>As Jeff Atwood suggests in his article
+<a href="http://blog.codinghorror.com/programmers-dont-read-books-but-you-should/">&ldquo;Programmers Don&rsquo;t Read Books - But You Should&rdquo;</a>, pick up one of the
+timeless books - not affected by changing technologies and processes.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Impact-driven development]]></title>
@@ -377,77 +526,6 @@ character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p
 
 <p>Maybe I can use this as an additional argument the next time I have to explain
 to a junior new hire why the character limits are so strictly enforced.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
-    <link href="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/"/>
-    <updated>2014-07-22T00:04:15-07:00</updated>
-    <id>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress</id>
-    <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
-<a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
-
-<h2>Why the migration?</h2>
-
-<p>WordPress was a great host for me at one point - the community is fun and no
-work is required for setup (I would rather not waste time fiddling with my blog
-too much). But a number of things are off-putting:</p>
-
-<ul>
-<li>I don&rsquo;t like WYSIWYG editors and I don&rsquo;t like web editors. I try to use my
-favorite editor for everything, including mail, documentation, note taking.
-Even though WordPress allowed me to write my posts using Markdown, I still
-didn&rsquo;t like not being able to use my favorite editor or environment.</li>
-<li>Storing all the entries in a MySQL database is not favorable. I am writing
-text, why would I pick any other format to store what I wrote?</li>
-<li>Over the years my blog became increasingly slow, and in order to have a
-reasonably fast site I needed to pay quite a sum of money. I am not ready for
-such a commitment, since I only occasionally update this blog.</li>
-</ul>
-
-
-<p>On the other hand, Octopress (which is based on Jekyll, a static site
-generator) has all of these concerns covered:</p>
-
-<ul>
-<li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
-write, or how I write. This enables me to use an editor of my choice.</li>
-<li>Plain text is universal. It can be viewed by a human, edited in any piece of
-software, printed out, emailed, piped to a Linux program - just about
-anything really.</li>
-<li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
-rendering.  The only real speed limit is network latency. In addition, GitHub
-lets you host static sites for free. What else could you ask for?</li>
-</ul>
-
-
-<h2>The process is painless</h2>
-
-<p>Switching from WordPress to Octopress was very easy, and it took me only a few
-hours (spread out throughout one weekend). Some highlights:</p>
-
-<ol>
-<li>Comments in Octopress are handled by <a href="https://disqus.com">Disqus</a>, and I had to set that up
-on my WordPress blog before transitioning in order to transfer all the
-comments.</li>
-<li>I used the <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">WordPress to Jekyll Exporter</a> tool to export all my posts
-from WordPress to Markdown (with meta-data which Octopress understands). I only
-had a bit over 50 posts to worry about, so the process was complete in an
-instant.</li>
-<li>I ran some custom Vim macros to remove and change some excess meta data, as
-well as clean up Markdown formatting. I am a perfectionist, and the exporter
-tool left me with a poorly formatted document. I couldn&rsquo;t let that happen.</li>
-</ol>
-
-
-<h2>Results are breathtaking</h2>
-
-<p>After only a few hours of work, I had a lightning fast, simple, and pragmatic
-blog. There is no excess configuration, comments are handled externally, and
-the source code for the site and articles is available on GitHub. I am able to
-write my posts using Markdown, in my favorite editor, and use git to publish
-the resulting articles.</p>
 ]]></content>
   </entry>
   

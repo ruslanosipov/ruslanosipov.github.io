@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="If you use vim often - you probably had to paste something into vim from the
-outside source. And, if you have corresponding indentation rules, they &hellip;">
+  <meta name="description" content="If you use git VCS, you can view previous version of the file you are currently
+editing in a split window by executing following command: :vsp tmp | &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,60 @@ outside source. And, if you have corresponding indentation rules, they &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/old-file-version-in-split-with-vim/">Old file version in split with vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-11-23T20:14:19-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>8:14 pm</span></time>
+        
+           | <a href="/blog/old-file-version-in-split-with-vim/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/old-file-version-in-split-with-vim/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you use git VCS, you can view previous version of the file you are currently
+editing in a split window by executing following command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
+</code></pre>
+
+<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s
+extension, like following:</p>
+
+<pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
+</code></pre>
+
+<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to
+the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you
+would like to go back in history by. For example, if you would like to get a
+version of the file 4 commits ago - you can do so by executing following
+command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
+</code></pre>
+
+<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the
+file you are working on.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -433,42 +487,6 @@ FAILED (failures=1)
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/pygame-font-not-found/">pygame.font not found</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-27T06:51:11-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>6:51 am</span></time>
-        
-           | <a href="/blog/pygame-font-not-found/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/pygame-font-not-found/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I had an issue with pygame not being able to find a dependency for the font
-module. After quite a time-consuming search the missing package name was
-<code>libsdl-ttf2.0-dev</code>.</p>
-
-<p>Hope this helps someone.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/9">&larr; Older</a>
@@ -484,6 +502,10 @@ module. After quite a time-consuming search the missing package name was
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
+      </li>
     
       <li class="post">
         <a href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
@@ -519,10 +541,6 @@ module. After quite a time-consuming search the missing package name was
     
       <li class="post">
         <a href="/blog/750-words-a-day/">750 words a day</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/beyond-grep/">Beyond grep</a>
       </li>
     
   </ul>
