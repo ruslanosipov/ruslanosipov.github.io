@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
+  <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2015-06-10T13:15:02-07:00</updated>
+  <id>http://www.rosipov.com/</id>
+  <author>
+    <name><![CDATA[Ruslan Osipov]]></name>
+    <email><![CDATA[ruslan@rosipov.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DidYouMean plugin for Vim]]></title>
+    <link href="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/"/>
+    <updated>2015-06-10T13:02:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/didyoumean-plugin-for-vim</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
+trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
+
+<p>Say you have two files with a similarly starting names: <code>model.py</code> and
+<code>model_test.py</code>. You type <code>vim mo</code>, you hit tab to autocomplete the name, you
+hit enter. In vanilla Vim, you&rsquo;d be opening a new file: <code>model</code>, since that&rsquo;s
+where shell&rsquo;s tab-completion stopped. DidYouMean detects such a nuance and asks
+you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>model_test.py</code>.</p>
+
+<p>Simple idea, and instantly after trying this out, I would really expect this
+feature to be included in vanilla Vim.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gundo tree for Vim]]></title>
+    <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
+    <updated>2015-06-07T13:10:15-07:00</updated>
+    <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
+    <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
+You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
+much more complex than that: Vim keeps track of every change you made in the
+current session, making it possible to access change history beyond basic <code>u</code>
+and <code>C-r</code> commands.</p>
+
+<p>Default interface for accessing far out branches of the undo tree leaves to be
+desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
+
+<p><img src="/images/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
+
+<p>Gundo provides an easy to use interface for navigating history branches. In the
+screenshot above, I am previewing a diff in one of the undo tree branches
+inaccessible via <code>u</code> command.</p>
+
+<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
+convenient to me:</p>
+
+<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
+</code></pre>
+
+<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
+to travel through changes. Enter key applies the changes.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My experience switching to buffers]]></title>
+    <link href="http://www.rosipov.com/blog/my-experience-switching-to-buffers/"/>
+    <updated>2015-06-01T06:28:42-07:00</updated>
+    <id>http://www.rosipov.com/blog/my-experience-switching-to-buffers</id>
+    <content type="html"><![CDATA[<p>About a year ago I stumbled upon an article explaining the difference between
+Vim tabs and buffers. The author emphasized that tabs are merely window
+layouts, and therefore one-file-per-tab idea I was used to at the moment just
+wasn&rsquo;t proper. Instead, author suggested the use of buffer commands to switch
+between multiple files. I decided to give it a shot, and here are some ideas I
+would like to share after switching to the use of buffers.</p>
+
+<p>Buffers are open files (they also may not be associated with any files), but
+they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
+linked to any particular buffer, so you can easily cycle through buffers from
+within any window.</p>
+
+<p>First and foremost, you probably want to add <code>set hidden</code> to your <code>.vimrc</code>.
+This option lets you switch between buffers without having to save files.</p>
+
+<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
+
+<ul>
+<li>Use <code>:ls</code> to list all buffers for this session.</li>
+<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
+<li>Use <code>:b partial_buffer_name</code> for navigating to the buffer of your choice.
+Buffer name auto-complete is supported.</li>
+<li>You can also use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific
+buffer.</li>
+<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
+</ul>
+
+
+<p><img src="/images/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
+
+<p>The hardest thing about stopping to use tabs and switching to buffers instead
+is not having the visual aid: I was used to having a list of files always
+available at a glance, at the top of my screen. To check what files I&rsquo;m working
+on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
+
+<p>Not surprisingly, this taught me to be more mindful about my editing
+experience. I usually have a clear structure of the files I&rsquo;m working on in my
+head. And if the list is getting to long to easily remember, then I&rsquo;m probably
+doing something wrong: time to take a break and reset my Vim session.</p>
+
+<p>The experience overall reminded me of my recent switch to blank keyboard key
+caps: with no inscriptions to aid you, I first felt a bit at loss, especially
+with they keys I couldn&rsquo;t find without looking: like function keys or special
+symbols. But after some time with the blank key caps, I improved my typing
+skill, and know where even the most obscure characters hide. The switch helped
+me to improve my typing experience overall.</p>
+
+<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
+achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
+editing process any faster, but instead much more satisfying.</p>
+
+<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
+
+<p>UPDATE: Made a few corrections and added a <code>:b partial_buffer_name</code> command
+thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&rsquo;s <a href="http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni">Reddit comment</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom templates in vimwiki]]></title>
+    <link href="http://www.rosipov.com/blog/custom-templates-in-vimwiki/"/>
+    <updated>2015-02-05T10:40:33-08:00</updated>
+    <id>http://www.rosipov.com/blog/custom-templates-in-vimwiki</id>
+    <content type="html"><![CDATA[<p>I got myself into a habit of using vimwiki for the past year: it helps me to
+keep track of random bits of information, work and project notes, as well as
+daily goals and achievements. You can read more about vimwiki in an article I
+wrote a while back: &ldquo;<a href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>&rdquo;.</p>
+
+<p><img src="/images/vimwiki-workflow-habits.png" title="HTML page generated by vimwiki with a custom navigation bar." ></p>
+
+<p>One of vimwiki&rsquo;s features I really like is an ability to convert whole wiki to
+HTML with a single command: <code>:VimwikiAll2HTML</code>. There is one annoyance though:
+HTML vimwiki pages don&rsquo;t have any navigation elements: the only way to navigate
+between pages is by clicking through links within a page or using browser&rsquo;s
+&ldquo;back&rdquo; button.</p>
+
+<p>Luckily, vimwiki has a setting which allows using custom templates for
+generating HTML. Assuming your wiki is in <code>$HOME/Dropbox/wiki</code> (can be anywhere
+else though), make following changes to your <code>.vimrc</code>:</p>
+
+<pre><code>let g:vimwiki_list = [{
+  \ 'path': '$HOME/Dropbox/wiki',
+  \ 'template_path': '$HOME/Dropbox/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+</code></pre>
+
+<p>After that, create a <code>$HOME/Dropbox/wiki/templates/default.html</code> using
+<code>vimwiki/autoload/vimwiki/default.tpl</code> as a base. I added simple navigation bar
+to my default template:</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="Stylesheet" type="text/css" href="%root_path%style.css" /&gt;
+    &lt;title&gt;%title%&lt;/title&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href="%root_path%index.html"&gt;Index&lt;/a&gt; |
+    &lt;a href="%root_path%diary/diary.html"&gt;Diary&lt;/a&gt;
+    &lt;hr&gt;
+    &lt;div class="content"&gt;
+    %content%
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Now it&rsquo;s much easier to jump between wiki entries. Of course, customization
+doesn&rsquo;t end there: you can change styles, add JavaScript and make your wiki all
+fancy and advanced.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Distraction-free writing with VimRoom]]></title>
+    <link href="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/"/>
+    <updated>2014-07-23T14:46:20-07:00</updated>
+    <id>http://www.rosipov.com/blog/distraction-free-writing-with-vimroom</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
+documentation, personal Wiki, keeping work journal, blogging, writing
+challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
+writing prose in Vim might feel a bit unnatural, especially if you have a wide
+screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
+not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
+editing text in Vim sometimes might feel a bit clunky - with all the extra
+information and high-tech (or low-tech, depending on your perspective) look.</p>
+
+<p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
+Vim plugin which enters distraction-free writing mode, by centering the
+80-character block of text on your screen. It&rsquo;s highly configurable, and I
+found it to look especially pleasing on vertical monitors (which I prefer to
+use for writing). It looks presentable even on smaller screens though, here&rsquo;s a
+screenshot:</p>
+
+<p><img src="/images/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
+
+<p>Install the plugin (use a package manager like Vundle or <a href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Pathogen</a> to
+simplify the task) and add a following line to your <code>.vimrc</code>:</p>
+
+<pre><code>nnoremap &lt;Leader&gt;vr :VimroomToggle&lt;CR&gt;
+</code></pre>
+
+<p>Now, hit <code>&lt;Leader&gt;vr</code> to drop in/out of the VimRoom mode (<code>&lt;Leader</code> is a
+backslash <code>\</code> character by default).</p>
+
+<p>GitHub link: <a href="https://github.com/mikewest/vimroom">https://github.com/mikewest/vimroom</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

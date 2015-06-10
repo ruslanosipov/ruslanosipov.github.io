@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>&#8220;The Pragmatic Programmer&#8221; - Ruslan Osipov</title>
+  <title>DidYouMean plugin for Vim - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I just finished reading &ldquo;The Pragmatic Programmer&rdquo; by Andrew Hunt and
-David Thomas - two consultants behind Pragmatic Programmers, LLC. &hellip;">
+  <meta name="description" content="DidYouMean Vim plugin is very simple: it asks you if the file you are
+trying to open is indeed the right file. How is this useful? Here&rsquo;s how: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ David Thomas - two consultants behind Pragmatic Programmers, LLC. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/the-pragmatic-programmer">
+  <link rel="canonical" href="http://www.rosipov.com/blog/didyoumean-plugin-for-vim">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -82,7 +82,7 @@ David Thomas - two consultants behind Pragmatic Programmers, LLC. &hellip;">
   
   <header>
     
-      <h1 class="entry-title">&#8220;The Pragmatic Programmer&#8221;</h1>
+      <h1 class="entry-title">DidYouMean plugin for Vim</h1>
     
     
       <p class="meta">
@@ -91,7 +91,7 @@ David Thomas - two consultants behind Pragmatic Programmers, LLC. &hellip;">
 
 
 
-<time class='entry-date' datetime='2014-07-14T18:43:26-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:43 pm</span></time>
+<time class='entry-date' datetime='2015-06-10T13:02:00-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:02 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -101,42 +101,17 @@ David Thomas - two consultants behind Pragmatic Programmers, LLC. &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I just finished reading &ldquo;<a href="http://amzn.to/1zXtlQx">The Pragmatic Programmer</a>&rdquo; by Andrew Hunt and
-David Thomas - two consultants behind Pragmatic Programmers, LLC. This book
-might as well be a fantastic marketing trick for their consulting agency, but
-the value it brings to the reader is hard to underestimate.</p>
+<div class="entry-content"><p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
+trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
 
-<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
-major aspect of developing software: be it the choice of a text editor,
-calculating time complexity, or working effectively on a team.</p>
+<p>Say you have two files with a similarly starting names: <code>model.py</code> and
+<code>model_test.py</code>. You type <code>vim mo</code>, you hit tab to autocomplete the name, you
+hit enter. In vanilla Vim, you&rsquo;d be opening a new file: <code>model</code>, since that&rsquo;s
+where shell&rsquo;s tab-completion stopped. DidYouMean detects such a nuance and asks
+you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>model_test.py</code>.</p>
 
-<p>If you read thematic books and actively follow programming blogs and podcasts -
-you may find yourself cheerfully nodding while reading sections of this book.
-You may have read about some of the tips online, heard from colleagues, or
-simply discovered them yourself. You will finish this book with a wide smile of
-approval, and a sense of validation in regards to your daily work flow or
-actions.</p>
-
-<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
-can utilize right away, right now, at your workplace. This is what &ldquo;The
-Pragmatic Programmer&rdquo; essentially is: a collection of practical things
-regarding getting things done.</p>
-
-<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
-reading list out there. And for a solid reason. This is the kind of book you
-want to re-read every couple of years to absorb every piece of knowledge
-presented within it. The latest edition of the book even contains a printout
-with all the tips listed in the book.</p>
-
-<p>You should read it after being in the field for a few years. After making
-mistakes, and figuring some things out on your own. Beginners might not
-understand some pieces, but will still be able to comprehend a major portion of
-knowledge contained within this book.</p>
-
-<p>I enthusiastically recommend this book to every software engineer I get to work
-with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;<a href="http://amzn.to/1zGLlv1">Code Complete</a>&rdquo;
-or &ldquo;<a href="http://amzn.to/1zGLnDl">Art of Computer Programming</a>&rdquo;) and it teaches you how to get things
-done, the pragmatic way.</p>
+<p>Simple idea, and instantly after trying this out, I would really expect this
+feature to be included in vanilla Vim.</p>
 </div>
 
 
@@ -152,12 +127,12 @@ done, the pragmatic way.</p>
 
 
 
-<time class='entry-date' datetime='2014-07-14T18:43:26-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:43 pm</span></time>
+<time class='entry-date' datetime='2015-06-10T13:02:00-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:02 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/book-reviews/'>book reviews</a>
+    <a class='category' href='/blog/categories/vim/'>vim</a>
   
 </span>
 
@@ -166,7 +141,7 @@ done, the pragmatic way.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/the-pragmatic-programmer/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/the-pragmatic-programmer/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/" >Tweet</a>
   
   
   
@@ -175,10 +150,8 @@ done, the pragmatic way.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/personal-wiki-with-vimwiki/" title="Previous Post: Personal wiki with vimwiki">&laquo; Personal wiki with vimwiki</a>
+        <a class="basic-alignment left" href="/blog/lessons-learned-engineering-productivity/" title="Previous Post: Lessons learned: engineering productivity">&laquo; Lessons learned: engineering productivity</a>
       
-      
-        <a class="basic-alignment right" href="/blog/abandoning-wordpress-for-octopress/" title="Next Post: Abandoning WordPress for Octopress">Abandoning WordPress for Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -260,8 +233,8 @@ done, the pragmatic way.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/the-pragmatic-programmer/';
-        var disqus_url = 'http://www.rosipov.com/blog/the-pragmatic-programmer/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/didyoumean-plugin-for-vim/';
+        var disqus_url = 'http://www.rosipov.com/blog/didyoumean-plugin-for-vim/';
         var disqus_script = 'embed.js';
       
     (function () {

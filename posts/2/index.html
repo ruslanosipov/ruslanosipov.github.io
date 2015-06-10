@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Ranger is a lightweight but powerful file manager with Vi-like key bindings.
-It shines at exploring file trees, looking for specific files, and &hellip;">
+  <meta name="description" content="A couple of months ago I discovered apparix: a set of commands which augment
+cd with bookmarks. It really is an amazing feeling when you zap between &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,86 @@ It shines at exploring file trees, looking for specific files, and &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-20T16:25:45-08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:25 pm</span></time>
+        
+           | <a href="/blog/managing-cd-bookmarks-with-apparix/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A couple of months ago I discovered apparix: a set of commands which augment
+<code>cd</code> with bookmarks. It really is an amazing feeling when you zap between
+multiple directories far away just with a couple of keystrokes! Apparix
+provides three commands I use daily: <code>to</code>, <code>bm</code>, and <code>apparix</code> (program
+suggests aliasing last one to <code>als</code>). Here&rsquo;s how I use it:</p>
+
+<pre><code>$ pwd
+/Users/ruslan
+$ apparix
+--- portals
+--- expansions
+--- bookmarks
+j dotfiles     /Users/ruslan/.dotfiles
+j blog         /Users/ruslan/Projects/ruslanosipov.github.io
+$ to blog
+$ pwd
+/Users/ruslan/Projects/ruslanosipov.github.io
+$ cd source/_posts
+$ bm posts
+added: posts -&gt; /Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
+$ to dotfiles
+$ pwd
+/Users/ruslan/.dotfiles
+$ to posts
+$ pwd
+/Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
+</code></pre>
+
+<p>The example above is self explanatory: you can see how over the span of a year
+apparix saves hours of navigating directories you frequent.</p>
+
+<h2>Installation</h2>
+
+<p>If you don&rsquo;t like reading manuals, installation might be a confusing. But in
+reality it&rsquo;s straightforward, you just need to add some functions or aliases to
+your shell&rsquo;s configuration file.</p>
+
+<p>Install <code>apparix</code> using your favorite package manager, and then pipe examples
+apparix offers into your shell&rsquo;s <code>rc</code> file.</p>
+
+<pre><code>apparix --shell-examples &gt;&gt; ~/.bashrc
+</code></pre>
+
+<p>Open your <code>.bashrc</code> (or another corresponding configuration file), and pick the
+preferred way of using apparix: you&rsquo;ll see functions for bash and aliases for
+csh given as examples. Pick whatever works for your shell, source your <code>rc</code>
+file, and you&rsquo;re all set!</p>
+
+<p>Happy jumping!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -539,76 +619,6 @@ branch of your Octopress repository. Otherwise <code>rake deploy</code> command 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/750-words-a-day/">750 words a day</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-29T10:51:35-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:51 am</span></time>
-        
-           | <a href="/blog/750-words-a-day/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/750-words-a-day/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve had increased interest in writing throughout this year. In addition to
-being a pleasant and fulfilling activity, it shown a number of benefits in my
-everyday life and career:</p>
-
-<ul>
-<li>Composing emails became faster and easier. When you have to reply to a couple
-of dozen emails a day, speed and attention to details matters. Writing more
-taught me to write more concise emails which are easy to read.</li>
-<li>Writing a lot isn&rsquo;t a problem anymore. If I have to write documentation,
-comment code, or just put together a very long email - I&rsquo;m not put off by the
-idea. I&rsquo;m excited about it.</li>
-<li>Typing speed went up. <a href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/">I already touch type</a>, and constant writing practice
-increases the acquired speed. Fast typing makes life easier, speeding up
-mundane tasks, freeing up brain power for more costly activities.</li>
-<li>It&rsquo;s easy to keep a condensed work log to highlight the issues of the day.
-Tough programming issues, &ldquo;Eureka!&rdquo; moments, meeting notes - this historical
-data saved me hours or even days of repeating my mistakes.</li>
-</ul>
-
-
-<p>A while ago, I&rsquo;ve heard of a thing called <a href="http://750words.com/">&ldquo;750 words&rdquo;</a>, a site built around
-a challenge to write 750 words a day in order to improve writing skills and
-unleash creativity. This looked like a great idea, and I decided to give it a
-shot. I prefer to keep my personal entries offline, and I decided not to use the
-provided service, but to keep a set of plain text files on my local machine.
-Which worked out just fine. It&rsquo;s all just text after all.</p>
-
-<p>I lasted for 10 days in a row, which I am proud of (filling up approximately 3
-pages a day was no easy task for me). I started of with silly entries about not
-knowing what to write about, and finished with a piece of a fiction story.
-That&rsquo;s a considerable improvement.</p>
-
-<p>By the end of the challenge I was mentally exhausted. But it taught me a very
-important lesson: the more you write, the better you become. And that&rsquo;s one of
-the main reasons I keep crafting new entries for this blog.</p>
-
-<p>This happened half a year ago, I just never got around to writing about it. I
-will go ahead and start another 750 words spree today. Maybe this time I&rsquo;ll be
-able to make it last for the whole month.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -624,6 +634,10 @@ able to make it last for the whole month.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
+      </li>
     
       <li class="post">
         <a href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
@@ -659,10 +673,6 @@ able to make it last for the whole month.</p>
     
       <li class="post">
         <a href="/blog/contributing-to-an-existing-octopress-blog/">Contributing to an existing Octopress blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/750-words-a-day/">750 words a day</a>
       </li>
     
   </ul>

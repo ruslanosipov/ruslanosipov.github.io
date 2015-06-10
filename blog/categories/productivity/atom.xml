@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-08T14:08:15-07:00</updated>
+  <updated>2015-06-10T13:15:02-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,100 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Gundo tree for Vim]]></title>
-    <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
-    <updated>2015-06-07T13:10:15-07:00</updated>
-    <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
-    <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
-You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
-much more complex than that: Vim keeps track of every change you made in the
-current session, making it possible to access change history beyond basic <code>u</code>
-and <code>C-r</code> commands.</p>
-
-<p>Default interface for accessing far out branches of the undo tree leaves to be
-desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
-
-<p><img src="/images/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
-
-<p>Gundo provides an easy to use interface for navigating history branches. In the
-screenshot above, I am previewing a diff in one of the undo tree branches
-inaccessible via <code>u</code> command.</p>
-
-<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
-convenient to me:</p>
-
-<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
-</code></pre>
-
-<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
-to travel through changes. Enter key applies the changes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My experience switching to buffers]]></title>
-    <link href="http://www.rosipov.com/blog/my-experience-switching-to-buffers/"/>
-    <updated>2015-06-01T06:28:42-07:00</updated>
-    <id>http://www.rosipov.com/blog/my-experience-switching-to-buffers</id>
-    <content type="html"><![CDATA[<p>About a year ago I stumbled upon an article explaining the difference between
-Vim tabs and buffers. The author emphasized that tabs are merely window
-layouts, and therefore one-file-per-tab idea I was used to at the moment just
-wasn&rsquo;t proper. Instead, author suggested the use of buffer commands to switch
-between multiple files. I decided to give it a shot, and here are some ideas I
-would like to share after switching to the use of buffers.</p>
-
-<p>Buffers are open files (they also may not be associated with any files), but
-they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
-linked to any particular buffer, so you can easily cycle through buffers from
-within any window.</p>
-
-<p>First and foremost, you probably want to add <code>set hidden</code> to your <code>.vimrc</code>.
-This option lets you switch between buffers without having to save files.</p>
-
-<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
-
-<ul>
-<li>Use <code>:ls</code> to list all buffers for this session.</li>
-<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
-<li>Use <code>:b partial_buffer_name</code> for navigating to the buffer of your choice.
-Buffer name auto-complete is supported.</li>
-<li>You can also use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific
-buffer.</li>
-<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
-</ul>
-
-
-<p><img src="/images/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
-
-<p>The hardest thing about stopping to use tabs and switching to buffers instead
-is not having the visual aid: I was used to having a list of files always
-available at a glance, at the top of my screen. To check what files I&rsquo;m working
-on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
-
-<p>Not surprisingly, this taught me to be more mindful about my editing
-experience. I usually have a clear structure of the files I&rsquo;m working on in my
-head. And if the list is getting to long to easily remember, then I&rsquo;m probably
-doing something wrong: time to take a break and reset my Vim session.</p>
-
-<p>The experience overall reminded me of my recent switch to blank keyboard key
-caps: with no inscriptions to aid you, I first felt a bit at loss, especially
-with they keys I couldn&rsquo;t find without looking: like function keys or special
-symbols. But after some time with the blank key caps, I improved my typing
-skill, and know where even the most obscure characters hide. The switch helped
-me to improve my typing experience overall.</p>
-
-<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
-achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
-editing process any faster, but instead much more satisfying.</p>
-
-<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
-
-<p>UPDATE: Made a few corrections and added a <code>:b partial_buffer_name</code> command
-thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&rsquo;s <a href="http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni">Reddit comment</a>.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
@@ -450,6 +356,104 @@ different times when either GUI or CLI tools excel:</p>
 tools seem to appeal to experienced users, while GUI tools are great for novice
 users and do excel in representing visual information. No matter what kind of
 interface you prefer, it&rsquo;s crucially important to use the right tool for the job.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beyond grep]]></title>
+    <link href="http://www.rosipov.com/blog/beyond-grep/"/>
+    <updated>2014-09-21T12:18:31-07:00</updated>
+    <id>http://www.rosipov.com/blog/beyond-grep</id>
+    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
+code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
+yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
+to use <code>grep</code> implementation built to work with large (or not really) code
+trees.</p>
+
+<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
+working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
+
+<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
+natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
+arises (<code>ack</code> has a great manual entry).</p>
+
+<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
+
+<pre><code>ack --shell 'gr[ae]y'
+</code></pre>
+
+<p>Searches all shell script files in the current code tree for any occurrences of
+&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
+<code>ack</code> will even check shebang lines for you.</p>
+
+<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
+types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
+job at searching through code.</p>
+
+<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Effective search with Mutt]]></title>
+    <link href="http://www.rosipov.com/blog/effective-search-with-mutt/"/>
+    <updated>2014-08-02T13:32:51-07:00</updated>
+    <id>http://www.rosipov.com/blog/effective-search-with-mutt</id>
+    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
+fonts to be more pleasant to the eye, and the visualization my browser offers
+is hard to beat. The main use-case for me is composing long emails: Mutt lets
+me use my favorite text editor, which speeds up the editing of long and
+carefully composed responses.</p>
+
+<p>Recently I added a new use-case to my work flow: searching through emails.
+Mutt has a powerful built-in regular-expressions engine, which is something the
+web Gmail client is missing.</p>
+
+<p>Mutt has two ways of finding things: search and limit. &ldquo;Search&rdquo; just jumps from
+one matching letter to another, something along the lines what <code>/</code> command does
+in <code>less</code>, <code>more</code>, or <code>vim</code>. &ldquo;Limit&rdquo; is something I am more used to with the
+web client, and it&rsquo;s what I use the most.</p>
+
+<h2>Using limits</h2>
+
+<p>Limit works the way regular search works in Gmail: it limits the view to
+conversations matching the query. Hit <code>l</code>, and enter a search query.</p>
+
+<p>By default, Mutt will only search through the subject lines, but this behaviour
+can be changed by prefixing the command with a special identifier. For
+instance, searching for <code>~b oranges</code> will limit the view to all the messages
+which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
+
+<ul>
+<li><code>~b</code> &ndash; Search in the message body.</li>
+<li><code>~B</code> &ndash; Search in the whole message.</li>
+<li><code>~f</code> &ndash; Message originated from the user.</li>
+<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
+</ul>
+
+
+<p>You can find full list in the <a href="http://www.mutt.org/doc/manual/manual-4.html#ss4.2">Mutt Advanced Usage Manual</a>.</p>
+
+<p>Patterns can be chained to produce narrower results: <code>~f joe ~B apples</code>. This
+will search for a message mentioning &ldquo;apples&rdquo; coming from an author whose name
+contains &ldquo;joe&rdquo;.</p>
+
+<h3>Caching mail for faster search</h3>
+
+<p>You may find that searching whole messages is slow, especially if you have more
+than a couple hundred messages to search through. That&rsquo;s because by default
+Mutt does not store messages for local use. This can be changed by specifying
+<code>header_cache</code> and <code>message_cachedir</code> variables in your <code>.muttrc</code> file:</p>
+
+<pre><code>set header_cache     = "$HOME/Mail"
+set message_cachedir = "$HOME/Mail"
+</code></pre>
+
+<p>Now, after you perform your first search, it will cache every message you open,
+making all the consecutive searches lightning fast.</p>
+
+<p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
+sure the cache directory is not shared with anyone but yourself.</p>
 ]]></content>
   </entry>
   
