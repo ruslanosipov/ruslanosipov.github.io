@@ -1,8 +1,7 @@
 ---
 title: "My experience switching to buffers"
 date: 2015-06-01 06:28:42 -0700
-categories: [Productivity]
-tags: [vim]
+categories: [Vim]
 ---
 
 About a year ago I stumbled upon an article explaining the difference between

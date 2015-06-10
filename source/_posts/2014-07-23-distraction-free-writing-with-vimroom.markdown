@@ -1,8 +1,7 @@
 ---
 title: "Distraction-free writing with VimRoom"
 date: 2014-07-23 14:46:20 -0700
-categories: [Productivity]
-tags: [vim]
+categories: [Vim]
 ---
 
 Recently I've been writing much more than I used to: long emails, software

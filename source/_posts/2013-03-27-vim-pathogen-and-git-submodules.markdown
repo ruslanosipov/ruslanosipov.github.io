@@ -1,9 +1,9 @@
 ---
 title: Vim, pathogen and git submodules
-categories: [Productivity]
+categories: [Vim]
 date: 2013-03-27 21:35:46+00:00
 date: 2013-03-27 21:35:46+00:00
-tags: [git, vim]
+tags: [git]
 ---
 
 This is a step by step tutorial on how to organize your vim config files using

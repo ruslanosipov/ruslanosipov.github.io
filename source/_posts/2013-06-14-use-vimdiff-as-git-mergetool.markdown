@@ -1,8 +1,8 @@
 ---
 title: Use vimdiff as git mergetool
-categories: [Productivity]
+categories: [Vim]
 date: 2013-06-14 02:18:16+00:00
-tags: [git, vim, vimdiff]
+tags: [git, vimdiff]
 ---
 
 Using vimdiff as a git mergetool can be pretty confusing - multiple windows and

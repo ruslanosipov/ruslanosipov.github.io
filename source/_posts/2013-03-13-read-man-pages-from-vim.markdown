@@ -1,8 +1,7 @@
 ---
 title: Read man pages from vim
-categories: [Productivity]
+categories: [Vim]
 date: 2013-03-13 23:50:56+00:00
-tags: [vim]
 ---
 
 I recently discovered an incredibly useful function - you can look up man pages

@@ -1,8 +1,7 @@
 ---
 title: Easy commenting with tcomment.vim
-categories: [Productivity]
+categories: [Vim]
 date: 2014-07-08 03:22:08+00:00
-tags: [vim]
 ---
 
 This plugin has been in my `.vim` directory for a few years, and I sometimes

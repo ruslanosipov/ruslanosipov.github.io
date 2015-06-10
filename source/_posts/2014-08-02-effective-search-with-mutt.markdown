@@ -2,6 +2,7 @@
 title: "Effective search with Mutt"
 date: 2014-08-02 13:32:51 -0700
 categories: [Productivity]
+tags: [mutt]
 ---
 
 I generally don't use Mutt for everyday emails - I find smooth non-monospace

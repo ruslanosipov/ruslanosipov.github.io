@@ -1,7 +1,6 @@
 ---
 title: "Gundo tree for Vim"
-tags: [vim]
-categories: [Productivity]
+categories: [Vim]
 date: 2015-06-07 13:10:15 -0700
 ---
 

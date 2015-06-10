@@ -1,8 +1,7 @@
 ---
 title: "Custom templates in vimwiki"
 date: 2015-02-05 10:40:33 -0800
-categories: [Productivity]
-tags: [vim]
+categories: [Vim]
 ---
 
 I got myself into a habit of using vimwiki for the past year: it helps me to

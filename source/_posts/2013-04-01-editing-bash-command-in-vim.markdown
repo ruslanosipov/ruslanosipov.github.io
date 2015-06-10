@@ -1,8 +1,8 @@
 ---
 title: Editing bash command in vim
-categories: [Productivity]
+categories: [Vim]
 date: 2013-04-01 07:34:28+00:00
-tags: [bash, vim]
+tags: [bash]
 ---
 
 You can open the current command you are typing for editing in your default

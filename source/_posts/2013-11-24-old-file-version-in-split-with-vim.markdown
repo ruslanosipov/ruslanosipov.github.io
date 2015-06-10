@@ -1,8 +1,8 @@
 ---
 title: Old file version in split with vim
-categories: [Productivity]
+categories: [Vim]
 date: 2013-11-24 04:14:19+00:00
-tags: [git, vim]
+tags: [git]
 ---
 
 If you use git VCS, you can view previous version of the file you are currently

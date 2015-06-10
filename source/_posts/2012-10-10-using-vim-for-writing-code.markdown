@@ -1,8 +1,7 @@
 ---
 title: Using vim for writing code
-categories: [Productivity]
+categories: [Vim]
 date: 2012-10-10 04:16:52+00:00
-tags: [vim]
 ---
 
 Vim is a great text editor which can be much more powerful then any GUI editor
