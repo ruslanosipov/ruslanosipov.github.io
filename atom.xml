@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-10T13:15:02-07:00</updated>
+  <updated>2015-06-10T13:21:14-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -20,6 +20,8 @@
     <id>http://www.rosipov.com/blog/didyoumean-plugin-for-vim</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
 trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
+
+<p><img src="http://www.rosipov.com/images/vim-plugin-didyoumean.png" title="DidYouMean plugin in action." ></p>
 
 <p>Say you have two files with a similarly starting names: <code>model.py</code> and
 <code>model_test.py</code>. You type <code>vim mo</code>, you hit tab to autocomplete the name, you
