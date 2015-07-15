@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-06-10T13:21:26-07:00</updated>
+  <updated>2015-07-15T11:32:15-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Profiling slow bashrc]]></title>
+    <link href="http://www.rosipov.com/blog/profiling-slow-bashrc/"/>
+    <updated>2015-07-15T10:07:53-07:00</updated>
+    <id>http://www.rosipov.com/blog/profiling-slow-bashrc</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
+<a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
+startup time hog in my <code>~/.bashrc</code> upon it.</p>
+
+<p>First off, add following few lines to your <code>/etc/bash.bashrc</code>,
+<code>~/.bash_profile</code>, or wherever you&rsquo;d like to begin tracing the script:</p>
+
+<pre><code>PS4='+ $(date "+%s.%N")\011 '
+exec 3&gt;&amp;2 2&gt;/tmp/bashstart.$$.log
+set -x
+</code></pre>
+
+<p>And add following few lines where you want to stop the trace:</p>
+
+<pre><code>set +x
+exec 2&gt;&amp;3 3&gt;&amp;-
+</code></pre>
+
+<p>Now start your bash session (you can simply open a new terminal Window for
+that). The above will create <code>/tmp/bashstart.&lt;PID&gt;.log</code>. To analyze it, I wrote
+a little Python script:</p>
+
+<pre><code>import argparse
+import heapq
+
+parser = argparse.ArgumentParser(description='Analyze bashstart log for speed.')
+parser.add_argument('filename', help='often /tmp/bashstart.&lt;PID&gt;.log')
+parser.add_argument('-n', default=20, help='number of results to show')
+args = parser.parse_args()
+filename, n = args.filename, int(args.n)
+
+with open(filename, 'r') as f:
+    q = []
+    prev_time = None
+    for line in f.readlines():
+        line = line.split()
+        if '+' not in line[0] or len(line) &lt; 3:
+            continue
+        text = ' '.join(line[2:])
+        seconds, nanoseconds = line[1].split('.')
+        time = int(nanoseconds)
+        diff = time - prev_time if prev_time is not None else 0
+        prev_time = time
+        heapq.heappush(q, (diff, text))
+
+for diff, text in heapq.nlargest(n, q):
+    print float(diff) / 1000000000, 's:', text
+</code></pre>
+
+<p>Save it as <code>bashprofile.py</code>, and run it as follows (replace file name with an
+appropriate):</p>
+
+<pre><code>python bashprofile.py /tmp/bashstart.2831.log -n 20
+0.050056909 s: _powerline_init_tmux_support
+0.045323022 s: _powerline_setup_prompt
+0.044722024 s: _powerline_setup_prompt
+0.044423727 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
+0.044364097 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
+0.044137159 s: _powerline_init_tmux_support
+0.015839574 s: __shell_name=bash
+0.010850276 s: command which which
+0.010105462 s: PS2='\[\]  \[\] \[\]'
+0.010000598 s: PS3=' Select variant  '
+0.009837956 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
+0.009767517 s: PS2='\[\]  \[\] \[\]'
+0.0095753 s: PS3=' Select variant  '
+0.007915565 s: other_utils=(ant automake autoreconf libtoolize make mount patch readlink)
+0.00771205 s: for script in version functions/selector cd functions/cli cli override_gem
+0.007008299 s: for gnu_util in '"${gnu_utils[@]}"'
+0.00693653 s: complete -F _crow crow
+0.006803049 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
+0.006672906 s: for script in version functions/selector cd functions/cli cli override_gem
+0.005912399 s: for entry in '${scripts[@]}'
+</code></pre>
+
+<p>In my example, <a href="https://github.com/powerline/powerline">Powerline</a> turned out to be a massive hog. Looks like I&rsquo;ll
+have to troubleshoot the speed or plain disable it.</p>
+
+<p>Don&rsquo;t forget to remove the lines you added to your bash configuration files
+after you&rsquo;re done profiling.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
@@ -82,7 +170,7 @@ to Mac OS X users: center column shows contents of the current directory, left
 column lists contents of a parent directory, and the right column contains
 preview for the selected file or folder.</p>
 
-<p>{% img /images/ranger-file-preview.png File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column. %}</p>
+<p><img src="/images/ranger-file-preview.png" title="File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column." ></p>
 
 <p>Ranger supports movement with familiar to Vi users <code>h</code>, <code>j</code>, <code>k</code>, and <code>l</code> keys,
 has internal command line which is invoked with <code>:</code>, as well as many other
@@ -90,7 +178,7 @@ features and key bindings similar to Vi. Another great selling point - Ranger
 can be extended with custom commands and key bindings. Utility is written in
 Python, therefore all the commands are nothing more than Python scripts.</p>
 
-<p>{% img /images/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing <code>:delete</code> command. %}</p>
+<p><img class="/images/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing" src="<code>:delete</code>&#8221; title=&#8221;command.&#8221; ></p>
 
 <h2>Installation</h2>
 
@@ -391,69 +479,6 @@ types, native support for Perl&rsquo;s regular expressions: <code>ack</code> doe
 job at searching through code.</p>
 
 <p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Effective search with Mutt]]></title>
-    <link href="http://www.rosipov.com/blog/effective-search-with-mutt/"/>
-    <updated>2014-08-02T13:32:51-07:00</updated>
-    <id>http://www.rosipov.com/blog/effective-search-with-mutt</id>
-    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
-fonts to be more pleasant to the eye, and the visualization my browser offers
-is hard to beat. The main use-case for me is composing long emails: Mutt lets
-me use my favorite text editor, which speeds up the editing of long and
-carefully composed responses.</p>
-
-<p>Recently I added a new use-case to my work flow: searching through emails.
-Mutt has a powerful built-in regular-expressions engine, which is something the
-web Gmail client is missing.</p>
-
-<p>Mutt has two ways of finding things: search and limit. &ldquo;Search&rdquo; just jumps from
-one matching letter to another, something along the lines what <code>/</code> command does
-in <code>less</code>, <code>more</code>, or <code>vim</code>. &ldquo;Limit&rdquo; is something I am more used to with the
-web client, and it&rsquo;s what I use the most.</p>
-
-<h2>Using limits</h2>
-
-<p>Limit works the way regular search works in Gmail: it limits the view to
-conversations matching the query. Hit <code>l</code>, and enter a search query.</p>
-
-<p>By default, Mutt will only search through the subject lines, but this behaviour
-can be changed by prefixing the command with a special identifier. For
-instance, searching for <code>~b oranges</code> will limit the view to all the messages
-which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
-
-<ul>
-<li><code>~b</code> &ndash; Search in the message body.</li>
-<li><code>~B</code> &ndash; Search in the whole message.</li>
-<li><code>~f</code> &ndash; Message originated from the user.</li>
-<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
-</ul>
-
-
-<p>You can find full list in the <a href="http://www.mutt.org/doc/manual/manual-4.html#ss4.2">Mutt Advanced Usage Manual</a>.</p>
-
-<p>Patterns can be chained to produce narrower results: <code>~f joe ~B apples</code>. This
-will search for a message mentioning &ldquo;apples&rdquo; coming from an author whose name
-contains &ldquo;joe&rdquo;.</p>
-
-<h3>Caching mail for faster search</h3>
-
-<p>You may find that searching whole messages is slow, especially if you have more
-than a couple hundred messages to search through. That&rsquo;s because by default
-Mutt does not store messages for local use. This can be changed by specifying
-<code>header_cache</code> and <code>message_cachedir</code> variables in your <code>.muttrc</code> file:</p>
-
-<pre><code>set header_cache     = "$HOME/Mail"
-set message_cachedir = "$HOME/Mail"
-</code></pre>
-
-<p>Now, after you perform your first search, it will cache every message you open,
-making all the consecutive searches lightning fast.</p>
-
-<p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
-sure the cache directory is not shared with anyone but yourself.</p>
 ]]></content>
   </entry>
   

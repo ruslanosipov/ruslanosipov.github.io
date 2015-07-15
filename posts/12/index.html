@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="Setting up Ruby on Rails with MongoDB on a Windows machine. You need to have cygwin installed with ruby and git packages (obviously you
-may want to &hellip;">
+  <meta name="description" content="I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that
+has softer colors. Add the following lines to your .minttyrc and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,64 @@ may want to &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/mintty-color-scheme-cygwin/">Mintty color scheme (Cygwin)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-03-13T12:35:28-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:35 pm</span></time>
+        
+           | <a href="/blog/mintty-color-scheme-cygwin/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/mintty-color-scheme-cygwin/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/mintty-softer-color-scheme.png" title="Softer colors for mintty." ></p>
+
+<p>I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that
+has softer colors. Add the following lines to your <code>.minttyrc</code> and restart
+cygwin in order to apply changes.</p>
+
+<pre><code>ForegroundColour = 131, 148, 150
+BackgroundColour =   0,   0,   0
+CursorColour     = 220,  50,  47
+
+Black            =   7,  54,  66
+BoldBlack        =   0,  43,  54
+Red              = 220,  50,  47
+BoldRed          = 203,  75,  22
+Green            =   0, 200, 132
+BoldGreen        =   0, 200, 132
+Yellow           = 204, 204, 102
+BoldYellow       = 204, 204, 102
+Blue             = 102, 153, 204
+BoldBlue         = 102, 153, 204
+Magenta          = 211,  54, 130
+BoldMagenta      = 108, 113, 196
+Cyan             =  42, 161, 152
+BoldCyan         = 147, 161, 161
+White            = 238, 232, 213
+BoldWhite        = 253, 246, 227
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -312,92 +370,6 @@ person&rsquo;s public key.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/c-strtok-usage-example/">C strtok usage example</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-12-10T10:36:05-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>10:36 am</span></time>
-        
-           | <a href="/blog/c-strtok-usage-example/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/c-strtok-usage-example/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I had some issues with the <code>strtok</code> function. Here&rsquo;s a detailed explanation and
-usage for it.</p>
-
-<p>The <code>strtok</code> function is used to tokenize a string and thus separates it into
-multiple strings divided by a delimiter.</p>
-
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-
-int main() {
-    int j, i = 0;
-    char delim[4];
-    char user_input[81], *token[80];
-    user_input[0] = 0;  // set first byte to 0 to detect empty string
-
-    // validate the string length
-    while (strlen(user_input) &lt;= 1 || strlen(user_input) &gt; 82) {
-        printf("Feed me a string to tokenize: ");
-        fgets(user_input, sizeof(user_input), stdin);
-    }
-
-    printf("And a delimiter (up to 4 chars): ");
-    fgets(delim, sizeof(delim), stdin);
-
-    token[0] = strtok(user_input, delim);  // first call returns pointer
-                                           // to first part of user_input
-                                           // separated by delim
-    while (token[i] != NULL) {
-        i++;
-        token[i] = strtok(NULL, delim);  // every call with NULL uses
-                                         // saved user_input value and
-                                         // returns next substring
-    }
-
-    for (j=0; j&lt;=i-1; j++) {
-        printf("%sn", token[j]);
-    }
-
-    return 0;
-}
-</code></pre>
-
-<p>Let&rsquo;s compile and execute it:</p>
-
-<pre><code>Feed me a string to tokenize: foo/bar/baz
-And a delimiter: /
-foo
-bar
-baz
-</code></pre>
-
-<p>The first call to <code>strtok</code> returns the pointer to the first substring. All the
-next calls with the first argument being <code>NULL</code> use the string passed at the
-first call and return the next substring. The function returns <code>NULL</code> if no
-more substrings are available.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/13">&larr; Older</a>
@@ -413,6 +385,10 @@ more substrings are available.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
+      </li>
     
       <li class="post">
         <a href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
@@ -448,10 +424,6 @@ more substrings are available.</p>
     
       <li class="post">
         <a href="/blog/custom-templates-in-vimwiki/">Custom templates in vimwiki</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/contributing-to-an-existing-octopress-blog/">Contributing to an existing Octopress blog</a>
       </li>
     
   </ul>
