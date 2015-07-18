@@ -49,7 +49,7 @@ important. Minimalism isn't about the absence of things. If you feel like you
 don't have enough - you're probably doing something wrong. Minimalism is about
 not being excessive.
 
-For me, knowing that my belongings serve a purpose makes me feel contempt,
+For me, knowing that my belongings serve a purpose makes me feel content,
 clear-headed. It's comforting. It feels right.
 
 Sometimes, I forget and start accumulating stuff. And that's when I go back to
