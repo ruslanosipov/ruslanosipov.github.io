@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Vim, pathogen and git submodules - Ruslan Osipov</title>
+  <title>My experience with minimalism - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
+  <meta name="description" content="Minimalism was always appealing to me. The philosophy of not having more than
+one would need is close to my heart. Over the past few years, I&rsquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules">
+  <link rel="canonical" href="http://www.rosipov.com/blog/my-experience-with-minimalism">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -82,7 +82,7 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Vim, pathogen and git submodules</h1>
+      <h1 class="entry-title">My experience with minimalism</h1>
     
     
       <p class="meta">
@@ -91,7 +91,7 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
 
 
 
-<time class='entry-date' datetime='2013-03-27T14:35:46-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:35 pm</span></time>
+<time class='entry-date' datetime='2015-07-18T12:54:36-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:54 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -101,78 +101,60 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   </header>
 
 
-<div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are familiar
-with git basics, but you don&rsquo;t really need to understand every step in order to
-follow it. For simplicity, only <code>.vim</code> directory is a repository in this
-example. You may want to have all your dotfiles under version control and use a
-script to symlink files to the home directory. For example see
-<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+<div class="entry-content"><p>Minimalism was always appealing to me. The philosophy of not having more than
+one would need is close to my heart. Over the past few years, I&rsquo;ve been
+&ldquo;trimming the fat&rdquo; off various parts of my life.</p>
 
-<h2>Setting up</h2>
+<p>I can&rsquo;t recall when I started being drawn to a minimalistic lifestyle. I think
+my passion for minimalism originates in my desire for organization and order.
+It&rsquo;s comforting to know that a world around me has a certain structure.</p>
 
-<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
-Let&rsquo;s initialize a repository.</p>
+<p>I remember the time when I started living on my own. I just moved to United
+States, away from my family. All my life fit in a half-empty suitcase at that
+time. Few sets of clothes, a blanket, a pillow, some hygiene products, a small
+laptop. Moving to a new place was as easy as throwing few things in that
+suitcase.</p>
 
-<pre><code>cd ~/.vim
-git init
-git remote add origin git@github.com:user/project.git
-</code></pre>
+<p>After some time, I started accumulating more things. A guitar. More variations
+of clothing. Cheap coffee table and a shoe rack from a dollar store. At that
+time I rented a room in one of the shady areas of the city. Adding a few pieces
+of furniture made a place feel like home.</p>
 
-<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
-submodule.</p>
+<p>Time has passed, and I moved again. Left the furniture behind, took the rest.
+Still light, but I did have to make a few trips to move everything I needed. I
+got even more comfortable. A gaming PC. Significantly more junk here and there.</p>
 
-<pre><code>mkdir bundle
-cd bundle
-git submodule add git@github.cfm:tpope/vim-pathogen.git
-bundle/vim-pathogen
-</code></pre>
+<p>That&rsquo;s when I did my first big cleanup. I went through every item I owned, and
+tossed it a trash bag if I didn&rsquo;t use it in the past 6 month. Old clothes, some
+action figures, other useless junk I accumulated. As a result, I tossed two big
+bags of stuff I didn&rsquo;t need. I still remember the liberating feeling. Knowing
+that everything I own serves a purpose.</p>
 
-<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
-non-default directory:</p>
+<p>It felt like I could breathe again.</p>
 
-<pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-</code></pre>
+<p>Years pass. I don&rsquo;t rent rooms anymore, but apartments, houses. This comes with
+having to own more things. Real furniture. A TV. More musical instruments.
+Having to accommodate guests. Cooking supplies. A bike. Outdoor furniture.</p>
 
-<p>Let&rsquo;s add some more plugins as git submodules, for example:</p>
+<p>But I&rsquo;ve kept the minimalistic mindset, and I still do periodical clean outs.
+Tossing almost everything I haven&rsquo;t used in a past six months. Reducing what I
+own only to things that I need to have comfortable and enjoyable living.</p>
 
-<pre><code>git submodule add git@github.com:Lokaltog/vim-easymotion.git
-bundle/vim-easymotion
-</code></pre>
+<p>Today, I don&rsquo;t think I can fit everything I own in that single suitcase. Hell, I
+most certainly will need to hire a truck for my next move. But that&rsquo;s not
+important. Minimalism isn&rsquo;t about the absence of things. If you feel like you
+don&rsquo;t have enough - you&rsquo;re probably doing something wrong. Minimalism is about
+not being excessive.</p>
 
-<p>Now we can add and commit everything and push it to a repository.</p>
+<p>For me, knowing that my belongings serve a purpose makes me feel contempt,
+clear-headed. It&rsquo;s comforting. It feels right.</p>
 
-<pre><code>git add .
-git commit -m "Use pathogen to keep track of vim plugins"
-git push origin master
-</code></pre>
+<p>Sometimes, I forget and start accumulating stuff. And that&rsquo;s when I go back to
+reducing again. It&rsquo;s not an obsession, but a healthy periodical maintenance.
+Often it takes months, or even years to get rid of certain things.</p>
 
-<h2>Deploying</h2>
-
-<p>Assuming that your repository is located at <code>git@github.com:user/project.git</code>:</p>
-
-<pre><code>cd ~
-git clone git@github.com:user/project.git .vim
-</code></pre>
-
-<p>And you are done, all plugins are downloaded from their repositories now.</p>
-
-<h2>Maintaining</h2>
-
-<p>Git submodules keep track of specific commits and are not being automatically
-updated when target repositories have new commits. In order to update plugins
-you have:</p>
-
-<pre><code>cd ~/.vim
-git submodule foreach git pull
-git add bundle
-git commit -m "Updated all the plugins in a bundle"
-git push origin master
-</code></pre>
-
-<p>You probably want to make sure that new versions of plugins are compatible with
-each other before committing, however.</p>
+<p>Replace a queen sized bed with a Japanese futon mat. Digitalize the growing
+paper trail I keep. Travel the world for with a single suitcase.</p>
 </div>
 
 
@@ -188,12 +170,12 @@ each other before committing, however.</p>
 
 
 
-<time class='entry-date' datetime='2013-03-27T14:35:46-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:35 pm</span></time>
+<time class='entry-date' datetime='2015-07-18T12:54:36-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:54 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/life/'>life</a>
   
 </span>
 
@@ -202,7 +184,7 @@ each other before committing, however.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/my-experience-with-minimalism/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/my-experience-with-minimalism/" >Tweet</a>
   
   
   
@@ -211,10 +193,8 @@ each other before committing, however.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/irssi-ignore-all-from-everyone/" title="Previous Post: IRSSI - ignore all from everyone">&laquo; IRSSI - ignore all from everyone</a>
+        <a class="basic-alignment left" href="/blog/profiling-slow-bashrc/" title="Previous Post: Profiling slow bashrc">&laquo; Profiling slow bashrc</a>
       
-      
-        <a class="basic-alignment right" href="/blog/editing-bash-command-in-vim/" title="Next Post: Editing bash command in vim">Editing bash command in vim &raquo;</a>
       
     </p>
   </footer>
@@ -296,8 +276,8 @@ each other before committing, however.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/';
-        var disqus_url = 'http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/my-experience-with-minimalism/';
+        var disqus_url = 'http://www.rosipov.com/blog/my-experience-with-minimalism/';
         var disqus_script = 'embed.js';
       
     (function () {

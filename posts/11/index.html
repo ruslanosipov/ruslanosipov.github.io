@@ -9,8 +9,8 @@
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
+  <meta name="description" content="You can open the current command you are typing for editing in your default
+text editor by pressing Ctrl + x + e. It will be executed after you write &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,60 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/editing-bash-command-in-vim/">Editing bash command in vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-04-01T00:34:28-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>12:34 am</span></time>
+        
+           | <a href="/blog/editing-bash-command-in-vim/#disqus_thread"
+             data-disqus-identifier="http://www.rosipov.com/blog/editing-bash-command-in-vim/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>You can open the current command you are typing for editing in your default
+text editor by pressing <code>Ctrl + x + e</code>. It will be executed after you write and
+quit the file. This is perfect for editing long/multi-line commands where typos
+are likely to occur. Consider something like this:</p>
+
+<pre><code>for run in {1..10}
+do
+    echo "Print me ten times"
+done
+</code></pre>
+
+<p>Editing this in vim is much more satisfying, isn&rsquo;t it?</p>
+
+<p>You can also open the last executed command for editing if you execute the <code>fc</code>
+command. You can also edit the last command starting with a certain pattern
+using <code>fc [pattern]</code> (you can skip the editor and execute the output of <code>fc</code> by
+adding the <code>-s</code> option, and a useful tip is to have <code>alias r="fc -s"</code>, which
+would allow you to execute the last command starting with &ldquo;cc&rdquo; by running <code>r
+cc</code>).</p>
+
+<p>P.S: In order for this trick to open <code>vim</code> and not any other editor, make sure
+you have the line <code>EDITOR=vim</code> in your <code>~/.bashrc</code>. Obviously this works with
+any text editor.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -309,43 +363,6 @@ to use the following gist posted by anonymous:
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/read-man-pages-from-vim/">Read man pages from vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-13T16:50:56-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>4:50 pm</span></time>
-        
-           | <a href="/blog/read-man-pages-from-vim/#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com/blog/read-man-pages-from-vim/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I recently discovered an incredibly useful function - you can look up man pages
-for keywords by pressing <code>K</code> (read: <code>Shift + k</code>) in normal mode when cursor is
-over the word you need to look up.</p>
-
-<p>It works with any shell or programming language keywords, as long as vim
-recognizes the filetype.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/12">&larr; Older</a>
@@ -361,6 +378,10 @@ recognizes the filetype.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
+      </li>
     
       <li class="post">
         <a href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
@@ -396,10 +417,6 @@ recognizes the filetype.</p>
     
       <li class="post">
         <a href="/blog/power-of-the-command-line/">Power of the command line</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/custom-templates-in-vimwiki/">Custom templates in vimwiki</a>
       </li>
     
   </ul>

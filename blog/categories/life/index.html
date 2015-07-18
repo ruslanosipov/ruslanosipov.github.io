@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Vim, pathogen and git submodules - Ruslan Osipov</title>
+  <title>Category: life - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
+  <meta name="description" content="Category: life">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules">
+  <link rel="canonical" href="http://www.rosipov.com/blog/categories/life">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
@@ -78,153 +77,36 @@ git, pathogen, and git submodules. This tutorial assumes that you are &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Vim, pathogen and git submodules</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-27T14:35:46-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:35 pm</span></time>
-        
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://www.rosipov.com">Comments</a>
-        
-      </p>
+    <h1 class="entry-title">Category: life</h1>
     
   </header>
-
-
-<div class="entry-content"><p>This is a step by step tutorial on how to organize your vim config files using
-git, pathogen, and git submodules. This tutorial assumes that you are familiar
-with git basics, but you don&rsquo;t really need to understand every step in order to
-follow it. For simplicity, only <code>.vim</code> directory is a repository in this
-example. You may want to have all your dotfiles under version control and use a
-script to symlink files to the home directory. For example see
-<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
-
-<h2>Setting up</h2>
-
-<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
-Let&rsquo;s initialize a repository.</p>
-
-<pre><code>cd ~/.vim
-git init
-git remote add origin git@github.com:user/project.git
-</code></pre>
-
-<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
-submodule.</p>
-
-<pre><code>mkdir bundle
-cd bundle
-git submodule add git@github.cfm:tpope/vim-pathogen.git
-bundle/vim-pathogen
-</code></pre>
-
-<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
-non-default directory:</p>
-
-<pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-</code></pre>
-
-<p>Let&rsquo;s add some more plugins as git submodules, for example:</p>
-
-<pre><code>git submodule add git@github.com:Lokaltog/vim-easymotion.git
-bundle/vim-easymotion
-</code></pre>
-
-<p>Now we can add and commit everything and push it to a repository.</p>
-
-<pre><code>git add .
-git commit -m "Use pathogen to keep track of vim plugins"
-git push origin master
-</code></pre>
-
-<h2>Deploying</h2>
-
-<p>Assuming that your repository is located at <code>git@github.com:user/project.git</code>:</p>
-
-<pre><code>cd ~
-git clone git@github.com:user/project.git .vim
-</code></pre>
-
-<p>And you are done, all plugins are downloaded from their repositories now.</p>
-
-<h2>Maintaining</h2>
-
-<p>Git submodules keep track of specific commits and are not being automatically
-updated when target repositories have new commits. In order to update plugins
-you have:</p>
-
-<pre><code>cd ~/.vim
-git submodule foreach git pull
-git add bundle
-git commit -m "Updated all the plugins in a bundle"
-git push origin master
-</code></pre>
-
-<p>You probably want to make sure that new versions of plugins are compatible with
-each other before committing, however.</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Ruslan Osipov</span></span>
-
-      
+  <div id="blog-archives" class="category">
 
 
 
-
-<time class='entry-date' datetime='2013-03-27T14:35:46-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:35 pm</span></time>
-      
-
-<span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+  <h2>2015</h2>
+
+<article>
   
-</span>
+<h1><a href="/blog/my-experience-with-minimalism/">My experience with minimalism</a></h1>
+<time datetime="2015-07-18T12:54:36-07:00" pubdate><span class='month'>Jul</span> <span class='day'>18</span> <span class='year'>2015</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/life/'>life</a></span>
+</footer>
 
 
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/irssi-ignore-all-from-everyone/" title="Previous Post: IRSSI - ignore all from everyone">&laquo; IRSSI - ignore all from everyone</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/editing-bash-command-in-vim/" title="Next Post: Editing bash command in vim">Editing bash command in vim &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -295,10 +177,7 @@ each other before committing, however.</p>
       var disqus_shortname = 'rosipov';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/';
-        var disqus_url = 'http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

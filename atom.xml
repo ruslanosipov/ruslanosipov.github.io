@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-07-15T11:32:15-07:00</updated>
+  <updated>2015-07-18T13:05:12-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My experience with minimalism]]></title>
+    <link href="http://www.rosipov.com/blog/my-experience-with-minimalism/"/>
+    <updated>2015-07-18T12:54:36-07:00</updated>
+    <id>http://www.rosipov.com/blog/my-experience-with-minimalism</id>
+    <content type="html"><![CDATA[<p>Minimalism was always appealing to me. The philosophy of not having more than
+one would need is close to my heart. Over the past few years, I&rsquo;ve been
+&ldquo;trimming the fat&rdquo; off various parts of my life.</p>
+
+<p>I can&rsquo;t recall when I started being drawn to a minimalistic lifestyle. I think
+my passion for minimalism originates in my desire for organization and order.
+It&rsquo;s comforting to know that a world around me has a certain structure.</p>
+
+<p>I remember the time when I started living on my own. I just moved to United
+States, away from my family. All my life fit in a half-empty suitcase at that
+time. Few sets of clothes, a blanket, a pillow, some hygiene products, a small
+laptop. Moving to a new place was as easy as throwing few things in that
+suitcase.</p>
+
+<p>After some time, I started accumulating more things. A guitar. More variations
+of clothing. Cheap coffee table and a shoe rack from a dollar store. At that
+time I rented a room in one of the shady areas of the city. Adding a few pieces
+of furniture made a place feel like home.</p>
+
+<p>Time has passed, and I moved again. Left the furniture behind, took the rest.
+Still light, but I did have to make a few trips to move everything I needed. I
+got even more comfortable. A gaming PC. Significantly more junk here and there.</p>
+
+<p>That&rsquo;s when I did my first big cleanup. I went through every item I owned, and
+tossed it a trash bag if I didn&rsquo;t use it in the past 6 month. Old clothes, some
+action figures, other useless junk I accumulated. As a result, I tossed two big
+bags of stuff I didn&rsquo;t need. I still remember the liberating feeling. Knowing
+that everything I own serves a purpose.</p>
+
+<p>It felt like I could breathe again.</p>
+
+<p>Years pass. I don&rsquo;t rent rooms anymore, but apartments, houses. This comes with
+having to own more things. Real furniture. A TV. More musical instruments.
+Having to accommodate guests. Cooking supplies. A bike. Outdoor furniture.</p>
+
+<p>But I&rsquo;ve kept the minimalistic mindset, and I still do periodical clean outs.
+Tossing almost everything I haven&rsquo;t used in a past six months. Reducing what I
+own only to things that I need to have comfortable and enjoyable living.</p>
+
+<p>Today, I don&rsquo;t think I can fit everything I own in that single suitcase. Hell, I
+most certainly will need to hire a truck for my next move. But that&rsquo;s not
+important. Minimalism isn&rsquo;t about the absence of things. If you feel like you
+don&rsquo;t have enough - you&rsquo;re probably doing something wrong. Minimalism is about
+not being excessive.</p>
+
+<p>For me, knowing that my belongings serve a purpose makes me feel contempt,
+clear-headed. It&rsquo;s comforting. It feels right.</p>
+
+<p>Sometimes, I forget and start accumulating stuff. And that&rsquo;s when I go back to
+reducing again. It&rsquo;s not an obsession, but a healthy periodical maintenance.
+Often it takes months, or even years to get rid of certain things.</p>
+
+<p>Replace a queen sized bed with a Japanese futon mat. Digitalize the growing
+paper trail I keep. Travel the world for with a single suitcase.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Profiling slow bashrc]]></title>
@@ -1242,72 +1304,6 @@ knowledge contained within this book.</p>
 with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;<a href="http://amzn.to/1zGLlv1">Code Complete</a>&rdquo;
 or &ldquo;<a href="http://amzn.to/1zGLnDl">Art of Computer Programming</a>&rdquo;) and it teaches you how to get things
 done, the pragmatic way.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Personal wiki with vimwiki]]></title>
-    <link href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/"/>
-    <updated>2014-07-07T21:14:21-07:00</updated>
-    <id>http://www.rosipov.com/blog/personal-wiki-with-vimwiki</id>
-    <content type="html"><![CDATA[<p>I recently found an interesting way to organize random bits of information: a
-personal Wiki. It&rsquo;s a great idea to have data repository shared between your
-machines: important notes about people, conversations, events, tasks you&rsquo;ve
-accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
-belong anywhere else. There is plenty of software out there which lets you set
-up a personal Wiki, and some of it is very lightweight and well polished.
-However, I prefer to do most of my editing and writing in Vim. As tip #22 from
-&ldquo;The Pragmatic Programmer&rdquo; states:</p>
-
-<blockquote><p>Use a single editor well</p>
-
-<p>We think it is better to know one editor very well, and use it for all
-editing tasks: code, documentation, memos, system administration, and so
-on. Without a single editor, you face a potential modern day Babel of
-confusion.</p></blockquote>
-
-<p>I fully agree with the above statement and I try to use one editor for the
-majority of tasks which require typing, without having to remember which editor
-contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
-went with <code>vimwiki</code> - a lightweight and clean personal Wiki with it&rsquo;s own
-Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
-Pragmatic Programmer&rdquo;:</p>
-
-<blockquote><p>Keep knowledge in plain text</p></blockquote>
-
-<p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
-
-<ul>
-<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you
-are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a
-new tab: the rest of the mappings are as intuitive.</li>
-<li>Multiple Wikis support: really handy if you have a number of separate
-projects for which you want to keep separate entries.</li>
-<li>Diary-like quick notes. You can create an instant page for today by hitting
-<code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home
-page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
-<li>Easy link creation: hit enter on a word and it will turn into a link to
-another page. Hitting enter on a link will transport you to the destination
-page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as
-well.</li>
-<li>Navigation: enter to follow a link, backspace to go back.</li>
-<li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
-<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start
-reading.</li>
-</ul>
-
-
-<p>The list can go on forever, but these are the features I found to be the most
-useful.</p>
-
-<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
-a Dropbox folder - <code>vimwiki</code> lets you specify locations from each one of your
-Wikis.</p>
-
-<pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
-</code></pre>
-
-<p>Download it from the GitHub: <a href="https://github.com/vimwiki/vimwiki">https://github.com/vimwiki/vimwiki</a>.</p>
 ]]></content>
   </entry>
   
