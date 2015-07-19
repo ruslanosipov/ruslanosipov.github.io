@@ -1,16 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <title>Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
-  <meta name="description" content="I recently found an interesting way to organize random bits of information: a
-personal Wiki. It&rsquo;s a great idea to have data repository shared &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,92 +14,134 @@ personal Wiki. It&rsquo;s a great idea to have data repository shared &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/posts/5">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="http://www.rosipov.com/posts/5/">
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.rosipov.com/posts/5/">
+  <meta property="og:title" content="Ruslan Osipov">
+  
+
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
 
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-48506044-1']);
-    _gaq.push(['_trackPageview']);
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+  
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48506044-1', 'auto');
+    ga('send', 'pageview');
+
   </script>
 
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Ruslan Osipov</a></h1>
-  
-    <h2>Thoughts on software development</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ruslan Osipov</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:www.rosipov.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/about/">About</a></li>
-  <li><a href="/blog/archive/">Archive</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/about">About</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="www.rosipov.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="Ruslan Osipov" />
+    
+    <meta itemprop="url" content="http://www.rosipov.com" />
       
-  <header>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
 
 
-<time class='entry-date' datetime='2014-07-07T21:14:21-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:14 pm</span></time>
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-07T21:14:21-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  7 Jul 2014,  9:14 PM</time>
         
-           | <a href="/blog/personal-wiki-with-vimwiki/#disqus_thread"
+           | <a href="/blog/personal-wiki-with-vimwiki/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">Comments</a>
         
       </p>
     
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/personal-wiki-with-vimwiki/" itemprop="url">Personal wiki with vimwiki</a></h2>
+    
   </header>
 
 
-  <div class="entry-content"><p>I recently found an interesting way to organize random bits of information: a
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I recently found an interesting way to organize random bits of information: a
 personal Wiki. It&rsquo;s a great idea to have data repository shared between your
 machines: important notes about people, conversations, events, tasks you&rsquo;ve
 accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
@@ -167,33 +204,41 @@ Wikis.</p>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/easy-commenting-with-tcomment-vim/">Easy commenting with tcomment.vim</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
 
 
-<time class='entry-date' datetime='2014-07-07T20:22:08-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:22 pm</span></time>
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-07T20:22:08-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  7 Jul 2014,  8:22 PM</time>
         
-           | <a href="/blog/easy-commenting-with-tcomment-vim/#disqus_thread"
+           | <a href="/blog/easy-commenting-with-tcomment-vim/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/easy-commenting-with-tcomment-vim/">Comments</a>
         
       </p>
     
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/easy-commenting-with-tcomment-vim/" itemprop="url">Easy commenting with tcomment.vim</a></h2>
+    
   </header>
 
 
-  <div class="entry-content"><p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
 forget that it&rsquo;s not a built-in Vim feature.</p>
 
 <p>Link to a GitHub repository: <a href="https://github.com/tomtom/tcomment_vim">https://github.com/tomtom/tcomment_vim</a>.</p>
@@ -202,33 +247,41 @@ forget that it&rsquo;s not a built-in Vim feature.</p>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/zero-mail-inbox/">Zero mail inbox</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
 
 
-<time class='entry-date' datetime='2014-07-02T13:36:42-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>1:36 pm</span></time>
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-02T13:36:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed  2 Jul 2014,  1:36 PM</time>
         
-           | <a href="/blog/zero-mail-inbox/#disqus_thread"
+           | <a href="/blog/zero-mail-inbox/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/zero-mail-inbox/">Comments</a>
         
       </p>
     
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/zero-mail-inbox/" itemprop="url">Zero mail inbox</a></h2>
+    
   </header>
 
 
-  <div class="entry-content"><p>I use email a lot. Maybe not as much as some, but I receive and send a fair
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I use email a lot. Maybe not as much as some, but I receive and send a fair
 share of mail each day. You might find it odd, but I love using email. It&rsquo;s a
 pleasant and calm experience, and sorting through a pile of messages every
 morning rewards me with a sense of achievement. There are, however, few tricks
@@ -328,33 +381,41 @@ myself a lot of time and frustration.</p>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/dark-side-of-technical-interviews/">Dark side of technical interviews</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
 
 
-<time class='entry-date' datetime='2014-06-24T18:16:13-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:16 pm</span></time>
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-24T18:16:13-07:00"  data-updated="true" itemprop="datePublished dateCreated">Tue 24 Jun 2014,  6:16 PM</time>
         
-           | <a href="/blog/dark-side-of-technical-interviews/#disqus_thread"
+           | <a href="/blog/dark-side-of-technical-interviews/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/dark-side-of-technical-interviews/">Comments</a>
         
       </p>
     
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/dark-side-of-technical-interviews/" itemprop="url">Dark side of technical interviews</a></h2>
+    
   </header>
 
 
-  <div class="entry-content"><p>It upsets me greatly, since there is no immediate or obvious solution to an
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>It upsets me greatly, since there is no immediate or obvious solution to an
 interviewing scheme which will fit every company. Some companies seem to find
 processes which work for their size and culture, while others struggle to do
 so. Human resources management is a complex subject, and it&rsquo;s hard to get
@@ -470,33 +531,41 @@ moment.</p>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/the-elements-of-style/">&#8220;The Elements Of Style&#8221;</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
 
 
-<time class='entry-date' datetime='2014-06-20T10:58:35-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:58 am</span></time>
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-20T10:58:35-07:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 20 Jun 2014, 10:58 AM</time>
         
-           | <a href="/blog/the-elements-of-style/#disqus_thread"
+           | <a href="/blog/the-elements-of-style/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/the-elements-of-style/">Comments</a>
         
       </p>
     
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/the-elements-of-style/" itemprop="url">&#8220;The Elements Of Style&#8221;</a></h2>
+    
   </header>
 
 
-  <div class="entry-content"><p>You might wonder what an English language style guide from 1918 is doing in a
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>You might wonder what an English language style guide from 1918 is doing in a
 software engineering blog. You might even get angry at me for pointing this
 book in your face. But I have a strong affection towards this guide; I believe
 everyone who has to write more than a sentence in English should read it. I
@@ -534,79 +603,74 @@ should read it too.</p>
   
 
 
-    </article>
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/posts/6">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next"><a href="/posts/4">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
+  </div>
+
   
-  <div class="pagination">
+    <aside class="sidebar col-md-3">
+      
+        <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
     
-      <a class="prev" href="/posts/6">&larr; Older</a>
+    <a class="list-group-item " href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
     
-    <a href="/blog/archives">Blog Archives</a>
+    <a class="list-group-item " href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
     
-    <a class="next" href="/posts/4">Newer &rarr;</a>
+    <a class="list-group-item " href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
+    
+    <a class="list-group-item " href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
+    
+    <a class="list-group-item " href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
+    
+    <a class="list-group-item " href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
+    
+    <a class="list-group-item " href="/blog/impact-driven-development/">Impact-driven development</a>
+    
+    <a class="list-group-item " href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a>
+    
+    <a class="list-group-item " href="/blog/ranger-the-cli-file-manager/">Ranger - the CLI file manager</a>
+    
+    <a class="list-group-item " href="/blog/power-of-the-command-line/">Power of the command line</a>
     
   </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/impact-driven-development/">Impact-driven development</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/ranger-the-cli-file-manager/">Ranger - the CLI file manager</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/power-of-the-command-line/">Power of the command line</a>
-      </li>
-    
-  </ul>
 </section>
 
+      
+    </aside>
   
-</aside>
+</div>
 
+        </div>
+      </div>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Ruslan Osipov -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2015 - Ruslan Osipov<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'rosipov';
@@ -638,8 +702,9 @@ should read it too.</p>
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>
