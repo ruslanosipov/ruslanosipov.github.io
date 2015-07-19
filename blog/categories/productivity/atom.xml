@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-07-18T22:37:42-07:00</updated>
+  <updated>2015-07-18T22:58:27-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -170,7 +170,7 @@ to Mac OS X users: center column shows contents of the current directory, left
 column lists contents of a parent directory, and the right column contains
 preview for the selected file or folder.</p>
 
-<p><img src="/images/ranger-file-preview.png" title="File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column." ></p>
+<p>{% img /images/posts/ranger-file-preview.png File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column. %}</p>
 
 <p>Ranger supports movement with familiar to Vi users <code>h</code>, <code>j</code>, <code>k</code>, and <code>l</code> keys,
 has internal command line which is invoked with <code>:</code>, as well as many other
@@ -178,7 +178,7 @@ features and key bindings similar to Vi. Another great selling point - Ranger
 can be extended with custom commands and key bindings. Utility is written in
 Python, therefore all the commands are nothing more than Python scripts.</p>
 
-<p><img class="/images/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing" src="<code>:delete</code>&#8221; title=&#8221;command.&#8221; ></p>
+<p>{% img /images/posts/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing <code>:delete</code> command. %}</p>
 
 <h2>Installation</h2>
 
