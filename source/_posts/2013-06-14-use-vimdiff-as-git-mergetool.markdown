@@ -69,7 +69,7 @@ Let's resolve the conflict:
 
     git mergetool
 
-{% img /images/three-way-merge-with-vimdiff.png Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom. %}
+{% img /images/posts/three-way-merge-with-vimdiff.png Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom. %}
 
 This looks terrifying at first, but let me explain what is going on.
 

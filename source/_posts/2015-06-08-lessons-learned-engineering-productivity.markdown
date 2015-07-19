@@ -20,7 +20,7 @@ with the third case. After returning from a lunch break, odds of a prisoner
 being released went back up to 65%. And once again, with each new prisoner the
 odds decline rapidly.
 
-{% img /images/israeli-parole-study.gif A graph of favorable parole decisions given by the judges. %}
+{% img /images/posts/israeli-parole-study.gif A graph of favorable parole decisions given by the judges. %}
 
 Authors of the paper suggest that making decisions depletes a limited mental
 facility. People start looking for shortcuts and making mistakes.

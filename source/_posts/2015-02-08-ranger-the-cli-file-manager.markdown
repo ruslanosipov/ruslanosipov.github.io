@@ -11,7 +11,7 @@ to Mac OS X users: center column shows contents of the current directory, left
 column lists contents of a parent directory, and the right column contains
 preview for the selected file or folder.
 
-{% img /images/ranger-file-preview.png File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column. %}
+{% img /images/posts/ranger-file-preview.png File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column. %}
 
 Ranger supports movement with familiar to Vi users `h`, `j`, `k`, and `l` keys,
 has internal command line which is invoked with `:`, as well as many other
@@ -19,7 +19,7 @@ features and key bindings similar to Vi. Another great selling point - Ranger
 can be extended with custom commands and key bindings. Utility is written in
 Python, therefore all the commands are nothing more than Python scripts.
 
-{% img /images/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing `:delete` command. %}
+{% img /images/posts/ranger-marking-files.png Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing `:delete` command. %}
 
 ## Installation
 

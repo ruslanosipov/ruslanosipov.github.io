@@ -7,7 +7,7 @@ date: 2015-06-10 13:02:00 -0700
 [DidYouMean][1] Vim plugin is very simple: it asks you if the file you are
 trying to open is indeed the right file. How is this useful? Here's how:
 
-{% img /images/vim-plugin-didyoumean.png DidYouMean plugin in action. %}
+{% img /images/posts/vim-plugin-didyoumean.png DidYouMean plugin in action. %}
 
 Say you have two files with a similarly starting names: `model.py` and
 `model_test.py`. You type `vim mo`, you hit tab to autocomplete the name, you

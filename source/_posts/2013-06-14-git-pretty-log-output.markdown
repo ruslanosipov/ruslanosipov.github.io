@@ -8,7 +8,7 @@ tags: [git]
 This alias has been around the web for quite some time, but it does look
 fantastic indeed.
 
-{% img /images/git-pretty-log.png An output of `git pretty-log` alias. %}
+{% img /images/posts/git-pretty-log.png An output of `git pretty-log` alias. %}
 
 To add the alias `git pretty-log`, execute the following command (join string
 prior to executing):

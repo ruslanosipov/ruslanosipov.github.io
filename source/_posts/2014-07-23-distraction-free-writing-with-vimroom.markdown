@@ -20,7 +20,7 @@ found it to look especially pleasing on vertical monitors (which I prefer to
 use for writing). It looks presentable even on smaller screens though, here's a
 screenshot:
 
-{% img /images/vimroom-screenshot.png VimRoom plugin in use. %}
+{% img /images/posts/vimroom-screenshot.png VimRoom plugin in use. %}
 
 Install the plugin (use a package manager like Vundle or [Pathogen][2] to
 simplify the task) and add a following line to your `.vimrc`:

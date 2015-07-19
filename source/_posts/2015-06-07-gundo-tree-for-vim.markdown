@@ -13,7 +13,7 @@ and `C-r` commands.
 Default interface for accessing far out branches of the undo tree leaves to be
 desired, but that's where [Gundo][1] comes in.
 
-{% img /images/vim-gundo-tree.png Gundo tree in Vim. %}
+{% img /images/posts/vim-gundo-tree.png Gundo tree in Vim. %}
 
 Gundo provides an easy to use interface for navigating history branches. In the
 screenshot above, I am previewing a diff in one of the undo tree branches

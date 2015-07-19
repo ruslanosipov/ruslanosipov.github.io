@@ -44,7 +44,7 @@ this is the workflow I have been successfully using for over a year.
 
 ## Workflow outside of the Mailbox app
 
-{% img /images/zero-mail-inbox-in-gmail.png Having clean inbox is rewarding. %}
+{% img /images/posts/zero-mail-inbox-in-gmail.png Having clean inbox is rewarding. %}
 
 I only use Gmail, and there probably are ways to have the same experience on
 other platforms. However, the Mailbox app works only with Gmail.

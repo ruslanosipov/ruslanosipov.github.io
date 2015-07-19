@@ -30,7 +30,7 @@ At it's basics, you only need few commands for operating buffers:
 * Get in a habit of closing buffers you will not use with `:bd`.
 
 
-{% img /images/vim-list-buffers.png A list of open buffers in Vim. %}
+{% img /images/posts/vim-list-buffers.png A list of open buffers in Vim. %}
 
 The hardest thing about stopping to use tabs and switching to buffers instead
 is not having the visual aid: I was used to having a list of files always
