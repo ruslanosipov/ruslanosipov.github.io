@@ -9,7 +9,7 @@ author: "Ruslan Osipov"
 simple_search: https://www.google.com/search
 description:
 
-date_format: "ordinal"
+date_format: "%a %e %b %Y, %l:%M %p"
 
 subscribe_rss: /atom.xml
 subscribe_email:

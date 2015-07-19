@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+navbar: About
 ---
 
 My name is Ruslan Osipov and I live and work in Mountain View, CA. I am currently employed as a Lead Software Engineer at [EPAM Systems Inc.](http://epam.com) - a software vendor company which outsources engineers to different companies worldwide.
@@ -14,6 +15,7 @@ You can find me on the following websites:
   * [Twitter](https://twitter.com/antistatuquo)
 * Me on the web
   * [GitHub](https://github.com/ruslanosipov)
+  * [Reddit](http://reddit.com/u/rosipov)
   * [Stack Overflow](http://stackoverflow.com/users/2578489/rosipov)
 
 Opinions expressed on this blog are solely my own and do not express the views or opinions of my employer.
