@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-07-19T17:27:05-07:00</updated>
+  <updated>2015-07-19T17:33:12-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -34,7 +34,7 @@ with the third case. After returning from a lunch break, odds of a prisoner
 being released went back up to 65%. And once again, with each new prisoner the
 odds decline rapidly.</p>
 
-<p>{% img /images/posts/israeli-parole-study.gif A graph of favorable parole decisions given by the judges. %}</p>
+<p><img src="/images/posts/israeli-parole-study.gif" title="A graph of favorable parole decisions given by the judges." ></p>
 
 <p>Authors of the paper suggest that making decisions depletes a limited mental
 facility. People start looking for shortcuts and making mistakes.</p>
