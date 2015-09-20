@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2015-09-18T12:59:47-07:00</updated>
+  <updated>2015-09-20T06:40:19-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Prius camper conversion]]></title>
+    <link href="http://www.rosipov.com/blog/prius-camper-conversion/"/>
+    <updated>2015-09-19T12:50:01-07:00</updated>
+    <id>http://www.rosipov.com/blog/prius-camper-conversion</id>
+    <content type="html"><![CDATA[<p>As requested, I took some detailed pictures of the
+<a href="http://amzn.to/1NvY78S">Prius Camper Conversion Kit</a> I mentioned in my <a href="http://www.rosipov.com/blog/urban-prius-living">previous article</a>. It
+adds valuable space to the back of the car when the seats are down, and helps to
+push down the seats all the way in order to achieve a level surface. This
+particular kit works for third generation of Prius, but can be slightly
+modified to fit other models. In theory, something like this can work with any
+car, as long as the rear seats can be forced down all the way to create a flat
+surface (170 pounds of my bodyweight was enough to flatten out the seat back).</p>
+
+<p>This is how the final conversion looks, with a mat cut to a custom shape on top
+of it:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-final.jpg" title="This is how the final conversion looks." ></p>
+
+<p>A wooden platform which is used to fill up rear leg space. Notice the blue
+strap on the rear seat, that&rsquo;s what pushes down the seat to create a level
+surface:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-with-the-mat-up.jpg" title="Wooden surface underneath the mat." ></p>
+
+<p>The lid can be removed for storage space access:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-with-the-lid-off.jpg" title="Wooden platform with the lid off." ></p>
+
+<p>It&rsquo;s a relatively thin wooden platform. Top (on the picture) side of it is a
+bit slanted to fit on a rear seat back:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-platform-top.jpg" title="Top view of the wooden platform." ></p>
+
+<p>View from the bottom: metal pieces are there to hold platform legs when the
+platform is not in use, but I don&rsquo;t find them necessary. Additional (darker)
+piece of wood is what the lid rests on:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-platform-bottom.jpg" title="Bottom view of the wooden platform." ></p>
+
+<p>View from the side:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-platform-side.jpg" title="Side view of the wooden platform." ></p>
+
+<p>With passenger front seat pushed all the way forward (and seat back in further
+possible forward position), wooden supports are inserted into exposed seat
+railing. I added some duct tape layers at the bottom of each leg so that they
+don&rsquo;t wobble when the wooden platform is removed.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-legs.jpg" title="Wooden supports for the platform." ></p>
+
+<p>Here&rsquo;s a right leg:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-legs-right.jpg" title="Right wooden support." ></p>
+
+<p>I noticed that the left leg needed to be approximately 5 mm longer in order for
+the platform not to wobble, so I extended it with whatever I had on hand:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-wooden-legs-left.jpg" title="Left wooden support." ></p>
+
+<p>Adjustable belt with a hook on one side and a strap tie on the other:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-belt-with-a-hook.jpg" title="Belt with a hook." ></p>
+
+<p>On the back side of rear seats there are places to secure a baby seat. I removed
+the plastic covers (use some force), and attached a strap there. I added a piece
+of cloth to (hopefully) prevent damage to seat fabric:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-belt-on-the-rear-seat.jpg" title="Belt on the rear seat." ></p>
+
+<p>Tricky part is getting the bottom hook in the right place. Rear seats are held
+in place by two metal locks. If you grab a rear seat from the bottom (when the
+back is not folded) and pull up with approximately 50-100 pounds of force, the
+seat will snap out of the place exposing the lock. Attach a hook to the exposed
+part of the locking mechanism. Jump down on a seat to snap the rear seat back in
+place. Exercise caution while you make your way through this, took me nearly an
+hour to figure out how to properly attach a hook and snap the seat back in
+place:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/prius-camper-bottom-hook.jpg" title="Bottom hook on the belt." ></p>
+
+<p>When both sides of the belt are in place, fold the rear seat, push in down with
+your body weight, and tighten the belt.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Urban Prius living]]></title>
@@ -1517,77 +1603,6 @@ simplify the task) and add a following line to your <code>.vimrc</code>:</p>
 backslash <code>\</code> character by default).</p>
 
 <p>GitHub link: <a href="https://github.com/mikewest/vimroom">https://github.com/mikewest/vimroom</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
-    <link href="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/"/>
-    <updated>2014-07-22T00:04:15-07:00</updated>
-    <id>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress</id>
-    <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
-<a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
-
-<h2>Why the migration?</h2>
-
-<p>WordPress was a great host for me at one point - the community is fun and no
-work is required for setup (I would rather not waste time fiddling with my blog
-too much). But a number of things are off-putting:</p>
-
-<ul>
-<li>I don&rsquo;t like WYSIWYG editors and I don&rsquo;t like web editors. I try to use my
-favorite editor for everything, including mail, documentation, note taking.
-Even though WordPress allowed me to write my posts using Markdown, I still
-didn&rsquo;t like not being able to use my favorite editor or environment.</li>
-<li>Storing all the entries in a MySQL database is not favorable. I am writing
-text, why would I pick any other format to store what I wrote?</li>
-<li>Over the years my blog became increasingly slow, and in order to have a
-reasonably fast site I needed to pay quite a sum of money. I am not ready for
-such a commitment, since I only occasionally update this blog.</li>
-</ul>
-
-
-<p>On the other hand, Octopress (which is based on Jekyll, a static site
-generator) has all of these concerns covered:</p>
-
-<ul>
-<li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
-write, or how I write. This enables me to use an editor of my choice.</li>
-<li>Plain text is universal. It can be viewed by a human, edited in any piece of
-software, printed out, emailed, piped to a Linux program - just about
-anything really.</li>
-<li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
-rendering.  The only real speed limit is network latency. In addition, GitHub
-lets you host static sites for free. What else could you ask for?</li>
-</ul>
-
-
-<h2>The process is painless</h2>
-
-<p>Switching from WordPress to Octopress was very easy, and it took me only a few
-hours (spread out throughout one weekend). Some highlights:</p>
-
-<ol>
-<li>Comments in Octopress are handled by <a href="https://disqus.com">Disqus</a>, and I had to set that up
-on my WordPress blog before transitioning in order to transfer all the
-comments.</li>
-<li>I used the <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">WordPress to Jekyll Exporter</a> tool to export all my posts
-from WordPress to Markdown (with meta-data which Octopress understands). I only
-had a bit over 50 posts to worry about, so the process was complete in an
-instant.</li>
-<li>I ran some custom Vim macros to remove and change some excess meta data, as
-well as clean up Markdown formatting. I am a perfectionist, and the exporter
-tool left me with a poorly formatted document. I couldn&rsquo;t let that happen.</li>
-</ol>
-
-
-<h2>Results are breathtaking</h2>
-
-<p>After only a few hours of work, I had a lightning fast, simple, and pragmatic
-blog. There is no excess configuration, comments are handled externally, and
-the source code for the site and articles is available on GitHub. I am able to
-write my posts using Markdown, in my favorite editor, and use git to publish
-the resulting articles.</p>
 ]]></content>
   </entry>
   
