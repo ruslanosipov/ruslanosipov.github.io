@@ -126,7 +126,63 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-17T11:32:46-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 17 Apr 2013, 11:32 AM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-24T12:47:11-04:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 24 Apr 2013, 12:47 PM</time>
+        
+           | <a href="/blog/my-most-used-bash-commands/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-most-used-bash-commands/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/my-most-used-bash-commands/" itemprop="url">My most used bash commands</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Shell history can tell a lot about its owner. What&rsquo;s in your shell?</p>
+
+<pre><code>history | awk '{CMD[$2]++;count++;}
+END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'
+| grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+
+     1  580  38.0328%    git         # I keep everything under VCS
+     2  202  13.2459%    cd          # Moving around a lot
+     3  171  11.2131%    vi          # Favorite text editor
+     4  127  8.32787%    ls          # I'm a curious person
+     5  43   2.81967%    rm          # I also like when it's clean
+     6  26   1.70492%    usrswitch   # https://gist.github.com/ruslanosipov/5453510
+     7  25   1.63934%    exit        # I don't like hitting the red cross button
+     8  18   1.18033%    source      # Reloading bash configuration files
+     9  17   1.11475%    clear       # Like when it's *really* clean
+    10  15   0.983607%   gitk        # Sometimes it is too messy for git log
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-17T14:32:46-04:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 17 Apr 2013,  2:32 PM</time>
         
            | <a href="/blog/colorless-week-results/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/colorless-week-results/">Comments</a>
@@ -194,7 +250,7 @@ Try it and see for yourself!</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T11:10:31-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013, 11:10 AM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T14:10:31-04:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013,  2:10 PM</time>
         
            | <a href="/blog/a-week-without-colorful-prompt/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">Comments</a>
@@ -249,7 +305,7 @@ representation will give me new insight on what I am currently writing.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T00:34:28-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013, 12:34 AM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T03:34:28-04:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013,  3:34 AM</time>
         
            | <a href="/blog/editing-bash-command-in-vim/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/editing-bash-command-in-vim/">Comments</a>
@@ -311,7 +367,7 @@ any text editor.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T14:35:46-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  2:35 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T17:35:46-04:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  5:35 PM</time>
         
            | <a href="/blog/vim-pathogen-and-git-submodules/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Comments</a>
@@ -403,64 +459,13 @@ each other before committing, however.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T08:37:10-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  8:37 AM</time>
-        
-           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/irssi-ignore-all-from-everyone/" itemprop="url">IRSSI - ignore all from everyone</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you visit noisy IRC channels like the programming ones on freenode, you
-probably want to ignore all the annoying status messages.</p>
-
-<p>To permanently ignore joins, parts, quits, and nickname changes from every
-channel in IRSSI:</p>
-
-<pre><code>/ignore * joins parts quits nicks
-/save
-</code></pre>
-
-<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
-post will keep it in my memory.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
       
         <li class="previous"><a href="/posts/12">&larr;&nbsp;Older</a></li>
       
-      <li><a href="/blog/archives">Blog Archives</a></li>
+      <li><a href="/blog/archive">Blog Archive</a></li>
       
         <li class="next"><a href="/posts/10">Newer&nbsp;&rarr;</a></li>
       
@@ -476,6 +481,8 @@ post will keep it in my memory.</p>
   </div>
   
   <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
     
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
     
@@ -494,8 +501,6 @@ post will keep it in my memory.</p>
     <a class="list-group-item " href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
     
     <a class="list-group-item " href="/blog/impact-driven-development/">Impact-driven development</a>
-    
-    <a class="list-group-item " href="/blog/managing-cd-bookmarks-with-apparix/">Managing cd bookmarks with apparix</a>
     
   </div>
 </section>
