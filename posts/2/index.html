@@ -126,7 +126,126 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-10T16:02:00-04:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 10 Jun 2015,  4:02 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-07-15T10:07:53-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 15 Jul 2015, 10:07 AM</time>
+        
+           | <a href="/blog/profiling-slow-bashrc/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/profiling-slow-bashrc/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/profiling-slow-bashrc/" itemprop="url">Profiling slow bashrc</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
+<a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
+startup time hog in my <code>~/.bashrc</code> upon it.</p>
+
+<p>First off, add following few lines to your <code>/etc/bash.bashrc</code>,
+<code>~/.bash_profile</code>, or wherever you&rsquo;d like to begin tracing the script:</p>
+
+<pre><code>PS4='+ $(date "+%s.%N")\011 '
+exec 3&gt;&amp;2 2&gt;/tmp/bashstart.$$.log
+set -x
+</code></pre>
+
+<p>And add following few lines where you want to stop the trace:</p>
+
+<pre><code>set +x
+exec 2&gt;&amp;3 3&gt;&amp;-
+</code></pre>
+
+<p>Now start your bash session (you can simply open a new terminal Window for
+that). The above will create <code>/tmp/bashstart.&lt;PID&gt;.log</code>. To analyze it, I wrote
+a little Python script:</p>
+
+<pre><code>import argparse
+import heapq
+
+parser = argparse.ArgumentParser(description='Analyze bashstart log for speed.')
+parser.add_argument('filename', help='often /tmp/bashstart.&lt;PID&gt;.log')
+parser.add_argument('-n', default=20, help='number of results to show')
+args = parser.parse_args()
+filename, n = args.filename, int(args.n)
+
+with open(filename, 'r') as f:
+    q = []
+    prev_time = None
+    for line in f.readlines():
+        line = line.split()
+        if '+' not in line[0] or len(line) &lt; 3:
+            continue
+        text = ' '.join(line[2:])
+        seconds, nanoseconds = line[1].split('.')
+        time = int(nanoseconds)
+        diff = time - prev_time if prev_time is not None else 0
+        prev_time = time
+        heapq.heappush(q, (diff, text))
+
+for diff, text in heapq.nlargest(n, q):
+    print float(diff) / 1000000000, 's:', text
+</code></pre>
+
+<p>Save it as <code>bashprofile.py</code>, and run it as follows (replace file name with an
+appropriate):</p>
+
+<pre><code>python bashprofile.py /tmp/bashstart.2831.log -n 20
+0.050056909 s: _powerline_init_tmux_support
+0.045323022 s: _powerline_setup_prompt
+0.044722024 s: _powerline_setup_prompt
+0.044423727 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
+0.044364097 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
+0.044137159 s: _powerline_init_tmux_support
+0.015839574 s: __shell_name=bash
+0.010850276 s: command which which
+0.010105462 s: PS2='\[\]  \[\] \[\]'
+0.010000598 s: PS3=' Select variant  '
+0.009837956 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
+0.009767517 s: PS2='\[\]  \[\] \[\]'
+0.0095753 s: PS3=' Select variant  '
+0.007915565 s: other_utils=(ant automake autoreconf libtoolize make mount patch readlink)
+0.00771205 s: for script in version functions/selector cd functions/cli cli override_gem
+0.007008299 s: for gnu_util in '"${gnu_utils[@]}"'
+0.00693653 s: complete -F _crow crow
+0.006803049 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
+0.006672906 s: for script in version functions/selector cd functions/cli cli override_gem
+0.005912399 s: for entry in '${scripts[@]}'
+</code></pre>
+
+<p>In my example, <a href="https://github.com/powerline/powerline">Powerline</a> turned out to be a massive hog. Looks like I&rsquo;ll
+have to troubleshoot the speed or plain disable it.</p>
+
+<p>Don&rsquo;t forget to remove the lines you added to your bash configuration files
+after you&rsquo;re done profiling.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-10T13:02:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 10 Jun 2015,  1:02 PM</time>
         
            | <a href="/blog/didyoumean-plugin-for-vim/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/">Comments</a>
@@ -178,7 +297,7 @@ feature to be included in vanilla Vim.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-08T18:03:58-04:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  8 Jun 2015,  6:03 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-08T14:03:58-08:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  8 Jun 2015,  2:03 PM</time>
         
            | <a href="/blog/lessons-learned-engineering-productivity/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/">Comments</a>
@@ -358,7 +477,7 @@ timeless books - not affected by changing technologies and processes.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-07T16:10:15-04:00"  data-updated="true" itemprop="datePublished dateCreated">Sun  7 Jun 2015,  4:10 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-07T13:10:15-07:00"  data-updated="true" itemprop="datePublished dateCreated">Sun  7 Jun 2015,  1:10 PM</time>
         
            | <a href="/blog/gundo-tree-for-vim/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/gundo-tree-for-vim/">Comments</a>
@@ -420,7 +539,7 @@ to travel through changes. Enter key applies the changes.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-01T09:28:42-04:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Jun 2015,  9:28 AM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-01T06:28:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Jun 2015,  6:28 AM</time>
         
            | <a href="/blog/my-experience-switching-to-buffers/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/my-experience-switching-to-buffers/">Comments</a>
@@ -495,99 +614,6 @@ thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T21:19:58-04:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 25 Apr 2015,  9:19 PM</time>
-        
-           | <a href="/blog/impact-driven-development/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/impact-driven-development/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/impact-driven-development/" itemprop="url">Impact-driven development</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>It is my fifth year working as a professional software engineer, and I think
-it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
-throughout past four years. This is the first article in a series of three,
-and it focuses on development process.</p>
-
-<p>Moving towards becoming a senior engineer, I noticed paying more attention to
-the impact my work produces. These days I would much rather compile a number of
-small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
-complex nice-to-haves. This sounds simple and straight-forward, and some reader
-might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
-of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
-
-<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
-there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
-always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
-
-<h2>Get the priorities right</h2>
-
-<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
-into completing it. Arrange the tasks by this factor.</p>
-
-<p>More often then not you can drop items with low impact/effort ratio.</p>
-
-<h2>Separate what is needed from what is asked</h2>
-
-<p>Know who the stakeholders are for each task, feature, or a project you work
-on.  Understand their underlying motives. Anyone can fall a victim of an
-<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
-stakeholders ask for what they actually need.</p>
-
-<h2>Know when to say &ldquo;No&rdquo;</h2>
-
-<p>In the very beginning of my career I gladly took every single task thrown at me.
-It soon became an issue: work that actually needs to get done is not getting
-done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
-
-<h2>Think about your work</h2>
-
-<p>Beware of routines, repeating the same workflow time after time is damaging when
-it comes to building software. Stop each time before you proceed to the next
-step, and ask yourself if you&rsquo;re performing the task in the best way possible.
-Be mindful about your work.</p>
-
-<h2>Be a catalyst for change</h2>
-
-<p>Be the first to promote the change. Did you notice a poor practice on a
-project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
-role in a team of course). Don&rsquo;t go on telling people how wrong what they use
-is. Show everyone how the new way is better on practice, and your colleagues
-will adopt successful trend.</p>
-
-<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
-people are involved, every member of a group relies on other people to get
-things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -611,6 +637,8 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
+    
     <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
     
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
@@ -628,8 +656,6 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
     <a class="list-group-item " href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
     
     <a class="list-group-item " href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
-    
-    <a class="list-group-item " href="/blog/impact-driven-development/">Impact-driven development</a>
     
   </div>
 </section>

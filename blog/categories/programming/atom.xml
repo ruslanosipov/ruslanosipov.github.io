@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-02-22T11:30:19-05:00</updated>
+  <updated>2016-06-04T18:26:15-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
     <link href="http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/"/>
-    <updated>2014-12-17T00:09:58-05:00</updated>
+    <updated>2014-12-16T21:09:58-08:00</updated>
     <id>http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog</id>
     <content type="html"><![CDATA[<p>I had to download my Octopress blog to a new machine today and the process of
 setting up didn&rsquo;t go as smoothly as I expected. At the end of the day the setup
@@ -38,7 +38,7 @@ branch of your Octopress repository. Otherwise <code>rake deploy</code> command 
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
     <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
-    <updated>2014-07-30T02:00:04-04:00</updated>
+    <updated>2014-07-29T23:00:04-07:00</updated>
     <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
@@ -82,7 +82,7 @@ to a junior new hire why the character limits are so strictly enforced.</p>
   <entry>
     <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
     <link href="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/"/>
-    <updated>2014-06-01T23:44:12-04:00</updated>
+    <updated>2014-06-02T03:44:12+00:00</updated>
     <id>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text</id>
     <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
 I find it nice to have an archive of posts lying around in plain text.</p>
@@ -173,7 +173,7 @@ if __name__ == "__main__":
   <entry>
     <title type="html"><![CDATA[Python: "ignored" context manager]]></title>
     <link href="http://www.rosipov.com/blog/python-ignored-context-manager/"/>
-    <updated>2014-05-29T15:20:34-04:00</updated>
+    <updated>2014-05-29T19:20:34+00:00</updated>
     <id>http://www.rosipov.com/blog/python-ignored-context-manager</id>
     <content type="html"><![CDATA[<p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
 <code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
@@ -216,7 +216,7 @@ to <code>contextlib.supress</code> (<a href="https://bugs.python.org/issue19266"
   <entry>
     <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
     <link href="http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/"/>
-    <updated>2013-12-30T13:48:31-05:00</updated>
+    <updated>2013-12-30T18:48:31+00:00</updated>
     <id>http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together</id>
     <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
 Gherkin syntax in python. However the documentation is not very comprehensive,
