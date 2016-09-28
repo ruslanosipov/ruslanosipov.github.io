@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-06-04T18:26:15-07:00</updated>
+  <updated>2016-09-28T12:12:01-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Browsing MSSQL and Vertica from CLI]]></title>
+    <link href="http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli/"/>
+    <updated>2016-09-28T11:51:31-07:00</updated>
+    <id>http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli</id>
+    <content type="html"><![CDATA[<p>Notes to make sure I don&rsquo;t forget how to do this in the future. First, install
+<code>mssql</code> and <code>vcli</code> tools:</p>
+
+<pre><code>npm install -g sql-cli
+pip install vcli
+</code></pre>
+
+<p>Encrypt desired database account passwords:</p>
+
+<pre><code>mkdir -p ~/.passwd
+echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$DB_ACCOUNT.gpg
+</code></pre>
+
+<p>Set up a set of aliases with the desired level of flexibility in <code>~/.bashrc</code> to
+avoid typing too much:</p>
+
+<pre><code>function _sql-helper-command {
+  host=$1
+  user=$2
+  password=$3
+  db=$4
+  opt_query_file=$5
+
+  if [ -z $opt_query_file ]; then
+    mssql -s $host -u $user -p $password -d $db
+  else
+    mssql -s $host -u $user -p $password -d $db -q "`cat $opt_query_file`"
+  fi
+}
+
+function _vsql-helper-command {
+  host=$1
+  user=$2
+  password=$3
+
+  vcli -h $host -U $user -w $password
+}
+
+# Usage: `sql` for interactive mode, `sql filename.sql` to execute a file.
+function sql {
+  opt_query_file=$1
+
+  host='$SOME_HOST'
+  user='$SOME_USER'
+  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
+  db='$SOME_DB'
+
+  _sql-helper-command $host $user $password $db $opt_query_file
+}
+
+# Usage: `vsql $VERTICA_HOST`
+function vsql {
+  host=$1
+  user=`whoami`
+  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
+
+  _vsql-helper-command $host $user $password
+}
+</code></pre>
+
+<p>Replace <code>$SOME_USER</code>, <code>$SOME_HOST</code>, <code>$SOME_DB</code>, <code>$SOME_FILENAME</code> above with
+specific user, host, DB, and filenames respectively. I usually make a bunch of
+aliases for different environments/machines I use: <code>sql-prod</code>, <code>sql-dev</code>,
+<code>sql-local</code> or <code>vsql-host1</code>, <code>vsql-host2</code>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Thoughts on travel]]></title>
@@ -1693,50 +1765,6 @@ making all the consecutive searches lightning fast.</p>
 
 <p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
 sure the cache directory is not shared with anyone but yourself.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
-    <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
-    <updated>2014-07-29T23:00:04-07:00</updated>
-    <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
-    <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
-topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
-questions by newbies and odd cases. Most established tech companies have their
-own line length guidelines. These are often dependent on a language, such as in
-the case of Google with their 80 character Python and 100 character Java limits.</p>
-
-<p>In this article, I won&rsquo;t be advocating all the usual arguments, such as easier
-diff with version control software, or the ability to stack windows side by side
-on wide screens. No, I believe that battle to be won quite a long time ago, the
-topic is now closed. But something I didn&rsquo;t find mentioned in any of the
-discussions is an interesting point from the world of writers and designers.</p>
-
-<p>Ever since I started being interested in improving my writing skills, I found
-article after article mention the importance of line length in reading.
-Interestingly enough, this issue was raised in a world of literature. It had
-been resolved long before programmers were fascinated with the desire to use up
-rapidly expanding screen real estate.</p>
-
-<p>I am talking about something known as &ldquo;measure&rdquo; in typography. It seems to be
-the reason newspapers use narrow columns, or books leave such vast margins
-around the text on a page. Here&rsquo;s an exempt from the <a href="http://en.wikipedia.org/wiki/Measure_(typography)">Wikipedia article</a>:</p>
-
-<blockquote><p>Measure (or sometimes &ldquo;The Measure&rdquo;) in typography is the length of a line of
-text. For a single-column design measure should ideally lie between 40 &amp; 80
-characters. Many typographers consider the perfect measure to be 65
-characters. If the lines are too short then the text becomes disjointed, if
-they are too long the content loses rhythm as the reader searches for the
-start of each line. Punctuation should preferably hang outside the measure.</p></blockquote>
-
-<p>Most programming languages use special operators and keywords, which can be
-considered &ldquo;punctuation&rdquo;. Some languages are more verbose (use more
-punctuation), and some aren&rsquo;t. If you remove punctuation, the 80/100/120
-character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p>
-
-<p>Maybe I can use this as an additional argument the next time I have to explain
-to a junior new hire why the character limits are so strictly enforced.</p>
 ]]></content>
   </entry>
   

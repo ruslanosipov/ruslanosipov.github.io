@@ -126,6 +126,55 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-13T01:10:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 13 Jan 2014,  1:10 AM</time>
+        
+           | <a href="/blog/navigate-files-easily-with-ctrlp-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/navigate-files-easily-with-ctrlp-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/navigate-files-easily-with-ctrlp-vim/" itemprop="url">Navigate files easily with ctrlp.vim</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Few years ago I used a lightweight IDE called &ldquo;Sublime Text 2&rdquo;. And one of the
+most compelling features of it was an ability to switch between files by
+hitting <code>Ctrl</code> + <code>P</code> and typing in a part of the file name.</p>
+
+<p>This is exactly what <code>ctrlp.vim</code> implements in vim. Usage is extremely simple:
+install the plugin, hit <code>Ctrl</code> + <code>P</code>, type a part of the file name, select a
+desired file and hit <code>Enter</code>. You can use arrow keys or <code>Ctrl</code> + <code>J</code> and <code>Ctrl</code>
++ <code>K</code> to navigate between suggested file list.</p>
+
+<p>Source: <a href="https://github.com/kien/ctrlp.vim">https://github.com/kien/ctrlp.vim</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-30T18:48:31+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 30 Dec 2013,  6:48 PM</time>
         
            | <a href="/blog/making-django-and-lettuce-play-nice-together/#disqus_thread" itemprop="discussionUrl"
@@ -523,103 +572,6 @@ nopaste</code>.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-09-12T01:26:15+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 12 Sep 2013,  1:26 AM</time>
-        
-           | <a href="/blog/remap-your-caps-lock/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/remap-your-caps-lock/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/remap-your-caps-lock/" itemprop="url">Remap your Caps Lock</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>The following three paragraphs are an angry <code>Caps Lock</code> rant. Feel free to skip
-past it or join me by commenting below.</p>
-
-<p>I&rsquo;ve had it with <code>Caps Lock</code>! How many times did I accidentally press it while
-hitting the <code>A</code> key! How many times did I mean <code>Tab</code> or <code>Shift</code>! There is an
-obvious problem with the <code>Caps Lock</code> placement, and there being only a
-millimeter of space to designate it from an adjacent key, it is quite difficult
-to notice when you accidentally press it.</p>
-
-<p>Pushing <code>Caps Lock</code> is more tolerable when typing, but while using keyboard
-controlled software it&rsquo;s a real pain; <code>vim</code> turns into a beeping ravaging
-nightmare, <code>vimperator</code> messes up all your bookmarks&hellip; Same thing with
-websites supporting keyboard shortcuts.</p>
-
-<p>When was the last time I ever used <code>Caps Lock</code>? Over ten years ago, when I was
-playing a video game that used <code>Caps Lock</code> to switch between running and
-walking. Em&hellip; Seriously? Time to put an end this nonsense.</p>
-
-<h2>Linux and Mac</h2>
-
-<p>Drop this into your <code>~/bin/capslockremap</code>, and don&rsquo;t forget to <code>chmod +x
-~/bin/capslockremap</code>. Now run the script with root privileges (that&rsquo;ll last you
-until the next restart).</p>
-
-<pre><code>#!/bin/sh
-
-# This temporarily remaps the Caps Lock key to a Control key.
-# The keyboard will return to the previous settings after a
-# reboot. The Linux console and the X Window system each
-# handles keypresses separately, so each must be remapped
-# separately. First remap the X keyboard since this does not
-# require root access.
-
-# Remap the Caps Lock key to a Control key for
-# the X Window system.
-if type setxkbmap &gt;/dev/null 2&gt;&amp;1; then
-fi
-
-# You have to be root to remap the console keyboard.
-if [ "$(id -u)" != "0" ]; then
-  echo "This script is not running as root so"
-  echo "the console Caps Lock cannot be remapped."
-  echo "Perhaps you forgot to run this under sudo."
-  echo "Note that this problem does not effect X."
-  echo "This only effects the consoles running on"
-  echo "Alt-f1 through Alt-f6."
-  exit 2
-fi
-# Remap the CapsLock key to a Control key for the console.
-(dumpkeys | grep keymaps; echo "keycode 58 = Control") | loadkeys
-</code></pre>
-
-<h2>Windows</h2>
-
-<p>Download <a href="http://technet.microsoft.com/en-us/sysinternals/bb897578.aspx">Sysinternals Ctrl2Cap v2.0</a>, run it as Administrator with
-<code>install</code> flag: <code>ctrl2cap.exe /install</code>.</p>
-
-<p>Source <a href="http://www.noah.org/wiki/CapsLock_Remap_Howto">CapsLock Remap Howto - Noah.org</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -643,6 +595,8 @@ fi
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
+    
     <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
     
     <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
@@ -660,8 +614,6 @@ fi
     <a class="list-group-item " href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
     
     <a class="list-group-item " href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
-    
-    <a class="list-group-item " href="/blog/my-experience-switching-to-buffers/">My experience switching to buffers</a>
     
   </div>
 </section>

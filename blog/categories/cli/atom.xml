@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cli | Ruslan Osipov]]></title>
+  <link href="http://www.rosipov.com/blog/categories/cli/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2016-09-28T12:12:01-07:00</updated>
+  <id>http://www.rosipov.com/</id>
+  <author>
+    <name><![CDATA[Ruslan Osipov]]></name>
+    <email><![CDATA[ruslan@rosipov.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Browsing MSSQL and Vertica from CLI]]></title>
+    <link href="http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli/"/>
+    <updated>2016-09-28T11:51:31-07:00</updated>
+    <id>http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli</id>
+    <content type="html"><![CDATA[<p>Notes to make sure I don&rsquo;t forget how to do this in the future. First, install
+<code>mssql</code> and <code>vcli</code> tools:</p>
+
+<pre><code>npm install -g sql-cli
+pip install vcli
+</code></pre>
+
+<p>Encrypt desired database account passwords:</p>
+
+<pre><code>mkdir -p ~/.passwd
+echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$DB_ACCOUNT.gpg
+</code></pre>
+
+<p>Set up a set of aliases with the desired level of flexibility in <code>~/.bashrc</code> to
+avoid typing too much:</p>
+
+<pre><code>function _sql-helper-command {
+  host=$1
+  user=$2
+  password=$3
+  db=$4
+  opt_query_file=$5
+
+  if [ -z $opt_query_file ]; then
+    mssql -s $host -u $user -p $password -d $db
+  else
+    mssql -s $host -u $user -p $password -d $db -q "`cat $opt_query_file`"
+  fi
+}
+
+function _vsql-helper-command {
+  host=$1
+  user=$2
+  password=$3
+
+  vcli -h $host -U $user -w $password
+}
+
+# Usage: `sql` for interactive mode, `sql filename.sql` to execute a file.
+function sql {
+  opt_query_file=$1
+
+  host='$SOME_HOST'
+  user='$SOME_USER'
+  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
+  db='$SOME_DB'
+
+  _sql-helper-command $host $user $password $db $opt_query_file
+}
+
+# Usage: `vsql $VERTICA_HOST`
+function vsql {
+  host=$1
+  user=`whoami`
+  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
+
+  _vsql-helper-command $host $user $password
+}
+</code></pre>
+
+<p>Replace <code>$SOME_USER</code>, <code>$SOME_HOST</code>, <code>$SOME_DB</code>, <code>$SOME_FILENAME</code> above with
+specific user, host, DB, and filenames respectively. I usually make a bunch of
+aliases for different environments/machines I use: <code>sql-prod</code>, <code>sql-dev</code>,
+<code>sql-local</code> or <code>vsql-host1</code>, <code>vsql-host2</code>.</p>
+]]></content>
+  </entry>
+  
+</feed>
