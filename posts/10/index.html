@@ -126,6 +126,69 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-17T01:02:30+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 17 Nov 2013,  1:02 AM</time>
+        
+           | <a href="/blog/pasting-with-vim-and-indentation-issues/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/pasting-with-vim-and-indentation-issues/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/pasting-with-vim-and-indentation-issues/" itemprop="url">Pasting with vim and indentation issues</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you use vim often - you probably had to paste something into vim from the
+outside source. And, if you have corresponding indentation rules, they will get
+applied, turning your nice block of code into something that looks more like a
+case of stairs:</p>
+
+<pre><code>def foo(a, b):
+        a, b = b, a
+            print "I am doing something important."
+                return a - b
+</code></pre>
+
+<p>Quite nasty, isn&rsquo;t it? But that&rsquo;s where vim&rsquo;s <code>paste</code> option comes in.  Before
+pasting, execute <code>:set paste</code>. If you go into insert mode, you&rsquo;ll see the usual
+mode indicator switch to <code>-- INSERT (paste) --</code>. Try pasting the same block of
+code now:</p>
+
+<pre><code>def foo(a, b):
+    a, b = b, a
+    print "I am doing something important."
+    return a - b
+</code></pre>
+
+<p>Beautiful. Don&rsquo;t forget to switch back to a regular mode by executing <code>:set
+nopaste</code>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-09-12T01:26:15+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 12 Sep 2013,  1:26 AM</time>
         
            | <a href="/blog/remap-your-caps-lock/#disqus_thread" itemprop="discussionUrl"
@@ -473,144 +536,6 @@ module. After quite a time-consuming search the missing package name was
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-14T02:18:16+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 14 Jun 2013,  2:18 AM</time>
-        
-           | <a href="/blog/use-vimdiff-as-git-mergetool/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/use-vimdiff-as-git-mergetool/" itemprop="url">Use vimdiff as git mergetool</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Using vimdiff as a git mergetool can be pretty confusing - multiple windows and
-little explanation. This is a short tutorial which explains basic usage, and
-what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at
-least a little bit of basic vim knowledge (how to move, save, and switch
-between split windows). If you don&rsquo;t, there&rsquo;s a short article for you:
-<a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>. Some basic understanding of git and branching
-is required as well, obviously.</p>
-
-<h2>Git config</h2>
-
-<p>Prior to doing anything, you need to know how to set vimdiff as a git
-mergetool. That being said:</p>
-
-<pre><code>git config merge.tool vimdiff
-git config merge.conflictstyle diff3
-git config mergetool.prompt false
-</code></pre>
-
-<p>This will set git as the default merge tool, will display a common ancestor
-while merging, and will disable the prompt to open the vimdiff.</p>
-
-<h2>Creating merge conflict</h2>
-
-<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work
-along with the tutorial.</p>
-
-<pre><code>mkdir zoo
-cd zoo
-git init
-vi animals.txt
-</code></pre>
-
-<p>Let&rsquo;s add some animals:</p>
-
-<pre><code>cat
-dog
-octopus
-octocat
-</code></pre>
-
-<p>Save the file.</p>
-
-<pre><code>git add animals.txt
-git commit -m "Initial commit"
-git branch octodog
-git checkout octodog
-vi animals.txt  # let's change octopus to octodog
-git add animals.txt
-git commit -m "Replace octopus with an octodog"
-git checkout master
-vi animals.txt  # let's change octopus to octoman
-git add animals.txt
-git commit -m "Replace octopus with an octoman"
-git merge octodog  # merge octodog into master
-</code></pre>
-
-<p>That&rsquo;s where we get a merge error:</p>
-
-<pre><code>Auto-merging animals.txt
-CONFLICT (content): Merge conflict in animals.txt
-Automatic merge failed; fix conflicts and then commit the result.
-</code></pre>
-
-<h2>Resolving merge conflict with vimdiff</h2>
-
-<p>Let&rsquo;s resolve the conflict:</p>
-
-<pre><code>git mergetool
-</code></pre>
-
-<p><img src="/images/posts/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom." ></p>
-
-<p>This looks terrifying at first, but let me explain what is going on.</p>
-
-<p>From left to right, top to the bottom:</p>
-
-<p><code>LOCAL</code> &ndash; this is file from the current branch
-<code>BASE</code> &ndash; common ancestor, how file looked before both changes
-<code>REMOTE</code> &ndash; file you are merging into your branch
-<code>MERGED</code> &ndash; merge result, this is what gets saved in the repo</p>
-
-<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that,
-move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict
-area and then:</p>
-
-<pre><code>:diffget RE
-</code></pre>
-
-<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You
-can also:</p>
-
-<pre><code>:diffg RE  " get from REMOTE
-:diffg BA  " get from BASE
-:diffg LO  " get from LOCAL
-</code></pre>
-
-<p>Save the file and quit (a fast way to write and quit multiple files is <code>:wqa</code>).</p>
-
-<p>Run <code>git commit</code> and you are all set!</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -634,6 +559,8 @@ can also:</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
+    
     <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
     
     <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
@@ -651,8 +578,6 @@ can also:</p>
     <a class="list-group-item " href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
     
     <a class="list-group-item " href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
-    
-    <a class="list-group-item " href="/blog/gundo-tree-for-vim/">Gundo tree for Vim</a>
     
   </div>
 </section>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Randomly generated dungeons - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.rosipov.com/blog/randomly-generated-dungeons/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.rosipov.com/blog/randomly-generated-dungeons/">
+  <meta property="og:title" content="Randomly generated dungeons - Ruslan Osipov">
+  
+
+  <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48506044-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ruslan Osipov</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/about">About</a>
+                </li>
+                <li >
+                    <a href="/blog/archive">Archive</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="www.rosipov.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="Ruslan Osipov" />
+    
+    <meta itemprop="url" content="http://www.rosipov.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-29T16:26:32-07:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 29 Sep 2016,  4:26 PM</time>
+        
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Randomly generated dungeons
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p>After playing with random dungeon generation for a bit, I seem to be satisfied
+with the results:</p>
+
+<p><img src="/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
+floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
+few random dungeon generation ideas, I settled with the following.</p>
+
+<h2>The algorithm</h2>
+
+<ol>
+<li>Start with a random point on a canvas.</li>
+<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
+<li>Select a few points on the sides of the room, put those in a stack. Save the
+direction in which the potential doors would point.</li>
+<li>Go through the stack, and try to add a room or a corridor (corridor is just a
+room with a width or a height of 1). Higher chance of corridors seems to look
+better and results in those wiggly passageways.
+
+<ol>
+<li>Try to add a room a few dozen times with different random configurations.
+If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
+generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
+clean those up later.</li>
+<li>If a room was added successfully - add a door where it connects to the
+previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
+to another corridor.</li>
+<li>At this point one ends up with quite a few interconnected corridors,
+merged rooms, and all kinds of fun surroundings (my desired goal).</li>
+</ol>
+</li>
+<li>Do the above until the stack is empty or a desired number of rooms has been
+generated.</li>
+<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
+one until intersection with another room/corridor is detected.</li>
+<li>Add walls around the rooms and corridors, while also cleaning up any extra
+doors we may have left behind when creating merged corridors or rooms.
+
+<ol>
+<li>I simply used slightly modified depth first search starting inside any
+room and drawing walls wherever I could find floor/door not connected to
+anything.</li>
+<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
+the opposite sides. If not - remove the door and replace it with a floor
+tile. If any doors were adjucent to the removed door - requeue the door
+check on them.</li>
+</ol>
+</li>
+<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
+time. Pick the best candidate with the most desired features - like a number
+of rooms, breadth, square footage, longest corridors, etc.</li>
+</ol>
+
+
+<p>A more detailed explanation of the steps is below. For now, here are a few more
+dungeons generated using this method:</p>
+
+<p><img src="/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>I think dungeon generation is far more art than science, and I had a lot of fun
+tweaking all the different input parameters:</p>
+
+<ul>
+<li>Room size boundaries.</li>
+<li>Corridor lengths.</li>
+<li>Frequency of corridor occurrences.</li>
+<li>Number of exits from the room.</li>
+<li>Number of room generation attempts.</li>
+<li>Number of dungeon generation attempts.</li>
+<li>Final dungeon picking heuristics.</li>
+</ul>
+
+
+<p>Last item on the list is the most interesting one - with few hundred dungeons as
+an input, picking the right one is rather important. I ended up settling on
+using max priority queue with a rough surface area of the dungeon as a key
+(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
+through some top results and pick the one with the most rooms available. This
+results in the most fun-looking map which feels up most of the screen, while
+still usually not being too cluttered.</p>
+
+<p>Here&rsquo;s a breakdown of a simple scenario:</p>
+
+<h3>Steps 1 and 2</h3>
+
+<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
+
+<pre><code>....
+....
+....
+</code></pre>
+
+<h3>Step 3</h3>
+
+<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
+
+<pre><code>....2
+....
+....1
+  3
+</code></pre>
+
+<p>I went for a uniform distribution by unfolding the rectangle and folding it back
+in to get a proper coordinate on the perimeter. Now, stack contains coordinates
+of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
+
+<h3>Steps 4 and 5</h3>
+
+<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
+the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
+We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
+random decide again: up.</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....3.
+  1
+</code></pre>
+
+<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
+also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
+corridors are never pretty.</p>
+
+<p>Now, to replace number 3 with a door:</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Adding another random corridor of length 2 to the point 4, pointing right.
+Replace number 4 with a floor segment, since point 4 was the end of another
+corridor. Remove point 4 from loose ends, add point 5.</p>
+
+<pre><code>     ...5
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
+is empty.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+....2.   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
+Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
+After a few unsuccessful attempts to place a room or a corridor there, we give
+up:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
+the loose ends list.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  +
+  .
+  .
+  .
+  6
+</code></pre>
+
+<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
+done generating the dungeon. Our stack is empty, and our loose ends contains
+coordinates of <code>6</code>.</p>
+
+<h3>Step 6</h3>
+
+<p>Start with the loose end, and remove items one by one until a tile with multiple
+neighbors is encountered:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  X
+  X
+  X
+  X
+  X
+</code></pre>
+
+<p>Viola:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+</code></pre>
+
+<h3>Steps 7 and 8</h3>
+
+<p>There are no rogue doors in this scenario, so all we need to do is add  the
+walls:</p>
+
+<pre><code>     #########
+     #...+...#
+     #.###...#
+######.# #...#
+#....#.# #...#
+#....#.# #...#
+#....+.# #...#
+######## #####
+</code></pre>
+
+<p>All of the steps above should be repeated a few hundred times with different
+dungeons, and then the best dungeon should be picked as a final one.</p>
+
+<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
+should have I done differently?</p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Ruslan Osipov</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-29T16:26:32-07:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 29 Sep 2016,  4:26 PM</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/gamedev/'>gamedev</a>
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/randomly-generated-dungeons/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/randomly-generated-dungeons/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/browsing-mssql-and-vertica-from-cli/" title="Previous Post: Browsing MSSQL and Vertica from CLI">&laquo; Browsing MSSQL and Vertica from CLI</a></li>
+            
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item active" href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
+    
+    <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
+    
+    <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
+    
+    <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
+    
+    <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
+    
+    <a class="list-group-item " href="/blog/urban-prius-living/">Urban Prius living</a>
+    
+    <a class="list-group-item " href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
+    
+    <a class="list-group-item " href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
+    
+    <a class="list-group-item " href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
+    
+    <a class="list-group-item " href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
+    
+  </div>
+</section>
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2016 - Ruslan Osipov<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.rosipov.com/blog/randomly-generated-dungeons/';
+        var disqus_url = 'http://www.rosipov.com/blog/randomly-generated-dungeons/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+  </body>
+</html>

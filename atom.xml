@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-09-28T12:12:01-07:00</updated>
+  <updated>2016-09-29T18:42:56-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,263 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Randomly generated dungeons]]></title>
+    <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
+    <updated>2016-09-29T16:26:32-07:00</updated>
+    <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
+    <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
+with the results:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
+floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
+few random dungeon generation ideas, I settled with the following.</p>
+
+<h2>The algorithm</h2>
+
+<ol>
+<li>Start with a random point on a canvas.</li>
+<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
+<li>Select a few points on the sides of the room, put those in a stack. Save the
+direction in which the potential doors would point.</li>
+<li>Go through the stack, and try to add a room or a corridor (corridor is just a
+room with a width or a height of 1). Higher chance of corridors seems to look
+better and results in those wiggly passageways.
+
+<ol>
+<li>Try to add a room a few dozen times with different random configurations.
+If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
+generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
+clean those up later.</li>
+<li>If a room was added successfully - add a door where it connects to the
+previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
+to another corridor.</li>
+<li>At this point one ends up with quite a few interconnected corridors,
+merged rooms, and all kinds of fun surroundings (my desired goal).</li>
+</ol>
+</li>
+<li>Do the above until the stack is empty or a desired number of rooms has been
+generated.</li>
+<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
+one until intersection with another room/corridor is detected.</li>
+<li>Add walls around the rooms and corridors, while also cleaning up any extra
+doors we may have left behind when creating merged corridors or rooms.
+
+<ol>
+<li>I simply used slightly modified depth first search starting inside any
+room and drawing walls wherever I could find floor/door not connected to
+anything.</li>
+<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
+the opposite sides. If not - remove the door and replace it with a floor
+tile. If any doors were adjucent to the removed door - requeue the door
+check on them.</li>
+</ol>
+</li>
+<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
+time. Pick the best candidate with the most desired features - like a number
+of rooms, breadth, square footage, longest corridors, etc.</li>
+</ol>
+
+
+<p>A more detailed explanation of the steps is below. For now, here are a few more
+dungeons generated using this method:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="http://www.rosipov.com/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="http://www.rosipov.com/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>I think dungeon generation is far more art than science, and I had a lot of fun
+tweaking all the different input parameters:</p>
+
+<ul>
+<li>Room size boundaries.</li>
+<li>Corridor lengths.</li>
+<li>Frequency of corridor occurrences.</li>
+<li>Number of exits from the room.</li>
+<li>Number of room generation attempts.</li>
+<li>Number of dungeon generation attempts.</li>
+<li>Final dungeon picking heuristics.</li>
+</ul>
+
+
+<p>Last item on the list is the most interesting one - with few hundred dungeons as
+an input, picking the right one is rather important. I ended up settling on
+using max priority queue with a rough surface area of the dungeon as a key
+(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
+through some top results and pick the one with the most rooms available. This
+results in the most fun-looking map which feels up most of the screen, while
+still usually not being too cluttered.</p>
+
+<p>Here&rsquo;s a breakdown of a simple scenario:</p>
+
+<h3>Steps 1 and 2</h3>
+
+<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
+
+<pre><code>....
+....
+....
+</code></pre>
+
+<h3>Step 3</h3>
+
+<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
+
+<pre><code>....2
+....
+....1
+  3
+</code></pre>
+
+<p>I went for a uniform distribution by unfolding the rectangle and folding it back
+in to get a proper coordinate on the perimeter. Now, stack contains coordinates
+of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
+
+<h3>Steps 4 and 5</h3>
+
+<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
+the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
+We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
+random decide again: up.</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....3.
+  1
+</code></pre>
+
+<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
+also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
+corridors are never pretty.</p>
+
+<p>Now, to replace number 3 with a door:</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Adding another random corridor of length 2 to the point 4, pointing right.
+Replace number 4 with a floor segment, since point 4 was the end of another
+corridor. Remove point 4 from loose ends, add point 5.</p>
+
+<pre><code>     ...5
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
+is empty.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+....2.   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
+Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
+After a few unsuccessful attempts to place a room or a corridor there, we give
+up:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
+the loose ends list.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  +
+  .
+  .
+  .
+  6
+</code></pre>
+
+<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
+done generating the dungeon. Our stack is empty, and our loose ends contains
+coordinates of <code>6</code>.</p>
+
+<h3>Step 6</h3>
+
+<p>Start with the loose end, and remove items one by one until a tile with multiple
+neighbors is encountered:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  X
+  X
+  X
+  X
+  X
+</code></pre>
+
+<p>Viola:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+</code></pre>
+
+<h3>Steps 7 and 8</h3>
+
+<p>There are no rogue doors in this scenario, so all we need to do is add  the
+walls:</p>
+
+<pre><code>     #########
+     #...+...#
+     #.###...#
+######.# #...#
+#....#.# #...#
+#....#.# #...#
+#....+.# #...#
+######## #####
+</code></pre>
+
+<p>All of the steps above should be repeated a few hundred times with different
+dungeons, and then the best dungeon should be picked as a final one.</p>
+
+<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
+should have I done differently?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Browsing MSSQL and Vertica from CLI]]></title>
@@ -1702,69 +1959,6 @@ types, native support for Perl&rsquo;s regular expressions: <code>ack</code> doe
 job at searching through code.</p>
 
 <p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Effective search with Mutt]]></title>
-    <link href="http://www.rosipov.com/blog/effective-search-with-mutt/"/>
-    <updated>2014-08-02T13:32:51-07:00</updated>
-    <id>http://www.rosipov.com/blog/effective-search-with-mutt</id>
-    <content type="html"><![CDATA[<p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
-fonts to be more pleasant to the eye, and the visualization my browser offers
-is hard to beat. The main use-case for me is composing long emails: Mutt lets
-me use my favorite text editor, which speeds up the editing of long and
-carefully composed responses.</p>
-
-<p>Recently I added a new use-case to my work flow: searching through emails.
-Mutt has a powerful built-in regular-expressions engine, which is something the
-web Gmail client is missing.</p>
-
-<p>Mutt has two ways of finding things: search and limit. &ldquo;Search&rdquo; just jumps from
-one matching letter to another, something along the lines what <code>/</code> command does
-in <code>less</code>, <code>more</code>, or <code>vim</code>. &ldquo;Limit&rdquo; is something I am more used to with the
-web client, and it&rsquo;s what I use the most.</p>
-
-<h2>Using limits</h2>
-
-<p>Limit works the way regular search works in Gmail: it limits the view to
-conversations matching the query. Hit <code>l</code>, and enter a search query.</p>
-
-<p>By default, Mutt will only search through the subject lines, but this behaviour
-can be changed by prefixing the command with a special identifier. For
-instance, searching for <code>~b oranges</code> will limit the view to all the messages
-which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
-
-<ul>
-<li><code>~b</code> &ndash; Search in the message body.</li>
-<li><code>~B</code> &ndash; Search in the whole message.</li>
-<li><code>~f</code> &ndash; Message originated from the user.</li>
-<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
-</ul>
-
-
-<p>You can find full list in the <a href="http://www.mutt.org/doc/manual/manual-4.html#ss4.2">Mutt Advanced Usage Manual</a>.</p>
-
-<p>Patterns can be chained to produce narrower results: <code>~f joe ~B apples</code>. This
-will search for a message mentioning &ldquo;apples&rdquo; coming from an author whose name
-contains &ldquo;joe&rdquo;.</p>
-
-<h3>Caching mail for faster search</h3>
-
-<p>You may find that searching whole messages is slow, especially if you have more
-than a couple hundred messages to search through. That&rsquo;s because by default
-Mutt does not store messages for local use. This can be changed by specifying
-<code>header_cache</code> and <code>message_cachedir</code> variables in your <code>.muttrc</code> file:</p>
-
-<pre><code>set header_cache     = "$HOME/Mail"
-set message_cachedir = "$HOME/Mail"
-</code></pre>
-
-<p>Now, after you perform your first search, it will cache every message you open,
-making all the consecutive searches lightning fast.</p>
-
-<p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
-sure the cache directory is not shared with anyone but yourself.</p>
 ]]></content>
   </entry>
   
