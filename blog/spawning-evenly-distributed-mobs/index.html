@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Impact-driven development - Ruslan Osipov</title>
+  <title>Spawning evenly distributed mobs - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/impact-driven-development/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/impact-driven-development/">
-  <meta property="og:title" content="Impact-driven development - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/">
+  <meta property="og:title" content="Spawning evenly distributed mobs - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T17:19:58-08:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 25 Apr 2015,  5:19 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-30T11:06:16-07:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 30 Sep 2016, 11:06 AM</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -131,67 +131,70 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Impact-driven development
+        Spawning evenly distributed mobs
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>It is my fifth year working as a professional software engineer, and I think
-it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
-throughout past four years. This is the first article in a series of three,
-and it focuses on development process.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>After generating a few <a href="http://www.rosipov.com/blog/randomly-generated-dungeons/">good looking random dungeons</a>, I was puzzled with
+randomly placing mobs on resulting maps. To make it fair (and fun) for the
+player mobs should be evenly distributed.</p>
 
-<p>Moving towards becoming a senior engineer, I noticed paying more attention to
-the impact my work produces. These days I would much rather compile a number of
-small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
-complex nice-to-haves. This sounds simple and straight-forward, and some reader
-might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
-of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
+<p><img src="/images/posts/dungeon-mob-placement.png" title="Dungeon with randomly placed mobs." ></p>
 
-<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
-there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
-always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
+<p>The obvious idea was to pick coordinates randomly within the rectangular map
+boundaries, and then place mobs if they have floor underneath them. But this way
+I lose control of the number of mobs and risk having a chance of not placing any
+mobs at all. Plus, dungeons with bigger surface area would get more mobs - which
+sounds somewhat realistic, but not entirely what I was aiming for.</p>
 
-<h2>Get the priorities right</h2>
+<p>I could improve on the above by rerunning enemy placement multiple times and
+select the most favorable outcome - but the solution would be rather naive.</p>
 
-<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
-into completing it. Arrange the tasks by this factor.</p>
+<p>To have control over the number of mobs I decided to place them as I generate
+the rooms of the dungeon. There&rsquo;s a trick one can use to get a random element
+with equal probability distribution from a sequence of an unknown size:</p>
 
-<p>More often then not you can drop items with low impact/effort ratio.</p>
+<pre><code>import random
 
-<h2>Separate what is needed from what is asked</h2>
 
-<p>Know who the stakeholders are for each task, feature, or a project you work
-on.  Understand their underlying motives. Anyone can fall a victim of an
-<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
-stakeholders ask for what they actually need.</p>
+def get_random_element(sequence):
+    """Select a random element from a sequence of an unknown size."""
+    selected = None
+    for k, element in enumerate(sequence):
+        if random.randint(0, k) == 0:
+            selected = element
+    return selected
+</code></pre>
 
-<h2>Know when to say &ldquo;No&rdquo;</h2>
+<p>With each iteration the chance of the current element to become a selected item
+is 1 divided by number of elements seen so far. Indeed, a probability of an
+element being selected out of a 4-item sequence:</p>
 
-<p>In the very beginning of my career I gladly took every single task thrown at me.
-It soon became an issue: work that actually needs to get done is not getting
-done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
+<pre><code>1 * (1 - 1/2) * (1 - 1/3) * (1 - 1/4) = 1/2 * 2/3 * 3/4 = 6/30 = 1/4 
+</code></pre>
 
-<h2>Think about your work</h2>
+<p>Now all I had to do is to modify this to account for multiple mob placement.
+Here&rsquo;s a generalized function above which accounts for selecting <code>n</code> elements
+from the sequence with even distribution.</p>
 
-<p>Beware of routines, repeating the same workflow time after time is damaging when
-it comes to building software. Stop each time before you proceed to the next
-step, and ask yourself if you&rsquo;re performing the task in the best way possible.
-Be mindful about your work.</p>
+<pre><code>import random
 
-<h2>Be a catalyst for change</h2>
 
-<p>Be the first to promote the change. Did you notice a poor practice on a
-project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
-role in a team of course). Don&rsquo;t go on telling people how wrong what they use
-is. Show everyone how the new way is better on practice, and your colleagues
-will adopt successful trend.</p>
+def get_random_element(sequence, n):
+    """Select n random elements from a sequence of an unknown size."""
+    selected = [None for _ in range(n)]
+    for k, element in enumerate(sequence):
+        for i in range(n):
+            if random.randint(0, k) == 0:
+                selected[i] = element
+    return selected
+</code></pre>
 
-<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
-people are involved, every member of a group relies on other people to get
-things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
+<p>I incorporated logic above into the room generation code, accounted for
+duplicates, and ended up with decent distribution results.</p>
 </div>
 
 
@@ -215,13 +218,13 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T17:19:58-08:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 25 Apr 2015,  5:19 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-30T11:06:16-07:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 30 Sep 2016, 11:06 AM</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/notes-and-rants/'>notes and rants</a>
+    <a class='category' href='/blog/categories/gamedev/'>gamedev</a>
   
 </span>
 
@@ -230,7 +233,7 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/impact-driven-development/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/impact-driven-development/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/" >Tweet</a>
   
   
   
@@ -240,10 +243,8 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/managing-cd-bookmarks-with-apparix/" title="Previous Post: Managing cd bookmarks with apparix">&laquo; Managing cd bookmarks with apparix</a></li>
+            <li class="previous"><a href="/blog/randomly-generated-dungeons/" title="Previous Post: Randomly generated dungeons">&laquo; Randomly generated dungeons</a></li>
             
-            
-            <li class="next"><a href="/blog/my-experience-switching-to-buffers/" title="Next Post: My experience switching to buffers">My experience switching to buffers &raquo;</a></li>
             
           </ul>
         
@@ -268,7 +269,7 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
+    <a class="list-group-item active" href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
     
     <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
     
@@ -317,8 +318,8 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/impact-driven-development/';
-        var disqus_url = 'http://www.rosipov.com/blog/impact-driven-development/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/';
+        var disqus_url = 'http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/';
         var disqus_script = 'embed.js';
       
     (function () {

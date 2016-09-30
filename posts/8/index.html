@@ -126,6 +126,78 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-07T19:11:54+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat  7 Jun 2014,  7:11 PM</time>
+        
+           | <a href="/blog/why-i-threw-away-my-to-do-list/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/why-i-threw-away-my-to-do-list/" itemprop="url">Why I threw away my &#8220;To Do&#8221; list</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
+written notes, and just about anything that will let me arrange my tasks
+instead of actually accomplishing them. I recently stopped writing things down,
+and the results were pleasantly surprising&hellip;</p>
+
+<p>I was keeping a list of things I would need to complete. I organized it by
+priorities, and at some point I even used Gina&rsquo;s fancy
+&ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
+
+<p>What I realized after using such a scheme, is that my list was growing longer
+and longer with every week. After a while, the number of tasks became hard to
+manage, and the number of tasks became permanent residents on my task list. Why
+did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
+Complete a task, check off a check box. There was no mindfulness about it: I
+was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
+to a next one.&rdquo; - this is what was constantly running through my head.
+Secondly, by writing down a task on my list in the first place, my brain would
+register it as being completed, and then I&rsquo;d go on with my day. Needless to
+say, certain tasks would sit on my list for an indefinite amount of time.</p>
+
+<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a
+simple question: &ldquo;What should I do today to succeed at what I am trying to
+accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing
+tasks which provide the biggest impact, dedicating some days just to minor
+&ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
+
+<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful
+about my day, I know exactly what I need to accomplish in order to succeed.
+It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t
+just a list of things to do, but a number of goals you want to reach. By not
+relying on a written manifesto cluttered with tasks, I am forced to concentrate
+on the bigger picture, where what I set out to accomplish has the highest
+possible impact on my life and career.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-02T03:44:12+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  2 Jun 2014,  3:44 AM</time>
         
            | <a href="/blog/export-wordpress-posts-to-plain-text/#disqus_thread" itemprop="discussionUrl"
@@ -523,129 +595,6 @@ to <code>contextlib.supress</code> (<a href="https://bugs.python.org/issue19266"
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T21:33:55+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 28 May 2014,  9:33 PM</time>
-        
-           | <a href="/blog/elegant-mutt-setup-for-use-with-gmail/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/elegant-mutt-setup-for-use-with-gmail/" itemprop="url">Elegant Mutt setup for use with Gmail</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
-nor does it extend the amount of time I spend reading email. For me, the best
-part about Mutt is that it lets me use text editor of my choice - Vim.
-Everything else - keyboard shortcuts, minimalist design, and simplicity -
-already exists in Gmail.</p>
-
-<p>I found configuration below to work really well for my needs: all of the
-important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
-
-<pre><code>bind editor &lt;space&gt; noop
-set alias_file        = '~/.mutt/aliases.txt'
-set copy              = no
-set display_filter    = '$HOME/.mutt/aliases.sh'
-set edit_headers
-set editor            = "vim +/^$ ++1"
-set folder            = "imaps://imap.gmail.com/"
-set hostname          = "gmail.com"
-set imap_check_subscribed
-set imap_pass         = "$PASSWORD"
-set imap_user         = "$USERNAME"
-set mail_check        = 5
-set move              = no
-set postponed         = "+[Gmail]/Drafts"
-set spoolfile         = "+INBOX"
-set text_flowed       = yes
-unset imap_passive
-unset record
-
-# Gmail-style keyboard shortcuts
-macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
-macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
-macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
-macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
-macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
-macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
-macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
-
-source $alias_file
-</code></pre>
-
-<p>It is quite self-explanatory, and includes such nice features as:</p>
-
-<ul>
-<li>Automatically adding addresses from read emails to address book (see
-below).</li>
-<li>Using vim as a text editor, with an ability to edit message
-headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
-Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
-respectfully (I am a huge fun of a zero-mail inbox).</li>
-</ul>
-
-
-<p>You might also want to have your password encrypted by GPG as opposed to
-leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
-here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
-
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
-<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
-email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
-the <code>aliases.sh</code> are below:</p>
-
-<pre><code>#!/bin/sh
-
-MESSAGE=$(cat)
-
-AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
-AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
-AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
-
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
-
-if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
-    :
-else
-    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
-fi
-
-echo "${MESSAGE}"
-</code></pre>
-
-<p>This script will create <code>aliases.txt</code> file containing email addresses for
-search and auto completion of email-addresses.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -669,6 +618,8 @@ search and auto completion of email-addresses.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
+    
     <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
     
     <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
@@ -686,8 +637,6 @@ search and auto completion of email-addresses.</p>
     <a class="list-group-item " href="/blog/profiling-slow-bashrc/">Profiling slow bashrc</a>
     
     <a class="list-group-item " href="/blog/didyoumean-plugin-for-vim/">DidYouMean plugin for Vim</a>
-    
-    <a class="list-group-item " href="/blog/lessons-learned-engineering-productivity/">Lessons learned: engineering productivity</a>
     
   </div>
 </section>
