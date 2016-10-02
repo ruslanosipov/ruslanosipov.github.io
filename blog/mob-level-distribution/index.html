@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>IRSSI - ignore all from everyone - Ruslan Osipov</title>
+  <title>Mob level distribution - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/mob-level-distribution/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">
-  <meta property="og:title" content="IRSSI - ignore all from everyone - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/mob-level-distribution/">
+  <meta property="og:title" content="Mob level distribution - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T15:37:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  3:37 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-01T17:15:12-07:00"  data-updated="true" itemprop="datePublished dateCreated">Sat  1 Oct 2016,  5:15 PM</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -131,25 +131,120 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        IRSSI - ignore all from everyone
+        Mob level distribution
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>If you visit noisy IRC channels like the programming ones on freenode, you
-probably want to ignore all the annoying status messages.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
+difficulty factor) was somewhat straightforward, but I would still like to
+document the progress. I needed to place a mob that&rsquo;s somewhat within the
+difficulty level I want, plus minus a few difficulty levels to spice it up.</p>
 
-<p>To permanently ignore joins, parts, quits, and nickname changes from every
-channel in IRSSI:</p>
+<p><img src="/images/posts/roguelike-leveled-mob-distribution.png" title="Random mob distribution in roguelike dungeon." ></p>
 
-<pre><code>/ignore * joins parts quits nicks
-/save
+<p>Above you can see three rats, three cats, a dog (<code>r</code>, <code>c</code>, <code>d</code>, all level 1), a
+farmer (<code>f</code>, level 2), and a lonely bandit (<code>b</code>, level 3) in a level 1 dungeon.</p>
+
+<p>Without going straight into measure theory, I generated intervals for each mob
+based on the diff of desired level and their level, and then randomly selected a
+point within the boundaries. Here&rsquo;s the abstract code:</p>
+
+<pre><code>import bisect
+import random
+
+
+def get_random_element(data, target, chance):
+    """Get random element from data set skewing towards target.
+
+    Args:
+        data   -- A dictionary with keys as elements and values as weights.
+                  Duplicates are allowed.
+        target -- Target weight, results will be skewed towards target
+                  weight.
+        chance -- A float 0..1, a factor by which chance of picking adjacent
+                  elements decreases (i.e, with chance 0 we will always
+                  select target element, with chance 0.5 probability of
+                  selecting elements adjacent to target are halved with each
+                  step).
+
+    Returns:
+        A random key from data with distribution respective of the target
+        weight.
+    """
+    intervals = []  # We insert in order, no overlaps.
+    next_i = 0
+    for element, v in data.iteritems():
+        d = max(target, v) - min(target, v)
+        size = 100
+        while d &gt; 0:  # Decrease chunk size for each step of `d`.
+            size *= chance
+            d -= 1
+        if size == 0:
+            continue
+        size = int(size)
+        intervals.append((next_i, next_i + size, element))
+        next_i += size + 1
+    fst, _, _ = zip(*intervals)
+    rnd = random.randint(0, next_i - 1)
+    idx = bisect.bisect(fst, rnd)  # This part is O(log n).
+    return intervals[idx - 1][2]
 </code></pre>
 
-<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
-post will keep it in my memory.</p>
+<p>Now, if I test the above for, say, a 1000000 iterations, with a chance of 0.5
+(halving probability of selecting adjacent elements with each step), and 2 as a
+target, here&rsquo;s the distribution I end up with:</p>
+
+<pre><code>target, chance, iterations = 2, 0.5, 1000000
+
+data = collections.OrderedDict([  # Ordered to make histogram prettier.
+    ('A', 0), ('B-0', 1), ('B-1', 1), ('C', 2), ('D', 3), ('E', 4),
+    ('F', 5), ('G', 6), ('H', 7), ('I', 8), ('J', 9),
+])
+
+res = collections.OrderedDict([(k, 0) for k, _ in data.iteritems()])
+
+# This is just a test, so there's no need to optimize this for now.
+for _ in xrange(iterations):
+    res[get_random_element(data, target, chance)] += 1
+
+pyplot.bar(
+    range(len(res)), res.values(), width=0.7, align='center', color='green')
+pyplot.xticks(range(len(res)), res.keys())
+pyplot.title(
+    'iterations={}, target={}, chance={}'.format(
+        iterations, target, chance))
+pyplot.show()
+</code></pre>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-05.png" title="Distribution histogram: 1000000 iterations, 0.5 chance, and 2 as a target." ></p>
+
+<p>You can see elements B-0 and B-1 having roughly the same distribution, since
+they have the same weight.</p>
+
+<p>Now, if I decrease the <code>chance</code>, likelihood of target being selected increases,
+while likelihood of surrounding elements being selected decreases:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-033.png" title="Distribution histogram: 1000000 iterations, 0.33 chance, and 2 as a target." ></p>
+
+<p>I works the opposite way as well, increasing the <code>chance</code> decreases likelihood
+of the target being selected and increases the probability for surrounding
+elements.</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-09.png" title="Distribution histogram: 1000000 iterations, 0.9 chance, and 2 as a target." ></p>
+
+<p>For the sake of completeness, it works with 0 chance of surrounding elements being picked:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-0.png" title="Distribution histogram: 1000000 iterations, 0 chance, and 2 as a target." ></p>
+
+<p>And an equal chance of picking surrounding elements:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-1.png" title="Distribution histogram: 1000000 iterations, 1 chance, and 2 as a target." ></p>
+
+<p>After playing around with the configuration in Jupyter Notebook, I cleaned up
+the algorithm above and included it into mob placement routine.</p>
 </div>
 
 
@@ -173,13 +268,13 @@ post will keep it in my memory.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T15:37:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  3:37 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-01T17:15:12-07:00"  data-updated="true" itemprop="datePublished dateCreated">Sat  1 Oct 2016,  5:15 PM</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/notes-and-rants/'>notes and rants</a>
+    <a class='category' href='/blog/categories/gamedev/'>gamedev</a>
   
 </span>
 
@@ -188,7 +283,7 @@ post will keep it in my memory.</p>
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/mob-level-distribution/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/mob-level-distribution/" >Tweet</a>
   
   
   
@@ -198,10 +293,8 @@ post will keep it in my memory.</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/vim-movement-cheatsheet/" title="Previous Post: Vim movement cheatsheet">&laquo; Vim movement cheatsheet</a></li>
+            <li class="previous"><a href="/blog/spawning-evenly-distributed-mobs/" title="Previous Post: Spawning evenly distributed mobs">&laquo; Spawning evenly distributed mobs</a></li>
             
-            
-            <li class="next"><a href="/blog/vim-pathogen-and-git-submodules/" title="Next Post: Vim, pathogen and git submodules">Vim, pathogen and git submodules &raquo;</a></li>
             
           </ul>
         
@@ -226,7 +319,7 @@ post will keep it in my memory.</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
+    <a class="list-group-item active" href="/blog/mob-level-distribution/">Mob level distribution</a>
     
     <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
     
@@ -275,8 +368,8 @@ post will keep it in my memory.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/';
-        var disqus_url = 'http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/mob-level-distribution/';
+        var disqus_url = 'http://www.rosipov.com/blog/mob-level-distribution/';
         var disqus_script = 'embed.js';
       
     (function () {
