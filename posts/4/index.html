@@ -126,6 +126,100 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-01T06:28:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Jun 2015,  6:28 AM</time>
+        
+           | <a href="/blog/my-experience-switching-to-buffers/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-experience-switching-to-buffers/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/my-experience-switching-to-buffers/" itemprop="url">My experience switching to buffers</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>About a year ago I stumbled upon an article explaining the difference between
+Vim tabs and buffers. The author emphasized that tabs are merely window
+layouts, and therefore one-file-per-tab idea I was used to at the moment just
+wasn&rsquo;t proper. Instead, author suggested the use of buffer commands to switch
+between multiple files. I decided to give it a shot, and here are some ideas I
+would like to share after switching to the use of buffers.</p>
+
+<p>Buffers are open files (they also may not be associated with any files), but
+they&rsquo;re not necessarily visible at any given moment. In Vim, windows are not
+linked to any particular buffer, so you can easily cycle through buffers from
+within any window.</p>
+
+<p>First and foremost, you probably want to add <code>set hidden</code> to your <code>.vimrc</code>.
+This option lets you switch between buffers without having to save files.</p>
+
+<p>At it&rsquo;s basics, you only need few commands for operating buffers:</p>
+
+<ul>
+<li>Use <code>:ls</code> to list all buffers for this session.</li>
+<li>To move between next and previous buffers use <code>:bn</code> and <code>:bp</code> respectively.</li>
+<li>Use <code>:b partial_buffer_name</code> for navigating to the buffer of your choice.
+Buffer name auto-complete is supported.</li>
+<li>You can also use <code>:bN</code>, where <code>N</code> is a buffer number to jump to a specific
+buffer.</li>
+<li>Get in a habit of closing buffers you will not use with <code>:bd</code>.</li>
+</ul>
+
+
+<p><img src="/images/posts/vim-list-buffers.png" title="A list of open buffers in Vim." ></p>
+
+<p>The hardest thing about stopping to use tabs and switching to buffers instead
+is not having the visual aid: I was used to having a list of files always
+available at a glance, at the top of my screen. To check what files I&rsquo;m working
+on now - I have to hit four keys: <code>:ls</code> (fourth being &ldquo;Enter&rdquo;).</p>
+
+<p>Not surprisingly, this taught me to be more mindful about my editing
+experience. I usually have a clear structure of the files I&rsquo;m working on in my
+head. And if the list is getting to long to easily remember, then I&rsquo;m probably
+doing something wrong: time to take a break and reset my Vim session.</p>
+
+<p>The experience overall reminded me of my recent switch to blank keyboard key
+caps: with no inscriptions to aid you, I first felt a bit at loss, especially
+with they keys I couldn&rsquo;t find without looking: like function keys or special
+symbols. But after some time with the blank key caps, I improved my typing
+skill, and know where even the most obscure characters hide. The switch helped
+me to improve my typing experience overall.</p>
+
+<p>With Vim, it&rsquo;s a similar story. After getting past the initial confusion, I
+achieved high level of awareness about my editing sessions. It didn&rsquo;t make the
+editing process any faster, but instead much more satisfying.</p>
+
+<p>But you already new that, since Vim isn&rsquo;t really about speed.</p>
+
+<p>UPDATE: Made a few corrections and added a <code>:b partial_buffer_name</code> command
+thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&rsquo;s <a href="http://www.reddit.com/r/vim/comments/382v6q/my_experience_switching_to_buffers/crrunni">Reddit comment</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T17:19:58-08:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 25 Apr 2015,  5:19 PM</time>
         
            | <a href="/blog/impact-driven-development/#disqus_thread" itemprop="discussionUrl"
@@ -639,93 +733,6 @@ interface you prefer, it&rsquo;s crucially important to use the right tool for t
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-05T10:40:33-08:00"  data-updated="true" itemprop="datePublished dateCreated">Thu  5 Feb 2015, 10:40 AM</time>
-        
-           | <a href="/blog/custom-templates-in-vimwiki/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/custom-templates-in-vimwiki/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/custom-templates-in-vimwiki/" itemprop="url">Custom templates in vimwiki</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I got myself into a habit of using vimwiki for the past year: it helps me to
-keep track of random bits of information, work and project notes, as well as
-daily goals and achievements. You can read more about vimwiki in an article I
-wrote a while back: &ldquo;<a href="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">Personal wiki with vimwiki</a>&rdquo;.</p>
-
-<p><img src="/images/posts/vimwiki-workflow-habits.png" title="HTML page generated by vimwiki with a custom navigation bar." ></p>
-
-<p>One of vimwiki&rsquo;s features I really like is an ability to convert whole wiki to
-HTML with a single command: <code>:VimwikiAll2HTML</code>. There is one annoyance though:
-HTML vimwiki pages don&rsquo;t have any navigation elements: the only way to navigate
-between pages is by clicking through links within a page or using browser&rsquo;s
-&ldquo;back&rdquo; button.</p>
-
-<p>Luckily, vimwiki has a setting which allows using custom templates for
-generating HTML. Assuming your wiki is in <code>$HOME/Dropbox/wiki</code> (can be anywhere
-else though), make following changes to your <code>.vimrc</code>:</p>
-
-<pre><code>let g:vimwiki_list = [{
-  \ 'path': '$HOME/Dropbox/wiki',
-  \ 'template_path': '$HOME/Dropbox/wiki/templates',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.html'}]
-</code></pre>
-
-<p>After that, create a <code>$HOME/Dropbox/wiki/templates/default.html</code> using
-<code>vimwiki/autoload/vimwiki/default.tpl</code> as a base. I added simple navigation bar
-to my default template:</p>
-
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-    &lt;link rel="Stylesheet" type="text/css" href="%root_path%style.css" /&gt;
-    &lt;title&gt;%title%&lt;/title&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;a href="%root_path%index.html"&gt;Index&lt;/a&gt; |
-    &lt;a href="%root_path%diary/diary.html"&gt;Diary&lt;/a&gt;
-    &lt;hr&gt;
-    &lt;div class="content"&gt;
-    %content%
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<p>Now it&rsquo;s much easier to jump between wiki entries. Of course, customization
-doesn&rsquo;t end there: you can change styles, add JavaScript and make your wiki all
-fancy and advanced.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -749,6 +756,8 @@ fancy and advanced.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
+    
     <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
     
     <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
@@ -766,8 +775,6 @@ fancy and advanced.</p>
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
     
     <a class="list-group-item " href="/blog/urban-prius-living/">Urban Prius living</a>
-    
-    <a class="list-group-item " href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
     
   </div>
 </section>

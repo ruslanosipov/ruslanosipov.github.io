@@ -126,6 +126,56 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-14T01:31:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 14 Jun 2013,  1:31 AM</time>
+        
+           | <a href="/blog/git-pretty-log-output/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/git-pretty-log-output/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/git-pretty-log-output/" itemprop="url">Git pretty log output</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>This alias has been around the web for quite some time, but it does look
+fantastic indeed.</p>
+
+<p><img src="/images/posts/git-pretty-log.png" title="An output of `git pretty-log` alias." ></p>
+
+<p>To add the alias <code>git pretty-log</code>, execute the following command (join string
+prior to executing):</p>
+
+<pre><code>git config alias.pretty-log 'log --graph --pretty=format:"%Cred%h%Creset
+-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset"'
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-05-17T18:52:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 17 May 2013,  6:52 PM</time>
         
            | <a href="/blog/download-gists-from-prompt/#disqus_thread" itemprop="discussionUrl"
@@ -433,68 +483,6 @@ representation will give me new insight on what I am currently writing.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T07:34:28+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013,  7:34 AM</time>
-        
-           | <a href="/blog/editing-bash-command-in-vim/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/editing-bash-command-in-vim/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/editing-bash-command-in-vim/" itemprop="url">Editing bash command in vim</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>You can open the current command you are typing for editing in your default
-text editor by pressing <code>Ctrl + x + e</code>. It will be executed after you write and
-quit the file. This is perfect for editing long/multi-line commands where typos
-are likely to occur. Consider something like this:</p>
-
-<pre><code>for run in {1..10}
-do
-    echo "Print me ten times"
-done
-</code></pre>
-
-<p>Editing this in vim is much more satisfying, isn&rsquo;t it?</p>
-
-<p>You can also open the last executed command for editing if you execute the <code>fc</code>
-command. You can also edit the last command starting with a certain pattern
-using <code>fc [pattern]</code> (you can skip the editor and execute the output of <code>fc</code> by
-adding the <code>-s</code> option, and a useful tip is to have <code>alias r="fc -s"</code>, which
-would allow you to execute the last command starting with &ldquo;cc&rdquo; by running <code>r
-cc</code>).</p>
-
-<p>P.S: In order for this trick to open <code>vim</code> and not any other editor, make sure
-you have the line <code>EDITOR=vim</code> in your <code>~/.bashrc</code>. Obviously this works with
-any text editor.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -518,6 +506,8 @@ any text editor.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
+    
     <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
     
     <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
@@ -535,8 +525,6 @@ any text editor.</p>
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
     
     <a class="list-group-item " href="/blog/urban-prius-living/">Urban Prius living</a>
-    
-    <a class="list-group-item " href="/blog/my-experience-with-minimalism/">My experience with minimalism</a>
     
   </div>
 </section>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.rosipov.com/blog/hackmud-first-impressions/</loc>
+    <lastmod>2016-10-09T14:24:26-07:00</lastmod>
+  </url>
+  <url>
     <loc>http://www.rosipov.com/blog/a-year-with-pebble-time-round/</loc>
     <lastmod>2016-10-05T11:12:59-07:00</lastmod>
   </url>
@@ -344,48 +348,6 @@
     <loc>http://www.rosipov.com/blog/categories/gadgets/</loc>
   </url>
   <url>
-    <loc>http://www.rosipov.com/posts/2/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/3/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/4/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/5/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/6/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/7/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/8/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/9/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/10/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/11/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/12/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/13/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/14/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/15/</loc>
-  </url>
-  <url>
-    <loc>http://www.rosipov.com/posts/16/</loc>
+    <loc>http://www.rosipov.com/blog/categories/games/</loc>
   </url>
 </urlset>
