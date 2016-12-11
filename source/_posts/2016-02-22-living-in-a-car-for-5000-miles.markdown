@@ -51,7 +51,7 @@ important. Space inside a car is separated into 5 major areas:
 {% img /images/posts/view-of-prius-interior-from-the-rear.jpg View of the car interior with the rear door open: suitcase on the left, and a bed on the right. %}
 
 After about a week, moving between the areas within a car becomes surprisingly
-easy and natural. I usually put on a hand break, lock the car, leave my shoes
+easy and natural. I usually put on a hand brake, lock the car, leave my shoes
 in a driver's seat and move to the back sit or the bed.
 
 ### Food, water, and cooking
