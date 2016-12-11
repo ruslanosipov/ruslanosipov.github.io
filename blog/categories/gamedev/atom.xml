@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gamedev | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/gamedev/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-10-09T16:28:27-07:00</updated>
+  <updated>2016-12-11T23:02:34+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mob level distribution]]></title>
     <link href="http://www.rosipov.com/blog/mob-level-distribution/"/>
-    <updated>2016-10-01T17:15:12-07:00</updated>
+    <updated>2016-10-02T00:15:12+00:00</updated>
     <id>http://www.rosipov.com/blog/mob-level-distribution</id>
     <content type="html"><![CDATA[<p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
 difficulty factor) was somewhat straightforward, but I would still like to
@@ -131,7 +131,7 @@ the algorithm above and included it into mob placement routine.</p>
   <entry>
     <title type="html"><![CDATA[Spawning evenly distributed mobs]]></title>
     <link href="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/"/>
-    <updated>2016-09-30T11:06:16-07:00</updated>
+    <updated>2016-09-30T18:06:16+00:00</updated>
     <id>http://www.rosipov.com/blog/spawning-evenly-distributed-mobs</id>
     <content type="html"><![CDATA[<p>After generating a few <a href="http://www.rosipov.com/blog/randomly-generated-dungeons/">good looking random dungeons</a>, I was puzzled with
 randomly placing mobs on resulting maps. To make it fair (and fun) for the
@@ -196,7 +196,7 @@ duplicates, and ended up with decent distribution results.</p>
   <entry>
     <title type="html"><![CDATA[Randomly generated dungeons]]></title>
     <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
-    <updated>2016-09-29T16:26:32-07:00</updated>
+    <updated>2016-09-29T23:26:32+00:00</updated>
     <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
     <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
 with the results:</p>

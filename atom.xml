@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-10-09T16:28:27-07:00</updated>
+  <updated>2016-12-11T23:02:34+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Hackmud first impressions]]></title>
     <link href="http://www.rosipov.com/blog/hackmud-first-impressions/"/>
-    <updated>2016-10-09T14:24:26-07:00</updated>
+    <updated>2016-10-09T21:24:26+00:00</updated>
     <id>http://www.rosipov.com/blog/hackmud-first-impressions</id>
     <content type="html"><![CDATA[<p>My Saturday just disappeared, quickly, and barely with any trace. You could find
 leftover scripts all over my hard drive here and there, all pointing to Hackmud.
@@ -315,7 +315,7 @@ you in, making you lose track of time.</p>
   <entry>
     <title type="html"><![CDATA[A year with Pebble Time Round]]></title>
     <link href="http://www.rosipov.com/blog/a-year-with-pebble-time-round/"/>
-    <updated>2016-10-05T11:12:59-07:00</updated>
+    <updated>2016-10-05T18:12:59+00:00</updated>
     <id>http://www.rosipov.com/blog/a-year-with-pebble-time-round</id>
     <content type="html"><![CDATA[<p><em>Disclaimer: This post was <strong>not</strong> endorsed by Pebble, nor I am affiliated with
 Pebble.</em></p>
@@ -393,7 +393,7 @@ of information.</p>
   <entry>
     <title type="html"><![CDATA[Mob level distribution]]></title>
     <link href="http://www.rosipov.com/blog/mob-level-distribution/"/>
-    <updated>2016-10-01T17:15:12-07:00</updated>
+    <updated>2016-10-02T00:15:12+00:00</updated>
     <id>http://www.rosipov.com/blog/mob-level-distribution</id>
     <content type="html"><![CDATA[<p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
 difficulty factor) was somewhat straightforward, but I would still like to
@@ -508,7 +508,7 @@ the algorithm above and included it into mob placement routine.</p>
   <entry>
     <title type="html"><![CDATA[Spawning evenly distributed mobs]]></title>
     <link href="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/"/>
-    <updated>2016-09-30T11:06:16-07:00</updated>
+    <updated>2016-09-30T18:06:16+00:00</updated>
     <id>http://www.rosipov.com/blog/spawning-evenly-distributed-mobs</id>
     <content type="html"><![CDATA[<p>After generating a few <a href="http://www.rosipov.com/blog/randomly-generated-dungeons/">good looking random dungeons</a>, I was puzzled with
 randomly placing mobs on resulting maps. To make it fair (and fun) for the
@@ -573,7 +573,7 @@ duplicates, and ended up with decent distribution results.</p>
   <entry>
     <title type="html"><![CDATA[Randomly generated dungeons]]></title>
     <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
-    <updated>2016-09-29T16:26:32-07:00</updated>
+    <updated>2016-09-29T23:26:32+00:00</updated>
     <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
     <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
 with the results:</p>
@@ -830,7 +830,7 @@ should have I done differently?</p>
   <entry>
     <title type="html"><![CDATA[Browsing MSSQL and Vertica from CLI]]></title>
     <link href="http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli/"/>
-    <updated>2016-09-28T11:51:31-07:00</updated>
+    <updated>2016-09-28T18:51:31+00:00</updated>
     <id>http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli</id>
     <content type="html"><![CDATA[<p>Notes to make sure I don&rsquo;t forget how to do this in the future. First, install
 <code>mssql</code> and <code>vcli</code> tools:</p>
@@ -902,7 +902,7 @@ aliases for different environments/machines I use: <code>sql-prod</code>, <code>
   <entry>
     <title type="html"><![CDATA[Thoughts on travel]]></title>
     <link href="http://www.rosipov.com/blog/thoughts-on-travel/"/>
-    <updated>2016-06-04T18:11:00-07:00</updated>
+    <updated>2016-06-05T01:11:00+00:00</updated>
     <id>http://www.rosipov.com/blog/thoughts-on-travel</id>
     <content type="html"><![CDATA[<p>I like traveling. I&rsquo;ve been living on the road on and off for the past half a year, traveling across the US. This whole time I live in my car, and quite frankly, I enjoy it.</p>
 
@@ -927,7 +927,7 @@ aliases for different environments/machines I use: <code>sql-prod</code>, <code>
   <entry>
     <title type="html"><![CDATA[Living in a car for 5000 miles]]></title>
     <link href="http://www.rosipov.com/blog/living-in-a-car-for-5000-miles/"/>
-    <updated>2016-02-22T11:27:52-05:00</updated>
+    <updated>2016-02-22T16:27:52+00:00</updated>
     <id>http://www.rosipov.com/blog/living-in-a-car-for-5000-miles</id>
     <content type="html"><![CDATA[<p>I have set on my journey across the United States and back a few months ago.
 It&rsquo;s a fun thing to do, and really gave me a breath of fresh air. I watched
@@ -979,7 +979,7 @@ compartment Prius has underneath the cargo surface.</li>
 <p><img src="http://www.rosipov.com/images/posts/view-of-prius-interior-from-the-rear.jpg" title="View of the car interior with the rear door open: suitcase on the left, and a bed on the right." ></p>
 
 <p>After about a week, moving between the areas within a car becomes surprisingly
-easy and natural. I usually put on a hand break, lock the car, leave my shoes
+easy and natural. I usually put on a hand brake, lock the car, leave my shoes
 in a driver&rsquo;s seat and move to the back sit or the bed.</p>
 
 <h3>Food, water, and cooking</h3>
@@ -1126,7 +1126,7 @@ an eye opening experience.</p>
   <entry>
     <title type="html"><![CDATA[Prius camper conversion]]></title>
     <link href="http://www.rosipov.com/blog/prius-camper-conversion/"/>
-    <updated>2015-09-19T12:50:01-07:00</updated>
+    <updated>2015-09-19T19:50:01+00:00</updated>
     <id>http://www.rosipov.com/blog/prius-camper-conversion</id>
     <content type="html"><![CDATA[<p>As requested, I took some detailed pictures of the
 <a href="http://amzn.to/1NvY78S">Prius Camper Conversion Kit</a> I mentioned in my <a href="http://www.rosipov.com/blog/urban-prius-living">previous article</a>. It
@@ -1212,7 +1212,7 @@ your body weight, and tighten the belt.</p>
   <entry>
     <title type="html"><![CDATA[Urban Prius living]]></title>
     <link href="http://www.rosipov.com/blog/urban-prius-living/"/>
-    <updated>2015-09-18T12:55:00-07:00</updated>
+    <updated>2015-09-18T19:55:00+00:00</updated>
     <id>http://www.rosipov.com/blog/urban-prius-living</id>
     <content type="html"><![CDATA[<p>Not so long ago I stumbled upon a blog titled <a href="https://chrissawey.wordpress.com/">&ldquo;Hotel Prius&rdquo;</a>, and I loved
 the idea. Being a Prius owner myself, I decided to give Prius living a test run.
@@ -1540,7 +1540,7 @@ to, so I don&rsquo;t rush anywhere. I savor every moment I have.</p>
   <entry>
     <title type="html"><![CDATA[My experience with minimalism]]></title>
     <link href="http://www.rosipov.com/blog/my-experience-with-minimalism/"/>
-    <updated>2015-07-18T12:54:36-07:00</updated>
+    <updated>2015-07-18T19:54:36+00:00</updated>
     <id>http://www.rosipov.com/blog/my-experience-with-minimalism</id>
     <content type="html"><![CDATA[<p>Minimalism was always appealing to me. The philosophy of not having more than
 one would need is close to my heart. Over the past few years, I&rsquo;ve been
@@ -1602,7 +1602,7 @@ paper trail I keep. Travel the world for with a single suitcase.</p>
   <entry>
     <title type="html"><![CDATA[Profiling slow bashrc]]></title>
     <link href="http://www.rosipov.com/blog/profiling-slow-bashrc/"/>
-    <updated>2015-07-15T10:07:53-07:00</updated>
+    <updated>2015-07-15T17:07:53+00:00</updated>
     <id>http://www.rosipov.com/blog/profiling-slow-bashrc</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
 <a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
@@ -1690,7 +1690,7 @@ after you&rsquo;re done profiling.</p>
   <entry>
     <title type="html"><![CDATA[DidYouMean plugin for Vim]]></title>
     <link href="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/"/>
-    <updated>2015-06-10T13:02:00-07:00</updated>
+    <updated>2015-06-10T20:02:00+00:00</updated>
     <id>http://www.rosipov.com/blog/didyoumean-plugin-for-vim</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
 trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
@@ -1711,7 +1711,7 @@ feature to be included in vanilla Vim.</p>
   <entry>
     <title type="html"><![CDATA[Lessons learned: engineering productivity]]></title>
     <link href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/"/>
-    <updated>2015-06-08T14:03:58-08:00</updated>
+    <updated>2015-06-08T22:03:58+00:00</updated>
     <id>http://www.rosipov.com/blog/lessons-learned-engineering-productivity</id>
     <content type="html"><![CDATA[<p>I enjoy optimizing the way I work: the less time I can spend on something
 without sacrificing quality - the better. Below are few ideas on the subject of
@@ -1860,7 +1860,7 @@ timeless books - not affected by changing technologies and processes.</p>
   <entry>
     <title type="html"><![CDATA[Gundo tree for Vim]]></title>
     <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
-    <updated>2015-06-07T13:10:15-07:00</updated>
+    <updated>2015-06-07T20:10:15+00:00</updated>
     <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
     <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
 You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
@@ -1891,7 +1891,7 @@ to travel through changes. Enter key applies the changes.</p>
   <entry>
     <title type="html"><![CDATA[My experience switching to buffers]]></title>
     <link href="http://www.rosipov.com/blog/my-experience-switching-to-buffers/"/>
-    <updated>2015-06-01T06:28:42-07:00</updated>
+    <updated>2015-06-01T13:28:42+00:00</updated>
     <id>http://www.rosipov.com/blog/my-experience-switching-to-buffers</id>
     <content type="html"><![CDATA[<p>About a year ago I stumbled upon an article explaining the difference between
 Vim tabs and buffers. The author emphasized that tabs are merely window
@@ -1954,7 +1954,7 @@ thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&
   <entry>
     <title type="html"><![CDATA[Impact-driven development]]></title>
     <link href="http://www.rosipov.com/blog/impact-driven-development/"/>
-    <updated>2015-04-25T17:19:58-08:00</updated>
+    <updated>2015-04-26T01:19:58+00:00</updated>
     <id>http://www.rosipov.com/blog/impact-driven-development</id>
     <content type="html"><![CDATA[<p>It is my fifth year working as a professional software engineer, and I think
 it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
@@ -2016,7 +2016,7 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
     <link href="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/"/>
-    <updated>2015-02-20T16:25:45-08:00</updated>
+    <updated>2015-02-21T00:25:45+00:00</updated>
     <id>http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix</id>
     <content type="html"><![CDATA[<p>A couple of months ago I discovered apparix: a set of commands which augment
 <code>cd</code> with bookmarks. It really is an amazing feeling when you zap between
@@ -2073,7 +2073,7 @@ file, and you&rsquo;re all set!</p>
   <entry>
     <title type="html"><![CDATA[Ranger - the CLI file manager]]></title>
     <link href="http://www.rosipov.com/blog/ranger-the-cli-file-manager/"/>
-    <updated>2015-02-08T19:33:16-08:00</updated>
+    <updated>2015-02-09T03:33:16+00:00</updated>
     <id>http://www.rosipov.com/blog/ranger-the-cli-file-manager</id>
     <content type="html"><![CDATA[<p>Ranger is a lightweight but powerful file manager with Vi-like key bindings.
 It shines at exploring file trees, looking for specific files, and performing
@@ -2148,7 +2148,7 @@ job well.</p>
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
     <link href="http://www.rosipov.com/blog/power-of-the-command-line/"/>
-    <updated>2015-02-06T13:13:49-08:00</updated>
+    <updated>2015-02-06T21:13:49+00:00</updated>
     <id>http://www.rosipov.com/blog/power-of-the-command-line</id>
     <content type="html"><![CDATA[<p><em>Disclaimer: I am not advocating any specific tools or methodologies, but
 sharing a workflow I find to be efficient and pleasant.</em></p>

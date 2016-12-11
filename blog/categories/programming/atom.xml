@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2016-10-09T16:28:27-07:00</updated>
+  <updated>2016-12-11T23:02:34+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
     <link href="http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/"/>
-    <updated>2014-12-16T21:09:58-08:00</updated>
+    <updated>2014-12-17T05:09:58+00:00</updated>
     <id>http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog</id>
     <content type="html"><![CDATA[<p>I had to download my Octopress blog to a new machine today and the process of
 setting up didn&rsquo;t go as smoothly as I expected. At the end of the day the setup
@@ -38,7 +38,7 @@ branch of your Octopress repository. Otherwise <code>rake deploy</code> command 
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
     <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
-    <updated>2014-07-29T23:00:04-07:00</updated>
+    <updated>2014-07-30T06:00:04+00:00</updated>
     <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
