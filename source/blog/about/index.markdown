@@ -4,7 +4,7 @@ title: About
 navbar: About
 ---
 
-My name is Ruslan Osipov and I live and work in Mountain View, CA. I work as a Technical Lead at [Google Inc.](https://google.com).
+My name is Ruslan Osipov and I live and work in Mountain View, CA. I am a Technical Lead at [Google](https://google.com).
 
 You can find me on the following websites:
 
