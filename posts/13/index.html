@@ -126,6 +126,61 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T18:10:31+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013,  6:10 PM</time>
+        
+           | <a href="/blog/a-week-without-colorful-prompt/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/a-week-without-colorful-prompt/" itemprop="url">A week without colorful prompt</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output,
+diffs, directory and file listings&hellip; It gets worse when using vim - I feel
+lost without the cozy syntax highlight guidance.</p>
+
+<p>Time to stop using output colors for a week whether in shell, git, or vim, and
+use only plain text with no fancy colors. Set git config &ndash;global color.ui
+false and don&rsquo;t use &ndash;color flags in shell. Also, set syntax off and set a
+simple color scheme for vim.</p>
+
+<p>What can I gain from all this? It will definitely reduce my productivity for a
+few days. However, I have a hint of an idea that changing the visual code
+representation will give me new insight on what I am currently writing.</p>
+
+<p><a href="https://github.com/ruslanosipov/dotfiles/commit/b2b592e4f5b4b2f5bb962651a03f9d83b3ab53b7">Link to related commit on GutHub</a>.</p>
+
+<p>Check back in a week to see how it went!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T07:34:28+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  1 Apr 2013,  7:34 AM</time>
         
            | <a href="/blog/editing-bash-command-in-vim/#disqus_thread" itemprop="discussionUrl"
@@ -375,61 +430,6 @@ an amazing job aiding in the memorization of essential vim movement shortcuts.</
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-15T00:09:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri 15 Mar 2013, 12:09 AM</time>
-        
-           | <a href="/blog/rename-commit-author-in-git/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/rename-commit-author-in-git/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/rename-commit-author-in-git/" itemprop="url">Rename commit author in git</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
-credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
-corrected easily:</p>
-
-<pre><code>git filter-branch -f --env-filter
-"GIT_AUTHOR_NAME='Stan Smith';
-GIT_AUTHOR_EMAIL='stansmith@cia.gov';
-GIT_COMMITTER_NAME='Stan Smith';
-GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
-git push --force
-</code></pre>
-
-<p>In the case of there being multiple people working on a project, you may want
-to use the following gist posted by anonymous:
-<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
---force</code>).</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -453,6 +453,8 @@ to use the following gist posted by anonymous:
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
+    
     <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
     
     <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
@@ -471,8 +473,6 @@ to use the following gist posted by anonymous:
     
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
     
-    <a class="list-group-item " href="/blog/urban-prius-living/">Urban Prius living</a>
-    
   </div>
 </section>
 
@@ -486,7 +486,7 @@ to use the following gist posted by anonymous:
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2016 - Ruslan Osipov<br>
+  Copyright &copy; 2017 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.

@@ -126,6 +126,128 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-02T03:44:12+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  2 Jun 2014,  3:44 AM</time>
+        
+           | <a href="/blog/export-wordpress-posts-to-plain-text/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/export-wordpress-posts-to-plain-text/" itemprop="url">Export WordPress posts to plain text</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
+I find it nice to have an archive of posts lying around in plain text.</p>
+
+<p>I wrote a little Python script which I used to extract an archive of my posts
+and pages into a bunch of files on my computer. In order to use it, you need to
+use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR
+format, and feed the file to the script.</p>
+
+<p>Source code of the script is below (link for downloading the script is at the
+bottom of this post):</p>
+
+<pre><code>#!/usr/bin/env python
+
+"""This script converts WXR file to a number of plain text files.
+
+WXR stands for "WordPress eXtended RSS", which basically is just a
+regular XML file. This script extracts entries from the WXR file into
+plain text files. Output format: article name prefixed by date for
+posts, article name for pages.
+
+Usage: wxr2txt.py filename [-o output_dir]
+"""
+
+import os
+import re
+import sys
+from xml.etree import ElementTree
+
+NAMESPACES = {
+        'content': 'http://purl.org/rss/1.0/modules/content/',
+        'wp': 'http://wordpress.org/export/1.2/',
+}
+USAGE_STRING = "Usage: wxr2txt.py filename [-o output_dir]"
+
+def main(argv):
+    filename, output_dir = _parse_and_validate_output(argv)
+    try:
+        data = ElementTree.parse(filename).getroot()
+    except ElementTree.ParseError:
+        _error("Invalid input file format. Can not parse the input.")
+    page_counter, post_counter = 0, 0
+    for post in data.find('channel').findall('item'):
+        post_type = post.find('wp:post_type', namespaces=NAMESPACES).text
+        if post_type not in ('post', 'page'):
+            continue
+        content = post.find('content:encoded', namespaces=NAMESPACES).text
+        date = post.find('wp:post_date', namespaces=NAMESPACES).text
+        title = post.find('title').text
+        date = date.split(' ')[0].replace('-', '')
+        title = re.sub(r'[_]+', '_', re.sub(r'[^a-z0-9+]', '_', title.lower()))
+        if post_type == 'post':
+            post_filename = date + '_' + title + '.txt'
+            post_counter += 1
+        else:
+            post_filename = title + '.txt'
+            page_counter += 1
+        with open(os.path.join(output_dir, post_filename), 'w') as post_file:
+            post_file.write(content.encode('utf8'))
+        post_counter += 1
+    print "Saved {} posts and {} pages in directory '{}'.".format(
+            post_counter, page_counter, output_dir)
+
+def _parse_and_validate_output(argv):
+    if len(argv) not in (2, 4):
+        _error("Wrong number of arguments.")
+    filename = argv[1]
+    if not os.path.isfile(filename):
+        _error("Input file does not exist (or not enough permissions).")
+    output_dir = argv[3] if len(argv) == 4 and argv[2] == '-o' else os.getcwd()
+    if not os.path.isdir(output_dir):
+        _error("Output directory does not exist (or not enough permissions).")
+    return filename, output_dir
+
+def _error(text):
+    print text
+    print USAGE_STRING
+    sys.exit(1)
+
+if __name__ == "__main__":
+    main(sys.argv)
+</code></pre>
+
+<p>You can download the script from here: <a href="https://gist.github.com/ruslanosipov/b748a138389db2cda1e8">wxr2txt.py</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-31T19:33:15+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 31 May 2014,  7:33 PM</time>
         
            | <a href="/blog/why-should-you-learn-to-touch-type/#disqus_thread" itemprop="discussionUrl"
@@ -524,67 +646,6 @@ search and auto completion of email-addresses.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T19:11:52+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 28 May 2014,  7:11 PM</time>
-        
-           | <a href="/blog/using-mutt-with-gpg/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/using-mutt-with-gpg/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/using-mutt-with-gpg/" itemprop="url">Using Mutt with GPG</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Mutt is a great command line email client, but it does not offer a built-in way
-to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an
-article on how to use GPG to store your passwords: [GPG Usage], this is a more
-practical note about using GPG to store your passwords for mutt. This note
-implies that you already have installed and configured GPG (which you can learn
-how to do in above linked article).</p>
-
-<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code>
-with your password and <code>$ACCOUNT</code> with a desired account alias. You probably
-want to prefix this command with a space, to avoid writing your password to a
-history file.</p>
-
-<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
-</code></pre>
-
-<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
-
-<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
-</code></pre>
-
-<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier.
-Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -608,6 +669,8 @@ Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
+    
     <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
     
     <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
@@ -626,8 +689,6 @@ Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p
     
     <a class="list-group-item " href="/blog/prius-camper-conversion/">Prius camper conversion</a>
     
-    <a class="list-group-item " href="/blog/urban-prius-living/">Urban Prius living</a>
-    
   </div>
 </section>
 
@@ -641,7 +702,7 @@ Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2016 - Ruslan Osipov<br>
+  Copyright &copy; 2017 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
