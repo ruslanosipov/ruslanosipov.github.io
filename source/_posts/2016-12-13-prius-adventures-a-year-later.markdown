@@ -70,7 +70,7 @@ I use the other rear passenger seat as my primary relaxing area when I'm inside 
 
 ### Cargo and the bike
 
-There's an old suitcase I use for organizing various cooking and camping supplies. It's split into nine compartments by some separators I've put together. This is where I have some freeze dried veggies, spices, grains and pasta, cooking oils, camping pots and pans, equipment for cleaning the dishes, etc. On top of the suitcase is a backpack where I keep clothes. There's also a propane propane burner, camping table and a chair, as well as a toiletry kit. Dirty laundry goes in a dry bag.
+There's an old suitcase I use for organizing various cooking and camping supplies. It's split into nine compartments by some separators I've put together. This is where I have some freeze dried veggies, spices, grains and pasta, cooking oils, camping pots and pans, equipment for cleaning the dishes, etc. On top of the suitcase is a backpack where I keep clothes. There's also a propane burner, camping table and a chair, as well as a toiletry kit. Dirty laundry goes in a dry bag.
 
 {% img /images/posts/cooking-supplies-in-the-suitcase.jpg Cooking supplies in a suitcase. %}
 
