@@ -28,15 +28,15 @@ Everyone I talk to thinks the space is really cramped up, and I have to sleep cu
 
 I'm 5'11", and I have a flat twin-width bed in that's around 7 feet long (it's been awhile since I measured). I sleep on an inflatable pad wrapped in a sleeping bag, on top of another sleeping bag all wrapped in a silk sleeping bag cover - my composite mattress is about 3 inches thick. I use regular blankets and pillows, adding or removing a few depending on the temperature outside.
 
-It's one of the most comfortable beds I've every slept on.
+It's one of the most comfortable beds I've ever slept on.
 
-## Poor soul, want to crush on my couch?
+## Poor soul, want to crash on my couch?
 
 This is an offer I get as soon as somebody learns I'm living in a car (it's right up there with "You must be saving so much money not paying rent!"). Most people are really nice, and offer a place to stay. I think it stems from an understandable notion that one probably would only live in a car because of being in a bad situation.
 
 {% img /images/posts/inside-of-the-car-view-from-the-back.jpg View of the bed from the back of the car. %}
 
-Oddly enough I really enjoy the lifestyle, and I always reject the offers (always appreciate them though). Sometimes I contemplate getting a small RV or a van, but I'm way to attached to air conditioning on demand and 50 mpg on the highway. But I probably won't need to crush on your couch.
+Oddly enough I really enjoy the lifestyle, and I always reject the offers (always appreciate them though). Sometimes I contemplate getting a small RV or a van, but I'm way to attached to air conditioning on demand and 50 mpg on the highway. But I probably won't need to crash on your couch.
 
 I think the TL;DR here is that majority of people are really nice, once you get out and get to interact with them enough.
 
