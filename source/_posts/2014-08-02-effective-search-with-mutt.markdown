@@ -57,4 +57,4 @@ making all the consecutive searches lightning fast.
 Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
 sure the cache directory is not shared with anyone but yourself.
 
-[1]: http://www.mutt.org/doc/manual/manual-4.html#ss4.2
+[1]: http://www.sendmail.org/~ca/email/mutt/manual-4.html#ss4.2
