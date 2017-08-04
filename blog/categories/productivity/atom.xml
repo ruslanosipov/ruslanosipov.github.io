@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2017-05-09T21:14:46+00:00</updated>
+  <updated>2017-08-04T18:41:27+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Desktop Notifications from Chrome Secure Shell]]></title>
+    <link href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/"/>
+    <updated>2017-08-04T17:33:16+00:00</updated>
+    <id>http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell</id>
+    <content type="html"><![CDATA[<p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is luck of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
+
+<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
+
+<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
+
+<pre><code>#!/bin/sh
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Write an error message and exit.
+# Usage: &lt;message&gt;
+die() {
+  echo "ERROR: $*"
+  exit 1
+}
+
+# Send a notification.
+# Usage: [title] [body]
+notify() {
+  local title="${1-}" body="${2-}"
+
+  case ${TERM-} in
+  screen*)  # This one's really tmux
+    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
+    ;;
+  *)        # This one's plain hterm
+    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
+    ;;
+  esac
+}
+
+# Write tool usage and exit.
+# Usage: [error message]
+usage() {
+  if [ $# -gt 0 ]; then
+    exec 1&gt;&amp;2
+  fi
+  cat &lt;&lt;EOF
+Usage: hterm-notify [options] &lt;title&gt; [body]
+
+Send a notification to hterm.
+
+Notes:
+- The title should not have a semi-colon in it.
+- Neither field should have escape sequences in them.
+  Best to stick to plain text.
+EOF
+
+  if [ $# -gt 0 ]; then
+    echo
+    die "$@"
+  else
+    exit 0
+  fi
+}
+
+main() {
+  set -e
+
+  while [ $# -gt 0 ]; do
+    case $1 in
+    -h|--help)
+      usage
+      ;;
+    -*)
+      usage "Unknown option: $1"
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
+
+  if [ $# -eq 0 ]; then
+    die "Missing message to send"
+  fi
+  if [ $# -gt 2 ]; then
+    usage "Too many arguments"
+  fi
+
+  notify "$@"
+}
+main "$@"
+</code></pre>
+
+<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
+
+<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Profiling slow bashrc]]></title>
@@ -444,41 +543,6 @@ different times when either GUI or CLI tools excel:</p>
 tools seem to appeal to experienced users, while GUI tools are great for novice
 users and do excel in representing visual information. No matter what kind of
 interface you prefer, it&rsquo;s crucially important to use the right tool for the job.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beyond grep]]></title>
-    <link href="http://www.rosipov.com/blog/beyond-grep/"/>
-    <updated>2014-09-21T19:18:31+00:00</updated>
-    <id>http://www.rosipov.com/blog/beyond-grep</id>
-    <content type="html"><![CDATA[<p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
-code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
-yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
-to use <code>grep</code> implementation built to work with large (or not really) code
-trees.</p>
-
-<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
-working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
-
-<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
-natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
-arises (<code>ack</code> has a great manual entry).</p>
-
-<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
-
-<pre><code>ack --shell 'gr[ae]y'
-</code></pre>
-
-<p>Searches all shell script files in the current code tree for any occurrences of
-&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
-<code>ack</code> will even check shebang lines for you.</p>
-
-<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
-types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
-job at searching through code.</p>
-
-<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
 ]]></content>
   </entry>
   

@@ -126,6 +126,50 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-25T00:39:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 25 Nov 2013, 12:39 AM</time>
+        
+           | <a href="/blog/open-previously-edited-file-in-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/open-previously-edited-file-in-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/open-previously-edited-file-in-vim/" itemprop="url">Open previously edited file in vim</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command
+with a number to go multiple files back. You can also travel forward in &ldquo;file
+history&rdquo; by using <code>Ctrl-I</code>.</p>
+
+<p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-24T04:14:19+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 24 Nov 2013,  4:14 AM</time>
         
            | <a href="/blog/old-file-version-in-split-with-vim/#disqus_thread" itemprop="discussionUrl"
@@ -412,148 +456,6 @@ Got:
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T14:47:47+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 22 Jul 2013,  2:47 PM</time>
-        
-           | <a href="/blog/python-tests-with-doctest-and-unittest/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/python-tests-with-doctest-and-unittest/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/python-tests-with-doctest-and-unittest/" itemprop="url">Python tests with doctest and unittest</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>When it comes to tests, <code>doctest</code> is a great simple module to write tests for
-your application. However it is pretty basic and does not have any extended
-features like, for example, centralized unit tests. If you have multiple
-modules with doctests (and you probably do) you most likely want to be able to
-run all doctests recursively from one place. That&rsquo;s where <code>unittest</code> comes in.</p>
-
-<p>Let&rsquo;s assume we store modules in the <code>lib/</code> directory:</p>
-
-<pre><code>$ ls lib/
-__init__.py bar.py foo.py
-</code></pre>
-
-<p>Here are the contents of <code>foo.py</code> and <code>bar.py</code> respectfully:</p>
-
-<pre><code>def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return False
-
-def bar():
-    """
-    &gt;&gt;&gt; bar()
-    True
-    """
-    return True
-
-def baz():
-    """
-    &gt;&gt;&gt; baz()
-    False
-    """
-    return False
-</code></pre>
-
-<p>Now, to run all tests we need a wrapper script. Let&rsquo;s call it: <code>runtests.py</code>:</p>
-
-<pre><code>#!/usr/bin/env python
-
-import unittest
-import doctest
-import os
-
-files = []
-root_dir = 'lib/'
-
-for root, _, filenames in os.walk(root_dir):
-    for filename in filenames:
-        if filename == '__init__.py' or filename[-3:] != '.py':
-            continue
-        f = os.path.join(root, filename)
-        f = f.replace('/', '.')
-        f = f[:-3]
-        files.append(f)
-
-suite = unittest.TestSuite()
-for module in files:
-    suite.addTest(doctest.DocTestSuite(module))
-unittest.TextTestRunner(verbosity=1).run(suite)
-</code></pre>
-
-<p>This approach invokes the <code>doctest.DocTestSuite</code> method, which converts
-doctests strings into unittest suites. Time to run our tests:</p>
-
-<pre><code>$ chmod +x runtests.py
-$ ./runtests.py
-...
-----------------------------------------------------------------------
-Ran 3 tests in 0.008s
-
-OK
-</code></pre>
-
-<p>And just to be sure that approach actually works, let&rsquo;s make one of the tests
-fail:</p>
-
-<pre><code>$ ./runtests.py
-.F.
-======================================================================
-FAIL: baz (lib.bar)
-Doctest: lib.bar.baz
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/usr/lib/python2.7/doctest.py", line 2201, in runTest
-    raise self.failureException(self.format_failure(new.getvalue()))
-AssertionError: Failed doctest test for lib.bar.baz
-  File "/home/rosipov/unitdoc/lib/bar.py", line 8, in baz
-
-----------------------------------------------------------------------
-File "/home/rosipov/unitdoc/lib/bar.py", line 10, in lib.bar.baz
-Failed example:
-    baz()
-Expected:
-    True
-Got:
-    False
-
-----------------------------------------------------------------------
-Ran 3 tests in 0.009s
-
-FAILED (failures=1)
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -577,6 +479,8 @@ FAILED (failures=1)
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
+    
     <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
     
     <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
@@ -594,8 +498,6 @@ FAILED (failures=1)
     <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
     
     <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
-    
-    <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
     
   </div>
 </section>

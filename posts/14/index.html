@@ -126,6 +126,57 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T15:37:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  3:37 PM</time>
+        
+           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/irssi-ignore-all-from-everyone/" itemprop="url">IRSSI - ignore all from everyone</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you visit noisy IRC channels like the programming ones on freenode, you
+probably want to ignore all the annoying status messages.</p>
+
+<p>To permanently ignore joins, parts, quits, and nickname changes from every
+channel in IRSSI:</p>
+
+<pre><code>/ignore * joins parts quits nicks
+/save
+</code></pre>
+
+<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
+post will keep it in my memory.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-21T21:57:37+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 21 Mar 2013,  9:57 PM</time>
         
            | <a href="/blog/vim-movement-cheatsheet/#disqus_thread" itemprop="discussionUrl"
@@ -317,72 +368,6 @@ BoldWhite        = 253, 246, 227
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-11T19:38:30+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 11 Mar 2013,  7:38 PM</time>
-        
-           | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/rails-and-mongodb-with-cygwin/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/rails-and-mongodb-with-cygwin/" itemprop="url">Rails and MongoDB with Cygwin</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
-
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
-may want to have more).</p>
-
-<p>The following commands are executed in the cygwin prompt:</p>
-
-<pre><code>git clone git://github.com/rubygems/rubygems.git
-cd rubygems/
-ruby setup.rb
-gem install rails
-</code></pre>
-
-<p>Go to the MongoDB website and download Windows binaries:
-<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
-to <code>C:\cygwin\usr\local\bin</code>.</p>
-
-<p>Create a directory for the db files (the default MongoDB db files directory is
-<code>C:\datadb</code>):</p>
-
-<pre><code>cd /cygdrive/c
-mkdir data
-mkdir data/db
-</code></pre>
-
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
-as you see fit.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -406,6 +391,8 @@ as you see fit.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
+    
     <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
     
     <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
@@ -423,8 +410,6 @@ as you see fit.</p>
     <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
     
     <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
-    
-    <a class="list-group-item " href="/blog/living-in-a-car-for-5000-miles/">Living in a car for 5000 miles</a>
     
   </div>
 </section>

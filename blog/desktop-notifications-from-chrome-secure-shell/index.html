@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Prius camper conversion - Ruslan Osipov</title>
+  <title>Desktop Notifications from Chrome Secure Shell - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/prius-camper-conversion/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/prius-camper-conversion/">
-  <meta property="og:title" content="Prius camper conversion - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/">
+  <meta property="og:title" content="Desktop Notifications from Chrome Secure Shell - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-09-19T19:50:01+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 19 Sep 2015,  7:50 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-08-04T17:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri  4 Aug 2017,  5:33 PM</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -131,91 +131,104 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Prius camper conversion
+        Desktop Notifications from Chrome Secure Shell
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>As requested, I took some detailed pictures of the
-<a href="http://amzn.to/1NvY78S">Prius Camper Conversion Kit</a> I mentioned in my <a href="http://www.rosipov.com/blog/urban-prius-living">previous article</a>. It
-adds valuable space to the back of the car when the seats are down, and helps to
-push down the seats all the way in order to achieve a level surface. This
-particular kit works for third generation of Prius, but can be slightly
-modified to fit other models. In theory, something like this can work with any
-car, as long as the rear seats can be forced down all the way to create a flat
-surface (170 pounds of my bodyweight was enough to flatten out the seat back).</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is luck of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
 
-<p>This is how the final conversion looks, with a mat cut to a custom shape on top
-of it:</p>
+<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
 
-<p><img src="/images/posts/prius-camper-final.jpg" title="This is how the final conversion looks." ></p>
+<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
 
-<p>A wooden platform which is used to fill up rear leg space. Notice the blue
-strap on the rear seat, that&rsquo;s what pushes down the seat to create a level
-surface:</p>
+<pre><code>#!/bin/sh
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 
-<p><img src="/images/posts/prius-camper-with-the-mat-up.jpg" title="Wooden surface underneath the mat." ></p>
+# Write an error message and exit.
+# Usage: &lt;message&gt;
+die() {
+  echo "ERROR: $*"
+  exit 1
+}
 
-<p>The lid can be removed for storage space access:</p>
+# Send a notification.
+# Usage: [title] [body]
+notify() {
+  local title="${1-}" body="${2-}"
 
-<p><img src="/images/posts/prius-camper-with-the-lid-off.jpg" title="Wooden platform with the lid off." ></p>
+  case ${TERM-} in
+  screen*)  # This one's really tmux
+    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
+    ;;
+  *)        # This one's plain hterm
+    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
+    ;;
+  esac
+}
 
-<p>It&rsquo;s a relatively thin wooden platform. Top (on the picture) side of it is a
-bit slanted to fit on a rear seat back:</p>
+# Write tool usage and exit.
+# Usage: [error message]
+usage() {
+  if [ $# -gt 0 ]; then
+    exec 1&gt;&amp;2
+  fi
+  cat &lt;&lt;EOF
+Usage: hterm-notify [options] &lt;title&gt; [body]
 
-<p><img src="/images/posts/prius-camper-wooden-platform-top.jpg" title="Top view of the wooden platform." ></p>
+Send a notification to hterm.
 
-<p>View from the bottom: metal pieces are there to hold platform legs when the
-platform is not in use, but I don&rsquo;t find them necessary. Additional (darker)
-piece of wood is what the lid rests on:</p>
+Notes:
+- The title should not have a semi-colon in it.
+- Neither field should have escape sequences in them.
+  Best to stick to plain text.
+EOF
 
-<p><img src="/images/posts/prius-camper-wooden-platform-bottom.jpg" title="Bottom view of the wooden platform." ></p>
+  if [ $# -gt 0 ]; then
+    echo
+    die "$@"
+  else
+    exit 0
+  fi
+}
 
-<p>View from the side:</p>
+main() {
+  set -e
 
-<p><img src="/images/posts/prius-camper-wooden-platform-side.jpg" title="Side view of the wooden platform." ></p>
+  while [ $# -gt 0 ]; do
+    case $1 in
+    -h|--help)
+      usage
+      ;;
+    -*)
+      usage "Unknown option: $1"
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
 
-<p>With passenger front seat pushed all the way forward (and seat back in further
-possible forward position), wooden supports are inserted into exposed seat
-railing. I added some duct tape layers at the bottom of each leg so that they
-don&rsquo;t wobble when the wooden platform is removed.</p>
+  if [ $# -eq 0 ]; then
+    die "Missing message to send"
+  fi
+  if [ $# -gt 2 ]; then
+    usage "Too many arguments"
+  fi
 
-<p><img src="/images/posts/prius-camper-wooden-legs.jpg" title="Wooden supports for the platform." ></p>
+  notify "$@"
+}
+main "$@"
+</code></pre>
 
-<p>Here&rsquo;s a right leg:</p>
+<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
 
-<p><img src="/images/posts/prius-camper-wooden-legs-right.jpg" title="Right wooden support." ></p>
-
-<p>I noticed that the left leg needed to be approximately 5 mm longer in order for
-the platform not to wobble, so I extended it with whatever I had on hand:</p>
-
-<p><img src="/images/posts/prius-camper-wooden-legs-left.jpg" title="Left wooden support." ></p>
-
-<p>Adjustable belt with a hook on one side and a strap tie on the other:</p>
-
-<p><img src="/images/posts/prius-camper-belt-with-a-hook.jpg" title="Belt with a hook." ></p>
-
-<p>On the back side of rear seats there are places to secure a baby seat. I removed
-the plastic covers (use some force), and attached a strap there. I added a piece
-of cloth to (hopefully) prevent damage to seat fabric:</p>
-
-<p><img src="/images/posts/prius-camper-belt-on-the-rear-seat.jpg" title="Belt on the rear seat." ></p>
-
-<p>Tricky part is getting the bottom hook in the right place. Rear seats are held
-in place by two metal locks. If you grab a rear seat from the bottom (when the
-back is not folded) and pull up with approximately 50-100 pounds of force, the
-seat will snap out of the place exposing the lock. Attach a hook to the exposed
-part of the locking mechanism. Jump down on a seat to snap the rear seat back in
-place. Exercise caution while you make your way through this, took me nearly an
-hour to figure out how to properly attach a hook and snap the seat back in
-place:</p>
-
-<p><img src="/images/posts/prius-camper-bottom-hook.jpg" title="Bottom hook on the belt." ></p>
-
-<p>When both sides of the belt are in place, fold the rear seat, push in down with
-your body weight, and tighten the belt.</p>
+<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
+</code></pre>
 </div>
 
 
@@ -239,13 +252,13 @@ your body weight, and tighten the belt.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-09-19T19:50:01+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 19 Sep 2015,  7:50 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-08-04T17:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri  4 Aug 2017,  5:33 PM</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/life/'>life</a>
+    <a class='category' href='/blog/categories/productivity/'>productivity</a>
   
 </span>
 
@@ -254,7 +267,7 @@ your body weight, and tighten the belt.</p>
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/prius-camper-conversion/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/prius-camper-conversion/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/" >Tweet</a>
   
   
   
@@ -264,10 +277,8 @@ your body weight, and tighten the belt.</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/urban-prius-living/" title="Previous Post: Urban Prius living">&laquo; Urban Prius living</a></li>
+            <li class="previous"><a href="/blog/journey-of-a-friend/" title="Previous Post: Journey of a friend">&laquo; Journey of a friend</a></li>
             
-            
-            <li class="next"><a href="/blog/living-in-a-car-for-5000-miles/" title="Next Post: Living in a car for 5000 miles">Living in a car for 5000 miles &raquo;</a></li>
             
           </ul>
         
@@ -292,7 +303,7 @@ your body weight, and tighten the belt.</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
+    <a class="list-group-item active" href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
     
     <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
     
@@ -341,8 +352,8 @@ your body weight, and tighten the belt.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/prius-camper-conversion/';
-        var disqus_url = 'http://www.rosipov.com/blog/prius-camper-conversion/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/';
+        var disqus_url = 'http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/';
         var disqus_script = 'embed.js';
       
     (function () {
