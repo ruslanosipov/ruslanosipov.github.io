@@ -4,7 +4,7 @@ date: 2017-08-04 17:33:16 +0000
 categories: [Productivity]
 ---
 
-For the past year or two I've been working in the cloud. I use Chrome [Secure Shell][1] to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an [HP Chromebook][2], which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is luck of `notify-send`-like functionality, especially when working with long-running builds.
+For the past year or two I've been working in the cloud. I use Chrome [Secure Shell][1] to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an [HP Chromebook][2], which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of `notify-send`-like functionality, especially when working with long-running builds.
 
 Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an [hterm-notify][3] script, which propagates notifications to Chrome, and by extent to desktop!
 
