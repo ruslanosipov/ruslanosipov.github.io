@@ -134,6 +134,117 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T21:35:46+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  9:35 PM</time>
+        
+           | <a href="/blog/vim-pathogen-and-git-submodules/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/vim-pathogen-and-git-submodules/" itemprop="url">Vim, pathogen and git submodules</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>This is a step by step tutorial on how to organize your vim config files using
+git, pathogen, and git submodules. This tutorial assumes that you are familiar
+with git basics, but you don&rsquo;t really need to understand every step in order to
+follow it. For simplicity, only <code>.vim</code> directory is a repository in this
+example. You may want to have all your dotfiles under version control and use a
+script to symlink files to the home directory. For example see
+<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+
+<h2>Setting up</h2>
+
+<p>Let&rsquo;s assume your <code>.vim</code> directory is a mess and is not under revision control.
+Let&rsquo;s initialize a repository.</p>
+
+<pre><code>cd ~/.vim
+git init
+git remote add origin git@github.com:user/project.git
+</code></pre>
+
+<p>Now let&rsquo;s create <code>.vim/bundle</code> directory and clone <code>pathogen</code> plugin as a
+submodule.</p>
+
+<pre><code>mkdir bundle
+cd bundle
+git submodule add git@github.cfm:tpope/vim-pathogen.git
+bundle/vim-pathogen
+</code></pre>
+
+<p>Pre-pend the following code to your <code>~/.vimrc</code> to load pathogen from
+non-default directory:</p>
+
+<pre><code>runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+</code></pre>
+
+<p>Let&rsquo;s add some more plugins as git submodules, for example:</p>
+
+<pre><code>git submodule add git@github.com:Lokaltog/vim-easymotion.git
+bundle/vim-easymotion
+</code></pre>
+
+<p>Now we can add and commit everything and push it to a repository.</p>
+
+<pre><code>git add .
+git commit -m "Use pathogen to keep track of vim plugins"
+git push origin master
+</code></pre>
+
+<h2>Deploying</h2>
+
+<p>Assuming that your repository is located at <code>git@github.com:user/project.git</code>:</p>
+
+<pre><code>cd ~
+git clone git@github.com:user/project.git .vim
+</code></pre>
+
+<p>And you are done, all plugins are downloaded from their repositories now.</p>
+
+<h2>Maintaining</h2>
+
+<p>Git submodules keep track of specific commits and are not being automatically
+updated when target repositories have new commits. In order to update plugins
+you have:</p>
+
+<pre><code>cd ~/.vim
+git submodule foreach git pull
+git add bundle
+git commit -m "Updated all the plugins in a bundle"
+git push origin master
+</code></pre>
+
+<p>You probably want to make sure that new versions of plugins are compatible with
+each other before committing, however.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T15:37:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 27 Mar 2013,  3:37 PM</time>
         
            | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread" itemprop="discussionUrl"
@@ -310,72 +421,6 @@ recognizes the filetype.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T19:35:28+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 13 Mar 2013,  7:35 PM</time>
-        
-           | <a href="/blog/mintty-color-scheme-cygwin/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/mintty-color-scheme-cygwin/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/mintty-color-scheme-cygwin/" itemprop="url">Mintty color scheme (Cygwin)</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p><img src="/images/posts/mintty-softer-color-scheme.png" title="Softer colors for mintty." ></p>
-
-<p>I find the default cygwin color palette to be a bit ugly, so here&rsquo;s one that
-has softer colors. Add the following lines to your <code>.minttyrc</code> and restart
-cygwin in order to apply changes.</p>
-
-<pre><code>ForegroundColour = 131, 148, 150
-BackgroundColour =   0,   0,   0
-CursorColour     = 220,  50,  47
-
-Black            =   7,  54,  66
-BoldBlack        =   0,  43,  54
-Red              = 220,  50,  47
-BoldRed          = 203,  75,  22
-Green            =   0, 200, 132
-BoldGreen        =   0, 200, 132
-Yellow           = 204, 204, 102
-BoldYellow       = 204, 204, 102
-Blue             = 102, 153, 204
-BoldBlue         = 102, 153, 204
-Magenta          = 211,  54, 130
-BoldMagenta      = 108, 113, 196
-Cyan             =  42, 161, 152
-BoldCyan         = 147, 161, 161
-White            = 238, 232, 213
-BoldWhite        = 253, 246, 227
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -399,6 +444,8 @@ BoldWhite        = 253, 246, 227
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and Her: What&#8217;s Inside the Bag?</a>
+    
     <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
     
     <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
@@ -416,8 +463,6 @@ BoldWhite        = 253, 246, 227
     <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
     
     <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
-    
-    <a class="list-group-item " href="/blog/thoughts-on-travel/">Thoughts on travel</a>
     
   </div>
 </section>
