@@ -4,6 +4,8 @@ date: 2017-11-13 10:00:00 -0500
 categories: [Life]
 ---
 
+_This article is a collaboration between my partner and I._
+
 Since moving into a studio, I have missed the freedom of taking off randomly, getting to know a different city or state and overall not being tied down to a routine or a location. I love the idea of trivializing travel, so it was only natural to have a random trip at the end of the week.
 
 My partner watches [The Bucket List Family](http://www.thebucketlistfamily.com/) on a weekly basis and caught the traveling bug as well. Unfortunately, we are not yet at the level where we can afford a 5 star trip to international locals or have companies pay for our travels (one day!). Our goal was to spend a few days going out of state to break the work week and avoid living for the weekend.
