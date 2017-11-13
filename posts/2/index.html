@@ -134,6 +134,336 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-09T21:24:26+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun  9 Oct 2016,  9:24 PM</time>
+        
+           | <a href="/blog/hackmud-first-impressions/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/hackmud-first-impressions/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/hackmud-first-impressions/" itemprop="url">Hackmud first impressions</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>My Saturday just disappeared, quickly, and barely with any trace. You could find
+leftover scripts all over my hard drive here and there, all pointing to Hackmud.
+One moment I had plans for the day, and the next it was well past midnight, I
+was listening to the 90s hacker movies inspired soundtrack while cracking locks
+and farming for credits with a script I crafted.</p>
+
+<p>I&rsquo;ve spent ten hours in game, and it was glorious.</p>
+
+<p><img src="/images/posts/hackmud-startup-logo.png" title="Hackmud startup logo." ></p>
+
+<p>Hackmud is a text-only MUD (multi-user dungeon) set in a not so distant future,
+where humanity was wiped out by a combination of Welsh Measels, killer rabbit
+outbreak, and multiple other disasters. All that&rsquo;s left is a trace of old
+corporations, dead user accounts, and AIs roaming the net. That&rsquo;s you, an AI.</p>
+
+<p>Game has a heavy 90s vibe to it, and the atmosphere reminds me of Ready Player
+One. References to popular TV shows and dial up sounds included.</p>
+
+<p>You start in a training area, a vLAN without access to the rest of the network
+and other players. You quickly learn all-text interface, and simple bash-like
+command line - it&rsquo;s based on JavaScript, with a few syntax changes. Hackmud is
+very much a puzzle game, and lets you take your time with a tutorial: you&rsquo;ll
+need a few hours to go through all the puzzles, cracking locks, installing
+upgrades, learning about security, and finally - escaping vLAN.</p>
+
+<p>Here are some basics I picked up:</p>
+
+<ul>
+<li>You can have multiple user accounts within a game, and so can everyone else.
+Be on the lookout.</li>
+<li>&ldquo;Locs&rdquo; are account locations, something similar to an IP or a domain name. You
+can launch an attack against a user or a dead account if you know their loc.</li>
+<li>Scripts are just that - scripts written in JavaScript (outside of the game).
+Hit <code>#help</code> and Google to get started, but at least some basic programming
+background is necessary here.</li>
+<li>Locks protect accounts - one can be behind multiple locks. Lock usually
+requires you to guess the correct combination, like a color, correct lower
+order prime, or a keyword.</li>
+<li>Upgrades are installed on user accounts and include locks, script
+slots, character limits, etc.</li>
+</ul>
+
+
+<p>At some point I successfully struggled through the tutorial and escaped vLAN.
+And that&rsquo;s where the open-ended social nature of the game shines. You&rsquo;re thrown
+into a global chat channel with users trying to trick you into running their
+malware, players and corporations providing banking services, selling breached
+account information, locks, and scripts.</p>
+
+<p>The game encourages lying, betrayal, deception, ponzi schemes, money laundering
+- you name it. And players take advantage of such freedoms to the full extent:</p>
+
+<p><img src="/images/posts/hackmud-window-screenshot.png" title="This is how the Hackmud gameplay looks.." ></p>
+
+<p>It looks rather confusing, but tutorial prepares you well for the chaotic flow
+of characters on the screen.</p>
+
+<p>I really wasn&rsquo;t sure what to do next. The tutorial taught me how to get money
+out of dead accounts, so I decided to try to find one or two. After asking about
+in the main channel and being offered a few dozen &ldquo;risk free scripts to get locs
+worth millions&rdquo;, I decided to set out on a search. I looked through a list of
+<code>scripts.fullsec</code>, and found a few corporations.</p>
+
+<p><img src="/images/posts/hackmud-corporations-screenshot.png" title="Two Hackmud corporations - Macrosoft and Core." ></p>
+
+<p>After digging about in their files for a good few hours, I found a way to get to
+employee registry and get a dozen of dead user locs. The locs were protected by
+different kinds of locks, and I went through the first batch manually. It took
+me a long time to get all the combinations and pull out some cash out of the
+accounts.</p>
+
+<p>I found my second batch of locs shortly after, and decided to try automating
+some manual attempts through scripting. After struggling with syntax and being
+aggravated by having only 120 seconds at a time to crack a lock (in line with
+the 90s feel of the game, one needs to be connected to a &ldquo;hardline&rdquo;), I wrote a
+first sample script, and started to play around with game concepts.</p>
+
+<p><img src="/images/posts/hackmud-hardline-dial.png" title="Hardline dial screenshot." ></p>
+
+<p>Hackmud is in no way an accurate hacking simulator, but it&rsquo;s a really fun puzzle
+game, and it doesn&rsquo;t make any outrageous mistakes. It allows you to write your
+own scripts to use in game using valid JavaScript with access to a game library.
+Game developer (it&rsquo;s a one person project) implemented his own JavaScript
+interpreter, so it has bugs here and there - one should be careful using obscure
+language features.</p>
+
+<p>The worst part about scripting was character limitations: one needs quite a bit
+of money to be able to install first upgrades, and default limit of one active
+script and 500 characters per script is straight-up rage inducing. Before
+getting my first 1MGC to finally upgrade my rig, I wrote a bunch of tiny
+scripts, one per lock type, struggling to keep to the character limit. I ended
+up with ugly monstrosities like this, manually passing results from one script
+to another when encountering multiple accounts:</p>
+
+<pre><code>function(o, g) {
+  var
+    a = {},
+    b = "ez_35",
+    c = ["open", "release", "unlock"],
+    d = "digit",
+    r = "",
+    s = false,
+    t = g.target.call;
+
+  for (var x in g) {
+    if (x != "target") {
+      a[x] = g[x];
+    }
+  }
+
+  for (var i = 0; i &lt; c.length; i++) {
+    a[b] = c[i];
+    r = t(a);
+    if (r.indexOf(d) &gt; -1) {
+      for (var k = 0; k &lt; 10; k++) {
+        a[d] = k
+        r = t(a);
+        if (r.indexOf(d) == -1) {
+          var m = b + ":\"" + a[b] + "\", " + d + ": \"" + a[d] + "\"";
+          return { ok:true, msg:r + "\n\n" + m };
+        }
+      }
+    }
+  }
+  return { ok:s, msg:r };
+}
+</code></pre>
+
+<p>It was really interesting working with the limitations:</p>
+
+<ul>
+<li>I couldn&rsquo;t write scripts longer than 500 characters (spaces not included).</li>
+<li>I couldn&rsquo;t have access to one script without unloading the other first.</li>
+<li>I had to debug and test the scripts within 120 second windows.</li>
+</ul>
+
+
+<p>Few more batches of locs later, I was finally able to afford to initialize my
+system to tier 1 and install upgrades I bought and accumulated from hacking
+accounts:</p>
+
+<p><img src="/images/posts/hackmud-upgrades-screenshot.png" title="Installed upgrades." ></p>
+
+<p>Now I can write all the scripts I want! Excited, I built my first t1 (tier 1)
+lock breaker, which automatically cracks a loc with any number of t1 locks on
+it:</p>
+
+<pre><code>function(context, func_args) { // {target:"#s."}
+
+  var digits = Array();
+  for (var i = 0; i &lt; 10; i++) {
+    digits.push(i);
+  }
+
+  var
+    COLORS = [
+      "purple", "blue", "cyan", "green", "lime", "yellow", "orange", "red"],
+    DIGITS = digits,
+    LOCKS = ["open", "release", "unlock"],
+    // ez_prime lock seems to only request low order primes, hardcoding this
+    PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+      61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137,
+      139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193];
+
+  var hackMultLevels = function(target, args, levels) {
+    for (var i = 0; i &lt; levels.length; i++) {
+      var
+        item = levels[i].item,
+        itemDesc = levels[i].itemDesc,
+        itemList = levels[i].itemList;
+      for (var k = 0; k &lt; itemList.length; k++) {
+        args[item] = itemList[k];
+        ret = target(args);
+        if (ret.indexOf(itemDesc) == -1) {
+          break;
+        }
+      }
+    }
+    return ret, args;
+  }
+
+  var hackEz21 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "ez_21", itemDesc: "command", itemList: LOCKS }
+      ]);
+  };
+
+  var hackEz35 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "ez_35", itemDesc: "command", itemList: LOCKS },
+        { item: "digit", itemDesc: "digit", itemList: DIGITS }
+      ]);
+  };
+
+  var hackEz40 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "ez_40", itemDesc: "command", itemList: LOCKS },
+        { item: "ez_prime", itemDesc: "prime", itemList: PRIMES }
+      ]);
+  };
+
+  var hackC001 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "c001", itemDesc: "correct", itemList: COLORS },
+        { item: "color_digit", itemDesc: "digit", itemList: DIGITS }
+      ]);
+  }
+
+  var hackC002 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "c002", itemDesc: "correct", itemList: COLORS },
+        { item: "c002_complement", itemDesc: "complement", itemList: COLORS }
+      ]);
+  }
+
+  var hackC003 = function(target, args) {
+    return hackMultLevels(
+      target,
+      args,
+      [
+        { item: "c003", itemDesc: "correct", itemList: COLORS },
+        { item: "c003_triad_1", itemDesc: "first", itemList: COLORS },
+        { item: "c003_triad_2", itemDesc: "second", itemList: COLORS }
+      ]);
+  }
+
+  var
+    args = {},
+    i = 0,
+    locks = [
+      { name: "EZ_21", func: hackEz21 },
+      { name: "EZ_35", func: hackEz35 },
+      { name: "EZ_40", func: hackEz40 },
+      { name: "c001", func: hackC001 },
+      { name: "c002", func: hackC002 },
+      { name: "c003", func: hackC003 }
+    ],
+    ret = "",
+    target = func_args.target.call,
+    unlocked = [];
+
+  ret = target(args);
+
+  while (true) {
+    i++;
+    var flag = true;
+
+    for (var k = 0; k &lt; locks.length; k++) {
+      if (ret.indexOf(locks[k].name) &gt; -1 &amp;&amp;
+          unlocked.indexOf(locks[k].name) == -1) {
+        ret,  args = locks[k].func(target, args);
+        unlocked.push(locks[k].name);
+        flag = false;
+      }
+    }
+
+    if (flag === true) {
+      return { ok: true, msg: ret };
+    }
+
+    if (i &gt; 10) {
+      return { ok: false, msg: ret }
+    }
+  }
+}
+</code></pre>
+
+<p>Rather rough around the edges, not easiest to read, but it works - and I was
+really proud of finishing it (and too tired to go back and refactor). With this,
+next dozen of t1 locs took me a few minutes to crack open. Success!</p>
+
+<p>That was the logical conclusion of my Saturday, and left me feel really
+satisfied. The game is rough around the edges, and has numerous bugs here and
+there. But the text-only world of Hackmud is alive and atmospheric, and puzzles
+and exploration of the derelict world through randomly-generated documents pulls
+you in, making you lose track of time.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-05T18:12:59+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed  5 Oct 2016,  6:12 PM</time>
         
            | <a href="/blog/a-year-with-pebble-time-round/#disqus_thread" itemprop="discussionUrl"
@@ -754,109 +1084,6 @@ should have I done differently?</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-28T18:51:31+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 28 Sep 2016,  6:51 PM</time>
-        
-           | <a href="/blog/browsing-mssql-and-vertica-from-cli/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/browsing-mssql-and-vertica-from-cli/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/browsing-mssql-and-vertica-from-cli/" itemprop="url">Browsing MSSQL and Vertica from CLI</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Notes to make sure I don&rsquo;t forget how to do this in the future. First, install
-<code>mssql</code> and <code>vcli</code> tools:</p>
-
-<pre><code>npm install -g sql-cli
-pip install vcli
-</code></pre>
-
-<p>Encrypt desired database account passwords:</p>
-
-<pre><code>mkdir -p ~/.passwd
-echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$DB_ACCOUNT.gpg
-</code></pre>
-
-<p>Set up a set of aliases with the desired level of flexibility in <code>~/.bashrc</code> to
-avoid typing too much:</p>
-
-<pre><code>function _sql-helper-command {
-  host=$1
-  user=$2
-  password=$3
-  db=$4
-  opt_query_file=$5
-
-  if [ -z $opt_query_file ]; then
-    mssql -s $host -u $user -p $password -d $db
-  else
-    mssql -s $host -u $user -p $password -d $db -q "`cat $opt_query_file`"
-  fi
-}
-
-function _vsql-helper-command {
-  host=$1
-  user=$2
-  password=$3
-
-  vcli -h $host -U $user -w $password
-}
-
-# Usage: `sql` for interactive mode, `sql filename.sql` to execute a file.
-function sql {
-  opt_query_file=$1
-
-  host='$SOME_HOST'
-  user='$SOME_USER'
-  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
-  db='$SOME_DB'
-
-  _sql-helper-command $host $user $password $db $opt_query_file
-}
-
-# Usage: `vsql $VERTICA_HOST`
-function vsql {
-  host=$1
-  user=`whoami`
-  password=`gpg --use-agent --quiet --batch -d ~/.passwd/$SOME_FILENAME.gpg`
-
-  _vsql-helper-command $host $user $password
-}
-</code></pre>
-
-<p>Replace <code>$SOME_USER</code>, <code>$SOME_HOST</code>, <code>$SOME_DB</code>, <code>$SOME_FILENAME</code> above with
-specific user, host, DB, and filenames respectively. I usually make a bunch of
-aliases for different environments/machines I use: <code>sql-prod</code>, <code>sql-dev</code>,
-<code>sql-local</code> or <code>vsql-host1</code>, <code>vsql-host2</code>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -880,6 +1107,8 @@ aliases for different environments/machines I use: <code>sql-prod</code>, <code>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
+    
     <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and Her: What&#8217;s Inside the Bag?</a>
     
     <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
@@ -897,8 +1126,6 @@ aliases for different environments/machines I use: <code>sql-prod</code>, <code>
     <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
     
     <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
-    
-    <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
     
   </div>
 </section>

@@ -134,6 +134,51 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T23:50:56+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 13 Mar 2013, 11:50 PM</time>
+        
+           | <a href="/blog/read-man-pages-from-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/read-man-pages-from-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/read-man-pages-from-vim/" itemprop="url">Read man pages from vim</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I recently discovered an incredibly useful function - you can look up man pages
+for keywords by pressing <code>K</code> (read: <code>Shift + k</code>) in normal mode when cursor is
+over the word you need to look up.</p>
+
+<p>It works with any shell or programming language keywords, as long as vim
+recognizes the filetype.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T19:35:28+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 13 Mar 2013,  7:35 PM</time>
         
            | <a href="/blog/mintty-color-scheme-cygwin/#disqus_thread" itemprop="discussionUrl"
@@ -356,95 +401,6 @@ last step and replace it with the cherry-pick.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-26T20:00:22+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 26 Dec 2012,  8:00 PM</time>
-        
-           | <a href="/blog/gpg-usage/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/gpg-usage/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/gpg-usage/" itemprop="url">GPG Usage</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>To encrypt and decrypt files in Linux there is a utility called <code>gpg</code> (Gnu
-Privacy Guard). This is a short GPG tutorial.</p>
-
-<h2>Quick usage example</h2>
-
-<pre><code>gpg -c foo.txt
-</code></pre>
-
-<p>It will prompt you for the passphrase and a confirmation. Now you will have the
-encrypted <code>foo.txt.gpg</code> file. To decrypt a file:</p>
-
-<pre><code>gpg -d foo.txt.gpg
-</code></pre>
-
-<p>This will forward the output to the console. You can output it into a file:</p>
-
-<p>gpg -d foo.txt.gpg > foo.txt</p>
-
-<h2>GPG keyring</h2>
-
-<p>This is all secure, but not quite enough if you are paranoid. Keys are what
-makes <code>gpg</code> great. Let&rsquo;s generate a private key:</p>
-
-<pre><code>gpg --gen-key
-</code></pre>
-
-<p>And create an ASCII version of a public key:</p>
-
-<pre><code>gpg --armor --export "John Doe" --output johndoe.txt
-</code></pre>
-
-<p>Public key <code>johndoe.txt</code> can be freely distributed. Now you can encrypt files
-for yourself only:</p>
-
-<pre><code>gpg -e -r "John Doe" foo.txt
-</code></pre>
-
-<p>Now if you decrypt a file it will require the passphrase you specified while
-generating a key. To encrypt a file for someone else you should have this
-person&rsquo;s public key.</p>
-
-<p>Let&rsquo;s assume Stan Smith sent you a key, <code>stansmith.txt</code>. You import it using:</p>
-
-<pre><code>gpg --import stansmith.txt
-</code></pre>
-
-<p>And encrypt the file:</p>
-
-<pre><code>gpg -e -r "Stan Smith" foo.txt
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -468,6 +424,8 @@ person&rsquo;s public key.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
+    
     <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and Her: What&#8217;s Inside the Bag?</a>
     
     <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
@@ -485,8 +443,6 @@ person&rsquo;s public key.</p>
     <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
     
     <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
-    
-    <a class="list-group-item " href="/blog/browsing-mssql-and-vertica-from-cli/">Browsing MSSQL and Vertica from CLI</a>
     
   </div>
 </section>
