@@ -134,6 +134,67 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T19:11:52+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 28 May 2014,  7:11 PM</time>
+        
+           | <a href="/blog/using-mutt-with-gpg/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/using-mutt-with-gpg/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/using-mutt-with-gpg/" itemprop="url">Using Mutt with GPG</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Mutt is a great command line email client, but it does not offer a built-in way
+to store passwords. But that&rsquo;s where GPG comes in. A while back I wrote an
+article on how to use GPG to store your passwords: [GPG Usage], this is a more
+practical note about using GPG to store your passwords for mutt. This note
+implies that you already have installed and configured GPG (which you can learn
+how to do in above linked article).</p>
+
+<p>First you will have to record a password to a GPG file. Replace <code>$PASSWORD</code>
+with your password and <code>$ACCOUNT</code> with a desired account alias. You probably
+want to prefix this command with a space, to avoid writing your password to a
+history file.</p>
+
+<pre><code>echo '$PASSWORD' | gpg --use-agent -e &gt; ~/.passwd/$ACCOUNT.gpg
+</code></pre>
+
+<p>Next, open your <code>~/.muttrc</code> file and add following line:</p>
+
+<pre><code>set imap_pass = "`gpg --use-agent --quiet --batch -d ~/.passwd/$ACCOUNT.gpg`"
+</code></pre>
+
+<p>Again, replace <code>$ACCOUNT</code> with the same account alias you specified earlier.
+Now you don&rsquo;t have to re-enter your password every time you start Mutt.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-13T01:10:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 13 Jan 2014,  1:10 AM</time>
         
            | <a href="/blog/navigate-files-easily-with-ctrlp-vim/#disqus_thread" itemprop="discussionUrl"
@@ -517,69 +578,6 @@ file you are working on.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-17T01:02:30+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 17 Nov 2013,  1:02 AM</time>
-        
-           | <a href="/blog/pasting-with-vim-and-indentation-issues/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/pasting-with-vim-and-indentation-issues/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/pasting-with-vim-and-indentation-issues/" itemprop="url">Pasting with vim and indentation issues</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you use vim often - you probably had to paste something into vim from the
-outside source. And, if you have corresponding indentation rules, they will get
-applied, turning your nice block of code into something that looks more like a
-case of stairs:</p>
-
-<pre><code>def foo(a, b):
-        a, b = b, a
-            print "I am doing something important."
-                return a - b
-</code></pre>
-
-<p>Quite nasty, isn&rsquo;t it? But that&rsquo;s where vim&rsquo;s <code>paste</code> option comes in.  Before
-pasting, execute <code>:set paste</code>. If you go into insert mode, you&rsquo;ll see the usual
-mode indicator switch to <code>-- INSERT (paste) --</code>. Try pasting the same block of
-code now:</p>
-
-<pre><code>def foo(a, b):
-    a, b = b, a
-    print "I am doing something important."
-    return a - b
-</code></pre>
-
-<p>Beautiful. Don&rsquo;t forget to switch back to a regular mode by executing <code>:set
-nopaste</code>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -603,6 +601,8 @@ nopaste</code>.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/automating-octopress-publishing/">Automating Octorpress Publishing</a>
+    
     <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
     
     <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and Her: What&#8217;s Inside the Bag?</a>
@@ -620,8 +620,6 @@ nopaste</code>.</p>
     <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
     
     <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
-    
-    <a class="list-group-item " href="/blog/randomly-generated-dungeons/">Randomly generated dungeons</a>
     
   </div>
 </section>

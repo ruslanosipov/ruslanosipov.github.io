@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2017-11-13T23:15:14+00:00</updated>
+  <updated>2017-11-14T17:15:47+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Automating Octorpress Publishing]]></title>
+    <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
+    <updated>2017-11-14T15:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
+    <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
+
+<p>One issue though - I need to be near a computer to publish and preview the article. This becomes difficult if I&rsquo;m traveling with, say, a tablet.</p>
+
+<p>I have a low end AWS Lightsail instance I use for writing and publishing, but it&rsquo;s not always fun to write when SSHing into a server, and I often write offline - making it even more difficult to move files between where I write and where I publish. And managing images is a nightmare. To resolve this, I set up a few directories I use in Dropbox, and wrote a few scripts to move things around when needed.</p>
+
+<p>Here&rsquo;s a directory structure in Dropbox:</p>
+
+<pre><code>- blog/
+  - posts/
+    - 2017-11-20-automatic-octopress-publishing.markdown
+  - img/
+    - input/
+      - a-picture-of-a-flower.jpg
+    - output/
+</code></pre>
+
+<p>I put Markdown files in <code>Dropbox/blog/posts/</code> (and numerous offline editors sync with Dropbox - I&rsquo;m writing this with <a href="https://stackedit.io/app">StackEdit</a>, and I use <a href="https://ia.net/writer/">iA Writer</a> on my tablet). I add my images to <code>Dropbox/img/input/</code>. I  tend to strip metadata from my images and resize them to fit the maximum page width (I don&rsquo;t really care for high resolution pictures, speed is preferred over ability to zoom into a picture). For this, two tools are needed:</p>
+
+<pre><code>sudo apt-get install imagemagick exiftool
+</code></pre>
+
+<p>When I&rsquo;m done writing or want to preview an article, I SSH into my AWS Lightsail instance and run <code>sync.sh</code>, a small script which moves posts to a proper directory, processes images and places them in the desired location, as well as starts Octopress instance (this way I can preview my blog on the AWS Lightsail instance). Contents of <code>sync.sh</code> (don&rsquo;t forget to <code>chmod +x</code>):</p>
+
+<pre><code>#!/bin/bash
+cd $HOME/Dropbox/blog/img/input
+mogrify -resize 832x620 -quality 100 -path $HOME/Dropbox/blog/img/output *.jpg
+exiftool -all= $HOME/Dropbox/blog/img/output/*.jpg
+cp $HOME/Dropbox/blog/posts/*.markdown $HOME/blog/source/_posts
+cp $HOME/Dropbox/blog/img/output/*.jpg $HOME/blog/source/images/posts
+cd $HOME/blog
+rake generate
+rake preview
+</code></pre>
+
+<p>I run the above script every time I want to preview the site. I&rsquo;m sure it&rsquo;s easy to set up a daemon to watch for changes in the Dropbox folders, but I don&rsquo;t see the need for that yet. Also, I just statically resize images to a particular resolution (832x620) since all of the pictures I upload have the same aspect ratio, I&rsquo;m sure there&rsquo;s a way to calculate that number on the fly for this script to work with different aspect ratios.</p>
+
+<p>Lastly, when I deployed and committed my changes (still commit and deploy manually out of a habit), I run <code>archive.sh</code>:</p>
+
+<pre><code>#!/bin/bash
+mv $HOME/Dropbox/blog/posts/*.markdown $HOME/Dropbox/blog/published
+rm $HOME/Dropbox/blog/img/input/*
+rm $HOME/Dropbox/blog/img/output/*
+</code></pre>
+
+<p>It&rsquo;s not much, but enough to save some manual labor involved in publishing to Octopress.</p>
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
+-->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
@@ -210,222 +269,6 @@ def ignored(*exceptions):
 
 <p>UPDATE: As Andy pointed out in comments, this context manager has been renamed
 to <code>contextlib.supress</code> (<a href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a>).</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making Django and Lettuce play nice together]]></title>
-    <link href="http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/"/>
-    <updated>2013-12-30T18:48:31+00:00</updated>
-    <id>http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together</id>
-    <content type="html"><![CDATA[<p>Lettuce is a great BDD tool which allows you to parse expressions written via
-Gherkin syntax in python. However the documentation is not very comprehensive,
-and at the moment current version (0.2.19) has some issues integrating with the
-latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
-to a comprehensive tutorial.</p>
-
-<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
-and you already have a working project configured. Your project is called
-&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
-
-<h2>Setup</h2>
-
-<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
-released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
-install current development version. Releases 0.2.20 and up should include the
-fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
-
-<pre><code>pip install -e \
-    git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
-pip install django-nose splinter
-pip freeze &gt; requirements.txt
-</code></pre>
-
-<p>First line downloads lettuce package from the github repository and installs
-missing dependencies. You can replace <code>cccc397</code> with the current commit.
-Technically commit can be omitted, but we don&rsquo;t want to have an unstable
-ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
-since nose assertions come in handy while writing Lettuce steps, as well as
-<code>splinter</code>, which is a great tool for testing web application.</p>
-
-<p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
-
-<pre><code>INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    # ... third party apps ...
-    'lettuce.django',
-    'myproject',
-    'polls',
-)
-</code></pre>
-
-<p>You also have to explicitly specify the apps you want to use with lettuce:</p>
-
-<pre><code>LETTUCE_APPS = (
-    'polls',
-)
-</code></pre>
-
-<p>By default, lettuce will run its&#8217; tests against your default database. But we
-want to use test database for that, so we have to add few more settings:</p>
-
-<pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
-LETTUCE_SERVER_PORT = 9000
-</code></pre>
-
-<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> - a
-class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
-from port 8000 so you won&rsquo;t have issues running the development server via
-<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
-
-<p>You also have to create a <code>features</code> directories inside the apps you want to
-test with Lettuce:</p>
-
-<pre><code>/myproject
-    /myproject
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    /polls
-        /features
-            /steps
-                __init__.py
-                polls_list.py
-            polls_list.feature
-        __init__.py
-        models.py
-        tests.py
-        views.py
-    manage.py
-    requirements.txt
-    terrain.py
-</code></pre>
-
-<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
-same directory as a <code>manage.py</code>:</p>
-
-<pre><code>from django.core.management import call_command
-from django.conf import settings
-from lettuce import before, after, world
-from splinter.browser import Browser
-
-@before.each_scenario
-def flush_database(scenario):
-    call_command('flush', interactive=False, verbosity=0)
-
-@before.each_scenario
-def prepare_browser(scenario):
-    world.browser = Browser()
-
-@after.each_scenario
-def destroy_browser(scenario):
-    world.browser.quit()
-</code></pre>
-
-<p>This code flushes the database before each scenario, as well as prepares and
-destroys the <code>splinter</code> browser.</p>
-
-<h2>Writing the features</h2>
-
-<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
-<code>polls/features/polls_list.feature</code>:</p>
-
-<pre><code>Feature: Polls list
-
-    Scenario: Polls list without any polls
-        When I access the "polls list" url
-        Then I see a text "We didn't find any polls!"
-
-    Scenario: Polls list with one poll
-        Given a poll with the title "Hello world"
-        When I access the "polls list" url
-        Then I see a text "Hello world"
-        And I do not see a text "We didn't find any polls!"
-</code></pre>
-
-<p>Now describe the steps in <code>polls/features/steps/polls_list.py</code>:</p>
-
-<pre><code>from django.core.urlresolvers import reverse
-from lettuce import step, world
-from lettuce.django import django_url
-from nose.tools import assert_in, assert_not_in
-from polls.models import Poll
-
-PAGES = {
-    "polls list": "polls:list"
-}
-
-@step(r'access the "(.*)" url')
-def access_the_url(step, name):
-    world.browser.visit(django_url(reverse(PAGES[name])))
-
-@step(r'see a text "(.*)"')
-def see_a_text(step, text):
-    assert_in(text, world.browser.html)
-
-@step(r'a poll with the title "(.*)"')
-def create_a_poll_with_the_title(step, title):
-    poll = Poll.objects.create(title=title)
-    polls.save()
-
-@step(r'do not see a text "(.*)"')
-def do_not_see_a_text(step, text):
-    assert_not_in(text, world.browser.html)
-</code></pre>
-
-<h2>Running the tests</h2>
-
-<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
-just wrote:</p>
-
-<pre><code>$ python manage.py harvest --test-server
-Creating test database for alias 'default'...
-Django's builtin server is running at 0.0.0.0:9000
-
-Feature: Polls list
-
-  Scenario: Polls list without any polls
-    When I access the "polls list" url
-    Then I see a text "We didn't find any polls!"
-
-  Scenario: Polls list with one poll
-    Given a poll with the title "Hello world"
-    When I access the "polls list" url
-    Then I see a text "Hello world"
-    And I do not see a text "We didn't find any polls!"
-
-1 feature (1 passed)
-2 scenarios (2 passed)
-6 steps (6 passed)
-Destroying test database for alias 'default'...
-</code></pre>
-
-<p>Don&rsquo;t forget the <code>--test-server</code> switch - otherwise Lettuce will run tests
-against your default database.</p>
-
-<h2>Sources</h2>
-
-<p>You can find some more details on Lettuce and Django integration here:
-<a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
-
-<h2>Update</h2>
-
-<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
-in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
-
-<pre><code>LETTUCE_USE_TEST_DATABASE = True
-</code></pre>
-
-<p>This way you won&rsquo;t end up accidentally erasing your production database after
-forgetting to add <code>--test-server</code> flag.</p>
 ]]></content>
   </entry>
   

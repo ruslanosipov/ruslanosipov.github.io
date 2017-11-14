@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2017-11-13T23:15:14+00:00</updated>
+  <updated>2017-11-14T17:15:47+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Automating Octorpress Publishing]]></title>
+    <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
+    <updated>2017-11-14T15:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
+    <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
+
+<p>One issue though - I need to be near a computer to publish and preview the article. This becomes difficult if I&rsquo;m traveling with, say, a tablet.</p>
+
+<p>I have a low end AWS Lightsail instance I use for writing and publishing, but it&rsquo;s not always fun to write when SSHing into a server, and I often write offline - making it even more difficult to move files between where I write and where I publish. And managing images is a nightmare. To resolve this, I set up a few directories I use in Dropbox, and wrote a few scripts to move things around when needed.</p>
+
+<p>Here&rsquo;s a directory structure in Dropbox:</p>
+
+<pre><code>- blog/
+  - posts/
+    - 2017-11-20-automatic-octopress-publishing.markdown
+  - img/
+    - input/
+      - a-picture-of-a-flower.jpg
+    - output/
+</code></pre>
+
+<p>I put Markdown files in <code>Dropbox/blog/posts/</code> (and numerous offline editors sync with Dropbox - I&rsquo;m writing this with <a href="https://stackedit.io/app">StackEdit</a>, and I use <a href="https://ia.net/writer/">iA Writer</a> on my tablet). I add my images to <code>Dropbox/img/input/</code>. I  tend to strip metadata from my images and resize them to fit the maximum page width (I don&rsquo;t really care for high resolution pictures, speed is preferred over ability to zoom into a picture). For this, two tools are needed:</p>
+
+<pre><code>sudo apt-get install imagemagick exiftool
+</code></pre>
+
+<p>When I&rsquo;m done writing or want to preview an article, I SSH into my AWS Lightsail instance and run <code>sync.sh</code>, a small script which moves posts to a proper directory, processes images and places them in the desired location, as well as starts Octopress instance (this way I can preview my blog on the AWS Lightsail instance). Contents of <code>sync.sh</code> (don&rsquo;t forget to <code>chmod +x</code>):</p>
+
+<pre><code>#!/bin/bash
+cd $HOME/Dropbox/blog/img/input
+mogrify -resize 832x620 -quality 100 -path $HOME/Dropbox/blog/img/output *.jpg
+exiftool -all= $HOME/Dropbox/blog/img/output/*.jpg
+cp $HOME/Dropbox/blog/posts/*.markdown $HOME/blog/source/_posts
+cp $HOME/Dropbox/blog/img/output/*.jpg $HOME/blog/source/images/posts
+cd $HOME/blog
+rake generate
+rake preview
+</code></pre>
+
+<p>I run the above script every time I want to preview the site. I&rsquo;m sure it&rsquo;s easy to set up a daemon to watch for changes in the Dropbox folders, but I don&rsquo;t see the need for that yet. Also, I just statically resize images to a particular resolution (832x620) since all of the pictures I upload have the same aspect ratio, I&rsquo;m sure there&rsquo;s a way to calculate that number on the fly for this script to work with different aspect ratios.</p>
+
+<p>Lastly, when I deployed and committed my changes (still commit and deploy manually out of a habit), I run <code>archive.sh</code>:</p>
+
+<pre><code>#!/bin/bash
+mv $HOME/Dropbox/blog/posts/*.markdown $HOME/Dropbox/blog/published
+rm $HOME/Dropbox/blog/img/input/*
+rm $HOME/Dropbox/blog/img/output/*
+</code></pre>
+
+<p>It&rsquo;s not much, but enough to save some manual labor involved in publishing to Octopress.</p>
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
+-->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Trip to Salt Lake City]]></title>
@@ -2355,37 +2414,6 @@ programmers limit themselves to.</p>
 <p>As Jeff Atwood suggests in his article
 <a href="http://blog.codinghorror.com/programmers-dont-read-books-but-you-should/">&ldquo;Programmers Don&rsquo;t Read Books - But You Should&rdquo;</a>, pick up one of the
 timeless books - not affected by changing technologies and processes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gundo tree for Vim]]></title>
-    <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
-    <updated>2015-06-07T20:10:15+00:00</updated>
-    <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
-    <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
-You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
-much more complex than that: Vim keeps track of every change you made in the
-current session, making it possible to access change history beyond basic <code>u</code>
-and <code>C-r</code> commands.</p>
-
-<p>Default interface for accessing far out branches of the undo tree leaves to be
-desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
-
-<p>Gundo provides an easy to use interface for navigating history branches. In the
-screenshot above, I am previewing a diff in one of the undo tree branches
-inaccessible via <code>u</code> command.</p>
-
-<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
-convenient to me:</p>
-
-<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
-</code></pre>
-
-<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
-to travel through changes. Enter key applies the changes.</p>
 ]]></content>
   </entry>
   
