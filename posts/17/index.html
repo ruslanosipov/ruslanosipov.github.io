@@ -134,6 +134,67 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-06T20:02:24+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu  6 Dec 2012,  8:02 PM</time>
+        
+           | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/gui-git-difftool-for-windows/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/gui-git-difftool-for-windows/" itemprop="url">GUI git difftool for Windows</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>A quick note on how to set up GUI difftool to use with git on Windows (Git
+Bash, Cygwin, etc&hellip;).</p>
+
+<p>Download and install GUI diff tool of your choice, get the path to executable.</p>
+
+<p>Create <code>difftool.sh</code> in directory included in your path (for example
+<code>C:\Users\{username}\bin</code> in Git Bash). Let&rsquo;s take SourceGear&rsquo;s DiffMerge as an
+example.</p>
+
+<pre><code>#!/bin/sh
+"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe" "$1" "$2" | cat
+</code></pre>
+
+<p>And in your ~/.gitconfig:</p>
+
+<pre><code>[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    difftool.sh "$LOCAL" "$REMOTE"
+</code></pre>
+
+<p>And difftool is available via <code>git difftool</code> command now.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-15T19:06:33+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 15 Nov 2012,  7:06 PM</time>
         
            | <a href="/blog/extendedly-basic-vim-setup/#disqus_thread" itemprop="discussionUrl"
@@ -730,6 +791,8 @@ Array length: 100, allocated elements: 100
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/my-vimrc-annotated/">My .vimrc, Annotated</a>
+    
     <a class="list-group-item " href="/blog/automating-octopress-publishing/">Automating Octorpress Publishing</a>
     
     <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
@@ -748,8 +811,6 @@ Array length: 100, allocated elements: 100
     
     <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
     
-    <a class="list-group-item " href="/blog/spawning-evenly-distributed-mobs/">Spawning evenly distributed mobs</a>
-    
   </div>
 </section>
 
@@ -763,7 +824,7 @@ Array length: 100, allocated elements: 100
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2017 - Ruslan Osipov<br>
+  Copyright &copy; 2018 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.

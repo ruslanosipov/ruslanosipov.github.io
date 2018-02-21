@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2017-11-14T17:15:47+00:00</updated>
+  <updated>2018-02-21T18:36:29+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,283 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My .vimrc, Annotated]]></title>
+    <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
+    <updated>2018-02-21T15:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
+
+<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
+
+set nocompatible  " Required for many plugins, ensures it's not compatible with 
+                  " Vi, which nobody uses at this point.
+filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
+</code></pre>
+
+<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
+
+<pre><code>" Required Vundle setup.
+set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=$GOROOT/misc/vim
+call vundle#rc()
+
+" =&gt; Vundle plugins ------------------------------------------------------- {{{1
+
+Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
+
+" Colorschemes:
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'ajh17/Spacegray.vim.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'squarefrog/tomorrow-night.vim'
+Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
+
+" Language/tool integration and support:
+Plugin 'burnettk/vim-angular'
+Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'motemen/git-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic.git'  " Syntax checker.
+Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
+
+" Quality of life:
+Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
+Plugin 'ciaranm/detectindent'      " Automatically detect indent.
+Plugin 'ervandew/supertab'         " Smarter autocompletion.
+Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
+Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
+Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
+Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
+Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
+Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
+Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
+Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
+Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
+Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
+
+" New features:
+Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
+Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
+Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
+Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
+
+if v:version &gt; 703
+  Plugin 'SirVer/ultisnips'        " Intricate snippets.
+  Plugin 'chrisbra/vim-diff-enhanced'
+endif
+
+" =&gt; Plugins configuration ------------------------------------------------ {{{1
+
+" NERDTree: auto close if last window.
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Force Gundo preview to the bottom.
+let g:gundo_preview_bottom = 1
+
+" Map Gundo.
+nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
+
+" DetectIndent: Enable and configure.
+augroup detectindent
+  autocmd!
+  autocmd BufReadPost * :DetectIndent
+augroup END
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
+" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
+let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
+let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
+let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
+let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
+
+" VimWiki: default location.
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Dropbox/wiki',
+  \ 'template_path': '$HOME/Dropbox/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+" Map Tagbar.
+nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
+
+" Synastic configuration.
+let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
+let g:syntastic_html_checkers = ['']
+let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
+let g:syntastic_javascript_gjslint_args = '--strict'
+let g:syntastic_python_checkers = ['gpylint']
+</code></pre>
+
+<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
+
+<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
+
+<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
+
+syntax on
+
+" Indentation settings.
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" Disable backups and .swp files.
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Semicolon is too long to type.
+nnoremap ; :
+vnoremap ; :
+
+" Map leader key.
+let mapleader = "\&lt;Space&gt;"
+
+" Use system clipboard.
+set clipboard=unnamedplus
+
+" Enable wild menu (tab command autocompletion).
+set wildmenu
+set wildmode=list:longest,full
+
+" Don't complain about unsaved files when switching buffers.
+set hidden
+
+" Make soft line breaks much better looking.
+if v:version &gt; 703
+  set breakindent
+endif
+
+" Pretty soft break character.
+let &amp;showbreak='↳ '
+
+" =&gt; Looks ---------------------------------------------------------------- {{{1
+
+set background=dark
+colorscheme spacegray
+
+" Set terminal window title and set it back on exit.
+set title
+let &amp;titleold = getcwd()
+
+" Shorten press ENTER to continue messages.
+set shortmess=atI
+
+" Show last command.
+set showcmd
+
+" Highlight cursor line.
+set cursorline
+
+" Ruler (line, column and % at the right bottom).
+set ruler
+
+" Display line numbers if terminal is wide enough.
+if &amp;co &gt; 80
+  set number
+endif
+
+" Soft word wrap.
+set linebreak
+
+" Prettier display of long lines of text.
+set display+=lastline
+
+" Always show statusline.
+set laststatus=2
+
+" =&gt; Movement and search -------------------------------------------------- {{{1
+
+" Ignore case when searching.
+set ignorecase
+set smartcase
+
+" Fast split navigation.
+nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
+nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
+nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
+nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
+
+" Absolute movement for word-wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+" =&gt; Misc ----------------------------------------------------------------- {{{1
+
+" Use Unix as the standart file type.
+set ffs=unix,dos,mac
+
+" Ignore compiled files.
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+" Ignore virtualenv directory.
+set wildignore+=env
+
+" Fold using {{{n, where n is fold level
+set foldmethod=marker
+
+" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
+
+" Ignore mouse (in GVIM).
+set mouse=c
+
+" Fix backspace behavior in GVIM.
+set bs=2
+
+" NERDTree arrows in Windows.
+if has("win32") || has("win64") || has("win32unix")
+  let g:NERDTreeDirArrows = 0
+endif
+
+" Increase lower status bar height in diff mode.
+if &amp;diff
+  set cmdheight=2
+endif
+
+" Unfold all files by default.
+au BufRead * normal zR
+</code></pre>
+
+<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
+
+<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
+
+" Trim trailing whitespace in the file.
+command TrimWhitespace %s/\s\+$//e
+
+" Command to close current buffer without closing the window.
+command Bd :bp | :sp | :bn | :bd
+
+" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
+
+nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
+nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
+nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
+nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
+nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
+</code></pre>
+
+<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Automating Octorpress Publishing]]></title>
@@ -2265,155 +2542,6 @@ you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>mo
 
 <p>Simple idea, and instantly after trying this out, I would really expect this
 feature to be included in vanilla Vim.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lessons learned: engineering productivity]]></title>
-    <link href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/"/>
-    <updated>2015-06-08T22:03:58+00:00</updated>
-    <id>http://www.rosipov.com/blog/lessons-learned-engineering-productivity</id>
-    <content type="html"><![CDATA[<p>I enjoy optimizing the way I work: the less time I can spend on something
-without sacrificing quality - the better. Below are few ideas on the subject of
-engineering productivity I&rsquo;ve successfully applied in my career.</p>
-
-<h2>Don&rsquo;t work long hours</h2>
-
-<p>A fascinating paper was released in 2011 by a group of Israeli researchers, who
-studied the factors which affect if prisoners were given a parole or not
-(source: <a href="http://www.pnas.org/content/108/17/6889.abstract">Extraneous factors in judicial decisions</a>.</p>
-
-<p>First prisoner in a morning has approximately 65% chance of being released. With
-every next case, the chance dropped significantly, reaching nearly 0% starting
-with the third case. After returning from a lunch break, odds of a prisoner
-being released went back up to 65%. And once again, with each new prisoner the
-odds decline rapidly.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/israeli-parole-study.gif" title="A graph of favorable parole decisions given by the judges." ></p>
-
-<p>Authors of the paper suggest that making decisions depletes a limited mental
-facility. People start looking for shortcuts and making mistakes.</p>
-
-<p>Working long hours is something we&rsquo;ve all done more than once. Be it an upcoming
-deadline, fascinating problem, or a personal project. The problem with working
-too long is that you&rsquo;re doing a poor job without realizing it.</p>
-
-<p>I try to avoid working more than 7 hours a day, and there are people who get an
-incredible amount of work done under an even shorter amount of time.</p>
-
-<p>This is probably explained by a phenomenon called &ldquo;ego depletion&rdquo;: the idea that
-self-control or willpower draw upon a pool of limited mental resources that can
-be used up. When the energy for mental activity is low, self-control is
-typically impaired, which is what is considered to be a state of ego depletion.</p>
-
-<h2>Dangers of burning out</h2>
-
-<p>Another problem with working too long - is a possibility of a burnout.</p>
-
-<p>A while back I worked as a freelancer for a client of mine. I worked long hours
-from home office. This was my first time working from home for such a long
-period of time, and I made a number of mistakes in the beginning. One of which
-was working too much.</p>
-
-<p>I&rsquo;ve put in a number of 12-hour marathons in order to get more work done. I was
-on call most of the time. I became overwhelmed with all the work I had to get
-done. I started losing interest in work and feeling like things are getting out
-of my control. Every day felt like a bad day.</p>
-
-<p>Those are the symptoms of a burnout. Feeling of life spinning out of control
-and feeling like nothing you do makes any impact.</p>
-
-<p>I broke out of a mental prison of a burnout by getting a better work-life
-balance, enforcing exercise routine, and never working more than 8 hours a day.
-7 in most cases.</p>
-
-<h2>Work-life balance</h2>
-
-<p>Another thing I learned from working from home is how to keep a work-life
-balance. Not having a separate office and living in a 1-bedroom apartment with
-my wife, I had to barricade myself in a far corner of a bedroom and turn it into
-a physically separated office space. That was the space I worked in, and it
-remained empty after I was done and until I started the next work day.</p>
-
-<p>Work-life balance deserves a special say: it&rsquo;s the difference between doing an
-amazing job and going insane. Set aside time and place for work, and never allow
-a bleed-through. Don&rsquo;t be on call if you can avoid it. Don&rsquo;t open or reply to
-work-related emails at your spare time. Office is for work and home is for
-family.</p>
-
-<h2>Distraction-free environment</h2>
-
-<p>Everybody is aware that interruptions hamper productivity, but not everyone
-actively avoids interruptions during work. Replying to a text message, quickly
-checking your social network notifications, or looking up that one thing you&rsquo;ve
-been forgetting to look up for days - all of this impairs your mental ability to
-complete the task within a desired time frame and, more importantly, with high
-quality.</p>
-
-<p>According to various studies it takes from 20 to 30 minutes to get regain the
-same level of concentration and productivity after a single act of disruption. A
-<a href="http://hfs.sagepub.com/content/56/7/1262">2014 study from George Mason University</a> found that students composed lower
-quality essays when interrupted only a few times throughout both planning and
-writing phases. Distracted students performed considerably worse, even though
-they were given additional time to complete an assignment in order to make up
-for the interruptions.</p>
-
-<h2>Know your tools</h2>
-
-<blockquote><p>Use a single editor well</p></blockquote>
-
-<ul>
-<li><a href="http://amzn.to/1B1PWw8">Pragmatic Programmer</a>, Tip #22.</li>
-</ul>
-
-
-<p>This is lower level tip than the rest, but something I find utterly important in
-my daily work. We, the software engineers, spend at least half the time editing
-some sort of text - code, email, documentation. Taking time to improve the
-knowledge of the software you use every day pays off.</p>
-
-<ul>
-<li>Using Gmail? Learn the keyboard shortcuts.</li>
-<li>Use Eclispe? Do the same. Search for plugins which can make your everyday work
-faster and easier.</li>
-<li>Use command shell for daily work? Practice your shell scripting skills, find
-the tools that let you do more work with lesser amount of typing.</li>
-<li>Pick up touch typing. It&rsquo;s also a part of your toolbox. Why think about keying
-words in? Lower error rate while typing - you need to go back less.</li>
-</ul>
-
-
-<p>For instance, I do all my work in shell. I use <a href="http://tmux.sourceforge.net">Tmux</a> for creating and
-navigating multiple sessions. I use Vim for all my editing needs - code,
-documentation, blogging, composing long emails (via <a href="http://www.mutt.org">Mutt</a>). I touch type, so
-working in a text mode is easy.</p>
-
-<p>Over the years I accumulated aliases for all the frequently used shell commands.
-All the Vim and Tmux shortcuts are a part of a muscle memory. Jumping from file
-to file or from one place to another within a file doesn&rsquo;t take any mental
-effort and is accomplished with only a couple of keystrokes.</p>
-
-<p>By eliminating the need to think about or spend too much time working with low
-level concepts - you free up the mental bandwidth for higher level reasoning and
-problem solving.</p>
-
-<h2>Read, don&rsquo;t stop learning</h2>
-
-<p>As per DeMarco and Lister, authors of
-<a href="http://amzn.to/1D2csza">&ldquo;Peopleware: Productive Projects and Teams&rdquo;</a> - one book is more than most
-programmers read each year. This is the same point Steve McConnell&rsquo;s
-<a href="http://amzn.to/1D2cB5K">&ldquo;Code Complete&rdquo;</a> emphasizes.</p>
-
-<p>A lot of programmers don&rsquo;t read books. A few even don&rsquo;t follow relevant blogs
-or websites. Don&rsquo;t do what software engineers had to do in the olden days:
-coding by error in isolation from the rest of the industry. Read a book, learn
-something you don&rsquo;t know about. A single book read from beginning to end
-contains wider array of information compared to disjointed articles some
-programmers limit themselves to.</p>
-
-<p>As Jeff Atwood suggests in his article
-<a href="http://blog.codinghorror.com/programmers-dont-read-books-but-you-should/">&ldquo;Programmers Don&rsquo;t Read Books - But You Should&rdquo;</a>, pick up one of the
-timeless books - not affected by changing technologies and processes.</p>
 ]]></content>
   </entry>
   

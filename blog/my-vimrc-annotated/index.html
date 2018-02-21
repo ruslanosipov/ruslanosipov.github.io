@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My .vimrc, Annotated - Ruslan Osipov</title>
+  <meta name="author" content="Ruslan Osipov">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.rosipov.com/blog/my-vimrc-annotated/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.rosipov.com/blog/my-vimrc-annotated/">
+  <meta property="og:title" content="My .vimrc, Annotated - Ruslan Osipov">
+  
+
+  <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48506044-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9673275857851395",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ruslan Osipov</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/about">About</a>
+                </li>
+                <li >
+                    <a href="/blog/archive">Archive</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="www.rosipov.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="Ruslan Osipov" />
+    
+    <meta itemprop="url" content="http://www.rosipov.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T15:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 21 Feb 2018,  3:00 PM</time>
+        
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        My .vimrc, Annotated
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
+
+<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
+
+set nocompatible  " Required for many plugins, ensures it's not compatible with 
+                  " Vi, which nobody uses at this point.
+filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
+</code></pre>
+
+<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
+
+<pre><code>" Required Vundle setup.
+set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=$GOROOT/misc/vim
+call vundle#rc()
+
+" =&gt; Vundle plugins ------------------------------------------------------- {{{1
+
+Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
+
+" Colorschemes:
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'ajh17/Spacegray.vim.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'squarefrog/tomorrow-night.vim'
+Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
+
+" Language/tool integration and support:
+Plugin 'burnettk/vim-angular'
+Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'motemen/git-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic.git'  " Syntax checker.
+Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
+
+" Quality of life:
+Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
+Plugin 'ciaranm/detectindent'      " Automatically detect indent.
+Plugin 'ervandew/supertab'         " Smarter autocompletion.
+Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
+Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
+Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
+Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
+Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
+Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
+Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
+Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
+Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
+Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
+
+" New features:
+Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
+Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
+Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
+Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
+
+if v:version &gt; 703
+  Plugin 'SirVer/ultisnips'        " Intricate snippets.
+  Plugin 'chrisbra/vim-diff-enhanced'
+endif
+
+" =&gt; Plugins configuration ------------------------------------------------ {{{1
+
+" NERDTree: auto close if last window.
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Force Gundo preview to the bottom.
+let g:gundo_preview_bottom = 1
+
+" Map Gundo.
+nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
+
+" DetectIndent: Enable and configure.
+augroup detectindent
+  autocmd!
+  autocmd BufReadPost * :DetectIndent
+augroup END
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
+" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
+let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
+let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
+let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
+let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
+
+" VimWiki: default location.
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Dropbox/wiki',
+  \ 'template_path': '$HOME/Dropbox/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+" Map Tagbar.
+nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
+
+" Synastic configuration.
+let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
+let g:syntastic_html_checkers = ['']
+let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
+let g:syntastic_javascript_gjslint_args = '--strict'
+let g:syntastic_python_checkers = ['gpylint']
+</code></pre>
+
+<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
+
+<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
+
+<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
+
+syntax on
+
+" Indentation settings.
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" Disable backups and .swp files.
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Semicolon is too long to type.
+nnoremap ; :
+vnoremap ; :
+
+" Map leader key.
+let mapleader = "\&lt;Space&gt;"
+
+" Use system clipboard.
+set clipboard=unnamedplus
+
+" Enable wild menu (tab command autocompletion).
+set wildmenu
+set wildmode=list:longest,full
+
+" Don't complain about unsaved files when switching buffers.
+set hidden
+
+" Make soft line breaks much better looking.
+if v:version &gt; 703
+  set breakindent
+endif
+
+" Pretty soft break character.
+let &amp;showbreak='↳ '
+
+" =&gt; Looks ---------------------------------------------------------------- {{{1
+
+set background=dark
+colorscheme spacegray
+
+" Set terminal window title and set it back on exit.
+set title
+let &amp;titleold = getcwd()
+
+" Shorten press ENTER to continue messages.
+set shortmess=atI
+
+" Show last command.
+set showcmd
+
+" Highlight cursor line.
+set cursorline
+
+" Ruler (line, column and % at the right bottom).
+set ruler
+
+" Display line numbers if terminal is wide enough.
+if &amp;co &gt; 80
+  set number
+endif
+
+" Soft word wrap.
+set linebreak
+
+" Prettier display of long lines of text.
+set display+=lastline
+
+" Always show statusline.
+set laststatus=2
+
+" =&gt; Movement and search -------------------------------------------------- {{{1
+
+" Ignore case when searching.
+set ignorecase
+set smartcase
+
+" Fast split navigation.
+nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
+nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
+nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
+nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
+
+" Absolute movement for word-wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+" =&gt; Misc ----------------------------------------------------------------- {{{1
+
+" Use Unix as the standart file type.
+set ffs=unix,dos,mac
+
+" Ignore compiled files.
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+" Ignore virtualenv directory.
+set wildignore+=env
+
+" Fold using {{{n, where n is fold level
+set foldmethod=marker
+
+" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
+
+" Ignore mouse (in GVIM).
+set mouse=c
+
+" Fix backspace behavior in GVIM.
+set bs=2
+
+" NERDTree arrows in Windows.
+if has("win32") || has("win64") || has("win32unix")
+  let g:NERDTreeDirArrows = 0
+endif
+
+" Increase lower status bar height in diff mode.
+if &amp;diff
+  set cmdheight=2
+endif
+
+" Unfold all files by default.
+au BufRead * normal zR
+</code></pre>
+
+<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
+
+<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
+
+" Trim trailing whitespace in the file.
+command TrimWhitespace %s/\s\+$//e
+
+" Command to close current buffer without closing the window.
+command Bd :bp | :sp | :bn | :bd
+
+" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
+
+nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
+nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
+nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
+nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
+nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
+</code></pre>
+
+<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Ruslan Osipov</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T15:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 21 Feb 2018,  3:00 PM</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/vim/'>vim</a>
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/my-vimrc-annotated/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/my-vimrc-annotated/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bottom of the post -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9673275857851395"
+     data-ad-slot="1791663594"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/automating-octopress-publishing/" title="Previous Post: Automating Octorpress Publishing">&laquo; Automating Octorpress Publishing</a></li>
+            
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item active" href="/blog/my-vimrc-annotated/">My .vimrc, Annotated</a>
+    
+    <a class="list-group-item " href="/blog/automating-octopress-publishing/">Automating Octorpress Publishing</a>
+    
+    <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
+    
+    <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and Her: What&#8217;s Inside the Bag?</a>
+    
+    <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop Notifications from Chrome Secure Shell</a>
+    
+    <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
+    
+    <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
+    
+    <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
+    
+    <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
+    
+    <a class="list-group-item " href="/blog/mob-level-distribution/">Mob level distribution</a>
+    
+  </div>
+</section>
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2018 - Ruslan Osipov<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'rosipov';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.rosipov.com/blog/my-vimrc-annotated/';
+        var disqus_url = 'http://www.rosipov.com/blog/my-vimrc-annotated/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+  </body>
+</html>
