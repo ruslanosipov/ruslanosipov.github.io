@@ -134,6 +134,253 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-30T18:48:31+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 30 Dec 2013,  6:48 PM</time>
+        
+           | <a href="/blog/making-django-and-lettuce-play-nice-together/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/making-django-and-lettuce-play-nice-together/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/making-django-and-lettuce-play-nice-together/" itemprop="url">Making Django and Lettuce play nice together</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Lettuce is a great BDD tool which allows you to parse expressions written via
+Gherkin syntax in python. However the documentation is not very comprehensive,
+and at the moment current version (0.2.19) has some issues integrating with the
+latest Django (1.6.1 at the moment of writing). Without further ado, I&rsquo;ll get
+to a comprehensive tutorial.</p>
+
+<p>Let&rsquo;s assume you are using <code>pip</code> and <code>virtualenv</code> for the dependency control,
+and you already have a working project configured. Your project is called
+&ldquo;myproject&rdquo;, and the only app you have within your project is called &ldquo;polls&rdquo;.</p>
+
+<h2>Setup</h2>
+
+<p>First, you have to install <code>lettuce</code> library. At the moment of writing, current
+released version (0.2.19) has an error integrating with Django, so we&rsquo;ll
+install current development version. Releases 0.2.20 and up should include the
+fix, so <code>pip install lettuce</code> would be better if the version is out.</p>
+
+<pre><code>pip install -e \
+    git://github.com/gabrielfalcao/lettuce@cccc397#egg=lettuce-master
+pip install django-nose splinter
+pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>First line downloads lettuce package from the github repository and installs
+missing dependencies. You can replace <code>cccc397</code> with the current commit.
+Technically commit can be omitted, but we don&rsquo;t want to have an unstable
+ever-changing branch in our <code>requirements.txt</code>. I also added <code>django-nose</code>
+since nose assertions come in handy while writing Lettuce steps, as well as
+<code>splinter</code>, which is a great tool for testing web application.</p>
+
+<p>Add Lettuce to the <code>INSTALLED_APPS</code> in your <code>myproject/settings.py</code>:</p>
+
+<pre><code>INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    # ... third party apps ...
+    'lettuce.django',
+    'myproject',
+    'polls',
+)
+</code></pre>
+
+<p>You also have to explicitly specify the apps you want to use with lettuce:</p>
+
+<pre><code>LETTUCE_APPS = (
+    'polls',
+)
+</code></pre>
+
+<p>By default, lettuce will run its&#8217; tests against your default database. But we
+want to use test database for that, so we have to add few more settings:</p>
+
+<pre><code>LETTUCE_TEST_SERVER = 'lettuce.django.server.DjangoServer'
+LETTUCE_SERVER_PORT = 9000
+</code></pre>
+
+<p>Where <code>LETTUCE_TEST_SERVER</code> is a subclass of Django&rsquo;s <code>LiveTestServerCase</code> - a
+class which runs a test server for you and <code>LETTUCE_SERVER_PORT</code> is different
+from port 8000 so you won&rsquo;t have issues running the development server via
+<code>python manage.py runserver</code> at the same time as running Lettuce tests.</p>
+
+<p>You also have to create a <code>features</code> directories inside the apps you want to
+test with Lettuce:</p>
+
+<pre><code>/myproject
+    /myproject
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+    /polls
+        /features
+            /steps
+                __init__.py
+                polls_list.py
+            polls_list.feature
+        __init__.py
+        models.py
+        tests.py
+        views.py
+    manage.py
+    requirements.txt
+    terrain.py
+</code></pre>
+
+<p>Lettuce has its&#8217; own settings file called <code>terrain.py</code>. It has to be in the
+same directory as a <code>manage.py</code>:</p>
+
+<pre><code>from django.core.management import call_command
+from django.conf import settings
+from lettuce import before, after, world
+from splinter.browser import Browser
+
+@before.each_scenario
+def flush_database(scenario):
+    call_command('flush', interactive=False, verbosity=0)
+
+@before.each_scenario
+def prepare_browser(scenario):
+    world.browser = Browser()
+
+@after.each_scenario
+def destroy_browser(scenario):
+    world.browser.quit()
+</code></pre>
+
+<p>This code flushes the database before each scenario, as well as prepares and
+destroys the <code>splinter</code> browser.</p>
+
+<h2>Writing the features</h2>
+
+<p>Feature files support standard Gherkin syntax, let&rsquo;s write one right now in
+<code>polls/features/polls_list.feature</code>:</p>
+
+<pre><code>Feature: Polls list
+
+    Scenario: Polls list without any polls
+        When I access the "polls list" url
+        Then I see a text "We didn't find any polls!"
+
+    Scenario: Polls list with one poll
+        Given a poll with the title "Hello world"
+        When I access the "polls list" url
+        Then I see a text "Hello world"
+        And I do not see a text "We didn't find any polls!"
+</code></pre>
+
+<p>Now describe the steps in <code>polls/features/steps/polls_list.py</code>:</p>
+
+<pre><code>from django.core.urlresolvers import reverse
+from lettuce import step, world
+from lettuce.django import django_url
+from nose.tools import assert_in, assert_not_in
+from polls.models import Poll
+
+PAGES = {
+    "polls list": "polls:list"
+}
+
+@step(r'access the "(.*)" url')
+def access_the_url(step, name):
+    world.browser.visit(django_url(reverse(PAGES[name])))
+
+@step(r'see a text "(.*)"')
+def see_a_text(step, text):
+    assert_in(text, world.browser.html)
+
+@step(r'a poll with the title "(.*)"')
+def create_a_poll_with_the_title(step, title):
+    poll = Poll.objects.create(title=title)
+    polls.save()
+
+@step(r'do not see a text "(.*)"')
+def do_not_see_a_text(step, text):
+    assert_not_in(text, world.browser.html)
+</code></pre>
+
+<h2>Running the tests</h2>
+
+<p>Now, you can run <code>python manage.py harvest --test-server</code> to run the tests you
+just wrote:</p>
+
+<pre><code>$ python manage.py harvest --test-server
+Creating test database for alias 'default'...
+Django's builtin server is running at 0.0.0.0:9000
+
+Feature: Polls list
+
+  Scenario: Polls list without any polls
+    When I access the "polls list" url
+    Then I see a text "We didn't find any polls!"
+
+  Scenario: Polls list with one poll
+    Given a poll with the title "Hello world"
+    When I access the "polls list" url
+    Then I see a text "Hello world"
+    And I do not see a text "We didn't find any polls!"
+
+1 feature (1 passed)
+2 scenarios (2 passed)
+6 steps (6 passed)
+Destroying test database for alias 'default'...
+</code></pre>
+
+<p>Don&rsquo;t forget the <code>--test-server</code> switch - otherwise Lettuce will run tests
+against your default database.</p>
+
+<h2>Sources</h2>
+
+<p>You can find some more details on Lettuce and Django integration here:
+<a href="http://lettuce.it/recipes/django-lxml.html">Web development fun with Lettuce and Django</a>.</p>
+
+<h2>Update</h2>
+
+<p>Rather than using <code>--test-server</code> switch, it&rsquo;s easier and safer to set a flag
+in your <code>settings.py</code> (suggested by Michel Sabchuk):</p>
+
+<pre><code>LETTUCE_USE_TEST_DATABASE = True
+</code></pre>
+
+<p>This way you won&rsquo;t end up accidentally erasing your production database after
+forgetting to add <code>--test-server</code> flag.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-25T00:39:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 25 Nov 2013, 12:39 AM</time>
         
            | <a href="/blog/open-previously-edited-file-in-vim/#disqus_thread" itemprop="discussionUrl"
@@ -381,89 +628,6 @@ fi
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T14:57:29+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon 22 Jul 2013,  2:57 PM</time>
-        
-           | <a href="/blog/python-doctests-and-decorators-bug/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/python-doctests-and-decorators-bug/" itemprop="url">Python doctests and decorators bug</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Now, this as well might be a feature, but doctest strings are not being
-executed for decorated functions (at least in version 2.7). However, there is a
-workaround.</p>
-
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
-to import docstrings into a decorator scope.</p>
-
-<pre><code>#!/usr/bin/env python
-
-from functools import wraps
-
-def decorator(func):
-    @wraps(func)
-    def wrapper():
-        return func()
-    return wrapper
-
-@decorator
-def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return True
-
-import doctest
-doctest.testmod()
-</code></pre>
-
-<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
-
-<pre><code>**********************************************************************
-File "decorator.py", line 12, in __main__.foo
-Failed example:
-    foo()
-Expected:
-    False
-Got:
-    True
-**********************************************************************
-1 items had failures:
-   1 of   1 in __main__.foo
-***Test Failed*** 1 failures.
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -487,6 +651,8 @@ Got:
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist Phone Launcher</a>
+    
     <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
     <a class="list-group-item " href="/blog/my-vimrc-annotated/">My .vimrc, Annotated</a>
@@ -504,8 +670,6 @@ Got:
     <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
     
     <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
-    
-    <a class="list-group-item " href="/blog/a-year-with-pebble-time-round/">A year with Pebble Time Round</a>
     
   </div>
 </section>

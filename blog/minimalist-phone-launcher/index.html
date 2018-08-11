@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Automating Octorpress Publishing - Ruslan Osipov</title>
+  <title>Minimalist Phone Launcher - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/automating-octopress-publishing/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/minimalist-phone-launcher/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/automating-octopress-publishing/">
-  <meta property="og:title" content="Automating Octorpress Publishing - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/minimalist-phone-launcher/">
+  <meta property="og:title" content="Minimalist Phone Launcher - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -130,7 +130,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-11-14T15:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Tue 14 Nov 2017,  3:00 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-11T00:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 11 Aug 2018, 12:00 AM</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -139,64 +139,36 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Automating Octorpress Publishing
+        Minimalist Phone Launcher
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
 
-<p>One issue though - I need to be near a computer to publish and preview the article. This becomes difficult if I&rsquo;m traveling with, say, a tablet.</p>
+<p>I present to you the biggest distraction: my phone.</p>
 
-<p>I have a low end AWS Lightsail instance I use for writing and publishing, but it&rsquo;s not always fun to write when SSHing into a server, and I often write offline - making it even more difficult to move files between where I write and where I publish. And managing images is a nightmare. To resolve this, I set up a few directories I use in Dropbox, and wrote a few scripts to move things around when needed.</p>
+<p>I use to get in touch with people I love. I&rsquo;m more productive at work because I have access to information on the go. I also use my phone to browse Reddit, YouTube, and every other media outlet imaginable. Even worse, sometimes I just waste time tinkering with the settings or mindlessly browsing through the apps I have installed.</p>
 
-<p>Here&rsquo;s a directory structure in Dropbox:</p>
+<p>It&rsquo;s an attention sink.</p>
 
-<pre><code>- blog/
-  - posts/
-    - 2017-11-20-automatic-octopress-publishing.markdown
-  - img/
-    - input/
-      - a-picture-of-a-flower.jpg
-    - output/
-</code></pre>
+<p>Nearly a year ago as I was browsing the Google Play Store I bumped into a new launcher: KISS. The tag line caught my attention: &ldquo;Keep It Simple, Stupid&rdquo;. I went ahead and downloaded the launcher. I haven&rsquo;t changed to another launcher since.</p>
 
-<p>I put Markdown files in <code>Dropbox/blog/posts/</code> (and numerous offline editors sync with Dropbox - I&rsquo;m writing this with <a href="https://stackedit.io/app">StackEdit</a>, and I use <a href="https://ia.net/writer/">iA Writer</a> on my tablet). I add my images to <code>Dropbox/img/input/</code>. I  tend to strip metadata from my images and resize them to fit the maximum page width (I don&rsquo;t really care for high resolution pictures, speed is preferred over ability to zoom into a picture). For this, two tools are needed:</p>
+<p>Here&rsquo;s how my home screen looks today:</p>
 
-<pre><code>sudo apt-get install imagemagick exiftool
-</code></pre>
+<p><img src="/images/posts/kiss-launcher-home-screen.png" title="A screenshot of a KISS launcher home screen." ></p>
 
-<p>When I&rsquo;m done writing or want to preview an article, I SSH into my AWS Lightsail instance and run <code>sync.sh</code>, a small script which moves posts to a proper directory, processes images and places them in the desired location, as well as starts Octopress instance (this way I can preview my blog on the AWS Lightsail instance). Contents of <code>sync.sh</code> (don&rsquo;t forget to <code>chmod +x</code>):</p>
+<p>There&rsquo;s nothing besides a single search bar. The search bar takes me to the apps I need, web searches I&rsquo;m interested in, or people I&rsquo;m trying to reach out to.</p>
 
-<pre><code>#!/bin/bash
-cd $HOME/Dropbox/blog/img/input
-mogrify -resize 832x620 -quality 100 -path $HOME/Dropbox/blog/img/output *.jpg
-exiftool -all= $HOME/Dropbox/blog/img/output/*.jpg
-cp $HOME/Dropbox/blog/posts/*.markdown $HOME/blog/source/_posts
-cp $HOME/Dropbox/blog/img/output/*.jpg $HOME/blog/source/images/posts
-cd $HOME/blog
-rake generate
-rake preview
-</code></pre>
+<p>It&rsquo;s simple to use. Start typing an app or a contact name, and the results show up above the search bar:</p>
 
-<p>I run the above script every time I want to preview the site. I&rsquo;m sure it&rsquo;s easy to set up a daemon to watch for changes in the Dropbox folders, but I don&rsquo;t see the need for that yet. Also, I just statically resize images to a particular resolution (832x620) since all of the pictures I upload have the same aspect ratio, I&rsquo;m sure there&rsquo;s a way to calculate that number on the fly for this script to work with different aspect ratios.</p>
+<p><img src="/images/posts/kiss-launcher-search-results.png" title="A screenshot of searching for an app with a KISS launcher." ></p>
 
-<p>Lastly, when I deployed and committed my changes (still commit and deploy manually out of a habit), I run <code>archive.sh</code>:</p>
+<p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
 
-<pre><code>#!/bin/bash
-mv $HOME/Dropbox/blog/posts/*.markdown $HOME/Dropbox/blog/published
-rm $HOME/Dropbox/blog/img/input/*
-rm $HOME/Dropbox/blog/img/output/*
-</code></pre>
-
-<p>It&rsquo;s not much, but enough to save some manual labor involved in publishing to Octopress.</p>
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
--->
-
+<p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
 </div>
 
 
@@ -220,13 +192,13 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-11-14T15:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Tue 14 Nov 2017,  3:00 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-11T00:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sat 11 Aug 2018, 12:00 AM</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming/'>programming</a>
+    <a class='category' href='/blog/categories/life/'>life</a>
   
 </span>
 
@@ -235,7 +207,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/automating-octopress-publishing/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/automating-octopress-publishing/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/minimalist-phone-launcher/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/minimalist-phone-launcher/" >Tweet</a>
   
   
   
@@ -256,10 +228,8 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/a-trip-to-salt-lake-city/" title="Previous Post: A Trip to Salt Lake City">&laquo; A Trip to Salt Lake City</a></li>
+            <li class="previous"><a href="/blog/making-a-packing-spreadsheet/" title="Previous Post: Making a packing spreadsheet">&laquo; Making a packing spreadsheet</a></li>
             
-            
-            <li class="next"><a href="/blog/my-vimrc-annotated/" title="Next Post: My .vimrc, Annotated">My .vimrc, Annotated &raquo;</a></li>
             
           </ul>
         
@@ -284,13 +254,13 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist Phone Launcher</a>
+    <a class="list-group-item active" href="/blog/minimalist-phone-launcher/">Minimalist Phone Launcher</a>
     
     <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
     <a class="list-group-item " href="/blog/my-vimrc-annotated/">My .vimrc, Annotated</a>
     
-    <a class="list-group-item active" href="/blog/automating-octopress-publishing/">Automating Octorpress Publishing</a>
+    <a class="list-group-item " href="/blog/automating-octopress-publishing/">Automating Octorpress Publishing</a>
     
     <a class="list-group-item " href="/blog/a-trip-to-salt-lake-city/">A Trip to Salt Lake City</a>
     
@@ -333,8 +303,8 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/automating-octopress-publishing/';
-        var disqus_url = 'http://www.rosipov.com/blog/automating-octopress-publishing/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/minimalist-phone-launcher/';
+        var disqus_url = 'http://www.rosipov.com/blog/minimalist-phone-launcher/';
         var disqus_script = 'embed.js';
       
     (function () {

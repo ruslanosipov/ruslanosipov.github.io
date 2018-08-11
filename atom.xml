@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-03-26T15:22:06+00:00</updated>
+  <updated>2018-08-11T21:22:17+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Minimalist Phone Launcher]]></title>
+    <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
+    <updated>2018-08-11T00:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
+    <content type="html"><![CDATA[<p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
+
+<p>I present to you the biggest distraction: my phone.</p>
+
+<p>I use to get in touch with people I love. I&rsquo;m more productive at work because I have access to information on the go. I also use my phone to browse Reddit, YouTube, and every other media outlet imaginable. Even worse, sometimes I just waste time tinkering with the settings or mindlessly browsing through the apps I have installed.</p>
+
+<p>It&rsquo;s an attention sink.</p>
+
+<p>Nearly a year ago as I was browsing the Google Play Store I bumped into a new launcher: KISS. The tag line caught my attention: &ldquo;Keep It Simple, Stupid&rdquo;. I went ahead and downloaded the launcher. I haven&rsquo;t changed to another launcher since.</p>
+
+<p>Here&rsquo;s how my home screen looks today:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/kiss-launcher-home-screen.png" title="A screenshot of a KISS launcher home screen." ></p>
+
+<p>There&rsquo;s nothing besides a single search bar. The search bar takes me to the apps I need, web searches I&rsquo;m interested in, or people I&rsquo;m trying to reach out to.</p>
+
+<p>It&rsquo;s simple to use. Start typing an app or a contact name, and the results show up above the search bar:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/kiss-launcher-search-results.png" title="A screenshot of searching for an app with a KISS launcher." ></p>
+
+<p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
+
+<p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
@@ -2520,94 +2551,6 @@ Often it takes months, or even years to get rid of certain things.</p>
 
 <p>Replace a queen sized bed with a Japanese futon mat. Digitalize the growing
 paper trail I keep. Travel the world for with a single suitcase.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Profiling slow bashrc]]></title>
-    <link href="http://www.rosipov.com/blog/profiling-slow-bashrc/"/>
-    <updated>2015-07-15T17:07:53+00:00</updated>
-    <id>http://www.rosipov.com/blog/profiling-slow-bashrc</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
-<a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
-startup time hog in my <code>~/.bashrc</code> upon it.</p>
-
-<p>First off, add following few lines to your <code>/etc/bash.bashrc</code>,
-<code>~/.bash_profile</code>, or wherever you&rsquo;d like to begin tracing the script:</p>
-
-<pre><code>PS4='+ $(date "+%s.%N")\011 '
-exec 3&gt;&amp;2 2&gt;/tmp/bashstart.$$.log
-set -x
-</code></pre>
-
-<p>And add following few lines where you want to stop the trace:</p>
-
-<pre><code>set +x
-exec 2&gt;&amp;3 3&gt;&amp;-
-</code></pre>
-
-<p>Now start your bash session (you can simply open a new terminal Window for
-that). The above will create <code>/tmp/bashstart.&lt;PID&gt;.log</code>. To analyze it, I wrote
-a little Python script:</p>
-
-<pre><code>import argparse
-import heapq
-
-parser = argparse.ArgumentParser(description='Analyze bashstart log for speed.')
-parser.add_argument('filename', help='often /tmp/bashstart.&lt;PID&gt;.log')
-parser.add_argument('-n', default=20, help='number of results to show')
-args = parser.parse_args()
-filename, n = args.filename, int(args.n)
-
-with open(filename, 'r') as f:
-    q = []
-    prev_time = None
-    for line in f.readlines():
-        line = line.split()
-        if '+' not in line[0] or len(line) &lt; 3:
-            continue
-        text = ' '.join(line[2:])
-        seconds, nanoseconds = line[1].split('.')
-        time = int(nanoseconds)
-        diff = time - prev_time if prev_time is not None else 0
-        prev_time = time
-        heapq.heappush(q, (diff, text))
-
-for diff, text in heapq.nlargest(n, q):
-    print float(diff) / 1000000000, 's:', text
-</code></pre>
-
-<p>Save it as <code>bashprofile.py</code>, and run it as follows (replace file name with an
-appropriate):</p>
-
-<pre><code>python bashprofile.py /tmp/bashstart.2831.log -n 20
-0.050056909 s: _powerline_init_tmux_support
-0.045323022 s: _powerline_setup_prompt
-0.044722024 s: _powerline_setup_prompt
-0.044423727 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
-0.044364097 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
-0.044137159 s: _powerline_init_tmux_support
-0.015839574 s: __shell_name=bash
-0.010850276 s: command which which
-0.010105462 s: PS2='\[\]  \[\] \[\]'
-0.010000598 s: PS3=' Select variant  '
-0.009837956 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
-0.009767517 s: PS2='\[\]  \[\] \[\]'
-0.0095753 s: PS3=' Select variant  '
-0.007915565 s: other_utils=(ant automake autoreconf libtoolize make mount patch readlink)
-0.00771205 s: for script in version functions/selector cd functions/cli cli override_gem
-0.007008299 s: for gnu_util in '"${gnu_utils[@]}"'
-0.00693653 s: complete -F _crow crow
-0.006803049 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
-0.006672906 s: for script in version functions/selector cd functions/cli cli override_gem
-0.005912399 s: for entry in '${scripts[@]}'
-</code></pre>
-
-<p>In my example, <a href="https://github.com/powerline/powerline">Powerline</a> turned out to be a massive hog. Looks like I&rsquo;ll
-have to troubleshoot the speed or plain disable it.</p>
-
-<p>Don&rsquo;t forget to remove the lines you added to your bash configuration files
-after you&rsquo;re done profiling.</p>
 ]]></content>
   </entry>
   
