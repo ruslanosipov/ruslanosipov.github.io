@@ -1,7 +1,7 @@
 ---
 title: Minimalist Phone Launcher
 categories: [Life]
-date: 2018-08-11 08-00-00 -0800
+date: 2018-08-11 14-20-00 -0800
 ---
 
 For the past few years I've been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.
