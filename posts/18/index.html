@@ -134,6 +134,141 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-10-10T04:16:52+00:00"  data-updated="true" itemprop="datePublished dateCreated">Wed 10 Oct 2012,  4:16 AM</time>
+        
+           | <a href="/blog/using-vim-for-writing-code/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/using-vim-for-writing-code/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/using-vim-for-writing-code/" itemprop="url">Using vim for writing code</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Vim is a great text editor which can be much more powerful then any GUI editor
+or IDE. It has its learning curve, but once you are used to it you&rsquo;ll never
+want to switch to anything else. Here&rsquo;s a quick tutorial on how to use and
+customize vim for working with code.</p>
+
+<h2>Basics</h2>
+
+<p>Feel free to skip this first part if you are familiar with vim already.</p>
+
+<p>First, let&rsquo;s get the hang of moving around. You can use arrow keys or <code>h</code>, <code>j</code>,
+<code>k</code> and <code>l</code> to move around. Holding <code>Ctrl</code> while moving will allow you to move
+between words (separated by spaces, tabulation, or line breaks), holding
+<code>Shift</code> allows you to do so with all punctuation characters including spaces
+and line breaks.</p>
+
+<p>Typing <code>:147</code> will get you to the line 147, <code>/foo</code> will get you to the first
+occurrence of foo, <code>/</code> will repeat the last search.</p>
+
+<p>Hit <code>i</code> to enter insert mode and type in text. Hit <code>Esc</code> to go back. Key <code>a</code>
+does the same thing, but sets the cursor after the selected character. Hit
+<code>Insert</code> to switch between insert and replace modes.</p>
+
+<p>Typing in <code>:w</code> will write changes to a file, <code>:q</code> exits the editor, <code>:e
+&lt;filename&gt;</code> opens another file.</p>
+
+<p>Sometimes you need to do some copy-pasting: copy (yank) line with <code>Y</code> and paste
+it with <code>p</code>. You should know that vim allows you to prefix the majority of
+commands with a number: typing in <code>13Y</code> will yank 13 lines, <code>40j</code> will take you
+40 lines down, etc.</p>
+
+<p>Command <code>x</code> will delete a character, <code>dd</code> will delete a whole line. Of course,
+you can prefix it with a number if you need to delete more then one line.</p>
+
+<p><code>:%s/foo/bar</code> will find and replace the first occurrence of foo with bar,
+<code>:%s/foo/bar/g</code> will do so within the whole file.</p>
+
+<p>Splitting windows is very helpful tool: <code>:split &lt;filename&gt;</code> will split the
+window horizontally, <code>:vsplit &lt;filename&gt;</code> will do so vertically. Hit <code>Ctrl +
+w</code>, and then arrow key will select an active view, <code>Ctrl + w, r</code> will swap the
+views. Simply type <code>:q</code> to close the window.</p>
+
+<h2>Customizing</h2>
+
+<p>Here&rsquo;s example of a <code>~/.vimrc</code> file, and the basic options necessary for
+editing code with vim.</p>
+
+<pre><code>syntax on
+
+set tabstop=4
+set shiftwidth=4
+set smartindent
+set autoindent
+set expandtab
+</code></pre>
+
+<p>Option <code>syntax on</code> enables syntax highlight, <code>tabstop</code> sets tab width,
+<code>shiftwidth</code> sets tab width for auto indentation, <code>smartindent</code>, <code>autoindent</code>
+enables indentation (smart indentation implies adding an extra indentation
+level after defining function, starting a loop, etc.), optional is <code>expandtab</code>,
+which tells vim to treat all tabs as spaces.</p>
+
+<p>If you are fan of limiting line width with n columns - add option
+<code>colorcolumn=80</code>, or (if your vim version is below 7.3) add the following
+lines:</p>
+
+<pre><code>highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /%80v.+/
+</code></pre>
+
+<p>That should highlight all text exceeding the 80 columns limit.</p>
+
+<p>Feel free to experiment with the options and start building up your own
+<code>.vimrc</code>.</p>
+
+<h2>Using ctags with vim</h2>
+
+<p><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a> allows you to create &ldquo;tags&rdquo;
+for all your classes, functions, and variables to allow easily jumping between
+them. After installing ctags (package is also available in major repositories
+named <code>ctags</code>) generate tags:</p>
+
+<pre><code>$ cd project/
+$ ctags -R *
+</code></pre>
+
+<p>Open the main project file and move your cursor over to some function call. Hit
+<code>Ctrl + ]</code> to move to function definition, <code>:tn</code> will move you to the next
+definition for the function. Hitting <code>Ctrl + t</code> will return you back.</p>
+
+<p>Auto completion allows you not to bother with finishing words, variable or
+function names, and pretty much anything. That being said, <code>Ctrl + n</code> will
+finish the word for you or allow you to select the desired word from the list.</p>
+
+<p>This is just a basic example of what you can do with vim, for further info you
+can read <a href="http://www.vim.org/docs.php">vim documentation</a>. I may be posting
+some more tips and tricks on using vim in future.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-09-02T01:54:36+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun  2 Sep 2012,  1:54 AM</time>
         
            | <a href="/blog/c-reallocating-memory-for-the-array/#disqus_thread" itemprop="discussionUrl"
@@ -418,6 +553,8 @@ Array length: 100, allocated elements: 100
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
+    
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist Phone Launcher</a>
     
     <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
@@ -435,8 +572,6 @@ Array length: 100, allocated elements: 100
     <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
     
     <a class="list-group-item " href="/blog/prius-adventures-a-year-later/">Prius adventures, a year later</a>
-    
-    <a class="list-group-item " href="/blog/hackmud-first-impressions/">Hackmud first impressions</a>
     
   </div>
 </section>

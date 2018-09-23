@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>pygame.font not found - Ruslan Osipov</title>
+  <title>Cross-platform vim-plug setup - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/pygame-font-not-found/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/pygame-font-not-found/">
-  <meta property="og:title" content="pygame.font not found - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/">
+  <meta property="og:title" content="Cross-platform vim-plug setup - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -130,7 +130,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-27T13:51:11+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 27 Jun 2013,  1:51 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-09-23T07:02:42+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 23 Sep 2018,  7:02 AM</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -139,18 +139,29 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        pygame.font not found
+        Cross-platform vim-plug setup
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>I had an issue with pygame not being able to find a dependency for the font
-module. After quite a time-consuming search the missing package name was
-<code>libsdl-ttf2.0-dev</code>.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve recently switch to <a href="https://github.com/junegunn/vim-plug">vim-plug</a>, a lightweight Vim plugin manager.</p>
 
-<p>Hope this helps someone.</p>
+<p>It comes with a little <code>.vimrc</code> snippet which downloads the plugin, but it only works for Unix. I use Vim across all three platforms regularly, so I updated the snippet:</p>
+
+<pre><code>" Download and install vim-plug (cross platform).
+if empty(glob(
+    \ '$HOME/' . (has('win32') ? 'vimfiles' : '.vim') . '/autoload/plug.vim'))
+  execute '!curl -fLo ' .
+    \ (has('win32') ? '\%USERPROFILE\%/vimfiles' : '$HOME/.vim') . 
+    \ '/autoload/plug.vim --create-dirs ' .
+    \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+</code></pre>
+
+<p>The above should work across all three major OSes, since Windows 10 recently received <code>curl</code> support.</p>
 </div>
 
 
@@ -174,13 +185,13 @@ module. After quite a time-consuming search the missing package name was
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-27T13:51:11+00:00"  data-updated="true" itemprop="datePublished dateCreated">Thu 27 Jun 2013,  1:51 PM</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-09-23T07:02:42+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 23 Sep 2018,  7:02 AM</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming/'>programming</a>
+    <a class='category' href='/blog/categories/vim/'>vim</a>
   
 </span>
 
@@ -189,7 +200,7 @@ module. After quite a time-consuming search the missing package name was
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/pygame-font-not-found/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/pygame-font-not-found/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/" >Tweet</a>
   
   
   
@@ -210,10 +221,8 @@ module. After quite a time-consuming search the missing package name was
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/use-vimdiff-as-git-mergetool/" title="Previous Post: Use vimdiff as git mergetool">&laquo; Use vimdiff as git mergetool</a></li>
+            <li class="previous"><a href="/blog/minimalist-phone-launcher/" title="Previous Post: Minimalist Phone Launcher">&laquo; Minimalist Phone Launcher</a></li>
             
-            
-            <li class="next"><a href="/blog/python-tests-with-doctest-and-unittest/" title="Next Post: Python tests with doctest and unittest">Python tests with doctest and unittest &raquo;</a></li>
             
           </ul>
         
@@ -238,7 +247,7 @@ module. After quite a time-consuming search the missing package name was
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
+    <a class="list-group-item active" href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
     
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist Phone Launcher</a>
     
@@ -287,8 +296,8 @@ module. After quite a time-consuming search the missing package name was
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/pygame-font-not-found/';
-        var disqus_url = 'http://www.rosipov.com/blog/pygame-font-not-found/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/cross-platform-vim-plug-setup/';
+        var disqus_url = 'http://www.rosipov.com/blog/cross-platform-vim-plug-setup/';
         var disqus_script = 'embed.js';
       
     (function () {
