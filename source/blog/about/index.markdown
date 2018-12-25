@@ -6,6 +6,8 @@ navbar: About
 
 My name is Ruslan Osipov and I live and work in Mountain View, CA. I am a Technical Lead at [Google](https://google.com).
 
+I've recently published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
+
 You can find me on the following websites:
 
 * Professional
