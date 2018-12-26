@@ -4,15 +4,15 @@ title: About
 navbar: About
 ---
 
-My name is Ruslan Osipov and I live and work in Mountain View, CA. I am a Technical Lead at [Google](https://google.com).
+My name is Ruslan Osipov and I live and work in Mountain View, CA. I am a software engineer at [Google](https://google.com).
 
 I've recently published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
 
 You can find me on the following websites:
 
 * Professional
-  * [Google Plus](https://google.com/+ruslanosipov)
   * [LinkedIn](http://www.linkedin.com/in/ruslanosipov)
+  * [Google Plus](https://google.com/+ruslanosipov)
   * [Stack Overflow Careers 2.0](http://careers.stackoverflow.com/ruslanosipov)
   * [Twitter](https://twitter.com/antistatuquo)
 * Me on the web
@@ -24,4 +24,4 @@ Opinions expressed on this blog are solely my own and do not express the views o
 
 ## Regarding my online presence
 
-There seems to be a number of people out there who use "rosipov" as their username. It's a regular coincidence, since this domain name consists of my first initial and my last name. So, if you see someone online with a username "rosipov" - it might not be me. As a rule of thumb, I usually leave a link to this blog on any profile I use. I also try to keep links to my online profiles (above) up to date on this page.
+There seems to be a number of people out there who use "rosipov" as their username. It's a regular coincidence, since this domain name consists of my first initial and my last name. So, if you see someone online with a username "rosipov" - it might not be me. As a rule of thumb, I usually leave a link to this blog on any profile I use. I also try to keep links to my online profiles (above) up to date.
