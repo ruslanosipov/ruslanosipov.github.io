@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-26T20:43:00+00:00</updated>
+  <updated>2018-12-26T20:49:16+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -21,6 +21,8 @@
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 
 <p><img src="http://www.rosipov.com/images/posts/mastering-vim.png" title="A picture of a &#34;Mastering Vim&#34; cover." alt="A picture of a &#34;Mastering Vim&#34; cover."></p>
+
+<p>Mastering Vim was written with support from Packt Publishing and was kindly reviewed by Bram Moolenaar (<a href="https://moolenaar.net">website</a>) - the creator of Vim. Many people made this book possible, including <a href="https://vimconf.org">VimConf Japan</a> crew, who kindly hosted me earlier this year. Thank you to everyone for making Mastering Vim happen!</p>
 
 <p>Give it a read and let me know what you think, <a href="https://amzn.to/2EfGaN5">Mastering Vim is available on Amazon</a>!</p>
 
