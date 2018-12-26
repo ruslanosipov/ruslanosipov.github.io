@@ -38,7 +38,6 @@ footer[role=contentinfo] {
   }
 }
 
-
 table {
   border-style: solid;
   border-width: 1px;
@@ -70,4 +69,8 @@ table th[align="right"], table td[align="right"] {
 
 table th[align="center"], table td[align="center"] {
   text-align: center;
+}
+
+img.shadow-box {
+  @include shadow-box;
 }

@@ -54,6 +54,7 @@ titlecase: false
 
 default_asides:
 - asides/recent_posts.html
+- custom/asides/about.html
 # - asides/github.html
 # - asides/delicious.html
 # - asides/pinboard.html
