@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-26T20:58:37+00:00</updated>
+  <updated>2018-12-26T21:35:56+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Status bar color in Vim terminal mode]]></title>
+    <link href="http://www.rosipov.com/blog/status-bar-color-in-vim-terminal-mode/"/>
+    <updated>2018-12-26T21:02:24+00:00</updated>
+    <id>http://www.rosipov.com/blog/status-bar-color-in-vim-terminal-mode</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;re using a custom color scheme (why wouldn&rsquo;t you?) in conjunction with a terminal mode in Vim (again, why wouldn&rsquo;t you?), you may have noticed that the terminal status bar has no respect for your color scheme.</p>
+
+<p>Run <code>:term</code>, and you&rsquo;ll be greeted to the default status bar:</p>
+
+<p><img src="/images/posts/vim-terminal-mode-default-colors.png" title="Screenshot of the default terminal mode status line." ></p>
+
+<p>Since terminal mode is still in beta in Vim 8.1, we have to manually set the highlighting groups. It&rsquo;ll require a bit of digging.</p>
+
+<p>Navigate to the directory containing your current color scheme. Depending on the plugin manager, the color schemes are located in different places. On Linux, default color schemes often live in <code>/usr/share/vim/vimcurrent/colors</code>. In this example, I&rsquo;m using PaperColor scheme, and I have it installed using vim-plug in <code>~/.vim/plugged/papercolor-theme</code>, and <code>colors/PaperColor.vim</code> is the file we&rsquo;re looking for.</p>
+
+<p>Search for <code>StatusLine</code> and <code>StatusLineNC</code> (tip: you can do a whole word search in Vim by running <code>/\&lt;StatusLine\&gt;</code>), and note the values used (you might have to jump through a few variables if the color scheme author decided to be fancy). You&rsquo;re interested in <code>ctermbg</code>, <code>ctermfg</code>, <code>guibg</code>, and <code>guifg</code>.</p>
+
+<p>You might find something like this:</p>
+
+<pre><code>hi StatusLine ctermbg=24 ctermfg=254 guibg=#004f87 guifg=#e4e4e4
+hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
+</code></pre>
+
+<p>Copy those lines to your <code>~/.vimrc</code>. Change <code>StatusLine</code> to <code>StatusLineTerm</code>, and change <code>StatusLineNC</code> to <code>StatusLineTermNC</code>:</p>
+
+<pre><code>" Manually set the status line color.
+hi StatusLineTerm ctermbg=24 ctermfg=254 guibg=#004f87 guifg=#e4e4e4
+hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
+</code></pre>
+
+<p>Reload <code>~/.vimrc</code> (<code>:w | so %</code>), and the terminal mode status line should have the same colors as your color scheme:</p>
+
+<p><img src="/images/posts/vim-terminal-mode-correct-colors.png" title="Screenshot of the terminal mode status line with corrected colors." ></p>
+
+<p>Above, <code>hi</code> is a shorthand for <code>highlight</code>, which is used to define highlight group colors. <code>StatusLineTerm</code> and <code>StatusLineTermNC</code> define the highlight groups for terminal mode status line (in active and inactive windows respectively). Options <code>ctermbg</code> and <code>guibg</code> define the background color, and <code>ctermfg</code> and <code>guifg</code> are responsible for the foreground (text) color.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
@@ -353,37 +391,6 @@ you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>mo
 
 <p>Simple idea, and instantly after trying this out, I would really expect this
 feature to be included in vanilla Vim.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gundo tree for Vim]]></title>
-    <link href="http://www.rosipov.com/blog/gundo-tree-for-vim/"/>
-    <updated>2015-06-07T20:10:15+00:00</updated>
-    <id>http://www.rosipov.com/blog/gundo-tree-for-vim</id>
-    <content type="html"><![CDATA[<p>One of the obscure, but tremendously useful features of Vim is an undo tree.
-You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
-much more complex than that: Vim keeps track of every change you made in the
-current session, making it possible to access change history beyond basic <code>u</code>
-and <code>C-r</code> commands.</p>
-
-<p>Default interface for accessing far out branches of the undo tree leaves to be
-desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
-
-<p><img src="/images/posts/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
-
-<p>Gundo provides an easy to use interface for navigating history branches. In the
-screenshot above, I am previewing a diff in one of the undo tree branches
-inaccessible via <code>u</code> command.</p>
-
-<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
-convenient to me:</p>
-
-<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
-</code></pre>
-
-<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
-to travel through changes. Enter key applies the changes.</p>
 ]]></content>
   </entry>
   

@@ -135,6 +135,112 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-09T03:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated">Mon  9 Feb 2015,  3:33 AM</time>
+        
+           | <a href="/blog/ranger-the-cli-file-manager/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/ranger-the-cli-file-manager/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/ranger-the-cli-file-manager/" itemprop="url">Ranger - the CLI file manager</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Ranger is a lightweight but powerful file manager with Vi-like key bindings.
+It shines at exploring file trees, looking for specific files, and performing
+bulk operations on folders and files. Three column layout will be very similar
+to Mac OS X users: center column shows contents of the current directory, left
+column lists contents of a parent directory, and the right column contains
+preview for the selected file or folder.</p>
+
+<p><img src="/images/posts/ranger-file-preview.png" title="File preview screen in Ranger: parent directory in the left column, current directory in the center column, and selected file preview in the left column." ></p>
+
+<p>Ranger supports movement with familiar to Vi users <code>h</code>, <code>j</code>, <code>k</code>, and <code>l</code> keys,
+has internal command line which is invoked with <code>:</code>, as well as many other
+features and key bindings similar to Vi. Another great selling point - Ranger
+can be extended with custom commands and key bindings. Utility is written in
+Python, therefore all the commands are nothing more than Python scripts.</p>
+
+<p><img src="/images/posts/ranger-marking-files.png" title="Marking files for deletion in Ranger.  Files highlighted in yellow will be deleted by executing `:delete` command." ></p>
+
+<h2>Installation</h2>
+
+<p>Ranger is easy to install and can be found in most public repositories, just
+install <code>ranger</code> package using your favorite package manager. While you&rsquo;re at
+it, you may want to install some external utilities to help Ranger properly
+display file previews (list is taken from <a href="https://wiki.archlinux.org/index.php/ranger">ArchWiki page on Ranger</a>):</p>
+
+<ul>
+<li><code>atool</code> for archives.</li>
+<li><code>highlight</code> for syntax highlighting.</li>
+<li><code>libcaca</code> (<code>img2txt</code>) for image previews in ASCII.</li>
+<li><code>lynx</code>, <code>w3m</code> or <code>elinks</code> for HTML.</li>
+<li><code>mediainfo</code> or <code>perl-image-exiftool</code> for media file information.</li>
+<li><code>poppler</code> (<code>pdftotext</code>) for PDF.</li>
+<li><code>transmission-cli</code> for BitTorrent information.</li>
+<li><code>w3m</code> for image previews.</li>
+</ul>
+
+
+<p>After all the dependencies are installed, quickly start up <code>ranger</code>, exit it
+with <code>q</code>, and run <code>ranger --copy-config=all</code> to generate configuration files in
+<code>~/.config/ranger</code>.</p>
+
+<h2>Usage</h2>
+
+<p>Here are a few of the key bindings and commands I found useful:</p>
+
+<ul>
+<li>Use spacebar to select files one by one. By selecting multiple files, you can
+perform bulk operations on them. Use <code>V</code> to perform visual selection.
+Lowercase <code>v</code> reverses current selection. For instance, you can run <code>:delete</code>
+after selecting multiple files and folders.</li>
+<li>As mentioned above, execute <code>:delete</code> to remove currently selected file (or
+files).</li>
+<li>To fullscreen a preview window, hit <code>i</code>. Hit <code>i</code> again to return the preview
+window to it&rsquo;s normal size.</li>
+<li>Vi&rsquo;s <code>gg</code> and <code>G</code> allow you to jump to the top and bottom of the file list
+respectively.</li>
+<li>Hit <code>zh</code> to toggle hidden files display.</li>
+<li>As in Vim, <code>/</code> searches for a file in a current buffer, while <code>n</code> and <code>N</code> let
+you navigate to the next and previous matches respectively.</li>
+<li>Similarly, <code>:filter</code> allows you to only limit your view to the files matching
+a pattern. It&rsquo;s also interactive - changes are applied as you type.</li>
+</ul>
+
+
+<p>If you&rsquo;re an avid Vim user, you&rsquo;ll find using Ranger surprisingly intuitive.
+Otherwise you might get confused and scared away, probably for a good reason.
+Ranger is designed to provide Vi-like feel for file browsing, and it does that
+job well.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-06T21:13:49+00:00"  data-updated="true" itemprop="datePublished dateCreated">Fri  6 Feb 2015,  9:13 PM</time>
         
            | <a href="/blog/power-of-the-command-line/#disqus_thread" itemprop="discussionUrl"
@@ -579,72 +685,6 @@ able to make it last for the whole month.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-09-21T19:18:31+00:00"  data-updated="true" itemprop="datePublished dateCreated">Sun 21 Sep 2014,  7:18 PM</time>
-        
-           | <a href="/blog/beyond-grep/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/beyond-grep/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/beyond-grep/" itemprop="url">Beyond grep</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I search for things a lot, especially in my code. Or even worse - someone else&rsquo;s
-code. For years <code>grep</code> served as an amazing tool for this: fast, simple, and
-yet powerful. That was until I discovered <code>ack</code> for myself. An incredibly easy
-to use <code>grep</code> implementation built to work with large (or not really) code
-trees.</p>
-
-<p>A lot can be said to enforce superiority of <code>ack</code> over <code>grep</code> when it comes to
-working with code, and it&rsquo;s all said here: <a href="http://beyondgrep.com/why-ack/">ack&rsquo;s features</a>.</p>
-
-<p>Amazing thing is - <code>ack</code> doesn&rsquo;t even need a tutorial. Learning progression is
-natural and &ldquo;just happens&rdquo; by researching necessary use cases as the need
-arises (<code>ack</code> has a great manual entry).</p>
-
-<p>Here&rsquo;s a typical use example for <code>ack</code>:</p>
-
-<pre><code>ack --shell 'gr[ae]y'
-</code></pre>
-
-<p>Searches all shell script files in the current code tree for any occurrences of
-&ldquo;gray&rdquo; or &ldquo;grey&rdquo;. It will search <code>.sh</code>, <code>.zsh</code>, and just about dot-anything;
-<code>ack</code> will even check shebang lines for you.</p>
-
-<p>Ease of use, the fact that it&rsquo;s ready to use out of the box, extensive file
-types, native support for Perl&rsquo;s regular expressions: <code>ack</code> does really good
-job at searching through code.</p>
-
-<p>Download it from <a href="http://beyondgrep.com">Beyond grep</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -668,6 +708,8 @@ job at searching through code.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/status-bar-color-in-vim-terminal-mode/">Status bar color in Vim terminal mode</a>
+    
     <a class="list-group-item " href="/blog/my-book-has-been-published/">My book has been published!</a>
     
     <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
@@ -685,8 +727,6 @@ job at searching through code.</p>
     <a class="list-group-item " href="/blog/him-and-her-whats-inside-the-bag/">Him and her: what&#8217;s inside the bag?</a>
     
     <a class="list-group-item " href="/blog/desktop-notifications-from-chrome-secure-shell/">Desktop notifications from Chrome Secure Shell</a>
-    
-    <a class="list-group-item " href="/blog/journey-of-a-friend/">Journey of a friend</a>
     
   </div>
 </section>
