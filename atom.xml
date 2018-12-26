@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-26T20:54:09+00:00</updated>
+  <updated>2018-12-26T20:58:37+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -55,7 +55,7 @@ endif
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Minimalist Phone Launcher]]></title>
+    <title type="html"><![CDATA[Minimalist phone launcher]]></title>
     <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
     <updated>2018-08-11T00:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
@@ -173,7 +173,7 @@ endif
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My .vimrc, Annotated]]></title>
+    <title type="html"><![CDATA[My .vimrc, annotated]]></title>
     <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
     <updated>2018-02-21T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
@@ -450,7 +450,7 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Automating Octorpress Publishing]]></title>
+    <title type="html"><![CDATA[Automating Octorpress publishing]]></title>
     <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
     <updated>2017-11-14T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
@@ -509,7 +509,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[A Trip to Salt Lake City]]></title>
+    <title type="html"><![CDATA[A trip to Salt Lake City]]></title>
     <link href="http://www.rosipov.com/blog/a-trip-to-salt-lake-city/"/>
     <updated>2017-11-13T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/a-trip-to-salt-lake-city</id>
@@ -557,7 +557,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Him and Her: What's Inside the Bag?]]></title>
+    <title type="html"><![CDATA[Him and her: what's inside the bag?]]></title>
     <link href="http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag/"/>
     <updated>2017-10-15T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag</id>
@@ -702,7 +702,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Desktop Notifications from Chrome Secure Shell]]></title>
+    <title type="html"><![CDATA[Desktop notifications from Chrome Secure Shell]]></title>
     <link href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/"/>
     <updated>2017-08-04T17:33:16+00:00</updated>
     <id>http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell</id>

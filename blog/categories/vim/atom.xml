@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-26T20:54:09+00:00</updated>
+  <updated>2018-12-26T20:58:37+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -55,7 +55,7 @@ endif
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My .vimrc, Annotated]]></title>
+    <title type="html"><![CDATA[My .vimrc, annotated]]></title>
     <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
     <updated>2018-02-21T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
