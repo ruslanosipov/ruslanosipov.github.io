@@ -1,7 +1,7 @@
 ---
+title: "Lessons learned: engineering productivity"
 categories: [Notes and rants]
 date: 2015-6-8 14:03:58 -0800
-title: "Lessons learned: engineering productivity"
 ---
 
 I enjoy optimizing the way I work: the less time I can spend on something

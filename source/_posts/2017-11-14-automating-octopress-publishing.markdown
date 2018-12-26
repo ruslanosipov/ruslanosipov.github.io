@@ -1,5 +1,5 @@
 ---
-title: "Automating Octorpress Publishing"
+title: "Automating Octorpress publishing"
 date: 2017-11-14 10:00:00 -0500
 categories: [Programming]
 ---

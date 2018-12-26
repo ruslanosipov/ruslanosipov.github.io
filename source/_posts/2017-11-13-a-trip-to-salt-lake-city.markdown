@@ -1,5 +1,5 @@
 ---
-title: "A Trip to Salt Lake City"
+title: "A trip to Salt Lake City"
 date: 2017-11-13 10:00:00 -0500
 categories: [Life]
 ---

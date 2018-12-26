@@ -1,5 +1,5 @@
 ---
-title: "Him and Her: What's Inside the Bag?"
+title: "Him and her: what's inside the bag?"
 date: 2017-10-15 10:00:00 -0500
 categories: [Life]
 ---

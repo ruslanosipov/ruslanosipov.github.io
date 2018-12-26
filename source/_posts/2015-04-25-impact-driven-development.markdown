@@ -1,7 +1,7 @@
 ---
+title: "Impact-driven development"
 categories: [Notes and rants]
 date: 2015-4-25 17:19:58 -0800
-title: "Impact-driven development"
 ---
 
 It is my fifth year working as a professional software engineer, and I think

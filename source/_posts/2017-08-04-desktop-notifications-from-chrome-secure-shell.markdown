@@ -1,5 +1,5 @@
 ---
-title: "Desktop Notifications from Chrome Secure Shell"
+title: "Desktop notifications from Chrome Secure Shell"
 date: 2017-08-04 17:33:16 +0000
 categories: [Productivity]
 ---
