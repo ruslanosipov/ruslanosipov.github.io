@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-27T19:43:29+00:00</updated>
+  <updated>2018-12-27T23:41:32+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sane Vim defaults (from Neovim)]]></title>
+    <link href="http://www.rosipov.com/blog/sane-vim-defaults-from-neovim/"/>
+    <updated>2018-12-27T23:28:37+00:00</updated>
+    <id>http://www.rosipov.com/blog/sane-vim-defaults-from-neovim</id>
+    <content type="html"><![CDATA[<p>Vim comes with a set of often outdated and counter-intuitive defaults. Vim has been around for around 30 years, and it only makes sense that many defaults did not age well.</p>
+
+<p>Neovim addresses this issue by being shipped with many default options tweaked for modern editing experience. If you can&rsquo;t or don&rsquo;t want to use Neovim - I highly recommend setting some these defaults in your <code>.vimrc</code>:</p>
+
+<pre><code>if !has('nvim')
+  set nocompatible
+  syntax on
+
+  set autoindent
+  set autoread
+  set backspace=indent,eol,start
+  set belloff=all
+  set complete-=i
+  set display=lastline
+  set formatoptions=tcqj
+  set history=10000
+  set incsearch
+  set laststatus=2
+  set ruler
+  set sessionoptions-=options
+  set showcmd
+  set sidescroll=1
+  set smarttab
+  set ttimeoutlen=50
+  set ttyfast
+  set viminfo+=!
+  set wildmenu
+endif
+</code></pre>
+
+<p>The defaults above enable some of the nicer editor features, like <code>autoindent</code> (respecting existing indentation), <code>incsearch</code> (search as you type), or <code>wildmenu</code> (enhanced command-line completion). The defaults also smooth out some historical artifacts, like unintuitive backspace behavior. Keep in mind, this breaks compatibility with some older Vim versions (but it&rsquo;s unlikely to be a problem for most if not all users).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Status bar color in Vim terminal mode]]></title>
@@ -370,27 +409,6 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
 <p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
 
 <p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DidYouMean plugin for Vim]]></title>
-    <link href="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/"/>
-    <updated>2015-06-10T20:02:00+00:00</updated>
-    <id>http://www.rosipov.com/blog/didyoumean-plugin-for-vim</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
-trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
-
-<p><img src="/images/posts/vim-plugin-didyoumean.png" title="DidYouMean plugin in action." ></p>
-
-<p>Say you have two files with a similarly starting names: <code>model.py</code> and
-<code>model_test.py</code>. You type <code>vim mo</code>, you hit tab to autocomplete the name, you
-hit enter. In vanilla Vim, you&rsquo;d be opening a new file: <code>model</code>, since that&rsquo;s
-where shell&rsquo;s tab-completion stopped. DidYouMean detects such a nuance and asks
-you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>model_test.py</code>.</p>
-
-<p>Simple idea, and instantly after trying this out, I would really expect this
-feature to be included in vanilla Vim.</p>
 ]]></content>
   </entry>
   
