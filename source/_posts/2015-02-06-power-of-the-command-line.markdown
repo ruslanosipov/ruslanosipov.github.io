@@ -1,7 +1,7 @@
 ---
 title: "Power of the command line"
 date: 2015-02-06 13:13:49 -0800
-categories: [Notes and Rants, Productivity]
+categories: [Notes and Rants, Productivity, CLI]
 ---
 
 *Disclaimer: I am not advocating any specific tools or methodologies, but

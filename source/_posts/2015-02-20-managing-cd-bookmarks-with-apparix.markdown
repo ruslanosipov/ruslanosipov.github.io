@@ -2,7 +2,7 @@
 title: "Managing cd bookmarks with apparix"
 date: 2015-02-20 16:25:45 -0800
 tags: [apparix]
-categories: [Productivity]
+categories: [Productivity, CLI]
 ---
 
 A couple of months ago I discovered apparix: a set of commands which augment

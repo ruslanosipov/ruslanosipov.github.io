@@ -1,6 +1,6 @@
 ---
 title: Minimalist phone launcher
-categories: [Life]
+categories: [Life, Gadgets]
 date: 2018-08-11 14-20-00 -0800
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Profiling slow bashrc"
 date: 2015-07-15 10:07:53 -0700
-categories: [Productivity]
+categories: [Productivity, CLI]
 ---
 
 I've recently noticed that it takes a long time for my bash to load. I've found

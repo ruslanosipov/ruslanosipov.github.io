@@ -1,6 +1,6 @@
 ---
 title: My most used bash commands
-categories: [Notes and rants]
+categories: [Notes and rants, CLI]
 date: 2013-04-24 16:47:11+00:00
 tags: [bash]
 ---

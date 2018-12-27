@@ -1,6 +1,6 @@
 ---
 title: Mintty color scheme (Cygwin)
-categories: [Productivity]
+categories: [Productivity, CLI]
 date: 2013-03-13 19:35:28+00:00
 tags: [cygwin]
 ---
@@ -31,3 +31,7 @@ cygwin in order to apply changes.
     BoldCyan         = 147, 161, 161
     White            = 238, 232, 213
     BoldWhite        = 253, 246, 227
+
+Update (December 2018): This theme is now packaged with the default Mintty
+distribution! Pull up Mintty/Cygwin and check for a theme called `rosipov` (I
+didn't pick the name).

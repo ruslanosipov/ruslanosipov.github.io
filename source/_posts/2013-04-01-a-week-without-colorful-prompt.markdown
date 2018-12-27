@@ -1,6 +1,6 @@
 ---
 title: A week without colorful prompt
-categories: [Notes and rants, Vim]
+categories: [Notes and rants, Vim, CLI]
 date: 2013-04-01 18:10:31+00:00
 tags: [bash, git]
 ---

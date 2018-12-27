@@ -1,7 +1,7 @@
 ---
 title: "Beyond grep"
 date: 2014-09-21 12:18:31 -0700
-categories: [Productivity]
+categories: [Productivity, CLI]
 tags: [ack, grep]
 ---
 

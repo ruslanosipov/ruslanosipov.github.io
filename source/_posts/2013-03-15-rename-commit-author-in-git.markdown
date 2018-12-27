@@ -1,6 +1,6 @@
 ---
 title: Rename commit author in git
-categories: [Productivity]
+categories: [Productivity, CLI]
 date: 2013-03-15 00:09:02+00:00
 tags: [git]
 ---

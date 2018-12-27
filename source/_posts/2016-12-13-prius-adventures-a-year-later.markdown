@@ -1,7 +1,7 @@
 ---
 title: "Prius adventures, a year later"
 date: 2017-01-17 01:11:38 +0000
-categories: [Life]
+categories: [Life, Travel]
 ---
 
 It's time to write more about my adventures. I've been traveling and living in my car for nearly a year now, mostly full-time (excluding hotels on infrequent business trips, occasional friends' couches, or AirBnB a few times I was sick or wanted a home). I'd love to share what I've learned over the past year.

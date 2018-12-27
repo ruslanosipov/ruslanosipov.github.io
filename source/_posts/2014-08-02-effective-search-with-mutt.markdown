@@ -1,7 +1,7 @@
 ---
 title: "Effective search with Mutt"
 date: 2014-08-02 13:32:51 -0700
-categories: [Productivity]
+categories: [Productivity, CLI]
 tags: [mutt]
 ---
 

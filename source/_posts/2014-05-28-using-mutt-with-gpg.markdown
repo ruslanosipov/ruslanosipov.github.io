@@ -1,6 +1,6 @@
 ---
 title: Using Mutt with GPG
-categories: [Productivity]
+categories: [Productivity, CLI]
 date: 2014-05-28 19:11:52+00:00
 tags: [gpg, mutt]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Randomly generated dungeons"
 date: 2016-09-29 16:26:32 -0700
-categories: [Gamedev]
+categories: [Gamedev, Programming]
 ---
 
 After playing with random dungeon generation for a bit, I seem to be satisfied

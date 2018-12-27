@@ -1,6 +1,6 @@
 ---
 title: Editing bash command in vim
-categories: [Vim]
+categories: [Vim, CLI]
 date: 2013-04-01 07:34:28+00:00
 tags: [bash]
 ---

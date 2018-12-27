@@ -1,7 +1,7 @@
 ---
 title: "Journey of a friend"
 date: 2017-05-09 08:00:00 +0000
-categories: [Life]
+categories: [Life, Travel]
 ---
 
 _A close friend of mine has a story similar to mine. She wanted to share it for a while now, and I'm humbled she chose my blog as a medium for telling her inspiring story to the strangers on the Internet:_

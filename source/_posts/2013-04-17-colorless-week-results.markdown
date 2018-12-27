@@ -1,6 +1,6 @@
 ---
 title: Colorless week results
-categories: [Notes and rants, Vim]
+categories: [Notes and rants, Vim, CLI]
 date: 2013-04-17 18:32:46+00:00
 tags: [bash, git]
 ---

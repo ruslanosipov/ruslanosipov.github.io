@@ -1,6 +1,6 @@
 ---
 title: Download gists from prompt
-categories: [Productivity]
+categories: [Productivity, CLI]
 date: 2013-05-17 18:52:02+00:00
 tags: [gist, github, python]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Ranger - the CLI file manager"
 date: 2015-02-08 19:33:16 -0800
-categories: [Productivity]
+categories: [Productivity, CLI]
 ---
 
 Ranger is a lightweight but powerful file manager with Vi-like key bindings.

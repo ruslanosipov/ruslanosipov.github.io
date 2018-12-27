@@ -1,7 +1,7 @@
 ---
 title: "Desktop notifications from Chrome Secure Shell"
 date: 2017-08-04 17:33:16 +0000
-categories: [Productivity]
+categories: [Productivity, CLI]
 ---
 
 For the past year or two I've been working in the cloud. I use Chrome [Secure Shell][1] to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an [HP Chromebook][2], which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of `notify-send`-like functionality, especially when working with long-running builds.

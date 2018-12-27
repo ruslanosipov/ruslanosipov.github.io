@@ -1,7 +1,7 @@
 ---
 title: "Three favorite bash tricks"
 date: 2014-07-24 18:41:10 -0700
-categories: [Productivity]
+categories: [Productivity, CLI]
 tags: [bash, vim]
 ---
 

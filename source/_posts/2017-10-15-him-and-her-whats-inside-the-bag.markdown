@@ -1,7 +1,7 @@
 ---
 title: "Him and her: what's inside the bag?"
 date: 2017-10-15 10:00:00 -0500
-categories: [Life]
+categories: [Life, Travel]
 ---
 
 Living in a car for nearly a year made me pick up number of travel-related skills, here and there. Having limited available space forced "less is more" philosophy on me, and it's something I carried over into more stationary life. Right now I'm taking a break from car dwelling and living in a small apartment in Bay Area. It didn't stop my love for travel though, as I'm writing this entry on my flight to Nassau, Bahamas. 5 days at the destination, leisure. One of the many weekends I'm not home.

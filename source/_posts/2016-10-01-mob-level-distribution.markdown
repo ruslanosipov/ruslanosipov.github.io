@@ -1,7 +1,7 @@
 ---
 title: "Mob level distribution"
 date: 2016-10-01 17:15:12 -0700
-categories: [GameDev]
+categories: [GameDev, Programming]
 ---
 
 Distributing mobs in a dungeon based on player's level (or some dungeon level

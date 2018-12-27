@@ -1,7 +1,7 @@
 ---
 title: "Spawning evenly distributed mobs"
 date: 2016-09-30 11:06:16 -0700
-categories: [GameDev]
+categories: [GameDev, Programming]
 ---
 
 After generating a few [good looking random dungeons][0], I was puzzled with

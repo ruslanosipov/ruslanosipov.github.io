@@ -1,7 +1,7 @@
 ---
 title: "Living in a car for 5000 miles"
 date: 2016-02-22 11:27:52 -0500
-categories: [Life]
+categories: [Life, Travel]
 ---
 
 I have set on my journey across the United States and back a few months ago.

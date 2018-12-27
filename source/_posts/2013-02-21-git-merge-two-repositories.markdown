@@ -1,6 +1,6 @@
 ---
-title: 'Git: merge two repositories'
-categories: [Productivity]
+title: Git: merge two repositories
+categories: [Productivity, CLI]
 date: 2013-02-21 20:09:07+00:00
 tags: [git]
 ---
