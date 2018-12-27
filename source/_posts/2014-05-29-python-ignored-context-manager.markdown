@@ -36,6 +36,6 @@ following function:
 Beautiful!
 
 UPDATE: As Andy pointed out in comments, this context manager has been renamed
-to `contextlib.supress` (<https://bugs.python.org/issue19266>).
+to `contextlib.suppress` (<https://bugs.python.org/issue19266>).
 
 [1]: http://hg.python.org/cpython/rev/406b47c64480
