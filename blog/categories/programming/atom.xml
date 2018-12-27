@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-27T01:35:44+00:00</updated>
+  <updated>2018-12-27T04:54:07+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -160,159 +160,439 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
-    <link href="http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/"/>
-    <updated>2014-12-17T05:09:58+00:00</updated>
-    <id>http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog</id>
-    <content type="html"><![CDATA[<p>I had to download my Octopress blog to a new machine today and the process of
-setting up didn&rsquo;t go as smoothly as I expected. At the end of the day the setup
-turned out to be simple, and here are the steps:</p>
+    <title type="html"><![CDATA[Mob level distribution]]></title>
+    <link href="http://www.rosipov.com/blog/mob-level-distribution/"/>
+    <updated>2016-10-02T00:15:12+00:00</updated>
+    <id>http://www.rosipov.com/blog/mob-level-distribution</id>
+    <content type="html"><![CDATA[<p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
+difficulty factor) was somewhat straightforward, but I would still like to
+document the progress. I needed to place a mob that&rsquo;s somewhat within the
+difficulty level I want, plus minus a few difficulty levels to spice it up.</p>
 
-<pre><code>git clone -b source https://github.com/username/username.github.io myblog
-cd myblog
-git clone https://github.com/username/username.github.io _deploy
-bundle install
-</code></pre>
+<p><img src="/images/posts/roguelike-leveled-mob-distribution.png" title="Random mob distribution in roguelike dungeon." ></p>
 
-<p>In a nutshell, you have to manually add <code>_deploy</code> folder set to track <code>master</code>
-branch of your Octopress repository. Otherwise <code>rake deploy</code> command fails.</p>
+<p>Above you can see three rats, three cats, a dog (<code>r</code>, <code>c</code>, <code>d</code>, all level 1), a
+farmer (<code>f</code>, level 2), and a lonely bandit (<code>b</code>, level 3) in a level 1 dungeon.</p>
 
-<p>Happy writing!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
-    <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
-    <updated>2014-07-30T06:00:04+00:00</updated>
-    <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
-    <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
-topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
-questions by newbies and odd cases. Most established tech companies have their
-own line length guidelines. These are often dependent on a language, such as in
-the case of Google with their 80 character Python and 100 character Java limits.</p>
+<p>Without going straight into measure theory, I generated intervals for each mob
+based on the diff of desired level and their level, and then randomly selected a
+point within the boundaries. Here&rsquo;s the abstract code:</p>
 
-<p>In this article, I won&rsquo;t be advocating all the usual arguments, such as easier
-diff with version control software, or the ability to stack windows side by side
-on wide screens. No, I believe that battle to be won quite a long time ago, the
-topic is now closed. But something I didn&rsquo;t find mentioned in any of the
-discussions is an interesting point from the world of writers and designers.</p>
+<pre><code>import bisect
+import random
 
-<p>Ever since I started being interested in improving my writing skills, I found
-article after article mention the importance of line length in reading.
-Interestingly enough, this issue was raised in a world of literature. It had
-been resolved long before programmers were fascinated with the desire to use up
-rapidly expanding screen real estate.</p>
 
-<p>I am talking about something known as &ldquo;measure&rdquo; in typography. It seems to be
-the reason newspapers use narrow columns, or books leave such vast margins
-around the text on a page. Here&rsquo;s an exempt from the <a href="http://en.wikipedia.org/wiki/Measure_(typography)">Wikipedia article</a>:</p>
+def get_random_element(data, target, chance):
+    """Get random element from data set skewing towards target.
 
-<blockquote><p>Measure (or sometimes &ldquo;The Measure&rdquo;) in typography is the length of a line of
-text. For a single-column design measure should ideally lie between 40 &amp; 80
-characters. Many typographers consider the perfect measure to be 65
-characters. If the lines are too short then the text becomes disjointed, if
-they are too long the content loses rhythm as the reader searches for the
-start of each line. Punctuation should preferably hang outside the measure.</p></blockquote>
+    Args:
+        data   -- A dictionary with keys as elements and values as weights.
+                  Duplicates are allowed.
+        target -- Target weight, results will be skewed towards target
+                  weight.
+        chance -- A float 0..1, a factor by which chance of picking adjacent
+                  elements decreases (i.e, with chance 0 we will always
+                  select target element, with chance 0.5 probability of
+                  selecting elements adjacent to target are halved with each
+                  step).
 
-<p>Most programming languages use special operators and keywords, which can be
-considered &ldquo;punctuation&rdquo;. Some languages are more verbose (use more
-punctuation), and some aren&rsquo;t. If you remove punctuation, the 80/100/120
-character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p>
-
-<p>Maybe I can use this as an additional argument the next time I have to explain
-to a junior new hire why the character limits are so strictly enforced.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Export WordPress posts to plain text]]></title>
-    <link href="http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text/"/>
-    <updated>2014-06-02T03:44:12+00:00</updated>
-    <id>http://www.rosipov.com/blog/export-wordpress-posts-to-plain-text</id>
-    <content type="html"><![CDATA[<p>I prefer to create and edit my posts in plain text. It&rsquo;s a timeless format, and
-I find it nice to have an archive of posts lying around in plain text.</p>
-
-<p>I wrote a little Python script which I used to extract an archive of my posts
-and pages into a bunch of files on my computer. In order to use it, you need to
-use &ldquo;<a href="http://wordpress.org/plugins/wordpress-importer/">WordPress Importer</a>&rdquo; plugin. Export your posts and pages into a WXR
-format, and feed the file to the script.</p>
-
-<p>Source code of the script is below (link for downloading the script is at the
-bottom of this post):</p>
-
-<pre><code>#!/usr/bin/env python
-
-"""This script converts WXR file to a number of plain text files.
-
-WXR stands for "WordPress eXtended RSS", which basically is just a
-regular XML file. This script extracts entries from the WXR file into
-plain text files. Output format: article name prefixed by date for
-posts, article name for pages.
-
-Usage: wxr2txt.py filename [-o output_dir]
-"""
-
-import os
-import re
-import sys
-from xml.etree import ElementTree
-
-NAMESPACES = {
-        'content': 'http://purl.org/rss/1.0/modules/content/',
-        'wp': 'http://wordpress.org/export/1.2/',
-}
-USAGE_STRING = "Usage: wxr2txt.py filename [-o output_dir]"
-
-def main(argv):
-    filename, output_dir = _parse_and_validate_output(argv)
-    try:
-        data = ElementTree.parse(filename).getroot()
-    except ElementTree.ParseError:
-        _error("Invalid input file format. Can not parse the input.")
-    page_counter, post_counter = 0, 0
-    for post in data.find('channel').findall('item'):
-        post_type = post.find('wp:post_type', namespaces=NAMESPACES).text
-        if post_type not in ('post', 'page'):
+    Returns:
+        A random key from data with distribution respective of the target
+        weight.
+    """
+    intervals = []  # We insert in order, no overlaps.
+    next_i = 0
+    for element, v in data.iteritems():
+        d = max(target, v) - min(target, v)
+        size = 100
+        while d &gt; 0:  # Decrease chunk size for each step of `d`.
+            size *= chance
+            d -= 1
+        if size == 0:
             continue
-        content = post.find('content:encoded', namespaces=NAMESPACES).text
-        date = post.find('wp:post_date', namespaces=NAMESPACES).text
-        title = post.find('title').text
-        date = date.split(' ')[0].replace('-', '')
-        title = re.sub(r'[_]+', '_', re.sub(r'[^a-z0-9+]', '_', title.lower()))
-        if post_type == 'post':
-            post_filename = date + '_' + title + '.txt'
-            post_counter += 1
-        else:
-            post_filename = title + '.txt'
-            page_counter += 1
-        with open(os.path.join(output_dir, post_filename), 'w') as post_file:
-            post_file.write(content.encode('utf8'))
-        post_counter += 1
-    print "Saved {} posts and {} pages in directory '{}'.".format(
-            post_counter, page_counter, output_dir)
-
-def _parse_and_validate_output(argv):
-    if len(argv) not in (2, 4):
-        _error("Wrong number of arguments.")
-    filename = argv[1]
-    if not os.path.isfile(filename):
-        _error("Input file does not exist (or not enough permissions).")
-    output_dir = argv[3] if len(argv) == 4 and argv[2] == '-o' else os.getcwd()
-    if not os.path.isdir(output_dir):
-        _error("Output directory does not exist (or not enough permissions).")
-    return filename, output_dir
-
-def _error(text):
-    print text
-    print USAGE_STRING
-    sys.exit(1)
-
-if __name__ == "__main__":
-    main(sys.argv)
+        size = int(size)
+        intervals.append((next_i, next_i + size, element))
+        next_i += size + 1
+    fst, _, _ = zip(*intervals)
+    rnd = random.randint(0, next_i - 1)
+    idx = bisect.bisect(fst, rnd)  # This part is O(log n).
+    return intervals[idx - 1][2]
 </code></pre>
 
-<p>You can download the script from here: <a href="https://gist.github.com/ruslanosipov/b748a138389db2cda1e8">wxr2txt.py</a>.</p>
+<p>Now, if I test the above for, say, a 1000000 iterations, with a chance of 0.5
+(halving probability of selecting adjacent elements with each step), and 2 as a
+target, here&rsquo;s the distribution I end up with:</p>
+
+<pre><code>target, chance, iterations = 2, 0.5, 1000000
+
+data = collections.OrderedDict([  # Ordered to make histogram prettier.
+    ('A', 0), ('B-0', 1), ('B-1', 1), ('C', 2), ('D', 3), ('E', 4),
+    ('F', 5), ('G', 6), ('H', 7), ('I', 8), ('J', 9),
+])
+
+res = collections.OrderedDict([(k, 0) for k, _ in data.iteritems()])
+
+# This is just a test, so there's no need to optimize this for now.
+for _ in xrange(iterations):
+    res[get_random_element(data, target, chance)] += 1
+
+pyplot.bar(
+    range(len(res)), res.values(), width=0.7, align='center', color='green')
+pyplot.xticks(range(len(res)), res.keys())
+pyplot.title(
+    'iterations={}, target={}, chance={}'.format(
+        iterations, target, chance))
+pyplot.show()
+</code></pre>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-05.png" title="Distribution histogram: 1000000 iterations, 0.5 chance, and 2 as a target." ></p>
+
+<p>You can see elements B-0 and B-1 having roughly the same distribution, since
+they have the same weight.</p>
+
+<p>Now, if I decrease the <code>chance</code>, likelihood of target being selected increases,
+while likelihood of surrounding elements being selected decreases:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-033.png" title="Distribution histogram: 1000000 iterations, 0.33 chance, and 2 as a target." ></p>
+
+<p>I works the opposite way as well, increasing the <code>chance</code> decreases likelihood
+of the target being selected and increases the probability for surrounding
+elements.</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-09.png" title="Distribution histogram: 1000000 iterations, 0.9 chance, and 2 as a target." ></p>
+
+<p>For the sake of completeness, it works with 0 chance of surrounding elements being picked:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-0.png" title="Distribution histogram: 1000000 iterations, 0 chance, and 2 as a target." ></p>
+
+<p>And an equal chance of picking surrounding elements:</p>
+
+<p><img src="/images/posts/roguelike-mob-distribution-chance-1.png" title="Distribution histogram: 1000000 iterations, 1 chance, and 2 as a target." ></p>
+
+<p>After playing around with the configuration in Jupyter Notebook, I cleaned up
+the algorithm above and included it into mob placement routine.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spawning evenly distributed mobs]]></title>
+    <link href="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/"/>
+    <updated>2016-09-30T18:06:16+00:00</updated>
+    <id>http://www.rosipov.com/blog/spawning-evenly-distributed-mobs</id>
+    <content type="html"><![CDATA[<p>After generating a few <a href="http://www.rosipov.com/blog/randomly-generated-dungeons/">good looking random dungeons</a>, I was puzzled with
+randomly placing mobs on resulting maps. To make it fair (and fun) for the
+player mobs should be evenly distributed.</p>
+
+<p><img src="/images/posts/dungeon-mob-placement.png" title="Dungeon with randomly placed mobs." ></p>
+
+<p>The obvious idea was to pick coordinates randomly within the rectangular map
+boundaries, and then place mobs if they have floor underneath them. But this way
+I lose control of the number of mobs and risk having a chance of not placing any
+mobs at all. Plus, dungeons with bigger surface area would get more mobs - which
+sounds somewhat realistic, but not entirely what I was aiming for.</p>
+
+<p>I could improve on the above by rerunning enemy placement multiple times and
+select the most favorable outcome - but the solution would be rather naive.</p>
+
+<p>To have control over the number of mobs I decided to place them as I generate
+the rooms of the dungeon. There&rsquo;s a trick one can use to get a random element
+with equal probability distribution from a sequence of an unknown size:</p>
+
+<pre><code>import random
+
+
+def get_random_element(sequence):
+    """Select a random element from a sequence of an unknown size."""
+    selected = None
+    for k, element in enumerate(sequence):
+        if random.randint(0, k) == 0:
+            selected = element
+    return selected
+</code></pre>
+
+<p>With each iteration the chance of the current element to become a selected item
+is 1 divided by number of elements seen so far. Indeed, a probability of an
+element being selected out of a 4-item sequence:</p>
+
+<pre><code>1 * (1 - 1/2) * (1 - 1/3) * (1 - 1/4) = 1/2 * 2/3 * 3/4 = 6/30 = 1/4 
+</code></pre>
+
+<p>Now all I had to do is to modify this to account for multiple mob placement.
+Here&rsquo;s a generalized function above which accounts for selecting <code>n</code> elements
+from the sequence with even distribution.</p>
+
+<pre><code>import random
+
+
+def get_random_element(sequence, n):
+    """Select n random elements from a sequence of an unknown size."""
+    selected = [None for _ in range(n)]
+    for k, element in enumerate(sequence):
+        for i in range(n):
+            if random.randint(0, k) == 0:
+                selected[i] = element
+    return selected
+</code></pre>
+
+<p>I incorporated logic above into the room generation code, accounted for
+duplicates, and ended up with decent distribution results.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Randomly generated dungeons]]></title>
+    <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
+    <updated>2016-09-29T23:26:32+00:00</updated>
+    <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
+    <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
+with the results:</p>
+
+<p><img src="/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
+floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
+few random dungeon generation ideas, I settled with the following.</p>
+
+<h2>The algorithm</h2>
+
+<ol>
+<li>Start with a random point on a canvas.</li>
+<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
+<li>Select a few points on the sides of the room, put those in a stack. Save the
+direction in which the potential doors would point.</li>
+<li>Go through the stack, and try to add a room or a corridor (corridor is just a
+room with a width or a height of 1). Higher chance of corridors seems to look
+better and results in those wiggly passageways.
+
+<ol>
+<li>Try to add a room a few dozen times with different random configurations.
+If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
+generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
+clean those up later.</li>
+<li>If a room was added successfully - add a door where it connects to the
+previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
+to another corridor.</li>
+<li>At this point one ends up with quite a few interconnected corridors,
+merged rooms, and all kinds of fun surroundings (my desired goal).</li>
+</ol>
+</li>
+<li>Do the above until the stack is empty or a desired number of rooms has been
+generated.</li>
+<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
+one until intersection with another room/corridor is detected.</li>
+<li>Add walls around the rooms and corridors, while also cleaning up any extra
+doors we may have left behind when creating merged corridors or rooms.
+
+<ol>
+<li>I simply used slightly modified depth first search starting inside any
+room and drawing walls wherever I could find floor/door not connected to
+anything.</li>
+<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
+the opposite sides. If not - remove the door and replace it with a floor
+tile. If any doors were adjucent to the removed door - requeue the door
+check on them.</li>
+</ol>
+</li>
+<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
+time. Pick the best candidate with the most desired features - like a number
+of rooms, breadth, square footage, longest corridors, etc.</li>
+</ol>
+
+
+<p>A more detailed explanation of the steps is below. For now, here are a few more
+dungeons generated using this method:</p>
+
+<p><img src="/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>I think dungeon generation is far more art than science, and I had a lot of fun
+tweaking all the different input parameters:</p>
+
+<ul>
+<li>Room size boundaries.</li>
+<li>Corridor lengths.</li>
+<li>Frequency of corridor occurrences.</li>
+<li>Number of exits from the room.</li>
+<li>Number of room generation attempts.</li>
+<li>Number of dungeon generation attempts.</li>
+<li>Final dungeon picking heuristics.</li>
+</ul>
+
+
+<p>Last item on the list is the most interesting one - with few hundred dungeons as
+an input, picking the right one is rather important. I ended up settling on
+using max priority queue with a rough surface area of the dungeon as a key
+(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
+through some top results and pick the one with the most rooms available. This
+results in the most fun-looking map which feels up most of the screen, while
+still usually not being too cluttered.</p>
+
+<p>Here&rsquo;s a breakdown of a simple scenario:</p>
+
+<h3>Steps 1 and 2</h3>
+
+<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
+
+<pre><code>....
+....
+....
+</code></pre>
+
+<h3>Step 3</h3>
+
+<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
+
+<pre><code>....2
+....
+....1
+  3
+</code></pre>
+
+<p>I went for a uniform distribution by unfolding the rectangle and folding it back
+in to get a proper coordinate on the perimeter. Now, stack contains coordinates
+of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
+
+<h3>Steps 4 and 5</h3>
+
+<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
+the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
+We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
+random decide again: up.</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....3.
+  1
+</code></pre>
+
+<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
+also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
+corridors are never pretty.</p>
+
+<p>Now, to replace number 3 with a door:</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Adding another random corridor of length 2 to the point 4, pointing right.
+Replace number 4 with a floor segment, since point 4 was the end of another
+corridor. Remove point 4 from loose ends, add point 5.</p>
+
+<pre><code>     ...5
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
+is empty.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+....2.   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
+Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
+After a few unsuccessful attempts to place a room or a corridor there, we give
+up:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
+the loose ends list.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  +
+  .
+  .
+  .
+  6
+</code></pre>
+
+<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
+done generating the dungeon. Our stack is empty, and our loose ends contains
+coordinates of <code>6</code>.</p>
+
+<h3>Step 6</h3>
+
+<p>Start with the loose end, and remove items one by one until a tile with multiple
+neighbors is encountered:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  X
+  X
+  X
+  X
+  X
+</code></pre>
+
+<p>Viola:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+</code></pre>
+
+<h3>Steps 7 and 8</h3>
+
+<p>There are no rogue doors in this scenario, so all we need to do is add  the
+walls:</p>
+
+<pre><code>     #########
+     #...+...#
+     #.###...#
+######.# #...#
+#....#.# #...#
+#....#.# #...#
+#....+.# #...#
+######## #####
+</code></pre>
+
+<p>All of the steps above should be repeated a few hundred times with different
+dungeons, and then the best dungeon should be picked as a final one.</p>
+
+<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
+should have I done differently?</p>
 ]]></content>
   </entry>
   

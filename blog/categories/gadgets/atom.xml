@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gadgets | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/gadgets/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2018-12-27T01:35:44+00:00</updated>
+  <updated>2018-12-27T04:54:07+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Minimalist phone launcher]]></title>
+    <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
+    <updated>2018-08-11T00:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
+    <content type="html"><![CDATA[<p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
+
+<p>I present to you the biggest distraction: my phone.</p>
+
+<p>I use to get in touch with people I love. I&rsquo;m more productive at work because I have access to information on the go. I also use my phone to browse Reddit, YouTube, and every other media outlet imaginable. Even worse, sometimes I just waste time tinkering with the settings or mindlessly browsing through the apps I have installed.</p>
+
+<p>It&rsquo;s an attention sink.</p>
+
+<p>Nearly a year ago as I was browsing the Google Play Store I bumped into a new launcher: KISS. The tag line caught my attention: &ldquo;Keep It Simple, Stupid&rdquo;. I went ahead and downloaded the launcher. I haven&rsquo;t changed to another launcher since.</p>
+
+<p>Here&rsquo;s how my home screen looks today:</p>
+
+<p><img src="/images/posts/kiss-launcher-home-screen.png" title="A screenshot of a KISS launcher home screen." ></p>
+
+<p>There&rsquo;s nothing besides a single search bar. The search bar takes me to the apps I need, web searches I&rsquo;m interested in, or people I&rsquo;m trying to reach out to.</p>
+
+<p>It&rsquo;s simple to use. Start typing an app or a contact name, and the results show up above the search bar:</p>
+
+<p><img src="/images/posts/kiss-launcher-search-results.png" title="A screenshot of searching for an app with a KISS launcher." ></p>
+
+<p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
+
+<p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A year with Pebble Time Round]]></title>
