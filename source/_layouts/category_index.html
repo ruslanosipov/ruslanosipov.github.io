@@ -16,7 +16,8 @@ navbar: Archives
     is a great intro article if you've never used Vim. Skim through the
     headings below to see if you find anything of interest.
   </p>
-{% else if page.category == 'travel' %}
+{% endif %}
+{% if page.category == 'travel' %}
   <p>
   This is a collection of travel-related articles I wrote over the years. I
   love conventional travel, but I also
@@ -24,6 +25,12 @@ navbar: Archives
   makes for one hell of an odd story).
   </p>
 {% endif %}
+
+<p>
+  An unfiltered list of all my posts is available in the
+  <a href="/blog/archive">archive</a>. You might also choose to navigate
+  to the <a href="/blog">home page</a>.
+</p>
 
 <ul>
   {% for post in site.categories[page.category] %}
