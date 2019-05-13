@@ -319,14 +319,6 @@ attention to life right in front of me. With everything I have packed in a car,
 there's nothing on the horizon. Nothing is far away. There's no home to go back
 to, so I don't rush anywhere. I savor every moment I have.
 
-October 2018 update. After pulling off a year traveling in a Prius full time --
-this article is really fun to revisit. It brings up so many memories! Rachel
-from [Hobby Help][12] recently reached out to me and shared
-[the ultimate beginner's guide to camping][13], which feels like a great
-complimentary article. Rachel goes into quite a lot of detail about car camping
-and solidifies the basics when it comes to venturing outside. I enjoyed it, and
-so might you. Give it a read!
-
 [1]: http://amzn.to/1NvY78S
 [2]: http://amzn.to/1NvXpbA
 [3]: http://amzn.to/1iFj0Sb
@@ -338,5 +330,3 @@ so might you. Give it a read!
 [9]: http://amzn.to/1iFkJqF
 [10]: http://amzn.to/1Nw0clb
 [11]: https://chrissawey.wordpress.com/
-[12]: https://hobbyhelp.com/
-[13]: https://hobbyhelp.com/camping/
