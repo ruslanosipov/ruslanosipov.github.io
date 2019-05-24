@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2019-05-13T02:17:36+00:00</updated>
+  <updated>2019-05-24T21:03:55+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,32 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Leveling problem in Assassin's Creed: Odyssey]]></title>
-    <link href="http://www.rosipov.com/blog/leveling-problem-in-assassins-creed-odyssey/"/>
-    <updated>2019-01-02T03:19:45+00:00</updated>
-    <id>http://www.rosipov.com/blog/leveling-problem-in-assassins-creed-odyssey</id>
-    <content type="html"><![CDATA[<p>Assassin&rsquo;s Creed: Odyssey has been received to fan fanfares, with players and critics alike praising the game. Odyssey is continuing to move the Assassin&rsquo;s Creed series into the action RPG territory, which in part is responsible for the praise the latest installment in the series has received.</p>
-
-<p>However, the way Assassin&rsquo;s Creed: Odyssey handles protagonist leveling and player progression leaves to be desired.</p>
-
-<p>Leveling systems in role-playing video games come from tabletop RPGs. Levels in table-top games serve several purposes:</p>
-
-<ul>
-<li>Showcase character progression. Character level increases, they now can dish out more damage and take more beating. It feels like they became stronger by overcoming in-game challenges.</li>
-<li>Something else here, right?</li>
-</ul>
-
-
-<p>In addition, video games leverage leveling systems to solve a few more problems:</p>
-
-<ul>
-<li>Control player progression.</li>
-</ul>
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sane Vim defaults (from Neovim)]]></title>
@@ -1995,6 +1969,31 @@ function vsql {
 specific user, host, DB, and filenames respectively. I usually make a bunch of
 aliases for different environments/machines I use: <code>sql-prod</code>, <code>sql-dev</code>,
 <code>sql-local</code> or <code>vsql-host1</code>, <code>vsql-host2</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thoughts on travel]]></title>
+    <link href="http://www.rosipov.com/blog/thoughts-on-travel/"/>
+    <updated>2016-06-05T01:11:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/thoughts-on-travel</id>
+    <content type="html"><![CDATA[<p>I like traveling. I&rsquo;ve been living on the road on and off for the past half a year, traveling across the US. This whole time I live in my car, and quite frankly, I enjoy it.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/colorado-mountains.jpg" title="View of the highway leading to Colorado mountains.." ></p>
+
+<p>Passing beautiful vistas and not having a place to call home are two sides of the same coin. It&rsquo;s something that gives me time to think.</p>
+
+<p>From a very young age we surround ourselves with objects of comfort. It all starts with toys we have as children. First things we own. Our room. Friends. House. Job. Town. Country. We take comfort in certain parts of the environment. Be it objects, people, or places.</p>
+
+<p>After getting rid of most of my belongings and starting my journey - I felt like a lot of things which made me feel comfortable and safe were gone. It made me feel very exposed to the world.</p>
+
+<p>When objects of comfort are gone, one has to face a lot of their own demons. Issues hidden by a security blanket are let out to roam freely. Living on the road amplifies the experiences I have: the ups are high, and the downs are low. A wider specter of emotions is thrown onto me.</p>
+
+<p>I guess there&rsquo;s a reason why majority of people all live in a similar manner. It&rsquo;s comforting. It&rsquo;s a void inside you that needs filling. It&rsquo;s things we don&rsquo;t want to think about, deal with.</p>
+
+<p>But there&rsquo;s also strength in letting go. Items, places, people. Thoughts. Ideas. It&rsquo;s a way of growth. To become a better version of yourself, you need to be destroyed a little. Deal with the darkness within.</p>
+
+<p>Some days it&rsquo;s exhausting, some days it&rsquo;s revitalizing. But that&rsquo;s why I do what I do.</p>
 ]]></content>
   </entry>
   
