@@ -16,11 +16,11 @@ I found the Internets to be surprisingly sparse on the subject, and I had to try
 
 The best solution for me turned out to be `rclone`, which mounts Google Drive as a directory. It requires `rclone` service to be constantly running in order to access the data, which is a plus for me - I've accidentally killed Dropbox daemon in the past and had to deal with conflicts in my files.
 
-Install `rclone` with the package manager of your choice:
+Install `rclone` ([instructions][1]):
 
-    sudo apt install rclone
+    curl https://rclone.org/install.sh | sudo bash
 
-From then on, [rclone website some documentation][1] when it comes to the setup. I found it somewhat difficult to parse, so here it is paraphrased:
+From then on, [rclone website some documentation][2] when it comes to the setup. I found it somewhat difficult to parse, so here it is paraphrased:
 
 Launch `rclone config` and follow the prompts:
 
@@ -51,4 +51,5 @@ For my i3 setup, all I needed was to add the following to `~/.config/i3/config`:
 It's been working without an issue for a couple of weeks now - and my migration from Dropbox turned out to be somewhat painless and quick.
 
 [0]: https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit
-[1]: https://rclone.org/drive/
+[1]: https://rclone.org/install/
+[2]: https://rclone.org/drive/
