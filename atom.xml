@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-03-20T03:36:30+00:00</updated>
+  <updated>2020-05-04T15:47:09+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Adjusting to working from home]]></title>
+    <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
+    <updated>2020-05-04T17:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
+    <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
+
+<p>My day begins around 7 or 8 am, without too much deviation from schedule. I used to bike to work before the pandemic, and I try to head out for a 30 minute ride in a morning a few days a week. There aren&rsquo;t a lot of people out early, and I love starting my day with some light cardio.</p>
+
+<p>I share breakfast and coffee with my partner, often while catching up on our favorite morning TV show. At the moment I&rsquo;m being educated on Avatar: The Last Airbender. Ugh, Azula!</p>
+
+<p>Breakfast is followed by a calendar sync. We check if either of us have overlapping or sensitive meetings. That way we know which calls either of us needs to take in another room - and which are okay to have in our workspace. Both of our desks are in the living room, and we use <a href="https://amzn.to/3ferNbP">noise cancelling headphones</a> throughout the day to help with focus. During the day we convert our bedroom to an ad hoc conference room.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/wfh-setup.jpg" title="A picture of my work-from-home setup." ></p>
+
+<p>By 9 am, I have my desk set up: I replace my personal laptop with its corporate-issued counterpart. An <a href="https://amzn.to/2SwMCpc">external webcam</a> helps with the image quality, and a dedicated <a href="https://amzn.to/2W0vREV">display</a>, keyboard (<a href="http://www.vortexgear.tw/vortex2_2.asp?kind=47&amp;kind2=220&amp;kind3=&amp;kind4=999">Vortex Pok3r</a> with <a href="https://drop.com/buy/91600">Matt3o Nerd DSA</a> key cap set), and a mouse (<a href="https://amzn.to/2SwNWbE">Glorious Model O-</a>) alleviate the cramped feeling I get when using a laptop.</p>
+
+<p>Most importantly, I&rsquo;m showered, groomed, and dressed by this time. While working in whatever I slept in has worked well for occasional remote Fridays, it proved to be unsustainable for prolonged remote work. Whenever I wasn&rsquo;t dressed for work, I found myself slowly drifting towards the couch, and trading a laptop for my phone. In fact, some days I dress up even more than I used to when going to the office!</p>
+
+<p>This is where the clear separation between home and work is established. I&rsquo;m fully dressed and have my workstation set up: it&rsquo;s work time!</p>
+
+<p>I spend the next few hours busy with heads down work, usually working on a design, writing some code, or doing anything which requires concentration. Playing something like a <a href="https://rainycafe.com/">Rainy Cafe</a> in the background helps me stay in the zone.</p>
+
+<p>Back in the office, 11 am used to be my workout time: a gym buddy of mine would consistency exercise at 11 am, and I adopted the habit of joining him over the past few years. I decided not to move the time slot: at 11 am I change into my workout clothes and exercise: 30 to 45 minutes of bodyweight exercises or online classes use up the remainder of my morning willpower. I&rsquo;m so glad there are thousands of YouTube videos to keep me company!</p>
+
+<p>My partner and I alternate cooking, and the next hour or so is reserved for cooking, lunch together, and cleanup. Remember the noise cancelling headphones? We haven&rsquo;t heard (and often seen) each other since morning! Getting to share lunch daily has definitely been the highlight of staying at home for me.</p>
+
+<p>After that - back to work: design reviews, meetings, busywork.</p>
+
+<p>I wrap up around 5 pm, and make a point not to work past that. I swap out my work laptop for my own (even if I&rsquo;m not planning to use it), and stow it away for the night. Disassembling my setup paired with showering and changing into house clothes creates a solid dividing line between work and home.</p>
+
+<p>Cooking dinner together and evening activities follow, but that&rsquo;s a story for another time. Stay healthy and productive!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I use Vimwiki]]></title>
@@ -1735,263 +1770,6 @@ def get_random_element(sequence, n):
 
 <p>I incorporated logic above into the room generation code, accounted for
 duplicates, and ended up with decent distribution results.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Randomly generated dungeons]]></title>
-    <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
-    <updated>2016-09-29T23:26:32+00:00</updated>
-    <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
-    <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
-with the results:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
-floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
-few random dungeon generation ideas, I settled with the following.</p>
-
-<h2>The algorithm</h2>
-
-<ol>
-<li>Start with a random point on a canvas.</li>
-<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
-<li>Select a few points on the sides of the room, put those in a stack. Save the
-direction in which the potential doors would point.</li>
-<li>Go through the stack, and try to add a room or a corridor (corridor is just a
-room with a width or a height of 1). Higher chance of corridors seems to look
-better and results in those wiggly passageways.
-
-<ol>
-<li>Try to add a room a few dozen times with different random configurations.
-If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
-generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
-clean those up later.</li>
-<li>If a room was added successfully - add a door where it connects to the
-previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
-to another corridor.</li>
-<li>At this point one ends up with quite a few interconnected corridors,
-merged rooms, and all kinds of fun surroundings (my desired goal).</li>
-</ol>
-</li>
-<li>Do the above until the stack is empty or a desired number of rooms has been
-generated.</li>
-<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
-one until intersection with another room/corridor is detected.</li>
-<li>Add walls around the rooms and corridors, while also cleaning up any extra
-doors we may have left behind when creating merged corridors or rooms.
-
-<ol>
-<li>I simply used slightly modified depth first search starting inside any
-room and drawing walls wherever I could find floor/door not connected to
-anything.</li>
-<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
-the opposite sides. If not - remove the door and replace it with a floor
-tile. If any doors were adjucent to the removed door - requeue the door
-check on them.</li>
-</ol>
-</li>
-<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
-time. Pick the best candidate with the most desired features - like a number
-of rooms, breadth, square footage, longest corridors, etc.</li>
-</ol>
-
-
-<p>A more detailed explanation of the steps is below. For now, here are a few more
-dungeons generated using this method:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p><img src="http://www.rosipov.com/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p><img src="http://www.rosipov.com/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p>I think dungeon generation is far more art than science, and I had a lot of fun
-tweaking all the different input parameters:</p>
-
-<ul>
-<li>Room size boundaries.</li>
-<li>Corridor lengths.</li>
-<li>Frequency of corridor occurrences.</li>
-<li>Number of exits from the room.</li>
-<li>Number of room generation attempts.</li>
-<li>Number of dungeon generation attempts.</li>
-<li>Final dungeon picking heuristics.</li>
-</ul>
-
-
-<p>Last item on the list is the most interesting one - with few hundred dungeons as
-an input, picking the right one is rather important. I ended up settling on
-using max priority queue with a rough surface area of the dungeon as a key
-(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
-through some top results and pick the one with the most rooms available. This
-results in the most fun-looking map which feels up most of the screen, while
-still usually not being too cluttered.</p>
-
-<p>Here&rsquo;s a breakdown of a simple scenario:</p>
-
-<h3>Steps 1 and 2</h3>
-
-<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
-
-<pre><code>....
-....
-....
-</code></pre>
-
-<h3>Step 3</h3>
-
-<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
-
-<pre><code>....2
-....
-....1
-  3
-</code></pre>
-
-<p>I went for a uniform distribution by unfolding the rectangle and folding it back
-in to get a proper coordinate on the perimeter. Now, stack contains coordinates
-of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
-
-<h3>Steps 4 and 5</h3>
-
-<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
-the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
-We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
-random decide again: up.</p>
-
-<pre><code>     4
-     .
-     .
-....2.
-.... .
-....3.
-  1
-</code></pre>
-
-<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
-also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
-corridors are never pretty.</p>
-
-<p>Now, to replace number 3 with a door:</p>
-
-<pre><code>     4
-     .
-     .
-....2.
-.... .
-....+.
-  1
-</code></pre>
-
-<p>Adding another random corridor of length 2 to the point 4, pointing right.
-Replace number 4 with a floor segment, since point 4 was the end of another
-corridor. Remove point 4 from loose ends, add point 5.</p>
-
-<pre><code>     ...5
-     .
-     .
-....2.
-.... .
-....+.
-  1
-</code></pre>
-
-<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
-is empty.</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-....2.   ...
-.... .   ...
-....+.   ...
-  1
-</code></pre>
-
-<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
-Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
-After a few unsuccessful attempts to place a room or a corridor there, we give
-up:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  1
-</code></pre>
-
-<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
-the loose ends list.</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  +
-  .
-  .
-  .
-  6
-</code></pre>
-
-<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
-done generating the dungeon. Our stack is empty, and our loose ends contains
-coordinates of <code>6</code>.</p>
-
-<h3>Step 6</h3>
-
-<p>Start with the loose end, and remove items one by one until a tile with multiple
-neighbors is encountered:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  X
-  X
-  X
-  X
-  X
-</code></pre>
-
-<p>Viola:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-</code></pre>
-
-<h3>Steps 7 and 8</h3>
-
-<p>There are no rogue doors in this scenario, so all we need to do is add  the
-walls:</p>
-
-<pre><code>     #########
-     #...+...#
-     #.###...#
-######.# #...#
-#....#.# #...#
-#....#.# #...#
-#....+.# #...#
-######## #####
-</code></pre>
-
-<p>All of the steps above should be repeated a few hundred times with different
-dungeons, and then the best dungeon should be picked as a final one.</p>
-
-<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
-should have I done differently?</p>
 ]]></content>
   </entry>
   
