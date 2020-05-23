@@ -8,6 +8,8 @@ Before COVID-19 shelter-in-place order came to be, I played Dungeons and Dragons
 
 Having to stay inside I had a prime opportunity to try something new, exciting, and less rule heavy than D&D: that's how I discovered Numenera. Well, I've been familiar with the concept for some time: I played Planescape: Torment -- with Planescape being an inspiration for the setting of Numenera, and I've recently completed Torment: Tides of Numenera -- a spiritual successor to Planescape, which used the Cypher System rules... I'm getting ahead of myself, let me back up.
 
+{% img /images/posts/numenera-keiran-yanner.jpg Numenera game system, image property of Monte Cook games. %}
+
 Numenera is a science fantasy tabletop role-playing game set in the (oh so) distant future. The "Cypher System" is a tabletop game engine which Numenera runs on. The system is notorious for emphasizing storytelling over rules, and for usage of "cyphers" - a one time abilities meant to shake up gameplay. Want to teleport? You don't have to be a level 10 wizard to that. Find the right cypher, and you can teleport, but only once. This keeps gameplay from getting stale, and provides players with exciting abilities from the get-go.
 
 For the past few months I've been running Numenera campaign for a group of friends, and we've had a blast so far! We've been playing over Google Hangouts, without miniatures or services like Roll20: and the game held up well.
@@ -87,9 +89,11 @@ To keep dice rolls exciting, Numenera extends the idea of critical success and c
 
 Natural 1 allows for a free GM intrusion. Something unexpected happens, and you don't get any experience for it.
 
-Natural 19 gives the player an opportunity to come up with a minor effect: some minor advantage which usually persists for a round. Maybe an enemy is knocked back, or a merchant impressed by your bartering skills gives you an extra discount.
+Natural 17 and 18 provide +1 and +2 damage respectively when attacking.
 
-Natural 20 provides the player with a major effect of their choice. The cutthroats in a bar spill the location of their next heist, or a enemy gets stunned in battle.
+Natural 19 gives the player an opportunity to come up with a minor effect (or inflict +3 damage): some minor advantage which usually persists for a round. Maybe an enemy is knocked back, or a merchant impressed by your bartering skills gives you an extra discount.
+
+Natural 20 provides the player with a major effect of their choice (or up the damage to +4). The cutthroats in a bar spill the location of their next heist, or a enemy gets stunned in battle.
 
 ## Stories, rules, and common sense
 
