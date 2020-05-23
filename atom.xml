@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-05-23T00:25:00+00:00</updated>
+  <updated>2020-05-23T22:11:11+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -21,6 +21,8 @@
     <content type="html"><![CDATA[<p>Before COVID-19 shelter-in-place order came to be, I played Dungeons and Dragons on and off for the past 10 or so years. I unfortunately don&rsquo;t have the patience to be a great player, but I enjoy running the game &ndash; being a Game Master constantly engages me, and I love seeing players have fun and overcome obstacles together.</p>
 
 <p>Having to stay inside I had a prime opportunity to try something new, exciting, and less rule heavy than D&amp;D: that&rsquo;s how I discovered Numenera. Well, I&rsquo;ve been familiar with the concept for some time: I played Planescape: Torment &ndash; with Planescape being an inspiration for the setting of Numenera, and I&rsquo;ve recently completed Torment: Tides of Numenera &ndash; a spiritual successor to Planescape, which used the Cypher System rules&hellip; I&rsquo;m getting ahead of myself, let me back up.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/numenera-keiran-yanner.jpg" title="Numenera game system, image property of Monte Cook games." ></p>
 
 <p>Numenera is a science fantasy tabletop role-playing game set in the (oh so) distant future. The &ldquo;Cypher System&rdquo; is a tabletop game engine which Numenera runs on. The system is notorious for emphasizing storytelling over rules, and for usage of &ldquo;cyphers&rdquo; - a one time abilities meant to shake up gameplay. Want to teleport? You don&rsquo;t have to be a level 10 wizard to that. Find the right cypher, and you can teleport, but only once. This keeps gameplay from getting stale, and provides players with exciting abilities from the get-go.</p>
 
@@ -104,9 +106,11 @@
 
 <p>Natural 1 allows for a free GM intrusion. Something unexpected happens, and you don&rsquo;t get any experience for it.</p>
 
-<p>Natural 19 gives the player an opportunity to come up with a minor effect: some minor advantage which usually persists for a round. Maybe an enemy is knocked back, or a merchant impressed by your bartering skills gives you an extra discount.</p>
+<p>Natural 17 and 18 provide +1 and +2 damage respectively when attacking.</p>
 
-<p>Natural 20 provides the player with a major effect of their choice. The cutthroats in a bar spill the location of their next heist, or a enemy gets stunned in battle.</p>
+<p>Natural 19 gives the player an opportunity to come up with a minor effect (or inflict +3 damage): some minor advantage which usually persists for a round. Maybe an enemy is knocked back, or a merchant impressed by your bartering skills gives you an extra discount.</p>
+
+<p>Natural 20 provides the player with a major effect of their choice (or up the damage to +4). The cutthroats in a bar spill the location of their next heist, or a enemy gets stunned in battle.</p>
 
 <h2>Stories, rules, and common sense</h2>
 
