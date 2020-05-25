@@ -67,7 +67,7 @@ In Numenera, experience points are a narrative currency, and a way for players t
 * 1 XP: re-roll a die, or resist GM intrusion
 * 2 XP: gain a short term benefit, like learn a local dialect, or become trained in a narrowly applicable skill
 * 3 XP: gain a long term benefit: make an ally, establish base of operations, or gain an artifact
-* 4 XP: increase your pools, learn a skill, gain an edge, or increase amount of effort you can expend
+* 4 XP: increase your pools, learn a skill, gain an edge, increase amount of effort you can expend, get an additional ability, improve pool recovery rolls, or reduce armor penalty
 
 Once you've spent 4 XP to advance your character 4 times, you advance to the next tier. All of the above benefits are equally valuable for character progression - as a die re-roll at the right time, or an ally's help can make all the difference in a tough situation.
 
