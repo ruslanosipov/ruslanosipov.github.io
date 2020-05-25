@@ -20,7 +20,6 @@ single: true
         {% unless page.sharing == false %}
           {% include post/sharing.html %}
         {% endunless %}
-        {% include post/google_adsense.html %}
         {% if page.previous.url or page.next.url %}
           <ul class="meta text-muted pager">
             {% if page.previous.url %}
