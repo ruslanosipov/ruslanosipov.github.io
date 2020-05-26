@@ -127,6 +127,82 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-10T04:11:23+00:00"  data-updated="true" itemprop="datePublished dateCreated">10 Dec 2012</time>
+        
+           | <a href="/blog/create-gitolite-repository/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/create-gitolite-repository/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/create-gitolite-repository/" itemprop="url">Create gitolite repository</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up.</p>
+
+<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code>
+is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite
+hostname. Command <code>vi</code> stands for the text editor, but you may use whichever
+editor you prefer.</p>
+
+<pre><code>cd ~/gitolite-admin
+vi conf/gitolite.conf
+</code></pre>
+
+<p>Add lines (obviously you may want to use individual users instead of @all):</p>
+
+<pre><code>repo foo
+    RW+ = @all
+</code></pre>
+
+<p>Save it. Next:</p>
+
+<pre><code>git add conf/gitolite.conf
+git commit -m "Add foo repo for @all"
+git pull --rebase &amp;amp;&amp;amp; git push
+mkdir ~/foo
+cd ~/foo
+git init
+git remote add origin git@rosipov.com:foo.git
+</code></pre>
+
+<p>Add some files at this point. In this example, only <code>.gitkeep</code> is added.</p>
+
+<pre><code>git add .gitkeep
+git commit -m "Initialize repo"
+git push origin master
+</code></pre>
+
+<p>The new repository is all set up now.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-06T20:02:24+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 6 Dec 2012</time>
         
            | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread" itemprop="discussionUrl"
@@ -784,6 +860,8 @@ Array length: 100, allocated elements: 100
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
+    
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D Players</a>
     
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
@@ -801,8 +879,6 @@ Array length: 100, allocated elements: 100
     <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
     
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist phone launcher</a>
-    
-    <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
   </div>
 </section>

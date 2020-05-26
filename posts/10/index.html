@@ -127,6 +127,73 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T21:46:20+00:00"  data-updated="true" itemprop="datePublished dateCreated">23 Jul 2014</time>
+        
+           | <a href="/blog/distraction-free-writing-with-vimroom/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/distraction-free-writing-with-vimroom/" itemprop="url">Distraction-free writing with VimRoom</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
+documentation, personal Wiki, keeping work journal, blogging, writing
+challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
+writing prose in Vim might feel a bit unnatural, especially if you have a wide
+screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
+not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
+editing text in Vim sometimes might feel a bit clunky - with all the extra
+information and high-tech (or low-tech, depending on your perspective) look.</p>
+
+<p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
+Vim plugin which enters distraction-free writing mode, by centering the
+80-character block of text on your screen. It&rsquo;s highly configurable, and I
+found it to look especially pleasing on vertical monitors (which I prefer to
+use for writing). It looks presentable even on smaller screens though, here&rsquo;s a
+screenshot:</p>
+
+<p><img src="/images/posts/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
+
+<p>Install the plugin (use a package manager like Vundle or <a href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Pathogen</a> to
+simplify the task) and add a following line to your <code>.vimrc</code>:</p>
+
+<pre><code>nnoremap &lt;Leader&gt;vr :VimroomToggle&lt;CR&gt;
+</code></pre>
+
+<p>Now, hit <code>&lt;Leader&gt;vr</code> to drop in/out of the VimRoom mode (<code>&lt;Leader</code> is a
+backslash <code>\</code> character by default).</p>
+
+<p>GitHub link: <a href="https://github.com/mikewest/vimroom">https://github.com/mikewest/vimroom</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-22T07:04:15+00:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2014</time>
         
            | <a href="/blog/abandoning-wordpress-for-octopress/#disqus_thread" itemprop="discussionUrl"
@@ -425,140 +492,6 @@ forget that it&rsquo;s not a built-in Vim feature.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-02T20:36:42+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 2 Jul 2014</time>
-        
-           | <a href="/blog/zero-mail-inbox/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/zero-mail-inbox/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/zero-mail-inbox/" itemprop="url">Zero mail inbox</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I use email a lot. Maybe not as much as some, but I receive and send a fair
-share of mail each day. You might find it odd, but I love using email. It&rsquo;s a
-pleasant and calm experience, and sorting through a pile of messages every
-morning rewards me with a sense of achievement. There are, however, few tricks
-I have up my sleeve, and I would like to share them today. These tips will not
-necessarily make you more productive, but they will provide you a with a more
-pleasant and peaceful experience of managing your inbox.</p>
-
-<p>But first, I would like to set the scene&hellip;</p>
-
-<h2>The wonderful Mailbox app</h2>
-
-<p>I started using iOS email client called <a href="http://www.mailboxapp.com">Mailbox</a> a little over a year ago,
-shortly after a release. Back then, before it was acquired by Dropbox, you had
-to wait in order for the company to grow their servers. I patiently waited &ldquo;in
-line&rdquo; for almost a month and I finally was able to transfer all my accounts to
-this wonderful mail client.</p>
-
-<p>It was worth waiting for. Right after starting, Mailbox archived all the
-conversations in my inbox, and presented me with a list of unread emails which
-looked an awful lot like a To-Do list. You can read and reply, archive the
-important letters, delete junk, or resend a conversation to yourself after a
-certain time span as a reminder. This is an extremely simple idea, but it is
-essentially what anyone&rsquo;s inbox is: a list of things which need to be done.
-Some emails have to be replied to, some have to be acted upon in some other
-way. The ones that don&rsquo;t get archived are deleted right away.</p>
-
-<p>Mailbox turned my trash-filled inbox into a clean list of items I need to do.
-Since then, there never was an email I forgot to reply to, nor an important
-thing I forgot to do. Inbox can be referred to as &ldquo;To Do&rdquo;, and an archive as
-&ldquo;Done&rdquo;. This scheme makes it nearly impossible to miss anything of importance.</p>
-
-<p>Unfortunately, Mailbox is an iOS-only application, and I started noticing the
-shortcomings of the desktop experience. And I do use desktop mail far more
-often than mobile. I decided to have a set of rules for managing my inbox; and
-this is the workflow I have been successfully using for over a year.</p>
-
-<h2>Workflow outside of the Mailbox app</h2>
-
-<p><img src="/images/posts/zero-mail-inbox-in-gmail.png" title="Having clean inbox is rewarding." ></p>
-
-<p>I only use Gmail, and there probably are ways to have the same experience on
-other platforms. However, the Mailbox app works only with Gmail.</p>
-
-<p>The first thing which needs to be done in order to start using the zero mail
-inbox workflow - is to empty it from all the read mail. Thankfully, the Mailbox
-app archives all your previous conversations the moment you install it.</p>
-
-<p>Next, there has to be a way to implement a &ldquo;snooze&rdquo; button. There are always
-times when you can&rsquo;t reply to an email, but don&rsquo;t exactly want to keep it in
-your inbox (what an eyesore). Gmail does not provide a native way to resend
-your emails at later times, but I found a Chrome extension called
-<a href="https://chrome.google.com/webstore/detail/snooze-your-email-for-gma/pbmfoncgccdhoknelpglaacbgkclcape">&ldquo;Snooze Your Email for Gmail&rdquo;</a>, which adds a simple &ldquo;Snooze&rdquo; button to the
-Gmail UI.</p>
-
-<p>Now that these two things are taken care of, there is a simple set of rules to
-be used when a new email comes in:</p>
-
-<ul>
-<li><em>Delete.</em> Is it a notification? Does it require saving for future
-reference? A lot of things should be deleted. Bills, notifications,
-messages from robots: these don&rsquo;t have to be saved. Items in Gmail trash
-live for 30 days, which is enough time to find something in case of an
-emergency. In addition, most of this information is available from some
-another source anyway.</li>
-<li><em>Snooze.</em> Do you have time right now to read/reply/act upon this email?
-Remind yourself about it in a few hours or days instead.</li>
-<li><em>Archive.</em> Conversation with a real person you might want to reference to
-later? I save all the email chains from humans, just in case I have to
-search through them at a later date.</li>
-<li><em>Reply and archive.</em> Self-explanatory. Act upon and save for future
-reference.</li>
-<li><em>Let it be.</em> This is an eyesore version of using the &ldquo;Snooze&rdquo; button. You
-usually want to do this only if there are more important emails to read and
-act upon before getting to this one.</li>
-</ul>
-
-
-<p>Ideally, when you keep items in your inbox - this means they have to be acted
-upon in some way. There is no reason not to archive or delete conversations
-which don&rsquo;t require actions.</p>
-
-<h2>Bonus point: labels</h2>
-
-<p>This is a recent addition to my repertoire. I found myself often searching
-through certain sets of email, and hence Gmail does not support regular
-expressions it&rsquo;s quite a big pain in the neck for me when I can&rsquo;t remember
-certain details. I created a set of thematic labels, which group emails by
-projects, products, and teams. And I started religiously assigning them to all
-the emails I archive. First it takes a bit of work, but after a while it
-becomes easy to identify a pattern and create filters to assist yourself with
-categorization.</p>
-
-<p>As a result, I can  narrow down a search to a thematic subset of emails, saving
-myself a lot of time and frustration.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -582,6 +515,8 @@ myself a lot of time and frustration.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
+    
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D Players</a>
     
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
@@ -599,8 +534,6 @@ myself a lot of time and frustration.</p>
     <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
     
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist phone launcher</a>
-    
-    <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
   </div>
 </section>

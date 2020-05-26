@@ -127,6 +127,136 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-08-04T17:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 4 Aug 2017</time>
+        
+           | <a href="/blog/desktop-notifications-from-chrome-secure-shell/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/desktop-notifications-from-chrome-secure-shell/" itemprop="url">Desktop notifications from Chrome Secure Shell</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
+
+<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
+
+<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
+
+<pre><code>#!/bin/sh
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Write an error message and exit.
+# Usage: &lt;message&gt;
+die() {
+  echo "ERROR: $*"
+  exit 1
+}
+
+# Send a notification.
+# Usage: [title] [body]
+notify() {
+  local title="${1-}" body="${2-}"
+
+  case ${TERM-} in
+  screen*)  # This one's really tmux
+    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
+    ;;
+  *)        # This one's plain hterm
+    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
+    ;;
+  esac
+}
+
+# Write tool usage and exit.
+# Usage: [error message]
+usage() {
+  if [ $# -gt 0 ]; then
+    exec 1&gt;&amp;2
+  fi
+  cat &lt;&lt;EOF
+Usage: hterm-notify [options] &lt;title&gt; [body]
+
+Send a notification to hterm.
+
+Notes:
+- The title should not have a semi-colon in it.
+- Neither field should have escape sequences in them.
+  Best to stick to plain text.
+EOF
+
+  if [ $# -gt 0 ]; then
+    echo
+    die "$@"
+  else
+    exit 0
+  fi
+}
+
+main() {
+  set -e
+
+  while [ $# -gt 0 ]; do
+    case $1 in
+    -h|--help)
+      usage
+      ;;
+    -*)
+      usage "Unknown option: $1"
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
+
+  if [ $# -eq 0 ]; then
+    die "Missing message to send"
+  fi
+  if [ $# -gt 2 ]; then
+    usage "Too many arguments"
+  fi
+
+  notify "$@"
+}
+main "$@"
+</code></pre>
+
+<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
+
+<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-05-09T08:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 9 May 2017</time>
         
            | <a href="/blog/journey-of-a-friend/#disqus_thread" itemprop="discussionUrl"
@@ -818,152 +948,6 @@ of information.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-02T00:15:12+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 2 Oct 2016</time>
-        
-           | <a href="/blog/mob-level-distribution/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/mob-level-distribution/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/mob-level-distribution/" itemprop="url">Mob level distribution</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
-difficulty factor) was somewhat straightforward, but I would still like to
-document the progress. I needed to place a mob that&rsquo;s somewhat within the
-difficulty level I want, plus minus a few difficulty levels to spice it up.</p>
-
-<p><img src="/images/posts/roguelike-leveled-mob-distribution.png" title="Random mob distribution in roguelike dungeon." ></p>
-
-<p>Above you can see three rats, three cats, a dog (<code>r</code>, <code>c</code>, <code>d</code>, all level 1), a
-farmer (<code>f</code>, level 2), and a lonely bandit (<code>b</code>, level 3) in a level 1 dungeon.</p>
-
-<p>Without going straight into measure theory, I generated intervals for each mob
-based on the diff of desired level and their level, and then randomly selected a
-point within the boundaries. Here&rsquo;s the abstract code:</p>
-
-<pre><code>import bisect
-import random
-
-
-def get_random_element(data, target, chance):
-    """Get random element from data set skewing towards target.
-
-    Args:
-        data   -- A dictionary with keys as elements and values as weights.
-                  Duplicates are allowed.
-        target -- Target weight, results will be skewed towards target
-                  weight.
-        chance -- A float 0..1, a factor by which chance of picking adjacent
-                  elements decreases (i.e, with chance 0 we will always
-                  select target element, with chance 0.5 probability of
-                  selecting elements adjacent to target are halved with each
-                  step).
-
-    Returns:
-        A random key from data with distribution respective of the target
-        weight.
-    """
-    intervals = []  # We insert in order, no overlaps.
-    next_i = 0
-    for element, v in data.iteritems():
-        d = max(target, v) - min(target, v)
-        size = 100
-        while d &gt; 0:  # Decrease chunk size for each step of `d`.
-            size *= chance
-            d -= 1
-        if size == 0:
-            continue
-        size = int(size)
-        intervals.append((next_i, next_i + size, element))
-        next_i += size + 1
-    fst, _, _ = zip(*intervals)
-    rnd = random.randint(0, next_i - 1)
-    idx = bisect.bisect(fst, rnd)  # This part is O(log n).
-    return intervals[idx - 1][2]
-</code></pre>
-
-<p>Now, if I test the above for, say, a 1000000 iterations, with a chance of 0.5
-(halving probability of selecting adjacent elements with each step), and 2 as a
-target, here&rsquo;s the distribution I end up with:</p>
-
-<pre><code>target, chance, iterations = 2, 0.5, 1000000
-
-data = collections.OrderedDict([  # Ordered to make histogram prettier.
-    ('A', 0), ('B-0', 1), ('B-1', 1), ('C', 2), ('D', 3), ('E', 4),
-    ('F', 5), ('G', 6), ('H', 7), ('I', 8), ('J', 9),
-])
-
-res = collections.OrderedDict([(k, 0) for k, _ in data.iteritems()])
-
-# This is just a test, so there's no need to optimize this for now.
-for _ in xrange(iterations):
-    res[get_random_element(data, target, chance)] += 1
-
-pyplot.bar(
-    range(len(res)), res.values(), width=0.7, align='center', color='green')
-pyplot.xticks(range(len(res)), res.keys())
-pyplot.title(
-    'iterations={}, target={}, chance={}'.format(
-        iterations, target, chance))
-pyplot.show()
-</code></pre>
-
-<p><img src="/images/posts/roguelike-mob-distribution-chance-05.png" title="Distribution histogram: 1000000 iterations, 0.5 chance, and 2 as a target." ></p>
-
-<p>You can see elements B-0 and B-1 having roughly the same distribution, since
-they have the same weight.</p>
-
-<p>Now, if I decrease the <code>chance</code>, likelihood of target being selected increases,
-while likelihood of surrounding elements being selected decreases:</p>
-
-<p><img src="/images/posts/roguelike-mob-distribution-chance-033.png" title="Distribution histogram: 1000000 iterations, 0.33 chance, and 2 as a target." ></p>
-
-<p>I works the opposite way as well, increasing the <code>chance</code> decreases likelihood
-of the target being selected and increases the probability for surrounding
-elements.</p>
-
-<p><img src="/images/posts/roguelike-mob-distribution-chance-09.png" title="Distribution histogram: 1000000 iterations, 0.9 chance, and 2 as a target." ></p>
-
-<p>For the sake of completeness, it works with 0 chance of surrounding elements being picked:</p>
-
-<p><img src="/images/posts/roguelike-mob-distribution-chance-0.png" title="Distribution histogram: 1000000 iterations, 0 chance, and 2 as a target." ></p>
-
-<p>And an equal chance of picking surrounding elements:</p>
-
-<p><img src="/images/posts/roguelike-mob-distribution-chance-1.png" title="Distribution histogram: 1000000 iterations, 1 chance, and 2 as a target." ></p>
-
-<p>After playing around with the configuration in Jupyter Notebook, I cleaned up
-the algorithm above and included it into mob placement routine.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -987,6 +971,8 @@ the algorithm above and included it into mob placement routine.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
+    
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D Players</a>
     
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
@@ -1004,8 +990,6 @@ the algorithm above and included it into mob placement routine.</p>
     <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
     
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist phone launcher</a>
-    
-    <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
   </div>
 </section>

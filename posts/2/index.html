@@ -127,6 +127,76 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-27T23:28:37+00:00"  data-updated="true" itemprop="datePublished dateCreated">27 Dec 2018</time>
+        
+           | <a href="/blog/sane-vim-defaults-from-neovim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/sane-vim-defaults-from-neovim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/sane-vim-defaults-from-neovim/" itemprop="url">Sane Vim defaults (from Neovim)</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Vim comes with a set of often outdated and counter-intuitive defaults. Vim has been around for around 30 years, and it only makes sense that many defaults did not age well.</p>
+
+<p>Neovim addresses this issue by being shipped with many default options tweaked for modern editing experience. If you can&rsquo;t or don&rsquo;t want to use Neovim - I highly recommend setting some these defaults in your <code>.vimrc</code>:</p>
+
+<pre><code>if !has('nvim')
+  set nocompatible
+  syntax on
+
+  set autoindent
+  set autoread
+  set backspace=indent,eol,start
+  set belloff=all
+  set complete-=i
+  set display=lastline
+  set formatoptions=tcqj
+  set history=10000
+  set incsearch
+  set laststatus=2
+  set ruler
+  set sessionoptions-=options
+  set showcmd
+  set sidescroll=1
+  set smarttab
+  set ttimeoutlen=50
+  set ttyfast
+  set viminfo+=!
+  set wildmenu
+endif
+</code></pre>
+
+<p>The defaults above enable some of the nicer editor features, like <code>autoindent</code> (respecting existing indentation), <code>incsearch</code> (search as you type), or <code>wildmenu</code> (enhanced command-line completion). The defaults also smooth out some historical artifacts, like unintuitive backspace behavior. Keep in mind, this breaks compatibility with some older Vim versions (but it&rsquo;s unlikely to be a problem for most if not all users).</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-26T21:02:24+00:00"  data-updated="true" itemprop="datePublished dateCreated">26 Dec 2018</time>
         
            | <a href="/blog/status-bar-color-in-vim-terminal-mode/#disqus_thread" itemprop="discussionUrl"
@@ -342,124 +412,6 @@ endif
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
-        
-           | <a href="/blog/making-a-packing-spreadsheet/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/making-a-packing-spreadsheet/" itemprop="url">Making a packing spreadsheet</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
-
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
-
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
-
-<h2>Final Result</h2>
-
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
-
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
-
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
-
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
-
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
-
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
-
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
-
-<h2>The Technical Details</h2>
-
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
-
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -483,6 +435,8 @@ endif
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
+    
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D Players</a>
     
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
@@ -500,8 +454,6 @@ endif
     <a class="list-group-item " href="/blog/cross-platform-vim-plug-setup/">Cross-platform vim-plug setup</a>
     
     <a class="list-group-item " href="/blog/minimalist-phone-launcher/">Minimalist phone launcher</a>
-    
-    <a class="list-group-item " href="/blog/making-a-packing-spreadsheet/">Making a packing spreadsheet</a>
     
   </div>
 </section>
