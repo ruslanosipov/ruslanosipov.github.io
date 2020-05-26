@@ -4,7 +4,7 @@ date: 2020-05-25 18:00:00 -0700
 categories: [Games]
 ---
 
-We'll be having our 12th Numenera game later this week, and ultimately Numenera proved to be easier to run compared to Dungeons and Dragons. I just wrote about [teaching Numenera to my D&D Players][1], and it's worth sharing my own experience getting used to the system as a GM.
+We'll be having our 12th Numenera game later this week, and ultimately Numenera proved to be easier to run compared to Dungeons and Dragons. I just wrote about [teaching Numenera to my D&D Players][1], and it's worth sharing my own experience getting familiar with the system as a GM.
 
 ## Story is the king
 
@@ -14,7 +14,7 @@ As a soft tabletop role playing system, Numenera focuses on storytelling over th
 
 Depending on your DMing style and party's needs you can get away with a lackluster D&D story: even if the party is saving the world from the evil wizard for the umpteenth time, there are decently fun board game mechanics to fall back to. Monster Manual and Dungeon Master's Guide provide hundreds of fun creatures and straightforward rules for building balanced encounters, and there's plenty of clearly laid out tactical choices and fun abilities to play with in combat. Take out the story telling, and you'll have a pretty fun tactical game (isn't that what [Gloomhaven][7] did?).
 
-But there really aren't enough rules in Numenera to make combat engaging without additional emotional investment from the players. This makes building something people really care about paramount to having fun with Numenera. The usual storytelling rules apply: build a compelling story and let the players take you for a ride if their story is better (and it often is).
+But there really aren't enough rules in Numenera to make combat engaging without additional emotional investment from the players. This makes building something people care about paramount to having fun with Numenera. The usual storytelling rules apply: build a compelling story and let the players take you for a ride if their story is better (and it often is).
 
 ## You don't *need* combat encounters
 
@@ -26,7 +26,7 @@ That being said, it does not mean Numenera combat can't be fun. One of the most 
 
 ## You still need to know all the rules
 
-Latest edition of Numenera consists of two books, titled [Discovery][3] and [Destiny][4] -- both targeted at the game master. The two tomes combined clock in at whopping 800 pages of reading material. However only 29 of the lavishly illustrated pages outline the rules. The rest provide supplemental material: character customization options, the setting, realizing the world, building compelling narrative, and so on.
+Latest edition of Numenera consists of two books, titled [Discovery][3] and [Destiny][4] -- both targeted at the game master. The two tomes combined clock in at a whopping 800 pages of reading material. However only 29 of the lavishly illustrated pages outline the rules. The rest provide supplemental material: character customization options, the setting, realizing the world, building compelling narrative, and so on.
 
 {% img /images/posts/numenera-discovery-and-destiny.jpg Numenera Discovery and Destiny core rulebooks. %}
 
@@ -46,15 +46,15 @@ It certainly took me time to get used to putting my foot down, even if the playe
 
 Monte Cook published a few sets of fantastic adventures which require little to no prep to run. [Weird Discoveries][5] and [Explorer's Keys][6] let you run adventures with minimal prep. But it doesn't help that these come with standard dungeon-style maps.
 
-Turned out a much better way to describe locations is: "Over the next few hours you explore the obelisk, and within the maze of the corridors you note a number of places of interest. There are...". The rulebook has my back on this too.
+Turned out a more engaging way to describe locations is: "Over the next few hours you explore the obelisk, and within the maze of the corridors you note a number of places of interest. There are...". The rulebook has my back on this too.
 
 ## Bring out the weird
 
-The hardest thing when running Numenera games was highlighting how weird the Ninth World truly is. My players kept falling back into thinking of Steadfast as a standard medieval fantasy setting, and that's in many ways because I kept forgetting to tell them how weird everything is.
+The most difficult part of running Numenera games was highlighting how weird the Ninth World truly is. My players kept falling back into thinking of Steadfast as a standard medieval fantasy setting, and that's in many ways because I kept forgetting to tell them how weird everything is.
 
-How a mountain in the background is probably a machine from the prior world. How the water in the swamp was probably a conduit for some unimaginable device. And how none of it should make sense.
+How a mountain in the background is a machine from the prior world. How the water in the swamp was a conduit for some unimaginable device. And how none of it should make sense.
 
-In earlier games, I had explanations ready for everything odd occurring in the world. I've been slowly making an effort to make the world more mysterious, more unexplainable, and more weird. This seems to be the key to running a great Numenera game, and I'm still trying to find the balance between a consistent, but weird world characters live in.
+In earlier games, I had explanations ready for everything odd occurring in the world. I've been slowly making an effort to make the world more mysterious, more unexplainable, and more weird. This seems to be the key to running a successful Numenera game, and I'm still trying to find the balance between a consistent, but weird world characters live in.
 
 [1]: https://www.rosipov.com/blog/numenera-for-dnd-players
 [2]: https://rpg.stackexchange.com/questions/tagged/numenera
