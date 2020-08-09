@@ -1,6 +1,6 @@
 ---
 title: "One page TTRPG prep"
-date: 2020-08-02 17:00:00 -0700
+date: 2020-08-08 17:00:00 -0700
 categories: [Games]
 ---
 
