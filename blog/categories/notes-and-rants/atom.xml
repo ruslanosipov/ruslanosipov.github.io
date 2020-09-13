@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-08-09T02:46:12+00:00</updated>
+  <updated>2020-09-13T12:51:33-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Lessons learned: engineering productivity]]></title>
     <link href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/"/>
-    <updated>2015-06-08T22:03:58+00:00</updated>
+    <updated>2015-06-08T14:03:58-08:00</updated>
     <id>http://www.rosipov.com/blog/lessons-learned-engineering-productivity</id>
     <content type="html"><![CDATA[<p>I enjoy optimizing the way I work: the less time I can spend on something
 without sacrificing quality - the better. Below are few ideas on the subject of
@@ -165,7 +165,7 @@ timeless books - not affected by changing technologies and processes.</p>
   <entry>
     <title type="html"><![CDATA[Impact-driven development]]></title>
     <link href="http://www.rosipov.com/blog/impact-driven-development/"/>
-    <updated>2015-04-26T01:19:58+00:00</updated>
+    <updated>2015-04-25T17:19:58-08:00</updated>
     <id>http://www.rosipov.com/blog/impact-driven-development</id>
     <content type="html"><![CDATA[<p>It is my fifth year working as a professional software engineer, and I think
 it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
@@ -227,7 +227,7 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
   <entry>
     <title type="html"><![CDATA[Power of the command line]]></title>
     <link href="http://www.rosipov.com/blog/power-of-the-command-line/"/>
-    <updated>2015-02-06T21:13:49+00:00</updated>
+    <updated>2015-02-06T13:13:49-08:00</updated>
     <id>http://www.rosipov.com/blog/power-of-the-command-line</id>
     <content type="html"><![CDATA[<p><em>Disclaimer: I am not advocating any specific tools or methodologies, but
 sharing a workflow I find to be efficient and pleasant.</em></p>
@@ -441,7 +441,7 @@ interface you prefer, it&rsquo;s crucially important to use the right tool for t
   <entry>
     <title type="html"><![CDATA[750 words a day]]></title>
     <link href="http://www.rosipov.com/blog/750-words-a-day/"/>
-    <updated>2014-10-29T17:51:35+00:00</updated>
+    <updated>2014-10-29T10:51:35-07:00</updated>
     <id>http://www.rosipov.com/blog/750-words-a-day</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve had increased interest in writing throughout this year. In addition to
 being a pleasant and fulfilling activity, it shown a number of benefits in my
@@ -488,7 +488,7 @@ able to make it last for the whole month.</p>
   <entry>
     <title type="html"><![CDATA[One more argument for 80 character limit]]></title>
     <link href="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/"/>
-    <updated>2014-07-30T06:00:04+00:00</updated>
+    <updated>2014-07-29T23:00:04-07:00</updated>
     <id>http://www.rosipov.com/blog/one-more-argument-for-80-character-limit</id>
     <content type="html"><![CDATA[<p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
 topic, and there&rsquo;s an overall consensus on the subject, not counting occasional

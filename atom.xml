@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-08-09T02:46:12+00:00</updated>
+  <updated>2020-09-13T12:51:33-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -14,9 +14,112 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Vortex Core 40% keyboard]]></title>
+    <link href="http://www.rosipov.com/blog/vortex-core-keyboard/"/>
+    <updated>2020-09-13T10:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/vortex-core-keyboard</id>
+    <content type="html"><![CDATA[<p><em>This review is written entirely using Vortex Core, in Markdown, and using Vim.</em></p>
+
+<p>Earlier this week I purchased <a href="https://amzn.to/3ivzMCK">Vortex Core</a> - a 40% keyboard from a Taiwanese company Vortex, makers of the ever popular <a href="https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=3633">Pok3r</a> keyboard (which I happen to use as my daily driver). This is a keyboard with only 47 keys: it drops the numpad (what&rsquo;s called 80%), function row (now we&rsquo;re down to 60%), and the dedicated number row (bringing us to the 40% keyboard realm).</p>
+
+<p>Words don&rsquo;t do justice to how small a 40% keyboard is. So here is a picture of Vortex Core next to Pok3r, which is an already a small keyboard.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/vortex-core-and-pok3r.jpg" title="A picture of Vortex Core 40% keyboard next to a Pok3r 60% keyboard." ></p>
+
+<p>At around a <a href="https://amzn.to/3ivzMCK">$100 on Amazon</a> it&rsquo;s one of the cheaper 40% options, but Vortex did not skimp on quality. The case is sturdy, is made of beautiful anodized aluminum, and has some weight to it. The keycaps this keyboard comes with feel fantastic (including slight dips on <code>F</code> and <code>J</code> keys), and I`m a huge fan of the look.</p>
+
+<p>I hooked it up to my Microsoft Surface Go as a toy more than anything else. And now I think I may have discovered the perfect writing machine! Small form factor of the keyboard really compliments the already small Surface Go screen, and there&rsquo;s just enough screen real estate to comfortably write and edit text.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/vortex-core-and-surface-go.jpg" title="A picture of Vortex Core 40% keyboard plugged into Microsoft Surface Go screen." ></p>
+
+<p>I&rsquo;ve used Vortex Core on and off for the past few days, and I feel like I have a solid feel for it. Let&rsquo;s dig in!</p>
+
+<h2>What&rsquo;s different about it?</h2>
+
+<p>First, the keycap size and distance between keys are standard: it&rsquo;s a standard staggered layout most people are used to. This means that when typing words, there is no noticeable speed drop. In fact I find myself typing a tiny bit faster using this keyboard than my daily driver - but that could just be my enthusiasm shining through. I hover at around 80 words per minute on both keyboards.</p>
+
+<p>That is until it&rsquo;s time to type &ldquo;you&rsquo;re&rdquo;, or use any punctuation outside of the <code>:;,.&lt;&gt;</code> symbols. That&rsquo;s right, the normally easily accessible apostrophe is hidden under the function layer (<code>Fn1 + b</code>), and so is the question mark (<code>Fn1 + Shift + Tab</code>). <code>-</code>, <code>=</code>, <code>/</code>, <code>\</code>, <code>[</code>, and <code>]</code> are gone too, and I&rsquo;ll cover those in due time.</p>
+
+<p>On a first day this immediately dropped my typing speed to around 50 words per minute, as it&rsquo;s completely unintuitive at first! In fact, I just now stopped hitting <code>Enter</code> every time I tried to place an apostrophe! But only after a few hours of sparingly using Vortex Core I&rsquo;m up to 65 WPM, and it feels like I would regain my regular typing speed within a week.</p>
+
+<p>Despite what you might think, it&rsquo;s relatively easy to get used to odd key placement like this.</p>
+
+<p>Keys have 4 layers (not to be confused with programming layers), and that&rsquo;s how the numbers, symbols, and some of the more rarely used keys are accessed. For example, here&rsquo;s what the key <code>L</code> contains:</p>
+
+<ul>
+<li>Default layer (no modifiers): <code>L</code></li>
+<li><code>Fn1</code> layer: <code>0</code></li>
+<li><code>Fn1 + Shift</code> layer: <code>)</code></li>
+<li><code>Fn</code> layer: <code>right arrow key</code></li>
+</ul>
+
+
+<p>The good news is that unlike many 40% keyboards on the market (and it&rsquo;s a rather esoteric market), Vortex Core has key inscriptions for each layer. Something like <a href="https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=3633https://olkb.com/collections/planck">Planck</a> would require you to print out layout cheatsheets while you get used to the function layers.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/vortex-core-left-half.jpg" title="Left side of the Vortex Core keyboard, demonstrating numbers and special characters." ></p>
+
+<p>As I continue attempting to type, numbers always take me by surprise: the whole number row is a function layer on top of the home row (where your fingers normally rest). After initially hitting the empty air when attempting to type numbers, I began to get used to using the home row instead.</p>
+
+<p>The placement mimics the order the keys would be in on the number row (<code>1234567890-=</code>), but <code>1</code> is placed on the <code>Tab</code> key, while <code>=</code> is on the <code>Enter</code>. While I was able to find the numbers relatively easily due to similar placement, I would often be off-by-one due to row starting on a <code>Tab</code> key.</p>
+
+<p>Things get a lot more complicated when it comes to special symbols. These are already normally gated behind a <code>Shift</code>-press on a regular keyboard, and Vortex Core requires some Emacs-level gymnastics! E.g. you need to press <code>Fn1 + Shift + F</code> to conjure <code>%</code>.</p>
+
+<p>Such complex keypresses are beyond counter-intuitive at first. Yet after a few hours, I began to get used to some of the more frequently used keys: <code>!</code> is <code>Fn1 + Shift + Tab</code>, <code>-</code> is <code>Fn1 + Shift + 1</code>, <code>$</code> (end of line in Vim) is <code>Fn1 + Shift + D</code>, and so on. Combining symbols quickly becomes problematic.</p>
+
+<p>It&rsquo;s fairly easy to get used to inserting a lone symbol here and there, but the problems start when having to combine multiple symbols at once. E.g. writing an expression like <code>'Fn1 + Shift + D' = '$'</code> above involves the following keypresses: <code>&lt;Fn1&gt;&lt;Esc&gt; F N &lt;Fn1&gt;&lt;Tab&gt; &lt;Fn1&gt;&lt;Shift&gt;&lt;Enter&gt; S H I F T &lt;Fn1&gt;&lt;Shift&gt;&lt;Enter&gt; D &lt;Fn1&gt;&lt;Esc&gt; &lt;Fn1&gt;&lt;Enter&gt; &lt;Fn1&gt;&lt;Esc&gt; &lt;Fn1&gt;&lt;Shift&gt;D &lt;Fn1&gt;&lt;Esc&gt;</code>. Could you image how long it took me to write that up?</p>
+
+<p><img src="http://www.rosipov.com/images/posts/vortex-core-right-half.jpg" title="Right side of the Vortex Core keyboard, demonstrating special characters placed on `bnm,.` keys." ></p>
+
+<p>The most difficult part of getting used to the keyboard is the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
+
+<p>This probably won&rsquo;t worry you if you don&rsquo;t write a lot of code or math, but I do, and it`s muscle memory I&rsquo;ll have to develop.</p>
+
+<p>There are dedicated <code>Del</code> and <code>Backspace</code> keys, which is a bit of an odd choice, likely influenced by needing somewhere to place the <code>F12</code> key - function row is right above the home row, and is hidden behind the <code>Fn1</code> layer.</p>
+
+<p>Spacebar is split into two (for ease of finding keycaps I hear), and it doesn&rsquo;t affect me whatsoever. I mostly hit spacebar with my left thumb and it&rsquo;s convenient.</p>
+
+<p><code>Tab</code> is placed where the <code>Caps Lock</code> is, which feels like a good choice. After accidentally hitting <code>Esc</code> a few times, I got used to the position. Do make sure to get <a href="http://www.vortexgear.tw/vortex3.asp">latest firmware</a> for your Vortex Core - I believe earlier firmware versions hides Tab behind a function layer, defaulting the key to <code>Caps Lock</code> (although my keycaps reflected the updated firmware).</p>
+
+<p>So I&rsquo;d say the numbers and the function row take the least amount of time to get used to. It&rsquo;s the special characters that take time.</p>
+
+<h2>Can you use it with Vim?</h2>
+
+<p>I&rsquo;m a huge fan of Vim, and I even wrote <a href="https://amzn.to/3htsTjK">a book</a> on the subject. In fact, I&rsquo;m writing this very review in Vim.</p>
+
+<p>And I must say, it&rsquo;s difficult. My productivity took a hit. I use curly braces to move between paragraphs, I regularly search with <code>/</code>, <code>?</code>, and <code>*</code>, move within a line with <code>_</code> and <code>$</code>, and use numbers in my commands like <code>c2w</code> (change two words) as well as other special characters, e.g. <code>da"</code> (delete around double quotes).</p>
+
+<p>The most difficult combination being spelling correction: <code>z=</code> followed by a number to select the correct spelling. I consistency break the flow by having to press <code>Z &lt;Fn1&gt;&lt;Enter&gt; &lt;Fn1&gt;&lt;Tab&gt;</code> or something similar to quickly fix a misspelling.</p>
+
+<p>My Vim productivity certainly took a massive hit. Yet, after a few days it&rsquo;s starting to slowly climb back up, and I find myself remembering the right key combinations as the muscle memory kicks in.</p>
+
+<p>I assume my Vim experience translates well into programming. Even though I write code for a living, I haven&rsquo;t used Vortex Core to crank out code.</p>
+
+<h2>Speaking of programming</h2>
+
+<p>The whole keyboard is fully programmable (as long as you update it to the <a href="http://www.vortexgear.tw/vortex3.asp">latest firmware</a>).</p>
+
+<p>It&rsquo;s an easy process - a <a href="http://www.vortexgear.tw/vortex3.asp">three page manual</a> covers everything that&rsquo;s needed like using different keyboard layers or remapping regular and function keys.</p>
+
+<p>The manual also mentions using right <code>Win</code>, <code>Pn</code>, <code>Ctrl</code>, and <code>Shift</code> keys as arrow keys by hitting left <code>Win</code>, left <code>Alt</code>, and right spacebar. Vortex keyboards nowadays always come with this feature, but due to small form factor of the keys (especially Shift), impromptu arrow keys on Vortex Core are nearly indistinguishable from individual arrow keys.</p>
+
+<p>Remapping is helpful, since I&rsquo;m used to having <code>Ctrl</code> where <code>Caps Lock</code> is (even though this means I have to hide Tab behind a function layer), or using <code>hjkl</code> as arrow keys (as opposed to the default <code>ijkl</code>).</p>
+
+<p>It took me only a few minutes to adjust the keyboard to my needs, but I imagine I will come back for tweaks - I&rsquo;m not so sure if I&rsquo;ll be able to get used to special symbols hidden behind <code>Fn1</code> + <code>Shift</code> + key layer. Regularly pressing three keys at the time (with two of these keys being on the edge of the keyboard) feels unnatural and inconvenient right now. But I&rsquo;m only a few hours in, and stenographers manager to do it.</p>
+
+<h2>Living in the command line</h2>
+
+<p>The absence of certain special characters is especially felt when using the command line. Not having a forward slash available with a single keypress makes typing paths more difficult. I also use <code>Ctrl + \</code> as a modifier key for tmux, and as you could imagine it&rsquo;s just as problematic.</p>
+
+<p>Despite so many difficulties, I&rsquo;m loving my time with Vortex Core! To be honest with myself, I don&rsquo;t buy new keyboards to be productive, or increase my typing speed. I buy them because they look great and are fun to type on. And Vortex Core looks fantastic, and being able to cover most of the keyboard with both hands is amazing.</p>
+
+<p>There&rsquo;s just something special about having such a small board under my fingertips.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[One page TTRPG prep]]></title>
     <link href="http://www.rosipov.com/blog/one-page-ttrpg-prep/"/>
-    <updated>2020-08-09T00:00:00+00:00</updated>
+    <updated>2020-08-08T17:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/one-page-ttrpg-prep</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been running table top role playing games for over a decade on and off, and I&rsquo;ve settled into a prep routine. It&rsquo;s heavily borrowed, if not outright stolen from other GMs on the Internets, and I encourage you to steal and adapt what I&rsquo;m doing as well. If I had to guess, this way of preparation is stolen directly from the <a href="https://slyflourish.com/lazydm/">Lazy GM</a>&rsquo;s table.</p>
 
@@ -84,7 +187,7 @@
   <entry>
     <title type="html"><![CDATA[Numenera for D&D DMs]]></title>
     <link href="http://www.rosipov.com/blog/numenera-for-dnd-dms/"/>
-    <updated>2020-05-26T01:00:00+00:00</updated>
+    <updated>2020-05-25T18:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/numenera-for-dnd-dms</id>
     <content type="html"><![CDATA[<p>We&rsquo;ll be having our 12th Numenera game later this week, and ultimately Numenera proved to be easier to run compared to Dungeons and Dragons. I just wrote about <a href="https://www.rosipov.com/blog/numenera-for-dnd-players">teaching Numenera to my D&amp;D Players</a>, and it&rsquo;s worth sharing my own experience getting familiar with the system as a GM.</p>
 
@@ -143,7 +246,7 @@
   <entry>
     <title type="html"><![CDATA[Numenera for D&D Players]]></title>
     <link href="http://www.rosipov.com/blog/numenera-for-dnd-players/"/>
-    <updated>2020-05-23T00:00:00+00:00</updated>
+    <updated>2020-05-22T17:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/numenera-for-dnd-players</id>
     <content type="html"><![CDATA[<p>Before COVID-19 shelter-in-place order came to be, I played Dungeons and Dragons on and off for the past 10 or so years. I unfortunately don&rsquo;t have the patience to be a great player, but I enjoy running the game &ndash; being a Game Master constantly engages me, and I love seeing players have fun and overcome obstacles together.</p>
 
@@ -248,7 +351,7 @@
   <entry>
     <title type="html"><![CDATA[Adjusting to working from home]]></title>
     <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T17:00:00+00:00</updated>
+    <updated>2020-05-04T09:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
     <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
 
@@ -283,7 +386,7 @@
   <entry>
     <title type="html"><![CDATA[How I use Vimwiki]]></title>
     <link href="http://www.rosipov.com/blog/how-i-use-vimwiki/"/>
-    <updated>2019-06-24T01:00:00+00:00</updated>
+    <updated>2019-06-23T17:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/how-i-use-vimwiki</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">using Vimwiki for 5 years</a>, on and off. There&rsquo;s a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.</p>
 
@@ -318,7 +421,7 @@
   <entry>
     <title type="html"><![CDATA[Google Drive on Linux with rclone]]></title>
     <link href="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/"/>
-    <updated>2019-06-23T07:00:00+00:00</updated>
+    <updated>2019-06-23T15:00:00+08:00</updated>
     <id>http://www.rosipov.com/blog/google-drive-on-linux-with-rclone</id>
     <content type="html"><![CDATA[<p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
 
@@ -455,7 +558,7 @@ hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
     <link href="http://www.rosipov.com/blog/my-book-has-been-published/"/>
-    <updated>2018-12-25T04:00:00+00:00</updated>
+    <updated>2018-12-25T12:00:00+08:00</updated>
     <id>http://www.rosipov.com/blog/my-book-has-been-published</id>
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 
@@ -496,7 +599,7 @@ endif
   <entry>
     <title type="html"><![CDATA[Minimalist phone launcher]]></title>
     <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
-    <updated>2018-08-11T00:00:00+00:00</updated>
+    <updated>2018-08-11T00:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
     <content type="html"><![CDATA[<p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
 
@@ -527,7 +630,7 @@ endif
   <entry>
     <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
     <link href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/"/>
-    <updated>2018-03-26T00:00:00+00:00</updated>
+    <updated>2018-03-26T00:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/making-a-packing-spreadsheet</id>
     <content type="html"><![CDATA[<p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
 
@@ -614,7 +717,7 @@ endif
   <entry>
     <title type="html"><![CDATA[My .vimrc, annotated]]></title>
     <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
-    <updated>2018-02-21T15:00:00+00:00</updated>
+    <updated>2018-02-21T10:00:00-05:00</updated>
     <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
 
@@ -891,7 +994,7 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
   <entry>
     <title type="html"><![CDATA[Automating Octorpress publishing]]></title>
     <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
-    <updated>2017-11-14T15:00:00+00:00</updated>
+    <updated>2017-11-14T10:00:00-05:00</updated>
     <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
     <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
 
@@ -950,7 +1053,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   <entry>
     <title type="html"><![CDATA[A trip to Salt Lake City]]></title>
     <link href="http://www.rosipov.com/blog/a-trip-to-salt-lake-city/"/>
-    <updated>2017-11-13T15:00:00+00:00</updated>
+    <updated>2017-11-13T10:00:00-05:00</updated>
     <id>http://www.rosipov.com/blog/a-trip-to-salt-lake-city</id>
     <content type="html"><![CDATA[<p><em>This article is a collaboration between my partner and I.</em></p>
 
@@ -998,7 +1101,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   <entry>
     <title type="html"><![CDATA[Him and her: what's inside the bag?]]></title>
     <link href="http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag/"/>
-    <updated>2017-10-15T15:00:00+00:00</updated>
+    <updated>2017-10-15T10:00:00-05:00</updated>
     <id>http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag</id>
     <content type="html"><![CDATA[<p>Living in a car for nearly a year made me pick up number of travel-related skills, here and there. Having limited available space forced &ldquo;less is more&rdquo; philosophy on me, and it&rsquo;s something I carried over into more stationary life. Right now I&rsquo;m taking a break from car dwelling and living in a small apartment in Bay Area. It didn&rsquo;t stop my love for travel though, as I&rsquo;m writing this entry on my flight to Nassau, Bahamas. 5 days at the destination, leisure. One of the many weekends I&rsquo;m not home.</p>
 
@@ -1445,305 +1548,6 @@ main "$@"
 <p>I&rsquo;m contemplating getting an RV to be able to stand up inside and have more room and privacy, but potential difficulties with air conditioning at night, atrocious gas mileage, and inefficient and noisy generators for my power usage are a concern of mine.</p>
 
 <p>Once in a while I contemplate getting myself an apartment. Since it&rsquo;s now winter I end up staying in AirBnBs more often, but I feel like having a place to call home makes it harder for me to a fight a lazy person inside me. I like when that person is forced to learn, explore, and create.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hackmud first impressions]]></title>
-    <link href="http://www.rosipov.com/blog/hackmud-first-impressions/"/>
-    <updated>2016-10-09T21:24:26+00:00</updated>
-    <id>http://www.rosipov.com/blog/hackmud-first-impressions</id>
-    <content type="html"><![CDATA[<p>My Saturday just disappeared, quickly, and barely with any trace. You could find
-leftover scripts all over my hard drive here and there, all pointing to Hackmud.
-One moment I had plans for the day, and the next it was well past midnight, I
-was listening to the 90s hacker movies inspired soundtrack while cracking locks
-and farming for credits with a script I crafted.</p>
-
-<p>I&rsquo;ve spent ten hours in game, and it was glorious.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/hackmud-startup-logo.png" title="Hackmud startup logo." ></p>
-
-<p>Hackmud is a text-only MUD (multi-user dungeon) set in a not so distant future,
-where humanity was wiped out by a combination of Welsh Measels, killer rabbit
-outbreak, and multiple other disasters. All that&rsquo;s left is a trace of old
-corporations, dead user accounts, and AIs roaming the net. That&rsquo;s you, an AI.</p>
-
-<p>Game has a heavy 90s vibe to it, and the atmosphere reminds me of Ready Player
-One. References to popular TV shows and dial up sounds included.</p>
-
-<p>You start in a training area, a vLAN without access to the rest of the network
-and other players. You quickly learn all-text interface, and simple bash-like
-command line - it&rsquo;s based on JavaScript, with a few syntax changes. Hackmud is
-very much a puzzle game, and lets you take your time with a tutorial: you&rsquo;ll
-need a few hours to go through all the puzzles, cracking locks, installing
-upgrades, learning about security, and finally - escaping vLAN.</p>
-
-<p>Here are some basics I picked up:</p>
-
-<ul>
-<li>You can have multiple user accounts within a game, and so can everyone else.
-Be on the lookout.</li>
-<li>&ldquo;Locs&rdquo; are account locations, something similar to an IP or a domain name. You
-can launch an attack against a user or a dead account if you know their loc.</li>
-<li>Scripts are just that - scripts written in JavaScript (outside of the game).
-Hit <code>#help</code> and Google to get started, but at least some basic programming
-background is necessary here.</li>
-<li>Locks protect accounts - one can be behind multiple locks. Lock usually
-requires you to guess the correct combination, like a color, correct lower
-order prime, or a keyword.</li>
-<li>Upgrades are installed on user accounts and include locks, script
-slots, character limits, etc.</li>
-</ul>
-
-
-<p>At some point I successfully struggled through the tutorial and escaped vLAN.
-And that&rsquo;s where the open-ended social nature of the game shines. You&rsquo;re thrown
-into a global chat channel with users trying to trick you into running their
-malware, players and corporations providing banking services, selling breached
-account information, locks, and scripts.</p>
-
-<p>The game encourages lying, betrayal, deception, ponzi schemes, money laundering
-- you name it. And players take advantage of such freedoms to the full extent:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/hackmud-window-screenshot.png" title="This is how the Hackmud gameplay looks.." ></p>
-
-<p>It looks rather confusing, but tutorial prepares you well for the chaotic flow
-of characters on the screen.</p>
-
-<p>I really wasn&rsquo;t sure what to do next. The tutorial taught me how to get money
-out of dead accounts, so I decided to try to find one or two. After asking about
-in the main channel and being offered a few dozen &ldquo;risk free scripts to get locs
-worth millions&rdquo;, I decided to set out on a search. I looked through a list of
-<code>scripts.fullsec</code>, and found a few corporations.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/hackmud-corporations-screenshot.png" title="Two Hackmud corporations - Macrosoft and Core." ></p>
-
-<p>After digging about in their files for a good few hours, I found a way to get to
-employee registry and get a dozen of dead user locs. The locs were protected by
-different kinds of locks, and I went through the first batch manually. It took
-me a long time to get all the combinations and pull out some cash out of the
-accounts.</p>
-
-<p>I found my second batch of locs shortly after, and decided to try automating
-some manual attempts through scripting. After struggling with syntax and being
-aggravated by having only 120 seconds at a time to crack a lock (in line with
-the 90s feel of the game, one needs to be connected to a &ldquo;hardline&rdquo;), I wrote a
-first sample script, and started to play around with game concepts.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/hackmud-hardline-dial.png" title="Hardline dial screenshot." ></p>
-
-<p>Hackmud is in no way an accurate hacking simulator, but it&rsquo;s a really fun puzzle
-game, and it doesn&rsquo;t make any outrageous mistakes. It allows you to write your
-own scripts to use in game using valid JavaScript with access to a game library.
-Game developer (it&rsquo;s a one person project) implemented his own JavaScript
-interpreter, so it has bugs here and there - one should be careful using obscure
-language features.</p>
-
-<p>The worst part about scripting was character limitations: one needs quite a bit
-of money to be able to install first upgrades, and default limit of one active
-script and 500 characters per script is straight-up rage inducing. Before
-getting my first 1MGC to finally upgrade my rig, I wrote a bunch of tiny
-scripts, one per lock type, struggling to keep to the character limit. I ended
-up with ugly monstrosities like this, manually passing results from one script
-to another when encountering multiple accounts:</p>
-
-<pre><code>function(o, g) {
-  var
-    a = {},
-    b = "ez_35",
-    c = ["open", "release", "unlock"],
-    d = "digit",
-    r = "",
-    s = false,
-    t = g.target.call;
-
-  for (var x in g) {
-    if (x != "target") {
-      a[x] = g[x];
-    }
-  }
-
-  for (var i = 0; i &lt; c.length; i++) {
-    a[b] = c[i];
-    r = t(a);
-    if (r.indexOf(d) &gt; -1) {
-      for (var k = 0; k &lt; 10; k++) {
-        a[d] = k
-        r = t(a);
-        if (r.indexOf(d) == -1) {
-          var m = b + ":\"" + a[b] + "\", " + d + ": \"" + a[d] + "\"";
-          return { ok:true, msg:r + "\n\n" + m };
-        }
-      }
-    }
-  }
-  return { ok:s, msg:r };
-}
-</code></pre>
-
-<p>It was really interesting working with the limitations:</p>
-
-<ul>
-<li>I couldn&rsquo;t write scripts longer than 500 characters (spaces not included).</li>
-<li>I couldn&rsquo;t have access to one script without unloading the other first.</li>
-<li>I had to debug and test the scripts within 120 second windows.</li>
-</ul>
-
-
-<p>Few more batches of locs later, I was finally able to afford to initialize my
-system to tier 1 and install upgrades I bought and accumulated from hacking
-accounts:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/hackmud-upgrades-screenshot.png" title="Installed upgrades." ></p>
-
-<p>Now I can write all the scripts I want! Excited, I built my first t1 (tier 1)
-lock breaker, which automatically cracks a loc with any number of t1 locks on
-it:</p>
-
-<pre><code>function(context, func_args) { // {target:"#s."}
-
-  var digits = Array();
-  for (var i = 0; i &lt; 10; i++) {
-    digits.push(i);
-  }
-
-  var
-    COLORS = [
-      "purple", "blue", "cyan", "green", "lime", "yellow", "orange", "red"],
-    DIGITS = digits,
-    LOCKS = ["open", "release", "unlock"],
-    // ez_prime lock seems to only request low order primes, hardcoding this
-    PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-      61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137,
-      139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193];
-
-  var hackMultLevels = function(target, args, levels) {
-    for (var i = 0; i &lt; levels.length; i++) {
-      var
-        item = levels[i].item,
-        itemDesc = levels[i].itemDesc,
-        itemList = levels[i].itemList;
-      for (var k = 0; k &lt; itemList.length; k++) {
-        args[item] = itemList[k];
-        ret = target(args);
-        if (ret.indexOf(itemDesc) == -1) {
-          break;
-        }
-      }
-    }
-    return ret, args;
-  }
-
-  var hackEz21 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "ez_21", itemDesc: "command", itemList: LOCKS }
-      ]);
-  };
-
-  var hackEz35 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "ez_35", itemDesc: "command", itemList: LOCKS },
-        { item: "digit", itemDesc: "digit", itemList: DIGITS }
-      ]);
-  };
-
-  var hackEz40 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "ez_40", itemDesc: "command", itemList: LOCKS },
-        { item: "ez_prime", itemDesc: "prime", itemList: PRIMES }
-      ]);
-  };
-
-  var hackC001 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "c001", itemDesc: "correct", itemList: COLORS },
-        { item: "color_digit", itemDesc: "digit", itemList: DIGITS }
-      ]);
-  }
-
-  var hackC002 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "c002", itemDesc: "correct", itemList: COLORS },
-        { item: "c002_complement", itemDesc: "complement", itemList: COLORS }
-      ]);
-  }
-
-  var hackC003 = function(target, args) {
-    return hackMultLevels(
-      target,
-      args,
-      [
-        { item: "c003", itemDesc: "correct", itemList: COLORS },
-        { item: "c003_triad_1", itemDesc: "first", itemList: COLORS },
-        { item: "c003_triad_2", itemDesc: "second", itemList: COLORS }
-      ]);
-  }
-
-  var
-    args = {},
-    i = 0,
-    locks = [
-      { name: "EZ_21", func: hackEz21 },
-      { name: "EZ_35", func: hackEz35 },
-      { name: "EZ_40", func: hackEz40 },
-      { name: "c001", func: hackC001 },
-      { name: "c002", func: hackC002 },
-      { name: "c003", func: hackC003 }
-    ],
-    ret = "",
-    target = func_args.target.call,
-    unlocked = [];
-
-  ret = target(args);
-
-  while (true) {
-    i++;
-    var flag = true;
-
-    for (var k = 0; k &lt; locks.length; k++) {
-      if (ret.indexOf(locks[k].name) &gt; -1 &amp;&amp;
-          unlocked.indexOf(locks[k].name) == -1) {
-        ret,  args = locks[k].func(target, args);
-        unlocked.push(locks[k].name);
-        flag = false;
-      }
-    }
-
-    if (flag === true) {
-      return { ok: true, msg: ret };
-    }
-
-    if (i &gt; 10) {
-      return { ok: false, msg: ret }
-    }
-  }
-}
-</code></pre>
-
-<p>Rather rough around the edges, not easiest to read, but it works - and I was
-really proud of finishing it (and too tired to go back and refactor). With this,
-next dozen of t1 locs took me a few minutes to crack open. Success!</p>
-
-<p>That was the logical conclusion of my Saturday, and left me feel really
-satisfied. The game is rough around the edges, and has numerous bugs here and
-there. But the text-only world of Hackmud is alive and atmospheric, and puzzles
-and exploration of the derelict world through randomly-generated documents pulls
-you in, making you lose track of time.</p>
 ]]></content>
   </entry>
   
