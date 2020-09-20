@@ -53,7 +53,7 @@ It's fairly easy to get used to inserting a lone symbol here and there, but the 
 
 {% img /images/posts/vortex-core-right-half.jpg Right side of the Vortex Core keyboard, demonstrating special characters placed on `bnm,.` keys. %}
 
-The most difficult part of getting used to the keyboard is the keyboard is the fact that a few keys on the right side are chopped off: `'/[]\` are placed in the bottom right of the keyboard, to `bnm,.` keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there's no logical way to place them otherwise).
+The most difficult part of getting used to the keyboard is the fact that a few keys on the right side are chopped off: `'/[]\` are placed in the bottom right of the keyboard, to `bnm,.` keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there's no logical way to place them otherwise).
 
 This probably won't worry you if you don't write a lot of code or math, but I do, and it`s muscle memory I'll have to develop.
 
