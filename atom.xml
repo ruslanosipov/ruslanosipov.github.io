@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-09-13T12:51:33-07:00</updated>
+  <updated>2020-09-20T18:32:27+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Vortex Core 40% keyboard]]></title>
     <link href="http://www.rosipov.com/blog/vortex-core-keyboard/"/>
-    <updated>2020-09-13T10:00:00-07:00</updated>
+    <updated>2020-09-13T17:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/vortex-core-keyboard</id>
     <content type="html"><![CDATA[<p><em>This review is written entirely using Vortex Core, in Markdown, and using Vim.</em></p>
 
@@ -70,7 +70,7 @@
 
 <p><img src="http://www.rosipov.com/images/posts/vortex-core-right-half.jpg" title="Right side of the Vortex Core keyboard, demonstrating special characters placed on `bnm,.` keys." ></p>
 
-<p>The most difficult part of getting used to the keyboard is the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
+<p>The most difficult part of getting used to the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
 
 <p>This probably won&rsquo;t worry you if you don&rsquo;t write a lot of code or math, but I do, and it`s muscle memory I&rsquo;ll have to develop.</p>
 
@@ -119,7 +119,7 @@
   <entry>
     <title type="html"><![CDATA[One page TTRPG prep]]></title>
     <link href="http://www.rosipov.com/blog/one-page-ttrpg-prep/"/>
-    <updated>2020-08-08T17:00:00-07:00</updated>
+    <updated>2020-08-09T00:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/one-page-ttrpg-prep</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been running table top role playing games for over a decade on and off, and I&rsquo;ve settled into a prep routine. It&rsquo;s heavily borrowed, if not outright stolen from other GMs on the Internets, and I encourage you to steal and adapt what I&rsquo;m doing as well. If I had to guess, this way of preparation is stolen directly from the <a href="https://slyflourish.com/lazydm/">Lazy GM</a>&rsquo;s table.</p>
 
@@ -187,7 +187,7 @@
   <entry>
     <title type="html"><![CDATA[Numenera for D&D DMs]]></title>
     <link href="http://www.rosipov.com/blog/numenera-for-dnd-dms/"/>
-    <updated>2020-05-25T18:00:00-07:00</updated>
+    <updated>2020-05-26T01:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/numenera-for-dnd-dms</id>
     <content type="html"><![CDATA[<p>We&rsquo;ll be having our 12th Numenera game later this week, and ultimately Numenera proved to be easier to run compared to Dungeons and Dragons. I just wrote about <a href="https://www.rosipov.com/blog/numenera-for-dnd-players">teaching Numenera to my D&amp;D Players</a>, and it&rsquo;s worth sharing my own experience getting familiar with the system as a GM.</p>
 
@@ -246,7 +246,7 @@
   <entry>
     <title type="html"><![CDATA[Numenera for D&D Players]]></title>
     <link href="http://www.rosipov.com/blog/numenera-for-dnd-players/"/>
-    <updated>2020-05-22T17:00:00-07:00</updated>
+    <updated>2020-05-23T00:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/numenera-for-dnd-players</id>
     <content type="html"><![CDATA[<p>Before COVID-19 shelter-in-place order came to be, I played Dungeons and Dragons on and off for the past 10 or so years. I unfortunately don&rsquo;t have the patience to be a great player, but I enjoy running the game &ndash; being a Game Master constantly engages me, and I love seeing players have fun and overcome obstacles together.</p>
 
@@ -351,7 +351,7 @@
   <entry>
     <title type="html"><![CDATA[Adjusting to working from home]]></title>
     <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T09:00:00-08:00</updated>
+    <updated>2020-05-04T17:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
     <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
 
@@ -386,7 +386,7 @@
   <entry>
     <title type="html"><![CDATA[How I use Vimwiki]]></title>
     <link href="http://www.rosipov.com/blog/how-i-use-vimwiki/"/>
-    <updated>2019-06-23T17:00:00-08:00</updated>
+    <updated>2019-06-24T01:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/how-i-use-vimwiki</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">using Vimwiki for 5 years</a>, on and off. There&rsquo;s a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.</p>
 
@@ -421,7 +421,7 @@
   <entry>
     <title type="html"><![CDATA[Google Drive on Linux with rclone]]></title>
     <link href="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/"/>
-    <updated>2019-06-23T15:00:00+08:00</updated>
+    <updated>2019-06-23T07:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/google-drive-on-linux-with-rclone</id>
     <content type="html"><![CDATA[<p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
 
@@ -558,7 +558,7 @@ hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
     <link href="http://www.rosipov.com/blog/my-book-has-been-published/"/>
-    <updated>2018-12-25T12:00:00+08:00</updated>
+    <updated>2018-12-25T04:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/my-book-has-been-published</id>
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 
@@ -599,7 +599,7 @@ endif
   <entry>
     <title type="html"><![CDATA[Minimalist phone launcher]]></title>
     <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
-    <updated>2018-08-11T00:00:00-07:00</updated>
+    <updated>2018-08-11T00:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
     <content type="html"><![CDATA[<p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
 
@@ -630,7 +630,7 @@ endif
   <entry>
     <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
     <link href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/"/>
-    <updated>2018-03-26T00:00:00-07:00</updated>
+    <updated>2018-03-26T00:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/making-a-packing-spreadsheet</id>
     <content type="html"><![CDATA[<p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
 
@@ -717,7 +717,7 @@ endif
   <entry>
     <title type="html"><![CDATA[My .vimrc, annotated]]></title>
     <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
-    <updated>2018-02-21T10:00:00-05:00</updated>
+    <updated>2018-02-21T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
 
@@ -994,7 +994,7 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
   <entry>
     <title type="html"><![CDATA[Automating Octorpress publishing]]></title>
     <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
-    <updated>2017-11-14T10:00:00-05:00</updated>
+    <updated>2017-11-14T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
     <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
 
@@ -1053,7 +1053,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   <entry>
     <title type="html"><![CDATA[A trip to Salt Lake City]]></title>
     <link href="http://www.rosipov.com/blog/a-trip-to-salt-lake-city/"/>
-    <updated>2017-11-13T10:00:00-05:00</updated>
+    <updated>2017-11-13T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/a-trip-to-salt-lake-city</id>
     <content type="html"><![CDATA[<p><em>This article is a collaboration between my partner and I.</em></p>
 
@@ -1101,7 +1101,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   <entry>
     <title type="html"><![CDATA[Him and her: what's inside the bag?]]></title>
     <link href="http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag/"/>
-    <updated>2017-10-15T10:00:00-05:00</updated>
+    <updated>2017-10-15T15:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag</id>
     <content type="html"><![CDATA[<p>Living in a car for nearly a year made me pick up number of travel-related skills, here and there. Having limited available space forced &ldquo;less is more&rdquo; philosophy on me, and it&rsquo;s something I carried over into more stationary life. Right now I&rsquo;m taking a break from car dwelling and living in a small apartment in Bay Area. It didn&rsquo;t stop my love for travel though, as I&rsquo;m writing this entry on my flight to Nassau, Bahamas. 5 days at the destination, leisure. One of the many weekends I&rsquo;m not home.</p>
 

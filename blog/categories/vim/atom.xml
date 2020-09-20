@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-09-13T12:51:33-07:00</updated>
+  <updated>2020-09-20T18:32:27+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Vortex Core 40% keyboard]]></title>
     <link href="http://www.rosipov.com/blog/vortex-core-keyboard/"/>
-    <updated>2020-09-13T10:00:00-07:00</updated>
+    <updated>2020-09-13T17:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/vortex-core-keyboard</id>
     <content type="html"><![CDATA[<p><em>This review is written entirely using Vortex Core, in Markdown, and using Vim.</em></p>
 
@@ -70,7 +70,7 @@
 
 <p><img class="/images/posts/vortex-core-right-half.jpg Right side of the Vortex Core keyboard, demonstrating special characters placed on" src="<code>bnm,.</code>&#8221; title=&#8221;keys.&#8221; ></p>
 
-<p>The most difficult part of getting used to the keyboard is the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
+<p>The most difficult part of getting used to the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
 
 <p>This probably won&rsquo;t worry you if you don&rsquo;t write a lot of code or math, but I do, and it`s muscle memory I&rsquo;ll have to develop.</p>
 
@@ -119,7 +119,7 @@
   <entry>
     <title type="html"><![CDATA[How I use Vimwiki]]></title>
     <link href="http://www.rosipov.com/blog/how-i-use-vimwiki/"/>
-    <updated>2019-06-23T17:00:00-08:00</updated>
+    <updated>2019-06-24T01:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/how-i-use-vimwiki</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">using Vimwiki for 5 years</a>, on and off. There&rsquo;s a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.</p>
 
@@ -231,7 +231,7 @@ hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
     <link href="http://www.rosipov.com/blog/my-book-has-been-published/"/>
-    <updated>2018-12-25T12:00:00+08:00</updated>
+    <updated>2018-12-25T04:00:00+00:00</updated>
     <id>http://www.rosipov.com/blog/my-book-has-been-published</id>
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 
