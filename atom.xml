@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-11-11T03:15:16+00:00</updated>
+  <updated>2021-03-27T12:11:11+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[On mentorship]]></title>
+    <link href="http://www.rosipov.com/blog/on-mentorship/"/>
+    <updated>2021-03-27T12:08:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/on-mentorship</id>
+    <content type="html"><![CDATA[<p>A couple of months ago I had a conversation with a fellow employee &ndash; let&rsquo;s call
+him Balgruuf &ndash; who decided to quit the grind and become a career coach.
+Shortly after I&rsquo;ve witnessed them interact with our mutual acquaintance &ndash;
+Farengar &ndash; who was in a difficult spot in their career. Balgruuf was
+enthusiastically instructing on what are the exact steps Farengar must take, and
+in what order. It generally felt like Balgruuf had this whole career thing
+figured out, and Farengar just stumbled along. Needless to say, Farengar quickly
+changed the topic.</p>
+
+<p>I haven&rsquo;t stopped thinking about mentorship since that day. In the 10 or so
+years of my career so far, I&rsquo;ve had a number of mentors - both formal and
+informal. I also get the opportunity to mentor people around me &ndash; both sides of
+the relationship really fascinate me.</p>
+
+<p>I&rsquo;ve had some mentors who worked really well for me - and some who didn&rsquo;t. I
+also had more different level of success with mentoring people myself. And one
+of the defining factors in a successful experience was this: people conflate
+mentorship with giving advice &ndash; two different, but oh-so-close feeling things.
+Let me elaborate on the difference with a tangentially related example.</p>
+
+<p>Sometimes my wife comes home and shares frustrations that inevitably arise after
+a long day at work. There&rsquo;s little to no room for my input, because she needs
+somebody to just listen, or maybe a rubber duck to talk at. And sometimes my
+better half wants to hear my thoughts on the subject. Needing to vent and asking
+for advice are two completely distinct scenarios in this case.</p>
+
+<p>Just like in my home life, sometimes people come looking for an advice. But more
+often than not, they&rsquo;re looking for mentorship.</p>
+
+<p>Giving advice is prescriptive, while mentorship is more nuanced, and takes more
+finesse from both parties.</p>
+
+<p>In <a href="https://amzn.to/2NYlWPb">Relationomics</a>, Randy Ross discusses a role that
+relationships play in personal growth. He talks about the harmful &ldquo;self help&rdquo;
+culture which discounts the value of human element in self-development.</p>
+
+<p>This is the gap where mentorship fits in. There&rsquo;s one huge &ldquo;but&rdquo; though, and
+that&rsquo;s the fact that the person needs to be ready for the specific feedback they
+might be getting.</p>
+
+<p>Mentor is there to guide the internal conversation, encourage insight, and
+suggest a direction. Mentor is there to identify when someone who&rsquo;s being
+mentored is heading in a completely wrong direction, or not addressing the
+elephant in the room.</p>
+
+<p>In fact, I&rsquo;ve been noticing a trend at Google to avoid trying to use the word
+&ldquo;mentorship&rdquo; overall, to avoid the go-to advice slinging attitude of your
+everyday Balgruuf. And it&rsquo;s been a helpful trend - since framing mentorship
+relationship around guidance and reminding mentors to let those who are mentored
+to drive the growth is crucial for healthy peer to peer learning.</p>
+
+<p>Even if so-called mentor has some aspect of life completely figured out for
+themselves, the person who&rsquo;s mentored must drive the whole journey. Otherwise
+there&rsquo;s really no room for growth in that relationship.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Writing for fun]]></title>
@@ -1372,55 +1434,6 @@ main "$@"
 
 <pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Journey of a friend]]></title>
-    <link href="http://www.rosipov.com/blog/journey-of-a-friend/"/>
-    <updated>2017-05-09T08:00:00+00:00</updated>
-    <id>http://www.rosipov.com/blog/journey-of-a-friend</id>
-    <content type="html"><![CDATA[<p><em>A close friend of mine has a story similar to mine. She wanted to share it for a while now, and I&rsquo;m humbled she chose my blog as a medium for telling her inspiring story to the strangers on the Internet:</em></p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-plane.jpg" title="At Narita Airport, Japan." ></p>
-
-<p>I can&rsquo;t count the number of times I have attempted to tell this story on paper. It all started 8 months ago when my then-husband, let&rsquo;s call him Carl, told me that he no longer loved me and was in love with someone else. There are a few moments in life that seem to happen in slow motion and this was one of them. Until then, my life had been being Carl&rsquo;s wife and in the blink of an eye, I had to figure out who I was in a world without Carl. I forced myself to write every thoughts I had, dark, depressed, once a day but it didn&rsquo;t stick. I bought various domain names hoping that it would give me the final push to start writing all this down but all the sites remained &ldquo;under construction&rdquo;. So here is my final attempt to write this up, organize my thoughts and hopefully let someone going through this know that they are not alone. How did I get here? Well funny you should ask, pull up a chair and listen to my tale.</p>
-
-<p>Carl and I met when we were 22 and 18 respectively. It was far from love at first sight but he intrigued me. I had just got out of an unhealthy relationship and wanted something different and Carl was that, unapologetically himself. Up until then, I had always felt pressure to conform to the idea of who others wanted me to be and meeting Carl, who let&rsquo;s be honest was a straight nerd, was surprisingly refreshing and attractive. We dated for 5 years before getting married. We struggled with money throughout the first years of our relationship so when the opportunity to make more at a job I was unqualified for presented itself, we jumped at the chance. We packed our bags and moved for my job. Thus started the beginning of the end. I was so focused on keeping said job that I overworked, became a ball of nerves and lost all desires to do anything outside of work. While I struggled with the demand of the job, Carl found refuge with his younger, funner coworkers. We started living separate lives, which eventually led up to the fateful day when my husband told me that he loved someone else.</p>
-
-<p>I will not bore you with the details of my attempts to become a stable, contributing member of society. It included a lot of sleepless night, Nutella for dinner, and lies. I would smile everyday as I got to work, joked with co-workers and call family members and friends to discuss everything and anything when deep down all I wanted to do was to crawl in a dark place and wallow in my sadness. This period led to a lot of physical and mental changes. I lost 20 pounds in 2 months due to stress but the vain person in me was happy to see myself get skinny. Mentally, I had to come clean to my family and explain to them how I became the first divorced person in a deeply catholic family. I created a smaller, more dependable community of friends, most of them divorced or separated who could provide me with a different perspective. I had to admit to my manager that I could not continue work as is. Maintaining the lies became exhausting and emotionally draining. One had to give and after a heart to heart with my manager, I decided to cash out all my vacation hours and head out to Southeast Asia for a month.</p>
-
-<p>Prior to Southeast Asia, I had never vacationed alone. For the first time in my life, I was in charge of my itinerary and my own entertainment. It was overwhelming. After discussing the trip with veteran solo travelers, I only purchased one ticket. All I knew was my departing and arrival date from and to the US. I arrived at my first stop, Ho Chi Minh City, at midnight on a blazing hot night. The bustle of the city took me aback and made me question the trip in its entirety. I was running away and I knew it. I have always thought of myself as a strong person but dealing with this separation made me feel like a scared kid. Just as I was going through this mental exercise, my cab driver hit a motorcyclist and the impact broke one of his side view mirrors. The driver angrily got out of the car and argued with the individual he had just hit. They spoke in Vietnamese for what felt like hours and came back without explanations. At that point, I was sure that this entire trip was a mistake and if I had spoken the language, I would have asked the driver to turn and drop me back at the airport.</p>
-
-<p>The rest of the drive to the hotel was much calmer with the occasional surprise looks from locals seeing a black tourist through a taxi window at midnight. Blame it on stress, jet lag or even regret but for the first time in months I slept for more than 4 hours. Somewhat invigorated by the night of sleep, I decided to venture into the city to find food. After multiple failed attempts to cross one of the main traffic arteries, I gave up and sat down miserably looking at a bowl of pho from a restaurant located in the same block as my hotel. The Ho Chi Minh City traffic had won once again. I sat by a window seat, staring into the street, dreading the rest of this Southeast Asia trip. To travel Asia required an adventure spirit and it only took me 2 days to recognize that this was not one of my hidden talents. I told myself, only half believing it, that my second stop might be different but deep down, I knew I was on my way to yet another disappointing time.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-sleep.png" title="Screenshot of sleep activity during the trip." ></p>
-
-<p>Bangkok was a life changing stop for my trip and myself as a person. I had contacted a Turkish-based traveler on CouchSurfing visiting Bangkok during the same time. I was excited to meet up with someone that could understand the struggles of being in an unfamiliar country. This guy learned English by watching American sitcoms but did not let his basic knowledge of English or his lack of Thai stop him. It led to some interesting conversations about the meaning of &ldquo;Netflix and Chill&rdquo; and other American colloquialisms. Seeing him tackle the challenges of navigating a foreign city showed me what my journey could look like. Not only did he help me see the wonders of being open to the world, but he also inadvertently started my process of self love. Let me explain. To avoid having to carry a heavy suitcase and pay airline fees, I limited my wardrobe to whatever could fit in a carry-on backpack. As a relatively fashion-focused person, this decision was uncomfortable. With that in mind and the unforgiving sun, I was either dripped in sweat or looking like a lost 1920s explorer. Having someone still think that I looked good in those conditions did wonders for my broken self esteem. We spend 4 adventures filled days and parted ways. We still talk to each other and I am grateful to have encountered him so early on during my trip. I finally embraced the lack of structure and decided to thrive through it. Remember this word &ldquo;Thrive&rdquo;, it will come back later on in this story.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-construction.jpg" title="Temple in Bangkok." ></p>
-
-<p>After Bangkok, I headed to Chiang Mai for the Lantern Festival. Given my positive experience with CouchSurfing, I decided to continue using it  to meet locals and travelers throughout my stops. I used all the lessons learned in Bangkok and forced myself to open up to people. I had a heart wrenching conversation with an American girl trying to find herself in the world despite familial and societal pressures. We quickly bonded and within minutes were sharing our deepest darkest fears. In addition to looking differently at people, I started focusing on things that made me happy. I took a Thai cooking class, a skill I desperately lacked in, and learned Muay Thai. With each new activity I undertook, I felt a change inside of me. I was slowly starting to fall in love with myself.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-market.jpg" title="Cooking class in Chiang Mai." ></p>
-
-<p>Next stop: Singapore. A few coworkers happened to be there around the same time and I had always been intrigued by the country. I experienced the country&rsquo;s renowned cleanliness, mix of cultures and wide array of food options. It was in Singapore that I learned another fact about myself: I loved meeting new people. I struck conversations with random people in elevators, buses or hotels. Not having an itinerary turned out to be a blessing. I ended up extending my time in Singapore and enjoyed some retail therapy from one of the cities&#8217; amazing malls.</p>
-
-<p>My goal for this trip was not only self discovery but also to be fully emerged in each country’s history and culture. So that meant that I purposely landed in each new locations not knowing anything about religious beliefs, language and social norms. It worked in my favor up until I arrived in Kuala Lumpur. On my first day in the country, I had planned to follow my typical plan and visit the national and art museums to learn about Malaysian culture. Unfortunately, I arrived during yellow and red shirt protests. All local attractions were closed and I ended up smack in  a protest. While I am sure I was never in any real danger, being stuck in the middle of a screaming and upset group of people was scary. I took refuge in a nearby mall and ended up being stranded there for 4 hours. No taxis or Ubers wanted to come to my location due to road closures and fears of property damages. With each hour, I got more and more scared and worried. When I was finally able to get to my hotel, I made arrangements to leave the day after to go to Cambodia. I am hoping to go back to KL and get a chance to see all the city has to offer.</p>
-
-<p>After my failure in Malaysia, I landed in Siem Reap defeated. Cambodia was breathtaking. It was the first time that I saw real poverty and luxury in the same location. It was in Siem Reap that I realized how small my problems really were. I saw and talked to people struggling to afford day to day life and here I was suffering from a broken heart. Siem Reap helped me refocus and gave me a different perspective. It wasn&rsquo;t about what my problems were but how I approached them. I was not as powerless as I thought I was. I could make the choice to not let my situations impact me and move forward. There, I met some of the most life-loving individuals. As we were exchanging travel stories and tips, we all realized that we were into the same type of music. One of the members of the group ran to his hotel room and brought back his turntables. We had an impromptu dance party in the middle of Siem Reap. I sang and danced my heart away to familiar songs in a an unfamiliar land with unfamiliar people. At that time, I realized that I was happy. For the first time in months, there were no hidden emotions behind my smile, it was pure happiness and I never wanted it to end.</p>
-
-<p>I went to Angkor Wat at sunrise and felt lost and transported to a different world visiting all the cultural sites of the country. The Tuol Seng prison and the lives lost there forced me to put my life into perspective. I realized the following facts that I knew deep down but up until then was unwilling to accept: 1) I was getting divorced, 2) I was deeply hurt that I wasn&rsquo;t enough for my husband , 3) I still loved Carl and needed to respect his choice, 4) This was not the end for me. Weirdly, coming to these realizations made me calmer. I knew what I had to do. I had to use the remaining days of this trip to try to discover as much as I could about myself.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-skyline.jpg" title="Sunrise at Angkor Wat, Siem Reap." ></p>
-
-<p>Along with self discovery and adventure-filled days came the not-so fun ones. Thanksgiving day landed while I was in Phnom Penh. As an immigrant, Thanksgiving meant spending time with Carl&rsquo;s family. Up until Thanksgiving day, I thought about Carl during my trip but never more than &ldquo;Carl would have loved eating this, or visiting this area or enjoyed talking with this individual&rdquo;. But as I was staring at my plate of mashed potatoes and turkey, I not only felt a overwhelming sense of loss but also felt shame. Only a few hours prior, I was reveling in the country&rsquo;s history and congratulating myself in having a fresh new perspective on life. I could not finish my plate and walked back to my hotel room beaten. For the first time since I started on this adventure, I was happy that I was traveling alone. I spent the rest of my day watching TV locked in my hotel room.</p>
-
-<p>After 3 weeks on the road, I headed back to Vietnam for my last week abroad. For convenience, I reserved a room in the same hotel I had checked at the beginning of this trip. I suddenly realized that the person who checked in 3 weeks ago was not the person who was walking in. I couldn&rsquo;t put my finger on what it was specifically but I felt more confident and more at peace with myself. A former coworker traveling in Ho Chi Minh City at the same time reached out and we connected for dinner. His first words to me were &ldquo;&hellip; so, what is going on, where is your husband?&rdquo; We hadn&rsquo;t seen each other for 4 years and apparently, my social media accounts had become a &ldquo;Eat, Pray, Love&rdquo; tribute. I explained my current situation, no longer ashamed of the fact that I had a failed marriage, and we traded travel stories. He had not left his hotel room until our meeting because he was overwhelmed by the city, especially the traffic. I can&rsquo;t put into words how satisfying it was for me to be able to teach him how to cross the road. I fondly remembered my old self, seating defeated in front of a bowl of pho. I couldn&rsquo;t have engineered a better end to 4 wonderful weeks in paradise.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/friends-trip-boat.jpg" title="On the way to floating market in Can Tho, Vietnam." ></p>
-
-<p>Of course I glanced over many more experiences, people and locations visited. It would take days to write it all. I came back to the US on a high that I knew would not last but I was determined to keep it as long as possible. I had felt true happiness and connected with new people for the first time in 7 months. I was accepted even after I showed my true, deeply flawed self, but most importantly, I met myself. I discovered the foundations of who I was, what made me smile, happy and tick. I realized that I could survive, not just survive, I could thrive in a foreign environment and to commemorate it, I tattooed “Thrive” on my shoulder to always remind myself of that feeling. Told you that word was going to come back.</p>
 ]]></content>
   </entry>
   

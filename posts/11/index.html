@@ -127,6 +127,108 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-22T07:04:15+00:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2014</time>
+        
+           | <a href="/blog/abandoning-wordpress-for-octopress/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/abandoning-wordpress-for-octopress/" itemprop="url">Abandoning WordPress for Octopress</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
+<a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
+
+<h2>Why the migration?</h2>
+
+<p>WordPress was a great host for me at one point - the community is fun and no
+work is required for setup (I would rather not waste time fiddling with my blog
+too much). But a number of things are off-putting:</p>
+
+<ul>
+<li>I don&rsquo;t like WYSIWYG editors and I don&rsquo;t like web editors. I try to use my
+favorite editor for everything, including mail, documentation, note taking.
+Even though WordPress allowed me to write my posts using Markdown, I still
+didn&rsquo;t like not being able to use my favorite editor or environment.</li>
+<li>Storing all the entries in a MySQL database is not favorable. I am writing
+text, why would I pick any other format to store what I wrote?</li>
+<li>Over the years my blog became increasingly slow, and in order to have a
+reasonably fast site I needed to pay quite a sum of money. I am not ready for
+such a commitment, since I only occasionally update this blog.</li>
+</ul>
+
+
+<p>On the other hand, Octopress (which is based on Jekyll, a static site
+generator) has all of these concerns covered:</p>
+
+<ul>
+<li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
+write, or how I write. This enables me to use an editor of my choice.</li>
+<li>Plain text is universal. It can be viewed by a human, edited in any piece of
+software, printed out, emailed, piped to a Linux program - just about
+anything really.</li>
+<li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
+rendering.  The only real speed limit is network latency. In addition, GitHub
+lets you host static sites for free. What else could you ask for?</li>
+</ul>
+
+
+<h2>The process is painless</h2>
+
+<p>Switching from WordPress to Octopress was very easy, and it took me only a few
+hours (spread out throughout one weekend). Some highlights:</p>
+
+<ol>
+<li>Comments in Octopress are handled by <a href="https://disqus.com">Disqus</a>, and I had to set that up
+on my WordPress blog before transitioning in order to transfer all the
+comments.</li>
+<li>I used the <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">WordPress to Jekyll Exporter</a> tool to export all my posts
+from WordPress to Markdown (with meta-data which Octopress understands). I only
+had a bit over 50 posts to worry about, so the process was complete in an
+instant.</li>
+<li>I ran some custom Vim macros to remove and change some excess meta data, as
+well as clean up Markdown formatting. I am a perfectionist, and the exporter
+tool left me with a poorly formatted document. I couldn&rsquo;t let that happen.</li>
+</ol>
+
+
+<h2>Results are breathtaking</h2>
+
+<p>After only a few hours of work, I had a lightning fast, simple, and pragmatic
+blog. There is no excess configuration, comments are handled externally, and
+the source code for the site and articles is available on GitHub. I am able to
+write my posts using Markdown, in my favorite editor, and use git to publish
+the resulting articles.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-15T01:43:26+00:00"  data-updated="true" itemprop="datePublished dateCreated">15 Jul 2014</time>
         
            | <a href="/blog/the-pragmatic-programmer/#disqus_thread" itemprop="discussionUrl"
@@ -457,156 +559,6 @@ myself a lot of time and frustration.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-06-25T01:16:13+00:00"  data-updated="true" itemprop="datePublished dateCreated">25 Jun 2014</time>
-        
-           | <a href="/blog/dark-side-of-technical-interviews/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/dark-side-of-technical-interviews/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/dark-side-of-technical-interviews/" itemprop="url">Dark side of technical interviews</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>It upsets me greatly, since there is no immediate or obvious solution to an
-interviewing scheme which will fit every company. Some companies seem to find
-processes which work for their size and culture, while others struggle to do
-so. Human resources management is a complex subject, and it&rsquo;s hard to get
-right.</p>
-
-<p>I have experience with only a small subset of interviewing techniques, but none
-of the following interview components I employ seem satisfactory.</p>
-
-<h2>Screening</h2>
-
-<p>Screenings are usually done by recruiters, employees whose skills are in
-seeking and evaluating prospective assets to the company. The first problem
-here is that <em>recruiters are not team members</em>. Recruiters might do a really
-good job at, say, finding good recruiters - since this is their domain, and
-something they are inherently good at. But they don&rsquo;t develop software.
-Recruiters don&rsquo;t work with tech leads and team members, they don&rsquo;t have the
-slightest real life idea what managers and leaders want from the potential
-hire. Hell, the problem is - most team leads don&rsquo;t even know what kind of
-person they need. And if they do, they don&rsquo;t have a slightest idea on how to
-communicate this properly to the recruiters.</p>
-
-<p>In an ideal world, software engineers and team leads would do recruiting
-themselves. But this way they would not have time to do their own job, and
-would thus become recruiters. Boom, the company lost a good software engineer.
-So you end up hiring recruiters, who have not the slightest idea what a team
-needs (&ldquo;person has to be proficient in Blah-blah-blah&rdquo; is like saying that a
-writer has to be an expert at writing about red cubes).</p>
-
-<p>Is there a solution? Probably, maybe, I don&rsquo;t know. Maybe recruiters and
-software engineers have to communicate more. Set up meetings to discuss team
-needs, go through training in regards to identifying key traits in prospective
-engineers. Teams of engineers have to communicate their preferences better.
-Engineers are hired to fit the culture, not to be a &ldquo;rock star&rdquo;. Geniuses don&rsquo;t
-go through the HR process, future team members do.</p>
-
-<h2>Interview with another engineer</h2>
-
-<p>This, even though it has a good intent, is a big whopping failure. What this
-originally is meant to do - is have a potential colleague evaluate the
-candidate. Sounds like a fantastic idea in theory, and sometimes it even works
-the way it is intended to.</p>
-
-<p>Most of the time, however, you end up with a competition-driven technological
-fanatic bombarding an interviewee with smart-ass obscure trick questions they
-discovered that one time browsing their favorite language&rsquo;s mailing lists from
-the year 1990. In the worst-case scenario, the candidate is not able to answer
-any of those terrible questions, satisfying the interviewer&rsquo;s ego while she
-cranks out a negative report to a recruiter.</p>
-
-<p>In a slightly better version, an engineer will give a candidate a set of
-hands-on tasks which rarely have anything to do with the real job
-responsibilities. One version of this: pair programming segment, on the
-engineer&rsquo;s machine, under stress and with shaking hands. Are we hiring
-contestants for a hackathon?</p>
-
-<p>When it comes to software engineering, everyone suddenly forgets that writing
-code is the smallest portion of the day. This might not be the case for junior
-programmers, but they are not the ones companies are wasting their hiring
-resources on. It&rsquo;s the mid-level and senior workers who weren&rsquo;t even evaluated
-on half of their job responsibilities. How are their human interaction skills?
-Are they pleasant to work with? Will they have issues with company policies?
-<em>Will they fit?</em> These questions are as important as one&rsquo;s ability to put
-together a few lines of code.</p>
-
-<p>Maybe interviewers have to spend less time checking how well candidates write
-code under pressure, and more time evaluating if they will be a good match for
-the company&rsquo;s culture. How do they react when you point out their mistake? Can
-they communicate concepts clearly? Are they good at marketing themselves? You
-hire people, not code generating machines. Unless that&rsquo;s what you need, of
-course.</p>
-
-<h2>Home assignments</h2>
-
-<p>Home assignments are something I personally like and despise and the same time.
-And I find it sad that there are a number of big fat minuses with this
-approach. First, one might find it insulting. &ldquo;What, I have to write code for
-you in my own time? Couldn&rsquo;t you evaluate me on an interview or something?&rdquo;
-This method can turn a lot of people off, and unfortunately the ones that stay
-are not typically the best quality.</p>
-
-<p>As my co-worker wisely pointed out, if you have a choice between two overall
-equal companies and one requires you to do more work before being considered -
-you will naturally pick one that accepts you easier. Any job seeker would feel
-more appreciated and trusted taking that route.</p>
-
-<p>The honesty factor doesn&rsquo;t play much role here, since you usually can tell if
-the person did not write everything herself during the one-on-one followup. But
-the cost does play a role. The interviewer has to come up with a relatively
-unique assignment, spend time reading and evaluating the written program, give
-feedback on a follow-up interview. This adds up if you have many candidates.</p>
-
-<p>This technique does make sense when the list of candidates needs to be narrowed
-down, or when you&rsquo;re at the top of your domain. Who wouldn&rsquo;t complete a
-day-long homework for Google? Many people will happily spend a sleepless night
-for an employment opportunity. Even more wouldn&rsquo;t, especially if someone has a
-number of options lined up in front of them.</p>
-
-<h2>What about other methods?</h2>
-
-<p>There is a large number of various interviewing techniques out there. Some
-companies combine the above specified methods to have a bare-bone hiring
-template. Some make candidates do paid work for a few weeks before being
-accepted as a new hire. Some don&rsquo;t bother and just decide to wing it.</p>
-
-<p>This is still a developing area; I am afraid the solution has to be obtained
-through the method of trial and error. There seems to be no success recipe
-which works for everyone. There are, however, a number of alternative
-solutions. I don&rsquo;t think most companies put enough resources in finding a
-successful technique, instead opting for whatever method is in season at the
-moment.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -630,6 +582,8 @@ moment.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
+    
     <a class="list-group-item " href="/blog/writing-for-fun/">Writing for fun</a>
     
     <a class="list-group-item " href="/blog/vortex-core-keyboard/">Vortex Core 40% keyboard</a>
@@ -647,8 +601,6 @@ moment.</p>
     <a class="list-group-item " href="/blog/google-drive-on-linux-with-rclone/">Google Drive on Linux with rclone</a>
     
     <a class="list-group-item " href="/blog/sane-vim-defaults-from-neovim/">Sane Vim defaults (from Neovim)</a>
-    
-    <a class="list-group-item " href="/blog/status-bar-color-in-vim-terminal-mode/">Status bar color in Vim terminal mode</a>
     
   </div>
 </section>
@@ -681,7 +633,7 @@ moment.</p>
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2020 - Ruslan Osipov<br>
+  Copyright &copy; 2021 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.

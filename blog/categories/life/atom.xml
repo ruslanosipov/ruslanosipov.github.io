@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2020-11-11T03:15:16+00:00</updated>
+  <updated>2021-03-27T12:11:11+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[On mentorship]]></title>
+    <link href="http://www.rosipov.com/blog/on-mentorship/"/>
+    <updated>2021-03-27T12:08:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/on-mentorship</id>
+    <content type="html"><![CDATA[<p>A couple of months ago I had a conversation with a fellow employee &ndash; let&rsquo;s call
+him Balgruuf &ndash; who decided to quit the grind and become a career coach.
+Shortly after I&rsquo;ve witnessed them interact with our mutual acquaintance &ndash;
+Farengar &ndash; who was in a difficult spot in their career. Balgruuf was
+enthusiastically instructing on what are the exact steps Farengar must take, and
+in what order. It generally felt like Balgruuf had this whole career thing
+figured out, and Farengar just stumbled along. Needless to say, Farengar quickly
+changed the topic.</p>
+
+<p>I haven&rsquo;t stopped thinking about mentorship since that day. In the 10 or so
+years of my career so far, I&rsquo;ve had a number of mentors - both formal and
+informal. I also get the opportunity to mentor people around me &ndash; both sides of
+the relationship really fascinate me.</p>
+
+<p>I&rsquo;ve had some mentors who worked really well for me - and some who didn&rsquo;t. I
+also had more different level of success with mentoring people myself. And one
+of the defining factors in a successful experience was this: people conflate
+mentorship with giving advice &ndash; two different, but oh-so-close feeling things.
+Let me elaborate on the difference with a tangentially related example.</p>
+
+<p>Sometimes my wife comes home and shares frustrations that inevitably arise after
+a long day at work. There&rsquo;s little to no room for my input, because she needs
+somebody to just listen, or maybe a rubber duck to talk at. And sometimes my
+better half wants to hear my thoughts on the subject. Needing to vent and asking
+for advice are two completely distinct scenarios in this case.</p>
+
+<p>Just like in my home life, sometimes people come looking for an advice. But more
+often than not, they&rsquo;re looking for mentorship.</p>
+
+<p>Giving advice is prescriptive, while mentorship is more nuanced, and takes more
+finesse from both parties.</p>
+
+<p>In <a href="https://amzn.to/2NYlWPb">Relationomics</a>, Randy Ross discusses a role that
+relationships play in personal growth. He talks about the harmful &ldquo;self help&rdquo;
+culture which discounts the value of human element in self-development.</p>
+
+<p>This is the gap where mentorship fits in. There&rsquo;s one huge &ldquo;but&rdquo; though, and
+that&rsquo;s the fact that the person needs to be ready for the specific feedback they
+might be getting.</p>
+
+<p>Mentor is there to guide the internal conversation, encourage insight, and
+suggest a direction. Mentor is there to identify when someone who&rsquo;s being
+mentored is heading in a completely wrong direction, or not addressing the
+elephant in the room.</p>
+
+<p>In fact, I&rsquo;ve been noticing a trend at Google to avoid trying to use the word
+&ldquo;mentorship&rdquo; overall, to avoid the go-to advice slinging attitude of your
+everyday Balgruuf. And it&rsquo;s been a helpful trend - since framing mentorship
+relationship around guidance and reminding mentors to let those who are mentored
+to drive the growth is crucial for healthy peer to peer learning.</p>
+
+<p>Even if so-called mentor has some aspect of life completely figured out for
+themselves, the person who&rsquo;s mentored must drive the whole journey. Otherwise
+there&rsquo;s really no room for growth in that relationship.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Writing for fun]]></title>
@@ -126,93 +188,6 @@
 <p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
 
 <p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
-    <link href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/"/>
-    <updated>2018-03-26T00:00:00+00:00</updated>
-    <id>http://www.rosipov.com/blog/making-a-packing-spreadsheet</id>
-    <content type="html"><![CDATA[<p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
-
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
-
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
-
-<h2>Final Result</h2>
-
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
-
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
-
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
-
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
-
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
-
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
-
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
-
-<h2>The Technical Details</h2>
-
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
-
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
 ]]></content>
   </entry>
   
