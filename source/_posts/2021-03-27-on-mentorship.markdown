@@ -1,7 +1,7 @@
 ---
 title: "On mentorship"
 date: 2021-03-27 05:08:00 -0700
-categories: [Life]
+categories: [Work]
 ---
 
 A couple of months ago I had a conversation with a fellow employee -- let's call
