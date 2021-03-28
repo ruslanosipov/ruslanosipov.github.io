@@ -1,6 +1,6 @@
 ---
 title: '"The Pragmatic Programmer"'
-categories: [Book reviews]
+categories: [Reviews]
 date: 2014-07-15 01:43:26+00:00
 ---
 

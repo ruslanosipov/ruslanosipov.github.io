@@ -1,7 +1,7 @@
 ---
 title: "Vortex Core 40% keyboard"
 date: 2020-09-13 10:00:00 -0700
-categories: [Vim, Productivity, CLI]
+categories: [Reviews]
 ---
 
 _This review is written entirely using Vortex Core, in Markdown, and using Vim._

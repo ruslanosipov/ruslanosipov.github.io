@@ -1,6 +1,6 @@
 ---
 title: "Impact-driven development"
-categories: [Notes and rants]
+categories: [Work]
 date: 2015-4-25 17:19:58 -0800
 ---
 

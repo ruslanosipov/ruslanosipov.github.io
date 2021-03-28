@@ -1,6 +1,6 @@
 ---
 title: "Lessons learned: engineering productivity"
-categories: [Notes and rants]
+categories: [Work]
 date: 2015-6-8 14:03:58 -0800
 ---
 

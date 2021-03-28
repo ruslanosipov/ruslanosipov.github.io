@@ -1,6 +1,6 @@
 ---
 title: Steve Krug's "Don't Make Me Think"
-categories: [Book reviews]
+categories: [Reviews]
 date: 2014-06-17 03:42:51+00:00
 ---
 

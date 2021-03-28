@@ -1,6 +1,6 @@
 ---
 title: Dark side of technical interviews
-categories: [Notes and rants]
+categories: [Work]
 date: 2014-06-25 01:16:13+00:00
 ---
 
