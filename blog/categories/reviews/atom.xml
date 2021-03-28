@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: reviews | Ruslan Osipov]]></title>
+  <link href="http://www.rosipov.com/blog/categories/reviews/atom.xml" rel="self"/>
+  <link href="http://www.rosipov.com/"/>
+  <updated>2021-03-28T18:28:33+00:00</updated>
+  <id>http://www.rosipov.com/</id>
+  <author>
+    <name><![CDATA[Ruslan Osipov]]></name>
+    <email><![CDATA[ruslan@rosipov.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vortex Core 40% keyboard]]></title>
+    <link href="http://www.rosipov.com/blog/vortex-core-keyboard/"/>
+    <updated>2020-09-13T17:00:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/vortex-core-keyboard</id>
+    <content type="html"><![CDATA[<p><em>This review is written entirely using Vortex Core, in Markdown, and using Vim.</em></p>
+
+<p>Earlier this week I purchased <a href="https://amzn.to/3ivzMCK">Vortex Core</a> - a 40% keyboard from a Taiwanese company Vortex, makers of the ever popular <a href="https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=3633">Pok3r</a> keyboard (which I happen to use as my daily driver). This is a keyboard with only 47 keys: it drops the numpad (what&rsquo;s called 80%), function row (now we&rsquo;re down to 60%), and the dedicated number row (bringing us to the 40% keyboard realm).</p>
+
+<p>Words don&rsquo;t do justice to how small a 40% keyboard is. So here is a picture of Vortex Core next to Pok3r, which is an already a small keyboard.</p>
+
+<p><img src="/images/posts/vortex-core-and-pok3r.jpg" title="A picture of Vortex Core 40% keyboard next to a Pok3r 60% keyboard." ></p>
+
+<p>At around a <a href="https://amzn.to/3ivzMCK">$100 on Amazon</a> it&rsquo;s one of the cheaper 40% options, but Vortex did not skimp on quality. The case is sturdy, is made of beautiful anodized aluminum, and has some weight to it. The keycaps this keyboard comes with feel fantastic (including slight dips on <code>F</code> and <code>J</code> keys), and I`m a huge fan of the look.</p>
+
+<p>I hooked it up to my Microsoft Surface Go as a toy more than anything else. And now I think I may have discovered the perfect writing machine! Small form factor of the keyboard really compliments the already small Surface Go screen, and there&rsquo;s just enough screen real estate to comfortably write and edit text.</p>
+
+<p><img src="/images/posts/vortex-core-and-surface-go.jpg" title="A picture of Vortex Core 40% keyboard plugged into Microsoft Surface Go screen." ></p>
+
+<p>I&rsquo;ve used Vortex Core on and off for the past few days, and I feel like I have a solid feel for it. Let&rsquo;s dig in!</p>
+
+<h2>What&rsquo;s different about it?</h2>
+
+<p>First, the keycap size and distance between keys are standard: it&rsquo;s a standard staggered layout most people are used to. This means that when typing words, there is no noticeable speed drop. In fact I find myself typing a tiny bit faster using this keyboard than my daily driver - but that could just be my enthusiasm shining through. I hover at around 80 words per minute on both keyboards.</p>
+
+<p>That is until it&rsquo;s time to type &ldquo;you&rsquo;re&rdquo;, or use any punctuation outside of the <code>:;,.&lt;&gt;</code> symbols. That&rsquo;s right, the normally easily accessible apostrophe is hidden under the function layer (<code>Fn1 + b</code>), and so is the question mark (<code>Fn1 + Shift + Tab</code>). <code>-</code>, <code>=</code>, <code>/</code>, <code>\</code>, <code>[</code>, and <code>]</code> are gone too, and I&rsquo;ll cover those in due time.</p>
+
+<p>On a first day this immediately dropped my typing speed to around 50 words per minute, as it&rsquo;s completely unintuitive at first! In fact, I just now stopped hitting <code>Enter</code> every time I tried to place an apostrophe! But only after a few hours of sparingly using Vortex Core I&rsquo;m up to 65 WPM, and it feels like I would regain my regular typing speed within a week.</p>
+
+<p>Despite what you might think, it&rsquo;s relatively easy to get used to odd key placement like this.</p>
+
+<p>Keys have 4 layers (not to be confused with programming layers), and that&rsquo;s how the numbers, symbols, and some of the more rarely used keys are accessed. For example, here&rsquo;s what the key <code>L</code> contains:</p>
+
+<ul>
+<li>Default layer (no modifiers): <code>L</code></li>
+<li><code>Fn1</code> layer: <code>0</code></li>
+<li><code>Fn1 + Shift</code> layer: <code>)</code></li>
+<li><code>Fn</code> layer: <code>right arrow key</code></li>
+</ul>
+
+
+<p>The good news is that unlike many 40% keyboards on the market (and it&rsquo;s a rather esoteric market), Vortex Core has key inscriptions for each layer. Something like <a href="https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;p=3633https://olkb.com/collections/planck">Planck</a> would require you to print out layout cheatsheets while you get used to the function layers.</p>
+
+<p><img src="/images/posts/vortex-core-left-half.jpg" title="Left side of the Vortex Core keyboard, demonstrating numbers and special characters." ></p>
+
+<p>As I continue attempting to type, numbers always take me by surprise: the whole number row is a function layer on top of the home row (where your fingers normally rest). After initially hitting the empty air when attempting to type numbers, I began to get used to using the home row instead.</p>
+
+<p>The placement mimics the order the keys would be in on the number row (<code>1234567890-=</code>), but <code>1</code> is placed on the <code>Tab</code> key, while <code>=</code> is on the <code>Enter</code>. While I was able to find the numbers relatively easily due to similar placement, I would often be off-by-one due to row starting on a <code>Tab</code> key.</p>
+
+<p>Things get a lot more complicated when it comes to special symbols. These are already normally gated behind a <code>Shift</code>-press on a regular keyboard, and Vortex Core requires some Emacs-level gymnastics! E.g. you need to press <code>Fn1 + Shift + F</code> to conjure <code>%</code>.</p>
+
+<p>Such complex keypresses are beyond counter-intuitive at first. Yet after a few hours, I began to get used to some of the more frequently used keys: <code>!</code> is <code>Fn1 + Shift + Tab</code>, <code>-</code> is <code>Fn1 + Shift + 1</code>, <code>$</code> (end of line in Vim) is <code>Fn1 + Shift + D</code>, and so on. Combining symbols quickly becomes problematic.</p>
+
+<p>It&rsquo;s fairly easy to get used to inserting a lone symbol here and there, but the problems start when having to combine multiple symbols at once. E.g. writing an expression like <code>'Fn1 + Shift + D' = '$'</code> above involves the following keypresses: <code>&lt;Fn1&gt;&lt;Esc&gt; F N &lt;Fn1&gt;&lt;Tab&gt; &lt;Fn1&gt;&lt;Shift&gt;&lt;Enter&gt; S H I F T &lt;Fn1&gt;&lt;Shift&gt;&lt;Enter&gt; D &lt;Fn1&gt;&lt;Esc&gt; &lt;Fn1&gt;&lt;Enter&gt; &lt;Fn1&gt;&lt;Esc&gt; &lt;Fn1&gt;&lt;Shift&gt;D &lt;Fn1&gt;&lt;Esc&gt;</code>. Could you image how long it took me to write that up?</p>
+
+<p><img class="/images/posts/vortex-core-right-half.jpg Right side of the Vortex Core keyboard, demonstrating special characters placed on" src="<code>bnm,.</code>&#8221; title=&#8221;keys.&#8221; ></p>
+
+<p>The most difficult part of getting used to the keyboard is the fact that a few keys on the right side are chopped off: <code>'/[]\</code> are placed in the bottom right of the keyboard, to <code>bnm,.</code> keys. While the rest of the layout attempts to mimic the existing convention and only shifting the rows down, the aforementioned keys are placed arbitrarily (as there&rsquo;s no logical way to place them otherwise).</p>
+
+<p>This probably won&rsquo;t worry you if you don&rsquo;t write a lot of code or math, but I do, and it`s muscle memory I&rsquo;ll have to develop.</p>
+
+<p>There are dedicated <code>Del</code> and <code>Backspace</code> keys, which is a bit of an odd choice, likely influenced by needing somewhere to place the <code>F12</code> key - function row is right above the home row, and is hidden behind the <code>Fn1</code> layer.</p>
+
+<p>Spacebar is split into two (for ease of finding keycaps I hear), and it doesn&rsquo;t affect me whatsoever. I mostly hit spacebar with my left thumb and it&rsquo;s convenient.</p>
+
+<p><code>Tab</code> is placed where the <code>Caps Lock</code> is, which feels like a good choice. After accidentally hitting <code>Esc</code> a few times, I got used to the position. Do make sure to get <a href="http://www.vortexgear.tw/vortex3.asp">latest firmware</a> for your Vortex Core - I believe earlier firmware versions hides Tab behind a function layer, defaulting the key to <code>Caps Lock</code> (although my keycaps reflected the updated firmware).</p>
+
+<p>So I&rsquo;d say the numbers and the function row take the least amount of time to get used to. It&rsquo;s the special characters that take time.</p>
+
+<h2>Can you use it with Vim?</h2>
+
+<p>I&rsquo;m a huge fan of Vim, and I even wrote <a href="https://amzn.to/3htsTjK">a book</a> on the subject. In fact, I&rsquo;m writing this very review in Vim.</p>
+
+<p>And I must say, it&rsquo;s difficult. My productivity took a hit. I use curly braces to move between paragraphs, I regularly search with <code>/</code>, <code>?</code>, and <code>*</code>, move within a line with <code>_</code> and <code>$</code>, and use numbers in my commands like <code>c2w</code> (change two words) as well as other special characters, e.g. <code>da"</code> (delete around double quotes).</p>
+
+<p>The most difficult combination being spelling correction: <code>z=</code> followed by a number to select the correct spelling. I consistency break the flow by having to press <code>Z &lt;Fn1&gt;&lt;Enter&gt; &lt;Fn1&gt;&lt;Tab&gt;</code> or something similar to quickly fix a misspelling.</p>
+
+<p>My Vim productivity certainly took a massive hit. Yet, after a few days it&rsquo;s starting to slowly climb back up, and I find myself remembering the right key combinations as the muscle memory kicks in.</p>
+
+<p>I assume my Vim experience translates well into programming. Even though I write code for a living, I haven&rsquo;t used Vortex Core to crank out code.</p>
+
+<h2>Speaking of programming</h2>
+
+<p>The whole keyboard is fully programmable (as long as you update it to the <a href="http://www.vortexgear.tw/vortex3.asp">latest firmware</a>).</p>
+
+<p>It&rsquo;s an easy process - a <a href="http://www.vortexgear.tw/vortex3.asp">three page manual</a> covers everything that&rsquo;s needed like using different keyboard layers or remapping regular and function keys.</p>
+
+<p>The manual also mentions using right <code>Win</code>, <code>Pn</code>, <code>Ctrl</code>, and <code>Shift</code> keys as arrow keys by hitting left <code>Win</code>, left <code>Alt</code>, and right spacebar. Vortex keyboards nowadays always come with this feature, but due to small form factor of the keys (especially Shift), impromptu arrow keys on Vortex Core are nearly indistinguishable from individual arrow keys.</p>
+
+<p>Remapping is helpful, since I&rsquo;m used to having <code>Ctrl</code> where <code>Caps Lock</code> is (even though this means I have to hide Tab behind a function layer), or using <code>hjkl</code> as arrow keys (as opposed to the default <code>ijkl</code>).</p>
+
+<p>It took me only a few minutes to adjust the keyboard to my needs, but I imagine I will come back for tweaks - I&rsquo;m not so sure if I&rsquo;ll be able to get used to special symbols hidden behind <code>Fn1</code> + <code>Shift</code> + key layer. Regularly pressing three keys at the time (with two of these keys being on the edge of the keyboard) feels unnatural and inconvenient right now. But I&rsquo;m only a few hours in, and stenographers manager to do it.</p>
+
+<h2>Living in the command line</h2>
+
+<p>The absence of certain special characters is especially felt when using the command line. Not having a forward slash available with a single keypress makes typing paths more difficult. I also use <code>Ctrl + \</code> as a modifier key for tmux, and as you could imagine it&rsquo;s just as problematic.</p>
+
+<p>Despite so many difficulties, I&rsquo;m loving my time with Vortex Core! To be honest with myself, I don&rsquo;t buy new keyboards to be productive, or increase my typing speed. I buy them because they look great and are fun to type on. And Vortex Core looks fantastic, and being able to cover most of the keyboard with both hands is amazing.</p>
+
+<p>There&rsquo;s just something special about having such a small board under my fingertips.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA["The Pragmatic Programmer"]]></title>
+    <link href="http://www.rosipov.com/blog/the-pragmatic-programmer/"/>
+    <updated>2014-07-15T01:43:26+00:00</updated>
+    <id>http://www.rosipov.com/blog/the-pragmatic-programmer</id>
+    <content type="html"><![CDATA[<p>I just finished reading &ldquo;<a href="http://amzn.to/1zXtlQx">The Pragmatic Programmer</a>&rdquo; by Andrew Hunt and
+David Thomas - two consultants behind Pragmatic Programmers, LLC. This book
+might as well be a fantastic marketing trick for their consulting agency, but
+the value it brings to the reader is hard to underestimate.</p>
+
+<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
+major aspect of developing software: be it the choice of a text editor,
+calculating time complexity, or working effectively on a team.</p>
+
+<p>If you read thematic books and actively follow programming blogs and podcasts -
+you may find yourself cheerfully nodding while reading sections of this book.
+You may have read about some of the tips online, heard from colleagues, or
+simply discovered them yourself. You will finish this book with a wide smile of
+approval, and a sense of validation in regards to your daily work flow or
+actions.</p>
+
+<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
+can utilize right away, right now, at your workplace. This is what &ldquo;The
+Pragmatic Programmer&rdquo; essentially is: a collection of practical things
+regarding getting things done.</p>
+
+<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
+reading list out there. And for a solid reason. This is the kind of book you
+want to re-read every couple of years to absorb every piece of knowledge
+presented within it. The latest edition of the book even contains a printout
+with all the tips listed in the book.</p>
+
+<p>You should read it after being in the field for a few years. After making
+mistakes, and figuring some things out on your own. Beginners might not
+understand some pieces, but will still be able to comprehend a major portion of
+knowledge contained within this book.</p>
+
+<p>I enthusiastically recommend this book to every software engineer I get to work
+with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;<a href="http://amzn.to/1zGLlv1">Code Complete</a>&rdquo;
+or &ldquo;<a href="http://amzn.to/1zGLnDl">Art of Computer Programming</a>&rdquo;) and it teaches you how to get things
+done, the pragmatic way.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA["The Elements Of Style"]]></title>
+    <link href="http://www.rosipov.com/blog/the-elements-of-style/"/>
+    <updated>2014-06-20T17:58:35+00:00</updated>
+    <id>http://www.rosipov.com/blog/the-elements-of-style</id>
+    <content type="html"><![CDATA[<p>You might wonder what an English language style guide from 1918 is doing in a
+software engineering blog. You might even get angry at me for pointing this
+book in your face. But I have a strong affection towards this guide; I believe
+everyone who has to write more than a sentence in English should read it. I
+like to emphasize the communication aspects of a software engineering career as
+much as coding or management skills.</p>
+
+<p>English is not my native language, and I often struggle with the writing style.
+I found a number of style tips online and in the books I read, but lately I
+noticed a pattern: most of those tips referenced &ldquo;The Elements Of Style&rdquo;. The
+book is available online free of charge (copyright has expired; it is now in
+public domain) and takes only an evening to read.</p>
+
+<p>What the book gives you is invaluable writing advice. The author provides
+concrete style rules targeted at increasing the appeal and comprehension rates
+of your text. Here&rsquo;s my favorite piece of advice:</p>
+
+<blockquote><p>13. Omit needless words.</p>
+
+<p>Vigorous writing is concise. A sentence should contain no unnecessary
+words, a paragraph no unnecessary sentences, for the same reason that a
+drawing should have no unnecessary lines and a machine no unnecessary
+parts. This requires not that the writer make all his sentences short, or
+that he avoid all detail and treat his subjects only in outline, but that
+he make every word tell.</p></blockquote>
+
+<p>&ldquo;<a href="http://amzn.to/1v6keFG">The Elements Of Style</a>&rdquo; is a timeless classic; it should be mandatory
+reading for every speaker or learner of English out there. I immediately
+applied the rules to technical documentation, email communication, and even
+this very blog entry. I will probably have to read through the guide multiple
+times over the course of the following months in order to ensure maximum
+retention. If you care about being understood by another human being, you
+should read it too.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA["Expert Python Programming" by Tarek Ziade]]></title>
+    <link href="http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade/"/>
+    <updated>2014-06-20T02:33:38+00:00</updated>
+    <id>http://www.rosipov.com/blog/expert-python-programming-by-tarek-ziade</id>
+    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve been trying to read at least one book every week, and this
+week&rsquo;s pick was &ldquo;<a href="http://amzn.to/1yRw7AZ">Expert Python Programming</a>&rdquo; by Tarek Ziade. Besides its
+few shortcomings, I found it to be useful - Python is a language of choice for
+me, and I found some valuable tips I could add to my arsenal.</p>
+
+<p>The best thing about this book is that it covers a very wide range of topics:
+syntax recommendations and code profiling, testing practices and project
+management, technical writing and design patterns, package distribution and
+version control&hellip; My favorite chapter covered writing technical documentation:
+I am very interested in writing in general, and the tips Ziade provided turned
+out to be very useful for documenting code, writing design documents, and even
+posting to this blog. Not much else caught my eye, but I had a number of &ldquo;Aha!&rdquo;
+moments such as, &ldquo;Oh, I never used that!&rdquo; and &ldquo;That&rsquo;s an interesting topic to
+look into!&rdquo; scattered throughout the book. This book is very useful for filling
+in little gaps in knowledge which programmers can have: the author covers an
+extremely wide variety of Python development aspects.</p>
+
+<p>Unfortunately, I found the book to be poorly written. Weak writing style, typos
+in the text and code examples - it looked like the book was put together
+sloppily, in haste. Reviewers did not do a very good job evaluating this book.
+&ldquo;Expert Python Programming&rdquo; gives you the feeling that the author tried to fit
+in as much content (and code) as possible in his book, with no consistent
+style. Many chapters go into unnecessary details, and the author has tendency
+to paste completely useless chunks of code, such as a page-long output of an
+installer. As I have mentioned, the book hops from one topic to another, and
+covers a wide variety of subjects: this is both a key strength and the biggest
+weakness of the book. There is just &ldquo;too much stuff&rdquo; and it&rsquo;s too scattered
+across the topics.</p>
+
+<p>&ldquo;<a href="http://amzn.to/1yRw7AZ">Expert Python Programming</a>&rdquo; will be of best use to, you guessed it, an
+expert. I found it best to scan through the content and seek out interesting
+bits of information. Beginners, however, might be completely overwhelmed. While
+advanced and intermediate Pythonistas will get the most out of this book, it
+will probably be too hard (and painful) to read to be of real value.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Steve Krug's "Don't Make Me Think"]]></title>
+    <link href="http://www.rosipov.com/blog/steve-krugs-dont-make-me-think/"/>
+    <updated>2014-06-17T03:42:51+00:00</updated>
+    <id>http://www.rosipov.com/blog/steve-krugs-dont-make-me-think</id>
+    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s
+&ldquo;<a href="http://amzn.to/1xCNOm4">Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability</a>&rdquo;
+(oh, that&rsquo;s a long name). I went through the whole book only in under a few
+hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is
+full of concrete and valuable tips and advice about usability.</p>
+
+<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics:
+web and mobile usability, design, and writing for the web. The advice can be
+easily used and incorporated into your daily workflow; and the author provides
+concrete guidelines for applying his tips in the real world.</p>
+
+<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice)
+is individual usability testing. I actually performed my first usability test
+just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found
+that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with
+your product (I&rsquo;ll get to the similarities between two of these books in a
+moment).</p>
+
+<p>I asked two of my colleagues, one after another, to visit a website I was
+working on, and I silently watched them navigate through it. They had never
+seen the website before, and the results were very shocking to me: they ignored
+the things most obvious to me, but attempted to click through things which are
+not even meant to be clicked. I carefully wrote down all of my findings, and
+delivered the patches with enhancements to improve the biggest areas of
+struggle these particular users had faced.</p>
+
+<p>Usability testing turned out to be invaluable: it pointed out actions that I,
+as a developer, did not anticipate, and highlighted parts of the system ignored
+by the users. I now plan to run usability tests regularly, grabbing colleagues
+from the hallway, and asking them to use my application for a few minutes.</p>
+
+<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but
+stripped from the extended theoretical part. The book references Norman&rsquo;s work
+quite a lot, and seems to be heavily influenced by it. It focuses on practical
+aspects of designing easy to use and understandable user interfaces. It
+successfully explains why you should be thoughtful of user experience,
+accessibility, and understanding the way users think. I would recommend reading
+this book after reading Donald Norman&rsquo;s masterpiece first, since it provides
+you with the reasoning behind many decisions Steve Krug makes throughout his
+book.</p>
+]]></content>
+  </entry>
+  
+</feed>

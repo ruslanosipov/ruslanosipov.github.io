@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes and rants | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/notes-and-rants/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-03-27T12:11:11+00:00</updated>
+  <updated>2021-03-28T18:28:33+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,431 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Lessons learned: engineering productivity]]></title>
-    <link href="http://www.rosipov.com/blog/lessons-learned-engineering-productivity/"/>
-    <updated>2015-06-08T22:03:58+00:00</updated>
-    <id>http://www.rosipov.com/blog/lessons-learned-engineering-productivity</id>
-    <content type="html"><![CDATA[<p>I enjoy optimizing the way I work: the less time I can spend on something
-without sacrificing quality - the better. Below are few ideas on the subject of
-engineering productivity I&rsquo;ve successfully applied in my career.</p>
-
-<h2>Don&rsquo;t work long hours</h2>
-
-<p>A fascinating paper was released in 2011 by a group of Israeli researchers, who
-studied the factors which affect if prisoners were given a parole or not
-(source: <a href="http://www.pnas.org/content/108/17/6889.abstract">Extraneous factors in judicial decisions</a>.</p>
-
-<p>First prisoner in a morning has approximately 65% chance of being released. With
-every next case, the chance dropped significantly, reaching nearly 0% starting
-with the third case. After returning from a lunch break, odds of a prisoner
-being released went back up to 65%. And once again, with each new prisoner the
-odds decline rapidly.</p>
-
-<p><img src="/images/posts/israeli-parole-study.gif" title="A graph of favorable parole decisions given by the judges." ></p>
-
-<p>Authors of the paper suggest that making decisions depletes a limited mental
-facility. People start looking for shortcuts and making mistakes.</p>
-
-<p>Working long hours is something we&rsquo;ve all done more than once. Be it an upcoming
-deadline, fascinating problem, or a personal project. The problem with working
-too long is that you&rsquo;re doing a poor job without realizing it.</p>
-
-<p>I try to avoid working more than 7 hours a day, and there are people who get an
-incredible amount of work done under an even shorter amount of time.</p>
-
-<p>This is probably explained by a phenomenon called &ldquo;ego depletion&rdquo;: the idea that
-self-control or willpower draw upon a pool of limited mental resources that can
-be used up. When the energy for mental activity is low, self-control is
-typically impaired, which is what is considered to be a state of ego depletion.</p>
-
-<h2>Dangers of burning out</h2>
-
-<p>Another problem with working too long - is a possibility of a burnout.</p>
-
-<p>A while back I worked as a freelancer for a client of mine. I worked long hours
-from home office. This was my first time working from home for such a long
-period of time, and I made a number of mistakes in the beginning. One of which
-was working too much.</p>
-
-<p>I&rsquo;ve put in a number of 12-hour marathons in order to get more work done. I was
-on call most of the time. I became overwhelmed with all the work I had to get
-done. I started losing interest in work and feeling like things are getting out
-of my control. Every day felt like a bad day.</p>
-
-<p>Those are the symptoms of a burnout. Feeling of life spinning out of control
-and feeling like nothing you do makes any impact.</p>
-
-<p>I broke out of a mental prison of a burnout by getting a better work-life
-balance, enforcing exercise routine, and never working more than 8 hours a day.
-7 in most cases.</p>
-
-<h2>Work-life balance</h2>
-
-<p>Another thing I learned from working from home is how to keep a work-life
-balance. Not having a separate office and living in a 1-bedroom apartment with
-my wife, I had to barricade myself in a far corner of a bedroom and turn it into
-a physically separated office space. That was the space I worked in, and it
-remained empty after I was done and until I started the next work day.</p>
-
-<p>Work-life balance deserves a special say: it&rsquo;s the difference between doing an
-amazing job and going insane. Set aside time and place for work, and never allow
-a bleed-through. Don&rsquo;t be on call if you can avoid it. Don&rsquo;t open or reply to
-work-related emails at your spare time. Office is for work and home is for
-family.</p>
-
-<h2>Distraction-free environment</h2>
-
-<p>Everybody is aware that interruptions hamper productivity, but not everyone
-actively avoids interruptions during work. Replying to a text message, quickly
-checking your social network notifications, or looking up that one thing you&rsquo;ve
-been forgetting to look up for days - all of this impairs your mental ability to
-complete the task within a desired time frame and, more importantly, with high
-quality.</p>
-
-<p>According to various studies it takes from 20 to 30 minutes to get regain the
-same level of concentration and productivity after a single act of disruption. A
-<a href="http://hfs.sagepub.com/content/56/7/1262">2014 study from George Mason University</a> found that students composed lower
-quality essays when interrupted only a few times throughout both planning and
-writing phases. Distracted students performed considerably worse, even though
-they were given additional time to complete an assignment in order to make up
-for the interruptions.</p>
-
-<h2>Know your tools</h2>
-
-<blockquote><p>Use a single editor well</p></blockquote>
-
-<ul>
-<li><a href="http://amzn.to/1B1PWw8">Pragmatic Programmer</a>, Tip #22.</li>
-</ul>
-
-
-<p>This is lower level tip than the rest, but something I find utterly important in
-my daily work. We, the software engineers, spend at least half the time editing
-some sort of text - code, email, documentation. Taking time to improve the
-knowledge of the software you use every day pays off.</p>
-
-<ul>
-<li>Using Gmail? Learn the keyboard shortcuts.</li>
-<li>Use Eclispe? Do the same. Search for plugins which can make your everyday work
-faster and easier.</li>
-<li>Use command shell for daily work? Practice your shell scripting skills, find
-the tools that let you do more work with lesser amount of typing.</li>
-<li>Pick up touch typing. It&rsquo;s also a part of your toolbox. Why think about keying
-words in? Lower error rate while typing - you need to go back less.</li>
-</ul>
-
-
-<p>For instance, I do all my work in shell. I use <a href="http://tmux.sourceforge.net">Tmux</a> for creating and
-navigating multiple sessions. I use Vim for all my editing needs - code,
-documentation, blogging, composing long emails (via <a href="http://www.mutt.org">Mutt</a>). I touch type, so
-working in a text mode is easy.</p>
-
-<p>Over the years I accumulated aliases for all the frequently used shell commands.
-All the Vim and Tmux shortcuts are a part of a muscle memory. Jumping from file
-to file or from one place to another within a file doesn&rsquo;t take any mental
-effort and is accomplished with only a couple of keystrokes.</p>
-
-<p>By eliminating the need to think about or spend too much time working with low
-level concepts - you free up the mental bandwidth for higher level reasoning and
-problem solving.</p>
-
-<h2>Read, don&rsquo;t stop learning</h2>
-
-<p>As per DeMarco and Lister, authors of
-<a href="http://amzn.to/1D2csza">&ldquo;Peopleware: Productive Projects and Teams&rdquo;</a> - one book is more than most
-programmers read each year. This is the same point Steve McConnell&rsquo;s
-<a href="http://amzn.to/1D2cB5K">&ldquo;Code Complete&rdquo;</a> emphasizes.</p>
-
-<p>A lot of programmers don&rsquo;t read books. A few even don&rsquo;t follow relevant blogs
-or websites. Don&rsquo;t do what software engineers had to do in the olden days:
-coding by error in isolation from the rest of the industry. Read a book, learn
-something you don&rsquo;t know about. A single book read from beginning to end
-contains wider array of information compared to disjointed articles some
-programmers limit themselves to.</p>
-
-<p>As Jeff Atwood suggests in his article
-<a href="http://blog.codinghorror.com/programmers-dont-read-books-but-you-should/">&ldquo;Programmers Don&rsquo;t Read Books - But You Should&rdquo;</a>, pick up one of the
-timeless books - not affected by changing technologies and processes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Impact-driven development]]></title>
-    <link href="http://www.rosipov.com/blog/impact-driven-development/"/>
-    <updated>2015-04-26T01:19:58+00:00</updated>
-    <id>http://www.rosipov.com/blog/impact-driven-development</id>
-    <content type="html"><![CDATA[<p>It is my fifth year working as a professional software engineer, and I think
-it&rsquo;s a good time for me to share a few tips, dos, and don&#8217;ts I learned
-throughout past four years. This is the first article in a series of three,
-and it focuses on development process.</p>
-
-<p>Moving towards becoming a senior engineer, I noticed paying more attention to
-the impact my work produces. These days I would much rather compile a number of
-small simple changes to &ldquo;wow&rdquo; the users, as opposed to building unnecessarily
-complex nice-to-haves. This sounds simple and straight-forward, and some reader
-might even say &ldquo;That&rsquo;s silly, everybody knows that&rdquo;. However significant number
-of engineers I meet don&rsquo;t concentrate on how much impact they produce.</p>
-
-<p>It&rsquo;s easy to get caught up in a daily routine: you close an issue after issue,
-there&rsquo;s a stable flow of requirements from the business meetings. It&rsquo;s not
-always easy to know when to stop and think &ldquo;Do I really need to do this?&rdquo;.</p>
-
-<h2>Get the priorities right</h2>
-
-<p>Divide amount of impact task produces by amount of effort you&rsquo;ll have to put
-into completing it. Arrange the tasks by this factor.</p>
-
-<p>More often then not you can drop items with low impact/effort ratio.</p>
-
-<h2>Separate what is needed from what is asked</h2>
-
-<p>Know who the stakeholders are for each task, feature, or a project you work
-on.  Understand their underlying motives. Anyone can fall a victim of an
-<a href="http://meta.stackexchange.com/q/66377/184108">XY problem</a>, it is your responsibility as an engineer to make sure that
-stakeholders ask for what they actually need.</p>
-
-<h2>Know when to say &ldquo;No&rdquo;</h2>
-
-<p>In the very beginning of my career I gladly took every single task thrown at me.
-It soon became an issue: work that actually needs to get done is not getting
-done quickly enough. Knowing when to say &ldquo;No&rdquo; is an art that takes practice.</p>
-
-<h2>Think about your work</h2>
-
-<p>Beware of routines, repeating the same workflow time after time is damaging when
-it comes to building software. Stop each time before you proceed to the next
-step, and ask yourself if you&rsquo;re performing the task in the best way possible.
-Be mindful about your work.</p>
-
-<h2>Be a catalyst for change</h2>
-
-<p>Be the first to promote the change. Did you notice a poor practice on a
-project? Begin a more efficient practice (if it&rsquo;s appropriate based on your
-role in a team of course). Don&rsquo;t go on telling people how wrong what they use
-is. Show everyone how the new way is better on practice, and your colleagues
-will adopt successful trend.</p>
-
-<p>Don&rsquo;t fall a victim of deferring responsibility: be aware that when multiple
-people are involved, every member of a group relies on other people to get
-things done. Be the one to take on responsibility when it&rsquo;s unclear who should.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Power of the command line]]></title>
-    <link href="http://www.rosipov.com/blog/power-of-the-command-line/"/>
-    <updated>2015-02-06T21:13:49+00:00</updated>
-    <id>http://www.rosipov.com/blog/power-of-the-command-line</id>
-    <content type="html"><![CDATA[<p><em>Disclaimer: I am not advocating any specific tools or methodologies, but
-sharing a workflow I find to be efficient and pleasant.</em></p>
-
-<p>I am a huge fan of working with CLI applications. I use Vim for editing code,
-composing emails, and various kinds of writing. When I have to manipulate huge
-amounts of email, I use Mutt: it&rsquo;s intuitive tagging and regular expression
-engine are extremely useful for the task. I employ <code>ack</code>, <code>awk</code>, <code>grep</code>, and
-<code>sed</code> - Linux utilities which allow for precise and fast text manipulation.</p>
-
-<p>However, I would not use CLI browsers like <code>elinks</code> or <code>w3m</code>, and the idea of
-reading every email in Mutt gives me the creeps. I love the visualization web
-browser offers, something text-based prompt is not able to provide. And it
-doesn&rsquo;t have to.</p>
-
-<p>There are two components to most of the tasks performed on a computer: analyzing
-output and entering input. Certain tasks employ one component more than the
-other. In most modern applications it&rsquo;s rare to have both solid control from
-the user perspective and a pleasant informative UI. With increased visual
-component, it&rsquo;s more time consuming to make the application do what you need,
-especially if your needs are esoteric. With more editing power, visual display
-becomes less complex in order to make editing tasks easier.</p>
-
-<h2>Where visual tools fall short</h2>
-
-<p>What is the alternative? Using multiple programs with different levels of
-control to accomplish one task: to edit text. Each of the programs excels in
-it&rsquo;s own field: word processing software allows for beautiful fonts and document
-presentation, IDE lets you access aggregated meta information about your
-application. But most of the IDEs and word processors lack the powerful tools
-needed to manipulate the foundation of what user is working with - plain text.</p>
-
-<h2>Ode to plain text</h2>
-
-<p>I spend a lot of time writing and editing plain text. Be it source code, emails,
-documentation, or even blog posts. These tasks take up significant amount of my
-day, and it is only logical to substitute some of the visual presentation
-capabilities for effectiveness.</p>
-
-<p>It is hard to mentally process data which is not explicitly and unambiguously
-visible: different levels of headings, hidden meta information. Unlike more
-obscuring formats, plain text is all there is - it has nothing to hide. If you
-don&rsquo;t see it - it&rsquo;s not there. If you do see it - you know exactly what it is.</p>
-
-<p>One of my favorite tips from &ldquo;<a href="http://amzn.to/1yRe6Th">Pragmatic Programmer</a>&rdquo; goes:</p>
-
-<blockquote><p>Use a single editor well</p></blockquote>
-
-<p>So I learned one editor well, and now I use it for all my writing and editing
-needs. I don&rsquo;t have to jump between IDE, browser, and office software. Most of
-the text I edit is manipulated with one editor. There is only one set of key
-bindings to know, one skill to master and hone. Fast, without any additional
-thought, using single text editor and all of it&rsquo;s powerful features is imprinted
-in muscle memory. One less task to worry about.</p>
-
-<p>I write my documents in Markdown format, and later convert them to the desired
-output using <code>pandoc</code>: be it an HTML page, PDF, or a Microsoft Word document. I
-use Vim, so I can rearrange paragraphs or manipulate lines within a couple of
-keystrokes. Since I spend so much time editing text, I also touch type, which
-makes me even more effective at the given task.</p>
-
-<h2>Harness the power of the command line</h2>
-
-<p>When it comes to bulk manipulating files or working with version control -
-there is no better candidate then command line applications. There&rsquo;s no need to
-go through a number of obscure menus, ticking and unticking checkboxes, and
-hoping that your desired result can be achieved with a program&rsquo;s GUI.</p>
-
-<p>Let&rsquo;s look at a few scenarios some users face in their daily workflow.</p>
-
-<h3>Creating a backup</h3>
-
-<p>With GUI, you&rsquo;d have to take multiple steps:</p>
-
-<ol>
-<li>Right click <code>file</code>.</li>
-<li>Left click on &ldquo;Copy&rdquo;.</li>
-<li>Right click on some empty space.</li>
-<li>Left click on &ldquo;Paste&rdquo;.</li>
-<li>Right click on a newly created copy.</li>
-<li>Left click on &ldquo;Rename&rdquo;.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>file.bak</code>.</li>
-</ol>
-
-
-<p>The above steps can be sped up using shortcuts like <code>C-c</code> or <code>C-v</code>, but not by
-much. Here&rsquo;s an alternative in bash:</p>
-
-<pre><code>cp file{,.bak}
-</code></pre>
-
-<p>While first variant would do great for a novice or a casual user - the second
-method would be much more preferred by an experienced user whose concern is
-speed.</p>
-
-<h3>Recursively bulk replacing text in a directory</h3>
-
-<p>Let&rsquo;s assume we want to do a bulk replace text in a directory and all it&rsquo;s
-subdirectories. We have our trusted IDE, let&rsquo;s assume this IDE is already
-configured to work with a desired directory.</p>
-
-<ol>
-<li>Open your IDE.</li>
-<li>Select &ldquo;Edit&rdquo; menu.</li>
-<li>Select &ldquo;Find and Replace&rdquo; submenu.</li>
-<li>Click on a &ldquo;Find&rdquo; input field.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>function_to_replace</code>.</li>
-<li>Switch to a mouse.</li>
-<li>Click on &ldquo;Replace&rdquo; input field.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>new_function_name</code>.</li>
-<li>Switch to a mouse.</li>
-<li>Enable &ldquo;Search in subdirectories&rdquo; checkbox.</li>
-<li>Click &ldquo;OK&rdquo;.</li>
-</ol>
-
-
-<p>Again, this can be shortened a bit with some keyboard shortcuts, but not by
-much. You still have to switch between keyboard and a mouse a total of 4 times,
-and you still have to click through all the menus. This does get time consuming
-if you do this often. Now let&rsquo;s try to perform the same task in command line:</p>
-
-<pre><code>find . -type f | xargs sed -i 's/function_to_replace/new_function_name/g'
-</code></pre>
-
-<p>Much faster, if you&rsquo;re able to memorize the structure. And remembering what the
-commands do is much easier than it looks. Especially with the help of <code>man</code> or,
-even better, <code>bro</code> (see <a href="http://bropages.org">http://bropages.org</a> for latter).</p>
-
-<p>The above example demonstrates one of the biggest advantages of command line
-interfaces: an ability to redirect an output of one program into another,
-chaining the tools together. In this example, we first get a list of all files
-use <code>find</code> tool, and then run <code>sed</code> tool on each of those files in order to
-replace the text.</p>
-
-<p>An output from any CLI tool can be fed into any other CLI tool. This allows for
-countless possibilities and high adaptability to unscripted scenarios.</p>
-
-<h2>Is it worth learning CLI tools over their GUI counterparts?</h2>
-
-<p>This depends on what your intentions are. If you&rsquo;re a power user who writes and
-edits a lot of text or manipulates bulk amounts of text on a daily basis - than
-it&rsquo;s definitely worth it. Time spent learning these tools will pay off. But if
-you&rsquo;re a casual user whose needs end with writing an occasional email or two -
-then you probably don&rsquo;t need to worry about this.</p>
-
-<p>Hell, if you&rsquo;ve read this far - this means you&rsquo;re the former case. I can
-practically guarantee that you will benefit from employing command line tools
-and modal editors over their GUI counterparts.</p>
-
-<p>I&rsquo;ve put together a table for comparison between two. Indeed, there are
-different times when either GUI or CLI tools excel:</p>
-
-<table>
-<thead>
-<tr>
-<th> Factor                            </th>
-<th> CLI </th>
-<th> GUI </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> Ability to combine/chain tools    </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Easy to learn                     </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Efficient for a novice user       </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Efficient for an experienced user </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Good for occasional use           </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Good for repetitive tasks         </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Presents visual information well  </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>As you can see - both CLI and GUI programs have their pluses and minuses. CLI
-tools seem to appeal to experienced users, while GUI tools are great for novice
-users and do excel in representing visual information. No matter what kind of
-interface you prefer, it&rsquo;s crucially important to use the right tool for the job.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[750 words a day]]></title>
@@ -526,6 +101,190 @@ character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p
 
 <p>Maybe I can use this as an additional argument the next time I have to explain
 to a junior new hire why the character limits are so strictly enforced.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Abandoning WordPress for Octopress]]></title>
+    <link href="http://www.rosipov.com/blog/abandoning-wordpress-for-octopress/"/>
+    <updated>2014-07-22T07:04:15+00:00</updated>
+    <id>http://www.rosipov.com/blog/abandoning-wordpress-for-octopress</id>
+    <content type="html"><![CDATA[<p>I finally did it! I&rsquo;ve left the dark corners of WordPress in favor of
+<a href="http://octopress.org">Octopress</a>, which seem to be the best system for my blogging needs.</p>
+
+<h2>Why the migration?</h2>
+
+<p>WordPress was a great host for me at one point - the community is fun and no
+work is required for setup (I would rather not waste time fiddling with my blog
+too much). But a number of things are off-putting:</p>
+
+<ul>
+<li>I don&rsquo;t like WYSIWYG editors and I don&rsquo;t like web editors. I try to use my
+favorite editor for everything, including mail, documentation, note taking.
+Even though WordPress allowed me to write my posts using Markdown, I still
+didn&rsquo;t like not being able to use my favorite editor or environment.</li>
+<li>Storing all the entries in a MySQL database is not favorable. I am writing
+text, why would I pick any other format to store what I wrote?</li>
+<li>Over the years my blog became increasingly slow, and in order to have a
+reasonably fast site I needed to pay quite a sum of money. I am not ready for
+such a commitment, since I only occasionally update this blog.</li>
+</ul>
+
+
+<p>On the other hand, Octopress (which is based on Jekyll, a static site
+generator) has all of these concerns covered:</p>
+
+<ul>
+<li>I can write by creating simple Markdown documents. It doesn&rsquo;t matter where I
+write, or how I write. This enables me to use an editor of my choice.</li>
+<li>Plain text is universal. It can be viewed by a human, edited in any piece of
+software, printed out, emailed, piped to a Linux program - just about
+anything really.</li>
+<li>Static sites are ridiculously fast. There&rsquo;s no preprocessing and no
+rendering.  The only real speed limit is network latency. In addition, GitHub
+lets you host static sites for free. What else could you ask for?</li>
+</ul>
+
+
+<h2>The process is painless</h2>
+
+<p>Switching from WordPress to Octopress was very easy, and it took me only a few
+hours (spread out throughout one weekend). Some highlights:</p>
+
+<ol>
+<li>Comments in Octopress are handled by <a href="https://disqus.com">Disqus</a>, and I had to set that up
+on my WordPress blog before transitioning in order to transfer all the
+comments.</li>
+<li>I used the <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">WordPress to Jekyll Exporter</a> tool to export all my posts
+from WordPress to Markdown (with meta-data which Octopress understands). I only
+had a bit over 50 posts to worry about, so the process was complete in an
+instant.</li>
+<li>I ran some custom Vim macros to remove and change some excess meta data, as
+well as clean up Markdown formatting. I am a perfectionist, and the exporter
+tool left me with a poorly formatted document. I couldn&rsquo;t let that happen.</li>
+</ol>
+
+
+<h2>Results are breathtaking</h2>
+
+<p>After only a few hours of work, I had a lightning fast, simple, and pragmatic
+blog. There is no excess configuration, comments are handled externally, and
+the source code for the site and articles is available on GitHub. I am able to
+write my posts using Markdown, in my favorite editor, and use git to publish
+the resulting articles.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why I threw away my "To Do" list]]></title>
+    <link href="http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/"/>
+    <updated>2014-06-07T19:11:54+00:00</updated>
+    <id>http://www.rosipov.com/blog/why-i-threw-away-my-to-do-list</id>
+    <content type="html"><![CDATA[<p>I enjoy organizing things. I am accustomed to keeping neat &ldquo;To Do&rdquo; lists,
+written notes, and just about anything that will let me arrange my tasks
+instead of actually accomplishing them. I recently stopped writing things down,
+and the results were pleasantly surprising&hellip;</p>
+
+<p>I was keeping a list of things I would need to complete. I organized it by
+priorities, and at some point I even used Gina&rsquo;s fancy
+&ldquo;<a href="http://todotxt.com">Todo.txt</a>&rdquo; wrapper for managing it.</p>
+
+<p>What I realized after using such a scheme, is that my list was growing longer
+and longer with every week. After a while, the number of tasks became hard to
+manage, and the number of tasks became permanent residents on my task list. Why
+did this happen? Well for one, I turned my list into a &ldquo;check box machine&rdquo;.
+Complete a task, check off a check box. There was no mindfulness about it: I
+was just completing task after task. &ldquo;All right, this one is done, let&rsquo;s move
+to a next one.&rdquo; - this is what was constantly running through my head.
+Secondly, by writing down a task on my list in the first place, my brain would
+register it as being completed, and then I&rsquo;d go on with my day. Needless to
+say, certain tasks would sit on my list for an indefinite amount of time.</p>
+
+<p>After a while, I deleted my &ldquo;To Do&rdquo; list. Instead, every day I ask myself a
+simple question: &ldquo;What should I do today to succeed at what I am trying to
+accomplish?&rdquo;. This way, work becomes achievement driven. I started choosing
+tasks which provide the biggest impact, dedicating some days just to minor
+&ldquo;clean up&rdquo; tasks which I didn&rsquo;t deem important enough for productive days.</p>
+
+<p>I threw away my &ldquo;To Do&rdquo; list, and I am glad I did it. I love being mindful
+about my day, I know exactly what I need to accomplish in order to succeed.
+It&rsquo;s easy to get caught up in a daily route, and forget that your life isn&rsquo;t
+just a list of things to do, but a number of goals you want to reach. By not
+relying on a written manifesto cluttered with tasks, I am forced to concentrate
+on the bigger picture, where what I set out to accomplish has the highest
+possible impact on my life and career.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why should you learn to touch type?]]></title>
+    <link href="http://www.rosipov.com/blog/why-should-you-learn-to-touch-type/"/>
+    <updated>2014-05-31T19:33:15+00:00</updated>
+    <id>http://www.rosipov.com/blog/why-should-you-learn-to-touch-type</id>
+    <content type="html"><![CDATA[<p>I have a confession to make. Up until recently I did not know how to touch
+type. I would do what most people around me did: push the keys however which
+way I felt; make a typo; look down at the keyboard to find the letter I
+mistyped; repeat the whole process. I would put out up to 50 words per minute
+with this method, with an embarrassing error rate (which usually went up if I
+was showing something to someone). I am now terrified to think about those
+times.</p>
+
+<p>It wasn&rsquo;t until I stumbled upon Steve Yegge&rsquo;s article
+&ldquo;<a href="http://steve-yegge.blogspot.com/2008/09/programmings-dirtiest-little-secret.html">Programming&rsquo;s Dirtiest Little Secret</a>&rdquo;, that I fully understood the
+implications of not developing proper typing technique.</p>
+
+<p>Picture the following: programmer Clara is working in a small software company.
+Clara doesn&rsquo;t use any fancy IDEs nor extendible editors like emacs or vim.
+Clara uses Windows&#8217; default &ldquo;Notepad&rdquo; program to write and edit her source
+code. She is defending herself by saying that she doesn&rsquo;t need any advanced
+features, and that she knows every keyword she needs to use by heart. She
+spends hours tediously searching for the files on her computer, opening them in
+Notepad, holding down arrow keys to get to whichever chunk of code she needs to
+edit (or even worse - lifts her hands off a keyboard and uses a mouse to
+navigate the file). Her editor only goes back one step with the &ldquo;undo&rdquo;
+operation&hellip; But Clara has good memory and she can re-type the code she erased.</p>
+
+<p>What do you think of Clara? You might say that she is wasting her time and she
+should learn herself a robust editor. And of course, you will be right.</p>
+
+<p>One day, Clara&rsquo;s company hired a new tech lead - Jane. Jane noticed that Clara
+is very slow at accomplishing tasks assigned to her. So Jane showed Clara how
+to save a lot of time by using an advanced editor she uses. Suddenly Clara
+discovered a whole new world in front of her: it became much easier to read the
+code with parts of it highlighted, and the new text editor showed her when she
+would make a typo or a big error - even before Clara compiled the code. And
+Clara didn&rsquo;t even have to re-invent the code she deleted, she could just travel
+down the undo tree back to the time when she erased the code: all of a sudden
+it felt like she had access to a time machine! Jane even told her that there
+are plugins which can write some code for Clara! How amazing is that? It took a
+while for Clara to learn how to use the new editor, but after a few months,
+Clara became almost as fast at doing her job as Jane. Maybe Clara even received
+a promotion from doing so many things in a short period of time.</p>
+
+<p>If you don&rsquo;t know how to touch type - you are Clara. You are wasting your time.
+You look ridiculous to your colleagues when you stare down at your keyboard
+while typing. Interviewers secretly laugh at you when you make five errors in a
+four-letter word. You are frustrated by even the remote possibility of having
+to write more than you absolutely have to.</p>
+
+<p>Writing is a big part of the job as a software engineer. You write code,
+documentation, ask questions. Most importantly, you have to communicate with
+your colleagues and users. Most of this interaction is written: it&rsquo;s a great
+form of communication for the job - written notes can be saved and searched
+through later. As a software engineer, you bring value to your company and its
+users. And due to the arcane nature of the craft, communication becomes
+crucial. You can be the smartest programmer in the world and you can write the
+best piece of software out there, but no one will know about it unless you
+communicate why is it so great, what it does, and how to use it.</p>
+
+<p>By learning how to type properly, you turn a keyboard into an extension of your
+hand. All you have to do in order to type - is just think of words and
+sentences. Your muscle memory does the rest.</p>
+
+<p>I now type somewhere between 60 and 80 words per minute with what I find to be
+a low error rate - and I have been touch typing now for little over a month. If
+you care for your craft, you have no excuse for not mastering a proper typing
+technique.</p>
 ]]></content>
   </entry>
   

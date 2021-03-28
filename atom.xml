@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-03-27T12:11:11+00:00</updated>
+  <updated>2021-03-28T18:28:33+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Take a pause before that email]]></title>
+    <link href="http://www.rosipov.com/blog/take-a-pause-before-that-email/"/>
+    <updated>2021-03-28T18:12:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/take-a-pause-before-that-email</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m not an ill tempered person, and it takes quite a lot to get me riled up. In
+the pandemic however getting frustrated has been oh so much easier!</p>
+
+<p>For once, there are less face to face interactions, which makes me feel removed
+from whomever I&rsquo;m talking to. The interactions that happen over video chat feel
+a lot less personal, and despite regular deliberately scheduled 1:1 time it&rsquo;s
+harder to connect with colleagues on a personal level.</p>
+
+<p>Then there&rsquo;s the lack of water cooler interactions between meetings. A colleague
+of mine correctly pointed out that before the era of video chat meetings, we&rsquo;d
+have the time to decompress and process content between meetings with those
+micro-interactions. Having just a minute or two &ldquo;off the record&rdquo; after a large
+call helps process, frame, and align prior interaction. And just sharing a laugh
+or being able to say &ldquo;well that was stressful&rdquo; helps reduce the inevitable daily
+stress buildup.</p>
+
+<p>Finally, all of the above is true for everyone else - and we&rsquo;re already in a
+melting pot of individuals with different communication styles. People are
+getting frustrated, making other people even more frustrated. It&rsquo;s a frustration
+chain reaction!</p>
+
+<p>All of this led to me into a cycle of sending some snappy responses, feeling
+terrible after time would pass, setting up time to profusely apologize face to
+face, and wowing to never overreact to work stress sources again&hellip; Until the
+next encounter that is. It all culminated with me getting entirely too
+frustrated between 8:00 and 8:05 am last Thursday and taking a day just to
+decompress.</p>
+
+<p>And that reminded of something I&rsquo;ve learned years ago, and I something I would
+practice with rigour - until the background frustration level rose that is.</p>
+
+<p>Early in my career I&rsquo;ve been taught to cool down before sending that angry ping
+or an email &ndash; type it up, leave it in my drafts - come back to it an hour or
+two later.</p>
+
+<p>In 9 out of 10 cases I end up deleting the message feeling relieved that an
+incoherent stream of hatred never saw the light of day. Most of the time when
+I&rsquo;m angry I don&rsquo;t really have a goal I&rsquo;m trying to accomplish (other than inform
+all the parties involved of my feelings), and that&rsquo;s not a great basis for
+professional communication.</p>
+
+<p>In the remaining case, I would end up completely rewriting that email to remove
+the hostile tone and focus on the source of the issue instead. There are
+problems that are worth addressing with candor &ndash; but candor is too often
+conflated for the lack of tact.</p>
+
+<p>And it&rsquo;s hard to take a break at work - because there are often so many things
+to do, and so little time to do them. Which makes taking a minute to breather
+feel like a waste of time, when it&rsquo;s one of the most productive things you can
+do in the long run.</p>
+
+<p>So here I am, putting these thoughts into writing to remember to take a break
+before initiating aggressive communications &ndash; hopefully the more I think about
+this, the easier it gets to remember to pause, self-assess, and disconnect.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[On mentorship]]></title>
@@ -1335,105 +1397,6 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
 <p>We&rsquo;ve also found that we really value downtime, every day we travel. Taking time to unwind (however long it needs to be) in the hotel room, a coffee shop, or anywhere else helps take the edge off flying and booking accommodations and the subconscious pressure to have fun as a pair.</p>
 
 <p>We&rsquo;ve learned this the hard way on our first trip together. Our days were packed with activities and sightseeing stops, and we were at each other&rsquo;s throats by the end of the trip. Lesson learned.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Desktop notifications from Chrome Secure Shell]]></title>
-    <link href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/"/>
-    <updated>2017-08-04T17:33:16+00:00</updated>
-    <id>http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell</id>
-    <content type="html"><![CDATA[<p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
-
-<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
-
-<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
-
-<pre><code>#!/bin/sh
-# Copyright 2017 The Chromium OS Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file.
-
-# Write an error message and exit.
-# Usage: &lt;message&gt;
-die() {
-  echo "ERROR: $*"
-  exit 1
-}
-
-# Send a notification.
-# Usage: [title] [body]
-notify() {
-  local title="${1-}" body="${2-}"
-
-  case ${TERM-} in
-  screen*)  # This one's really tmux
-    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
-    ;;
-  *)        # This one's plain hterm
-    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
-    ;;
-  esac
-}
-
-# Write tool usage and exit.
-# Usage: [error message]
-usage() {
-  if [ $# -gt 0 ]; then
-    exec 1&gt;&amp;2
-  fi
-  cat &lt;&lt;EOF
-Usage: hterm-notify [options] &lt;title&gt; [body]
-
-Send a notification to hterm.
-
-Notes:
-- The title should not have a semi-colon in it.
-- Neither field should have escape sequences in them.
-  Best to stick to plain text.
-EOF
-
-  if [ $# -gt 0 ]; then
-    echo
-    die "$@"
-  else
-    exit 0
-  fi
-}
-
-main() {
-  set -e
-
-  while [ $# -gt 0 ]; do
-    case $1 in
-    -h|--help)
-      usage
-      ;;
-    -*)
-      usage "Unknown option: $1"
-      ;;
-    *)
-      break
-      ;;
-    esac
-  done
-
-  if [ $# -eq 0 ]; then
-    die "Missing message to send"
-  fi
-  if [ $# -gt 2 ]; then
-    usage "Too many arguments"
-  fi
-
-  notify "$@"
-}
-main "$@"
-</code></pre>
-
-<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
-
-<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
-</code></pre>
 ]]></content>
   </entry>
   
