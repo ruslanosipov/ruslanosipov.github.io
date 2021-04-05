@@ -4,15 +4,21 @@ title: About
 navbar: About
 ---
 
-My name is Ruslan Osipov and I live and work in San Francisco Bay Area, California. I am a software engineer at [Google](https://google.com).
+My name is Ruslan Osipov and I live in San Francisco Bay Area, California. I am a software engineer at Google.
 
 I've recently published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
 
-You can find me on the following websites:
+<a href="https://amzn.to/2EfGaN5"
+   target="blank"><img alt="A picture of Mastering Vim book cover."
+                       class="shadow-box"
+                       src="/images/mastering-vim.png"
+                       title="A picture of Mastering Vim book cover."
+                       width="262px" /></a>
+
+I'm not very active online, but you can find me on the following websites:
 
 * Professional
   * [LinkedIn](http://www.linkedin.com/in/ruslanosipov)
-  * [Google Plus](https://google.com/+ruslanosipov)
   * [Stack Overflow Careers 2.0](http://careers.stackoverflow.com/ruslanosipov)
   * [Twitter](https://twitter.com/antistatuquo)
 * Me on the web
@@ -20,8 +26,4 @@ You can find me on the following websites:
   * [Reddit](http://reddit.com/u/rosipov)
   * [Stack Overflow](http://stackoverflow.com/users/2578489/rosipov)
 
-Opinions expressed on this blog are solely my own and do not express the views or opinions of my employer.
-
-## Regarding my online presence
-
-There seems to be a number of people out there who use "rosipov" as their username. It's a regular coincidence, since this domain name consists of my first initial and my last name. So, if you see someone online with a username "rosipov" - it might not be me. As a rule of thumb, I usually leave a link to this blog on any profile I use. I also try to keep links to my online profiles (above) up to date.
+My first/last name combination is surprisingly common. It's probably not me if it's not in the list above.
