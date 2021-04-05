@@ -127,6 +127,59 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-12-17T05:09:58+00:00"  data-updated="true" itemprop="datePublished dateCreated">17 Dec 2014</time>
+        
+           | <a href="/blog/contributing-to-an-existing-octopress-blog/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/contributing-to-an-existing-octopress-blog/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/contributing-to-an-existing-octopress-blog/" itemprop="url">Contributing to an existing Octopress blog</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I had to download my Octopress blog to a new machine today and the process of
+setting up didn&rsquo;t go as smoothly as I expected. At the end of the day the setup
+turned out to be simple, and here are the steps:</p>
+
+<pre><code>git clone -b source https://github.com/username/username.github.io myblog
+cd myblog
+git clone https://github.com/username/username.github.io _deploy
+bundle install
+</code></pre>
+
+<p>In a nutshell, you have to manually add <code>_deploy</code> folder set to track <code>master</code>
+branch of your Octopress repository. Otherwise <code>rake deploy</code> command fails.</p>
+
+<p>Happy writing!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-29T17:51:35+00:00"  data-updated="true" itemprop="datePublished dateCreated">29 Oct 2014</time>
         
            | <a href="/blog/750-words-a-day/#disqus_thread" itemprop="discussionUrl"
@@ -421,91 +474,6 @@ to a junior new hire why the character limits are so strictly enforced.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-25T01:41:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">25 Jul 2014</time>
-        
-           | <a href="/blog/three-favorite-bash-tricks/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/three-favorite-bash-tricks/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/three-favorite-bash-tricks/" itemprop="url">Three favorite bash tricks</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I spend most of my development time in the shell - be it editing text with Vim
-or executing various console commands. I have quite a number of tricks in my
-daily repertoire, and I would like to share three tips today.</p>
-
-<h2>Edit current command with a text editor</h2>
-
-<p>I often end up having to change a long command I just typed, and using arrow
-keys to get to the correct spot is not favorable. Bash has the feature which
-lets you edit current command in a text editor of your choice. Hit <code>Ctrl + x</code>,
-<code>Ctrl + e</code> (or <code>Ctrl + x + e</code>), and you will be dropped into your text editor.
-Now you are able to edit the command, and it will be executed as soon as your
-write the file and exit the editor.</p>
-
-<p>You can use an editor of your choice by adding following line to your <code>.bashrc</code>
-file:</p>
-
-<pre><code>export EDITOR=vim
-</code></pre>
-
-<p>Replace <code>vim</code> with the name of your favorite editor.</p>
-
-<p>Update: It looks like for some machines setting <code>EDITOR</code> variable is not
-enough. In this case, you also need to set <code>VISUAL</code> environment variable.</p>
-
-<h2>Edit recent command</h2>
-
-<p>You can edit your recent commands in a text editor of your choice by executing
-<code>fc beginning_of_the_command</code>. For instance, if you run <code>fc l</code>, you will open
-most recent command starting with the letter &ldquo;l&rdquo;.</p>
-
-<p>You can execute <code>fc</code> without any arguments to edit last executed command.</p>
-
-<h2>Bash history autocomplete</h2>
-
-<p>Another great feature - &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
-your shell, you&rsquo;ll be greeted by the following prompt:</p>
-
-<pre><code>(reverse-i-search)`':
-</code></pre>
-
-<p>Start typing a part of the command from your history, and you&rsquo;ll see suggestions
-popping up. Hit <code>Enter</code> to pick the command (you&rsquo;ll be able to edit it before
-executing), or push <code>Ctrl + g</code> to return back.</p>
-
-<p>Like any of these tips? Have some of your own? Don&rsquo;t hesitate to share those in
-the comments section down below.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -529,6 +497,8 @@ the comments section down below.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
+    
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
     
     <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
@@ -546,8 +516,6 @@ the comments section down below.</p>
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
     
     <a class="list-group-item " href="/blog/how-i-use-vimwiki/">How I use Vimwiki</a>
-    
-    <a class="list-group-item " href="/blog/google-drive-on-linux-with-rclone/">Google Drive on Linux with rclone</a>
     
   </div>
 </section>
