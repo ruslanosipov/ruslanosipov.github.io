@@ -1,5 +1,5 @@
 ---
-title: "Numenera for D&D Players"
+title: "Numenera for D&D players"
 date: 2020-05-22 17:00:00 -0700
 categories: [Games]
 ---
