@@ -127,6 +127,81 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-30T06:00:04+00:00"  data-updated="true" itemprop="datePublished dateCreated">30 Jul 2014</time>
+        
+           | <a href="/blog/one-more-argument-for-80-character-limit/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/one-more-argument-for-80-character-limit/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/one-more-argument-for-80-character-limit/" itemprop="url">One more argument for 80 character limit</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Limiting code to 80 (or 100 or 120) characters per line. It&rsquo;s a well-known
+topic, and there&rsquo;s an overall consensus on the subject, not counting occasional
+questions by newbies and odd cases. Most established tech companies have their
+own line length guidelines. These are often dependent on a language, such as in
+the case of Google with their 80 character Python and 100 character Java limits.</p>
+
+<p>In this article, I won&rsquo;t be advocating all the usual arguments, such as easier
+diff with version control software, or the ability to stack windows side by side
+on wide screens. No, I believe that battle to be won quite a long time ago, the
+topic is now closed. But something I didn&rsquo;t find mentioned in any of the
+discussions is an interesting point from the world of writers and designers.</p>
+
+<p>Ever since I started being interested in improving my writing skills, I found
+article after article mention the importance of line length in reading.
+Interestingly enough, this issue was raised in a world of literature. It had
+been resolved long before programmers were fascinated with the desire to use up
+rapidly expanding screen real estate.</p>
+
+<p>I am talking about something known as &ldquo;measure&rdquo; in typography. It seems to be
+the reason newspapers use narrow columns, or books leave such vast margins
+around the text on a page. Here&rsquo;s an exempt from the <a href="http://en.wikipedia.org/wiki/Measure_(typography)">Wikipedia article</a>:</p>
+
+<blockquote><p>Measure (or sometimes &ldquo;The Measure&rdquo;) in typography is the length of a line of
+text. For a single-column design measure should ideally lie between 40 &amp; 80
+characters. Many typographers consider the perfect measure to be 65
+characters. If the lines are too short then the text becomes disjointed, if
+they are too long the content loses rhythm as the reader searches for the
+start of each line. Punctuation should preferably hang outside the measure.</p></blockquote>
+
+<p>Most programming languages use special operators and keywords, which can be
+considered &ldquo;punctuation&rdquo;. Some languages are more verbose (use more
+punctuation), and some aren&rsquo;t. If you remove punctuation, the 80/100/120
+character limit perfectly fits the standard time-honed &ldquo;measure&rdquo;.</p>
+
+<p>Maybe I can use this as an additional argument the next time I have to explain
+to a junior new hire why the character limits are so strictly enforced.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-25T01:41:10+00:00"  data-updated="true" itemprop="datePublished dateCreated">25 Jul 2014</time>
         
            | <a href="/blog/three-favorite-bash-tricks/#disqus_thread" itemprop="discussionUrl"
@@ -437,103 +512,6 @@ done, the pragmatic way.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-08T04:14:21+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 8 Jul 2014</time>
-        
-           | <a href="/blog/personal-wiki-with-vimwiki/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/personal-wiki-with-vimwiki/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/personal-wiki-with-vimwiki/" itemprop="url">Personal wiki with vimwiki</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I recently found an interesting way to organize random bits of information: a
-personal Wiki. It&rsquo;s a great idea to have data repository shared between your
-machines: important notes about people, conversations, events, tasks you&rsquo;ve
-accomplished, thoughts, and a hundred of little pieces of knowledge which don&rsquo;t
-belong anywhere else. There is plenty of software out there which lets you set
-up a personal Wiki, and some of it is very lightweight and well polished.
-However, I prefer to do most of my editing and writing in Vim. As tip #22 from
-&ldquo;The Pragmatic Programmer&rdquo; states:</p>
-
-<blockquote><p>Use a single editor well</p>
-
-<p>We think it is better to know one editor very well, and use it for all
-editing tasks: code, documentation, memos, system administration, and so
-on. Without a single editor, you face a potential modern day Babel of
-confusion.</p></blockquote>
-
-<p>I fully agree with the above statement and I try to use one editor for the
-majority of tasks which require typing, without having to remember which editor
-contains certain features, and which doesn&rsquo;t. That&rsquo;s one of the main reasons I
-went with <code>vimwiki</code> - a lightweight and clean personal Wiki with it&rsquo;s own
-Wiki-style markdown. Oh, <code>vimwiki</code> also subscribes to another tip from &ldquo;The
-Pragmatic Programmer&rdquo;:</p>
-
-<blockquote><p>Keep knowledge in plain text</p></blockquote>
-
-<p>The <code>vimwiki</code> plugin has a number of interesting and useful features:</p>
-
-<ul>
-<li>Memorable mappings for moving in and out of Wikis. Hit <code>&lt;leader&gt;ww</code> and you
-are on the home page of your Wiki. The <code>&lt;leader&gt;wt</code> will open the Wiki in a
-new tab: the rest of the mappings are as intuitive.</li>
-<li>Multiple Wikis support: really handy if you have a number of separate
-projects for which you want to keep separate entries.</li>
-<li>Diary-like quick notes. You can create an instant page for today by hitting
-<code>&lt;leader&gt;w&lt;leader&gt;w</code>. Combination <code>&lt;leader&gt;wi</code> brings you to a diary home
-page, and <code>&lt;leader&gt;w&lt;leader&gt;i</code> re-indexes the diary entries.</li>
-<li>Easy link creation: hit enter on a word and it will turn into a link to
-another page. Hitting enter on a link will transport you to the destination
-page. Simply surrounding text with double square brackets (<code>[[]]</code>) works as
-well.</li>
-<li>Navigation: enter to follow a link, backspace to go back.</li>
-<li>You can convert all your records into html by executing <code>:VimwikiAll2HTML</code>.</li>
-<li>Extensive and well written help file. Just run <code>:help vimwiki</code> and start
-reading.</li>
-</ul>
-
-
-<p>The list can go on forever, but these are the features I found to be the most
-useful.</p>
-
-<p>In order to enjoy synchronization between all my machines, I hosted my Wiki in
-a Dropbox folder - <code>vimwiki</code> lets you specify locations from each one of your
-Wikis.</p>
-
-<pre><code>let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
-</code></pre>
-
-<p>Download it from the GitHub: <a href="https://github.com/vimwiki/vimwiki">https://github.com/vimwiki/vimwiki</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -557,6 +535,8 @@ Wikis.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
+    
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
@@ -574,8 +554,6 @@ Wikis.</p>
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D players</a>
     
     <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
-    
-    <a class="list-group-item " href="/blog/how-i-use-vimwiki/">How I use Vimwiki</a>
     
   </div>
 </section>

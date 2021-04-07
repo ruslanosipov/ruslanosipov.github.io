@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-04-05T23:17:42+00:00</updated>
+  <updated>2021-04-07T01:26:37+00:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,214 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How much does writing a book earn?]]></title>
+    <link href="http://www.rosipov.com/blog/how-much-does-writing-a-book-earn/"/>
+    <updated>2021-04-08T01:30:00+00:00</updated>
+    <id>http://www.rosipov.com/blog/how-much-does-writing-a-book-earn</id>
+    <content type="html"><![CDATA[<p>I write about Vim &ndash; a modal text editor &ndash; <a href="http://www.rosipov.com/blog/categories/vim">a lot</a>. In fact, in early 2018
+I was approached by a <a href="https://packtpub.com">Packt Publishing</a> &ndash; what I&rsquo;ve later learned to be a
+&ldquo;quantity over quality&rdquo; publishing house. Over the next 6 to 9 months I wrote a
+300-page <a href="https://amzn.to/3wBeTx4">&ldquo;Mastering Vim&rdquo;</a>.</p>
+
+<p>It was a stressful endeavour, with a publisher rushing to meet internal
+deadlines and eventually sending an unfinished draft to print. There were many
+highlights too, like actually cranking out 300 pages of material, or getting to
+work with Bram Moolenaar &ndash; the creator of Vim himself. Now that a few years
+have passed and the book is at its 3rd edition, complete, and re-released &ndash;
+I&rsquo;m a lot more happy with the result.</p>
+
+<p>I can write a whole other essay about my experience working with the publisher,
+but that&rsquo;s a horror story for another time.</p>
+
+<p>I didn&rsquo;t write to make money, but it&rsquo;s nice seeing a couple of hundred dollars
+trickling in every quarter. Putting together spreadhseets is my favorite past
+time, so here&rsquo;s a breakdown of my earnings from the time I wrote a book with
+Packt.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/mastering-vim-amazon.png" title="A screenshot of &#34;Mastering Vim&#34; on Amazon.com." alt="A screenshot of &#34;Mastering Vim&#34; on Amazon.com."></p>
+
+<p>As of April 2021, the English version of my book has 14 reviews on Amazon
+averaging at 5 stars (that&rsquo;s more than I would hope for), which likely helps
+keep the sales at a somewhat of a steady level.</p>
+
+<p>I was signed into a default &ldquo;16% of net receipts&rdquo; contract, with a $2,000
+advance given out to me. The advance was split into 5 milestone-based
+installments: the first preliminary draft, 6 preliminary drafts, the remaining
+preliminary drafts, the final drafts, and the publication. Although I didn&rsquo;t
+urgently need the money, and the publisher may have just sent it as a bulk
+$2,000 payment after the publication.</p>
+
+<p>Eventually I received a PDF for the first quarter of my book being sold&hellip; And
+here are the financials for Q4 2018:</p>
+
+<table>
+<thead>
+<tr>
+<th> Print # </th>
+<th> Print $ </th>
+<th> E-books # </th>
+<th> E-books $ </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 10      </td>
+<td> $55.50  </td>
+<td> 274       </td>
+<td> $307.70   </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>A whopping 363 dollars and 20 cents in royalties! I didn&rsquo;t really think anyone
+would be interested to read the book, so seeing 284 copies sold I was pretty
+ecstatic!</p>
+
+<p>Selling printed books seems to pay $5.55 per copy, while e-books only bring me
+$1.12.</p>
+
+<p>Now I didn&rsquo;t see any of that money, since I would have to &ldquo;pay back&rdquo; the
+advance. I know it&rsquo;s called &ldquo;the advance&rdquo;, and I knew that I won&rsquo;t be getting
+that first check in the mail &ndash; but it sucked a bit nonetheless.</p>
+
+<p>After that I received some great news &ndash; my book was going to get
+<a href="https://amzn.to/3fN7mFz">translated to Japanese</a>! During my last trip to Tokyo I made some friends
+who were interested in Vim as much as I was, and one of them - Masafumi Okura -
+decided to translate &ldquo;Mastering Vim&rdquo; into his native language. The legend found
+close to three dozen mistakes in my book too, and is solely responsible for the
+third edition of Mastering Vim!</p>
+
+<p>Turns out the translation rights are expensive, and I&rsquo;m getting my cut as well
+&ndash; $1,586.26! That&rsquo;s more than the first quarter of sales!</p>
+
+<p>Packt advertised my book for a few months or so, but they seemed to have
+quickly lost interest. I received my first 5 star review on Amazon though,
+which was great! I spent the next month refreshing Amazon reviews daily, after
+realizing that to be a path to acquiring a mental illness.</p>
+
+<p>2019 came, and here are my next 4 quarterly statements:</p>
+
+<table>
+<thead>
+<tr>
+<th> Quarter      </th>
+<th> Print # </th>
+<th> Print $ </th>
+<th> E-books # </th>
+<th> E-books $ </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 2019 Q1      </td>
+<td> 29      </td>
+<td> $141.89 </td>
+<td> 202       </td>
+<td> $337.49   </td>
+</tr>
+<tr>
+<td> 2019 Q2      </td>
+<td> 15      </td>
+<td> $77.53  </td>
+<td> 71        </td>
+<td> $194.26   </td>
+</tr>
+<tr>
+<td> 2019 Q3      </td>
+<td> 19      </td>
+<td> $100.09 </td>
+<td> 57        </td>
+<td> $207.68   </td>
+</tr>
+<tr>
+<td> 2019 Q4      </td>
+<td> 23      </td>
+<td> $118.55 </td>
+<td> 117       </td>
+<td> $255.17   </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>I sold 86 print books and 447 e-books in 2021. You can see the higher numbers
+correspond to seasonal sales. Notice the prices for Q3 and Q4. E-books sold in
+Q3 pay me as much as $3.64 per copy, while in Q1 it&rsquo;s a meager $1.67 per book.
+Print edition payout stays much more consistent.</p>
+
+<p>Altogether, I earned $1432.66 from my first full year of selling &ldquo;Mastering
+Vim&rdquo;.</p>
+
+<p>Here are my 2021 earnings:</p>
+
+<table>
+<thead>
+<tr>
+<th> Quarter      </th>
+<th> Print # </th>
+<th> Print $ </th>
+<th> E-books # </th>
+<th> E-books $ </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 2020 Q1      </td>
+<td> 26      </td>
+<td> $131.61 </td>
+<td> 112       </td>
+<td> $414.12   </td>
+</tr>
+<tr>
+<td> 2020 Q2      </td>
+<td> 22      </td>
+<td> $106.67 </td>
+<td> 77        </td>
+<td> $379.61   </td>
+</tr>
+<tr>
+<td> 2020 Q3      </td>
+<td> 26      </td>
+<td> $141.17 </td>
+<td> 74        </td>
+<td> $325.97   </td>
+</tr>
+<tr>
+<td> 2020 Q4      </td>
+<td> 45      </td>
+<td> $236.69 </td>
+<td> 166       </td>
+<td> $458.07   </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>That&rsquo;s $1,533.38, a $100 more than in 2021. The patterns seem rather
+predictable, with Q2 and Q3 being slow, and Q1 and Q4 displaying a noticeable
+spike.</p>
+
+<p>Finally, Packt offers service subscriptions &ndash; I believe the subscription is for
+the courses they offer, but I can&rsquo;t say for sure. Payout per subscription is
+small, and I&rsquo;ve earned $158.10 over the 9 quarters since publishing &ldquo;Mastering
+Vim&rdquo;.</p>
+
+<p>Across $3,329.24 in book sales, $1,586.26 in translation fees, and $158.10 in
+subscriptions, this adds up to $5,073.60 over the 2+ years the book has been in
+print. Looks like it can make for a decent supplemental income if you write
+enough books, but I&rsquo;m saying that based on a sample size of one.</p>
+
+<p>Throughout this time, my earnings per copy average at $5.16 for a print, and
+$1.93 for an e-book (using weighted averages for quarterly sales).</p>
+
+<p>And here&rsquo;s the last number in this post &ndash; this one purely for fun. Based on
+the 16% royalty rate, Packt probably earned $31,710 from &ldquo;Mastering Vim&rdquo; so
+far.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The feedback fallacy]]></title>
@@ -1238,54 +1446,6 @@ rm $HOME/Dropbox/blog/img/output/*
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
 -->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A trip to Salt Lake City]]></title>
-    <link href="http://www.rosipov.com/blog/a-trip-to-salt-lake-city/"/>
-    <updated>2017-11-13T15:00:00+00:00</updated>
-    <id>http://www.rosipov.com/blog/a-trip-to-salt-lake-city</id>
-    <content type="html"><![CDATA[<p><em>This article is a collaboration between my partner and I.</em></p>
-
-<p>Since moving into a studio, I have missed the freedom of taking off randomly, getting to know a different city or state and overall not being tied down to a routine or a location. I love the idea of trivializing travel, so it was only natural to have a random trip at the end of the week.</p>
-
-<p>My partner watches <a href="http://www.thebucketlistfamily.com/">The Bucket List Family</a> on a weekly basis and caught the traveling bug as well. Unfortunately, we are not yet at the level where we can afford a 5 star trip to international locals or have companies pay for our travels (one day!). Our goal was to spend a few days going out of state to break the work week and avoid living for the weekend.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/prius-ready-for-trip-to-slc.jpg" title="Ready for the trip to Salt Lake City." ></p>
-
-<p>We decided to leave Northern California on Thursday afternoon for Salt Lake City, Utah as soon as we were done with work. Roughly 800 miles each way, if one counts exits and driving around sightseeing. Inspired by an acquaintance who travels the world with a folding bike, my partner and we took our bikes with us: a borrowed Brompton folding bike for my partner in the back seat, and my <a href="http://amzn.to/2xT6xT7">ZycleFix Prime</a> mounted on the rack in the rear.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/brompton-bike-in-the-backseat.jpg" title="Brompton bike in the backseat." ></p>
-
-<p>Driving through California, Nevada, and Utah on I-80 was always one of my favorites - and it was nice to share the wonders of the world with my partner. She clocked in a lot more international travel than I did, but only been to a handful of states. It was her first time in Utah and each stop on the way to the Salt Flats exposed us to all kinds of people, different from the type of individuals we typically see inside the Silicon Valley tech bubble. We saw people with different lives, habits, hobbies, and worldviews, which to be perfectly honest, was refreshing.</p>
-
-<p>Throughout the trip, we made it a point not to make any plans and go with the flow &ndash; be it our driving pace, entertainment or food options, or cities we decided to stay the night in. Traveling that way removed the stress associated with finding the perfect location and planning a fun trip. Don’t like the town we stopped at? Let’s keep driving. Enjoy a specific city? Let’s spend the night there. Having issues at a hotel? Back on the road we go.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/beautiful-sky-on-our-way.jpg" title="Beautiful sky as we’re driving on I-80." ></p>
-
-<p>We found a hotel while driving on the I-80 and settled there for the night. Unfortunately the place did not have a strong enough WiFi, which led us to drive to the next town over for coffee and internet to work remotely. We ended up spending 6 hours in the coffee shop making sure that we kept ourselves well caffeinated and the servers well tipped. After a somewhat productive day, we decided to explore the city’s downtown and save the Salt Flats drive for the daytime.</p>
-
-<p>Our Super 8 Motel in Wendover cost us around $70 for the night and was more comfortable than expected. We ended up passing out as soon as we got to the room, exhausted from the day. We tried to stay at cheaper hotels/motels, while avoiding shady looking places. We would most often pick the 2nd or 3rd cheapest option. We never stayed in one place for more than a night and lucked out every time we got ourselves a room. Every room we slept in was clean and we even managed to squeeze in a daily workout before the start of each day.</p>
-
-<p>Keeping a healthy diet on the other hand was a whole other challenge. Between cafes, restaurants and late night cravings, we failed at maintaining proper eating habits and saving on food. We spent around $300 on food alone. Eating is definitely one area for improvement, especially as we decide to travel more. Dieting is hard and dieting on the road is even harder.</p>
-
-<p>On Saturday, we finally headed to Utah and stopped at a rest stop by the Salt Flats. The view was marvelous and cold for an October day. We left the Salt Flats for a mall, City Creek Center, in Salt Lake City where we had another amazingly delicious and unhealthy lunch. To feel better about our life choices, we used our bikes to get some cardio and discover the city on two-wheels. We biked through Memory Grove Park, crashed a wedding, and biked almost to the Capitol. Almost. Due to Salt Lake’s incredible, deadly hills. Next time, SLC, next time we shall conquer you.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/salt-flats-are-gorgeous.jpg" title="Beautiful Salt Flats." ></p>
-
-<p>After a day of biking and testing each other&rsquo;s patience, we decided to go for a date night and talk through our attempts at making life on the road work. Traveling solo is a very different experience than traveling with a partner. We chatted over Brazilian BBQ, another unhealthy choice, and agreed that we needed to include time alone as part of our travel routine and constantly check in with each other.</p>
-
-<p>We headed to the hotel and decided to leave back for California after breakfast on Sunday. Oh, and on the topic of car, the subject of staying in the Prius or camping came up a few times. We even prepared our tents in that event but the cold weather and the thought of a hot shower took priority&hellip; Oh well, hotel Prius will get more use some other time.</p>
-
-<p>In one day, we drove from Utah back to Northern California. We have different memories of the road back. For her, it was long and slow. For me as a driver, it passed within a blink of an eye. Overall, our trip to Utah was a success and we learned a lot:</p>
-
-<ol>
-<li>Nothing can replace the freedom associated with the absence of a plan. When there&rsquo;s no agenda or times to be at specific places - you&rsquo;re never late, never in a hurry, and you&rsquo;ve always seen more than you planned for. It allowed us to be surprised and delighted by places we encountered without imposing our pace on said locations.</li>
-<li>Taking time for oneself is a necessity when traveling with someone else. Time alone does not always mean actually being alone. It can be whatever works for you as a couple. For us, it’s spending time on our devices while sitting next to each other.</li>
-<li>Approaching each location with an open mind. You are not always going to get to travel to exotic <a href="http://www.rosipov.com/blog/him-and-her-whats-inside-the-bag/">places like the Bahamas</a>, but the opportunity to fall in love with a place or its people is always there.</li>
-</ol>
 
 ]]></content>
   </entry>
