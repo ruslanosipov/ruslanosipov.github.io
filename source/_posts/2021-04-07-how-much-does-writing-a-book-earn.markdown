@@ -1,11 +1,11 @@
 ---
-title: "How much does writing a book earn"
+title: "How much does writing a book earn?"
 date: 2021-04-07 18:30:00 -0700
 categories: [Writing, Work]
 ---
 
 I write about Vim -- a modal text editor -- [a lot][4]. In fact, in early 2018
-I was approached by a [Packt Publishing][3] -- what I've later learned to be a
+I was approached by [Packt Publishing][3] -- what I've later learned to be a
 "quantity over quality" publishing house. Over the next 6 to 9 months I wrote a
 300-page ["Mastering Vim"][1].
 
@@ -79,7 +79,7 @@ realizing that to be a path to acquiring a mental illness.
 | 2019 Q3      | 19      | $100.09 | 57        | $207.68   |
 | 2019 Q4      | 23      | $118.55 | 117       | $255.17   |
 
-I sold 86 print books and 447 e-books in 2021. You can see the higher numbers
+I sold 86 print books and 447 e-books in 2019. You can see the higher numbers
 correspond to seasonal sales. Notice the prices for Q3 and Q4. E-books sold in
 Q3 pay me as much as $3.64 per copy, while in Q1 it's a meager $1.67 per book.
 Print edition payout stays much more consistent.
@@ -87,7 +87,7 @@ Print edition payout stays much more consistent.
 Altogether, I earned $1432.66 from my first full year of selling "Mastering
 Vim".
 
-Here are my 2021 earnings:
+Here are my 2020 earnings:
 
 | Quarter      | Print # | Print $ | E-books # | E-books $ |
 |--------------|---------|---------|-----------|-----------|
@@ -96,7 +96,7 @@ Here are my 2021 earnings:
 | 2020 Q3      | 26      | $141.17 | 74        | $325.97   |
 | 2020 Q4      | 45      | $236.69 | 166       | $458.07   |
 
-That's $1,533.38, a $100 more than in 2021. The patterns seem rather
+That's $1,533.38, a $100 more than in 2019. The patterns seem rather
 predictable, with Q2 and Q3 being slow, and Q1 and Q4 displaying a noticeable
 spike.
 
