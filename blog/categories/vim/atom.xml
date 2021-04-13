@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-04-09T18:18:16+00:00</updated>
+  <updated>2021-04-13T09:39:11-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[How I use Vimwiki]]></title>
     <link href="http://www.rosipov.com/blog/how-i-use-vimwiki/"/>
-    <updated>2019-06-24T01:00:00+00:00</updated>
+    <updated>2019-06-23T18:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/how-i-use-vimwiki</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">using Vimwiki for 5 years</a>, on and off. There&rsquo;s a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.</p>
 
@@ -51,7 +51,7 @@
   <entry>
     <title type="html"><![CDATA[Sane Vim defaults (from Neovim)]]></title>
     <link href="http://www.rosipov.com/blog/sane-vim-defaults-from-neovim/"/>
-    <updated>2018-12-27T23:28:37+00:00</updated>
+    <updated>2018-12-27T15:28:37-08:00</updated>
     <id>http://www.rosipov.com/blog/sane-vim-defaults-from-neovim</id>
     <content type="html"><![CDATA[<p>Vim comes with a set of often outdated and counter-intuitive defaults. Vim has been around for around 30 years, and it only makes sense that many defaults did not age well.</p>
 
@@ -90,7 +90,7 @@ endif
   <entry>
     <title type="html"><![CDATA[Status bar color in Vim terminal mode]]></title>
     <link href="http://www.rosipov.com/blog/status-bar-color-in-vim-terminal-mode/"/>
-    <updated>2018-12-26T21:02:24+00:00</updated>
+    <updated>2018-12-26T13:02:24-08:00</updated>
     <id>http://www.rosipov.com/blog/status-bar-color-in-vim-terminal-mode</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re using a custom color scheme (why wouldn&rsquo;t you?) in conjunction with a terminal mode in Vim (again, why wouldn&rsquo;t you?), you may have noticed that the terminal status bar has no respect for your color scheme.</p>
 
@@ -128,7 +128,7 @@ hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
     <link href="http://www.rosipov.com/blog/my-book-has-been-published/"/>
-    <updated>2018-12-25T04:00:00+00:00</updated>
+    <updated>2018-12-24T20:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/my-book-has-been-published</id>
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 
@@ -145,7 +145,7 @@ hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
   <entry>
     <title type="html"><![CDATA[Cross-platform vim-plug setup]]></title>
     <link href="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/"/>
-    <updated>2018-09-23T07:02:42+00:00</updated>
+    <updated>2018-09-23T00:02:42-07:00</updated>
     <id>http://www.rosipov.com/blog/cross-platform-vim-plug-setup</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve recently switch to <a href="https://github.com/junegunn/vim-plug">vim-plug</a>, a lightweight Vim plugin manager.</p>
 

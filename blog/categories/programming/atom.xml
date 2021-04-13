@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-04-09T18:18:16+00:00</updated>
+  <updated>2021-04-13T09:39:11-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
     <link href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/"/>
-    <updated>2018-03-26T00:00:00+00:00</updated>
+    <updated>2018-03-26T00:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/making-a-packing-spreadsheet</id>
     <content type="html"><![CDATA[<p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
 
@@ -103,7 +103,7 @@
   <entry>
     <title type="html"><![CDATA[Automating Octorpress publishing]]></title>
     <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
-    <updated>2017-11-14T15:00:00+00:00</updated>
+    <updated>2017-11-14T07:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
     <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
 
@@ -162,7 +162,7 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   <entry>
     <title type="html"><![CDATA[Mob level distribution]]></title>
     <link href="http://www.rosipov.com/blog/mob-level-distribution/"/>
-    <updated>2016-10-02T00:15:12+00:00</updated>
+    <updated>2016-10-01T17:15:12-07:00</updated>
     <id>http://www.rosipov.com/blog/mob-level-distribution</id>
     <content type="html"><![CDATA[<p>Distributing mobs in a dungeon based on player&rsquo;s level (or some dungeon level
 difficulty factor) was somewhat straightforward, but I would still like to
@@ -277,7 +277,7 @@ the algorithm above and included it into mob placement routine.</p>
   <entry>
     <title type="html"><![CDATA[Spawning evenly distributed mobs]]></title>
     <link href="http://www.rosipov.com/blog/spawning-evenly-distributed-mobs/"/>
-    <updated>2016-09-30T18:06:16+00:00</updated>
+    <updated>2016-09-30T11:06:16-07:00</updated>
     <id>http://www.rosipov.com/blog/spawning-evenly-distributed-mobs</id>
     <content type="html"><![CDATA[<p>After generating a few <a href="http://www.rosipov.com/blog/randomly-generated-dungeons/">good looking random dungeons</a>, I was puzzled with
 randomly placing mobs on resulting maps. To make it fair (and fun) for the
@@ -342,7 +342,7 @@ duplicates, and ended up with decent distribution results.</p>
   <entry>
     <title type="html"><![CDATA[Randomly generated dungeons]]></title>
     <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
-    <updated>2016-09-29T23:26:32+00:00</updated>
+    <updated>2016-09-29T16:26:32-07:00</updated>
     <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
     <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
 with the results:</p>

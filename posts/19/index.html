@@ -127,7 +127,62 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T23:50:56+00:00"  data-updated="true" itemprop="datePublished dateCreated">13 Mar 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-14T17:09:02-07:00"  data-updated="true" itemprop="datePublished dateCreated">14 Mar 2013</time>
+        
+           | <a href="/blog/rename-commit-author-in-git/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/rename-commit-author-in-git/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/rename-commit-author-in-git/" itemprop="url">Rename commit author in git</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>In some extremely rare cases you end up pushing data to the repo with the wrong
+credentials. If you are the only author and you&rsquo;re as picky as I am, it can be
+corrected easily:</p>
+
+<pre><code>git filter-branch -f --env-filter
+"GIT_AUTHOR_NAME='Stan Smith';
+GIT_AUTHOR_EMAIL='stansmith@cia.gov';
+GIT_COMMITTER_NAME='Stan Smith';
+GIT_COMMITTER_EMAIL='stansmith@cia.gov';" HEAD
+git push --force
+</code></pre>
+
+<p>In the case of there being multiple people working on a project, you may want
+to use the following gist posted by anonymous:
+<a href="https://gist.github.com/anonymous/2523336/">https://gist.github.com/anonymous/2523336/</a> (again, followed by <code>git push
+--force</code>).</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T16:50:56-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Mar 2013</time>
         
            | <a href="/blog/read-man-pages-from-vim/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/read-man-pages-from-vim/">Comments</a>
@@ -172,7 +227,7 @@ recognizes the filetype.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T19:35:28+00:00"  data-updated="true" itemprop="datePublished dateCreated">13 Mar 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-13T12:35:28-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Mar 2013</time>
         
            | <a href="/blog/mintty-color-scheme-cygwin/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/mintty-color-scheme-cygwin/">Comments</a>
@@ -242,7 +297,7 @@ didn&rsquo;t pick the name).</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-11T19:38:30+00:00"  data-updated="true" itemprop="datePublished dateCreated">11 Mar 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-11T12:38:30-07:00"  data-updated="true" itemprop="datePublished dateCreated">11 Mar 2013</time>
         
            | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/rails-and-mongodb-with-cygwin/">Comments</a>
@@ -308,7 +363,7 @@ as you see fit.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-24T05:35:27+00:00"  data-updated="true" itemprop="datePublished dateCreated">24 Feb 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-23T21:35:27-08:00"  data-updated="true" itemprop="datePublished dateCreated">23 Feb 2013</time>
         
            | <a href="/blog/use-vim-commands-in-a-browser/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/use-vim-commands-in-a-browser/">Comments</a>
@@ -343,61 +398,6 @@ other nasty stuff).</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-21T20:09:07+00:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2013</time>
-        
-           | <a href="/blog/git-merge-two-repositories/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/git-merge-two-repositories/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/git-merge-two-repositories/" itemprop="url">Git: merge two repositories</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Today I had to merge changes from one repository into another. Let&rsquo;s assume you
-want to merge <code>beta</code> into <code>alpha</code>.</p>
-
-<p>Operations are performed in repo alpha:</p>
-
-<pre><code>git remote add beta_repo git@rosipov.com:beta.git
-git fetch beta_repo
-git merge beta_repo/master
-</code></pre>
-
-<p>In this case, <code>beta_repo</code> is the name you pick for remote.</p>
-
-<p>If you just need to cherry-pick a certain commit from <code>beta</code> you can omit the
-last step and replace it with the cherry-pick.</p>
-
-<p>More on the topic of remotes: <a href="http://git-scm.com/book/ch2-5.html">http://git-scm.com/book/ch2-5.html</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -421,6 +421,8 @@ last step and replace it with the cherry-pick.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
+    
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
     
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
@@ -438,8 +440,6 @@ last step and replace it with the cherry-pick.</p>
     <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
     
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D players</a>
-    
-    <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
     
   </div>
 </section>

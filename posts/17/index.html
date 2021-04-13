@@ -127,7 +127,145 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-14T01:31:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">14 Jun 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-13T19:18:16-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Jun 2013</time>
+        
+           | <a href="/blog/use-vimdiff-as-git-mergetool/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/use-vimdiff-as-git-mergetool/" itemprop="url">Use vimdiff as git mergetool</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Using vimdiff as a git mergetool can be pretty confusing - multiple windows and
+little explanation. This is a short tutorial which explains basic usage, and
+what the LOCAL, BASE, and REMOTE keywords mean. This implies that you have at
+least a little bit of basic vim knowledge (how to move, save, and switch
+between split windows). If you don&rsquo;t, there&rsquo;s a short article for you:
+<a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>. Some basic understanding of git and branching
+is required as well, obviously.</p>
+
+<h2>Git config</h2>
+
+<p>Prior to doing anything, you need to know how to set vimdiff as a git
+mergetool. That being said:</p>
+
+<pre><code>git config merge.tool vimdiff
+git config merge.conflictstyle diff3
+git config mergetool.prompt false
+</code></pre>
+
+<p>This will set git as the default merge tool, will display a common ancestor
+while merging, and will disable the prompt to open the vimdiff.</p>
+
+<h2>Creating merge conflict</h2>
+
+<p>Let&rsquo;s create a test situation. You are free to skip this part or you can work
+along with the tutorial.</p>
+
+<pre><code>mkdir zoo
+cd zoo
+git init
+vi animals.txt
+</code></pre>
+
+<p>Let&rsquo;s add some animals:</p>
+
+<pre><code>cat
+dog
+octopus
+octocat
+</code></pre>
+
+<p>Save the file.</p>
+
+<pre><code>git add animals.txt
+git commit -m "Initial commit"
+git branch octodog
+git checkout octodog
+vi animals.txt  # let's change octopus to octodog
+git add animals.txt
+git commit -m "Replace octopus with an octodog"
+git checkout master
+vi animals.txt  # let's change octopus to octoman
+git add animals.txt
+git commit -m "Replace octopus with an octoman"
+git merge octodog  # merge octodog into master
+</code></pre>
+
+<p>That&rsquo;s where we get a merge error:</p>
+
+<pre><code>Auto-merging animals.txt
+CONFLICT (content): Merge conflict in animals.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+
+<h2>Resolving merge conflict with vimdiff</h2>
+
+<p>Let&rsquo;s resolve the conflict:</p>
+
+<pre><code>git mergetool
+</code></pre>
+
+<p><img src="/images/posts/three-way-merge-with-vimdiff.png" title="Three-way merge using vimdiff. Local changes are in top left, followed by a common ancestor, and branch `octodog` in the top right corner. Resulting file is at the bottom." ></p>
+
+<p>This looks terrifying at first, but let me explain what is going on.</p>
+
+<p>From left to right, top to the bottom:</p>
+
+<p><code>LOCAL</code> &ndash; this is file from the current branch
+<code>BASE</code> &ndash; common ancestor, how file looked before both changes
+<code>REMOTE</code> &ndash; file you are merging into your branch
+<code>MERGED</code> &ndash; merge result, this is what gets saved in the repo</p>
+
+<p>Let&rsquo;s assume that we want to keep the &ldquo;octodog&rdquo; change (from REMOTE). For that,
+move to the MERGED file (<code>Ctrl + w, j</code>), move your cursor to a merge conflict
+area and then:</p>
+
+<pre><code>:diffget RE
+</code></pre>
+
+<p>This gets the corresponding change from REMOTE and puts it in MERGED file. You
+can also:</p>
+
+<pre><code>:diffg RE  " get from REMOTE
+:diffg BA  " get from BASE
+:diffg LO  " get from LOCAL
+</code></pre>
+
+<p>Save the file and quit (a fast way to write and quit multiple files is <code>:wqa</code>).</p>
+
+<p>Run <code>git commit</code> and you are all set!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-13T18:31:02-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Jun 2013</time>
         
            | <a href="/blog/git-pretty-log-output/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/git-pretty-log-output/">Comments</a>
@@ -177,7 +315,7 @@ prior to executing):</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-05-17T18:52:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">17 May 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-05-17T11:52:02-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 May 2013</time>
         
            | <a href="/blog/download-gists-from-prompt/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/download-gists-from-prompt/">Comments</a>
@@ -324,7 +462,7 @@ gist.find_by_name(argv)
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-24T16:47:11+00:00"  data-updated="true" itemprop="datePublished dateCreated">24 Apr 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-24T09:47:11-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 Apr 2013</time>
         
            | <a href="/blog/my-most-used-bash-commands/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/my-most-used-bash-commands/">Comments</a>
@@ -380,7 +518,7 @@ END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-17T18:32:46+00:00"  data-updated="true" itemprop="datePublished dateCreated">17 Apr 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-17T11:32:46-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Apr 2013</time>
         
            | <a href="/blog/colorless-week-results/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/colorless-week-results/">Comments</a>
@@ -429,61 +567,6 @@ Try it and see for yourself!</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-01T18:10:31+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 1 Apr 2013</time>
-        
-           | <a href="/blog/a-week-without-colorful-prompt/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/a-week-without-colorful-prompt/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/a-week-without-colorful-prompt/" itemprop="url">A week without colorful prompt</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I noticed that I rely on colors in the bash terminal a lot, as in git output,
-diffs, directory and file listings&hellip; It gets worse when using vim - I feel
-lost without the cozy syntax highlight guidance.</p>
-
-<p>Time to stop using output colors for a week whether in shell, git, or vim, and
-use only plain text with no fancy colors. Set git config &ndash;global color.ui
-false and don&rsquo;t use &ndash;color flags in shell. Also, set syntax off and set a
-simple color scheme for vim.</p>
-
-<p>What can I gain from all this? It will definitely reduce my productivity for a
-few days. However, I have a hint of an idea that changing the visual code
-representation will give me new insight on what I am currently writing.</p>
-
-<p><a href="https://github.com/ruslanosipov/dotfiles/commit/b2b592e4f5b4b2f5bb962651a03f9d83b3ab53b7">Link to related commit on GutHub</a>.</p>
-
-<p>Check back in a week to see how it went!</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -507,6 +590,8 @@ representation will give me new insight on what I am currently writing.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
+    
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
     
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
@@ -524,8 +609,6 @@ representation will give me new insight on what I am currently writing.</p>
     <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
     
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D players</a>
-    
-    <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
     
   </div>
 </section>

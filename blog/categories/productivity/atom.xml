@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-04-09T18:18:16+00:00</updated>
+  <updated>2021-04-13T09:39:11-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Adjusting to working from home]]></title>
     <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T17:00:00+00:00</updated>
+    <updated>2020-05-04T10:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
     <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
 
@@ -51,7 +51,7 @@
   <entry>
     <title type="html"><![CDATA[Google Drive on Linux with rclone]]></title>
     <link href="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/"/>
-    <updated>2019-06-23T07:00:00+00:00</updated>
+    <updated>2019-06-23T00:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/google-drive-on-linux-with-rclone</id>
     <content type="html"><![CDATA[<p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
 
@@ -111,7 +111,7 @@
   <entry>
     <title type="html"><![CDATA[Desktop notifications from Chrome Secure Shell]]></title>
     <link href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/"/>
-    <updated>2017-08-04T17:33:16+00:00</updated>
+    <updated>2017-08-04T10:33:16-07:00</updated>
     <id>http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell</id>
     <content type="html"><![CDATA[<p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
 
@@ -210,7 +210,7 @@ main "$@"
   <entry>
     <title type="html"><![CDATA[Profiling slow bashrc]]></title>
     <link href="http://www.rosipov.com/blog/profiling-slow-bashrc/"/>
-    <updated>2015-07-15T17:07:53+00:00</updated>
+    <updated>2015-07-15T10:07:53-07:00</updated>
     <id>http://www.rosipov.com/blog/profiling-slow-bashrc</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
 <a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
@@ -298,7 +298,7 @@ after you&rsquo;re done profiling.</p>
   <entry>
     <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
     <link href="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/"/>
-    <updated>2015-02-21T00:25:45+00:00</updated>
+    <updated>2015-02-20T16:25:45-08:00</updated>
     <id>http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix</id>
     <content type="html"><![CDATA[<p>A couple of months ago I discovered apparix: a set of commands which augment
 <code>cd</code> with bookmarks. It really is an amazing feeling when you zap between

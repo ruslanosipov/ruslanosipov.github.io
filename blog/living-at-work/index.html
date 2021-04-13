@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cross-platform vim-plug setup - Ruslan Osipov</title>
+  <title>Living at work - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/living-at-work/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/">
-  <meta property="og:title" content="Cross-platform vim-plug setup - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/living-at-work/">
+  <meta property="og:title" content="Living at work - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-09-23T00:02:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Sep 2018</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-04-13T09:34:18-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Apr 2021</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,29 +132,54 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Cross-platform vim-plug setup
+        Living at work
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve recently switch to <a href="https://github.com/junegunn/vim-plug">vim-plug</a>, a lightweight Vim plugin manager.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>My first remote work experience coincided with my self-employment as a contractor. I was building a copyright enforcement service for a client in a year 2013. I lived in a one bedroom apartment in Philadelphia with my now ex-wife &ndash; a few blocks away from the city hall. I worked at a small standing desk (trendy!) in a corner of our little bedroom - by the closet.</p>
 
-<p>It comes with a little <code>.vimrc</code> snippet which downloads the plugin, but it only works for Unix. I use Vim across all three platforms regularly, so I updated the snippet:</p>
+<p>I worked from the early morning and deep into the night at that desk. Sometimes I would look out of the window behind me. I would see an uninspired urban picture of roof tops of other four story colonial homes. And after a moment of respite it was back to work for me.</p>
 
-<pre><code>" Download and install vim-plug (cross platform).
-if empty(glob(
-    \ '$HOME/' . (has('win32') ? 'vimfiles' : '.vim') . '/autoload/plug.vim'))
-  execute '!curl -fLo ' .
-    \ (has('win32') ? '\%USERPROFILE\%/vimfiles' : '$HOME/.vim') . 
-    \ '/autoload/plug.vim --create-dirs ' .
-    \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-</code></pre>
+<p>This was my first major foray into the world of self-accountability: I meticulously tracked the time spent working, billed the client per hour, provided in-depth breakdowns. The more I worked, the more I could bill the client &ndash; I had the incentive to put in as much time into work as possible.</p>
 
-<p>The above should work across all three major OSes, since Windows 10 recently received <code>curl</code> support.</p>
+<p>So I did. I clocked in 80 to 90 hours of billable time a week. The checks with a before unheard of hourly rate kept coming, so I kept putting in the hours. Neither I nor my significant other had major professional experience. (To be completely honest we didn&rsquo;t have much in the realm of like experience either). We kept on keeping on.</p>
+
+<p>I thought about work during lunch. I was agonizing over the details when walking through the neighboring Rittenhouse Square. I would jump into late night coding sessions. As a young professional, I didn&rsquo;t see the need to draw lines between my work and my life &ndash; my life was my work. There was no &ldquo;me&rdquo; without work.</p>
+
+<p>That is until I burnt out. I woke up one morning, and something inside me snapped. I realized that I couldn&rsquo;t spend another minute in front of the screen. I took a day off, and the feeling wouldn&rsquo;t pass. I felt numb and overwhelmed at the same time. A day filled with my favorite video games - and I still felt that way. A day at a museum - nothing. I didn&rsquo;t get better.</p>
+
+<p>I invoked a force majeure clause in my contract. I transferred all the materials, sent the final invoice, and stepped away from the project.</p>
+
+<p>I won&rsquo;t talk here about the ways to fight burnout, because I didn&rsquo;t know how to. I quit, took a break, and eventually moved onto another job. By the virtue of this happening early in my career, and me being rather young - I managed to &ldquo;snap out of it&rdquo; between jobs.</p>
+
+<p>I wish I could share &ldquo;the one thing&rdquo; I did that helped - but there wasn&rsquo;t one. I don&rsquo;t remember how I took care of myself, and how I managed to get my head straight. All I remember that I felt discombobulated for weeks. And at some point the feeling went away. I couldn&rsquo;t work during that time.</p>
+
+<p>Time passed. I moved across the country to the San Francisco Bay area for a job with Google. My now ex-wife and I split up &ndash; it was a civil, but nonetheless a difficult divorce.</p>
+
+<p>Around that time, I spent a year traveling across the United States. I lived out of my car and stayed in hotels while working remotely on my own terms. I established strict working hours and routines.</p>
+
+<p>I would start my work around 8 am, without paying mind to the timezone I&rsquo;d be in. I&rsquo;d work out of coffee shops, coworking spaces, or even campgrounds. I&rsquo;d always take a break for lunch. I&rsquo;d wrap up work at 4 pm, and not a minute longer. Constant travel and change of scenery encouraged me to keep to my work hours. I had to weigh in staying past my end of workday versus going out and sight seeing a new city. The wanderlust always won.</p>
+
+<p>The work was out of my mind after 4 pm. That was easy to do with an adventure afoot, but years later and the habit stuck with me. I don&rsquo;t let thoughts about work slip into my day to day. My mind is my own outside of work.</p>
+
+<p>That was a transformative experience, and it changed the way I see work. I know it&rsquo;s trendy to say this, but I don&rsquo;t live to work: I work to live.</p>
+
+<p>Today, I work with some people who have never worked remotely before the pandemic. And I often hear a similar sounding sentiment: &ldquo;never again&rdquo;.</p>
+
+<p>It makes me think about the time I was self-employed for the first time. Putting in 80 hour work weeks, and not having the awareness to understand how I was affecting myself and people around me. It created distance between me and my partner. I let the work spill into the time I had. In a way it made me less of an employee and less of person.</p>
+
+<p>When the pandemic started I looked back to these memories. Google moved to continuous work from home model in March 2020. And I made a conscious effort not to slip into my early remote work days. I established a strict routine. Breakfast and lunch with my significant other (here&rsquo;s some closure to my divorce). No deviation from &ldquo;9 to 5&rdquo;.</p>
+
+<p>I established an area for myself to work in &ndash; I bought a sturdy desk and a chair from a used office furniture reseller. I make an effort to create not only mental, but physical separation from work. I wear office clothes during the day, and change once I&rsquo;m done with work. I cook to distress after a long day. My partner and I adhere to scheduled date nights (we do leave room for spontaneity too).</p>
+
+<p>That isn&rsquo;t to say I didn&rsquo;t slip over the past year: many times I stayed past an established time. I often started earlier than planned. And some days I would let work occupy my mind space as I&rsquo;m relaxing with my better half. We&rsquo;ve spent the past year working out of a one bedroom apartment. A bigger one than I worked out of 7 years ago, but still a one bedroom. It was difficult, and some days it still is.</p>
+
+<p>But time and time again, I corrected the course and resumed my routine. During my soul searching adventure remote work was fun. Because this time working remotely is much harder. There are no sights to see. No new places to stay in. No novelty to look towards at the end of the day. Working from home in the middle of a pandemic is oh-so-difficult.</p>
+
+<p>To be honest I can&rsquo;t wait to be back in the office. But I&rsquo;m also excited to work from home on my own terms. Because this isn&rsquo;t what remote work is like.</p>
 </div>
 
 
@@ -178,13 +203,13 @@ endif
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-09-23T00:02:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Sep 2018</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-04-13T09:34:18-07:00"  data-updated="true" itemprop="datePublished dateCreated">13 Apr 2021</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/work/'>work</a>
   
 </span>
 
@@ -193,7 +218,7 @@ endif
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/cross-platform-vim-plug-setup/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/living-at-work/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/living-at-work/" >Tweet</a>
   
   
   
@@ -203,10 +228,8 @@ endif
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/minimalist-phone-launcher/" title="Previous Post: Minimalist phone launcher">&laquo; Minimalist phone launcher</a></li>
+            <li class="previous"><a href="/blog/how-much-does-writing-a-book-earn/" title="Previous Post: How much does writing a book earn?">&laquo; How much does writing a book earn?</a></li>
             
-            
-            <li class="next"><a href="/blog/my-book-has-been-published/" title="Next Post: My book has been published!">My book has been published! &raquo;</a></li>
             
           </ul>
         
@@ -231,7 +254,7 @@ endif
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
+    <a class="list-group-item active" href="/blog/living-at-work/">Living at work</a>
     
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
     
@@ -307,8 +330,8 @@ endif
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/cross-platform-vim-plug-setup/';
-        var disqus_url = 'http://www.rosipov.com/blog/cross-platform-vim-plug-setup/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/living-at-work/';
+        var disqus_url = 'http://www.rosipov.com/blog/living-at-work/';
         var disqus_script = 'embed.js';
       
     (function () {

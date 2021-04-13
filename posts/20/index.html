@@ -127,7 +127,62 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-26T20:00:22+00:00"  data-updated="true" itemprop="datePublished dateCreated">26 Dec 2012</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-21T12:09:07-08:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2013</time>
+        
+           | <a href="/blog/git-merge-two-repositories/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/git-merge-two-repositories/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/git-merge-two-repositories/" itemprop="url">Git: merge two repositories</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Today I had to merge changes from one repository into another. Let&rsquo;s assume you
+want to merge <code>beta</code> into <code>alpha</code>.</p>
+
+<p>Operations are performed in repo alpha:</p>
+
+<pre><code>git remote add beta_repo git@rosipov.com:beta.git
+git fetch beta_repo
+git merge beta_repo/master
+</code></pre>
+
+<p>In this case, <code>beta_repo</code> is the name you pick for remote.</p>
+
+<p>If you just need to cherry-pick a certain commit from <code>beta</code> you can omit the
+last step and replace it with the cherry-pick.</p>
+
+<p>More on the topic of remotes: <a href="http://git-scm.com/book/ch2-5.html">http://git-scm.com/book/ch2-5.html</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-26T12:00:22-08:00"  data-updated="true" itemprop="datePublished dateCreated">26 Dec 2012</time>
         
            | <a href="/blog/gpg-usage/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/gpg-usage/">Comments</a>
@@ -216,7 +271,7 @@ person&rsquo;s public key.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-10T18:36:05+00:00"  data-updated="true" itemprop="datePublished dateCreated">10 Dec 2012</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-10T10:36:05-08:00"  data-updated="true" itemprop="datePublished dateCreated">10 Dec 2012</time>
         
            | <a href="/blog/c-strtok-usage-example/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/c-strtok-usage-example/">Comments</a>
@@ -310,7 +365,7 @@ more substrings are available.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-10T04:11:23+00:00"  data-updated="true" itemprop="datePublished dateCreated">10 Dec 2012</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-09T20:11:23-08:00"  data-updated="true" itemprop="datePublished dateCreated"> 9 Dec 2012</time>
         
            | <a href="/blog/create-gitolite-repository/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/create-gitolite-repository/">Comments</a>
@@ -386,7 +441,7 @@ git push origin master
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-06T20:02:24+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 6 Dec 2012</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-06T12:02:24-08:00"  data-updated="true" itemprop="datePublished dateCreated"> 6 Dec 2012</time>
         
            | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/gui-git-difftool-for-windows/">Comments</a>
@@ -428,183 +483,6 @@ example.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-15T19:06:33+00:00"  data-updated="true" itemprop="datePublished dateCreated">15 Nov 2012</time>
-        
-           | <a href="/blog/extendedly-basic-vim-setup/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/extendedly-basic-vim-setup/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/extendedly-basic-vim-setup/" itemprop="url">Extendedly basic vim setup</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for
-programming. Feel free to copy over settings/plugins you find useful, or just
-download a repository from <a href="https://github.com/ruslanosipov/dotfiles">GitHub</a> with settings and plugins.</p>
-
-<h2>The .vimrc file</h2>
-
-<pre><code>"""""""""""""""""""""""""""""""""""""""
-" =&gt; Editing
-"""""""""""""""""""""""""""""""""""""""
-
-syntax on
-
-" Indentation settings
-set tabstop=4
-set shiftwidth=4
-set smartindent
-set autoindent
-set expandtab
-
-" Disable backups and .swp files
-set nobackup
-set nowritebackup
-set noswapfile
-
-" Ignore case when searching
-set ignorecase
-set smartcase
-
-"""""""""""""""""""""""""""""""""""""""
-" =&gt; Looks
-"""""""""""""""""""""""""""""""""""""""
-
-colorscheme darkburn
-set background=dark
-
-" Set terminal window title
-set title
-
-" Shorten press ENTER to continue messages
-set shortmess=atI
-
-" Show last command
-set showcmd
-
-" Highlight cursor line
-set cursorline
-
-" Ruler (line, column and % at the right bottom)
-set ruler
-
-" Enable wild menu (tab command autocompletion)
-set wildmenu
-set wildmode=list:longest,full
-
-" Warn if exceed 80 columns limit
-if (&amp;ft == 'python')
-    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-    match OverLength /%81v.+/
-endif
-
-"""""""""""""""""""""""""""""""""""""""
-" =&gt; Misc
-"""""""""""""""""""""""""""""""""""""""
-
-" Use Unix as the standart file type
-set ffs=unix,dos,mac
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc,*.pyo
-
-"""""""""""""""""""""""""""""""""""""""
-" =&gt; Plugins
-"""""""""""""""""""""""""""""""""""""""
-
-" EasyMotion: one leader key instead of two
-let g:EasyMotion_leader_key = '&lt;Leader&gt;'
-
-" NERDTree: auto open and close
-autocmd VimEnter * NERDTree
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-" NERDTree: focus on text window (left)
-autocmd VimEnter * wincmd l
-autocmd BufNew * wincmd l
-
-" NERDTree: auto close if last window
-function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-        if bufwinnr(t:NERDTreeBufName) != -1
-            if winnr("$") == 1
-                q
-            endif
-        endif
-    endif
-endfunction
-
-" Exuberant Ctags: autogenerate on py file write
-au BufWritePost *.py silent! !ctags -R &amp;
-
-" Pydoc: open in new tab instead of split
-let g:pydoc_open_cmd = 'tabnew'
-
-" Pydoc: disable search term highlight
-let g:pydoc_highlight=0
-</code></pre>
-
-<h2>Plugins</h2>
-
-<p>If you are not planning to use some of the plugins, make sure to remove
-plugin-specific rules from .vimrc => Plugins.</p>
-
-<ul>
-<li><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>: allows you to generate index of variables, functions
-and classes to freely move between them. A bit more info on how to use these
-in article <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>.</li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=625">Colo(u)r Sampler Pack</a> is not really a plugin, but a collection of color
-shemes. 100 of them, to be precise. Feel free to choose whatever you like.</li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=1488">ScrollColors</a> allows you to try out every theme in visual mode. Just type
-in <code>:SCROLL</code>.</li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=3526">EasyMotion</a> allows you to move between words, lines and sentences with a
-lightning speed. Just hit <code>&lt;Leader&gt; + w</code> to jump to one of the words forward
-or <code>&lt;Leader&gt; + b</code> backward (leader key is a backslash by default). It can
-do more neat things, documentation is pretty self-explanatory.</li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=1658">NERDTree</a> is a directory tree, like in all modern IDEs (but of course
-better).</li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=1173">tComment</a> allows you to easily comment out blocks of code. Hit <code>gcc</code> to
-comment a line or <code>gc</code> while selecting a block in <code>V</code>isual mode.</li>
-</ul>
-
-
-<h2>Source</h2>
-
-<p>You may want to head over to GitHub and grab a version from here:
-<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -628,6 +506,8 @@ comment a line or <code>gc</code> while selecting a block in <code>V</code>isual
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
+    
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
     
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
@@ -645,8 +525,6 @@ comment a line or <code>gc</code> while selecting a block in <code>V</code>isual
     <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
     
     <a class="list-group-item " href="/blog/numenera-for-dnd-players/">Numenera for D&D players</a>
-    
-    <a class="list-group-item " href="/blog/adjusting-to-wfh/">Adjusting to working from home</a>
     
   </div>
 </section>
