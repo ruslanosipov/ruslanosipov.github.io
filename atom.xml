@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-04-13T09:39:11-07:00</updated>
+  <updated>2021-04-30T10:02:33-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Savings rate plotted over 8 years]]></title>
+    <link href="http://www.rosipov.com/blog/savings-rate-plotted-over-8-years/"/>
+    <updated>2021-04-30T09:31:17-07:00</updated>
+    <id>http://www.rosipov.com/blog/savings-rate-plotted-over-8-years</id>
+    <content type="html"><![CDATA[<p>I just found my financial records going back to 2013!</p>
+
+<p>I know that doesn&rsquo;t sound exciting, but for someone who loves putting together spreadsheets this is a treasure trove of information! Well, maybe not a trove, but a sizable chunk of data. I only have two numbers for each month &ndash; income and expenses. But that&rsquo;s just enough to calculate my savings rate!</p>
+
+<p><code>(income - expenses) / income = savings rate</code></p>
+
+<p>With this number I can trace a broad outline through the past 8 years of my financial life! I present my savings rate charted over the past 8 years:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-1.png" title="A trend of my savings rate from August 2013 to February 2021. It shows a steady growth from effectively a 0% savings rate in 2013, 75% in early 2017, dips to 50% throughout 2017, and a steady 75% savings rate from 2018 onward." ></p>
+
+<p><em>It&rsquo;s smoothed out using a 6 period rolling window, as it&rsquo;s near impossible to see trends when plotting raw numbers.</em></p>
+
+<p>This chart tells a life story: starting with a near 0% savings rate in early 2014, a dip in 2017, and a steady 75% from 2018 onward. Let&rsquo;s trace my major life events!</p>
+
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-2.png" title="The same image as described above, with a &#34;Silicon Valley job&#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%." alt="The same image as described above, with a &#34;Silicon Valley job&#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%."></p>
+
+<p>By the end of 2013 I lived in downtown Philly and was working as a freelance software developer. Per-project pay was decent, but the gaps between contracts reduced the overall income. That, and being a sole breadwinner for a family of two &ndash; the funds were running dry and we were living paycheck-to-paycheck.</p>
+
+<p>My then-SO and I had different financial upbringing. My ex-wife and I were both young when we got married, and we&rsquo;ve never sat down and talked about finance &ndash; so I could only guess as to what her relationship with money was. I came from a household of a frugal single mother &ndash; we were never short on cash, but the expenses were low. In a rural community food was grown in a large garden, milk bartered from a neighbor, sweaters knitted.</p>
+
+<p>I distinctly remember my partner  not having more than a couple of hundred dollars in a bank account when we moved in together. On the other hand, by the time we got married I amassed a nest egg - nearly $20,000. Granted, it&rsquo;s small in the grand scheme of things &ndash; but these were the savings I put together from working low wage jobs &ndash; before I learned software development.</p>
+
+<p>You can see us deplete that fund by the end of 2013 and into early 2014. And paycheck-to-paycheck we lived.</p>
+
+<p>In January 2014 I was offered a position with a software company in the Silicon Valley. Things were looking up for our financial life! My then-wife and I moved to a Bay Area suburb.</p>
+
+<p>It took some adjusting after living in downtown Philly. Both our income and expenses increased. Thankfully with the new job we found it harder to keep up with the increasing income: that&rsquo;s where we settled for the 25% savings rate. A balance between frugality and spending habits.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-3.png" title="The same image as described above, with a &#34;divorce, raise, car living&#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%." alt="The same image as described above, with a &#34;divorce, raise, car living&#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%."></p>
+
+<p>A marital disaster struck at the end of 2015: my now ex-wife and I split up. What was a downturn in life turned out to be a financial upturn for me. My ex moved back with her parents, and I stayed in the apartment we were renting.</p>
+
+<p>In a bout of coincidental timing, the apartment complex I lived in was scheduled for demolition. I had to move out and look for a new place. Instead, I decided to move into my car. <a href="https://www.rosipov.com/blog/living-in-a-car-for-5000-miles/">I wrote about that in detail before</a>, if you&rsquo;d like to read about that.</p>
+
+<p>This is when I became interested in the FIRE movement. If you&rsquo;re not familiar, &ldquo;FIRE&rdquo; stands for &ldquo;Financial Independence, Retire Early&rdquo; (I like to think everyone is aware that this is a terrible acronym). The idea is to increase income, drastically decrease expenses, and invest the difference into index funds to live off of indefinitely.</p>
+
+<p>Now that I had an idea where my money can work best, I had an easier time justifying increasing my savings rate. FIRE also turned increasing savings rate into somewhat of a game.</p>
+
+<p>Finally, I negotiated a chunky raise at work. I was underpaid by the Silicon Valley standards, and &ldquo;I like working here, but I need to be paid X or I quit&rdquo; tactics worked. Having a reputation for being a high performer no doubt helped.</p>
+
+<p>It&rsquo;s not surprising that as a culmination of those events, this is where you can see my savings rate beginning it&rsquo;s climb to a respectable 75%. Occasional spousal support would bump up the expenses, but not having rent to pay and a higher salary made it easy to absorb those expenses.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-4.png" title="The same image as described above, with a &#34;new place&#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &#34;FIRE reignited&#34; label hovers over August 2017 mark, preceding savings rate climb to 75%." alt="The same image as described above, with a &#34;new place&#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &#34;FIRE reignited&#34; label hovers over August 2017 mark, preceding savings rate climb to 75%."></p>
+
+<p>By the end of 2016 I got my dream job at Google, and moved into a new studio apartment. No, the big dip isn&rsquo;t just a new place, but it&rsquo;s strongly connected. I decided to make up for a year of living out of a single suitcase. There&rsquo;s furnishing the new place from scratch, top of the line gaming PC, a VR headset, and so many things I didn&rsquo;t need! I definitely went on a bender.</p>
+
+<p>It took me a year to slow down. This is also where my then-girlfriend and now-forever-housemate became more open with me financially: I happened to meet another FIRE enthusiast out in the wild, completely by chance. She reignited my desire to live frugally. End of 2017 was marked by me donating and selling an ungodly amount of things I accumulated over this year, and returning to comfortable living within (or below, depending on how you look at it) my needs.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-5.png" title="The same image as described above, with a &#34;moving in&#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &#34;marriage&#34; label hovers over September 2020 mark." alt="The same image as described above, with a &#34;moving in&#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &#34;marriage&#34; label hovers over September 2020 mark."></p>
+
+<p>We moved in together by the end of 2018 and married in 2020. We still keep separate accounts for ease of accounting, and this chart only displays my data for the sake of my partner&rsquo;s privacy (it&rsquo;s less work to chart too). Overlaying my SO&rsquo;s data after combining our finances doesn&rsquo;t meaningfully change the numbers you see above.</p>
+
+<p>It&rsquo;s not realistic for us to push the savings rate higher without sacrificing the luxuries we enjoy - like travel or occasional high end dining. So here we are, at a comfortable 75% to 80% savings rate.</p>
+
+<p>My wife and I earn 7 times more than I did when I was a sole breadwinner. Our joint expenses are 60% higher than what my ex wife and I spent 8 years ago. Both my wife and I are in a priviliged position to be high earners in a high paying industry. We&rsquo;ve gotten extremely lucky where many wouldn&rsquo;t have.</p>
+
+<p>There&rsquo;s no real purpose to this post other than sharing my journey. Hope you found something of interest!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Living at work]]></title>
@@ -1160,283 +1225,6 @@ endif
 <p><img src="http://www.rosipov.com/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
 
 <p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My .vimrc, annotated]]></title>
-    <link href="http://www.rosipov.com/blog/my-vimrc-annotated/"/>
-    <updated>2018-02-21T07:00:00-08:00</updated>
-    <id>http://www.rosipov.com/blog/my-vimrc-annotated</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
-
-<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
-
-set nocompatible  " Required for many plugins, ensures it's not compatible with 
-                  " Vi, which nobody uses at this point.
-filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
-</code></pre>
-
-<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
-
-<pre><code>" Required Vundle setup.
-set runtimepath+=~/.vim/bundle/vundle
-set runtimepath+=$GOROOT/misc/vim
-call vundle#rc()
-
-" =&gt; Vundle plugins ------------------------------------------------------- {{{1
-
-Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
-
-" Colorschemes:
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'ajh17/Spacegray.vim.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'squarefrog/tomorrow-night.vim'
-Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
-
-" Language/tool integration and support:
-Plugin 'burnettk/vim-angular'
-Plugin 'fatih/vim-go'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mileszs/ack.vim'
-Plugin 'motemen/git-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic.git'  " Syntax checker.
-Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
-
-" Quality of life:
-Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
-Plugin 'ciaranm/detectindent'      " Automatically detect indent.
-Plugin 'ervandew/supertab'         " Smarter autocompletion.
-Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
-Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
-Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
-Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
-Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
-Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
-Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
-Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
-Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
-Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
-
-" New features:
-Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
-Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
-Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
-Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
-
-if v:version &gt; 703
-  Plugin 'SirVer/ultisnips'        " Intricate snippets.
-  Plugin 'chrisbra/vim-diff-enhanced'
-endif
-
-" =&gt; Plugins configuration ------------------------------------------------ {{{1
-
-" NERDTree: auto close if last window.
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
-" Force Gundo preview to the bottom.
-let g:gundo_preview_bottom = 1
-
-" Map Gundo.
-nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
-
-" DetectIndent: Enable and configure.
-augroup detectindent
-  autocmd!
-  autocmd BufReadPost * :DetectIndent
-augroup END
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
-
-" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
-let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
-let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
-let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
-let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
-let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
-let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
-
-" VimWiki: default location.
-let g:vimwiki_list = [{
-  \ 'path': '$HOME/Dropbox/wiki',
-  \ 'template_path': '$HOME/Dropbox/wiki/templates',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.html'}]
-
-" Map Tagbar.
-nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
-
-" Synastic configuration.
-let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
-let g:syntastic_html_checkers = ['']
-let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
-let g:syntastic_javascript_gjslint_args = '--strict'
-let g:syntastic_python_checkers = ['gpylint']
-</code></pre>
-
-<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
-
-<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
-
-<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
-
-syntax on
-
-" Indentation settings.
-set autoindent
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-" Disable backups and .swp files.
-set nobackup
-set noswapfile
-set nowritebackup
-
-" Semicolon is too long to type.
-nnoremap ; :
-vnoremap ; :
-
-" Map leader key.
-let mapleader = "\&lt;Space&gt;"
-
-" Use system clipboard.
-set clipboard=unnamedplus
-
-" Enable wild menu (tab command autocompletion).
-set wildmenu
-set wildmode=list:longest,full
-
-" Don't complain about unsaved files when switching buffers.
-set hidden
-
-" Make soft line breaks much better looking.
-if v:version &gt; 703
-  set breakindent
-endif
-
-" Pretty soft break character.
-let &amp;showbreak='↳ '
-
-" =&gt; Looks ---------------------------------------------------------------- {{{1
-
-set background=dark
-colorscheme spacegray
-
-" Set terminal window title and set it back on exit.
-set title
-let &amp;titleold = getcwd()
-
-" Shorten press ENTER to continue messages.
-set shortmess=atI
-
-" Show last command.
-set showcmd
-
-" Highlight cursor line.
-set cursorline
-
-" Ruler (line, column and % at the right bottom).
-set ruler
-
-" Display line numbers if terminal is wide enough.
-if &amp;co &gt; 80
-  set number
-endif
-
-" Soft word wrap.
-set linebreak
-
-" Prettier display of long lines of text.
-set display+=lastline
-
-" Always show statusline.
-set laststatus=2
-
-" =&gt; Movement and search -------------------------------------------------- {{{1
-
-" Ignore case when searching.
-set ignorecase
-set smartcase
-
-" Fast split navigation.
-nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
-nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
-nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
-nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
-
-" Absolute movement for word-wrapped lines.
-nnoremap j gj
-nnoremap k gk
-
-" =&gt; Misc ----------------------------------------------------------------- {{{1
-
-" Use Unix as the standart file type.
-set ffs=unix,dos,mac
-
-" Ignore compiled files.
-set wildignore=*.o,*~,*.pyc,*.pyo
-
-" Ignore virtualenv directory.
-set wildignore+=env
-
-" Fold using {{{n, where n is fold level
-set foldmethod=marker
-
-" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
-
-" Ignore mouse (in GVIM).
-set mouse=c
-
-" Fix backspace behavior in GVIM.
-set bs=2
-
-" NERDTree arrows in Windows.
-if has("win32") || has("win64") || has("win32unix")
-  let g:NERDTreeDirArrows = 0
-endif
-
-" Increase lower status bar height in diff mode.
-if &amp;diff
-  set cmdheight=2
-endif
-
-" Unfold all files by default.
-au BufRead * normal zR
-</code></pre>
-
-<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
-
-<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
-
-" Trim trailing whitespace in the file.
-command TrimWhitespace %s/\s\+$//e
-
-" Command to close current buffer without closing the window.
-command Bd :bp | :sp | :bn | :bd
-
-" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
-
-nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
-nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
-nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
-nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
-nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
-</code></pre>
-
-<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
 ]]></content>
   </entry>
   
