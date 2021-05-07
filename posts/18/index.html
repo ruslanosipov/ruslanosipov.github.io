@@ -127,6 +127,62 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-24T09:47:11-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 Apr 2013</time>
+        
+           | <a href="/blog/my-most-used-bash-commands/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-most-used-bash-commands/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/my-most-used-bash-commands/" itemprop="url">My most used bash commands</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Shell history can tell a lot about its owner. What&rsquo;s in your shell?</p>
+
+<pre><code>history | awk '{CMD[$2]++;count++;}
+END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'
+| grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+
+     1  580  38.0328%    git         # I keep everything under VCS
+     2  202  13.2459%    cd          # Moving around a lot
+     3  171  11.2131%    vi          # Favorite text editor
+     4  127  8.32787%    ls          # I'm a curious person
+     5  43   2.81967%    rm          # I also like when it's clean
+     6  26   1.70492%    usrswitch   # https://gist.github.com/ruslanosipov/5453510
+     7  25   1.63934%    exit        # I don't like hitting the red cross button
+     8  18   1.18033%    source      # Reloading bash configuration files
+     9  17   1.11475%    clear       # Like when it's *really* clean
+    10  15   0.983607%   gitk        # Sometimes it is too messy for git log
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-17T11:32:46-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Apr 2013</time>
         
            | <a href="/blog/colorless-week-results/#disqus_thread" itemprop="discussionUrl"
@@ -404,57 +460,6 @@ each other before committing, however.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T08:37:10-07:00"  data-updated="true" itemprop="datePublished dateCreated">27 Mar 2013</time>
-        
-           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/irssi-ignore-all-from-everyone/" itemprop="url">IRSSI - ignore all from everyone</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you visit noisy IRC channels like the programming ones on freenode, you
-probably want to ignore all the annoying status messages.</p>
-
-<p>To permanently ignore joins, parts, quits, and nickname changes from every
-channel in IRSSI:</p>
-
-<pre><code>/ignore * joins parts quits nicks
-/save
-</code></pre>
-
-<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
-post will keep it in my memory.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -478,6 +483,8 @@ post will keep it in my memory.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/fire-in-a-developing-economy/">FIRE in a developing economy</a>
+    
     <a class="list-group-item " href="/blog/savings-rate-plotted-over-8-years/">Savings rate plotted over 8 years</a>
     
     <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
@@ -495,8 +502,6 @@ post will keep it in my memory.</p>
     <a class="list-group-item " href="/blog/vortex-core-keyboard/">Vortex Core 40% keyboard</a>
     
     <a class="list-group-item " href="/blog/one-page-ttrpg-prep/">One page TTRPG prep</a>
-    
-    <a class="list-group-item " href="/blog/numenera-for-dnd-dms/">Numenera for D&D DMs</a>
     
   </div>
 </section>
