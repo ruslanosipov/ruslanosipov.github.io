@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-05-07T14:56:14-07:00</updated>
+  <updated>2021-05-24T07:41:36-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Abandoned project showcase: Hikaya]]></title>
+    <link href="http://www.rosipov.com/blog/abandoned-project-showcase-hikaya/"/>
+    <updated>2021-05-24T09:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/abandoned-project-showcase-hikaya</id>
+    <content type="html"><![CDATA[<p>Roguelikes are once niche, but an increasing mainstream video game genre. The genre is named after 1980 &ldquo;Rogue&rdquo; - a procedurally generated dungeon crawler. Rogue and games inspired by it often include simple ASCII graphics, feature procedural generation of the world, and include &ldquo;permadeath&rdquo;: the game is over once you die.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/rogue-1980.png" title="A screenshot of 1980 &#34;Rogue&#34; video game." alt="A screenshot of 1980 &#34;Rogue&#34; video game."></p>
+
+<p>Many games were heavily inspired by it - like Ancient Domains of Mystery and Nethack, or more recent Cataclysm: DDA and Caves of Qud. Modern games bring a lot of fantastic fusion into the genre too with like The Binding of Isaac or Hades. But I digress.</p>
+
+<p>A few months ago I was struck by a bout of inspiration. I&rsquo;ve tried countless times before, but never produced a complete video game &ndash; this was meant to be the time! I&rsquo;ve significantly reduced the scope, came up with a plan of action, and started coding!</p>
+
+<p>I codenamed the game &ldquo;Hikaya&rdquo;, which means &ldquo;a fairy tale&rdquo; in Tatar - my native language (although I think the word itself has been borrowed from Arabic). I planned to make a fairly straightforward roguelike, without too many bells and whistles.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/hikaya-splash-screen.png" title="A screenshot of the main menu of Hikaya." ></p>
+
+<p>I&rsquo;ve found a wonderful tutorial on rogueliketutorials.com, which introduces <code>libtcod</code> &ndash; a library to simplify the mundane: drawing on screen, handling input, field of view and lighting, pathfinding. I&rsquo;ve struggled through all of the above before, and knew that getting deep into the mechanical details would slow me down.</p>
+
+<p>Alas, I didn&rsquo;t finish the game. I&rsquo;ve gotten maybe half way there, before my focus slipped away from the project. But not before getting some screenshots and documenting some interesting ideas I had!</p>
+
+<p>The only contains a dozen dungeon levels, with a short story being told through item descriptions. The player is an adventurer who&rsquo;s sent by their village to a nearby cave to retrieve the last flame - a placeholder MacGuffin.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/hikaya-inventory.png" title="An inventory screen of Hikaya." ></p>
+
+<p>Every item and monster posses a fantasy-sounding name, contrasted with a short, but colorful description hinting at a science fiction nature of the objects. Think magic scrolls with touch screens, or injectable health potions.</p>
+
+<p>Each monster type has a unique behavior - with goblins running away and regrouping, ogres snacking on goblins to restore health, and so on.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/hikaya-goblin.png" title="A goblin running away for backup." ></p>
+
+<p>As the player descends down the dungeon, they encounter multiple bosses guarding the staircases. The bosses drop unique armor pieces, which tell a story of a group of adventurers descending into the dungeon, but succumbing to traps, greed, and treachery.</p>
+
+<p>Finally, a dragon guards the last light on the final floor. The game ends with the player becoming a dragon, and a cycle becomes anew.</p>
+
+<p>I know, I know: edgy, uninspired &ndash; but I enjoyed the premise.</p>
+
+<p>The combat is focused on tactical movement and avoiding damage, and the player unlocks new moves &ndash; like kicks, jumps, or faints &ndash; as they progress through the dungeon.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/hikaya-stunts.png" title="A screenshots of a stunt selector in Hikaya." ></p>
+
+<p>I wanted to experiment with the health system. Inspired by FATE tabletop roleplaying system, I attempted to use health pools. The system was meant to keep combat dangerous and entertaining throughout the game by making even the goblins dangerous throughout the game.</p>
+
+<p>My biggest experiment came from a health system. Inspired by FATE tabletop roleplaying ruleset, the health consists of multiple pools (as opposed to a single bar). The goal of the system is to make combat deadly, and create a sense of danger even for trivial encounters, while still leaving room for error.</p>
+
+<p>Let me try to explain. For example, a player might have three health pools - for 1, 2, and 3 hit points each. Each time a player takes damage, the smallest pool is used to absorb that damage. For instance, a 2 damage hit voids the 2 hit point pool. A second 2 damage hit clears out the 3 hit point pool. A third 2 damage hit is fatal.</p>
+
+<p>You can see the voided health pools marked as red on the screenshot below, and the full health pools in green:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/hikaya-damage.png" title="A screenshots of a player taking damage in Hikaya." ></p>
+
+<p>To complicate thing further, I give players some leeway by slowly draining partially damaged pools over time. For instance, if the player uses their 5 hit point pool to absorb 2 points of damage, I&rsquo;ll slowly drain that pool over the next three turns. This would let the player take another 2 damage hit (or a few 1 damage hits) &ldquo;for free&rdquo; immediately after being hit. You can see those hearts marked as yellow on the screenshot above.</p>
+
+<p>Needless to say, the system turned out to be very convoluted to explain in game (and on paper too &ndash; I don&rsquo;t think the above is clear enough). I still think it&rsquo;s a great idea, but it desperately needs better user experience design to make it accessible. In fact, FATE itself got rid of confusing health pools in it&rsquo;s latest &ldquo;FATE Condensed&rdquo; release, simplifying health down to binary hit markers.</p>
+
+<p>Despite not finishing it, putting together Hikaya was a fun experience. I&rsquo;ve had a great time working on the prototype: I&rsquo;ve learned a lot, and maybe I&rsquo;ll lead my next video game project to completion given everything I&rsquo;ve learned!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FIRE in a developing economy]]></title>
@@ -1279,37 +1338,6 @@ endif
 </code></pre>
 
 <p>The above should work across all three major OSes, since Windows 10 recently received <code>curl</code> support.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Minimalist phone launcher]]></title>
-    <link href="http://www.rosipov.com/blog/minimalist-phone-launcher/"/>
-    <updated>2018-08-11T00:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/minimalist-phone-launcher</id>
-    <content type="html"><![CDATA[<p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
-
-<p>I present to you the biggest distraction: my phone.</p>
-
-<p>I use to get in touch with people I love. I&rsquo;m more productive at work because I have access to information on the go. I also use my phone to browse Reddit, YouTube, and every other media outlet imaginable. Even worse, sometimes I just waste time tinkering with the settings or mindlessly browsing through the apps I have installed.</p>
-
-<p>It&rsquo;s an attention sink.</p>
-
-<p>Nearly a year ago as I was browsing the Google Play Store I bumped into a new launcher: KISS. The tag line caught my attention: &ldquo;Keep It Simple, Stupid&rdquo;. I went ahead and downloaded the launcher. I haven&rsquo;t changed to another launcher since.</p>
-
-<p>Here&rsquo;s how my home screen looks today:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/kiss-launcher-home-screen.png" title="A screenshot of a KISS launcher home screen." ></p>
-
-<p>There&rsquo;s nothing besides a single search bar. The search bar takes me to the apps I need, web searches I&rsquo;m interested in, or people I&rsquo;m trying to reach out to.</p>
-
-<p>It&rsquo;s simple to use. Start typing an app or a contact name, and the results show up above the search bar:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/kiss-launcher-search-results.png" title="A screenshot of searching for an app with a KISS launcher." ></p>
-
-<p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
-
-<p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
 ]]></content>
   </entry>
   

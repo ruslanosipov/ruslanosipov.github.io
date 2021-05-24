@@ -127,6 +127,96 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-05-24T09:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 May 2021</time>
+        
+           | <a href="/blog/abandoned-project-showcase-hikaya/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/abandoned-project-showcase-hikaya/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/abandoned-project-showcase-hikaya/" itemprop="url">Abandoned project showcase: Hikaya</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Roguelikes are once niche, but an increasing mainstream video game genre. The genre is named after 1980 &ldquo;Rogue&rdquo; - a procedurally generated dungeon crawler. Rogue and games inspired by it often include simple ASCII graphics, feature procedural generation of the world, and include &ldquo;permadeath&rdquo;: the game is over once you die.</p>
+
+<p><img src="/images/posts/rogue-1980.png" title="A screenshot of 1980 &#34;Rogue&#34; video game." alt="A screenshot of 1980 &#34;Rogue&#34; video game."></p>
+
+<p>Many games were heavily inspired by it - like Ancient Domains of Mystery and Nethack, or more recent Cataclysm: DDA and Caves of Qud. Modern games bring a lot of fantastic fusion into the genre too with like The Binding of Isaac or Hades. But I digress.</p>
+
+<p>A few months ago I was struck by a bout of inspiration. I&rsquo;ve tried countless times before, but never produced a complete video game &ndash; this was meant to be the time! I&rsquo;ve significantly reduced the scope, came up with a plan of action, and started coding!</p>
+
+<p>I codenamed the game &ldquo;Hikaya&rdquo;, which means &ldquo;a fairy tale&rdquo; in Tatar - my native language (although I think the word itself has been borrowed from Arabic). I planned to make a fairly straightforward roguelike, without too many bells and whistles.</p>
+
+<p><img src="/images/posts/hikaya-splash-screen.png" title="A screenshot of the main menu of Hikaya." ></p>
+
+<p>I&rsquo;ve found a wonderful tutorial on rogueliketutorials.com, which introduces <code>libtcod</code> &ndash; a library to simplify the mundane: drawing on screen, handling input, field of view and lighting, pathfinding. I&rsquo;ve struggled through all of the above before, and knew that getting deep into the mechanical details would slow me down.</p>
+
+<p>Alas, I didn&rsquo;t finish the game. I&rsquo;ve gotten maybe half way there, before my focus slipped away from the project. But not before getting some screenshots and documenting some interesting ideas I had!</p>
+
+<p>The only contains a dozen dungeon levels, with a short story being told through item descriptions. The player is an adventurer who&rsquo;s sent by their village to a nearby cave to retrieve the last flame - a placeholder MacGuffin.</p>
+
+<p><img src="/images/posts/hikaya-inventory.png" title="An inventory screen of Hikaya." ></p>
+
+<p>Every item and monster posses a fantasy-sounding name, contrasted with a short, but colorful description hinting at a science fiction nature of the objects. Think magic scrolls with touch screens, or injectable health potions.</p>
+
+<p>Each monster type has a unique behavior - with goblins running away and regrouping, ogres snacking on goblins to restore health, and so on.</p>
+
+<p><img src="/images/posts/hikaya-goblin.png" title="A goblin running away for backup." ></p>
+
+<p>As the player descends down the dungeon, they encounter multiple bosses guarding the staircases. The bosses drop unique armor pieces, which tell a story of a group of adventurers descending into the dungeon, but succumbing to traps, greed, and treachery.</p>
+
+<p>Finally, a dragon guards the last light on the final floor. The game ends with the player becoming a dragon, and a cycle becomes anew.</p>
+
+<p>I know, I know: edgy, uninspired &ndash; but I enjoyed the premise.</p>
+
+<p>The combat is focused on tactical movement and avoiding damage, and the player unlocks new moves &ndash; like kicks, jumps, or faints &ndash; as they progress through the dungeon.</p>
+
+<p><img src="/images/posts/hikaya-stunts.png" title="A screenshots of a stunt selector in Hikaya." ></p>
+
+<p>I wanted to experiment with the health system. Inspired by FATE tabletop roleplaying system, I attempted to use health pools. The system was meant to keep combat dangerous and entertaining throughout the game by making even the goblins dangerous throughout the game.</p>
+
+<p>My biggest experiment came from a health system. Inspired by FATE tabletop roleplaying ruleset, the health consists of multiple pools (as opposed to a single bar). The goal of the system is to make combat deadly, and create a sense of danger even for trivial encounters, while still leaving room for error.</p>
+
+<p>Let me try to explain. For example, a player might have three health pools - for 1, 2, and 3 hit points each. Each time a player takes damage, the smallest pool is used to absorb that damage. For instance, a 2 damage hit voids the 2 hit point pool. A second 2 damage hit clears out the 3 hit point pool. A third 2 damage hit is fatal.</p>
+
+<p>You can see the voided health pools marked as red on the screenshot below, and the full health pools in green:</p>
+
+<p><img src="/images/posts/hikaya-damage.png" title="A screenshots of a player taking damage in Hikaya." ></p>
+
+<p>To complicate thing further, I give players some leeway by slowly draining partially damaged pools over time. For instance, if the player uses their 5 hit point pool to absorb 2 points of damage, I&rsquo;ll slowly drain that pool over the next three turns. This would let the player take another 2 damage hit (or a few 1 damage hits) &ldquo;for free&rdquo; immediately after being hit. You can see those hearts marked as yellow on the screenshot above.</p>
+
+<p>Needless to say, the system turned out to be very convoluted to explain in game (and on paper too &ndash; I don&rsquo;t think the above is clear enough). I still think it&rsquo;s a great idea, but it desperately needs better user experience design to make it accessible. In fact, FATE itself got rid of confusing health pools in it&rsquo;s latest &ldquo;FATE Condensed&rdquo; release, simplifying health down to binary hit markers.</p>
+
+<p>Despite not finishing it, putting together Hikaya was a fun experience. I&rsquo;ve had a great time working on the prototype: I&rsquo;ve learned a lot, and maybe I&rsquo;ll lead my next video game project to completion given everything I&rsquo;ve learned!</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-05-07T14:18:06-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 7 May 2021</time>
         
            | <a href="/blog/fire-in-a-developing-economy/#disqus_thread" itemprop="discussionUrl"
@@ -726,72 +816,6 @@ far.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-04-05T18:32:00-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 5 Apr 2021</time>
-        
-           | <a href="/blog/the-feedback-fallacy/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/the-feedback-fallacy/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/the-feedback-fallacy/" itemprop="url">The feedback fallacy</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>After learning about <a href="https://amzn.to/3ukVvm5">&ldquo;Radical Candor&rdquo;</a>, I became obsessed with providing candid and compassionate feedback. I&rsquo;ve been especially focused on the ability to communicate areas of growth for individual on my team.</p>
-
-<p>And then a colleague of mine shared <a href="https://hbr.org/2019/03/the-feedback-fallacy">&ldquo;The Feedback Fallacy&rdquo;</a> (published in the Harvard Business Review), which points to some research and outlines a few key problems why focusing on negative feedback might not be the best choice. Research shows that:</p>
-
-<ul>
-<li>people are bad at assessing other people</li>
-<li>we learn best with positive reinforcement</li>
-<li>focusing on shortcomings impairs learning</li>
-<li>excellence is specific to an individual</li>
-</ul>
-
-
-<p>Like many pieces of business literature, it reads like an &ldquo;all-or-nothing&rdquo; approach (&ldquo;negative feedback - bad, positive feedback - good&rdquo;), and the most effective approach is likely somewhere in the middle. There&rsquo;s a place for positive and negative feedback, and it&rsquo;s the focus on positive reinforcement that I see as a primary takeaway from this article.</p>
-
-<p>I&rsquo;ve noticed that my assessment of others&#8217; performance changes over time. It often depends on what self-help book I&rsquo;m reading at the moment if I&rsquo;m being entirely honest.</p>
-
-<p>This piece made me think of the portrayal of successful people in media: there&rsquo;s an inherent cultural belief that successful people know what makes them successful, and all you need to do is to follow in their steps! What is often omitted is a mix of luck, some talent or hard work, topped with another serving of being in the right place at the right time. Warren Buffet can probably tell you what&rsquo;s the smartest thing to do with ten thousand dollars you have in your savings account. It&rsquo;s unlikely that his advice alone will get you to his <a href="https://www.google.com/search?q=warren+buffett+net+worth">98.2 billion dollar net worth</a>.</p>
-
-<p>It seems like once you get past basic competency, success identifiers seem unpredictable.</p>
-
-<p>I attribute part of my professional success to having a reputation of a person who &ldquo;gets shit done&rdquo;. I naturally value qualities associated with that style of work. It&rsquo;s only natural that I prioritize on communication and organizational skills when assessing the performance of others.</p>
-
-<p>In fact, the article made me think about how I landed with the reputation as a problem solver. Every time I accomplished a project on time, owned the problem space, involved the right parties, or raised alarms early &ndash; I received positive reinforcement. People I worked with valued those qualities, and years working with those people shaped what I perceive as an effective work style.</p>
-
-<p>Yet, this work style is effective for me, and is not a solution for my peers.</p>
-
-<p>Since reading <a href="https://hbr.org/2019/03/the-feedback-fallacy">&ldquo;The Feedback Fallacy&rdquo;</a>, I started focusing on the outcomes I like, as opposed to qualities I believe are valuable. Where before I would say &ldquo;Great comms on project X!&rdquo;, now I focus on specifics: &ldquo;I know what you&rsquo;re up to on project X, which helps me communicate with stakeholder Y and plan resources for the project Z&rdquo;</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -815,6 +839,8 @@ far.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/abandoned-project-showcase-hikaya/">Abandoned project showcase: Hikaya</a>
+    
     <a class="list-group-item " href="/blog/fire-in-a-developing-economy/">FIRE in a developing economy</a>
     
     <a class="list-group-item " href="/blog/savings-rate-plotted-over-8-years/">Savings rate plotted over 8 years</a>
@@ -832,8 +858,6 @@ far.</p>
     <a class="list-group-item " href="/blog/writing-for-fun/">Writing for fun</a>
     
     <a class="list-group-item " href="/blog/vortex-core-keyboard/">Vortex Core 40% keyboard</a>
-    
-    <a class="list-group-item " href="/blog/one-page-ttrpg-prep/">One page TTRPG prep</a>
     
   </div>
 </section>
