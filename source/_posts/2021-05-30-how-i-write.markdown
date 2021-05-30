@@ -1,12 +1,12 @@
 ---
 title: "How I write"
-date: 2021-05-29 18:47:36 -0700
+date: 2021-05-30 16:00:00 -0700
 categories: [Writing]
 ---
 
-I don't blog consistently, and I'm still struggling to find my voice. For me, writing is difficult for many reasons, especially when it comes to identifying topics worth writing about. I want to bring a combination of passion, expertise, and a fresh perspective into a topic -- which makes finding a theme to cover challenging. To top it all off, English is my third language. Making content flow well is difficult, and I don't always have the ear for it.
+I don't blog consistently, and I'm still struggling to find my voice. I find writing difficult for many reasons, especially when it comes to identifying topics worth writing about. I want to bring a combination of passion, expertise, and a fresh perspective into a topic -- which makes finding a theme to cover challenging. To top it all off, English is my third language. Getting the content to flow well is difficult, and I don't always have the ear for it.
 
-In contrast, I find it straightforward to write once I know what to write about. In part due to volume of writing I have to do for work: as a technical lead at Google I routinely use extensive design documents to communicate my ideas. I also [wrote a book][1] once.
+In contrast, I find it straightforward to write once I know what to write about. In part due to the volume of writing I have to do for work: as a technical lead at Google I routinely use extensive design documents to communicate my ideas. I also [wrote a book][1] once.
 
 I found a set of techniques that work well for me. I don't know if these techniques help me write higher quality material -- you'll be the judge of that. But these techniques help me express ideas from my head and onto paper. Hopefully in a digestible and entertaining format.
 
@@ -20,7 +20,7 @@ I break down writing process into a set of distinct steps. I start with some pre
 
 This is a step zero, although it might not apply to everything I write about. This is a breadth-first, "open as many tabs as computer can handle" type of research. There's no in-depth reading at this point, and only high level information is consumed.
 
-I picked up the breadth-first approach from my wife, who is an indisputable queen of online research. I find it tempting to dig into the first source I find -- and stopping myself from digging to deep helps understand the information landscape.
+I picked up this approach from my wife, who is an indisputable queen of online research. I find it tempting to dig into the first source I find. Stopping myself from digging too deep helps me understand the information landscape.
 
 For instance, when writing about [financial independence in Cote d'Ivoire][2] (a topic I know nothing about) my preliminary research consisted of: a brief review of country's history, a list of major geopolitical events, investment landscape, and identifying trustworthy sources which could tell me more about currency stability or tax situation.
 
@@ -30,7 +30,7 @@ I've also looked for existing sources on the subject, but there wasn't any.
 
 This post started with an outline. An outline is crucial to pacing and identifying areas of focus. Chapter summaries in a book, outlining headings in technical documents, or putting together a bulleted list for a blog post -- you name it.
 
-Outline needs to make sense to you, and you don't have to use complete sentences. I started with the following outline for this post.
+Outline only needs to make sense to you, and you don't have to use complete sentences. I started with the following outline for this post:
 
 - I write a lot
   - Quantity doesn't mean quality
@@ -48,7 +48,7 @@ An outline is not final, and it evolves as I write. For instance, by the time I 
   - ~~I don't publish most things I write~~
   - A lot of practice with technical docs
 - Preliminary research
-- Write an outline
+- Write an outline (you're here now!)
 - In-depth research
 - Write wine draft
 - Write coffee draft
@@ -80,7 +80,7 @@ I find accompanying wine mandatory, but whiskey or tea works in a pinch.
 
 ## Coffee draft
 
-After the wine draft is complete, I take a break. Often couple of hours is enough to create a distance between the text and I. A coffee draft requires more focus and attention. This is when the messy draft takes shape and becomes (hopefully) readable. You tell me.
+After the wine draft is complete, I take a break. Often couple of hours is enough to create a distance between me and the text. A coffee draft requires more focus and attention. This is when the messy draft takes shape and becomes (hopefully) readable. You tell me.
 
 I make my way down, sentence by sentence, turning ramblings of a madman into a coherent narrative. I rearrange sentences, correct syntactic and grammatical errors, and liberally remove what doesn't contribute to the narrative. If the wine draft is particularly incoherent, I simply rewrite each paragraph one by one.
 
@@ -94,7 +94,7 @@ The final step involves good old proofreading (unless you have a proofreader: it
 
 I try to proofread in a different software suite, or with different fonts and colors: it helps create further distance between the content and I. For instance, I write this post in Vim using Markdown, but I proofread by reading the final preview using my blog's visual theme.
 
-It often helps to read things out loud too: really anything to change up the way you perceive the text.
+It often helps to read things out loud too: anything you can do to change up the way you perceive the text.
 
 ----
 
