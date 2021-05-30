@@ -9,12 +9,19 @@ navbar: Archives
 {% if site.description %}<meta itemprop="description" content="{{site.description}}" />{% endif %}
 <meta itemprop="url" content="{{site.url}}" />
 
-{% if page.category == 'vim' %}
+{% if page.category == 'cli' %}
   <p>
-    This is a collection of articles I wrote about Vim, my favorite editor.
-    <a href="/blog/using-vim-for-writing-code/">Using Vim for writing code</a>
-    is a great intro article if you've never used Vim. Skim through the
-    headings below to see if you find anything of interest.
+  Command line interface is the best interface: but it's also the most fiddly. I usually take notes on how to get something to work, and then publish them online for everyone to see.
+  </p>
+{% endif %}
+{% if page.category == 'productivity' %}
+  <p>
+  Engineering efficiency and productivity is a passion of mine, and I'm also lucky to get paid to think about it at Google. These are Ruslan-scale notes on individual productivity and things that work well for me.
+  </p>
+{% endif %}
+{% if page.category == 'programming' %}
+  <p>
+  I write code for a living, and it's something I enjoy doing (and occasionally writing about). These are often notes I initially took for myself, and later decided to publish.
   </p>
 {% endif %}
 {% if page.category == 'travel' %}
@@ -25,9 +32,22 @@ navbar: Archives
   makes for one hell of an odd story).
   </p>
 {% endif %}
+{% if page.category == 'vim' %}
+  <p>
+    This is a collection of articles I wrote about Vim, my favorite editor.
+    <a href="/blog/using-vim-for-writing-code/">Using Vim for writing code</a>
+    is a great intro article if you've never used Vim. Skim through the
+    headings below to see if you find anything of interest.
+  </p>
+{% endif %}
 {% if page.category == 'work' %}
   <p>
   This is a collection of work-related essays, pertaining to my work at Google and my career in software industry in general.
+  </p>
+{% endif %}
+{% if page.category == 'writing' %}
+  <p>
+  I enjoy writing, and it's only natural I sometimes write about writing.
   </p>
 {% endif %}
 
