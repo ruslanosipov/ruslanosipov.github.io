@@ -127,6 +127,54 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-24T20:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">24 Dec 2018</time>
+        
+           | <a href="/blog/my-book-has-been-published/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-book-has-been-published/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/my-book-has-been-published/" itemprop="url">My book has been published!</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
+
+<p><img src="/images/posts/mastering-vim.png" title="A picture of a &#34;Mastering Vim&#34; cover." alt="A picture of a &#34;Mastering Vim&#34; cover."></p>
+
+<p>Mastering Vim was written with support from Packt Publishing and was kindly reviewed by Bram Moolenaar (<a href="https://moolenaar.net">website</a>) - the creator of Vim. Many people made this book possible, including <a href="https://vimconf.org">VimConf Japan</a> crew, who kindly hosted me earlier this year. Thank you to everyone for making Mastering Vim happen!</p>
+
+<p>Give it a read and let me know what you think, <a href="https://amzn.to/2EfGaN5">Mastering Vim is available on Amazon</a>!</p>
+
+<p>P.S: This post, like many others, is written in Vim.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-09-23T00:02:42-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Sep 2018</time>
         
            | <a href="/blog/cross-platform-vim-plug-setup/#disqus_thread" itemprop="discussionUrl"
@@ -651,96 +699,6 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-11-14T07:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">14 Nov 2017</time>
-        
-           | <a href="/blog/automating-octopress-publishing/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/automating-octopress-publishing/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/automating-octopress-publishing/" itemprop="url">Automating Octorpress publishing</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
-
-<p>One issue though - I need to be near a computer to publish and preview the article. This becomes difficult if I&rsquo;m traveling with, say, a tablet.</p>
-
-<p>I have a low end AWS Lightsail instance I use for writing and publishing, but it&rsquo;s not always fun to write when SSHing into a server, and I often write offline - making it even more difficult to move files between where I write and where I publish. And managing images is a nightmare. To resolve this, I set up a few directories I use in Dropbox, and wrote a few scripts to move things around when needed.</p>
-
-<p>Here&rsquo;s a directory structure in Dropbox:</p>
-
-<pre><code>- blog/
-  - posts/
-    - 2017-11-20-automatic-octopress-publishing.markdown
-  - img/
-    - input/
-      - a-picture-of-a-flower.jpg
-    - output/
-</code></pre>
-
-<p>I put Markdown files in <code>Dropbox/blog/posts/</code> (and numerous offline editors sync with Dropbox - I&rsquo;m writing this with <a href="https://stackedit.io/app">StackEdit</a>, and I use <a href="https://ia.net/writer/">iA Writer</a> on my tablet). I add my images to <code>Dropbox/img/input/</code>. I  tend to strip metadata from my images and resize them to fit the maximum page width (I don&rsquo;t really care for high resolution pictures, speed is preferred over ability to zoom into a picture). For this, two tools are needed:</p>
-
-<pre><code>sudo apt-get install imagemagick exiftool
-</code></pre>
-
-<p>When I&rsquo;m done writing or want to preview an article, I SSH into my AWS Lightsail instance and run <code>sync.sh</code>, a small script which moves posts to a proper directory, processes images and places them in the desired location, as well as starts Octopress instance (this way I can preview my blog on the AWS Lightsail instance). Contents of <code>sync.sh</code> (don&rsquo;t forget to <code>chmod +x</code>):</p>
-
-<pre><code>#!/bin/bash
-cd $HOME/Dropbox/blog/img/input
-mogrify -resize 832x620 -quality 100 -path $HOME/Dropbox/blog/img/output *.jpg
-exiftool -all= $HOME/Dropbox/blog/img/output/*.jpg
-cp $HOME/Dropbox/blog/posts/*.markdown $HOME/blog/source/_posts
-cp $HOME/Dropbox/blog/img/output/*.jpg $HOME/blog/source/images/posts
-cd $HOME/blog
-rake generate
-rake preview
-</code></pre>
-
-<p>I run the above script every time I want to preview the site. I&rsquo;m sure it&rsquo;s easy to set up a daemon to watch for changes in the Dropbox folders, but I don&rsquo;t see the need for that yet. Also, I just statically resize images to a particular resolution (832x620) since all of the pictures I upload have the same aspect ratio, I&rsquo;m sure there&rsquo;s a way to calculate that number on the fly for this script to work with different aspect ratios.</p>
-
-<p>Lastly, when I deployed and committed my changes (still commit and deploy manually out of a habit), I run <code>archive.sh</code>:</p>
-
-<pre><code>#!/bin/bash
-mv $HOME/Dropbox/blog/posts/*.markdown $HOME/Dropbox/blog/published
-rm $HOME/Dropbox/blog/img/input/*
-rm $HOME/Dropbox/blog/img/output/*
-</code></pre>
-
-<p>It&rsquo;s not much, but enough to save some manual labor involved in publishing to Octopress.</p>
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
--->
-
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -764,6 +722,8 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
+    
     <a class="list-group-item " href="/blog/how-i-write/">How I write</a>
     
     <a class="list-group-item " href="/blog/abandoned-project-showcase-hikaya/">Abandoned project showcase: Hikaya</a>
@@ -781,8 +741,6 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
     
     <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
-    
-    <a class="list-group-item " href="/blog/writing-for-fun/">Writing for fun</a>
     
   </div>
 </section>
