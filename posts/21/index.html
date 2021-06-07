@@ -127,6 +127,60 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-23T21:35:27-08:00"  data-updated="true" itemprop="datePublished dateCreated">23 Feb 2013</time>
+        
+           | <a href="/blog/use-vim-commands-in-a-browser/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/use-vim-commands-in-a-browser/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/use-vim-commands-in-a-browser/" itemprop="url">Use vim commands in a browser</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve been giving preference to a keyboard over mouse since I discovered vim for
+myself, as it&rsquo;s a faster and more convenient way to go. I am a Chrome user and
+recently I found an amazing plugin: <a href="http://vimium.github.com">Vimium</a>.</p>
+
+<p>It does exactly what the name suggests, allowing you to use vim-like commands
+in your browser. You can freely move, switch between tabs, work with forms and
+click links using familiar vim key bindings.</p>
+
+<p>A two minute long introductory video explains basic commands and you&rsquo;re all
+set! I&rsquo;ve been using Vimium for over a week now, an amusing experience which
+allows you to throw your mouse in a dark corner (well, not exactly: Vimium
+still has some issues with over-bloated ajax pages, not to mention Flash and
+other nasty stuff).</p>
+
+<p>Check it out: <a href="http://vimium.github.com">http://vimium.github.com/</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-21T12:09:07-08:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2013</time>
         
            | <a href="/blog/git-merge-two-repositories/#disqus_thread" itemprop="discussionUrl"
@@ -422,67 +476,6 @@ git push origin master
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-06T12:02:24-08:00"  data-updated="true" itemprop="datePublished dateCreated"> 6 Dec 2012</time>
-        
-           | <a href="/blog/gui-git-difftool-for-windows/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/gui-git-difftool-for-windows/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/gui-git-difftool-for-windows/" itemprop="url">GUI git difftool for Windows</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>A quick note on how to set up GUI difftool to use with git on Windows (Git
-Bash, Cygwin, etc&hellip;).</p>
-
-<p>Download and install GUI diff tool of your choice, get the path to executable.</p>
-
-<p>Create <code>difftool.sh</code> in directory included in your path (for example
-<code>C:\Users\{username}\bin</code> in Git Bash). Let&rsquo;s take SourceGear&rsquo;s DiffMerge as an
-example.</p>
-
-<pre><code>#!/bin/sh
-"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe" "$1" "$2" | cat
-</code></pre>
-
-<p>And in your ~/.gitconfig:</p>
-
-<pre><code>[diff]
-    tool = diffmerge
-[difftool "diffmerge"]
-    difftool.sh "$LOCAL" "$REMOTE"
-</code></pre>
-
-<p>And difftool is available via <code>git difftool</code> command now.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -506,6 +499,8 @@ example.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
+    
     <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
     
     <a class="list-group-item " href="/blog/how-i-write/">How I write</a>
@@ -523,8 +518,6 @@ example.</p>
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
-    
-    <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
     
   </div>
 </section>

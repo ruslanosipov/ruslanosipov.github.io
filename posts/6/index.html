@@ -127,6 +127,314 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T07:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2018</time>
+        
+           | <a href="/blog/my-vimrc-annotated/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-vimrc-annotated/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/my-vimrc-annotated/" itemprop="url">My .vimrc, annotated</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
+
+<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
+
+set nocompatible  " Required for many plugins, ensures it's not compatible with 
+                  " Vi, which nobody uses at this point.
+filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
+</code></pre>
+
+<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
+
+<pre><code>" Required Vundle setup.
+set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=$GOROOT/misc/vim
+call vundle#rc()
+
+" =&gt; Vundle plugins ------------------------------------------------------- {{{1
+
+Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
+
+" Colorschemes:
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'ajh17/Spacegray.vim.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'squarefrog/tomorrow-night.vim'
+Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
+
+" Language/tool integration and support:
+Plugin 'burnettk/vim-angular'
+Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'motemen/git-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic.git'  " Syntax checker.
+Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
+
+" Quality of life:
+Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
+Plugin 'ciaranm/detectindent'      " Automatically detect indent.
+Plugin 'ervandew/supertab'         " Smarter autocompletion.
+Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
+Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
+Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
+Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
+Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
+Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
+Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
+Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
+Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
+Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
+
+" New features:
+Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
+Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
+Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
+Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
+
+if v:version &gt; 703
+  Plugin 'SirVer/ultisnips'        " Intricate snippets.
+  Plugin 'chrisbra/vim-diff-enhanced'
+endif
+
+" =&gt; Plugins configuration ------------------------------------------------ {{{1
+
+" NERDTree: auto close if last window.
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Force Gundo preview to the bottom.
+let g:gundo_preview_bottom = 1
+
+" Map Gundo.
+nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
+
+" DetectIndent: Enable and configure.
+augroup detectindent
+  autocmd!
+  autocmd BufReadPost * :DetectIndent
+augroup END
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
+" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
+let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
+let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
+let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
+let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
+
+" VimWiki: default location.
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Dropbox/wiki',
+  \ 'template_path': '$HOME/Dropbox/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+" Map Tagbar.
+nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
+
+" Synastic configuration.
+let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
+let g:syntastic_html_checkers = ['']
+let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
+let g:syntastic_javascript_gjslint_args = '--strict'
+let g:syntastic_python_checkers = ['gpylint']
+</code></pre>
+
+<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
+
+<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
+
+<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
+
+syntax on
+
+" Indentation settings.
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" Disable backups and .swp files.
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Semicolon is too long to type.
+nnoremap ; :
+vnoremap ; :
+
+" Map leader key.
+let mapleader = "\&lt;Space&gt;"
+
+" Use system clipboard.
+set clipboard=unnamedplus
+
+" Enable wild menu (tab command autocompletion).
+set wildmenu
+set wildmode=list:longest,full
+
+" Don't complain about unsaved files when switching buffers.
+set hidden
+
+" Make soft line breaks much better looking.
+if v:version &gt; 703
+  set breakindent
+endif
+
+" Pretty soft break character.
+let &amp;showbreak='↳ '
+
+" =&gt; Looks ---------------------------------------------------------------- {{{1
+
+set background=dark
+colorscheme spacegray
+
+" Set terminal window title and set it back on exit.
+set title
+let &amp;titleold = getcwd()
+
+" Shorten press ENTER to continue messages.
+set shortmess=atI
+
+" Show last command.
+set showcmd
+
+" Highlight cursor line.
+set cursorline
+
+" Ruler (line, column and % at the right bottom).
+set ruler
+
+" Display line numbers if terminal is wide enough.
+if &amp;co &gt; 80
+  set number
+endif
+
+" Soft word wrap.
+set linebreak
+
+" Prettier display of long lines of text.
+set display+=lastline
+
+" Always show statusline.
+set laststatus=2
+
+" =&gt; Movement and search -------------------------------------------------- {{{1
+
+" Ignore case when searching.
+set ignorecase
+set smartcase
+
+" Fast split navigation.
+nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
+nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
+nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
+nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
+
+" Absolute movement for word-wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+" =&gt; Misc ----------------------------------------------------------------- {{{1
+
+" Use Unix as the standart file type.
+set ffs=unix,dos,mac
+
+" Ignore compiled files.
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+" Ignore virtualenv directory.
+set wildignore+=env
+
+" Fold using {{{n, where n is fold level
+set foldmethod=marker
+
+" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
+
+" Ignore mouse (in GVIM).
+set mouse=c
+
+" Fix backspace behavior in GVIM.
+set bs=2
+
+" NERDTree arrows in Windows.
+if has("win32") || has("win64") || has("win32unix")
+  let g:NERDTreeDirArrows = 0
+endif
+
+" Increase lower status bar height in diff mode.
+if &amp;diff
+  set cmdheight=2
+endif
+
+" Unfold all files by default.
+au BufRead * normal zR
+</code></pre>
+
+<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
+
+<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
+
+" Trim trailing whitespace in the file.
+command TrimWhitespace %s/\s\+$//e
+
+" Command to close current buffer without closing the window.
+command Bd :bp | :sp | :bn | :bd
+
+" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
+
+nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
+nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
+nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
+nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
+nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
+</code></pre>
+
+<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-11-14T07:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">14 Nov 2017</time>
         
            | <a href="/blog/automating-octopress-publishing/#disqus_thread" itemprop="discussionUrl"
@@ -583,86 +891,6 @@ main "$@"
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-05-09T01:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 9 May 2017</time>
-        
-           | <a href="/blog/journey-of-a-friend/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/journey-of-a-friend/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/journey-of-a-friend/" itemprop="url">Journey of a friend</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p><em>A close friend of mine has a story similar to mine. She wanted to share it for a while now, and I&rsquo;m humbled she chose my blog as a medium for telling her inspiring story to the strangers on the Internet:</em></p>
-
-<p><img src="/images/posts/friends-trip-plane.jpg" title="At Narita Airport, Japan." ></p>
-
-<p>I can&rsquo;t count the number of times I have attempted to tell this story on paper. It all started 8 months ago when my then-husband, let&rsquo;s call him Carl, told me that he no longer loved me and was in love with someone else. There are a few moments in life that seem to happen in slow motion and this was one of them. Until then, my life had been being Carl&rsquo;s wife and in the blink of an eye, I had to figure out who I was in a world without Carl. I forced myself to write every thoughts I had, dark, depressed, once a day but it didn&rsquo;t stick. I bought various domain names hoping that it would give me the final push to start writing all this down but all the sites remained &ldquo;under construction&rdquo;. So here is my final attempt to write this up, organize my thoughts and hopefully let someone going through this know that they are not alone. How did I get here? Well funny you should ask, pull up a chair and listen to my tale.</p>
-
-<p>Carl and I met when we were 22 and 18 respectively. It was far from love at first sight but he intrigued me. I had just got out of an unhealthy relationship and wanted something different and Carl was that, unapologetically himself. Up until then, I had always felt pressure to conform to the idea of who others wanted me to be and meeting Carl, who let&rsquo;s be honest was a straight nerd, was surprisingly refreshing and attractive. We dated for 5 years before getting married. We struggled with money throughout the first years of our relationship so when the opportunity to make more at a job I was unqualified for presented itself, we jumped at the chance. We packed our bags and moved for my job. Thus started the beginning of the end. I was so focused on keeping said job that I overworked, became a ball of nerves and lost all desires to do anything outside of work. While I struggled with the demand of the job, Carl found refuge with his younger, funner coworkers. We started living separate lives, which eventually led up to the fateful day when my husband told me that he loved someone else.</p>
-
-<p>I will not bore you with the details of my attempts to become a stable, contributing member of society. It included a lot of sleepless night, Nutella for dinner, and lies. I would smile everyday as I got to work, joked with co-workers and call family members and friends to discuss everything and anything when deep down all I wanted to do was to crawl in a dark place and wallow in my sadness. This period led to a lot of physical and mental changes. I lost 20 pounds in 2 months due to stress but the vain person in me was happy to see myself get skinny. Mentally, I had to come clean to my family and explain to them how I became the first divorced person in a deeply catholic family. I created a smaller, more dependable community of friends, most of them divorced or separated who could provide me with a different perspective. I had to admit to my manager that I could not continue work as is. Maintaining the lies became exhausting and emotionally draining. One had to give and after a heart to heart with my manager, I decided to cash out all my vacation hours and head out to Southeast Asia for a month.</p>
-
-<p>Prior to Southeast Asia, I had never vacationed alone. For the first time in my life, I was in charge of my itinerary and my own entertainment. It was overwhelming. After discussing the trip with veteran solo travelers, I only purchased one ticket. All I knew was my departing and arrival date from and to the US. I arrived at my first stop, Ho Chi Minh City, at midnight on a blazing hot night. The bustle of the city took me aback and made me question the trip in its entirety. I was running away and I knew it. I have always thought of myself as a strong person but dealing with this separation made me feel like a scared kid. Just as I was going through this mental exercise, my cab driver hit a motorcyclist and the impact broke one of his side view mirrors. The driver angrily got out of the car and argued with the individual he had just hit. They spoke in Vietnamese for what felt like hours and came back without explanations. At that point, I was sure that this entire trip was a mistake and if I had spoken the language, I would have asked the driver to turn and drop me back at the airport.</p>
-
-<p>The rest of the drive to the hotel was much calmer with the occasional surprise looks from locals seeing a black tourist through a taxi window at midnight. Blame it on stress, jet lag or even regret but for the first time in months I slept for more than 4 hours. Somewhat invigorated by the night of sleep, I decided to venture into the city to find food. After multiple failed attempts to cross one of the main traffic arteries, I gave up and sat down miserably looking at a bowl of pho from a restaurant located in the same block as my hotel. The Ho Chi Minh City traffic had won once again. I sat by a window seat, staring into the street, dreading the rest of this Southeast Asia trip. To travel Asia required an adventure spirit and it only took me 2 days to recognize that this was not one of my hidden talents. I told myself, only half believing it, that my second stop might be different but deep down, I knew I was on my way to yet another disappointing time.</p>
-
-<p><img src="/images/posts/friends-trip-sleep.png" title="Screenshot of sleep activity during the trip." ></p>
-
-<p>Bangkok was a life changing stop for my trip and myself as a person. I had contacted a Turkish-based traveler on CouchSurfing visiting Bangkok during the same time. I was excited to meet up with someone that could understand the struggles of being in an unfamiliar country. This guy learned English by watching American sitcoms but did not let his basic knowledge of English or his lack of Thai stop him. It led to some interesting conversations about the meaning of &ldquo;Netflix and Chill&rdquo; and other American colloquialisms. Seeing him tackle the challenges of navigating a foreign city showed me what my journey could look like. Not only did he help me see the wonders of being open to the world, but he also inadvertently started my process of self love. Let me explain. To avoid having to carry a heavy suitcase and pay airline fees, I limited my wardrobe to whatever could fit in a carry-on backpack. As a relatively fashion-focused person, this decision was uncomfortable. With that in mind and the unforgiving sun, I was either dripped in sweat or looking like a lost 1920s explorer. Having someone still think that I looked good in those conditions did wonders for my broken self esteem. We spend 4 adventures filled days and parted ways. We still talk to each other and I am grateful to have encountered him so early on during my trip. I finally embraced the lack of structure and decided to thrive through it. Remember this word &ldquo;Thrive&rdquo;, it will come back later on in this story.</p>
-
-<p><img src="/images/posts/friends-trip-construction.jpg" title="Temple in Bangkok." ></p>
-
-<p>After Bangkok, I headed to Chiang Mai for the Lantern Festival. Given my positive experience with CouchSurfing, I decided to continue using it  to meet locals and travelers throughout my stops. I used all the lessons learned in Bangkok and forced myself to open up to people. I had a heart wrenching conversation with an American girl trying to find herself in the world despite familial and societal pressures. We quickly bonded and within minutes were sharing our deepest darkest fears. In addition to looking differently at people, I started focusing on things that made me happy. I took a Thai cooking class, a skill I desperately lacked in, and learned Muay Thai. With each new activity I undertook, I felt a change inside of me. I was slowly starting to fall in love with myself.</p>
-
-<p><img src="/images/posts/friends-trip-market.jpg" title="Cooking class in Chiang Mai." ></p>
-
-<p>Next stop: Singapore. A few coworkers happened to be there around the same time and I had always been intrigued by the country. I experienced the country&rsquo;s renowned cleanliness, mix of cultures and wide array of food options. It was in Singapore that I learned another fact about myself: I loved meeting new people. I struck conversations with random people in elevators, buses or hotels. Not having an itinerary turned out to be a blessing. I ended up extending my time in Singapore and enjoyed some retail therapy from one of the cities&#8217; amazing malls.</p>
-
-<p>My goal for this trip was not only self discovery but also to be fully emerged in each country’s history and culture. So that meant that I purposely landed in each new locations not knowing anything about religious beliefs, language and social norms. It worked in my favor up until I arrived in Kuala Lumpur. On my first day in the country, I had planned to follow my typical plan and visit the national and art museums to learn about Malaysian culture. Unfortunately, I arrived during yellow and red shirt protests. All local attractions were closed and I ended up smack in  a protest. While I am sure I was never in any real danger, being stuck in the middle of a screaming and upset group of people was scary. I took refuge in a nearby mall and ended up being stranded there for 4 hours. No taxis or Ubers wanted to come to my location due to road closures and fears of property damages. With each hour, I got more and more scared and worried. When I was finally able to get to my hotel, I made arrangements to leave the day after to go to Cambodia. I am hoping to go back to KL and get a chance to see all the city has to offer.</p>
-
-<p>After my failure in Malaysia, I landed in Siem Reap defeated. Cambodia was breathtaking. It was the first time that I saw real poverty and luxury in the same location. It was in Siem Reap that I realized how small my problems really were. I saw and talked to people struggling to afford day to day life and here I was suffering from a broken heart. Siem Reap helped me refocus and gave me a different perspective. It wasn&rsquo;t about what my problems were but how I approached them. I was not as powerless as I thought I was. I could make the choice to not let my situations impact me and move forward. There, I met some of the most life-loving individuals. As we were exchanging travel stories and tips, we all realized that we were into the same type of music. One of the members of the group ran to his hotel room and brought back his turntables. We had an impromptu dance party in the middle of Siem Reap. I sang and danced my heart away to familiar songs in a an unfamiliar land with unfamiliar people. At that time, I realized that I was happy. For the first time in months, there were no hidden emotions behind my smile, it was pure happiness and I never wanted it to end.</p>
-
-<p>I went to Angkor Wat at sunrise and felt lost and transported to a different world visiting all the cultural sites of the country. The Tuol Seng prison and the lives lost there forced me to put my life into perspective. I realized the following facts that I knew deep down but up until then was unwilling to accept: 1) I was getting divorced, 2) I was deeply hurt that I wasn&rsquo;t enough for my husband , 3) I still loved Carl and needed to respect his choice, 4) This was not the end for me. Weirdly, coming to these realizations made me calmer. I knew what I had to do. I had to use the remaining days of this trip to try to discover as much as I could about myself.</p>
-
-<p><img src="/images/posts/friends-trip-skyline.jpg" title="Sunrise at Angkor Wat, Siem Reap." ></p>
-
-<p>Along with self discovery and adventure-filled days came the not-so fun ones. Thanksgiving day landed while I was in Phnom Penh. As an immigrant, Thanksgiving meant spending time with Carl&rsquo;s family. Up until Thanksgiving day, I thought about Carl during my trip but never more than &ldquo;Carl would have loved eating this, or visiting this area or enjoyed talking with this individual&rdquo;. But as I was staring at my plate of mashed potatoes and turkey, I not only felt a overwhelming sense of loss but also felt shame. Only a few hours prior, I was reveling in the country&rsquo;s history and congratulating myself in having a fresh new perspective on life. I could not finish my plate and walked back to my hotel room beaten. For the first time since I started on this adventure, I was happy that I was traveling alone. I spent the rest of my day watching TV locked in my hotel room.</p>
-
-<p>After 3 weeks on the road, I headed back to Vietnam for my last week abroad. For convenience, I reserved a room in the same hotel I had checked at the beginning of this trip. I suddenly realized that the person who checked in 3 weeks ago was not the person who was walking in. I couldn&rsquo;t put my finger on what it was specifically but I felt more confident and more at peace with myself. A former coworker traveling in Ho Chi Minh City at the same time reached out and we connected for dinner. His first words to me were &ldquo;&hellip; so, what is going on, where is your husband?&rdquo; We hadn&rsquo;t seen each other for 4 years and apparently, my social media accounts had become a &ldquo;Eat, Pray, Love&rdquo; tribute. I explained my current situation, no longer ashamed of the fact that I had a failed marriage, and we traded travel stories. He had not left his hotel room until our meeting because he was overwhelmed by the city, especially the traffic. I can&rsquo;t put into words how satisfying it was for me to be able to teach him how to cross the road. I fondly remembered my old self, seating defeated in front of a bowl of pho. I couldn&rsquo;t have engineered a better end to 4 wonderful weeks in paradise.</p>
-
-<p><img src="/images/posts/friends-trip-boat.jpg" title="On the way to floating market in Can Tho, Vietnam." ></p>
-
-<p>Of course I glanced over many more experiences, people and locations visited. It would take days to write it all. I came back to the US on a high that I knew would not last but I was determined to keep it as long as possible. I had felt true happiness and connected with new people for the first time in 7 months. I was accepted even after I showed my true, deeply flawed self, but most importantly, I met myself. I discovered the foundations of who I was, what made me smile, happy and tick. I realized that I could survive, not just survive, I could thrive in a foreign environment and to commemorate it, I tattooed “Thrive” on my shoulder to always remind myself of that feeling. Told you that word was going to come back.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -686,6 +914,8 @@ main "$@"
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
+    
     <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
     
     <a class="list-group-item " href="/blog/how-i-write/">How I write</a>
@@ -703,8 +933,6 @@ main "$@"
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
-    
-    <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
     
   </div>
 </section>

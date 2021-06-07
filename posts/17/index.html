@@ -127,6 +127,68 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-23T20:14:19-08:00"  data-updated="true" itemprop="datePublished dateCreated">23 Nov 2013</time>
+        
+           | <a href="/blog/old-file-version-in-split-with-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/old-file-version-in-split-with-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/old-file-version-in-split-with-vim/" itemprop="url">Old file version in split with vim</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you use git VCS, you can view previous version of the file you are currently
+editing in a split window by executing following command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
+</code></pre>
+
+<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s
+extension, like following:</p>
+
+<pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
+</code></pre>
+
+<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to
+the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you
+would like to go back in history by. For example, if you would like to get a
+version of the file 4 commits ago - you can do so by executing following
+command:</p>
+
+<pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
+</code></pre>
+
+<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the
+file you are working on.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-16T17:02:30-08:00"  data-updated="true" itemprop="datePublished dateCreated">16 Nov 2013</time>
         
            | <a href="/blog/pasting-with-vim-and-indentation-issues/#disqus_thread" itemprop="discussionUrl"
@@ -493,50 +555,6 @@ FAILED (failures=1)
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-06-27T06:51:11-07:00"  data-updated="true" itemprop="datePublished dateCreated">27 Jun 2013</time>
-        
-           | <a href="/blog/pygame-font-not-found/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/pygame-font-not-found/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/pygame-font-not-found/" itemprop="url">pygame.font not found</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I had an issue with pygame not being able to find a dependency for the font
-module. After quite a time-consuming search the missing package name was
-<code>libsdl-ttf2.0-dev</code>.</p>
-
-<p>Hope this helps someone.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -560,6 +578,8 @@ module. After quite a time-consuming search the missing package name was
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
+    
     <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
     
     <a class="list-group-item " href="/blog/how-i-write/">How I write</a>
@@ -577,8 +597,6 @@ module. After quite a time-consuming search the missing package name was
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
     <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
-    
-    <a class="list-group-item " href="/blog/on-mentorship/">On mentorship</a>
     
   </div>
 </section>

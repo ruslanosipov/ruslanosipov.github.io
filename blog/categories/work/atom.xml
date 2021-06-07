@@ -4,7 +4,7 @@
   <title><![CDATA[Category: work | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/work/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-06-03T09:02:44-07:00</updated>
+  <updated>2021-06-07T16:24:26-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Communicating via snippets]]></title>
+    <link href="http://www.rosipov.com/blog/communicating-via-snippets/"/>
+    <updated>2021-06-07T16:15:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/communicating-via-snippets</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve learned a lot of cool things during my tenure at Google.</p>
+
+<p><img src="/images/posts/i-have-approximate-knowledge-of-many-things.gif" title="I have approximate knowledge of many things&hellip;" ></p>
+
+<p>One of those things are snippets. Google (and from what I hear other Silicon Valley giants as well) utilizes a system of snippets: a transparent and widely accessible set of weekly notes. It&rsquo;s not mandatory, and some groups use it more often then others. Sounds ordinary, but I think it&rsquo;s a lot more interesting then that.</p>
+
+<p>Communication and visibility is one of the major challenges in any paid creative work, but it&rsquo;s especially important in software engineering. Engineers often settle on tasks they know nothing about: tasks are hard to measure and estimate. This makes it even harder to communicate progress broadly.</p>
+
+<p>There are ways around this communication barrier &ndash; regular standups or periodic reviews come to mind. But there&rsquo;s a better (although not necessarily exclusive), more asynchronous way to communicate and increase visibility. Enter snippets - a condensed list of what happened with you and your colleagues last week, delivered straight to your inbox.</p>
+
+<p>Every Friday, an email notification reminds you to fill in weekly snippets. These snippets might look something like this:</p>
+
+<ul>
+<li>Project X
+
+<ul>
+<li>Authored a design doc (link), sent for a review</li>
+<li>Discussed roadmap with stakeholders A and B (notes)</li>
+<li>Debugged issue Z, to no avail (link)</li>
+</ul>
+</li>
+<li>Project Y
+
+<ul>
+<li>Cleared backlog for the past 6 months</li>
+</ul>
+</li>
+<li>Attended a summit about G</li>
+<li>Had 1:1s with C, D, E, and F</li>
+</ul>
+
+
+<p>On Monday, an email goes out compiling our team&rsquo;s snippets in a single digest. Skimming through snippets covers any communication gaps from the past week, and raises visibility on what everyone is working on.</p>
+
+<p>This system has many benefits:</p>
+
+<ul>
+<li>Transparency: you know what everyone around you (including higher ups) is up to.</li>
+<li>You actually remember what you&rsquo;ve done a month from now.</li>
+<li>All the important documents, events, and notes are linked from snippets. Snippets are are time bound, which makes these documents easy to find.</li>
+<li>Teammates and managers can always check snippets to get an idea of progress on certain efforts.</li>
+<li>You manager (who&rsquo;s hopefully your biggest ally when it comes to career development) has a great idea of what you&rsquo;re up to.</li>
+<li>It&rsquo;s easy to find artifacts and proof during performance reviews.</li>
+<li>Higher visibility of glue work (all the little things you do to keep the place running).</li>
+</ul>
+
+
+<p>This doesn&rsquo;t have to be a particularly complex system. A running doc with notes could suffice, although email notifications remove a lot of the overhead needed. Even if the organization doesn&rsquo;t follow the model, I find it worthwhile to keep snippets, and to share them with my manager and team.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Living at work]]></title>
@@ -364,68 +420,6 @@ do in the long run.</p>
 <p>So here I am, putting these thoughts into writing to remember to take a break
 before initiating aggressive communications &ndash; hopefully the more I think about
 this, the easier it gets to remember to pause, self-assess, and disconnect.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[On mentorship]]></title>
-    <link href="http://www.rosipov.com/blog/on-mentorship/"/>
-    <updated>2021-03-27T05:08:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/on-mentorship</id>
-    <content type="html"><![CDATA[<p>A couple of months ago I had a conversation with a fellow employee &ndash; let&rsquo;s call
-him Balgruuf &ndash; who decided to quit the grind and become a career coach.
-Shortly after I&rsquo;ve witnessed them interact with our mutual acquaintance &ndash;
-Farengar &ndash; who was in a difficult spot in their career. Balgruuf was
-enthusiastically instructing on what are the exact steps Farengar must take, and
-in what order. It generally felt like Balgruuf had this whole career thing
-figured out, and Farengar just stumbled along. Needless to say, Farengar quickly
-changed the topic.</p>
-
-<p>I haven&rsquo;t stopped thinking about mentorship since that day. In the 10 or so
-years of my career so far, I&rsquo;ve had a number of mentors - both formal and
-informal. I also get the opportunity to mentor people around me &ndash; both sides of
-the relationship really fascinate me.</p>
-
-<p>I&rsquo;ve had some mentors who worked really well for me - and some who didn&rsquo;t. I
-also had more different level of success with mentoring people myself. And one
-of the defining factors in a successful experience was this: people conflate
-mentorship with giving advice &ndash; two different, but oh-so-close feeling things.
-Let me elaborate on the difference with a tangentially related example.</p>
-
-<p>Sometimes my wife comes home and shares frustrations that inevitably arise after
-a long day at work. There&rsquo;s little to no room for my input, because she needs
-somebody to just listen, or maybe a rubber duck to talk at. And sometimes my
-better half wants to hear my thoughts on the subject. Needing to vent and asking
-for advice are two completely distinct scenarios in this case.</p>
-
-<p>Just like in my home life, sometimes people come looking for an advice. But more
-often than not, they&rsquo;re looking for mentorship.</p>
-
-<p>Giving advice is prescriptive, while mentorship is more nuanced, and takes more
-finesse from both parties.</p>
-
-<p>In <a href="https://amzn.to/2NYlWPb">Relationomics</a>, Randy Ross discusses a role that
-relationships play in personal growth. He talks about the harmful &ldquo;self help&rdquo;
-culture which discounts the value of human element in self-development.</p>
-
-<p>This is the gap where mentorship fits in. There&rsquo;s one huge &ldquo;but&rdquo; though, and
-that&rsquo;s the fact that the person needs to be ready for the specific feedback they
-might be getting.</p>
-
-<p>Mentor is there to guide the internal conversation, encourage insight, and
-suggest a direction. Mentor is there to identify when someone who&rsquo;s being
-mentored is heading in a completely wrong direction, or not addressing the
-elephant in the room.</p>
-
-<p>In fact, I&rsquo;ve been noticing a trend at Google to avoid trying to use the word
-&ldquo;mentorship&rdquo; overall, to avoid the go-to advice slinging attitude of your
-everyday Balgruuf. And it&rsquo;s been a helpful trend - since framing mentorship
-relationship around guidance and reminding mentors to let those who are mentored
-to drive the growth is crucial for healthy peer to peer learning.</p>
-
-<p>Even if so-called mentor has some aspect of life completely figured out for
-themselves, the person who&rsquo;s mentored must drive the whole journey. Otherwise
-there&rsquo;s really no room for growth in that relationship.</p>
 ]]></content>
   </entry>
   
