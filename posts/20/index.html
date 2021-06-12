@@ -127,6 +127,57 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-27T08:37:10-07:00"  data-updated="true" itemprop="datePublished dateCreated">27 Mar 2013</time>
+        
+           | <a href="/blog/irssi-ignore-all-from-everyone/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/irssi-ignore-all-from-everyone/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/irssi-ignore-all-from-everyone/" itemprop="url">IRSSI - ignore all from everyone</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you visit noisy IRC channels like the programming ones on freenode, you
+probably want to ignore all the annoying status messages.</p>
+
+<p>To permanently ignore joins, parts, quits, and nickname changes from every
+channel in IRSSI:</p>
+
+<pre><code>/ignore * joins parts quits nicks
+/save
+</code></pre>
+
+<p>I keep forgetting the exact syntax, so maybe clipping the snippet in a blog
+post will keep it in my memory.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-21T14:57:37-07:00"  data-updated="true" itemprop="datePublished dateCreated">21 Mar 2013</time>
         
            | <a href="/blog/vim-movement-cheatsheet/#disqus_thread" itemprop="discussionUrl"
@@ -322,72 +373,6 @@ didn&rsquo;t pick the name).</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-11T12:38:30-07:00"  data-updated="true" itemprop="datePublished dateCreated">11 Mar 2013</time>
-        
-           | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/rails-and-mongodb-with-cygwin/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/rails-and-mongodb-with-cygwin/" itemprop="url">Rails and MongoDB with Cygwin</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
-
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
-may want to have more).</p>
-
-<p>The following commands are executed in the cygwin prompt:</p>
-
-<pre><code>git clone git://github.com/rubygems/rubygems.git
-cd rubygems/
-ruby setup.rb
-gem install rails
-</code></pre>
-
-<p>Go to the MongoDB website and download Windows binaries:
-<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
-to <code>C:\cygwin\usr\local\bin</code>.</p>
-
-<p>Create a directory for the db files (the default MongoDB db files directory is
-<code>C:\datadb</code>):</p>
-
-<pre><code>cd /cygdrive/c
-mkdir data
-mkdir data/db
-</code></pre>
-
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
-as you see fit.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -411,6 +396,8 @@ as you see fit.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
+    
     <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
     
     <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
@@ -428,8 +415,6 @@ as you see fit.</p>
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
     
     <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
-    
-    <a class="list-group-item " href="/blog/take-a-pause-before-that-email/">Take a pause before that email</a>
     
   </div>
 </section>

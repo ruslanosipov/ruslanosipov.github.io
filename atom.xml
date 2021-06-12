@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-06-07T16:24:26-07:00</updated>
+  <updated>2021-06-12T14:01:20-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Journaling for work-life balance]]></title>
+    <link href="http://www.rosipov.com/blog/journaling-for-work-life-balance/"/>
+    <updated>2021-06-12T13:32:48-07:00</updated>
+    <id>http://www.rosipov.com/blog/journaling-for-work-life-balance</id>
+    <content type="html"><![CDATA[<p>When writing about <a href="https://www.rosipov.com/blog/communicating-via-snippets/">snippets at Google</a> earlier this week, I omitted a fairly important bit: how lists and journaling help me create distance between work and life. This became especially <a href="https://www.rosipov.com/blog/living-at-work/">relevant in the pandemic</a>, as I had to work with my therapist on being able to mentally disconnect.</p>
+
+<p>I wrote about my strained relationship with ToDo lists <a href="https://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/">before</a>: all the way back in 2014. Back then I focused on moving away from a monolithic ToDo list, and focusing on just a few major things I&rsquo;d like to accomplish each day. I continued to do this, but with some changes to my philosophy.</p>
+
+<p>I&rsquo;m back to keeping a ToDo list, but it&rsquo;s a bit more complex than a single list I used to keep. I split things I care about by days, weeks, and months, and I review these lists regularly.</p>
+
+<p>Last year I learned about <a href="https://bulletjournal.com/pages/learn">bullet journaling</a>, often shortened to &ldquo;BuJo&rdquo;. Akin to artisan coffee and avocado toast, this hipster friendly and highly marketable approach has a solid foundation. At its core bullet journaling consists of two parts. First is a consistent and simple notation for tasks, notes, and events: some simple guidelines on how to document what happened, what will happen, and what you need to remember. Second part is a rule set on organizing these lists: daily and monthly notes, custom logs, and so on.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/bullet-journal.png" title="Picture of a bullet journal with a few sample tasks, notes, and events." ></p>
+
+<p>I rigorously keep daily notes about work, meeting annotations, records of important thoughts and ideas, and things I need to do (or have already done). This helps me leave work at work &ndash; or more precisely leave work in a journal. Once it&rsquo;s closed - I&rsquo;m done for the day. Everything I need to think about is written down, and there&rsquo;s no need for my mind to wonder back.</p>
+
+<p>Some weeks I omit note taking, and the contrast in my well-being is jarring. My mind wonders back to the events of the week, and I even have trouble sleeping some days. And no one wants to dream about work &ndash; I&rsquo;m sure as hell not paid enough for that.</p>
+
+<p>Another technique I picked up from the bullet journal keeps me from getting overwhelmed and keeping focus. BuJo advocates for regular migration of ToDo items &ndash; meaning that you should be crossing out and rewriting the same thing over and over again, day by day, week by week. At some point it becomes either to either do something about those ToDos, or choose not to do them altogether. Either way, it&rsquo;s a huge weight off my shoulders.</p>
+
+<p>And this is where the <a href="https://www.rosipov.com/blog/communicating-via-snippets/">aforementioned snippets</a> come in. At the end of the week, all I have to do is go through the weekly set of notes, and transcribe noteworthy bullet points. That&rsquo;s the time I take to look back at my week, migrate tasks I choose to revisit at a later date, or cross off tasks I choose not to do.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Communicating via snippets]]></title>
@@ -1630,45 +1655,6 @@ there&rsquo;s really no room for growth in that relationship.</p>
 </code></pre>
 
 <p>It&rsquo;s been working without an issue for a couple of weeks now - and my migration from Dropbox turned out to be somewhat painless and quick.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sane Vim defaults (from Neovim)]]></title>
-    <link href="http://www.rosipov.com/blog/sane-vim-defaults-from-neovim/"/>
-    <updated>2018-12-27T15:28:37-08:00</updated>
-    <id>http://www.rosipov.com/blog/sane-vim-defaults-from-neovim</id>
-    <content type="html"><![CDATA[<p>Vim comes with a set of often outdated and counter-intuitive defaults. Vim has been around for around 30 years, and it only makes sense that many defaults did not age well.</p>
-
-<p>Neovim addresses this issue by being shipped with many default options tweaked for modern editing experience. If you can&rsquo;t or don&rsquo;t want to use Neovim - I highly recommend setting some these defaults in your <code>.vimrc</code>:</p>
-
-<pre><code>if !has('nvim')
-  set nocompatible
-  syntax on
-
-  set autoindent
-  set autoread
-  set backspace=indent,eol,start
-  set belloff=all
-  set complete-=i
-  set display=lastline
-  set formatoptions=tcqj
-  set history=10000
-  set incsearch
-  set laststatus=2
-  set ruler
-  set sessionoptions-=options
-  set showcmd
-  set sidescroll=1
-  set smarttab
-  set ttimeoutlen=50
-  set ttyfast
-  set viminfo+=!
-  set wildmenu
-endif
-</code></pre>
-
-<p>The defaults above enable some of the nicer editor features, like <code>autoindent</code> (respecting existing indentation), <code>incsearch</code> (search as you type), or <code>wildmenu</code> (enhanced command-line completion). The defaults also smooth out some historical artifacts, like unintuitive backspace behavior. Keep in mind, this breaks compatibility with some older Vim versions (but it&rsquo;s unlikely to be a problem for most if not all users).</p>
 ]]></content>
   </entry>
   
