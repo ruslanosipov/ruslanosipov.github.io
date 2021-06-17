@@ -127,6 +127,91 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-24T18:41:10-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 Jul 2014</time>
+        
+           | <a href="/blog/three-favorite-bash-tricks/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/three-favorite-bash-tricks/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/three-favorite-bash-tricks/" itemprop="url">Three favorite bash tricks</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I spend most of my development time in the shell - be it editing text with Vim
+or executing various console commands. I have quite a number of tricks in my
+daily repertoire, and I would like to share three tips today.</p>
+
+<h2>Edit current command with a text editor</h2>
+
+<p>I often end up having to change a long command I just typed, and using arrow
+keys to get to the correct spot is not favorable. Bash has the feature which
+lets you edit current command in a text editor of your choice. Hit <code>Ctrl + x</code>,
+<code>Ctrl + e</code> (or <code>Ctrl + x + e</code>), and you will be dropped into your text editor.
+Now you are able to edit the command, and it will be executed as soon as your
+write the file and exit the editor.</p>
+
+<p>You can use an editor of your choice by adding following line to your <code>.bashrc</code>
+file:</p>
+
+<pre><code>export EDITOR=vim
+</code></pre>
+
+<p>Replace <code>vim</code> with the name of your favorite editor.</p>
+
+<p>Update: It looks like for some machines setting <code>EDITOR</code> variable is not
+enough. In this case, you also need to set <code>VISUAL</code> environment variable.</p>
+
+<h2>Edit recent command</h2>
+
+<p>You can edit your recent commands in a text editor of your choice by executing
+<code>fc beginning_of_the_command</code>. For instance, if you run <code>fc l</code>, you will open
+most recent command starting with the letter &ldquo;l&rdquo;.</p>
+
+<p>You can execute <code>fc</code> without any arguments to edit last executed command.</p>
+
+<h2>Bash history autocomplete</h2>
+
+<p>Another great feature - &ldquo;reverse intelligent search&rdquo;. If you hit <code>Ctrl + r</code> in
+your shell, you&rsquo;ll be greeted by the following prompt:</p>
+
+<pre><code>(reverse-i-search)`':
+</code></pre>
+
+<p>Start typing a part of the command from your history, and you&rsquo;ll see suggestions
+popping up. Hit <code>Enter</code> to pick the command (you&rsquo;ll be able to edit it before
+executing), or push <code>Ctrl + g</code> to return back.</p>
+
+<p>Like any of these tips? Have some of your own? Don&rsquo;t hesitate to share those in
+the comments section down below.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T14:46:20-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Jul 2014</time>
         
            | <a href="/blog/distraction-free-writing-with-vimroom/#disqus_thread" itemprop="discussionUrl"
@@ -449,49 +534,6 @@ Wikis.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-07T20:22:08-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 7 Jul 2014</time>
-        
-           | <a href="/blog/easy-commenting-with-tcomment-vim/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/easy-commenting-with-tcomment-vim/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/easy-commenting-with-tcomment-vim/" itemprop="url">Easy commenting with tcomment.vim</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>This plugin has been in my <code>.vim</code> directory for a few years, and I sometimes
-forget that it&rsquo;s not a built-in Vim feature.</p>
-
-<p>Link to a GitHub repository: <a href="https://github.com/tomtom/tcomment_vim">https://github.com/tomtom/tcomment_vim</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -515,6 +557,8 @@ forget that it&rsquo;s not a built-in Vim feature.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
     <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
     <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
@@ -532,8 +576,6 @@ forget that it&rsquo;s not a built-in Vim feature.</p>
     <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
     
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
-    
-    <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
   </div>
 </section>

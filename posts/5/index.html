@@ -127,6 +127,97 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2019-06-23T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Jun 2019</time>
+        
+           | <a href="/blog/google-drive-on-linux-with-rclone/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/google-drive-on-linux-with-rclone/" itemprop="url">Google Drive on Linux with rclone</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
+
+<blockquote><p>Basic users have a three device limit as of March 2019.</p></blockquote>
+
+<p>Being the &ldquo;basic&rdquo; user, and relying on Dropbox across multiple machines, I got unreasonably upset (&ldquo;How dare you deny me free access to your service?!&rdquo;) and started looking for a replacement.</p>
+
+<p>I already store quite a lot of things in Google Drive, so it seemed like a no brainer: I migrated all my machines to Google Drive overnight. There was but only one problem: Google Drive has official clients for Windows and Mac, but there&rsquo;s nothing when it comes to Linux.</p>
+
+<p>I found the Internets to be surprisingly sparse on the subject, and I had to try multiple solutions and spent more time than I&rsquo;d like researching options.</p>
+
+<p>The best solution for me turned out to be <code>rclone</code>, which mounts Google Drive as a directory. It requires <code>rclone</code> service to be constantly running in order to access the data, which is a plus for me - I&rsquo;ve accidentally killed Dropbox daemon in the past and had to deal with conflicts in my files.</p>
+
+<p>Install <code>rclone</code> (<a href="https://rclone.org/install/">instructions</a>):</p>
+
+<pre><code>curl https://rclone.org/install.sh | sudo bash
+</code></pre>
+
+<p>From then on, <a href="https://rclone.org/drive/">rclone website some documentation</a> when it comes to the setup. I found it somewhat difficult to parse, so here it is paraphrased:</p>
+
+<p>Launch <code>rclone config</code> and follow the prompts:</p>
+
+<ul>
+<li><code>n) New remote</code></li>
+<li><code>name&gt; remote</code></li>
+<li>Type of storage to configure: <code>Google Drive</code></li>
+<li>Leave <code>client_id&gt;</code> and <code>client_secret&gt;</code> blank</li>
+<li>Scope: <code>1 \ Full access to all files</code></li>
+<li>Leave <code>root_folder_id&gt;</code> and <code>service_account_file&gt;</code> blank</li>
+<li>Use auto config? <code>y</code></li>
+<li>Configure this as a team drive? <code>n</code></li>
+<li>Is this OK? <code>y</code></li>
+</ul>
+
+
+<p>From here on, you can interact with your Google Drive by running <code>rclone</code> commands (e.g. <code>rclone ls remote:</code> to list top level files). But I am more interested in a continuous running service and <code>mount</code> is what I need:</p>
+
+<pre><code>rclone mount remote: $HOME/Drive
+</code></pre>
+
+<p>Now my Google Drive is accessible at <code>~/Drive</code>. All that&rsquo;s left is to make sure the directory is mounted on startup.</p>
+
+<p>For Ubuntu/Debian, I added the following line to <code>/etc/rc.local</code> (before <code>exit 0</code>, and you need <code>sudo</code> access to edit the file):</p>
+
+<pre><code>rclone mount remote: $HOME/Drive
+</code></pre>
+
+<p>For my i3 setup, all I needed was to add the following to <code>~/.config/i3/config</code>:</p>
+
+<pre><code>exec rclone mount remote: $HOME/Drive
+</code></pre>
+
+<p>It&rsquo;s been working without an issue for a couple of weeks now - and my migration from Dropbox turned out to be somewhat painless and quick.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-27T15:28:37-08:00"  data-updated="true" itemprop="datePublished dateCreated">27 Dec 2018</time>
         
            | <a href="/blog/sane-vim-defaults-from-neovim/#disqus_thread" itemprop="discussionUrl"
@@ -350,68 +441,6 @@ endif
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-11T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">11 Aug 2018</time>
-        
-           | <a href="/blog/minimalist-phone-launcher/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/minimalist-phone-launcher/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/minimalist-phone-launcher/" itemprop="url">Minimalist phone launcher</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>For the past few years I&rsquo;ve been trying to focus on having more mindful experiences in my life. I find it rewarding to be present in the moment, without my thoughts rushing onto whatever awaits me next.</p>
-
-<p>I present to you the biggest distraction: my phone.</p>
-
-<p>I use to get in touch with people I love. I&rsquo;m more productive at work because I have access to information on the go. I also use my phone to browse Reddit, YouTube, and every other media outlet imaginable. Even worse, sometimes I just waste time tinkering with the settings or mindlessly browsing through the apps I have installed.</p>
-
-<p>It&rsquo;s an attention sink.</p>
-
-<p>Nearly a year ago as I was browsing the Google Play Store I bumped into a new launcher: KISS. The tag line caught my attention: &ldquo;Keep It Simple, Stupid&rdquo;. I went ahead and downloaded the launcher. I haven&rsquo;t changed to another launcher since.</p>
-
-<p>Here&rsquo;s how my home screen looks today:</p>
-
-<p><img src="/images/posts/kiss-launcher-home-screen.png" title="A screenshot of a KISS launcher home screen." ></p>
-
-<p>There&rsquo;s nothing besides a single search bar. The search bar takes me to the apps I need, web searches I&rsquo;m interested in, or people I&rsquo;m trying to reach out to.</p>
-
-<p>It&rsquo;s simple to use. Start typing an app or a contact name, and the results show up above the search bar:</p>
-
-<p><img src="/images/posts/kiss-launcher-search-results.png" title="A screenshot of searching for an app with a KISS launcher." ></p>
-
-<p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
-
-<p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -435,6 +464,8 @@ endif
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
     <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
     <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
@@ -452,8 +483,6 @@ endif
     <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
     
     <a class="list-group-item " href="/blog/how-much-does-writing-a-book-earn/">How much does writing a book earn?</a>
-    
-    <a class="list-group-item " href="/blog/the-feedback-fallacy/">The feedback fallacy</a>
     
   </div>
 </section>

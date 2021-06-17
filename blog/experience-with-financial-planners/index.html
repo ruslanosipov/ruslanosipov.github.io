@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Python doctests and decorators bug - Ruslan Osipov</title>
+  <title>Experience with financial planners - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/experience-with-financial-planners/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/">
-  <meta property="og:title" content="Python doctests and decorators bug - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/experience-with-financial-planners/">
+  <meta property="og:title" content="Experience with financial planners - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T07:57:29-07:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-06-17T12:07:33-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Jun 2021</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,57 +132,58 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Python doctests and decorators bug
+        Experience with financial planners
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>Now, this as well might be a feature, but doctest strings are not being
-executed for decorated functions (at least in version 2.7). However, there is a
-workaround.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>As I&rsquo;m starting to write more about early retirement, I think more and more about financial planners and advisors I&rsquo;ve talked to along the way. The first financial planner I ever talked to (who&rsquo;s been now fired from a role of my financial advisor and promoted into a position of friendship) reminded me about the beginning of the journey after reading one of the FIRE articles I&rsquo;ve posted earlier this month.</p>
 
-<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
-to import docstrings into a decorator scope.</p>
+<p>I&rsquo;ve talked to half a dozen financial planners over the past 5-or-so years. Some of those conversations have been very influential, and some have been more aggravating than anything else &ndash; but it was a net positive experience for me.</p>
 
-<pre><code>#!/usr/bin/env python
+<p>The aforementioned financial advisor I&rsquo;ve had the pleasure to talk to was a colleague&rsquo;s spouse. I&rsquo;ve voiced my interest in early retirement, and we decided to sit down and run through a financial overview.</p>
 
-from functools import wraps
+<p>I&rsquo;ve learned a lot from this meeting, and the advisor helped me frame my knowledge, and fill in the gaps for everything I&rsquo;ve learned on the Internets. The biggest value came from leveraging tax-advantaged accounts and employment benefits: maximizing 401(k), IRA, and HSA contributions, leveraging IRA backdoor and 401(k) megabackdoor (I just talked about these in detail in &ldquo;<a href="https://www.rosipov.com/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>&rdquo;). We discussed fund selections, risk profiles, and even touched on housing. It was great to have an opportunity to have someone who knows what they&rsquo;re talking about answer all the questions that built up over the years.</p>
 
-def decorator(func):
-    @wraps(func)
-    def wrapper():
-        return func()
-    return wrapper
+<p>The conversation had profound impact on my initial portfolio and investment strategy, and set pace for early retirement planning. With the confidence of having my plan and assumptions validated, I went on with my investments (employing the &ldquo;slow, boring and steady&rdquo; strategy, if you&rsquo;re interested).</p>
 
-@decorator
-def foo():
-    """
-    &gt;&gt;&gt; foo()
-    False
-    """
-    return True
+<p>After some time said colleague and his spouse became our family friends: and I don&rsquo;t much care for doing business with friends.</p>
 
-import doctest
-doctest.testmod()
-</code></pre>
+<p>After that experience, I struggled to find the person I would work with for a prolonged amount of time.</p>
 
-<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
+<p>At some point I thought I found &ldquo;my guy&rdquo;: a financial planner who was familiar with early retirement, and was eager to do additional research for just about any topic I could ask. Unfortunately for me it didn&rsquo;t take long for &ldquo;my guy&rdquo; to soar through corporate ranks and get promoted past working with individual clients.</p>
 
-<pre><code>**********************************************************************
-File "decorator.py", line 12, in __main__.foo
-Failed example:
-    foo()
-Expected:
-    False
-Got:
-    True
-**********************************************************************
-1 items had failures:
-   1 of   1 in __main__.foo
-***Test Failed*** 1 failures.
-</code></pre>
+<p>This is where the cracks started to show. For many financial planners, early retirement refers to age 55. And that makes sense &ndash; retirement in your 30s is such a niche topic! Most financial planning tools don&rsquo;t account for this. Things like tapping into 401(k) or IRA balances before age 59 &frac12; is not something supported by the rigid financial projection tooling.</p>
+
+<p>Your typical financial planner will not be intimately familiar with the intricacies of early retirement &ndash; or any other niche topics for that matter. And that&rsquo;s okay. Because financial professionals still know their shit &ndash; and it&rsquo;s much easier for them to make professional judgement about things your smart ass found online.</p>
+
+<p>The best financial planners I talked to were willing to listen and put in work outside of our calls. Those folks would understand my concerns, supplement their answers with research, and come back with educated opinions.</p>
+
+<p>A model that works for me is providing my questions and concerns in advance of the call, giving the advisor time to research niche and domain specific questions.</p>
+
+<p>Financial planners worked for me especially well for two purposes:</p>
+
+<ol>
+<li>Confirm that my understanding of something is correct.</li>
+<li>Tell me about things I don&rsquo;t know or haven&rsquo;t thought about.</li>
+</ol>
+
+
+<p>This is where a financial planner pointed out that I misunderstood 401(k) contribution limits, or didn&rsquo;t consider implications of varied cost of health insurance in retirement. This is the person I bombarded with an hour worth of questions about my auto insurance or the need for umbrella policy.</p>
+
+<p>One time fee advisors worked best for me. I know some folks who moved assets under management for a certain percentage of those assets in fees, and are now trying to get out. This worked okay for them early on, but ended up not being what they want as they became more financially savvy. And it turned out to be oh-so-expensive in the long run.</p>
+
+<p>And there are many things I had to watch out for along the road. Some advisors I&rsquo;ve talked to seem to have no idea what they&rsquo;re talking about, and just sound misguided. And it&rsquo;s not solely my opinion - sometimes I would write down something a person would say, ask for independent opinion, and get back &ldquo;What drugs are they on? I would like some of that!&rdquo;</p>
+
+<p>There&rsquo;s also the question of their interest.</p>
+
+<p>Some financial advisors might be inclined to sell things like lucrative whole term life insurance, and while in certain cases it&rsquo;s appropriate, it might not always work for all individuals. But it sure as hell pays well for those advisors, so it&rsquo;s hard to fault them for peddling the insurance.</p>
+
+<p>The United States has a fiduciary system that&rsquo;s supposedly requires a planner to work in your best interest (I personally learned about it from <a href="https://www.youtube.com/watch?v=gvZSpET11ZY">this Last Week Tonight show episode</a>).</p>
+
+<p>If you&rsquo;ve done a lot of your own research (and especially if you haven&rsquo;t) &ndash; it certainly wouldn&rsquo;t hurt to talk to professional and review your decisions. Someone who has an idea of what they&rsquo;re doing can go a long way in making sure you&rsquo;re not heading down the wrong path &ndash; and if you are &ndash; you&rsquo;re doing it with full awareness of the trade offs you&rsquo;re making. Just be mindful of pitfalls when doing so.</p>
 </div>
 
 
@@ -206,13 +207,13 @@ Got:
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T07:57:29-07:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-06-17T12:07:33-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Jun 2021</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming/'>programming</a>
+    <a class='category' href='/blog/categories/finance/'>finance</a>
   
 </span>
 
@@ -221,7 +222,7 @@ Got:
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/experience-with-financial-planners/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/experience-with-financial-planners/" >Tweet</a>
   
   
   
@@ -231,10 +232,8 @@ Got:
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/python-tests-with-doctest-and-unittest/" title="Previous Post: Python tests with doctest and unittest">&laquo; Python tests with doctest and unittest</a></li>
+            <li class="previous"><a href="/blog/journaling-for-work-life-balance/" title="Previous Post: Journaling for work-life balance">&laquo; Journaling for work-life balance</a></li>
             
-            
-            <li class="next"><a href="/blog/remap-your-caps-lock/" title="Next Post: Remap your Caps Lock">Remap your Caps Lock &raquo;</a></li>
             
           </ul>
         
@@ -259,7 +258,7 @@ Got:
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    <a class="list-group-item active" href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
     
     <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
@@ -336,8 +335,8 @@ Got:
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/python-doctests-and-decorators-bug/';
-        var disqus_url = 'http://www.rosipov.com/blog/python-doctests-and-decorators-bug/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/experience-with-financial-planners/';
+        var disqus_url = 'http://www.rosipov.com/blog/experience-with-financial-planners/';
         var disqus_script = 'embed.js';
       
     (function () {
