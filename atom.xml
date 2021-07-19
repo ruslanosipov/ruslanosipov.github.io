@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-06-17T12:27:49-07:00</updated>
+  <updated>2021-07-19T14:37:44-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Exercising online privacy rights]]></title>
+    <link href="http://www.rosipov.com/blog/exercising-online-privacy-rights/"/>
+    <updated>2021-07-19T14:19:41-07:00</updated>
+    <id>http://www.rosipov.com/blog/exercising-online-privacy-rights</id>
+    <content type="html"><![CDATA[<p>Following Europe&rsquo;s 2016 General Data Protection Regulation (GDPR), California passed its own California Consumer Privacy Act (CCPA) in 2020. I won&rsquo;t pretend to understand the intricacies of the law or the differences between the two, but from what I understand this gives you the right to know exactly what data of yours do businesses use, and request that this information is to not be sold or to be deleted.</p>
+
+<p>As a California resident, I decided to dedicate a long weekend to exercising my privacy rights. The long weekend turned into a week worth of back and forth with a dozen-or-so companies, and me having a much better idea of what information about me is out there.</p>
+
+<p>Turned out many large websites provide privacy dashboards where you&rsquo;re able to review and see information collected or inferred about you. But most of this data is hidden behind a formal request process which takes a few days to a week.</p>
+
+<hr />
+
+<p>First, I decided to stroll through Google&rsquo;s privacy settings. There are two ways forward: privacy dashboard, or full-on Google Takeout. Google Takeout allows you to download an archive of <strong>everything</strong> Google has on you, which took a few days to process, and is near impossible to go through while keeping your sanity. So I decided to play with the privacy dashboard instead.</p>
+
+<p>Google Maps has location history of most places I&rsquo;ve visited for the past ten or so years (creepy, but I found it useful on more than one occasion), and YouTube and Search history stores thousands of searches. I already had Assistant history disabled, since storing audio recordings is apparently where I draw the line when it comes to privacy. Targeted ad profile was an interesting thing to look at, accurately summing up my lifestyle in 50 words or less. I ended up disabling targeted ads from Google (and all other services as I went about on my privacy crusade).</p>
+
+<p>Google had some of the finest privacy controls compared to other services, with actionable privacy-leaning suggestions. Google&rsquo;s not known for its services playing well together, but privacy is where Google feels closer to Apple experience - everything is in a single place, surfaced in the same format, easy to control, and plays well together. Given the amount of transparency and fine grained control, I feel pretty good staying in the Google ecosystem.</p>
+
+<hr />
+
+<p>Next I looked at LinkedIn. Outside of the expected things &ndash; emails, phone numbers, messages, invitations, and a history of just about everything I&rsquo;ve ever clicked on, a file labeled &ldquo;inferences&rdquo; stood out. Whether LinkedIn thinks you&rsquo;re open to job seeking opportunities, or what stage of career you are in, or if you travel for businesses, or if you&rsquo;re a recruiter or maybe a senior leader in your company.</p>
+
+<p>Since LinkedIn is a professional network, all information I share is well curated and is meant as public by default &ndash; and I found LinkedIn privacy settings in line with my expectations.</p>
+
+<hr />
+
+<p>As an avid gamer, I went through Steam, Good Old Games, Ubisoft, Epic Games, and Origin privacy details. Unsurprisingly, the services tracked every time I launched every game, shopping preferences, and so on. Thankfully the data seemed confined to the world of gaming &ndash; which made this level of being creepy somewhat okay in my book.</p>
+
+<p>I also looked at random websites I use somewhat frequently &ndash; Reddit, StackOverflow, PayPal, Venmo, AirBnB, and some others &ndash; not too many surprises there, although I did end up tightening privacy settings and opting out of personal data sharing and ad tracking for every service.</p>
+
+<p>Last year I requested deletion of all my data on Mint, Personal Capital, and YNAB (You Need a Budget), and to be honest I&rsquo;m a little relived that I didn&rsquo;t have to look at the data these companies had on me.</p>
+
+<hr />
+
+<p>Amazon data sharing turned out to be the scariest finding. Until now I didn&rsquo;t really self-identify as a heavy Amazon user, but that turned out to be a lie: Prime shopping, Kindle, Audible, Prime Video.</p>
+
+<p>The amount of data Amazon kept on me was overwhelming: Kindle and Audible track every time I read, play, or pause books, the Amazon website keeps full track of browsing habits, and Prime Video has detailed watch times and history. Most of this data ties back into real world &ndash; including nearly every address I ever lived at or phone numbers I had.</p>
+
+<p>Even scarier, despite never using Alexa, I found numerous recordings of my voice from close to a decade ago &ndash; me checking status of the packages, but a few of me just breathing and walking around. I found no way of deleting these, as they didn&rsquo;t show up in any privacy settings (including me installing an Alexa app just to get into privacy settings).</p>
+
+<p>All of this gave me pause. It feels like the privacy controls are either lacking, hidden, or spread out thin across Amazon&rsquo;s various apps. And I&rsquo;ve only briefly scanned through the data Amazon had on me.</p>
+
+<hr />
+
+<p>That&rsquo;s where I had to take a break.</p>
+
+<p>I have accounts with hundreds of services, and I have no idea how my personal data is used, and what it&rsquo;s joined with. As I&rsquo;m go on about my daily life, I&rsquo;ll start tightening privacy controls, and maybe deleting services and their data where possible.</p>
+
+<p>It&rsquo;s just too creepy for my taste.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Experience with financial planners]]></title>
@@ -1613,41 +1666,6 @@ there&rsquo;s really no room for growth in that relationship.</p>
 <p>I wrap up around 5 pm, and make a point not to work past that. I swap out my work laptop for my own (even if I&rsquo;m not planning to use it), and stow it away for the night. Disassembling my setup paired with showering and changing into house clothes creates a solid dividing line between work and home.</p>
 
 <p>Cooking dinner together and evening activities follow, but that&rsquo;s a story for another time. Stay healthy and productive!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I use Vimwiki]]></title>
-    <link href="http://www.rosipov.com/blog/how-i-use-vimwiki/"/>
-    <updated>2019-06-23T18:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/how-i-use-vimwiki</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">using Vimwiki for 5 years</a>, on and off. There&rsquo;s a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.</p>
-
-<p>Over those 5 years I&rsquo;ve tried a few different lightweight personal wiki solutions, but kept coming back to Vimwiki due to my excessive familiarity with Vim and the simplicity of the underlying format (plain text FTW).</p>
-
-<p>I used to store my Vimwiki in Dropbox, but after Dropbox imposed a three device free tier limit, I <a href="https://www.rosipov.com/blog/google-drive-on-linux-with-rclone/">migrated to Google Drive</a> for all my storage needs (and haven&rsquo;t looked back!). I&rsquo;m able to view my notes on any platform (including previewing the HTML pages on mobile).</p>
-
-<p>I love seeing how other people organize their Wiki homepage, so it&rsquo;s only fair to share mine:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/vimwiki-homepage-screenshot.png" title="Screenshot of my wiki homepage." ></p>
-
-<p>I use Vimwiki as a combination of a knowledge repository and a daily project/work journal (<code>&lt;Leader&gt;wi</code>). I love being able to interlink pages, and I find it extremely helpful to write entries journal-style, without having to think of a particular topic or a page to place my notes in.</p>
-
-<p>Whenever I have a specific topic in mind, I create a page for it, or contribute to an existing page. If I don&rsquo;t - I create a diary entry (<code>&lt;Leader&gt;w&lt;Leader&gt;w</code>), and move any developed topics into their own pages.</p>
-
-<p>I use folders (I keep wanting to call them namespaces) for disconnected topics which I don&rsquo;t usually connect with the rest of the wiki: like video games, financial research, and so on. I&rsquo;m not sure I&rsquo;m getting enough value out of namespaces though, and I might revisit using those in the future: too many files in a single directory is not a problem since I don&rsquo;t interract with the files directly.</p>
-
-<p>Most importantly, every once in a while I go back and revisit the organizational structure of the wiki: move pages into folders where needed (<code>:VimwikiRenameLink</code> makes this much less painful), add missing links for recently added but commonly mentioned topics (<code>:VimwikiSearch</code> helps here), and generally tidy up.</p>
-
-<p>I use images liberally (<code>{{local:images/nyan.gif|Nyan.}}</code>), and I occasionally access the HTML version of the wiki (generated by running <code>:VimwikiAll2HTML</code>).</p>
-
-<p>I&rsquo;ve found useful to keep a running todo list with a set of things I need to accomplish for work or my projects, and I move those into corresponding diary pages once the tasks are ticked off.</p>
-
-<p>At the end of each week I try to have a mini-retrospective to validate if my week was productive, and if there&rsquo;s anything I can do to improve upon what I&rsquo;m doing.</p>
-
-<p>I also really like creating in-depth documentation on topics when researching something: the act of writing down and organizing information it helps me understand it better (that&rsquo;s why, for instance, I have a beefy &ldquo;financial/&rdquo; folder, with a ton of research into somewhat dry, but important topics - portfolio rebalancing, health and auto insurance, home ownership, and so on).</p>
-
-<p>Incoherent rambling aside, I&rsquo;m hoping this post will spark some ideas about how to set up and use your own personal wiki.</p>
 ]]></content>
   </entry>
   

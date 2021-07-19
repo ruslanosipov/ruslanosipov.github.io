@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-06-17T12:27:49-07:00</updated>
+  <updated>2021-07-19T14:37:44-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Exercising online privacy rights]]></title>
+    <link href="http://www.rosipov.com/blog/exercising-online-privacy-rights/"/>
+    <updated>2021-07-19T14:19:41-07:00</updated>
+    <id>http://www.rosipov.com/blog/exercising-online-privacy-rights</id>
+    <content type="html"><![CDATA[<p>Following Europe&rsquo;s 2016 General Data Protection Regulation (GDPR), California passed its own California Consumer Privacy Act (CCPA) in 2020. I won&rsquo;t pretend to understand the intricacies of the law or the differences between the two, but from what I understand this gives you the right to know exactly what data of yours do businesses use, and request that this information is to not be sold or to be deleted.</p>
+
+<p>As a California resident, I decided to dedicate a long weekend to exercising my privacy rights. The long weekend turned into a week worth of back and forth with a dozen-or-so companies, and me having a much better idea of what information about me is out there.</p>
+
+<p>Turned out many large websites provide privacy dashboards where you&rsquo;re able to review and see information collected or inferred about you. But most of this data is hidden behind a formal request process which takes a few days to a week.</p>
+
+<hr />
+
+<p>First, I decided to stroll through Google&rsquo;s privacy settings. There are two ways forward: privacy dashboard, or full-on Google Takeout. Google Takeout allows you to download an archive of <strong>everything</strong> Google has on you, which took a few days to process, and is near impossible to go through while keeping your sanity. So I decided to play with the privacy dashboard instead.</p>
+
+<p>Google Maps has location history of most places I&rsquo;ve visited for the past ten or so years (creepy, but I found it useful on more than one occasion), and YouTube and Search history stores thousands of searches. I already had Assistant history disabled, since storing audio recordings is apparently where I draw the line when it comes to privacy. Targeted ad profile was an interesting thing to look at, accurately summing up my lifestyle in 50 words or less. I ended up disabling targeted ads from Google (and all other services as I went about on my privacy crusade).</p>
+
+<p>Google had some of the finest privacy controls compared to other services, with actionable privacy-leaning suggestions. Google&rsquo;s not known for its services playing well together, but privacy is where Google feels closer to Apple experience - everything is in a single place, surfaced in the same format, easy to control, and plays well together. Given the amount of transparency and fine grained control, I feel pretty good staying in the Google ecosystem.</p>
+
+<hr />
+
+<p>Next I looked at LinkedIn. Outside of the expected things &ndash; emails, phone numbers, messages, invitations, and a history of just about everything I&rsquo;ve ever clicked on, a file labeled &ldquo;inferences&rdquo; stood out. Whether LinkedIn thinks you&rsquo;re open to job seeking opportunities, or what stage of career you are in, or if you travel for businesses, or if you&rsquo;re a recruiter or maybe a senior leader in your company.</p>
+
+<p>Since LinkedIn is a professional network, all information I share is well curated and is meant as public by default &ndash; and I found LinkedIn privacy settings in line with my expectations.</p>
+
+<hr />
+
+<p>As an avid gamer, I went through Steam, Good Old Games, Ubisoft, Epic Games, and Origin privacy details. Unsurprisingly, the services tracked every time I launched every game, shopping preferences, and so on. Thankfully the data seemed confined to the world of gaming &ndash; which made this level of being creepy somewhat okay in my book.</p>
+
+<p>I also looked at random websites I use somewhat frequently &ndash; Reddit, StackOverflow, PayPal, Venmo, AirBnB, and some others &ndash; not too many surprises there, although I did end up tightening privacy settings and opting out of personal data sharing and ad tracking for every service.</p>
+
+<p>Last year I requested deletion of all my data on Mint, Personal Capital, and YNAB (You Need a Budget), and to be honest I&rsquo;m a little relived that I didn&rsquo;t have to look at the data these companies had on me.</p>
+
+<hr />
+
+<p>Amazon data sharing turned out to be the scariest finding. Until now I didn&rsquo;t really self-identify as a heavy Amazon user, but that turned out to be a lie: Prime shopping, Kindle, Audible, Prime Video.</p>
+
+<p>The amount of data Amazon kept on me was overwhelming: Kindle and Audible track every time I read, play, or pause books, the Amazon website keeps full track of browsing habits, and Prime Video has detailed watch times and history. Most of this data ties back into real world &ndash; including nearly every address I ever lived at or phone numbers I had.</p>
+
+<p>Even scarier, despite never using Alexa, I found numerous recordings of my voice from close to a decade ago &ndash; me checking status of the packages, but a few of me just breathing and walking around. I found no way of deleting these, as they didn&rsquo;t show up in any privacy settings (including me installing an Alexa app just to get into privacy settings).</p>
+
+<p>All of this gave me pause. It feels like the privacy controls are either lacking, hidden, or spread out thin across Amazon&rsquo;s various apps. And I&rsquo;ve only briefly scanned through the data Amazon had on me.</p>
+
+<hr />
+
+<p>That&rsquo;s where I had to take a break.</p>
+
+<p>I have accounts with hundreds of services, and I have no idea how my personal data is used, and what it&rsquo;s joined with. As I&rsquo;m go on about my daily life, I&rsquo;ll start tightening privacy controls, and maybe deleting services and their data where possible.</p>
+
+<p>It&rsquo;s just too creepy for my taste.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Writing for fun]]></title>
@@ -126,93 +179,6 @@
 <p>This simple concept has been responsible for cutting hours upon hours from my phone usage. Opening an app becomes a more deliberate experience, I open my phone with a purpose (granted this purpose might be to kill hours looking at cat videos). There&rsquo;s no more scrolling through everything I have installed just to find something to stimulate my attention for a few more seconds.</p>
 
 <p>You can download the KISS Launcher for Android from <a href="https://play.google.com/store/apps/details?id=fr.neamar.kiss">Google Play Store</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
-    <link href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/"/>
-    <updated>2018-03-26T00:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/making-a-packing-spreadsheet</id>
-    <content type="html"><![CDATA[<p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
-
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
-
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
-
-<h2>Final Result</h2>
-
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
-
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
-
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
-
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
-
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
-
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
-
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
-
-<h2>The Technical Details</h2>
-
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
-
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
 ]]></content>
   </entry>
   
