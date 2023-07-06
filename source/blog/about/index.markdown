@@ -4,9 +4,9 @@ title: About
 navbar: About
 ---
 
-My name is Ruslan Osipov and I live in San Francisco Bay Area, California. I am a software engineer at Google.
+My name is Ruslan Osipov and I live in San Diego, California. I am a software engineer at Google.
 
-I've recently published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
+I've published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
 
 <a href="https://amzn.to/2EfGaN5"
    target="blank"><img alt="A picture of Mastering Vim book cover."
