@@ -127,6 +127,294 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-29T16:26:32-07:00"  data-updated="true" itemprop="datePublished dateCreated">29 Sep 2016</time>
+        
+           | <a href="/blog/randomly-generated-dungeons/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/randomly-generated-dungeons/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/randomly-generated-dungeons/" itemprop="url">Randomly generated dungeons</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>After playing with random dungeon generation for a bit, I seem to be satisfied
+with the results:</p>
+
+<p><img src="/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
+floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
+few random dungeon generation ideas, I settled with the following.</p>
+
+<h2>The algorithm</h2>
+
+<ol>
+<li>Start with a random point on a canvas.</li>
+<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
+<li>Select a few points on the sides of the room, put those in a stack. Save the
+direction in which the potential doors would point.</li>
+<li>Go through the stack, and try to add a room or a corridor (corridor is just a
+room with a width or a height of 1). Higher chance of corridors seems to look
+better and results in those wiggly passageways.
+
+<ol>
+<li>Try to add a room a few dozen times with different random configurations.
+If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
+generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
+clean those up later.</li>
+<li>If a room was added successfully - add a door where it connects to the
+previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
+to another corridor.</li>
+<li>At this point one ends up with quite a few interconnected corridors,
+merged rooms, and all kinds of fun surroundings (my desired goal).</li>
+</ol>
+</li>
+<li>Do the above until the stack is empty or a desired number of rooms has been
+generated.</li>
+<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
+one until intersection with another room/corridor is detected.</li>
+<li>Add walls around the rooms and corridors, while also cleaning up any extra
+doors we may have left behind when creating merged corridors or rooms.
+
+<ol>
+<li>I simply used slightly modified depth first search starting inside any
+room and drawing walls wherever I could find floor/door not connected to
+anything.</li>
+<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
+the opposite sides. If not - remove the door and replace it with a floor
+tile. If any doors were adjucent to the removed door - requeue the door
+check on them.</li>
+</ol>
+</li>
+<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
+time. Pick the best candidate with the most desired features - like a number
+of rooms, breadth, square footage, longest corridors, etc.</li>
+</ol>
+
+
+<p>A more detailed explanation of the steps is below. For now, here are a few more
+dungeons generated using this method:</p>
+
+<p><img src="/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p><img src="/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
+
+<p>I think dungeon generation is far more art than science, and I had a lot of fun
+tweaking all the different input parameters:</p>
+
+<ul>
+<li>Room size boundaries.</li>
+<li>Corridor lengths.</li>
+<li>Frequency of corridor occurrences.</li>
+<li>Number of exits from the room.</li>
+<li>Number of room generation attempts.</li>
+<li>Number of dungeon generation attempts.</li>
+<li>Final dungeon picking heuristics.</li>
+</ul>
+
+
+<p>Last item on the list is the most interesting one - with few hundred dungeons as
+an input, picking the right one is rather important. I ended up settling on
+using max priority queue with a rough surface area of the dungeon as a key
+(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
+through some top results and pick the one with the most rooms available. This
+results in the most fun-looking map which feels up most of the screen, while
+still usually not being too cluttered.</p>
+
+<p>Here&rsquo;s a breakdown of a simple scenario:</p>
+
+<h3>Steps 1 and 2</h3>
+
+<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
+
+<pre><code>....
+....
+....
+</code></pre>
+
+<h3>Step 3</h3>
+
+<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
+
+<pre><code>....2
+....
+....1
+  3
+</code></pre>
+
+<p>I went for a uniform distribution by unfolding the rectangle and folding it back
+in to get a proper coordinate on the perimeter. Now, stack contains coordinates
+of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
+
+<h3>Steps 4 and 5</h3>
+
+<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
+the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
+We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
+random decide again: up.</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....3.
+  1
+</code></pre>
+
+<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
+also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
+corridors are never pretty.</p>
+
+<p>Now, to replace number 3 with a door:</p>
+
+<pre><code>     4
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Adding another random corridor of length 2 to the point 4, pointing right.
+Replace number 4 with a floor segment, since point 4 was the end of another
+corridor. Remove point 4 from loose ends, add point 5.</p>
+
+<pre><code>     ...5
+     .
+     .
+....2.
+.... .
+....+.
+  1
+</code></pre>
+
+<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
+is empty.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+....2.   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
+Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
+After a few unsuccessful attempts to place a room or a corridor there, we give
+up:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  1
+</code></pre>
+
+<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
+the loose ends list.</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  +
+  .
+  .
+  .
+  6
+</code></pre>
+
+<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
+done generating the dungeon. Our stack is empty, and our loose ends contains
+coordinates of <code>6</code>.</p>
+
+<h3>Step 6</h3>
+
+<p>Start with the loose end, and remove items one by one until a tile with multiple
+neighbors is encountered:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+  X
+  X
+  X
+  X
+  X
+</code></pre>
+
+<p>Viola:</p>
+
+<pre><code>     ...+...
+     .   ...
+     .   ...
+.... .   ...
+.... .   ...
+....+.   ...
+</code></pre>
+
+<h3>Steps 7 and 8</h3>
+
+<p>There are no rogue doors in this scenario, so all we need to do is add  the
+walls:</p>
+
+<pre><code>     #########
+     #...+...#
+     #.###...#
+######.# #...#
+#....#.# #...#
+#....#.# #...#
+#....+.# #...#
+######## #####
+</code></pre>
+
+<p>All of the steps above should be repeated a few hundred times with different
+dungeons, and then the best dungeon should be picked as a final one.</p>
+
+<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
+should have I done differently?</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-28T11:51:31-07:00"  data-updated="true" itemprop="datePublished dateCreated">28 Sep 2016</time>
         
            | <a href="/blog/browsing-mssql-and-vertica-from-cli/#disqus_thread" itemprop="discussionUrl"
@@ -286,7 +574,7 @@ aliases for different environments/machines I use: <code>sql-prod</code>, <code>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-02-22T08:27:52-08:00"  data-updated="true" itemprop="datePublished dateCreated">22 Feb 2016</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-02-22T11:27:52-05:00"  data-updated="true" itemprop="datePublished dateCreated">22 Feb 2016</time>
         
            | <a href="/blog/living-in-a-car-for-5000-miles/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/living-in-a-car-for-5000-miles/">Comments</a>
@@ -614,365 +902,6 @@ your body weight, and tighten the belt.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-09-18T12:55:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">18 Sep 2015</time>
-        
-           | <a href="/blog/urban-prius-living/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/urban-prius-living/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/urban-prius-living/" itemprop="url">Urban Prius living</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Not so long ago I stumbled upon a blog titled <a href="https://chrissawey.wordpress.com/">&ldquo;Hotel Prius&rdquo;</a>, and I loved
-the idea. Being a Prius owner myself, I decided to give Prius living a test run.
-Being cautious person I am, I decided to give it a test run for a week in a
-familiar area.</p>
-
-<p><img src="/images/posts/prius-in-a-corporate-area.jpg" title="A Prius." ></p>
-
-<h2>Preparing for the journey</h2>
-
-<p>First, I decided to tint my windows. In addition to making a Prius look much
-more pleasant, it keeps the car cooler throughout the day, and most importantly
-makes it hard to peek inside the car. Especially at night.</p>
-
-<p>Next, I ordered a <a href="http://amzn.to/1NvY78S">Prius Gen III Camping Sleeper Conversion Kit</a>. It&rsquo;s just a
-fancy name for two belts to push down the rear seats, and two wooden platforms
-with detachable feet to cover leg space. And two custom cut carpet runners to
-cover up the panels. Nothing one can&rsquo;t make in their own garage, if the money is
-tight.</p>
-
-<p>The kit requires front seats to be locked in the furthest possible position,
-rendering them unusable. So I only installed a panel behind a passenger seat.
-With the panel installed, I have nearly 7 feet of level surface to sleep on.</p>
-
-<p>Another problem with the kit is that it blocks the console from being opened
-(arm rest storage between driver and passenger seat). I stopped using console as
-a quick access box, and it doesn&rsquo;t feel like a big loss.</p>
-
-<p><img src="/images/posts/prius-sleeping-platform.jpg" title="Sleeping platform. Laundry bag at the bottom." ></p>
-
-<p>I packed all my clothes in a duffle bag, bought a small toiletries kit, and put
-the rest of my belongings in a backpack. Queen-sized sleeping bag I had came in
-handy as a bed (with a couple of travel pillows).</p>
-
-<p><img src="/images/posts/prius-duffle-bag-and-a-sleeping-bag.jpg" title="Duffle bag with clothes and a sleeping bag." ></p>
-
-<p>After a second night I swapped my sleeping bag with a lighter and more compact
-summer sleeping bag. That&rsquo;s also when I added a 1.5 inch sleeping pad to my
-inventory.</p>
-
-<p><img src="/images/posts/prius-in-a-sleeping-position.jpg" title="Prius in a sleeping position, with toiletries kit and a duffle bag on the left, sleeping bag on the right." ></p>
-
-<p><img src="/images/posts/prius-bed-view-from-drivers-seat.jpg" title="View of a bed from the driver's seat." ></p>
-
-<p>My backpack/briefcase is on the passenger&rsquo;s seat, I always take it with me.</p>
-
-<p><img src="/images/posts/prius-backpack-on-the-front-seat.jpg" title="Backpack on the passenger seat." ></p>
-
-<p>In addition to all of the above, I took my guitar - even though it&rsquo;s bigger than
-anything else I had to take with me, it&rsquo;s a great source of entertainment.</p>
-
-<p><img src="/images/posts/prius-guitar-and-bed-view.jpg" title="Guitar with a travel pillow on top, old backpack (now replaced)." ></p>
-
-<p>If you&rsquo;re feeling impatient, links to all the items are at the bottom of the
-post.</p>
-
-<h2>Sleeping in a Prius</h2>
-
-<h3>Night one</h3>
-
-<p>First night in a Prius left me with mixed feelings. I parked in one of the
-corporate areas of the city at about 9 pm. I picked a well lit parking lot with
-some (but not much) evening traffic. I parked in one of the slightly darker
-areas of the parking lot (approximately one out of twenty parking spots was
-taken, and large number of cars made me feel safer).</p>
-
-<p>It was 74F outside, slowly cooling after a 100F day. I left my car in accessory
-mode (spoiler: bad idea), turned on the AC, locked the doors, and hopped on my
-bedding arrangement to the back of the car. I didn&rsquo;t want to keep the windows
-open since I just got them tinted. And sleeping with windows rolled down felt a
-bit eerie.</p>
-
-<p>First thing I noticed was how obnoxiously bright instrument panel and GPS are.
-It was the opposite of stealthy, and it was plain annoying to sleep with those
-bright lights on. I reached out for my duffle bag, and pulled out a couple of
-towels to cover up both the instrument panel and GPS, as well as few AC control
-LEDs. This made me feel at ease, and I tried to doze off into sleep.</p>
-
-<p><img src="/images/posts/prius-towels-on-instrument-panel.jpg" title="Towels covering an instrument panel and a GPS." ></p>
-
-<p>The parking lot lights were a minor annoyance, mostly filtered out by a 20% rear
-window tint. I&rsquo;ve heard some people pass somewhere within 20 feet of my car a
-few times, but other than that it was quiet. Still, unfamiliar situation made it
-hard to fall asleep.</p>
-
-<p>And then a few voices and an engine noise disturbed my peace, pretty close to my
-car. I waited for about 10 minutes, and the noise didn&rsquo;t go away. I raised my
-head to see what&rsquo;s happening - turns out someone had a tire blowout a 2 parking
-spots away from me, and a pickup truck pulled in next to them to help with
-changing the tire. There were anywhere between 3 and 5 people walking around and
-talking.</p>
-
-<p>That&rsquo;s when I quickly got dressed, climbed to a driver&rsquo;s seat, and drove off to
-look for a quieter spot. It was 9:55 pm.</p>
-
-<p>I went to a more secluded, but still well lit parking lot behind one of the
-offices. Concentration of cars was about the same, but it looked like those cars
-were left there overnight. I picked a spot within 50 feet of other parked cars,
-where a tree was covering my car from the harsh street light.</p>
-
-<p><img src="/images/posts/prius-parking-spot-by-the-tree.jpg" title="Parking spot by the tree." ></p>
-
-<p>Accessory mode, AC, lock the doors. Climbed in the back, and after some
-restlessness (a fairly normal thing for me), I fell asleep. I woke up sometime
-around 11:30 pm. It was fairly hot in the car, and it was hard to breathe. Turns
-out accessory mode turned itself off at some point. Maybe the battery ran low,
-or maybe there&rsquo;s a time limit of sort. I opened all the doors to air out a car
-for a couple of minutes while I walked around and stretched.</p>
-
-<p>In the meantime, I also noticed that because of the tinted windows, it&rsquo;s nearly
-impossible to see what&rsquo;s inside the car while only standing a few feet away
-from it. That was comforting.</p>
-
-<p>Second attempt, this time I turned on the car the usual way (by depressing the
-pedal). I used a foot brake for a peace of mind, set the AC to 68 degrees (with
-external air flow setting), locked the car, covered the instrument panel and a
-GPS, and climbed in the back.</p>
-
-<p>AC was blowing on my neck, but I was too tired to worry about it. The car cooled
-down and I climbed inside a sleeping bag (it was too hot before, and I was just
-lying on top of it). I&rsquo;m used to sleeping on hard surfaces, so the setup felt
-comfortable enough. The light from surrounding light poles was a bit too harsh,
-so I covered my eyes with a T-shirt. I fell asleep.</p>
-
-<p>I woke up a few times throughout the night, but I feel like I&rsquo;ve had enough
-sleep. I woke up with the sun at about 6:30 am, got dressed, opened all doors to
-ventilate the car, packed away a sleeping bag, and drove to work. I felt well
-rested, even though my throat and neck felt a bit sore from the AC directed at
-me.</p>
-
-<p>Oh, and it cost me $1.40 to have an AC running through the night. The car would
-turn on for about a minute every once in a while (30 minutes?) to recharge the
-battery.</p>
-
-<h3>Night two</h3>
-
-<p>This time, I found a perfect spot in a small parking lot behind an office. Less
-crowded than the previous time, but still well lit. I got lucky and found a
-space with no direct street light being visible when laying down.</p>
-
-<p><img src="/images/posts/prius-parked-in-a-small-lot.jpg" title="Prius parked in a small parking lot." ></p>
-
-<p>Turn the car on, AC to 68 degrees, lock the doors, hop to the back seat.</p>
-
-<p>I&rsquo;ve slept well for the first couple of hours, but I ended up waking up well
-rested at midnight. I stopped by my office and worked for a couple of hours.
-Back to the car to get 4 more hours of sleep.</p>
-
-<p>It cost me $1.38 to camp through the night with AC on.</p>
-
-<h3>Night three</h3>
-
-<p>My sleeping bag was too hot to use at room temperature, so I swapped it with a
-summer down filled bag. I also purchased a self-inflating sleeping pad for more
-comfort.</p>
-
-<p>Things are getting better from now on.</p>
-
-<p><img src="/images/posts/prius-on-top-of-a-parking-garage.jpg" title="Prius on top of a parking garage." ></p>
-
-<p>Feeling more confident, I found a four-story corporate parking lot and drove to
-the top level. I parked at a well-lit spot without any direct lights coming
-through the windows. I easily fell asleep a tad bit past nine, and woke up at 6
-am refreshed and well rested. Secluded spot, comfortable sleeping pad, summer
-sleeping bag, and increased confidence - all contributed to making sleeping in a
-Prius a delightful experience.</p>
-
-<p>This was also the night I learned a neat trick: if you recline the driver&rsquo;s seat
-all the way, it becomes really easy to move between front seat and a sleeping
-area.</p>
-
-<p>Cost of running the car through the night: $1.63.</p>
-
-<h3>Night four</h3>
-
-<p>I decided to camp out in the same multi-level parking garage I did yesterday (it
-has high enough number of cars so that I don&rsquo;t stand out - about one per fifty
-parking spots; and the foot traffic is very low to non-existent). I found
-another part of the garage with a roof access on a second level and pulled in
-there. After getting situated, I realized I didn&rsquo;t account for all the lights -
-bright parking lot lights from other levels ended up shining right in my face.
-And even though I knew I couldn&rsquo;t be seen behind the tinted windows, it did
-leave me feeling exposed.</p>
-
-<p>I slid to the driver&rsquo;s seat and drove up a few levels to the previous spot.
-Doors are locked, AC is set to 68F, instrument panel is covered, driver&rsquo;s seat
-is reclined. I climbed to the back, and fell asleep.</p>
-
-<p>It was a warm night, temperature outside was at 73F. It was hot enough for me to
-wake up two times through the night, but that was a minor inconvenience.</p>
-
-<p>Cost: $1.73.</p>
-
-<h3>Night five</h3>
-
-<p>It was one of the chillier nights, so sleeping was a very pleasant experience. I
-picked the same spot I used on the third night. Absence of direct lights visible
-from the car windows plays a huge role in making you feel safe.</p>
-
-<p>Cost: $1.53 while also bringing Nexus 6 to a full charge.</p>
-
-<h3>Night six</h3>
-
-<p>Picked another spot in a similar area, I parked under a broken street light in a
-well lit parking lot. I&rsquo;ve slept well. Mostly due to this being a cooler night
-(65F).</p>
-
-<p>Cost: $1.29 while also bringing Nexus 6 to a full charge.</p>
-
-<h3>Night seven</h3>
-
-<p>I was stuck in traffic in the evening, and I fiddled with the GPS for a while.
-Turns out you can disable the obnoxiously bright screen by going into &ldquo;Setup&rdquo;
--> &ldquo;Display&rdquo; -> &ldquo;Screen off&rdquo;. Pushing any button on the GPS turns the screen
-back on. I&rsquo;m still using the towels to cover up the instrument panel and AC
-controls though.</p>
-
-<p>Another fairly cold night, which made sleeping more comfortable. I went back to
-the top of the parking garage. Night was a delight.</p>
-
-<p>Cost: $1.39, with full Nexus 6 charging.</p>
-
-<h3>Impressions</h3>
-
-<p>Stealthy living in a Prius is very comfortable. With tinted windows there&rsquo;s just
-enough privacy, it&rsquo;s safe and cheap to run AC through the night (cost averages
-to about $1.48 per night). There&rsquo;s more than enough space for someone of my
-height (5&#8217;11&#8221;). It took me a couple of days to get used to feeling relatively
-exposed in public, but once I did - it was a breeze. Last five nights I have
-slept without any problems.</p>
-
-<p>Surprisingly, I&rsquo;ve slept better in a Prius than I did in my own bed. Here I
-should probably note that I&rsquo;ve been having troubles sleeping on an off for some
-time lately, and sleeping through the night in a car was a step up from where I
-was before.</p>
-
-<h3>Lessons learned</h3>
-
-<p>Some things I didn&rsquo;t know before trying out sleeping in a Prius:</p>
-
-<ul>
-<li>Pick a well lit parking lot, ideally with some cars of similar value parked
-overnight. Make sure there&rsquo;s not too much foot traffic.</li>
-<li>Park in an area without direct light source near you. Also account for lights
-visible from inside the car (light nearly a hundred feet away can still be
-bother).</li>
-<li>If you&rsquo;re using the AC, turn Prius engine on instead of leaving it in
-accessory mode.</li>
-<li>Proper AC vent direction is important. Fiddle with those until there are no
-drafts in the sleeping area.</li>
-<li>Use a sleeping mask to avoid being bothered by the lights if you couldn&rsquo;t find
-area without visible light sources shining directly through the windows.</li>
-<li>Since the temperature inside the car is regulated, summer sleeping bag is a
-must.</li>
-<li>Sleeping pad is very helpful in making the surface softer. 1.5 inches made a
-huge difference in comfort.</li>
-</ul>
-
-
-<h2>Items I used</h2>
-
-<p><img src="/images/posts/prius-storage-compartment.jpg" title="Storage compartment. Left to right, top to bottom: a travel pillow, miscellaneous items storage box, sleeping pad, sleeping bag, a book (I'm not an avid reader these days), emergency supplies backpack, 10000 mAh power bank, paper towels." ></p>
-
-<p>Here are the items directly related to the trip which I either purchased or
-already owned.</p>
-
-<ul>
-<li><a href="http://amzn.to/1NvY78S">Prius Gen III Camping Sleeper Conversion Kit</a>. While not as good of a fit
-as something one can make with a garage and a set of tools, it&rsquo;s a quick (but
-rather expensive, depending on your situation) solution.</li>
-<li><a href="http://amzn.to/1NvXpbA">eBags TLS Mother Lode Weekender Convertible Junior</a>.</li>
-<li><a href="http://amzn.to/1iFj0Sb">Kelty Cosmic 550 Dridown Sleeping Bag, Regular/41-Degree</a>. I started a
-journey with a sleeping bag I already had around - winter
-<a href="http://amzn.to/1Nw0clb">Coleman Calgary Cold-Weather Scoop Sleeping Bag</a>. Needless to say, Kelty
-Cosmic 41 is lighter, and by far more compact.</li>
-<li><a href="http://amzn.to/1imaIyz">Therm-a-Rest ProLite Plus Sleeping Pad</a>. It&rsquo;s a 1.5 inch tall matress, I
-found it to be extremely comfortable.</li>
-<li><a href="http://www.rei.com/product/870768/rei-roadtripper-duffel-medium">REI Roadtripper Duffel - Medium</a>. I don&rsquo;t have too many clothes (and I
-live in California, taking winter clothing is out of the picture), so
-everything fits in a duffel bag.</li>
-<li><a href="http://amzn.to/1K5CQPv">Eagle Creek Pack-It Clean/Dirty Cube</a>. Holds underwear and socks, also
-doubles as a sealed laundry bag for both.</li>
-<li><a href="http://amzn.to/1imbiMJ">Therm-a-Rest Compressible Travel Pillow, Medium</a>. A comfortable pillow
-which goes under a sleeping bag.</li>
-<li><a href="http://www.rei.com/product/878299/rei-grande-shower-kit-black">REI Grande Shower Kit</a>. It&rsquo;s fairly big and holds all my toiletries.</li>
-<li><a href="http://amzn.to/1iFkJqF">Ready America Emergency Kit, 2-Person, 3-Day Backpack</a>. Something I always
-have in a car for the peace of mind.</li>
-</ul>
-
-
-<h2>Future improvement ideas</h2>
-
-<p>I have a great stealthy setup, but having more privacy would&rsquo;ve been a nice
-bonus. I&rsquo;ll probably look for some inconspicuous looking shades or curtains,
-provided that the setup doesn&rsquo;t look too obvious.</p>
-
-<h2>Philosophical implications</h2>
-
-<p>This was an interesting experience. Inability to retreat to the safety of my
-house got me out of my comfort zone. Initial discomfort passed quickly, and a
-world of possibilities opened up to me.</p>
-
-<p>Not having access to a house made me, well, feel bored. And that&rsquo;s amazing.
-Without having an ability to default to a TV, gaming platform, or even a laptop
-(it&rsquo;s really not that comfortable to work on a laptop in a car) - I had to get
-creative. I got to play a guitar, a piano, sing, practice with a drum set. I
-worked on my blog (this article took multiple revisions and hours upon hours of
-time to look the way it does now). I went to Mozzart&rsquo;s Don Giovanni publicly
-hosted in a nearby town.</p>
-
-<p>And I finished this article, which took me about 8 days of revisions and
-additions to finish.</p>
-
-<p>Now, thanks to self-imposed restrictions, I&rsquo;m doing all the things I wanted to
-do.</p>
-
-<p>I&rsquo;m a perpetual planner. And that sometimes becomes a problem, since I&rsquo;m always
-looking forward to the next thing that&rsquo;s going to happen, sometimes not paying
-attention to life right in front of me. With everything I have packed in a car,
-there&rsquo;s nothing on the horizon. Nothing is far away. There&rsquo;s no home to go back
-to, so I don&rsquo;t rush anywhere. I savor every moment I have.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -996,6 +925,8 @@ to, so I don&rsquo;t rush anywhere. I savor every moment I have.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/high-stakes-email-checklist/">High stakes email checklist</a>
+    
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
@@ -1013,8 +944,6 @@ to, so I don&rsquo;t rush anywhere. I savor every moment I have.</p>
     <a class="list-group-item " href="/blog/fire-in-a-developing-economy/">FIRE in a developing economy</a>
     
     <a class="list-group-item " href="/blog/savings-rate-plotted-over-8-years/">Savings rate plotted over 8 years</a>
-    
-    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
     
   </div>
 </section>
@@ -1057,7 +986,7 @@ to, so I don&rsquo;t rush anywhere. I savor every moment I have.</p>
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2021 - Ruslan Osipov<br>
+  Copyright &copy; 2023 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.

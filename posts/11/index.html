@@ -127,6 +127,68 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-07T13:10:15-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 7 Jun 2015</time>
+        
+           | <a href="/blog/gundo-tree-for-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/gundo-tree-for-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/gundo-tree-for-vim/" itemprop="url">Gundo tree for Vim</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>One of the obscure, but tremendously useful features of Vim is an undo tree.
+You would expect Vim to have a simple stack for undo and redo actions, but it&rsquo;s
+much more complex than that: Vim keeps track of every change you made in the
+current session, making it possible to access change history beyond basic <code>u</code>
+and <code>C-r</code> commands.</p>
+
+<p>Default interface for accessing far out branches of the undo tree leaves to be
+desired, but that&rsquo;s where <a href="http://sjl.bitbucket.org/gundo.vim/">Gundo</a> comes in.</p>
+
+<p><img src="/images/posts/vim-gundo-tree.png" title="Gundo tree in Vim." ></p>
+
+<p>Gundo provides an easy to use interface for navigating history branches. In the
+screenshot above, I am previewing a diff in one of the undo tree branches
+inaccessible via <code>u</code> command.</p>
+
+<p>As per author&rsquo;s recommendation, I mapped the plugin to <code>F5</code>, which seems quite
+convenient to me:</p>
+
+<pre><code>nnoremap &lt;F5&gt; :GundoToggle&lt;CR&gt;
+</code></pre>
+
+<p>Usage is quite easy. <code>F5</code> opens or closes the undo tree, <code>j</code> and <code>k</code> are used
+to travel through changes. Enter key applies the changes.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-01T06:28:42-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 1 Jun 2015</time>
         
            | <a href="/blog/my-experience-switching-to-buffers/#disqus_thread" itemprop="discussionUrl"
@@ -221,7 +283,7 @@ thanks to <a href="http://www.reddit.com/user/___violet___">/u/___violet___</a>&
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T18:19:58-07:00"  data-updated="true" itemprop="datePublished dateCreated">25 Apr 2015</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-04-25T17:19:58-08:00"  data-updated="true" itemprop="datePublished dateCreated">25 Apr 2015</time>
         
            | <a href="/blog/impact-driven-development/#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com/blog/impact-driven-development/">Comments</a>
@@ -489,251 +551,6 @@ job well.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-06T13:13:49-08:00"  data-updated="true" itemprop="datePublished dateCreated"> 6 Feb 2015</time>
-        
-           | <a href="/blog/power-of-the-command-line/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/power-of-the-command-line/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/power-of-the-command-line/" itemprop="url">Power of the command line</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p><em>Disclaimer: I am not advocating any specific tools or methodologies, but
-sharing a workflow I find to be efficient and pleasant.</em></p>
-
-<p>I am a huge fan of working with CLI applications. I use Vim for editing code,
-composing emails, and various kinds of writing. When I have to manipulate huge
-amounts of email, I use Mutt: it&rsquo;s intuitive tagging and regular expression
-engine are extremely useful for the task. I employ <code>ack</code>, <code>awk</code>, <code>grep</code>, and
-<code>sed</code> - Linux utilities which allow for precise and fast text manipulation.</p>
-
-<p>However, I would not use CLI browsers like <code>elinks</code> or <code>w3m</code>, and the idea of
-reading every email in Mutt gives me the creeps. I love the visualization web
-browser offers, something text-based prompt is not able to provide. And it
-doesn&rsquo;t have to.</p>
-
-<p>There are two components to most of the tasks performed on a computer: analyzing
-output and entering input. Certain tasks employ one component more than the
-other. In most modern applications it&rsquo;s rare to have both solid control from
-the user perspective and a pleasant informative UI. With increased visual
-component, it&rsquo;s more time consuming to make the application do what you need,
-especially if your needs are esoteric. With more editing power, visual display
-becomes less complex in order to make editing tasks easier.</p>
-
-<h2>Where visual tools fall short</h2>
-
-<p>What is the alternative? Using multiple programs with different levels of
-control to accomplish one task: to edit text. Each of the programs excels in
-it&rsquo;s own field: word processing software allows for beautiful fonts and document
-presentation, IDE lets you access aggregated meta information about your
-application. But most of the IDEs and word processors lack the powerful tools
-needed to manipulate the foundation of what user is working with - plain text.</p>
-
-<h2>Ode to plain text</h2>
-
-<p>I spend a lot of time writing and editing plain text. Be it source code, emails,
-documentation, or even blog posts. These tasks take up significant amount of my
-day, and it is only logical to substitute some of the visual presentation
-capabilities for effectiveness.</p>
-
-<p>It is hard to mentally process data which is not explicitly and unambiguously
-visible: different levels of headings, hidden meta information. Unlike more
-obscuring formats, plain text is all there is - it has nothing to hide. If you
-don&rsquo;t see it - it&rsquo;s not there. If you do see it - you know exactly what it is.</p>
-
-<p>One of my favorite tips from &ldquo;<a href="http://amzn.to/1yRe6Th">Pragmatic Programmer</a>&rdquo; goes:</p>
-
-<blockquote><p>Use a single editor well</p></blockquote>
-
-<p>So I learned one editor well, and now I use it for all my writing and editing
-needs. I don&rsquo;t have to jump between IDE, browser, and office software. Most of
-the text I edit is manipulated with one editor. There is only one set of key
-bindings to know, one skill to master and hone. Fast, without any additional
-thought, using single text editor and all of it&rsquo;s powerful features is imprinted
-in muscle memory. One less task to worry about.</p>
-
-<p>I write my documents in Markdown format, and later convert them to the desired
-output using <code>pandoc</code>: be it an HTML page, PDF, or a Microsoft Word document. I
-use Vim, so I can rearrange paragraphs or manipulate lines within a couple of
-keystrokes. Since I spend so much time editing text, I also touch type, which
-makes me even more effective at the given task.</p>
-
-<h2>Harness the power of the command line</h2>
-
-<p>When it comes to bulk manipulating files or working with version control -
-there is no better candidate then command line applications. There&rsquo;s no need to
-go through a number of obscure menus, ticking and unticking checkboxes, and
-hoping that your desired result can be achieved with a program&rsquo;s GUI.</p>
-
-<p>Let&rsquo;s look at a few scenarios some users face in their daily workflow.</p>
-
-<h3>Creating a backup</h3>
-
-<p>With GUI, you&rsquo;d have to take multiple steps:</p>
-
-<ol>
-<li>Right click <code>file</code>.</li>
-<li>Left click on &ldquo;Copy&rdquo;.</li>
-<li>Right click on some empty space.</li>
-<li>Left click on &ldquo;Paste&rdquo;.</li>
-<li>Right click on a newly created copy.</li>
-<li>Left click on &ldquo;Rename&rdquo;.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>file.bak</code>.</li>
-</ol>
-
-
-<p>The above steps can be sped up using shortcuts like <code>C-c</code> or <code>C-v</code>, but not by
-much. Here&rsquo;s an alternative in bash:</p>
-
-<pre><code>cp file{,.bak}
-</code></pre>
-
-<p>While first variant would do great for a novice or a casual user - the second
-method would be much more preferred by an experienced user whose concern is
-speed.</p>
-
-<h3>Recursively bulk replacing text in a directory</h3>
-
-<p>Let&rsquo;s assume we want to do a bulk replace text in a directory and all it&rsquo;s
-subdirectories. We have our trusted IDE, let&rsquo;s assume this IDE is already
-configured to work with a desired directory.</p>
-
-<ol>
-<li>Open your IDE.</li>
-<li>Select &ldquo;Edit&rdquo; menu.</li>
-<li>Select &ldquo;Find and Replace&rdquo; submenu.</li>
-<li>Click on a &ldquo;Find&rdquo; input field.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>function_to_replace</code>.</li>
-<li>Switch to a mouse.</li>
-<li>Click on &ldquo;Replace&rdquo; input field.</li>
-<li>Switch to a keyboard.</li>
-<li>Type <code>new_function_name</code>.</li>
-<li>Switch to a mouse.</li>
-<li>Enable &ldquo;Search in subdirectories&rdquo; checkbox.</li>
-<li>Click &ldquo;OK&rdquo;.</li>
-</ol>
-
-
-<p>Again, this can be shortened a bit with some keyboard shortcuts, but not by
-much. You still have to switch between keyboard and a mouse a total of 4 times,
-and you still have to click through all the menus. This does get time consuming
-if you do this often. Now let&rsquo;s try to perform the same task in command line:</p>
-
-<pre><code>find . -type f | xargs sed -i 's/function_to_replace/new_function_name/g'
-</code></pre>
-
-<p>Much faster, if you&rsquo;re able to memorize the structure. And remembering what the
-commands do is much easier than it looks. Especially with the help of <code>man</code> or,
-even better, <code>bro</code> (see <a href="http://bropages.org">http://bropages.org</a> for latter).</p>
-
-<p>The above example demonstrates one of the biggest advantages of command line
-interfaces: an ability to redirect an output of one program into another,
-chaining the tools together. In this example, we first get a list of all files
-use <code>find</code> tool, and then run <code>sed</code> tool on each of those files in order to
-replace the text.</p>
-
-<p>An output from any CLI tool can be fed into any other CLI tool. This allows for
-countless possibilities and high adaptability to unscripted scenarios.</p>
-
-<h2>Is it worth learning CLI tools over their GUI counterparts?</h2>
-
-<p>This depends on what your intentions are. If you&rsquo;re a power user who writes and
-edits a lot of text or manipulates bulk amounts of text on a daily basis - than
-it&rsquo;s definitely worth it. Time spent learning these tools will pay off. But if
-you&rsquo;re a casual user whose needs end with writing an occasional email or two -
-then you probably don&rsquo;t need to worry about this.</p>
-
-<p>Hell, if you&rsquo;ve read this far - this means you&rsquo;re the former case. I can
-practically guarantee that you will benefit from employing command line tools
-and modal editors over their GUI counterparts.</p>
-
-<p>I&rsquo;ve put together a table for comparison between two. Indeed, there are
-different times when either GUI or CLI tools excel:</p>
-
-<table>
-<thead>
-<tr>
-<th> Factor                            </th>
-<th> CLI </th>
-<th> GUI </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> Ability to combine/chain tools    </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Easy to learn                     </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Efficient for a novice user       </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Efficient for an experienced user </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Good for occasional use           </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-<tr>
-<td> Good for repetitive tasks         </td>
-<td> Yes </td>
-<td> No  </td>
-</tr>
-<tr>
-<td> Presents visual information well  </td>
-<td> No  </td>
-<td> Yes </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>As you can see - both CLI and GUI programs have their pluses and minuses. CLI
-tools seem to appeal to experienced users, while GUI tools are great for novice
-users and do excel in representing visual information. No matter what kind of
-interface you prefer, it&rsquo;s crucially important to use the right tool for the job.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -757,6 +574,8 @@ interface you prefer, it&rsquo;s crucially important to use the right tool for t
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/high-stakes-email-checklist/">High stakes email checklist</a>
+    
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
@@ -774,8 +593,6 @@ interface you prefer, it&rsquo;s crucially important to use the right tool for t
     <a class="list-group-item " href="/blog/fire-in-a-developing-economy/">FIRE in a developing economy</a>
     
     <a class="list-group-item " href="/blog/savings-rate-plotted-over-8-years/">Savings rate plotted over 8 years</a>
-    
-    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
     
   </div>
 </section>
@@ -818,7 +635,7 @@ interface you prefer, it&rsquo;s crucially important to use the right tool for t
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2021 - Ruslan Osipov<br>
+  Copyright &copy; 2023 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.

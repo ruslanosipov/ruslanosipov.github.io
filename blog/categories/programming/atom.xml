@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-07-19T14:37:44-07:00</updated>
+  <updated>2023-07-06T13:25:22-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -103,7 +103,7 @@
   <entry>
     <title type="html"><![CDATA[Automating Octorpress publishing]]></title>
     <link href="http://www.rosipov.com/blog/automating-octopress-publishing/"/>
-    <updated>2017-11-14T07:00:00-08:00</updated>
+    <updated>2017-11-14T10:00:00-05:00</updated>
     <id>http://www.rosipov.com/blog/automating-octopress-publishing</id>
     <content type="html"><![CDATA[<p>I really like Octopress. It builds on top of Jekyll to address certain rough edges, and provides ready to go lighting fast blogging platform. It&rsquo;s easily extendible if you know how to code (thanks to a rather clean and well organized code base), and posts are just plain Markdown files.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-07-19T14:37:44-07:00</updated>
+  <updated>2023-07-06T13:25:22-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,165 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[High stakes email checklist]]></title>
+    <link href="http://www.rosipov.com/blog/high-stakes-email-checklist/"/>
+    <updated>2023-07-06T13:05:13-07:00</updated>
+    <id>http://www.rosipov.com/blog/high-stakes-email-checklist</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m making a little cheat sheet for myself. As I progress in my career, much of
+my work revolves around communication, and I&rsquo;d be remiss if I don&rsquo;t share a
+formal framework I use. I like checklists, spreadsheets, and anything else that
+organizes the world around me, and it&rsquo;s fun to make one about communications.</p>
+
+<h2>Checklist</h2>
+
+<p>This is a checklist for high stakes emails, let&rsquo;s dig in:</p>
+
+<ul>
+<li><strong>Goals</strong>
+
+<ul>
+<li>What are you trying to accomplish? Why? (It could be worth asking why
+multiple times.)</li>
+<li>Will this email help you accomplish the goal?</li>
+<li>Can the goal be summarized in a single sentence? If not, it&rsquo;s probably not
+specific enough.</li>
+</ul>
+</li>
+<li><strong>Audience</strong>
+
+<ul>
+<li>Who is the audience?</li>
+<li>What does the audience care about? How can you connect the subject of your
+email to things they care about?</li>
+<li>Does every recipient need to be there? Who&rsquo;s missing?</li>
+<li>What action do you want the reader to take? Is there a clear call for
+action? For executive communications (who have notoriously short attention
+span), you&rsquo;ll want to both start and end with the same call for action.</li>
+</ul>
+</li>
+<li><strong>Content</strong>
+
+<ul>
+<li>Is there a nuance that would be lost in email that requires face to face
+conversation? Does this need to be an email?</li>
+<li>Does every sentence and paragraph support your goal?</li>
+<li>Does this need a TL;DR?</li>
+<li>Is the narrative structure in place? Is there a clear beginning, middle, and
+end? No need to write a novel, but without this the content risks being
+disjoined.</li>
+</ul>
+</li>
+<li><strong>Impulse</strong>
+
+<ul>
+<li>Is now the best time to send it? Friday afternoon is almost always a no-no,
+unless you purposely want the reader to pay less attention to the issue.</li>
+<li>If this was shared broadly, would you rephrase it? If yes - you definitely
+should.
+
+<ul>
+<li>To double down, if email is about someone, write as if that someone will
+eventually see it. It&rsquo;s fine to be candid, it&rsquo;s not fine to be rude.</li>
+</ul>
+</li>
+<li>Are you angry? Upset? I get notoriously cranky in the late afternoon, and
+avoid sending anything important until the next day - or, if time sensitive,
+until taking a short break or a walk.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Example</h2>
+
+<p>Let&rsquo;s apply this to an example. Say, I&rsquo;m writing a book, and the editor I&rsquo;m
+working with hasn&rsquo;t been responsive. I&rsquo;ve tried talking to them about it, but
+they&rsquo;re not responsive. I think it&rsquo;s the time to escalate to their supervisor.</p>
+
+<p>Here&rsquo;s the quick, dirty, and impulsive draft I would write:</p>
+
+<blockquote><p>Hello X,</p>
+
+<p>Y hasn&rsquo;t been responsive when reviewing the chapters, and it&rsquo;s really
+difficult to get back to chapters after a whole week passes by. By then I
+don&rsquo;t even have the context! I&rsquo;ve raised this multiple times and to no avail.
+Can you please get Y to be more responsive or find another editor for me to
+work with? I haven&rsquo;t been able to make meaningful progress in a month!</p></blockquote>
+
+<p>Pretty brusque, isn&rsquo;t it? I don&rsquo;t normally dissect every email like this, but
+sometimes it helps to take a closer look and formalize the decision making
+behind each sentence. Thankfully, much of this becomes habitual over time.</p>
+
+<h3>Goals</h3>
+
+<p>First things first, I want the editor to be more responsive. Why? To have a
+shorter feedback loop when it comes to making changes. Why? To make it easier
+to write - it&rsquo;s difficult to come back to the chapter after a long amount of
+time passed. Why? This pushes back timelines for each chapter.</p>
+
+<p>I don&rsquo;t really care about how to achieve this goal: the same person can be
+more responsive, or maybe I get a new point of contact to work with. Maybe
+there are other options I haven&rsquo;t considered.</p>
+
+<p>To summarize in a single sentence, the goal is to &ldquo;reduce the feedback loop&rdquo;.</p>
+
+<h3>Audience</h3>
+
+<p>The audience is the editor&rsquo;s supervisor, or maybe someone else from the
+editorial team who&rsquo;ll have the incentive to escalate.</p>
+
+<p>I know that the timelines are very important to this publisher, which is
+something I can use. I can frame the concerns around impacts of the timeline -
+even if it&rsquo;s not something I necessarily care about myself.</p>
+
+<p>Since there are multiple ways to achieve my goal and I don&rsquo;t particularly care
+about how, I can make the call for action open ended. I&rsquo;m doing this because I&rsquo;m
+comfortable with either outcomes - like the editor not being to improve response
+times, but the publisher providing more leniency around the schedule - which,
+while isn&rsquo;t ideal, still helps.</p>
+
+<h3>Content</h3>
+
+<p>As multiple people can help me accomplish a goal, and I might not be aware of
+all of relevant parties - email format works best.</p>
+
+<p>Narrative structure here is simple - I have a problem (the beginning), here&rsquo;s why
+it&rsquo;s bad (the middle), let&rsquo;s fix it (the end).</p>
+
+<p>This email is short enough not to require a TL;DR.</p>
+
+<h3>Impulse</h3>
+
+<p>As my concern is about a particular person, I have to talk about them. I don&rsquo;t
+want to avoid candor, but I can approach the situation with empathy and
+assumption of best intentions something along the lines of: &ldquo;I understand X has
+other commitments&rdquo;. Focusing on facts and leading with empathy would help here.</p>
+
+<p>Having an unresponsive editor is definitely frustrating, so it&rsquo;s worth taking a
+step back, and maybe paying extra attention - there&rsquo;s no use having frustration
+show through.</p>
+
+<h3>The result</h3>
+
+<p>After running through the checklist, we end up with (what I hope is) a better,
+more actionable, and less icky email:</p>
+
+<blockquote><p>Hello X,</p>
+
+<p>When working with Y, it takes up to a week for me to receive feedback on the
+chapters I wrote. I understand Y is working with multiple engagements, but
+I&rsquo;m concerned about the timelines for the book. If we continue as is, it&rsquo;s
+likely we&rsquo;ll have to push publishing date by X months.</p>
+
+<p>Could you help me find a resolution here?</p></blockquote>
+
+<p>It&rsquo;s short, omits unnecessary details, and leaves the reader with a clear (but
+open ended) call for action. Now, all that&rsquo;s left is to schedule send that
+email in a morning, and wait for a response!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Exercising online privacy rights]]></title>
@@ -561,7 +720,7 @@
     <id>http://www.rosipov.com/blog/abandoned-project-showcase-hikaya</id>
     <content type="html"><![CDATA[<p>Roguelikes are once niche, but an increasing mainstream video game genre. The genre is named after 1980 &ldquo;Rogue&rdquo; - a procedurally generated dungeon crawler. Rogue and games inspired by it often include simple ASCII graphics, feature procedural generation of the world, and include &ldquo;permadeath&rdquo;: the game is over once you die.</p>
 
-<p><img src="http://www.rosipov.com/images/posts/rogue-1980.png" title="A screenshot of 1980 &#34;Rogue&#34; video game." alt="A screenshot of 1980 &#34;Rogue&#34; video game."></p>
+<p><img src="http://www.rosipov.com/images/posts/rogue-1980.png" title="A screenshot of 1980 &amp;#34;Rogue&amp;#34; video game." alt="A screenshot of 1980 &amp;#34;Rogue&amp;#34; video game."></p>
 
 <p>Many games were heavily inspired by it - like Ancient Domains of Mystery and Nethack, or more recent Cataclysm: DDA and Caves of Qud. Modern games bring a lot of fantastic fusion into the genre too with like The Binding of Isaac or Hades. But I digress.</p>
 
@@ -694,7 +853,7 @@
 
 <p>Increased income is an important pillar of reaching financial independence. This is where you say:</p>
 
-<p><img src="http://www.rosipov.com/images/posts/what-an-idea.png" title="A screenshot from &#34;The Simpsons&#34; of a man smacking his forehead. The text reads &#34;My goodness, what an idea! Why didn't I think of that&#34;." alt="A screenshot from &#34;The Simpsons&#34; of a man smacking his forehead. The text reads &#34;My goodness, what an idea! Why didn't I think of that&#34;."></p>
+<p><img src="http://www.rosipov.com/images/posts/what-an-idea.png" title="A screenshot from &amp;#34;The Simpsons&amp;#34; of a man smacking his forehead. The text reads &amp;#34;My goodness, what an idea! Why didn't I think of that&amp;#34;." alt="A screenshot from &amp;#34;The Simpsons&amp;#34; of a man smacking his forehead. The text reads &amp;#34;My goodness, what an idea! Why didn't I think of that&amp;#34;."></p>
 
 <p>I work in a highly specialized (and therefore well paid) field. I can talk all I want about saving and investment, but without the high earner salary, stock grants, and financial benefits my job provides - it would take me decades to get where it takes me years.</p>
 
@@ -804,7 +963,7 @@
 
 <p>This chart tells a life story: starting with a near 0% savings rate in early 2014, a dip in 2017, and a steady 75% from 2018 onward. Let&rsquo;s trace my major life events!</p>
 
-<p><img src="http://www.rosipov.com/images/posts/savings-rate-2.png" title="The same image as described above, with a &#34;Silicon Valley job&#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%." alt="The same image as described above, with a &#34;Silicon Valley job&#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%."></p>
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-2.png" title="The same image as described above, with a &amp;#34;Silicon Valley job&amp;#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%." alt="The same image as described above, with a &amp;#34;Silicon Valley job&amp;#34; label hovering over January 2013 mark, with a savings rate at 0% preceding a climb to 25%."></p>
 
 <p>By the end of 2013 I lived in downtown Philly and was working as a freelance software developer. Per-project pay was decent, but the gaps between contracts reduced the overall income. That, and being a sole breadwinner for a family of two &ndash; the funds were running dry and we were living paycheck-to-paycheck.</p>
 
@@ -818,7 +977,7 @@
 
 <p>It took some adjusting after living in downtown Philly. Both our income and expenses increased. Thankfully with the new job we found it harder to keep up with the increasing income: that&rsquo;s where we settled for the 25% savings rate. A balance between frugality and spending habits.</p>
 
-<p><img src="http://www.rosipov.com/images/posts/savings-rate-3.png" title="The same image as described above, with a &#34;divorce, raise, car living&#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%." alt="The same image as described above, with a &#34;divorce, raise, car living&#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%."></p>
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-3.png" title="The same image as described above, with a &amp;#34;divorce, raise, car living&amp;#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%." alt="The same image as described above, with a &amp;#34;divorce, raise, car living&amp;#34; label hovering over October 2015 mark, with a savings rate at 25% preceding a climb to 75%."></p>
 
 <p>A marital disaster struck at the end of 2015: my now ex-wife and I split up. What was a downturn in life turned out to be a financial upturn for me. My ex moved back with her parents, and I stayed in the apartment we were renting.</p>
 
@@ -832,13 +991,13 @@
 
 <p>It&rsquo;s not surprising that as a culmination of those events, this is where you can see my savings rate beginning it&rsquo;s climb to a respectable 75%. Occasional spousal support would bump up the expenses, but not having rent to pay and a higher salary made it easy to absorb those expenses.</p>
 
-<p><img src="http://www.rosipov.com/images/posts/savings-rate-4.png" title="The same image as described above, with a &#34;new place&#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &#34;FIRE reignited&#34; label hovers over August 2017 mark, preceding savings rate climb to 75%." alt="The same image as described above, with a &#34;new place&#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &#34;FIRE reignited&#34; label hovers over August 2017 mark, preceding savings rate climb to 75%."></p>
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-4.png" title="The same image as described above, with a &amp;#34;new place&amp;#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &amp;#34;FIRE reignited&amp;#34; label hovers over August 2017 mark, preceding savings rate climb to 75%." alt="The same image as described above, with a &amp;#34;new place&amp;#34; label hovering over November 2016 mark, with a savings rate at 75% preceding a dip into 50%. A &amp;#34;FIRE reignited&amp;#34; label hovers over August 2017 mark, preceding savings rate climb to 75%."></p>
 
 <p>By the end of 2016 I got my dream job at Google, and moved into a new studio apartment. No, the big dip isn&rsquo;t just a new place, but it&rsquo;s strongly connected. I decided to make up for a year of living out of a single suitcase. There&rsquo;s furnishing the new place from scratch, top of the line gaming PC, a VR headset, and so many things I didn&rsquo;t need! I definitely went on a bender.</p>
 
 <p>It took me a year to slow down. This is also where my then-girlfriend and now-forever-housemate became more open with me financially: I happened to meet another FIRE enthusiast out in the wild, completely by chance. She reignited my desire to live frugally. End of 2017 was marked by me donating and selling an ungodly amount of things I accumulated over this year, and returning to comfortable living within (or below, depending on how you look at it) my needs.</p>
 
-<p><img src="http://www.rosipov.com/images/posts/savings-rate-5.png" title="The same image as described above, with a &#34;moving in&#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &#34;marriage&#34; label hovers over September 2020 mark." alt="The same image as described above, with a &#34;moving in&#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &#34;marriage&#34; label hovers over September 2020 mark."></p>
+<p><img src="http://www.rosipov.com/images/posts/savings-rate-5.png" title="The same image as described above, with a &amp;#34;moving in&amp;#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &amp;#34;marriage&amp;#34; label hovers over September 2020 mark." alt="The same image as described above, with a &amp;#34;moving in&amp;#34; label hovering over August 2018 mark, with a steady 75% savings rate onward. A &amp;#34;marriage&amp;#34; label hovers over September 2020 mark."></p>
 
 <p>We moved in together by the end of 2018 and married in 2020. We still keep separate accounts for ease of accounting, and this chart only displays my data for the sake of my partner&rsquo;s privacy (it&rsquo;s less work to chart too). Overlaying my SO&rsquo;s data after combining our finances doesn&rsquo;t meaningfully change the numbers you see above.</p>
 
@@ -924,7 +1083,7 @@ trickling in every quarter. Putting together spreadhseets is my favorite past
 time, so here&rsquo;s a breakdown of my earnings from the time I wrote a book with
 Packt.</p>
 
-<p><img src="http://www.rosipov.com/images/posts/mastering-vim-amazon.png" title="A screenshot of &#34;Mastering Vim&#34; on Amazon.com." alt="A screenshot of &#34;Mastering Vim&#34; on Amazon.com."></p>
+<p><img src="http://www.rosipov.com/images/posts/mastering-vim-amazon.png" title="A screenshot of &amp;#34;Mastering Vim&amp;#34; on Amazon.com." alt="A screenshot of &amp;#34;Mastering Vim&amp;#34; on Amazon.com."></p>
 
 <p>As of April 2021, the English version of my book has 14 reviews on Amazon
 averaging at 5 stars (that&rsquo;s more than I would hope for), which likely helps
@@ -1269,7 +1428,7 @@ there&rsquo;s really no room for growth in that relationship.</p>
   <entry>
     <title type="html"><![CDATA[Writing for fun]]></title>
     <link href="http://www.rosipov.com/blog/writing-for-fun/"/>
-    <updated>2020-11-10T18:13:17-08:00</updated>
+    <updated>2020-11-11T02:13:17+00:00</updated>
     <id>http://www.rosipov.com/blog/writing-for-fun</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve had this blog since 2012, and I&rsquo;m only now getting close to my 100th post. All because I&rsquo;m a perfectionist, which sure as hell didn&rsquo;t make me a better writer.</p>
 
@@ -1631,41 +1790,6 @@ there&rsquo;s really no room for growth in that relationship.</p>
 <h2>Stories, rules, and common sense</h2>
 
 <p>Finally, Numenera and Cypher System are focused on telling great stories, and many rules are deliberately vague and are left up to GM&rsquo;s discretion. In Numenera, if you wonder if you can attempt some task &ndash; you most definitely can try, and good GM will help you fail in spectacular and most importantly entertaining ways.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Adjusting to working from home]]></title>
-    <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T10:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
-    <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
-
-<p>My day begins around 7 or 8 am, without too much deviation from schedule. I used to bike to work before the pandemic, and I try to head out for a 30 minute ride in a morning a few days a week. There aren&rsquo;t a lot of people out early, and I love starting my day with some light cardio.</p>
-
-<p>I share breakfast and coffee with my partner, often while catching up on our favorite morning TV show. At the moment I&rsquo;m being educated on Avatar: The Last Airbender. Ugh, Azula!</p>
-
-<p>Breakfast is followed by a calendar sync. We check if either of us have overlapping or sensitive meetings. That way we know which calls either of us needs to take in another room - and which are okay to have in our workspace. Both of our desks are in the living room, and we use <a href="https://amzn.to/3ferNbP">noise cancelling headphones</a> throughout the day to help with focus. During the day we convert our bedroom to an ad hoc conference room.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/wfh-setup.jpg" title="A picture of my work-from-home setup." ></p>
-
-<p>By 9 am, I have my desk set up: I replace my personal laptop with its corporate-issued counterpart. An <a href="https://amzn.to/2SwMCpc">external webcam</a> helps with the image quality, and a dedicated <a href="https://amzn.to/2W0vREV">display</a>, keyboard (<a href="http://www.vortexgear.tw/vortex2_2.asp?kind=47&amp;kind2=220&amp;kind3=&amp;kind4=999">Vortex Pok3r</a> with <a href="https://drop.com/buy/91600">Matt3o Nerd DSA</a> key cap set), and a mouse (<a href="https://amzn.to/2SwNWbE">Glorious Model O-</a>) alleviate the cramped feeling I get when using a laptop.</p>
-
-<p>Most importantly, I&rsquo;m showered, groomed, and dressed by this time. While working in whatever I slept in has worked well for occasional remote Fridays, it proved to be unsustainable for prolonged remote work. Whenever I wasn&rsquo;t dressed for work, I found myself slowly drifting towards the couch, and trading a laptop for my phone. In fact, some days I dress up even more than I used to when going to the office!</p>
-
-<p>This is where the clear separation between home and work is established. I&rsquo;m fully dressed and have my workstation set up: it&rsquo;s work time!</p>
-
-<p>I spend the next few hours busy with heads down work, usually working on a design, writing some code, or doing anything which requires concentration. Playing something like a <a href="https://rainycafe.com/">Rainy Cafe</a> in the background helps me stay in the zone.</p>
-
-<p>Back in the office, 11 am used to be my workout time: a gym buddy of mine would consistency exercise at 11 am, and I adopted the habit of joining him over the past few years. I decided not to move the time slot: at 11 am I change into my workout clothes and exercise: 30 to 45 minutes of bodyweight exercises or online classes use up the remainder of my morning willpower. I&rsquo;m so glad there are thousands of YouTube videos to keep me company!</p>
-
-<p>My partner and I alternate cooking, and the next hour or so is reserved for cooking, lunch together, and cleanup. Remember the noise cancelling headphones? We haven&rsquo;t heard (and often seen) each other since morning! Getting to share lunch daily has definitely been the highlight of staying at home for me.</p>
-
-<p>After that - back to work: design reviews, meetings, busywork.</p>
-
-<p>I wrap up around 5 pm, and make a point not to work past that. I swap out my work laptop for my own (even if I&rsquo;m not planning to use it), and stow it away for the night. Disassembling my setup paired with showering and changing into house clothes creates a solid dividing line between work and home.</p>
-
-<p>Cooking dinner together and evening activities follow, but that&rsquo;s a story for another time. Stay healthy and productive!</p>
 ]]></content>
   </entry>
   

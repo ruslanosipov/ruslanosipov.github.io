@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-07-19T14:37:44-07:00</updated>
+  <updated>2023-07-06T13:25:22-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -69,7 +69,7 @@
   <entry>
     <title type="html"><![CDATA[Writing for fun]]></title>
     <link href="http://www.rosipov.com/blog/writing-for-fun/"/>
-    <updated>2020-11-10T18:13:17-08:00</updated>
+    <updated>2020-11-11T02:13:17+00:00</updated>
     <id>http://www.rosipov.com/blog/writing-for-fun</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve had this blog since 2012, and I&rsquo;m only now getting close to my 100th post. All because I&rsquo;m a perfectionist, which sure as hell didn&rsquo;t make me a better writer.</p>
 
@@ -102,7 +102,7 @@
   <entry>
     <title type="html"><![CDATA[Adjusting to working from home]]></title>
     <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T10:00:00-07:00</updated>
+    <updated>2020-05-04T09:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
     <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
 
@@ -137,7 +137,7 @@
   <entry>
     <title type="html"><![CDATA[My book has been published!]]></title>
     <link href="http://www.rosipov.com/blog/my-book-has-been-published/"/>
-    <updated>2018-12-24T20:00:00-08:00</updated>
+    <updated>2018-12-25T12:00:00+08:00</updated>
     <id>http://www.rosipov.com/blog/my-book-has-been-published</id>
     <content type="html"><![CDATA[<p>Over the past six to nine months I&rsquo;ve been working on a book - <a href="https://amzn.to/2EfGaN5">Mastering Vim</a>. Mastering Vim is a passion project which is meant to take the reader (you) from zero to a hero (future you): from knowing nothing about Vim, to becoming a power user. I cover many of Vim&rsquo;s mysterious commands, philosophy behind the beloved editor, configuration tips, a plethora of community created plugins, as well as creating your own plugins.</p>
 

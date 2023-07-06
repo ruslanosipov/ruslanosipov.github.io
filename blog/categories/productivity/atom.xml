@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2021-07-19T14:37:44-07:00</updated>
+  <updated>2023-07-06T13:25:22-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -14,9 +14,168 @@
 
   
   <entry>
+    <title type="html"><![CDATA[High stakes email checklist]]></title>
+    <link href="http://www.rosipov.com/blog/high-stakes-email-checklist/"/>
+    <updated>2023-07-06T13:05:13-07:00</updated>
+    <id>http://www.rosipov.com/blog/high-stakes-email-checklist</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m making a little cheat sheet for myself. As I progress in my career, much of
+my work revolves around communication, and I&rsquo;d be remiss if I don&rsquo;t share a
+formal framework I use. I like checklists, spreadsheets, and anything else that
+organizes the world around me, and it&rsquo;s fun to make one about communications.</p>
+
+<h2>Checklist</h2>
+
+<p>This is a checklist for high stakes emails, let&rsquo;s dig in:</p>
+
+<ul>
+<li><strong>Goals</strong>
+
+<ul>
+<li>What are you trying to accomplish? Why? (It could be worth asking why
+multiple times.)</li>
+<li>Will this email help you accomplish the goal?</li>
+<li>Can the goal be summarized in a single sentence? If not, it&rsquo;s probably not
+specific enough.</li>
+</ul>
+</li>
+<li><strong>Audience</strong>
+
+<ul>
+<li>Who is the audience?</li>
+<li>What does the audience care about? How can you connect the subject of your
+email to things they care about?</li>
+<li>Does every recipient need to be there? Who&rsquo;s missing?</li>
+<li>What action do you want the reader to take? Is there a clear call for
+action? For executive communications (who have notoriously short attention
+span), you&rsquo;ll want to both start and end with the same call for action.</li>
+</ul>
+</li>
+<li><strong>Content</strong>
+
+<ul>
+<li>Is there a nuance that would be lost in email that requires face to face
+conversation? Does this need to be an email?</li>
+<li>Does every sentence and paragraph support your goal?</li>
+<li>Does this need a TL;DR?</li>
+<li>Is the narrative structure in place? Is there a clear beginning, middle, and
+end? No need to write a novel, but without this the content risks being
+disjoined.</li>
+</ul>
+</li>
+<li><strong>Impulse</strong>
+
+<ul>
+<li>Is now the best time to send it? Friday afternoon is almost always a no-no,
+unless you purposely want the reader to pay less attention to the issue.</li>
+<li>If this was shared broadly, would you rephrase it? If yes - you definitely
+should.
+
+<ul>
+<li>To double down, if email is about someone, write as if that someone will
+eventually see it. It&rsquo;s fine to be candid, it&rsquo;s not fine to be rude.</li>
+</ul>
+</li>
+<li>Are you angry? Upset? I get notoriously cranky in the late afternoon, and
+avoid sending anything important until the next day - or, if time sensitive,
+until taking a short break or a walk.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Example</h2>
+
+<p>Let&rsquo;s apply this to an example. Say, I&rsquo;m writing a book, and the editor I&rsquo;m
+working with hasn&rsquo;t been responsive. I&rsquo;ve tried talking to them about it, but
+they&rsquo;re not responsive. I think it&rsquo;s the time to escalate to their supervisor.</p>
+
+<p>Here&rsquo;s the quick, dirty, and impulsive draft I would write:</p>
+
+<blockquote><p>Hello X,</p>
+
+<p>Y hasn&rsquo;t been responsive when reviewing the chapters, and it&rsquo;s really
+difficult to get back to chapters after a whole week passes by. By then I
+don&rsquo;t even have the context! I&rsquo;ve raised this multiple times and to no avail.
+Can you please get Y to be more responsive or find another editor for me to
+work with? I haven&rsquo;t been able to make meaningful progress in a month!</p></blockquote>
+
+<p>Pretty brusque, isn&rsquo;t it? I don&rsquo;t normally dissect every email like this, but
+sometimes it helps to take a closer look and formalize the decision making
+behind each sentence. Thankfully, much of this becomes habitual over time.</p>
+
+<h3>Goals</h3>
+
+<p>First things first, I want the editor to be more responsive. Why? To have a
+shorter feedback loop when it comes to making changes. Why? To make it easier
+to write - it&rsquo;s difficult to come back to the chapter after a long amount of
+time passed. Why? This pushes back timelines for each chapter.</p>
+
+<p>I don&rsquo;t really care about how to achieve this goal: the same person can be
+more responsive, or maybe I get a new point of contact to work with. Maybe
+there are other options I haven&rsquo;t considered.</p>
+
+<p>To summarize in a single sentence, the goal is to &ldquo;reduce the feedback loop&rdquo;.</p>
+
+<h3>Audience</h3>
+
+<p>The audience is the editor&rsquo;s supervisor, or maybe someone else from the
+editorial team who&rsquo;ll have the incentive to escalate.</p>
+
+<p>I know that the timelines are very important to this publisher, which is
+something I can use. I can frame the concerns around impacts of the timeline -
+even if it&rsquo;s not something I necessarily care about myself.</p>
+
+<p>Since there are multiple ways to achieve my goal and I don&rsquo;t particularly care
+about how, I can make the call for action open ended. I&rsquo;m doing this because I&rsquo;m
+comfortable with either outcomes - like the editor not being to improve response
+times, but the publisher providing more leniency around the schedule - which,
+while isn&rsquo;t ideal, still helps.</p>
+
+<h3>Content</h3>
+
+<p>As multiple people can help me accomplish a goal, and I might not be aware of
+all of relevant parties - email format works best.</p>
+
+<p>Narrative structure here is simple - I have a problem (the beginning), here&rsquo;s why
+it&rsquo;s bad (the middle), let&rsquo;s fix it (the end).</p>
+
+<p>This email is short enough not to require a TL;DR.</p>
+
+<h3>Impulse</h3>
+
+<p>As my concern is about a particular person, I have to talk about them. I don&rsquo;t
+want to avoid candor, but I can approach the situation with empathy and
+assumption of best intentions something along the lines of: &ldquo;I understand X has
+other commitments&rdquo;. Focusing on facts and leading with empathy would help here.</p>
+
+<p>Having an unresponsive editor is definitely frustrating, so it&rsquo;s worth taking a
+step back, and maybe paying extra attention - there&rsquo;s no use having frustration
+show through.</p>
+
+<h3>The result</h3>
+
+<p>After running through the checklist, we end up with (what I hope is) a better,
+more actionable, and less icky email:</p>
+
+<blockquote><p>Hello X,</p>
+
+<p>When working with Y, it takes up to a week for me to receive feedback on the
+chapters I wrote. I understand Y is working with multiple engagements, but
+I&rsquo;m concerned about the timelines for the book. If we continue as is, it&rsquo;s
+likely we&rsquo;ll have to push publishing date by X months.</p>
+
+<p>Could you help me find a resolution here?</p></blockquote>
+
+<p>It&rsquo;s short, omits unnecessary details, and leaves the reader with a clear (but
+open ended) call for action. Now, all that&rsquo;s left is to schedule send that
+email in a morning, and wait for a response!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Adjusting to working from home]]></title>
     <link href="http://www.rosipov.com/blog/adjusting-to-wfh/"/>
-    <updated>2020-05-04T10:00:00-07:00</updated>
+    <updated>2020-05-04T09:00:00-08:00</updated>
     <id>http://www.rosipov.com/blog/adjusting-to-wfh</id>
     <content type="html"><![CDATA[<p>Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it&rsquo;s been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I&rsquo;ve decided to approach remote work with a plan.</p>
 
@@ -51,7 +210,7 @@
   <entry>
     <title type="html"><![CDATA[Google Drive on Linux with rclone]]></title>
     <link href="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/"/>
-    <updated>2019-06-23T00:00:00-07:00</updated>
+    <updated>2019-06-23T15:00:00+08:00</updated>
     <id>http://www.rosipov.com/blog/google-drive-on-linux-with-rclone</id>
     <content type="html"><![CDATA[<p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
 
@@ -111,7 +270,7 @@
   <entry>
     <title type="html"><![CDATA[Desktop notifications from Chrome Secure Shell]]></title>
     <link href="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/"/>
-    <updated>2017-08-04T10:33:16-07:00</updated>
+    <updated>2017-08-04T17:33:16+00:00</updated>
     <id>http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell</id>
     <content type="html"><![CDATA[<p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
 
@@ -292,63 +451,6 @@ have to troubleshoot the speed or plain disable it.</p>
 
 <p>Don&rsquo;t forget to remove the lines you added to your bash configuration files
 after you&rsquo;re done profiling.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Managing cd bookmarks with apparix]]></title>
-    <link href="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/"/>
-    <updated>2015-02-20T16:25:45-08:00</updated>
-    <id>http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix</id>
-    <content type="html"><![CDATA[<p>A couple of months ago I discovered apparix: a set of commands which augment
-<code>cd</code> with bookmarks. It really is an amazing feeling when you zap between
-multiple directories far away just with a couple of keystrokes! Apparix
-provides three commands I use daily: <code>to</code>, <code>bm</code>, and <code>apparix</code> (program
-suggests aliasing last one to <code>als</code>). Here&rsquo;s how I use it:</p>
-
-<pre><code>$ pwd
-/Users/ruslan
-$ apparix
---- portals
---- expansions
---- bookmarks
-j dotfiles     /Users/ruslan/.dotfiles
-j blog         /Users/ruslan/Projects/ruslanosipov.github.io
-$ to blog
-$ pwd
-/Users/ruslan/Projects/ruslanosipov.github.io
-$ cd source/_posts
-$ bm posts
-added: posts -&gt; /Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
-$ to dotfiles
-$ pwd
-/Users/ruslan/.dotfiles
-$ to posts
-$ pwd
-/Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
-</code></pre>
-
-<p>The example above is self explanatory: you can see how over the span of a year
-apparix saves hours of navigating directories you frequent.</p>
-
-<h2>Installation</h2>
-
-<p>If you don&rsquo;t like reading manuals, installation might be a confusing. But in
-reality it&rsquo;s straightforward, you just need to add some functions or aliases to
-your shell&rsquo;s configuration file.</p>
-
-<p>Install <code>apparix</code> using your favorite package manager, and then pipe examples
-apparix offers into your shell&rsquo;s <code>rc</code> file.</p>
-
-<pre><code>apparix --shell-examples &gt;&gt; ~/.bashrc
-</code></pre>
-
-<p>Open your <code>.bashrc</code> (or another corresponding configuration file), and pick the
-preferred way of using apparix: you&rsquo;ll see functions for bash and aliases for
-csh given as examples. Pick whatever works for your shell, source your <code>rc</code>
-file, and you&rsquo;re all set!</p>
-
-<p>Happy jumping!</p>
 ]]></content>
   </entry>
   

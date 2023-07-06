@@ -127,6 +127,100 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-02T13:32:51-07:00"  data-updated="true" itemprop="datePublished dateCreated"> 2 Aug 2014</time>
+        
+           | <a href="/blog/effective-search-with-mutt/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/effective-search-with-mutt/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/effective-search-with-mutt/" itemprop="url">Effective search with Mutt</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I generally don&rsquo;t use Mutt for everyday emails - I find smooth non-monospace
+fonts to be more pleasant to the eye, and the visualization my browser offers
+is hard to beat. The main use-case for me is composing long emails: Mutt lets
+me use my favorite text editor, which speeds up the editing of long and
+carefully composed responses.</p>
+
+<p>Recently I added a new use-case to my work flow: searching through emails.
+Mutt has a powerful built-in regular-expressions engine, which is something the
+web Gmail client is missing.</p>
+
+<p>Mutt has two ways of finding things: search and limit. &ldquo;Search&rdquo; just jumps from
+one matching letter to another, something along the lines what <code>/</code> command does
+in <code>less</code>, <code>more</code>, or <code>vim</code>. &ldquo;Limit&rdquo; is something I am more used to with the
+web client, and it&rsquo;s what I use the most.</p>
+
+<h2>Using limits</h2>
+
+<p>Limit works the way regular search works in Gmail: it limits the view to
+conversations matching the query. Hit <code>l</code>, and enter a search query.</p>
+
+<p>By default, Mutt will only search through the subject lines, but this behaviour
+can be changed by prefixing the command with a special identifier. For
+instance, searching for <code>~b oranges</code> will limit the view to all the messages
+which mention &ldquo;oranges&rdquo; in the message body. Here are a couple I use the most:</p>
+
+<ul>
+<li><code>~b</code> &ndash; Search in the message body.</li>
+<li><code>~B</code> &ndash; Search in the whole message.</li>
+<li><code>~f</code> &ndash; Message originated from the user.</li>
+<li><code>~Q</code> &ndash; Messages which have been replied to.</li>
+</ul>
+
+
+<p>You can find full list in the <a href="http://www.sendmail.org/~ca/email/mutt/manual-4.html#ss4.2">Mutt Advanced Usage Manual</a>.</p>
+
+<p>Patterns can be chained to produce narrower results: <code>~f joe ~B apples</code>. This
+will search for a message mentioning &ldquo;apples&rdquo; coming from an author whose name
+contains &ldquo;joe&rdquo;.</p>
+
+<h3>Caching mail for faster search</h3>
+
+<p>You may find that searching whole messages is slow, especially if you have more
+than a couple hundred messages to search through. That&rsquo;s because by default
+Mutt does not store messages for local use. This can be changed by specifying
+<code>header_cache</code> and <code>message_cachedir</code> variables in your <code>.muttrc</code> file:</p>
+
+<pre><code>set header_cache     = "$HOME/Mail"
+set message_cachedir = "$HOME/Mail"
+</code></pre>
+
+<p>Now, after you perform your first search, it will cache every message you open,
+making all the consecutive searches lightning fast.</p>
+
+<p>Oh, and keep in mind, Mutt stores messages and headers in plain text, so make
+sure the cache directory is not shared with anyone but yourself.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-29T23:00:04-07:00"  data-updated="true" itemprop="datePublished dateCreated">29 Jul 2014</time>
         
            | <a href="/blog/one-more-argument-for-80-character-limit/#disqus_thread" itemprop="discussionUrl"
@@ -437,81 +531,6 @@ the resulting articles.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-14T18:43:26-07:00"  data-updated="true" itemprop="datePublished dateCreated">14 Jul 2014</time>
-        
-           | <a href="/blog/the-pragmatic-programmer/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/the-pragmatic-programmer/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/the-pragmatic-programmer/" itemprop="url">&#8220;The Pragmatic Programmer&#8221;</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I just finished reading &ldquo;<a href="http://amzn.to/1zXtlQx">The Pragmatic Programmer</a>&rdquo; by Andrew Hunt and
-David Thomas - two consultants behind Pragmatic Programmers, LLC. This book
-might as well be a fantastic marketing trick for their consulting agency, but
-the value it brings to the reader is hard to underestimate.</p>
-
-<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
-major aspect of developing software: be it the choice of a text editor,
-calculating time complexity, or working effectively on a team.</p>
-
-<p>If you read thematic books and actively follow programming blogs and podcasts -
-you may find yourself cheerfully nodding while reading sections of this book.
-You may have read about some of the tips online, heard from colleagues, or
-simply discovered them yourself. You will finish this book with a wide smile of
-approval, and a sense of validation in regards to your daily work flow or
-actions.</p>
-
-<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
-can utilize right away, right now, at your workplace. This is what &ldquo;The
-Pragmatic Programmer&rdquo; essentially is: a collection of practical things
-regarding getting things done.</p>
-
-<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
-reading list out there. And for a solid reason. This is the kind of book you
-want to re-read every couple of years to absorb every piece of knowledge
-presented within it. The latest edition of the book even contains a printout
-with all the tips listed in the book.</p>
-
-<p>You should read it after being in the field for a few years. After making
-mistakes, and figuring some things out on your own. Beginners might not
-understand some pieces, but will still be able to comprehend a major portion of
-knowledge contained within this book.</p>
-
-<p>I enthusiastically recommend this book to every software engineer I get to work
-with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;<a href="http://amzn.to/1zGLlv1">Code Complete</a>&rdquo;
-or &ldquo;<a href="http://amzn.to/1zGLnDl">Art of Computer Programming</a>&rdquo;) and it teaches you how to get things
-done, the pragmatic way.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -535,6 +554,8 @@ done, the pragmatic way.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/high-stakes-email-checklist/">High stakes email checklist</a>
+    
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
@@ -552,8 +573,6 @@ done, the pragmatic way.</p>
     <a class="list-group-item " href="/blog/fire-in-a-developing-economy/">FIRE in a developing economy</a>
     
     <a class="list-group-item " href="/blog/savings-rate-plotted-over-8-years/">Savings rate plotted over 8 years</a>
-    
-    <a class="list-group-item " href="/blog/living-at-work/">Living at work</a>
     
   </div>
 </section>
@@ -596,7 +615,7 @@ done, the pragmatic way.</p>
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2021 - Ruslan Osipov<br>
+  Copyright &copy; 2023 - Ruslan Osipov<br>
   <small>
       <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
