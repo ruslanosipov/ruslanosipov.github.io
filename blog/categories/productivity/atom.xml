@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-06T13:59:27-07:00</updated>
+  <updated>2023-07-10T08:38:33-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Eisenhower matrix]]></title>
+    <link href="http://www.rosipov.com/blog/the-eisenhower-matrix/"/>
+    <updated>2023-07-10T08:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/the-eisenhower-matrix</id>
+    <content type="html"><![CDATA[<p>The Eisenhower matrix, sometimes known as the priority matrix, is an invaluable
+planning tool, and something I have been consistently using for the better part
+of the last decade.</p>
+
+<p>As someone who has a short attention span and easily gets overwhelmed, I find
+Eisenhower matrix to be an invaluable tool in allowing me to focus on what&rsquo;s
+important, rather than what&rsquo;s right in front of me.</p>
+
+<p>Oh, I still struggle to make sure that things that are important to me are
+what matters to others, but that&rsquo;s a whole different battle - at the very least
+I&rsquo;m able to keep my own head straight, and that&rsquo;s a win in my book.</p>
+
+<p>Without any further ado, I present to you the decision making framework
+developed and popularized by Dwight D. Eisenhower, the 34th president of the
+United States (and clearly a notorious efficiency nut).</p>
+
+<p><img src="/images/posts/eisenhower-matrix.png" title="Picture of an Eisenhower matrix: vertical axis titled &ldquo;Importance&rdquo;, horizontal axis titled &ldquo;Urgency&rdquo;, and four quadrants titled &ldquo;Do now&rdquo;, &ldquo;Schedule&rdquo;, &ldquo;Delegate&rdquo;, and &ldquo;Eliminate&rdquo;." ></p>
+
+<p>It&rsquo;s pretty simple, really. Take everything from your long single-file To-Do
+list, and place it on the matrix based on its urgency and importance. Work
+through the matrix in the following order:</p>
+
+<ul>
+<li>Urgent and important: get these done, now.</li>
+<li>Important, but not urgent: decide when you want to do these, actively make
+time for yourself to work on those.</li>
+<li>Urgent, but not important: delegate (read on below if you have no one to
+delegate to).</li>
+<li>Not urgent and not important: take time to eliminate these tasks.</li>
+</ul>
+
+
+<h2>Do now: a common pitfall</h2>
+
+<p>It&rsquo;s easy to throw everything into the &ldquo;urgent and important&rdquo; pile. In reality,
+that&rsquo;s not often the case. If you find yourself throwing everything in the first
+quadrant - I implore you to think of your tasks in relative terms. Out of
+everything on your mind, I&rsquo;m sure some things are more important than others.</p>
+
+<p>I find that over time most of my work shifts into a single quadrant (usually the
+&ldquo;important, but not urgent&rdquo;), and I find it helpful to redistribute those, or
+populate the matrix from scratch.</p>
+
+<h2>Schedule: mindful use of time</h2>
+
+<p>One of the goals of the Eisenhower Matrix is to increase visibility into how you
+spend your time. While it&rsquo;s easy to spend most of the time in the &ldquo;urgent and
+important&rdquo; quadrant, the best work happens in the &ldquo;important, but not urgent&rdquo;
+section of the matrix. That&rsquo;s where the best use of your time is, and that&rsquo;s
+where most of the energy and attention should be spent.</p>
+
+<p>Otherwise you&rsquo;re just running around like a chicken with its head cut off,
+although I can sympathise with the difficulty of getting out of the urgency
+trap. It&rsquo;s not trivial, and probably downright impossible in some cases.</p>
+
+<p>This is where the biggest pitfall of the Eisenhower matrix lays in my
+experience. You want to maximize amount of time spent in the &ldquo;schedule&rdquo;
+quadrant, but you don&rsquo;t want to end up with a massive list that becomes a yet
+another To Do list, because <a href="https://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/">one dimensional To-Do lists suck</a>.</p>
+
+<h2>Delegate: to whom?</h2>
+
+<p>Not everyone has someone to delegate work to. Or not everything can be
+delegated. In these cases, I treat the &ldquo;delegate&rdquo; bucket the same as
+&ldquo;eliminate&rdquo;. Hopefully that won&rsquo;t come back to bite me in the future.</p>
+
+<h2>Eliminate: it&rsquo;s hard</h2>
+
+<p>I really like following up on things, to a fault. I don&rsquo;t like leaving loose
+ends, unanswered emails, or unspoken expectations. I find it helpful to schedule
+time to explicitly eliminate certain work, and communicate explicit expectations
+to everyone around me about that. Because of that, that&rsquo;s where the most of my
+procrastination happens. Telling people &ldquo;no&rdquo; isn&rsquo;t always easy, and I still
+don&rsquo;t have the best process for combing through the &ldquo;Eliminate&rdquo; quadrant.</p>
+
+<p>I know many people are a lot more comfortable letting unimportant things quietly
+fall through the cracks, and there&rsquo;s nothing wrong with that.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[High stakes email checklist]]></title>
@@ -363,94 +448,6 @@ main "$@"
 
 <pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Profiling slow bashrc]]></title>
-    <link href="http://www.rosipov.com/blog/profiling-slow-bashrc/"/>
-    <updated>2015-07-15T10:07:53-07:00</updated>
-    <id>http://www.rosipov.com/blog/profiling-slow-bashrc</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve recently noticed that it takes a long time for my bash to load. I&rsquo;ve found
-<a href="http://stackoverflow.com/a/5015179/2578489">following StackOverflow answer</a> to be useful, and I based my solution to find a
-startup time hog in my <code>~/.bashrc</code> upon it.</p>
-
-<p>First off, add following few lines to your <code>/etc/bash.bashrc</code>,
-<code>~/.bash_profile</code>, or wherever you&rsquo;d like to begin tracing the script:</p>
-
-<pre><code>PS4='+ $(date "+%s.%N")\011 '
-exec 3&gt;&amp;2 2&gt;/tmp/bashstart.$$.log
-set -x
-</code></pre>
-
-<p>And add following few lines where you want to stop the trace:</p>
-
-<pre><code>set +x
-exec 2&gt;&amp;3 3&gt;&amp;-
-</code></pre>
-
-<p>Now start your bash session (you can simply open a new terminal Window for
-that). The above will create <code>/tmp/bashstart.&lt;PID&gt;.log</code>. To analyze it, I wrote
-a little Python script:</p>
-
-<pre><code>import argparse
-import heapq
-
-parser = argparse.ArgumentParser(description='Analyze bashstart log for speed.')
-parser.add_argument('filename', help='often /tmp/bashstart.&lt;PID&gt;.log')
-parser.add_argument('-n', default=20, help='number of results to show')
-args = parser.parse_args()
-filename, n = args.filename, int(args.n)
-
-with open(filename, 'r') as f:
-    q = []
-    prev_time = None
-    for line in f.readlines():
-        line = line.split()
-        if '+' not in line[0] or len(line) &lt; 3:
-            continue
-        text = ' '.join(line[2:])
-        seconds, nanoseconds = line[1].split('.')
-        time = int(nanoseconds)
-        diff = time - prev_time if prev_time is not None else 0
-        prev_time = time
-        heapq.heappush(q, (diff, text))
-
-for diff, text in heapq.nlargest(n, q):
-    print float(diff) / 1000000000, 's:', text
-</code></pre>
-
-<p>Save it as <code>bashprofile.py</code>, and run it as follows (replace file name with an
-appropriate):</p>
-
-<pre><code>python bashprofile.py /tmp/bashstart.2831.log -n 20
-0.050056909 s: _powerline_init_tmux_support
-0.045323022 s: _powerline_setup_prompt
-0.044722024 s: _powerline_setup_prompt
-0.044423727 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
-0.044364097 s: '[' -f /usr/local/google/home/ruslano/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ']'
-0.044137159 s: _powerline_init_tmux_support
-0.015839574 s: __shell_name=bash
-0.010850276 s: command which which
-0.010105462 s: PS2='\[\]  \[\] \[\]'
-0.010000598 s: PS3=' Select variant  '
-0.009837956 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
-0.009767517 s: PS2='\[\]  \[\] \[\]'
-0.0095753 s: PS3=' Select variant  '
-0.007915565 s: other_utils=(ant automake autoreconf libtoolize make mount patch readlink)
-0.00771205 s: for script in version functions/selector cd functions/cli cli override_gem
-0.007008299 s: for gnu_util in '"${gnu_utils[@]}"'
-0.00693653 s: complete -F _crow crow
-0.006803049 s: complete -F _svn -o default -X '@(*/.svn|*/.svn/|.svn|.svn/)' svn
-0.006672906 s: for script in version functions/selector cd functions/cli cli override_gem
-0.005912399 s: for entry in '${scripts[@]}'
-</code></pre>
-
-<p>In my example, <a href="https://github.com/powerline/powerline">Powerline</a> turned out to be a massive hog. Looks like I&rsquo;ll
-have to troubleshoot the speed or plain disable it.</p>
-
-<p>Don&rsquo;t forget to remove the lines you added to your bash configuration files
-after you&rsquo;re done profiling.</p>
 ]]></content>
   </entry>
   
