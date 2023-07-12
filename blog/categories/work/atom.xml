@@ -4,7 +4,7 @@
   <title><![CDATA[Category: work | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/work/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-10T08:38:33-07:00</updated>
+  <updated>2023-07-12T10:04:46-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Eisenhower matrix]]></title>
+    <link href="http://www.rosipov.com/blog/the-eisenhower-matrix/"/>
+    <updated>2023-07-10T08:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/the-eisenhower-matrix</id>
+    <content type="html"><![CDATA[<p>The Eisenhower matrix, sometimes known as the priority matrix, is an invaluable
+planning tool, and something I have been consistently using for the better part
+of the last decade.</p>
+
+<p>As someone who has a short attention span and easily gets overwhelmed, I find
+Eisenhower matrix to be an invaluable tool in allowing me to focus on what&rsquo;s
+important, rather than what&rsquo;s right in front of me.</p>
+
+<p>Oh, I still struggle to make sure that things that are important to me are
+what matters to others, but that&rsquo;s a whole different battle - at the very least
+I&rsquo;m able to keep my own head straight, and that&rsquo;s a win in my book.</p>
+
+<p>Without any further ado, I present to you the decision making framework
+developed and popularized by Dwight D. Eisenhower, the 34th president of the
+United States (and clearly a notorious efficiency nut).</p>
+
+<p><img src="/images/posts/eisenhower-matrix.png" title="Picture of an Eisenhower matrix: vertical axis titled &ldquo;Importance&rdquo;, horizontal axis titled &ldquo;Urgency&rdquo;, and four quadrants titled &ldquo;Do now&rdquo;, &ldquo;Schedule&rdquo;, &ldquo;Delegate&rdquo;, and &ldquo;Eliminate&rdquo;." ></p>
+
+<p>It&rsquo;s pretty simple, really. Take everything from your long single-file To-Do
+list, and place it on the matrix based on its urgency and importance. Work
+through the matrix in the following order:</p>
+
+<ul>
+<li>Urgent and important: get these done, now.</li>
+<li>Important, but not urgent: decide when you want to do these, actively make
+time for yourself to work on those.</li>
+<li>Urgent, but not important: delegate (read on below if you have no one to
+delegate to).</li>
+<li>Not urgent and not important: take time to eliminate these tasks.</li>
+</ul>
+
+
+<h2>Do now: a common pitfall</h2>
+
+<p>It&rsquo;s easy to throw everything into the &ldquo;urgent and important&rdquo; pile. In reality,
+that&rsquo;s not often the case. If you find yourself throwing everything in the first
+quadrant - I implore you to think of your tasks in relative terms. Out of
+everything on your mind, I&rsquo;m sure some things are more important than others.</p>
+
+<p>I find that over time most of my work shifts into a single quadrant (usually the
+&ldquo;important, but not urgent&rdquo;), and I find it helpful to redistribute those, or
+populate the matrix from scratch.</p>
+
+<h2>Schedule: mindful use of time</h2>
+
+<p>One of the goals of the Eisenhower Matrix is to increase visibility into how you
+spend your time. While it&rsquo;s easy to spend most of the time in the &ldquo;urgent and
+important&rdquo; quadrant, the best work happens in the &ldquo;important, but not urgent&rdquo;
+section of the matrix. That&rsquo;s where the best use of your time is, and that&rsquo;s
+where most of the energy and attention should be spent.</p>
+
+<p>Otherwise you&rsquo;re just running around like a chicken with its head cut off,
+although I can sympathise with the difficulty of getting out of the urgency
+trap. It&rsquo;s not trivial, and probably downright impossible in some cases.</p>
+
+<p>This is where the biggest pitfall of the Eisenhower matrix lays in my
+experience. You want to maximize amount of time spent in the &ldquo;schedule&rdquo;
+quadrant, but you don&rsquo;t want to end up with a massive list that becomes a yet
+another To Do list, because <a href="https://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/">one dimensional To-Do lists suck</a>.</p>
+
+<h2>Delegate: to whom?</h2>
+
+<p>Not everyone has someone to delegate work to. Or not everything can be
+delegated. In these cases, I treat the &ldquo;delegate&rdquo; bucket the same as
+&ldquo;eliminate&rdquo;. Hopefully that won&rsquo;t come back to bite me in the future.</p>
+
+<h2>Eliminate: it&rsquo;s hard</h2>
+
+<p>I really like following up on things, to a fault. I don&rsquo;t like leaving loose
+ends, unanswered emails, or unspoken expectations. I find it helpful to schedule
+time to explicitly eliminate certain work, and communicate explicit expectations
+to everyone around me about that. Because of that, that&rsquo;s where the most of my
+procrastination happens. Telling people &ldquo;no&rdquo; isn&rsquo;t always easy, and I still
+don&rsquo;t have the best process for combing through the &ldquo;Eliminate&rdquo; quadrant.</p>
+
+<p>I know many people are a lot more comfortable letting unimportant things quietly
+fall through the cracks, and there&rsquo;s nothing wrong with that.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[High stakes email checklist]]></title>
@@ -299,214 +384,6 @@ email in a morning, and wait for a response!</p>
 <p>But time and time again, I corrected the course and resumed my routine. During my soul searching adventure remote work was fun. Because this time working remotely is much harder. There are no sights to see. No new places to stay in. No novelty to look towards at the end of the day. Working from home in the middle of a pandemic is oh-so-difficult.</p>
 
 <p>To be honest I can&rsquo;t wait to be back in the office. But I&rsquo;m also excited to work from home on my own terms. Because this isn&rsquo;t what remote work is like.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How much does writing a book earn?]]></title>
-    <link href="http://www.rosipov.com/blog/how-much-does-writing-a-book-earn/"/>
-    <updated>2021-04-07T18:30:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/how-much-does-writing-a-book-earn</id>
-    <content type="html"><![CDATA[<p>I write about Vim &ndash; a modal text editor &ndash; <a href="/blog/categories/vim">a lot</a>. In fact, in early 2018
-I was approached by <a href="https://packtpub.com">Packt Publishing</a> &ndash; what I&rsquo;ve later learned to be a
-&ldquo;quantity over quality&rdquo; publishing house. Over the next 6 to 9 months I wrote a
-300-page <a href="https://amzn.to/3wBeTx4">&ldquo;Mastering Vim&rdquo;</a>.</p>
-
-<p>It was a stressful endeavour, with a publisher rushing to meet internal
-deadlines and eventually sending an unfinished draft to print. There were many
-highlights too, like actually cranking out 300 pages of material, or getting to
-work with Bram Moolenaar &ndash; the creator of Vim himself. Now that a few years
-have passed and the book is at its 3rd edition, complete, and re-released &ndash;
-I&rsquo;m a lot more happy with the result.</p>
-
-<p>I can write a whole other essay about my experience working with the publisher,
-but that&rsquo;s a horror story for another time.</p>
-
-<p>I didn&rsquo;t write to make money, but it&rsquo;s nice seeing a couple of hundred dollars
-trickling in every quarter. Putting together spreadhseets is my favorite past
-time, so here&rsquo;s a breakdown of my earnings from the time I wrote a book with
-Packt.</p>
-
-<p><img src="/images/posts/mastering-vim-amazon.png" title="A screenshot of &ldquo;Mastering Vim&rdquo; on Amazon.com." ></p>
-
-<p>As of April 2021, the English version of my book has 14 reviews on Amazon
-averaging at 5 stars (that&rsquo;s more than I would hope for), which likely helps
-keep the sales at a somewhat of a steady level.</p>
-
-<p>I was signed into a default &ldquo;16% of net receipts&rdquo; contract, with a $2,000
-advance given out to me. The advance was split into 5 milestone-based
-installments: the first preliminary draft, 6 preliminary drafts, the remaining
-preliminary drafts, the final drafts, and the publication. Although I didn&rsquo;t
-urgently need the money, and the publisher may have just sent it as a bulk
-$2,000 payment after the publication.</p>
-
-<p>Eventually I received a PDF for the first quarter of my book being sold&hellip; And
-here are the financials for Q4 2018:</p>
-
-<table>
-<thead>
-<tr>
-<th> Print # </th>
-<th> Print $ </th>
-<th> E-books # </th>
-<th> E-books $ </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 10      </td>
-<td> $55.50  </td>
-<td> 274       </td>
-<td> $307.70   </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>A whopping 363 dollars and 20 cents in royalties! I didn&rsquo;t really think anyone
-would be interested to read the book, so seeing 284 copies sold I was pretty
-ecstatic!</p>
-
-<p>Selling printed books seems to pay $5.55 per copy, while e-books only bring me
-$1.12.</p>
-
-<p>Now I didn&rsquo;t see any of that money, since I would have to &ldquo;pay back&rdquo; the
-advance. I know it&rsquo;s called &ldquo;the advance&rdquo;, and I knew that I won&rsquo;t be getting
-that first check in the mail &ndash; but it sucked a bit nonetheless.</p>
-
-<p>After that I received some great news &ndash; my book was going to get
-<a href="https://amzn.to/3fN7mFz">translated to Japanese</a>! During my last trip to Tokyo I made some friends
-who were interested in Vim as much as I was, and one of them - Masafumi Okura -
-decided to translate &ldquo;Mastering Vim&rdquo; into his native language. The legend found
-close to three dozen mistakes in my book too, and is solely responsible for the
-third edition of Mastering Vim!</p>
-
-<p>Turns out the translation rights are expensive, and I&rsquo;m getting my cut as well
-&ndash; $1,586.26! That&rsquo;s more than the first quarter of sales!</p>
-
-<p>Packt advertised my book for a few months or so, but they seemed to have
-quickly lost interest. I received my first 5 star review on Amazon though,
-which was great! I spent the next month refreshing Amazon reviews daily, after
-realizing that to be a path to acquiring a mental illness.</p>
-
-<p>2019 came, and here are my next 4 quarterly statements:</p>
-
-<table>
-<thead>
-<tr>
-<th> Quarter      </th>
-<th> Print # </th>
-<th> Print $ </th>
-<th> E-books # </th>
-<th> E-books $ </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 2019 Q1      </td>
-<td> 29      </td>
-<td> $141.89 </td>
-<td> 202       </td>
-<td> $337.49   </td>
-</tr>
-<tr>
-<td> 2019 Q2      </td>
-<td> 15      </td>
-<td> $77.53  </td>
-<td> 71        </td>
-<td> $194.26   </td>
-</tr>
-<tr>
-<td> 2019 Q3      </td>
-<td> 19      </td>
-<td> $100.09 </td>
-<td> 57        </td>
-<td> $207.68   </td>
-</tr>
-<tr>
-<td> 2019 Q4      </td>
-<td> 23      </td>
-<td> $118.55 </td>
-<td> 117       </td>
-<td> $255.17   </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>I sold 86 print books and 447 e-books in 2019. You can see the higher numbers
-correspond to seasonal sales. Notice the prices for Q3 and Q4. E-books sold in
-Q3 pay me as much as $3.64 per copy, while in Q1 it&rsquo;s a meager $1.67 per book.
-Print edition payout stays much more consistent.</p>
-
-<p>Altogether, I earned $1432.66 from my first full year of selling &ldquo;Mastering
-Vim&rdquo;.</p>
-
-<p>Here are my 2020 earnings:</p>
-
-<table>
-<thead>
-<tr>
-<th> Quarter      </th>
-<th> Print # </th>
-<th> Print $ </th>
-<th> E-books # </th>
-<th> E-books $ </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 2020 Q1      </td>
-<td> 26      </td>
-<td> $131.61 </td>
-<td> 112       </td>
-<td> $414.12   </td>
-</tr>
-<tr>
-<td> 2020 Q2      </td>
-<td> 22      </td>
-<td> $106.67 </td>
-<td> 77        </td>
-<td> $379.61   </td>
-</tr>
-<tr>
-<td> 2020 Q3      </td>
-<td> 26      </td>
-<td> $141.17 </td>
-<td> 74        </td>
-<td> $325.97   </td>
-</tr>
-<tr>
-<td> 2020 Q4      </td>
-<td> 45      </td>
-<td> $236.69 </td>
-<td> 166       </td>
-<td> $458.07   </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>That&rsquo;s $1,533.38, a $100 more than in 2019. The patterns seem rather
-predictable, with Q2 and Q3 being slow, and Q1 and Q4 displaying a noticeable
-spike.</p>
-
-<p>Finally, Packt offers service subscriptions &ndash; I believe the subscription is for
-the courses they offer, but I can&rsquo;t say for sure. Payout per subscription is
-small, and I&rsquo;ve earned $158.10 over the 9 quarters since publishing &ldquo;Mastering
-Vim&rdquo;.</p>
-
-<p>Across $3,329.24 in book sales, $1,586.26 in translation fees, and $158.10 in
-subscriptions, this adds up to $5,073.60 over the 2+ years the book has been in
-print. Looks like it can make for a decent supplemental income if you write
-enough books, but I&rsquo;m saying that based on a sample size of one.</p>
-
-<p>Throughout this time, my earnings per copy average at $5.16 for a print, and
-$1.93 for an e-book (using weighted averages for quarterly sales).</p>
-
-<p>And here&rsquo;s the last number in this post &ndash; this one purely for fun. Based on
-the 16% royalty rate, Packt probably earned $31,710 from &ldquo;Mastering Vim&rdquo; so
-far.</p>
 ]]></content>
   </entry>
   
