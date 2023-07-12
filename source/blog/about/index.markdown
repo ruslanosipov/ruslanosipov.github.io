@@ -17,13 +17,9 @@ I've published a book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and
 
 I'm not very active online, but you can find me on the following websites:
 
-* Professional
-  * [LinkedIn](http://www.linkedin.com/in/ruslanosipov)
-  * [Stack Overflow Careers 2.0](http://careers.stackoverflow.com/ruslanosipov)
-  * [Twitter](https://twitter.com/antistatuquo)
-* Me on the web
-  * [GitHub](https://github.com/ruslanosipov)
-  * [Reddit](http://reddit.com/u/rosipov)
-  * [Stack Overflow](http://stackoverflow.com/users/2578489/rosipov)
+* [LinkedIn](http://www.linkedin.com/in/ruslanosipov)
+* [GitHub](https://github.com/ruslanosipov)
+* [Reddit](http://reddit.com/u/rosipov)
+* [Stack Overflow](http://stackoverflow.com/users/2578489/rosipov)
 
 My first/last name combination is surprisingly common. It's probably not me if it's not in the list above.
