@@ -1,7 +1,7 @@
 ---
 title: "The Eisenhower matrix"
 date: 2023-07-10 08:00:00 -0700
-categories: [Productivity]
+categories: [Productivity, Work]
 ---
 
 The Eisenhower matrix, sometimes known as the priority matrix, is an invaluable

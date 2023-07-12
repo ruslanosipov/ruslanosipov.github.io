@@ -51,4 +51,9 @@ Now it's much easier to jump between wiki entries. Of course, customization
 doesn't end there: you can change styles, add JavaScript and make your wiki all
 fancy and advanced.
 
+If you'd like to get even better about using Vim, I wrote a book about it:
+[Mastering Vim][2]. I'm pretty proud of how it turned out, and I hope you like
+it too.
+
 [1]: http://www.rosipov.com/blog/personal-wiki-with-vimwiki/
+[2]: https://amzn.to/3rne4dk
