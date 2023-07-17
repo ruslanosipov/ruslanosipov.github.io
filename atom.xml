@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-17T07:57:39-07:00</updated>
+  <updated>2023-07-17T12:16:06-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vimwiki with Google Drive on ChromeOS]]></title>
+    <link href="http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/"/>
+    <updated>2023-07-17T08:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos</id>
+    <content type="html"><![CDATA[<p>In the past few years my work heavily shifted towards being mostly done in a web browser. Much of what I use today is email and documents, and I&rsquo;m able to SSH into a dedicated Linux machine for rare instances of coding or running some scripts. Because of that my primary machine these days is a trusty Chromebook - really just a web browser with an OS stapled on top of it.</p>
+
+<p>I&rsquo;ve <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">used Vimwiki</a> extensively for nearly 10 years now: it&rsquo;s a fantastic way to organize my thoughts and everything I learn about the world, and it works with the tool I know and love - Vim. My Vimwiki followed me across machines, and I use Google Drive to keep it in sync regardless of the environment I use the Vimwiki in.</p>
+
+<p>It took me way longer than I would like to admit to get Vimwiki working on my Chromebook: here lies the journey of getting the Vimwiki to work on a ChromeOS. There are three major hurdles I had to jump over:</p>
+
+<ul>
+<li>Getting Vim to run on ChromeOS.</li>
+<li>Getting Vimwiki, Google Drive, and ChromeOS to play together nicely.</li>
+<li>Getting the web view to work.</li>
+</ul>
+
+
+<p>Good news is that ChromeOS allows you to run a Linux environment. Bad news, is that things can&rsquo;t get a tiny bit finnicky.</p>
+
+<p>First, set up Linux to run on ChromeOS via &ldquo;Settings > Advanced > Developers > Linux Development Environment > Turn on&rdquo;. After a few prompts and a freshly brewed cup of coffee, you&rsquo;ll have a Debian Linux environment running on your Chromebook.</p>
+
+<p>Newly installed Linux is accessible from the terminal:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/chromeos-linux-terminal.png" title="Screenshot of a Linux terminal available from ChromeOS." ></p>
+
+<p>Pop open the terminal and update Vim and get the latest version of Python:</p>
+
+<pre><code>sudo apt install python3 vim
+</code></pre>
+
+<p>Download and install Vimwiki however you&rsquo;d like: there are extensive instructions on <a href="https://github.com/vimwiki/vimwiki">GitHub</a>. If you&rsquo;re anything like me, you might have a <a href="https://www.rosipov.com/blog/cross-platform-vim-plug-setup/">self-installing vim-plug</a>, and all you need is just plop your existing .vimrc into your Chromebook Linux instance.</p>
+
+<p>Now, for getting Google Drive, Vim, and ChromeOS to play together. ChromeOS and Linux are integrated well enough, and you can access your home directory through ChromeOS native file manager:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/chromeos-linux-files.png" title="Screenshot of Linux home directory available in ChromeOS file manager." ></p>
+
+<p>To share files in another direction, there&rsquo;s a handy &ldquo;Share with Linux&rdquo; option for files:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/chromeos-share-with-linux.png" title="Screenshot of &amp;#34;Share with Linux&amp;#34; option in ChromeOS file manager." alt="Screenshot of &amp;#34;Share with Linux&amp;#34; option in ChromeOS file manager."></p>
+
+<p>This option shares files with Linux via <code>/mnt/chromeos</code>. In Google Drive, I have a <code>vimwiki/</code> folder which contains <code>wiki/</code> and <code>wiki_html/</code>. I&rsquo;m able to share that folder, and update Vimwiki configuration accordingly:</p>
+
+<pre><code>let g:vimwiki_list = [{
+  \ 'path': '/mnt/chromeos/GoogleDrive/MyDrive/vimwiki/wiki/',
+  \ 'template_path': '/mnt/chromeos/GoogleDrive/MyDrive/vimwiki/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+</code></pre>
+
+<p>Now there&rsquo;s a corner case I ran into when I had Vimwiki set up on a different account than the one I use to log into the Chromebook. Only the primary account&rsquo;s Google Drive shows up in ChromeOS file manager. To work around that, I had to share my <code>vimwiki/</code> folder with the primary account, and then share that with Linux. The resulting directory was available through a <code>/mnt/chormeos/GoogleDrive/ShortcutsSharedWithMe/...</code>:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/chromeos-linux-shared-folders.png" title="Screenshot of Linux folders shared with ChromeOS." ></p>
+
+<p>At this point Vimwiki works just fine: working with the wiki and generating HTML is functional. All that&rsquo;s left is getting the generated Vimwiki to show up in the web browser. Ever since Chrome disabled local file access, I (expectedly) haven&rsquo;t been able to get <code>:Vimwiki2HTMLBrowse</code> to function, since simple <code>file:///</code> URLs aren&rsquo;t accessible for security reasons.</p>
+
+<p>That&rsquo;s where Python comes in, with it&rsquo;s native web server module. I made a small alias in my <code>.bashrc</code>:</p>
+
+<pre><code>alias vimwiki="cd /mnt/chromeos/GoogleDrive/MyDrive/vimwiki/ &amp;&amp; python3 -m http.server"
+</code></pre>
+
+<p>Next thing you know, I&rsquo;m finally able to access the generated web version of my Vimwiki via <code>localhost:8000/wiki_html</code>:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/vimwiki-web-view.png" title="Screenshot of an HTML version of Vimwiki." ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Eisenhower matrix]]></title>
@@ -1711,65 +1778,6 @@ there&rsquo;s really no room for growth in that relationship.</p>
 <p>For Numenera, these are not particularly complex - most enemies are described by a single number and a few key things about them. I&rsquo;d imagine for D&amp;D and other combat focused systems you&rsquo;d want to put a bit more effort in making sure you&rsquo;re building balanced combat encounters, so that would warrant a section of its own.</p>
 
 <p>I tend to spend a little under 20 minutes on all of the above, and I get to use it in three out of four games &ndash; the fourth one tends to go off the rails completely, and I&rsquo;m okay with it. Without investing as much time into prep, it&rsquo;s easy to be taken on a ride by the players.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Numenera for D&D DMs]]></title>
-    <link href="http://www.rosipov.com/blog/numenera-for-dnd-dms/"/>
-    <updated>2020-05-25T18:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/numenera-for-dnd-dms</id>
-    <content type="html"><![CDATA[<p>We&rsquo;ll be having our 12th Numenera game later this week, and ultimately Numenera proved to be easier to run compared to Dungeons and Dragons. I just wrote about <a href="https://www.rosipov.com/blog/numenera-for-dnd-players">teaching Numenera to my D&amp;D Players</a>, and it&rsquo;s worth sharing my own experience getting familiar with the system as a GM.</p>
-
-<h2>Story is the king</h2>
-
-<p>As a soft tabletop role playing system, Numenera focuses on storytelling over the rules. Every dozen pages or so the rulebook tirelessly reminds the reader: &ldquo;if rules get in the way of having fun or creating an interesting story, change them&rdquo;.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/numenera-and-dnd-books.jpg" title="Numenera rulebooks stacked next to Dungeons and Dragons rulebooks." ></p>
-
-<p>Depending on your DMing style and party&rsquo;s needs you can get away with a lackluster D&amp;D story: even if the party is saving the world from the evil wizard for the umpteenth time, there are decently fun board game mechanics to fall back to. Monster Manual and Dungeon Master&rsquo;s Guide provide hundreds of fun creatures and straightforward rules for building balanced encounters, and there&rsquo;s plenty of clearly laid out tactical choices and fun abilities to play with in combat. Take out the story telling, and you&rsquo;ll have a pretty fun tactical game (isn&rsquo;t that what <a href="https://amzn.to/2zla2HW">Gloomhaven</a> did?).</p>
-
-<p>But there really aren&rsquo;t enough rules in Numenera to make combat engaging without additional emotional investment from the players. This makes building something people care about paramount to having fun with Numenera. The usual storytelling rules apply: build a compelling story and let the players take you for a ride if their story is better (and it often is).</p>
-
-<h2>You don&rsquo;t <em>need</em> combat encounters</h2>
-
-<p>Numenera supports a breadth of combat options only limited by players&#8217; imagination, but many of them are not immediately obvious, and newer players will struggle to utilize the full spectrum of abilities available to them. Combat uses the same rules as the rest of the game, and is not more mechanically complicated (you decide what you want to do, you try to beat certain difficulty, you fail spectacularly).</p>
-
-<p>Because of this combat is completely optional in Numenera. Don&rsquo;t force the players into combat if they find a way to avoid it. Make them feel great about their cunning victory! We&rsquo;ve had great and satisfying sessions without a single thrown punch.</p>
-
-<p>That being said, it does not mean Numenera combat can&rsquo;t be fun. One of the most engaging sessions we had consisted of a single battle &ndash; when a monster hunter delve decided to hunt a morigo &ndash; an enormous beast whose entire purpose was to scare the players from entering an area. The fight was deadly and arduous, but the characters triumphed against all odds.</p>
-
-<h2>You still need to know all the rules</h2>
-
-<p>Latest edition of Numenera consists of two books, titled <a href="https://amzn.to/36FZvmV">Discovery</a> and <a href="https://amzn.to/2AbgeSx">Destiny</a> &ndash; both targeted at the game master. The two tomes combined clock in at a whopping 800 pages of reading material. However only 29 of the lavishly illustrated pages outline the rules. The rest provide supplemental material: character customization options, the setting, realizing the world, building compelling narrative, and so on.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/numenera-discovery-and-destiny.jpg" title="Numenera Discovery and Destiny core rulebooks." ></p>
-
-<p>But because of this it&rsquo;s even more important for the GM to be intimately familiar with the rules. Since there was so little to learn, the group of players I&rsquo;m GMing for decided that it&rsquo;s not worth reading the rules. Thankfully Numenera rules are easy to teach, but you still need to know the rules.</p>
-
-<h2>A lesson in assertiveness</h2>
-
-<p>When playing D&amp;D, I&rsquo;d often outsource dealing with the rules by designating a rules arbiter from the player ranks. This doesn&rsquo;t seem to work in Numenera. There rules are guidelines, and logic dictates how each situation is resolved. GM has the fullest picture of the situation in their head, making it crucial for them to adjudicate.</p>
-
-<p>It certainly took me time to get used to putting my foot down, even if the players might not always agree with the decision. I found myself frequently making snap judgements, and following up with any adjustments after the session &ndash; <a href="https://rpg.stackexchange.com/questions/tagged/numenera">rpg.stackexchange.com</a> turned out to be a great resource for asking questions about the spirit of the rules.</p>
-
-<h2>Don&rsquo;t dungeon crawl</h2>
-
-<p>&ldquo;And then you enter another room which contains X, Y, and Z&rdquo;. That&rsquo;s the line I kept repeating during our weakest session to date. Numenera does not land itself well to a typical dungeon crawl.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/numenera-rulebooks-stack.jpg" title="Numenera rulebooks stacked on top of each other." ></p>
-
-<p>Monte Cook published a few sets of fantastic adventures which require little to no prep to run. <a href="https://amzn.to/2Adkdht">Weird Discoveries</a> and <a href="https://amzn.to/3gphdPE">Explorer&rsquo;s Keys</a> let you run adventures with minimal prep. But it doesn&rsquo;t help that these come with standard dungeon-style maps.</p>
-
-<p>Turned out a more engaging way to describe locations is: &ldquo;Over the next few hours you explore the obelisk, and within the maze of the corridors you note a number of places of interest. There are&hellip;&rdquo;. The rulebook has my back on this too.</p>
-
-<h2>Bring out the weird</h2>
-
-<p>The most difficult part of running Numenera games was highlighting how weird the Ninth World truly is. My players kept falling back into thinking of Steadfast as a standard medieval fantasy setting, and that&rsquo;s in many ways because I kept forgetting to tell them how weird everything is.</p>
-
-<p>How a mountain in the background is a machine from the prior world. How the water in the swamp was a conduit for some unimaginable device. And how none of it should make sense.</p>
-
-<p>In earlier games, I had explanations ready for everything odd occurring in the world. I&rsquo;ve been slowly making an effort to make the world more mysterious, more unexplainable, and more weird. This seems to be the key to running a successful Numenera game, and I&rsquo;m still trying to find the balance between a consistent, but weird world characters live in.</p>
 ]]></content>
   </entry>
   

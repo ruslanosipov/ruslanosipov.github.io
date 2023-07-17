@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>&#8220;The Pragmatic Programmer&#8221; - Ruslan Osipov</title>
+  <title>Vimwiki with Google Drive on ChromeOS - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/the-pragmatic-programmer/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/the-pragmatic-programmer/">
-  <meta property="og:title" content=""The Pragmatic Programmer" - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/">
+  <meta property="og:title" content="Vimwiki with Google Drive on ChromeOS - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-15T01:43:26+00:00"  data-updated="true" itemprop="datePublished dateCreated">15 Jul 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-17T08:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Jul 2023</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,49 +132,72 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        &#8220;The Pragmatic Programmer&#8221;
+        Vimwiki with Google Drive on ChromeOS
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>I just finished reading &ldquo;<a href="http://amzn.to/1zXtlQx">The Pragmatic Programmer</a>&rdquo; by Andrew Hunt and
-David Thomas - two consultants behind Pragmatic Programmers, LLC. This book
-might as well be a fantastic marketing trick for their consulting agency, but
-the value it brings to the reader is hard to underestimate.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>In the past few years my work heavily shifted towards being mostly done in a web browser. Much of what I use today is email and documents, and I&rsquo;m able to SSH into a dedicated Linux machine for rare instances of coding or running some scripts. Because of that my primary machine these days is a trusty Chromebook - really just a web browser with an OS stapled on top of it.</p>
 
-<p>Hunt and Thomas cover a wide variety of topics, briefly glancing over every
-major aspect of developing software: be it the choice of a text editor,
-calculating time complexity, or working effectively on a team.</p>
+<p>I&rsquo;ve <a href="https://www.rosipov.com/blog/personal-wiki-with-vimwiki/">used Vimwiki</a> extensively for nearly 10 years now: it&rsquo;s a fantastic way to organize my thoughts and everything I learn about the world, and it works with the tool I know and love - Vim. My Vimwiki followed me across machines, and I use Google Drive to keep it in sync regardless of the environment I use the Vimwiki in.</p>
 
-<p>If you read thematic books and actively follow programming blogs and podcasts -
-you may find yourself cheerfully nodding while reading sections of this book.
-You may have read about some of the tips online, heard from colleagues, or
-simply discovered them yourself. You will finish this book with a wide smile of
-approval, and a sense of validation in regards to your daily work flow or
-actions.</p>
+<p>It took me way longer than I would like to admit to get Vimwiki working on my Chromebook: here lies the journey of getting the Vimwiki to work on a ChromeOS. There are three major hurdles I had to jump over:</p>
 
-<p>If you are less lucky (say, you don&rsquo;t read as much), you will find 70 tips you
-can utilize right away, right now, at your workplace. This is what &ldquo;The
-Pragmatic Programmer&rdquo; essentially is: a collection of practical things
-regarding getting things done.</p>
+<ul>
+<li>Getting Vim to run on ChromeOS.</li>
+<li>Getting Vimwiki, Google Drive, and ChromeOS to play together nicely.</li>
+<li>Getting the web view to work.</li>
+</ul>
 
-<p>It&rsquo;s an essential read, and I&rsquo;ve seen this book in every single recommended
-reading list out there. And for a solid reason. This is the kind of book you
-want to re-read every couple of years to absorb every piece of knowledge
-presented within it. The latest edition of the book even contains a printout
-with all the tips listed in the book.</p>
 
-<p>You should read it after being in the field for a few years. After making
-mistakes, and figuring some things out on your own. Beginners might not
-understand some pieces, but will still be able to comprehend a major portion of
-knowledge contained within this book.</p>
+<p>Good news is that ChromeOS allows you to run a Linux environment. Bad news, is that things can&rsquo;t get a tiny bit finnicky.</p>
 
-<p>I enthusiastically recommend this book to every software engineer I get to work
-with. It&rsquo;s easy to read (as opposed to monstrosities like &ldquo;<a href="http://amzn.to/1zGLlv1">Code Complete</a>&rdquo;
-or &ldquo;<a href="http://amzn.to/1zGLnDl">Art of Computer Programming</a>&rdquo;) and it teaches you how to get things
-done, the pragmatic way.</p>
+<p>First, set up Linux to run on ChromeOS via &ldquo;Settings > Advanced > Developers > Linux Development Environment > Turn on&rdquo;. After a few prompts and a freshly brewed cup of coffee, you&rsquo;ll have a Debian Linux environment running on your Chromebook.</p>
+
+<p>Newly installed Linux is accessible from the terminal:</p>
+
+<p><img src="/images/posts/chromeos-linux-terminal.png" title="Screenshot of a Linux terminal available from ChromeOS." ></p>
+
+<p>Pop open the terminal and update Vim and get the latest version of Python:</p>
+
+<pre><code>sudo apt install python3 vim
+</code></pre>
+
+<p>Download and install Vimwiki however you&rsquo;d like: there are extensive instructions on <a href="https://github.com/vimwiki/vimwiki">GitHub</a>. If you&rsquo;re anything like me, you might have a <a href="https://www.rosipov.com/blog/cross-platform-vim-plug-setup/">self-installing vim-plug</a>, and all you need is just plop your existing .vimrc into your Chromebook Linux instance.</p>
+
+<p>Now, for getting Google Drive, Vim, and ChromeOS to play together. ChromeOS and Linux are integrated well enough, and you can access your home directory through ChromeOS native file manager:</p>
+
+<p><img src="/images/posts/chromeos-linux-files.png" title="Screenshot of Linux home directory available in ChromeOS file manager." ></p>
+
+<p>To share files in another direction, there&rsquo;s a handy &ldquo;Share with Linux&rdquo; option for files:</p>
+
+<p><img src="/images/posts/chromeos-share-with-linux.png" title="Screenshot of &amp;#34;Share with Linux&amp;#34; option in ChromeOS file manager." alt="Screenshot of &amp;#34;Share with Linux&amp;#34; option in ChromeOS file manager."></p>
+
+<p>This option shares files with Linux via <code>/mnt/chromeos</code>. In Google Drive, I have a <code>vimwiki/</code> folder which contains <code>wiki/</code> and <code>wiki_html/</code>. I&rsquo;m able to share that folder, and update Vimwiki configuration accordingly:</p>
+
+<pre><code>let g:vimwiki_list = [{
+  \ 'path': '/mnt/chromeos/GoogleDrive/MyDrive/vimwiki/wiki/',
+  \ 'template_path': '/mnt/chromeos/GoogleDrive/MyDrive/vimwiki/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+</code></pre>
+
+<p>Now there&rsquo;s a corner case I ran into when I had Vimwiki set up on a different account than the one I use to log into the Chromebook. Only the primary account&rsquo;s Google Drive shows up in ChromeOS file manager. To work around that, I had to share my <code>vimwiki/</code> folder with the primary account, and then share that with Linux. The resulting directory was available through a <code>/mnt/chormeos/GoogleDrive/ShortcutsSharedWithMe/...</code>:</p>
+
+<p><img src="/images/posts/chromeos-linux-shared-folders.png" title="Screenshot of Linux folders shared with ChromeOS." ></p>
+
+<p>At this point Vimwiki works just fine: working with the wiki and generating HTML is functional. All that&rsquo;s left is getting the generated Vimwiki to show up in the web browser. Ever since Chrome disabled local file access, I (expectedly) haven&rsquo;t been able to get <code>:Vimwiki2HTMLBrowse</code> to function, since simple <code>file:///</code> URLs aren&rsquo;t accessible for security reasons.</p>
+
+<p>That&rsquo;s where Python comes in, with it&rsquo;s native web server module. I made a small alias in my <code>.bashrc</code>:</p>
+
+<pre><code>alias vimwiki="cd /mnt/chromeos/GoogleDrive/MyDrive/vimwiki/ &amp;&amp; python3 -m http.server"
+</code></pre>
+
+<p>Next thing you know, I&rsquo;m finally able to access the generated web version of my Vimwiki via <code>localhost:8000/wiki_html</code>:</p>
+
+<p><img src="/images/posts/vimwiki-web-view.png" title="Screenshot of an HTML version of Vimwiki." ></p>
 </div>
 
 
@@ -198,13 +221,13 @@ done, the pragmatic way.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-15T01:43:26+00:00"  data-updated="true" itemprop="datePublished dateCreated">15 Jul 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-17T08:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">17 Jul 2023</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/reviews/'>reviews</a>
+    <a class='category' href='/blog/categories/vim/'>vim</a>
   
 </span>
 
@@ -213,7 +236,7 @@ done, the pragmatic way.</p>
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/the-pragmatic-programmer/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/the-pragmatic-programmer/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/" data-via="antistatuquo" data-counturl="http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/" >Tweet</a>
   
   
   
@@ -223,10 +246,8 @@ done, the pragmatic way.</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/personal-wiki-with-vimwiki/" title="Previous Post: Personal wiki with vimwiki">&laquo; Personal wiki with vimwiki</a></li>
+            <li class="previous"><a href="/blog/the-eisenhower-matrix/" title="Previous Post: The Eisenhower matrix">&laquo; The Eisenhower matrix</a></li>
             
-            
-            <li class="next"><a href="/blog/abandoning-wordpress-for-octopress/" title="Next Post: Abandoning WordPress for Octopress">Abandoning WordPress for Octopress &raquo;</a></li>
             
           </ul>
         
@@ -251,7 +272,7 @@ done, the pragmatic way.</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/vimwiki-with-google-drive-on-chromeos/">Vimwiki with Google Drive on ChromeOS</a>
+    <a class="list-group-item active" href="/blog/vimwiki-with-google-drive-on-chromeos/">Vimwiki with Google Drive on ChromeOS</a>
     
     <a class="list-group-item " href="/blog/the-eisenhower-matrix/">The Eisenhower matrix</a>
     
@@ -330,8 +351,8 @@ done, the pragmatic way.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/the-pragmatic-programmer/';
-        var disqus_url = 'http://www.rosipov.com/blog/the-pragmatic-programmer/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/';
+        var disqus_url = 'http://www.rosipov.com/blog/vimwiki-with-google-drive-on-chromeos/';
         var disqus_script = 'embed.js';
       
     (function () {
