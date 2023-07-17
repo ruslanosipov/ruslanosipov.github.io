@@ -1,6 +1,6 @@
 ---
 title: "Thoughts, Energy, Attention"
-date: 2023-07-17 08:00:00 -0700
+date: 2023-07-20 08:00:00 -0700
 categories: [Productivity]
 ---
 

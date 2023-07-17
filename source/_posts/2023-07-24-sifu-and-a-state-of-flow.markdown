@@ -1,6 +1,6 @@
 ---
 title: "Sifu and a state of flow"
-date: 2023-07-20 08:00:00 -0700
+date: 2023-07-24 08:00:00 -0700
 categories: [Games]
 ---
 

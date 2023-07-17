@@ -1,6 +1,6 @@
 ---
 title: "Vimwiki with Google Drive on ChromeOS"
-date: 2023-07-13 08:00:00 -0700
+date: 2023-07-17 08:00:00 -0700
 categories: [Vim]
 ---
 
