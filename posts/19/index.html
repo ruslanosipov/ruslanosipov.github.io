@@ -127,6 +127,89 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T14:57:29+00:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2013</time>
+        
+           | <a href="/blog/python-doctests-and-decorators-bug/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/python-doctests-and-decorators-bug/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/python-doctests-and-decorators-bug/" itemprop="url">Python doctests and decorators bug</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Now, this as well might be a feature, but doctest strings are not being
+executed for decorated functions (at least in version 2.7). However, there is a
+workaround.</p>
+
+<p>You need to decorate your functions with <code>functools.wraps</code> within a decorator
+to import docstrings into a decorator scope.</p>
+
+<pre><code>#!/usr/bin/env python
+
+from functools import wraps
+
+def decorator(func):
+    @wraps(func)
+    def wrapper():
+        return func()
+    return wrapper
+
+@decorator
+def foo():
+    """
+    &gt;&gt;&gt; foo()
+    False
+    """
+    return True
+
+import doctest
+doctest.testmod()
+</code></pre>
+
+<p>Now you can see this test failing, where otherwise it would have been ignored:</p>
+
+<pre><code>**********************************************************************
+File "decorator.py", line 12, in __main__.foo
+Failed example:
+    foo()
+Expected:
+    False
+Got:
+    True
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.foo
+***Test Failed*** 1 failures.
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-07-22T14:47:47+00:00"  data-updated="true" itemprop="datePublished dateCreated">22 Jul 2013</time>
         
            | <a href="/blog/python-tests-with-doctest-and-unittest/#disqus_thread" itemprop="discussionUrl"
@@ -486,153 +569,6 @@ prior to executing):</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-05-17T18:52:02+00:00"  data-updated="true" itemprop="datePublished dateCreated">17 May 2013</time>
-        
-           | <a href="/blog/download-gists-from-prompt/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/download-gists-from-prompt/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/download-gists-from-prompt/" itemprop="url">Download gists from prompt</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I wrote a little script to download gists from the command prompt.</p>
-
-<p>Generate your Github API Token under Settings -> Applications, change it within
-a script, and then:</p>
-
-<pre><code>chmod +x shgist.py
-mv shgist.py ~/bin/shgist
-</code></pre>
-
-<p>Where ~/bin is a directory in your path. Now you can use it as shgist file to
-quickly download your gists (<a href="https://gist.github.com/ruslanosipov/5599377">Gist on Github</a>).</p>
-
-<pre><code>#!/usr/bin/env python
-
-# Ruslan Osipov &lt;ruslan@rosipov.com&gt;
-# Usage: shgist keywords
-# Description: Gists downloader
-
-import urllib
-import urllib2
-import sys
-import json
-
-token = 'Personal API Access Token'  # Github Settings -&gt; Applications
-
-class Gist:
-    def __init__(self, token):
-        """
-        token -- str, github token
-        """
-        self.token = token
-        self.url = 'https://api.github.com'
-
-    def find_by_name(self, keywords):
-        """
-        keywords -- list of strings
-        """
-        gists, urls = self._get_gists()
-        for i, gist in enumerate(gists):
-            for keyword in keywords:
-                if keyword not in gist:
-                    del gists[i]
-                    del urls[i]
-                    break
-        if len(gists) == 0:
-            print "Sorry, no gists matching your description"
-            return
-        if len(gists) == 1:
-            self._download_gist(gists[0], urls[0])
-            return
-        for i, gist in enumerate(gists):
-            print i, gist
-        while True:
-            num = raw_input("Gist number, 'q' to quit: ")
-            if num == 'q':
-                print "Quiting..."
-                return
-            try:
-                num = int(num)
-                if 0 &lt;= num &lt; len(gists):
-                    break
-                print "Number should be within specified range"
-            except:
-                print "Only integers or 'q' are allowed"
-        self._download_gist(gists[num], urls[num])
-
-    def _download_gist(self, name, url):
-        """
-        name -- str, filename
-        url -- str, raw gist url
-        """
-        print "Downloading %s..." % name
-        gist = self._send_get_request(url)
-        open(name, 'wb').write(gist)
-
-    def _get_gists(self):
-        """
-        Returns 2 lists which should be treated as ordered dict
-        """
-        url = '/gists'
-        response = self._send_get_request(self.url + url)
-        response = json.loads(response)
-        gists, urls = [], []
-        for gist in response:
-            for name, meta in gist['files'].items():
-                gists.append(name)
-                urls.append(meta['raw_url'])
-        return gists, urls
-
-    def _send_get_request(self, url):
-        """
-        url -- str
-        """
-        headers = {
-                'Authorization': 'token ' + self.token
-                }
-        request = urllib2.Request(url, headers=headers)
-        response = urllib2.urlopen(request)
-        return response.read()
-
-argv = sys.argv[1:]
-if not len(argv):
-    print "Usage: shgist keywords"
-    sys.exit(0)
-
-gist = Gist(token)
-gist.find_by_name(argv)
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -656,6 +592,8 @@ gist.find_by_name(argv)
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/thoughts-energy-attention/">Thoughts, Energy, Attention</a>
+    
     <a class="list-group-item " href="/blog/vimwiki-with-google-drive-on-chromeos/">Vimwiki with Google Drive on ChromeOS</a>
     
     <a class="list-group-item " href="/blog/the-eisenhower-matrix/">The Eisenhower matrix</a>
@@ -673,8 +611,6 @@ gist.find_by_name(argv)
     <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
     
     <a class="list-group-item " href="/blog/how-i-write/">How I write</a>
-    
-    <a class="list-group-item " href="/blog/abandoned-project-showcase-hikaya/">Abandoned project showcase: Hikaya</a>
     
   </div>
 </section>

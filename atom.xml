@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-17T22:06:03-07:00</updated>
+  <updated>2023-07-20T07:24:45-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Thoughts, Energy, Attention]]></title>
+    <link href="http://www.rosipov.com/blog/thoughts-energy-attention/"/>
+    <updated>2023-07-20T07:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/thoughts-energy-attention</id>
+    <content type="html"><![CDATA[<p>I find it easy to get caught up in whatever is on my mind. That&rsquo;s why I find mindfulness practices particularly helpful, and T.E.A. - Thoughts, Energy, Attention - is something I&rsquo;ve been using on and off for a few years to clear my head and focus on work and decisions that matter to me.</p>
+
+<p><img src="http://www.rosipov.com/images/posts/thoughts-energy-attention.png" title="A drawing of a tea cup with Thoughts, Energy, Attention written next to it." ></p>
+
+<p>It&rsquo;s short and simple, and only takes few minutes:</p>
+
+<ul>
+<li><strong>Thoughts</strong>: What&rsquo;s on my mind now?
+
+<ul>
+<li>Is my train of thought helpful? What can be done to change it?</li>
+</ul>
+</li>
+<li><strong>Energy</strong>: How am I feeling?
+
+<ul>
+<li>How is my energy level? Can I maintain or improve it?</li>
+</ul>
+</li>
+<li><strong>Attention</strong>: What matters to me?
+
+<ul>
+<li>What should I focus on? What should I accomplish?</li>
+</ul>
+</li>
+</ul>
+
+
+<p>I&rsquo;ve seen a common variation of the same acronym stand for Time, Energy, Attention - but I found that didn&rsquo;t work well for me. Maybe that&rsquo;s because I&rsquo;m terrible at estimating or understanding time, or maybe that&rsquo;s because the most important decisions sometimes end up not taking any time at all. Either way, I try not to concern myself with time. Hence: Thoughts, Energy, Attention.</p>
+
+<p>You can read more about T.E.A. in this <a href="https://blog.google/documents/103/T.E.A_Check-in_Guide_-_External_.pdf/">PDF from Google</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vimwiki with Google Drive on ChromeOS]]></title>
@@ -1710,74 +1749,6 @@ there&rsquo;s really no room for growth in that relationship.</p>
 <p>Despite so many difficulties, I&rsquo;m loving my time with Vortex Core! To be honest with myself, I don&rsquo;t buy new keyboards to be productive, or increase my typing speed. I buy them because they look great and are fun to type on. And Vortex Core looks fantastic, and being able to cover most of the keyboard with both hands is amazing.</p>
 
 <p>There&rsquo;s just something special about having such a small board under my fingertips.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One page TTRPG prep]]></title>
-    <link href="http://www.rosipov.com/blog/one-page-ttrpg-prep/"/>
-    <updated>2020-08-08T17:00:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/one-page-ttrpg-prep</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been running table top role playing games for over a decade on and off, and I&rsquo;ve settled into a prep routine. It&rsquo;s heavily borrowed, if not outright stolen from other GMs on the Internets, and I encourage you to steal and adapt what I&rsquo;m doing as well. If I had to guess, this way of preparation is stolen directly from the <a href="https://slyflourish.com/lazydm/">Lazy GM</a>&rsquo;s table.</p>
-
-<p>I&rsquo;ve learned that in order to run a successful session, I need to prepare the following:</p>
-
-<ul>
-<li>Discoveries: What my players need to discover.</li>
-<li>Scenes: Where things happen.</li>
-<li>Clues: Some thoughts on how to expose the discoveries.</li>
-<li>Key NPCs: Some names and primary aspects of non player characters.</li>
-<li>Enemies: A few stat blocks or references to enemies.</li>
-</ul>
-
-
-<p>And all of the above fits on a single page: I find it enough to run the session while providing player freedom without having to completely invent everything on the fly.</p>
-
-<p>Here&rsquo;s an example for a Numenera game I ran a few weeks ago, where I adopted the idea behind the &ldquo;Mother Machine&rdquo; module from <a href="https://www.montecookgames.com/explorers-keys/">&ldquo;Explorer&rsquo;s Keys: Ten Instant Adventures for Numenera&rdquo;</a>:</p>
-
-<p><img src="http://www.rosipov.com/images/posts/ttrpg-game-prep.jpeg" title="A picture of a journal I use to prepare for tabletop role playing games." ></p>
-
-<p>In this example, the village under players&#8217; protection is attacked by &ldquo;tarza&rdquo;, never before seen monsters. For historical reasons, my players are initially expected to blame a neighboring tribe of abhumans for the attack. The monsters are in fact part of a defense mechanism which is attempting to exterminate so-called &ldquo;cinomar&rdquo;: doppelgangers who are impersonating some of the villagers.</p>
-
-<h2>Discoveries</h2>
-
-<p>This section cover key information and plot twists, and it&rsquo;s the one I start with. I use it as a tool to outline the adventure, and it&rsquo;s helpful to refer to if I get stuck.</p>
-
-<p>These are the details players should unravel throughout the session, and I usually check them off as the players find them. In fact, you&rsquo;ll see I check off most bullet points on the page as the session plays out.</p>
-
-<p>Although, now that I&rsquo;m looking at the example I provided, the discoveries are not marked. I guess I&rsquo;m not very consistent.</p>
-
-<h2>Scenes</h2>
-
-<p>This is the primary tool I use during the game. Scenes outline encounters - be they social, exploratory, or combat related. Scenes help me form a general idea about locations the adventure will be taking a place in, as well as some of the key action sequences.</p>
-
-<p>I often use scenes to help me control pacing: If I&rsquo;m running a 3 hour game with roughly 5 scenes planned, I know to hurry up if I haven&rsquo;t gotten to any of them at a one hour mark. It&rsquo;s often a good time to narrate a time skip, tie up an ongoing investigation, or suggest a direction for the party to move in.</p>
-
-<p>Now this doesn&rsquo;t mean that the adventure is limited to these scenes. If (or more accurately &ldquo;when&rdquo;) the adventure goes off rails, I reskin these scenes or use them for an inspiration to quickly throw together a new scene.</p>
-
-<h2>Clues</h2>
-
-<p>Clues are ideas for how to surface discoveries. These are not strictly necessary if you&rsquo;re really creative, but if you&rsquo;re anything like me - these are a godsend.</p>
-
-<p>Clues are concrete ways for players to discover plot points outlined in &ldquo;Discoveries&rdquo;. <em>&ldquo;The assassin had a letter signed by the big bad&rdquo;</em>, or <em>&ldquo;The drunken sailor lets slip about a cult in the town&rdquo;</em>. I aim for one clue per discovery, but it&rsquo;s not a hard rule.</p>
-
-<p>The list should not be exhaustive, and should not be strictly followed - I treat this section as an exercise in creativity. I find it more impactful to try to come up with clues as I play &ndash; players often search in places I haven&rsquo;t thought of - so I place the clue to a discovery wherever the players are looking.</p>
-
-<h2>Key NPCs</h2>
-
-<p>This is a list of key non player characters relevant to the game. I try to keep number of named NPCs low to help my players remember them better, and I try to use as many recurring NPCs as humanly possible.</p>
-
-<p>I usually add an aspect for each of the NPCs - a short description in a few words, something that makes them stand out in some way.</p>
-
-<p>This list doesn&rsquo;t have to be exhaustive &ndash; you&rsquo;ll probably want to use the running list of NPCs for your campaign as a supplement for unexpected recurring characters, and a list of pre-generated names for unexpected encounters.</p>
-
-<h2>Enemies</h2>
-
-<p>The last thing is enemy stat blocks for quickly referencing if (again, &ldquo;when&rdquo;) a combat breaks out.</p>
-
-<p>For Numenera, these are not particularly complex - most enemies are described by a single number and a few key things about them. I&rsquo;d imagine for D&amp;D and other combat focused systems you&rsquo;d want to put a bit more effort in making sure you&rsquo;re building balanced combat encounters, so that would warrant a section of its own.</p>
-
-<p>I tend to spend a little under 20 minutes on all of the above, and I get to use it in three out of four games &ndash; the fourth one tends to go off the rails completely, and I&rsquo;m okay with it. Without investing as much time into prep, it&rsquo;s easy to be taken on a ride by the players.</p>
 ]]></content>
   </entry>
   
