@@ -49,3 +49,9 @@ That's where I had to take a break.
 I have accounts with hundreds of services, and I have no idea how my personal data is used, and what it's joined with. As I'm go on about my daily life, I'll start tightening privacy controls, and maybe deleting services and their data where possible.
 
 It's just too creepy for my taste.
+
+----
+
+While you have control over the services you have accounts for, companies and ISPs collect a trove of private information on you even while you're not logged in. For that, I strongly recommend using a VPN. I've been using [PIA][1] since 2019 and I've been very happy with it. Wholeheartedly [recommend][1].
+
+[1]: https://www.privateinternetaccess.com/offer/rosipov_o6hmp8nh
