@@ -206,11 +206,8 @@ the <code>aliases.sh</code> are below:</p>
 
 MESSAGE=$(cat)
 
-AWK='{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) '
-AWK+='{print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", '
-AWK+='tolower($(NF-1))"-"tolower($2) $0;}}'
+NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk '{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) {print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", tolower($(NF-1))"-"tolower($2) $0;}}')
 
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk $AWK)
 
 if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
     :
@@ -220,6 +217,8 @@ fi
 
 echo "${MESSAGE}"
 </code></pre>
+
+<p><em>Source: <a href="http://wcaleb.org/blog/mutt-tips">W. Caleb McDaniel</a>.</em></p>
 
 <p>This script will create <code>aliases.txt</code> file containing email addresses for
 search and auto completion of email-addresses.</p>
