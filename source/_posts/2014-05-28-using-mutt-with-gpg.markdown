@@ -7,7 +7,7 @@ tags: [gpg, mutt]
 
 Mutt is a great command line email client, but it does not offer a built-in way
 to store passwords. But that's where GPG comes in. A while back I wrote an
-article on how to use GPG to store your passwords: [GPG Usage], this is a more
+article on how to use GPG to store your passwords: [GPG Usage][1], this is a more
 practical note about using GPG to store your passwords for mutt. This note
 implies that you already have installed and configured GPG (which you can learn
 how to do in above linked article).
