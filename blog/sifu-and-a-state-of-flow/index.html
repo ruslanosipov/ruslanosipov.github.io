@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Making a packing spreadsheet - Ruslan Osipov</title>
+  <title>Sifu and a state of flow - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/sifu-and-a-state-of-flow/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">
-  <meta property="og:title" content="Making a packing spreadsheet - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/sifu-and-a-state-of-flow/">
+  <meta property="og:title" content="Sifu and a state of flow - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-24T07:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 Jul 2023</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,92 +132,44 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Making a packing spreadsheet
+        Sifu and a state of flow
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>It&rsquo;s not a hot take that I really like Soulsbourne video games: games like Dark Souls, Sekiro, Elden Ring. There are many reasons behind my appreciation for the titles: fascinating lore delivery mechanisms, selfless multiplayer cooperation, or thought provoking art direction.</p>
 
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
+<p>But one faucet of these games ties together the experience: combat. Tight, responsive, and unforgivingly difficult. And mainstream critical success of these games is what allows us to see publishers take more risks with difficult games.</p>
 
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
+<p>And nothing makes this more apparent than a game stripped down to its core: Sifu. Okay, bear with me - Sifu has nothing to do with the Dark Souls franchise, and the small French Sloclap studio is as far away as you can get from the now behemoth of the industry From Software.</p>
 
-<h2>Final Result</h2>
+<p><img src="/images/posts/sifu-museum-combat-scene.jpg" title="A screenshot from Sifu video game, depicting a staff wielding female protagonist fighting two assailants in a museum." ></p>
 
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
+<p>But Sifu is just that: a responsive, fluid, and unforgiving combat experience masquerading as a game. Sifu is a revenge story set in modern-day China, that sees you play through through five levels, each of which culminates with a boss fight.</p>
 
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
+<p>There&rsquo;s a twist: every time the character dies, they get older - increasing their damage and reducing their health. Once you go past 80 - it&rsquo;s game over.  This forces the player to master each level, as the player is incentivised to finish each level at the youngest possible age.</p>
 
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
+<p>The game&rsquo;s final boss - a man who killed the protagonists&#8217; teacher is hands down one of the hardest boss fights I have experienced in the video games. He&rsquo;s immune to every cheap trick you might have in your sleeve, attacks relentlessly, and leaves nearly no room for error.</p>
 
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
+<p>And it&rsquo;s this boss fight that really made me aware of the state of flow difficult combat forces the player into.</p>
 
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
+<p><img src="/images/posts/state-of-flow-diagram.png" title="A diagram depicting a state of flow. X axis is titled &amp;#34;Mastery&amp;#34;, Y axis is titled &amp;#34;Difficulty&amp;#34;. A state of flow is labeled as when the difficulty and mastery match." alt="A diagram depicting a state of flow. X axis is titled &amp;#34;Mastery&amp;#34;, Y axis is titled &amp;#34;Difficulty&amp;#34;. A state of flow is labeled as when the difficulty and mastery match."></p>
 
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
+<p>State of flow, or the feeling of &ldquo;being in the zone&rdquo; is a state of intense concentration, a perfect balance of difficulty and skill. State of flow is immensely satisfying, and time flies by in an instant while you&rsquo;re in the zone. And difficult games force the player into the state of flow to progress.</p>
 
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
+<p>State of flow has many benefits: increasing concentration, creativity, problem solving abilities, and even boosting self esteem. Among many benefits, state of flow helps to reduce stress and anxiety: it&rsquo;s an inherently relaxing and enjoyable experience, and is one of the main reason I like playing difficult games, even if I&rsquo;m exhausted after a long day. I can rely on an induced state of flow to help myself relax.</p>
 
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
+<p>Back to Sifu&rsquo;s final boss.</p>
 
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
+<p>The only way I was able to defeat the final boss in Sifu is by sitting back, relaxing, and letting the built up muscle memory take over. It&rsquo;s a beautiful experience akin to playing an instrument - something that requires the right amount of concentration: too much focus would make you get in your own way, too little would allow you to get distracted. It&rsquo;s a state of flow, which I immensely enjoy, and which games like this help me enter.</p>
 
-<h2>The Technical Details</h2>
+<p><img src="/images/posts/sifu-slums-combat-scene.jpg" title="A screenshot from Sifu video game, depicting a male protagonist vaulting over a table while fighting two assailants in the slums." ></p>
 
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
+<p>But it isn&rsquo;t until a second playthrough, which the game encourages you to take to experience the full story, that you&rsquo;re able to appreciate all the progress you made, and reenter the state of flow for the duration of the full playthrough. Because you&rsquo;ve already completed the game, there&rsquo;s confidence in mastery of the game&rsquo;s systems, but the difficulty and unforgiving nature of encounters still keep the game a challenge.</p>
 
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
+<p>I think this applies to many games that are built with high difficulty - be it platformers like Celeste, or even tactics games like XCom. In fact, I&rsquo;d be really curious to see how more cerebral video games get the player into the state of flow - I might dig into that someday.</p>
 </div>
 
 
@@ -241,13 +193,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-24T07:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">24 Jul 2023</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/life/'>life</a>, <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/travel/'>travel</a>
+    <a class='category' href='/blog/categories/games/'>games</a>
   
 </span>
 
@@ -264,10 +216,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/my-vimrc-annotated/" title="Previous Post: My .vimrc, annotated">&laquo; My .vimrc, annotated</a></li>
+            <li class="previous"><a href="/blog/thoughts-energy-attention/" title="Previous Post: Thoughts, Energy, Attention">&laquo; Thoughts, Energy, Attention</a></li>
             
-            
-            <li class="next"><a href="/blog/minimalist-phone-launcher/" title="Next Post: Minimalist phone launcher">Minimalist phone launcher &raquo;</a></li>
             
           </ul>
         
@@ -292,7 +242,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
+    <a class="list-group-item active" href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
     
     <a class="list-group-item " href="/blog/thoughts-energy-attention/">Thoughts, Energy, Attention</a>
     
@@ -374,8 +324,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/making-a-packing-spreadsheet/';
-        var disqus_url = 'http://www.rosipov.com/blog/making-a-packing-spreadsheet/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/sifu-and-a-state-of-flow/';
+        var disqus_url = 'http://www.rosipov.com/blog/sifu-and-a-state-of-flow/';
         var disqus_script = 'embed.js';
       
     (function () {
