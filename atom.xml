@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-24T07:51:07-07:00</updated>
+  <updated>2023-07-27T08:41:24-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Static websites rule!]]></title>
+    <link href="http://www.rosipov.com/blog/static-websites-rule/"/>
+    <updated>2023-07-27T08:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/static-websites-rule</id>
+    <content type="html"><![CDATA[<p>I hope you&rsquo;ve noticed that navigating to this page was quick (let&rsquo;s hope that the Internet Gods are kind to me, and nothing stood in the way of you accessing this page). In fact, most pages on my blog - hopefully including this one - should render in under a second. I didn&rsquo;t put any work into optimizing this site, and it&rsquo;s not a boast, nor is it a technological marvel - this is just a good old fashioned static website.</p>
+
+<p>If this is new to you - static website is just what it sounds like - static HTML and CSS files, sometimes with some light JavaScript sprinkled throughout. There&rsquo;s no server side processing &ndash; the only bottlenecks are the host server speed, recipient&rsquo;s connection speed, and the browser rendering speed. Page is stored as is, and is sent over as soon as it&rsquo;s requested. This is how the Internet used to be in late 90s and early 2000s (with eclectic web design to boot, of course).</p>
+
+<p>I think static websites are cool and aren&rsquo;t used nearly enough, especially for websites that are, well, static. Think to the last website you&rsquo;ve visited to read something - maybe a news site, or maybe a blog. Now did it take at least a couple of seconds for them to load? Likely. Did their server have to waste unnecessary cycles putting together a page for you? Most definitely. Now, contrast this with your experience with a static website like this one. Here&rsquo;s the result from <a href="https://pagespeed.web.dev/">pagespeed.web.dev</a> for this page:</p>
+
+<p><img src="http://www.rosipov.com/images/posts/rosipov-page-speed-test.png" title="A screenshot with page speed test for www.rosipov.com (this website). It displays: first contentful paint: 0.8 s; largest contentful paint: 0.9 s; total blocking time: 0 ms; cumulative layout shift: 0.007; speed index: 0.7 s." ></p>
+
+<p>Every render complete in under a second, and I didn&rsquo;t have to put in any work into optimizing my website.</p>
+
+<p>This site is built on a (now unsupported) <a href="http://octopress.org/">Octopress</a>, which is itself built on top of <a href="https://jekyllrb.com/">Jekyll</a>. You write pages in Markdown, generate web pages using a pre-made template, and deploy the resulting pages to a hosting provider. In fact, <a href="https://pages.github.com/">GitHub Pages</a> allow you to host your static website for free, and you can have a third party platform like <a href="https://disqus.com/">Disqus</a> provide comment support.</p>
+
+<p>Static websites work great for portfolios, blogs, and websites that don&rsquo;t rely on extensive common manipulation. They&rsquo;re more secure (no backend to hack), simple to build and maintain, very fast even without optimization, and are natively SEO friendly (search engines are great at understanding static pages). Static websites are cheap to run - I only pay for a domain name for this site (under $20 a year).</p>
+
+<p>If you have a blog or a portfolio and you&rsquo;re using an overly complicated content management system to write - consider slimming down. <a href="https://jekyllrb.com/">Jekyll</a> (or many of its alternatives) offers a number of pre-made off-ramps for major CMS users, is easy to set up, and is straightforward to work with. Can&rsquo;t recommend enough - static websites rule!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sifu and a state of flow]]></title>
@@ -1656,39 +1679,6 @@ to drive the growth is crucial for healthy peer to peer learning.</p>
 <p>Even if so-called mentor has some aspect of life completely figured out for
 themselves, the person who&rsquo;s mentored must drive the whole journey. Otherwise
 there&rsquo;s really no room for growth in that relationship.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Writing for fun]]></title>
-    <link href="http://www.rosipov.com/blog/writing-for-fun/"/>
-    <updated>2020-11-11T02:13:17+00:00</updated>
-    <id>http://www.rosipov.com/blog/writing-for-fun</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve had this blog since 2012, and I&rsquo;m only now getting close to my 100th post. All because I&rsquo;m a perfectionist, which sure as hell didn&rsquo;t make me a better writer.</p>
-
-<p>I love writing, and I feel like I&rsquo;m getting better after every piece I write - be it publishing blog posts, journaling, countless design docs, navigating email politics, or writing a book. I write a lot, about many different topics - if I&rsquo;m interested in the topic for at least a few hours - you can bet I&rsquo;ll write about it.</p>
-
-<p><img src="http://www.rosipov.com/images/posts/journal.jpg" title="A picture of journal on a table." ></p>
-
-<p>Then how come this blog barely gets one post per month?</p>
-
-<p>I meticulously research and edit, generously discard drafts, and it often takes me days strung across weeks to put something together. Something that I feel is worthy of being displayed next to my name. Perfectionism at its core, attached to hobbyist web content.</p>
-
-<p>I struggled with this when writing <a href="https://www.rosipov.com/blog/my-book-has-been-published/">Mastering Vim</a> too - the first edition was rushed out by the publisher long before it was ready, with various errors and inconsistencies in it, and a few downright unfinished bits. It took over a year of me avoiding even thinking about the book and two more editions to become comfortable with merely sharing that I published a book.</p>
-
-<p>And all of this sucks the joy out of writing. I&rsquo;m not a for-profit writer. It&rsquo;s not part of my career path, and I obviously didn&rsquo;t go to school for it (not that I went to school for anything else). And it sure as hell shouldn&rsquo;t be grueling to have to come up with what to write.</p>
-
-<p>This blog has a rather modest following - it brings in around 3,000 readers a month, with a few regulars sprinkled here and there (honestly - I would love to meet at least one of you weirdos someday). I don&rsquo;t target a particular market niche, I don&rsquo;t have a content or SEO strategy, and I opportunistically monetize to cover the website running costs.</p>
-
-<p>What&rsquo;s crazy is that nearly half of that traffic is organic search for a quick note I jotted down back in 2013! I could spend weeks putting together a literary love child and not even get a fraction of attention this back of the napkin screenshot received.</p>
-
-<p>Back in 2012 I used this blog as a way to categorize my discoveries about developing software, and later what I&rsquo;ve learned about working with people. Over the years I gradually expanded to travel (including that time I lived in my car for a year), and general things I like - like keyboards or tabletop role playing games.</p>
-
-<p>I&rsquo;m putting this together to remind myself that I love writing and why I started this blog. That not every piece of content requires hours of research, or even have a clear audience in mind for that matter.</p>
-
-<p>I wouldn&rsquo;t have blinked an eye flooding this blog with unfiltered thoughts, perspectives, and experiences if it wasn&rsquo;t attached to my real world persona. It&rsquo;s easy to throw out something I perceive as &ldquo;unworthy&rdquo; anonymously. It&rsquo;s mortifying to publish such a piece at my-first-name-last-name-dot-com.</p>
-
-<p>So here it is, the first post I wrote purely for fun! I&rsquo;m still taking a light editing pass on it, and drastically cutting it down in size - I&rsquo;m not a savage! But unlike in my usual writing, there&rsquo;s no clear value I&rsquo;m providing or a skill I&rsquo;m trying to teach - and that&rsquo;s a huge step for me. Feels good!</p>
 ]]></content>
   </entry>
   

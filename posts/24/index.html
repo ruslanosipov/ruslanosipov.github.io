@@ -127,6 +127,183 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-15T19:06:33+00:00"  data-updated="true" itemprop="datePublished dateCreated">15 Nov 2012</time>
+        
+           | <a href="/blog/extendedly-basic-vim-setup/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/extendedly-basic-vim-setup/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/extendedly-basic-vim-setup/" itemprop="url">Extendedly basic vim setup</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Ahoy Internet, here&rsquo;s a neat and fairly simple vim configuration for
+programming. Feel free to copy over settings/plugins you find useful, or just
+download a repository from <a href="https://github.com/ruslanosipov/dotfiles">GitHub</a> with settings and plugins.</p>
+
+<h2>The .vimrc file</h2>
+
+<pre><code>"""""""""""""""""""""""""""""""""""""""
+" =&gt; Editing
+"""""""""""""""""""""""""""""""""""""""
+
+syntax on
+
+" Indentation settings
+set tabstop=4
+set shiftwidth=4
+set smartindent
+set autoindent
+set expandtab
+
+" Disable backups and .swp files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Ignore case when searching
+set ignorecase
+set smartcase
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Looks
+"""""""""""""""""""""""""""""""""""""""
+
+colorscheme darkburn
+set background=dark
+
+" Set terminal window title
+set title
+
+" Shorten press ENTER to continue messages
+set shortmess=atI
+
+" Show last command
+set showcmd
+
+" Highlight cursor line
+set cursorline
+
+" Ruler (line, column and % at the right bottom)
+set ruler
+
+" Enable wild menu (tab command autocompletion)
+set wildmenu
+set wildmode=list:longest,full
+
+" Warn if exceed 80 columns limit
+if (&amp;ft == 'python')
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /%81v.+/
+endif
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Misc
+"""""""""""""""""""""""""""""""""""""""
+
+" Use Unix as the standart file type
+set ffs=unix,dos,mac
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+"""""""""""""""""""""""""""""""""""""""
+" =&gt; Plugins
+"""""""""""""""""""""""""""""""""""""""
+
+" EasyMotion: one leader key instead of two
+let g:EasyMotion_leader_key = '&lt;Leader&gt;'
+
+" NERDTree: auto open and close
+autocmd VimEnter * NERDTree
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" NERDTree: focus on text window (left)
+autocmd VimEnter * wincmd l
+autocmd BufNew * wincmd l
+
+" NERDTree: auto close if last window
+function! s:CloseIfOnlyNerdTreeLeft()
+    if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+            if winnr("$") == 1
+                q
+            endif
+        endif
+    endif
+endfunction
+
+" Exuberant Ctags: autogenerate on py file write
+au BufWritePost *.py silent! !ctags -R &amp;
+
+" Pydoc: open in new tab instead of split
+let g:pydoc_open_cmd = 'tabnew'
+
+" Pydoc: disable search term highlight
+let g:pydoc_highlight=0
+</code></pre>
+
+<h2>Plugins</h2>
+
+<p>If you are not planning to use some of the plugins, make sure to remove
+plugin-specific rules from .vimrc => Plugins.</p>
+
+<ul>
+<li><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>: allows you to generate index of variables, functions
+and classes to freely move between them. A bit more info on how to use these
+in article <a href="http://www.rosipov.com/blog/using-vim-for-writing-code/">Using vim for writing code</a>.</li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=625">Colo(u)r Sampler Pack</a> is not really a plugin, but a collection of color
+shemes. 100 of them, to be precise. Feel free to choose whatever you like.</li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1488">ScrollColors</a> allows you to try out every theme in visual mode. Just type
+in <code>:SCROLL</code>.</li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=3526">EasyMotion</a> allows you to move between words, lines and sentences with a
+lightning speed. Just hit <code>&lt;Leader&gt; + w</code> to jump to one of the words forward
+or <code>&lt;Leader&gt; + b</code> backward (leader key is a backslash by default). It can
+do more neat things, documentation is pretty self-explanatory.</li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1658">NERDTree</a> is a directory tree, like in all modern IDEs (but of course
+better).</li>
+<li><a href="http://www.vim.org/scripts/script.php?script_id=1173">tComment</a> allows you to easily comment out blocks of code. Hit <code>gcc</code> to
+comment a line or <code>gc</code> while selecting a block in <code>V</code>isual mode.</li>
+</ul>
+
+
+<h2>Source</h2>
+
+<p>You may want to head over to GitHub and grab a version from here:
+<a href="https://github.com/ruslanosipov/dotfiles">https://github.com/ruslanosipov/dotfiles</a>.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-10-10T04:16:52+00:00"  data-updated="true" itemprop="datePublished dateCreated">10 Oct 2012</time>
         
            | <a href="/blog/using-vim-for-writing-code/#disqus_thread" itemprop="discussionUrl"
@@ -546,6 +723,8 @@ Array length: 100, allocated elements: 100
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
+    
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
     
     <a class="list-group-item " href="/blog/thoughts-energy-attention/">Thoughts, Energy, Attention</a>
@@ -563,8 +742,6 @@ Array length: 100, allocated elements: 100
     <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
     <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
-    
-    <a class="list-group-item " href="/blog/accessing-retirement-funds-early/">Accessing retirement funds early</a>
     
   </div>
 </section>

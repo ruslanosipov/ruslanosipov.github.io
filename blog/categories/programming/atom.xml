@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-24T07:51:07-07:00</updated>
+  <updated>2023-07-27T08:41:24-07:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Static websites rule!]]></title>
+    <link href="http://www.rosipov.com/blog/static-websites-rule/"/>
+    <updated>2023-07-27T08:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/static-websites-rule</id>
+    <content type="html"><![CDATA[<p>I hope you&rsquo;ve noticed that navigating to this page was quick (let&rsquo;s hope that the Internet Gods are kind to me, and nothing stood in the way of you accessing this page). In fact, most pages on my blog - hopefully including this one - should render in under a second. I didn&rsquo;t put any work into optimizing this site, and it&rsquo;s not a boast, nor is it a technological marvel - this is just a good old fashioned static website.</p>
+
+<p>If this is new to you - static website is just what it sounds like - static HTML and CSS files, sometimes with some light JavaScript sprinkled throughout. There&rsquo;s no server side processing &ndash; the only bottlenecks are the host server speed, recipient&rsquo;s connection speed, and the browser rendering speed. Page is stored as is, and is sent over as soon as it&rsquo;s requested. This is how the Internet used to be in late 90s and early 2000s (with eclectic web design to boot, of course).</p>
+
+<p>I think static websites are cool and aren&rsquo;t used nearly enough, especially for websites that are, well, static. Think to the last website you&rsquo;ve visited to read something - maybe a news site, or maybe a blog. Now did it take at least a couple of seconds for them to load? Likely. Did their server have to waste unnecessary cycles putting together a page for you? Most definitely. Now, contrast this with your experience with a static website like this one. Here&rsquo;s the result from <a href="https://pagespeed.web.dev/">pagespeed.web.dev</a> for this page:</p>
+
+<p><img src="/images/posts/rosipov-page-speed-test.png" title="A screenshot with page speed test for www.rosipov.com (this website). It displays: first contentful paint: 0.8 s; largest contentful paint: 0.9 s; total blocking time: 0 ms; cumulative layout shift: 0.007; speed index: 0.7 s." ></p>
+
+<p>Every render complete in under a second, and I didn&rsquo;t have to put in any work into optimizing my website.</p>
+
+<p>This site is built on a (now unsupported) <a href="http://octopress.org/">Octopress</a>, which is itself built on top of <a href="https://jekyllrb.com/">Jekyll</a>. You write pages in Markdown, generate web pages using a pre-made template, and deploy the resulting pages to a hosting provider. In fact, <a href="https://pages.github.com/">GitHub Pages</a> allow you to host your static website for free, and you can have a third party platform like <a href="https://disqus.com/">Disqus</a> provide comment support.</p>
+
+<p>Static websites work great for portfolios, blogs, and websites that don&rsquo;t rely on extensive common manipulation. They&rsquo;re more secure (no backend to hack), simple to build and maintain, very fast even without optimization, and are natively SEO friendly (search engines are great at understanding static pages). Static websites are cheap to run - I only pay for a domain name for this site (under $20 a year).</p>
+
+<p>If you have a blog or a portfolio and you&rsquo;re using an overly complicated content management system to write - consider slimming down. <a href="https://jekyllrb.com/">Jekyll</a> (or many of its alternatives) offers a number of pre-made off-ramps for major CMS users, is easy to set up, and is straightforward to work with. Can&rsquo;t recommend enough - static websites rule!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Making a packing spreadsheet]]></title>
@@ -336,263 +359,6 @@ def get_random_element(sequence, n):
 
 <p>I incorporated logic above into the room generation code, accounted for
 duplicates, and ended up with decent distribution results.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Randomly generated dungeons]]></title>
-    <link href="http://www.rosipov.com/blog/randomly-generated-dungeons/"/>
-    <updated>2016-09-29T16:26:32-07:00</updated>
-    <id>http://www.rosipov.com/blog/randomly-generated-dungeons</id>
-    <content type="html"><![CDATA[<p>After playing with random dungeon generation for a bit, I seem to be satisfied
-with the results:</p>
-
-<p><img src="/images/posts/random-dungeon-1.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p>The above is displayed using ADOM notation - <code>#</code> represents a wall, <code>.</code> is a
-floor tile, and <code>+</code> is meant to be a closed door. After fiddling about with a
-few random dungeon generation ideas, I settled with the following.</p>
-
-<h2>The algorithm</h2>
-
-<ol>
-<li>Start with a random point on a canvas.</li>
-<li>Create a room with random width and height. Don&rsquo;t worry about walls yet.</li>
-<li>Select a few points on the sides of the room, put those in a stack. Save the
-direction in which the potential doors would point.</li>
-<li>Go through the stack, and try to add a room or a corridor (corridor is just a
-room with a width or a height of 1). Higher chance of corridors seems to look
-better and results in those wiggly passageways.
-
-<ol>
-<li>Try to add a room a few dozen times with different random configurations.
-If no luck - give up and grab a new item from the stack. If couldn&rsquo;t
-generate a continuation to the corridor - mark it as a loose end, we&rsquo;ll
-clean those up later.</li>
-<li>If a room was added successfully - add a door where it connects to the
-previous room/corridor. Add a floor section if it&rsquo;s a corridor connecting
-to another corridor.</li>
-<li>At this point one ends up with quite a few interconnected corridors,
-merged rooms, and all kinds of fun surroundings (my desired goal).</li>
-</ol>
-</li>
-<li>Do the above until the stack is empty or a desired number of rooms has been
-generated.</li>
-<li>Clean up the loose ends from step 4.1. Remove loose corridor segments one by
-one until intersection with another room/corridor is detected.</li>
-<li>Add walls around the rooms and corridors, while also cleaning up any extra
-doors we may have left behind when creating merged corridors or rooms.
-
-<ol>
-<li>I simply used slightly modified depth first search starting inside any
-room and drawing walls wherever I could find floor/door not connected to
-anything.</li>
-<li>When encountering a door - check if it&rsquo;s surrounded by walls or doors from
-the opposite sides. If not - remove the door and replace it with a floor
-tile. If any doors were adjucent to the removed door - requeue the door
-check on them.</li>
-</ol>
-</li>
-<li>Perform steps 1-7 a few hundred times, saving the resulting dungeons each
-time. Pick the best candidate with the most desired features - like a number
-of rooms, breadth, square footage, longest corridors, etc.</li>
-</ol>
-
-
-<p>A more detailed explanation of the steps is below. For now, here are a few more
-dungeons generated using this method:</p>
-
-<p><img src="/images/posts/random-dungeon-2.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p><img src="/images/posts/random-dungeon-3.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p><img src="/images/posts/random-dungeon-4.png" title="A randomly generated ASCII-dungeon." ></p>
-
-<p>I think dungeon generation is far more art than science, and I had a lot of fun
-tweaking all the different input parameters:</p>
-
-<ul>
-<li>Room size boundaries.</li>
-<li>Corridor lengths.</li>
-<li>Frequency of corridor occurrences.</li>
-<li>Number of exits from the room.</li>
-<li>Number of room generation attempts.</li>
-<li>Number of dungeon generation attempts.</li>
-<li>Final dungeon picking heuristics.</li>
-</ul>
-
-
-<p>Last item on the list is the most interesting one - with few hundred dungeons as
-an input, picking the right one is rather important. I ended up settling on
-using max priority queue with a rough surface area of the dungeon as a key
-(it&rsquo;s more of a breadth, really - how wide and tall it is). Then I&rsquo;d sift
-through some top results and pick the one with the most rooms available. This
-results in the most fun-looking map which feels up most of the screen, while
-still usually not being too cluttered.</p>
-
-<p>Here&rsquo;s a breakdown of a simple scenario:</p>
-
-<h3>Steps 1 and 2</h3>
-
-<p>Pick a random spot on a canvas and generate a room of random size (4 x 3):</p>
-
-<pre><code>....
-....
-....
-</code></pre>
-
-<h3>Step 3</h3>
-
-<p>Select potential spots for doors, let&rsquo;s label them 1, 2, 3.</p>
-
-<pre><code>....2
-....
-....1
-  3
-</code></pre>
-
-<p>I went for a uniform distribution by unfolding the rectangle and folding it back
-in to get a proper coordinate on the perimeter. Now, stack contains coordinates
-of <code>[1, 2, 3]</code> (along with the directions in which they are pointing).</p>
-
-<h3>Steps 4 and 5</h3>
-
-<p>Add a room or a corridor to a connector number 3. We&rsquo;ll be adding the room to
-the right of number 3. Let&rsquo;s assume random sends a corridor of length 5 our way.
-We&rsquo;re happy with the corridor pointing either up, down, or right - so we let the
-random decide again: up.</p>
-
-<pre><code>     4
-     .
-     .
-....2.
-.... .
-....3.
-  1
-</code></pre>
-
-<p>We add the end of the corridor to the stack as number 4 (now <code>[1, 2, 4]</code>). We
-also mark 4 as a loose end, in case we end up not adding a room to it. Dangling
-corridors are never pretty.</p>
-
-<p>Now, to replace number 3 with a door:</p>
-
-<pre><code>     4
-     .
-     .
-....2.
-.... .
-....+.
-  1
-</code></pre>
-
-<p>Adding another random corridor of length 2 to the point 4, pointing right.
-Replace number 4 with a floor segment, since point 4 was the end of another
-corridor. Remove point 4 from loose ends, add point 5.</p>
-
-<pre><code>     ...5
-     .
-     .
-....2.
-.... .
-....+.
-  1
-</code></pre>
-
-<p>Take point 5, generate a room of size 3 x 6. 5 becomes a door. Loose ends list
-is empty.</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-....2.   ...
-.... .   ...
-....+.   ...
-  1
-</code></pre>
-
-<p>For simplicity&rsquo;s sake, let&rsquo;s assume we don&rsquo;t want any more exits from this room.
-Back to the stack of <code>[1, 2]</code>. Point 2 seem to not have much room for growth.
-After a few unsuccessful attempts to place a room or a corridor there, we give
-up:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  1
-</code></pre>
-
-<p>Now for point 1: we get another corridor of length 3. Point 6 is now added to
-the loose ends list.</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  +
-  .
-  .
-  .
-  6
-</code></pre>
-
-<p>Let&rsquo;s assume we run out of space and can&rsquo;t add anything to the end of 6. We&rsquo;re
-done generating the dungeon. Our stack is empty, and our loose ends contains
-coordinates of <code>6</code>.</p>
-
-<h3>Step 6</h3>
-
-<p>Start with the loose end, and remove items one by one until a tile with multiple
-neighbors is encountered:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-  X
-  X
-  X
-  X
-  X
-</code></pre>
-
-<p>Viola:</p>
-
-<pre><code>     ...+...
-     .   ...
-     .   ...
-.... .   ...
-.... .   ...
-....+.   ...
-</code></pre>
-
-<h3>Steps 7 and 8</h3>
-
-<p>There are no rogue doors in this scenario, so all we need to do is add  the
-walls:</p>
-
-<pre><code>     #########
-     #...+...#
-     #.###...#
-######.# #...#
-#....#.# #...#
-#....#.# #...#
-#....+.# #...#
-######## #####
-</code></pre>
-
-<p>All of the steps above should be repeated a few hundred times with different
-dungeons, and then the best dungeon should be picked as a final one.</p>
-
-<p>Did I miss anything? Was cleaning up &ldquo;loose ends&rdquo; too much of a hack? What
-should have I done differently?</p>
 ]]></content>
   </entry>
   

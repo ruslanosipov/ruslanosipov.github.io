@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Distraction-free writing with VimRoom - Ruslan Osipov</title>
+  <title>Static websites rule! - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/static-websites-rule/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/">
-  <meta property="og:title" content="Distraction-free writing with VimRoom - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/static-websites-rule/">
+  <meta property="og:title" content="Static websites rule! - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T14:46:20-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Jul 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-27T08:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">27 Jul 2023</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,41 +132,28 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Distraction-free writing with VimRoom
+        Static websites rule!
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>Recently I&rsquo;ve been writing much more than I used to: long emails, software
-documentation, personal Wiki, keeping work journal, blogging, writing
-challenges&hellip; Luckily enough, I do all of this writing in Vim. But sometimes
-writing prose in Vim might feel a bit unnatural, especially if you have a wide
-screen: text will be on the very left side of the screen, or (if <code>textwrap</code> is
-not enabled) you&rsquo;ll end up with lines hundreds of characters long. And overall,
-editing text in Vim sometimes might feel a bit clunky - with all the extra
-information and high-tech (or low-tech, depending on your perspective) look.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>I hope you&rsquo;ve noticed that navigating to this page was quick (let&rsquo;s hope that the Internet Gods are kind to me, and nothing stood in the way of you accessing this page). In fact, most pages on my blog - hopefully including this one - should render in under a second. I didn&rsquo;t put any work into optimizing this site, and it&rsquo;s not a boast, nor is it a technological marvel - this is just a good old fashioned static website.</p>
 
-<p>I found a simple, yet sufficient solution for this issue: <a href="http://projects.mikewest.org/vimroom/">VimRoom</a>. It&rsquo;s a
-Vim plugin which enters distraction-free writing mode, by centering the
-80-character block of text on your screen. It&rsquo;s highly configurable, and I
-found it to look especially pleasing on vertical monitors (which I prefer to
-use for writing). It looks presentable even on smaller screens though, here&rsquo;s a
-screenshot:</p>
+<p>If this is new to you - static website is just what it sounds like - static HTML and CSS files, sometimes with some light JavaScript sprinkled throughout. There&rsquo;s no server side processing &ndash; the only bottlenecks are the host server speed, recipient&rsquo;s connection speed, and the browser rendering speed. Page is stored as is, and is sent over as soon as it&rsquo;s requested. This is how the Internet used to be in late 90s and early 2000s (with eclectic web design to boot, of course).</p>
 
-<p><img src="/images/posts/vimroom-screenshot.png" title="VimRoom plugin in use." ></p>
+<p>I think static websites are cool and aren&rsquo;t used nearly enough, especially for websites that are, well, static. Think to the last website you&rsquo;ve visited to read something - maybe a news site, or maybe a blog. Now did it take at least a couple of seconds for them to load? Likely. Did their server have to waste unnecessary cycles putting together a page for you? Most definitely. Now, contrast this with your experience with a static website like this one. Here&rsquo;s the result from <a href="https://pagespeed.web.dev/">pagespeed.web.dev</a> for this page:</p>
 
-<p>Install the plugin (use a package manager like Vundle or <a href="http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/">Pathogen</a> to
-simplify the task) and add a following line to your <code>.vimrc</code>:</p>
+<p><img src="/images/posts/rosipov-page-speed-test.png" title="A screenshot with page speed test for www.rosipov.com (this website). It displays: first contentful paint: 0.8 s; largest contentful paint: 0.9 s; total blocking time: 0 ms; cumulative layout shift: 0.007; speed index: 0.7 s." ></p>
 
-<pre><code>nnoremap &lt;Leader&gt;vr :VimroomToggle&lt;CR&gt;
-</code></pre>
+<p>Every render complete in under a second, and I didn&rsquo;t have to put in any work into optimizing my website.</p>
 
-<p>Now, hit <code>&lt;Leader&gt;vr</code> to drop in/out of the VimRoom mode (<code>&lt;Leader</code> is a
-backslash <code>\</code> character by default).</p>
+<p>This site is built on a (now unsupported) <a href="http://octopress.org/">Octopress</a>, which is itself built on top of <a href="https://jekyllrb.com/">Jekyll</a>. You write pages in Markdown, generate web pages using a pre-made template, and deploy the resulting pages to a hosting provider. In fact, <a href="https://pages.github.com/">GitHub Pages</a> allow you to host your static website for free, and you can have a third party platform like <a href="https://disqus.com/">Disqus</a> provide comment support.</p>
 
-<p>GitHub link: <a href="https://github.com/mikewest/vimroom">https://github.com/mikewest/vimroom</a>.</p>
+<p>Static websites work great for portfolios, blogs, and websites that don&rsquo;t rely on extensive common manipulation. They&rsquo;re more secure (no backend to hack), simple to build and maintain, very fast even without optimization, and are natively SEO friendly (search engines are great at understanding static pages). Static websites are cheap to run - I only pay for a domain name for this site (under $20 a year).</p>
+
+<p>If you have a blog or a portfolio and you&rsquo;re using an overly complicated content management system to write - consider slimming down. <a href="https://jekyllrb.com/">Jekyll</a> (or many of its alternatives) offers a number of pre-made off-ramps for major CMS users, is easy to set up, and is straightforward to work with. Can&rsquo;t recommend enough - static websites rule!</p>
 </div>
 
 
@@ -190,13 +177,13 @@ backslash <code>\</code> character by default).</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T14:46:20-07:00"  data-updated="true" itemprop="datePublished dateCreated">23 Jul 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-07-27T08:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">27 Jul 2023</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/programming/'>programming</a>
   
 </span>
 
@@ -213,10 +200,8 @@ backslash <code>\</code> character by default).</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/abandoning-wordpress-for-octopress/" title="Previous Post: Abandoning WordPress for Octopress">&laquo; Abandoning WordPress for Octopress</a></li>
+            <li class="previous"><a href="/blog/sifu-and-a-state-of-flow/" title="Previous Post: Sifu and a state of flow">&laquo; Sifu and a state of flow</a></li>
             
-            
-            <li class="next"><a href="/blog/three-favorite-bash-tricks/" title="Next Post: Three favorite bash tricks">Three favorite bash tricks &raquo;</a></li>
             
           </ul>
         
@@ -241,7 +226,7 @@ backslash <code>\</code> character by default).</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
+    <a class="list-group-item active" href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
     
@@ -323,8 +308,8 @@ backslash <code>\</code> character by default).</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/';
-        var disqus_url = 'http://www.rosipov.com/blog/distraction-free-writing-with-vimroom/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/static-websites-rule/';
+        var disqus_url = 'http://www.rosipov.com/blog/static-websites-rule/';
         var disqus_script = 'embed.js';
       
     (function () {
