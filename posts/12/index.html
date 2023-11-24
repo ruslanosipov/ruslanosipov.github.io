@@ -127,58 +127,6 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-10T13:02:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">10 Jun 2015</time>
-        
-           | <a href="/blog/didyoumean-plugin-for-vim/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/didyoumean-plugin-for-vim/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/didyoumean-plugin-for-vim/" itemprop="url">DidYouMean plugin for Vim</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p><a href="https://github.com/EinfachToll/DidYouMean">DidYouMean</a> Vim plugin is very simple: it asks you if the file you are
-trying to open is indeed the right file. How is this useful? Here&rsquo;s how:</p>
-
-<p><img src="/images/posts/vim-plugin-didyoumean.png" title="DidYouMean plugin in action." ></p>
-
-<p>Say you have two files with a similarly starting names: <code>model.py</code> and
-<code>model_test.py</code>. You type <code>vim mo</code>, you hit tab to autocomplete the name, you
-hit enter. In vanilla Vim, you&rsquo;d be opening a new file: <code>model</code>, since that&rsquo;s
-where shell&rsquo;s tab-completion stopped. DidYouMean detects such a nuance and asks
-you if you wanted to open <code>model</code>, <code>model.py</code>, or <code>model_test.py</code>.</p>
-
-<p>Simple idea, and instantly after trying this out, I would really expect this
-feature to be included in vanilla Vim.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-06-08T14:03:58-08:00"  data-updated="true" itemprop="datePublished dateCreated"> 8 Jun 2015</time>
         
            | <a href="/blog/lessons-learned-engineering-productivity/#disqus_thread" itemprop="discussionUrl"
@@ -589,6 +537,94 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
 
         </article>
       
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-20T16:25:45-08:00"  data-updated="true" itemprop="datePublished dateCreated">20 Feb 2015</time>
+        
+           | <a href="/blog/managing-cd-bookmarks-with-apparix/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/managing-cd-bookmarks-with-apparix/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/managing-cd-bookmarks-with-apparix/" itemprop="url">Managing cd bookmarks with apparix</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>A couple of months ago I discovered apparix: a set of commands which augment
+<code>cd</code> with bookmarks. It really is an amazing feeling when you zap between
+multiple directories far away just with a couple of keystrokes! Apparix
+provides three commands I use daily: <code>to</code>, <code>bm</code>, and <code>apparix</code> (program
+suggests aliasing last one to <code>als</code>). Here&rsquo;s how I use it:</p>
+
+<pre><code>$ pwd
+/Users/ruslan
+$ apparix
+--- portals
+--- expansions
+--- bookmarks
+j dotfiles     /Users/ruslan/.dotfiles
+j blog         /Users/ruslan/Projects/ruslanosipov.github.io
+$ to blog
+$ pwd
+/Users/ruslan/Projects/ruslanosipov.github.io
+$ cd source/_posts
+$ bm posts
+added: posts -&gt; /Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
+$ to dotfiles
+$ pwd
+/Users/ruslan/.dotfiles
+$ to posts
+$ pwd
+/Users/ruslan/Projects/ruslanosipov.github.io/source/_posts
+</code></pre>
+
+<p>The example above is self explanatory: you can see how over the span of a year
+apparix saves hours of navigating directories you frequent.</p>
+
+<h2>Installation</h2>
+
+<p>If you don&rsquo;t like reading manuals, installation might be a confusing. But in
+reality it&rsquo;s straightforward, you just need to add some functions or aliases to
+your shell&rsquo;s configuration file.</p>
+
+<p>Install <code>apparix</code> using your favorite package manager, and then pipe examples
+apparix offers into your shell&rsquo;s <code>rc</code> file.</p>
+
+<pre><code>apparix --shell-examples &gt;&gt; ~/.bashrc
+</code></pre>
+
+<p>Open your <code>.bashrc</code> (or another corresponding configuration file), and pick the
+preferred way of using apparix: you&rsquo;ll see functions for bash and aliases for
+csh given as examples. Pick whatever works for your shell, source your <code>rc</code>
+file, and you&rsquo;re all set!</p>
+
+<p>Happy jumping!</p>
+</div>
+  
+  
+
+
+        </article>
+      
     </div>
 
     <ul class="pager">
@@ -614,8 +650,6 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
     
     <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
     
-    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
-    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -631,6 +665,8 @@ things done. Be the one to take on responsibility when it&rsquo;s unclear who sh
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
+    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
   </div>
 </section>

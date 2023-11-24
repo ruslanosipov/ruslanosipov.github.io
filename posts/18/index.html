@@ -127,80 +127,6 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-29T19:20:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">29 May 2014</time>
-        
-           | <a href="/blog/python-ignored-context-manager/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/python-ignored-context-manager/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/python-ignored-context-manager/" itemprop="url">Python: &#8220;ignored&#8221; context manager</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
-<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
-following often-occurring pattern:</p>
-
-<pre><code>try:
-    os.remove('i_probably_do_not_exist.txt')
-except OSError:
-    pass
-</code></pre>
-
-<p>And turn it into this:</p>
-
-<pre><code>with ignored(OSError):
-    os.remove('i_probably_do_not_exist')
-</code></pre>
-
-<p>Much shorted and prettier. But, as probably most of engineers, you have to use
-older version of python in production. That&rsquo;s where this little chunk of code
-comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
-following function:</p>
-
-<pre><code>import contextlib
-
-@contextlib.contextmanager
-def ignored(*exceptions):
-    try:
-        yield
-    except exceptions:
-        pass
-</code></pre>
-
-<p>Beautiful!</p>
-
-<p>UPDATE: As Andy pointed out in comments, this context manager has been renamed
-to <code>contextlib.suppress</code> (<a href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a>).</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T21:33:55+00:00"  data-updated="true" itemprop="datePublished dateCreated">28 May 2014</time>
         
            | <a href="/blog/elegant-mutt-setup-for-use-with-gmail/#disqus_thread" itemprop="discussionUrl"
@@ -661,6 +587,50 @@ forgetting to add <code>--test-server</code> flag.</p>
 
         </article>
       
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-25T00:39:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">25 Nov 2013</time>
+        
+           | <a href="/blog/open-previously-edited-file-in-vim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/open-previously-edited-file-in-vim/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/open-previously-edited-file-in-vim/" itemprop="url">Open previously edited file in vim</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command
+with a number to go multiple files back. You can also travel forward in &ldquo;file
+history&rdquo; by using <code>Ctrl-I</code>.</p>
+
+<p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
+</div>
+  
+  
+
+
+        </article>
+      
     </div>
 
     <ul class="pager">
@@ -686,8 +656,6 @@ forgetting to add <code>--test-server</code> flag.</p>
     
     <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
     
-    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
-    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -703,6 +671,8 @@ forgetting to add <code>--test-server</code> flag.</p>
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
+    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
   </div>
 </section>

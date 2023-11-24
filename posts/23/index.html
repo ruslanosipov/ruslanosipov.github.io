@@ -127,72 +127,6 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-03-11T19:38:30+00:00"  data-updated="true" itemprop="datePublished dateCreated">11 Mar 2013</time>
-        
-           | <a href="/blog/rails-and-mongodb-with-cygwin/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/rails-and-mongodb-with-cygwin/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/rails-and-mongodb-with-cygwin/" itemprop="url">Rails and MongoDB with Cygwin</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Setting up Ruby on Rails with MongoDB on a Windows machine.</p>
-
-<p>You need to have cygwin installed with <code>ruby</code> and <code>git</code> packages (obviously you
-may want to have more).</p>
-
-<p>The following commands are executed in the cygwin prompt:</p>
-
-<pre><code>git clone git://github.com/rubygems/rubygems.git
-cd rubygems/
-ruby setup.rb
-gem install rails
-</code></pre>
-
-<p>Go to the MongoDB website and download Windows binaries:
-<a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a>. Extract the content of the <code>bin/</code> directory
-to <code>C:\cygwin\usr\local\bin</code>.</p>
-
-<p>Create a directory for the db files (the default MongoDB db files directory is
-<code>C:\datadb</code>):</p>
-
-<pre><code>cd /cygdrive/c
-mkdir data
-mkdir data/db
-</code></pre>
-
-<p>Done! Both mongo and rails are in your cygwin&rsquo;s path now, feel free to tweak it
-as you see fit.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-02-24T05:35:27+00:00"  data-updated="true" itemprop="datePublished dateCreated">24 Feb 2013</time>
         
            | <a href="/blog/use-vim-commands-in-a-browser/#disqus_thread" itemprop="discussionUrl"
@@ -466,6 +400,82 @@ more substrings are available.</p>
 
         </article>
       
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-10T04:11:23+00:00"  data-updated="true" itemprop="datePublished dateCreated">10 Dec 2012</time>
+        
+           | <a href="/blog/create-gitolite-repository/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/create-gitolite-repository/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/create-gitolite-repository/" itemprop="url">Create gitolite repository</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>A reminder on how to initialize a fresh gitolite repository, assuming that
+gitolite has already been set up.</p>
+
+<p>All actions are performed on a local machine. In this case: <code>~/gitolite-admin</code>
+is admin repository, <code>~/foo</code> is desired repository, <code>rosipov.com</code> is gitolite
+hostname. Command <code>vi</code> stands for the text editor, but you may use whichever
+editor you prefer.</p>
+
+<pre><code>cd ~/gitolite-admin
+vi conf/gitolite.conf
+</code></pre>
+
+<p>Add lines (obviously you may want to use individual users instead of @all):</p>
+
+<pre><code>repo foo
+    RW+ = @all
+</code></pre>
+
+<p>Save it. Next:</p>
+
+<pre><code>git add conf/gitolite.conf
+git commit -m "Add foo repo for @all"
+git pull --rebase &amp;amp;&amp;amp; git push
+mkdir ~/foo
+cd ~/foo
+git init
+git remote add origin git@rosipov.com:foo.git
+</code></pre>
+
+<p>Add some files at this point. In this example, only <code>.gitkeep</code> is added.</p>
+
+<pre><code>git add .gitkeep
+git commit -m "Initialize repo"
+git push origin master
+</code></pre>
+
+<p>The new repository is all set up now.</p>
+</div>
+  
+  
+
+
+        </article>
+      
     </div>
 
     <ul class="pager">
@@ -491,8 +501,6 @@ more substrings are available.</p>
     
     <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
     
-    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
-    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -508,6 +516,8 @@ more substrings are available.</p>
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
+    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
   </div>
 </section>

@@ -127,124 +127,6 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
-        
-           | <a href="/blog/making-a-packing-spreadsheet/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/making-a-packing-spreadsheet/" itemprop="url">Making a packing spreadsheet</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
-
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
-
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
-
-<h2>Final Result</h2>
-
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
-
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
-
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
-
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
-
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
-
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
-
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
-
-<h2>The Technical Details</h2>
-
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
-
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T10:00:00-05:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2018</time>
         
            | <a href="/blog/my-vimrc-annotated/#disqus_thread" itemprop="discussionUrl"
@@ -879,6 +761,136 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
 
         </article>
       
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-08-04T17:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 4 Aug 2017</time>
+        
+           | <a href="/blog/desktop-notifications-from-chrome-secure-shell/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/desktop-notifications-from-chrome-secure-shell/" itemprop="url">Desktop notifications from Chrome Secure Shell</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
+
+<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
+
+<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
+
+<pre><code>#!/bin/sh
+# Copyright 2017 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Write an error message and exit.
+# Usage: &lt;message&gt;
+die() {
+  echo "ERROR: $*"
+  exit 1
+}
+
+# Send a notification.
+# Usage: [title] [body]
+notify() {
+  local title="${1-}" body="${2-}"
+
+  case ${TERM-} in
+  screen*)  # This one's really tmux
+    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
+    ;;
+  *)        # This one's plain hterm
+    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
+    ;;
+  esac
+}
+
+# Write tool usage and exit.
+# Usage: [error message]
+usage() {
+  if [ $# -gt 0 ]; then
+    exec 1&gt;&amp;2
+  fi
+  cat &lt;&lt;EOF
+Usage: hterm-notify [options] &lt;title&gt; [body]
+
+Send a notification to hterm.
+
+Notes:
+- The title should not have a semi-colon in it.
+- Neither field should have escape sequences in them.
+  Best to stick to plain text.
+EOF
+
+  if [ $# -gt 0 ]; then
+    echo
+    die "$@"
+  else
+    exit 0
+  fi
+}
+
+main() {
+  set -e
+
+  while [ $# -gt 0 ]; do
+    case $1 in
+    -h|--help)
+      usage
+      ;;
+    -*)
+      usage "Unknown option: $1"
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
+
+  if [ $# -eq 0 ]; then
+    die "Missing message to send"
+  fi
+  if [ $# -gt 2 ]; then
+    usage "Too many arguments"
+  fi
+
+  notify "$@"
+}
+main "$@"
+</code></pre>
+
+<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
+
+<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
+</code></pre>
+</div>
+  
+  
+
+
+        </article>
+      
     </div>
 
     <ul class="pager">
@@ -904,8 +916,6 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
     
     <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
     
-    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
-    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -921,6 +931,8 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
+    
+    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
     
   </div>
 </section>
