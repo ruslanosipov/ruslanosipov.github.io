@@ -127,6 +127,202 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-29T19:20:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">29 May 2014</time>
+        
+           | <a href="/blog/python-ignored-context-manager/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/python-ignored-context-manager/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/python-ignored-context-manager/" itemprop="url">Python: &#8220;ignored&#8221; context manager</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>There was a recent <a href="http://hg.python.org/cpython/rev/406b47c64480">fantastic addition to Python 3.4</a> by Raymond Hettinger:
+<code>contextlib.ignored</code>. It&rsquo;s a context manager which lets you shorten the
+following often-occurring pattern:</p>
+
+<pre><code>try:
+    os.remove('i_probably_do_not_exist.txt')
+except OSError:
+    pass
+</code></pre>
+
+<p>And turn it into this:</p>
+
+<pre><code>with ignored(OSError):
+    os.remove('i_probably_do_not_exist')
+</code></pre>
+
+<p>Much shorted and prettier. But, as probably most of engineers, you have to use
+older version of python in production. That&rsquo;s where this little chunk of code
+comes in. Create a little <code>compat</code> (as in &ldquo;compatibility&rdquo;) library and add
+following function:</p>
+
+<pre><code>import contextlib
+
+@contextlib.contextmanager
+def ignored(*exceptions):
+    try:
+        yield
+    except exceptions:
+        pass
+</code></pre>
+
+<p>Beautiful!</p>
+
+<p>UPDATE: As Andy pointed out in comments, this context manager has been renamed
+to <code>contextlib.suppress</code> (<a href="https://bugs.python.org/issue19266">https://bugs.python.org/issue19266</a>).</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T21:33:55+00:00"  data-updated="true" itemprop="datePublished dateCreated">28 May 2014</time>
+        
+           | <a href="/blog/elegant-mutt-setup-for-use-with-gmail/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/elegant-mutt-setup-for-use-with-gmail/" itemprop="url">Elegant Mutt setup for use with Gmail</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
+nor does it extend the amount of time I spend reading email. For me, the best
+part about Mutt is that it lets me use text editor of my choice - Vim.
+Everything else - keyboard shortcuts, minimalist design, and simplicity -
+already exists in Gmail.</p>
+
+<p>I found configuration below to work really well for my needs: all of the
+important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+
+<pre><code>bind editor &lt;space&gt; noop
+set alias_file        = '~/.mutt/aliases.txt'
+set copy              = no
+set display_filter    = '$HOME/.mutt/aliases.sh'
+set edit_headers
+set editor            = "vim +/^$ ++1"
+set folder            = "imaps://imap.gmail.com/"
+set hostname          = "gmail.com"
+set imap_check_subscribed
+set imap_pass         = "$PASSWORD"
+set imap_user         = "$USERNAME"
+set mail_check        = 5
+set move              = no
+set postponed         = "+[Gmail]/Drafts"
+set spoolfile         = "+INBOX"
+set text_flowed       = yes
+unset imap_passive
+unset record
+
+# Gmail-style keyboard shortcuts
+macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
+macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
+macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
+macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
+macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
+macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
+macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
+
+source $alias_file
+</code></pre>
+
+<p>It is quite self-explanatory, and includes such nice features as:</p>
+
+<ul>
+<li>Automatically adding addresses from read emails to address book (see
+below).</li>
+<li>Using vim as a text editor, with an ability to edit message
+headers/recipients from within vim.</li>
+<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
+Starred, Trash.</li>
+<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
+respectfully (I am a huge fun of a zero-mail inbox).</li>
+</ul>
+
+
+<p>You might also want to have your password encrypted by GPG as opposed to
+leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
+here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
+
+<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
+<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
+email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
+the <code>aliases.sh</code> are below:</p>
+
+<pre><code>#!/bin/sh
+
+MESSAGE=$(cat)
+
+NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk '{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) {print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", tolower($(NF-1))"-"tolower($2) $0;}}')
+
+
+if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
+    :
+else
+    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
+fi
+
+echo "${MESSAGE}"
+</code></pre>
+
+<p><em>Source: <a href="http://wcaleb.org/blog/mutt-tips">W. Caleb McDaniel</a>.</em></p>
+
+<p>This script will create <code>aliases.txt</code> file containing email addresses for
+search and auto completion of email-addresses.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T19:11:52+00:00"  data-updated="true" itemprop="datePublished dateCreated">28 May 2014</time>
         
            | <a href="/blog/using-mutt-with-gpg/#disqus_thread" itemprop="discussionUrl"
@@ -465,112 +661,6 @@ forgetting to add <code>--test-server</code> flag.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-25T00:39:34+00:00"  data-updated="true" itemprop="datePublished dateCreated">25 Nov 2013</time>
-        
-           | <a href="/blog/open-previously-edited-file-in-vim/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/open-previously-edited-file-in-vim/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/open-previously-edited-file-in-vim/" itemprop="url">Open previously edited file in vim</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>You can open previous location by hitting <code>Ctrl-O</code>. You can prefix the command
-with a number to go multiple files back. You can also travel forward in &ldquo;file
-history&rdquo; by using <code>Ctrl-I</code>.</p>
-
-<p>There&rsquo;s a nice article on <a href="http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations">Vim Wikia</a> with more details on a subject.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-24T04:14:19+00:00"  data-updated="true" itemprop="datePublished dateCreated">24 Nov 2013</time>
-        
-           | <a href="/blog/old-file-version-in-split-with-vim/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/old-file-version-in-split-with-vim/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/old-file-version-in-split-with-vim/" itemprop="url">Old file version in split with vim</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you use git VCS, you can view previous version of the file you are currently
-editing in a split window by executing following command:</p>
-
-<pre><code>:vsp tmp | read !git show HEAD^:path/from/working/directory
-</code></pre>
-
-<p>For the instant syntax highlighting, you can specify temporary file&rsquo;s
-extension, like following:</p>
-
-<pre><code>:vsp tmp.py | read !git show HEAD^:lib/module.py
-</code></pre>
-
-<p>You can also cycle back by few versions by replacing <code>HEAD^</code> (which points to
-the previous commit) with <code>HEAD~N</code>, where <code>N</code> is the number of commits you
-would like to go back in history by. For example, if you would like to get a
-version of the file 4 commits ago - you can do so by executing following
-command:</p>
-
-<pre><code>:vsp tmp | read !git show HEAD~4:path/from/working/directory
-</code></pre>
-
-<p>It&rsquo;s a pretty nice hack when you need to quickly view previous version of the
-file you are working on.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -594,6 +684,10 @@ file you are working on.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
+    
+    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
+    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -609,10 +703,6 @@ file you are working on.</p>
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
-    
-    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
-    
-    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
     
   </div>
 </section>

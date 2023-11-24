@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-27T08:41:24-07:00</updated>
+  <updated>2023-11-24T13:24:08-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Essentialism: A Practical Guide to Less]]></title>
+    <link href="http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/"/>
+    <updated>2023-11-24T12:00:00-08:00</updated>
+    <id>http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve thoroughly enjoyed <a href="https://amzn.to/3QUpyyb">Essentialism</a>, a book that encapsulates the simple yet powerful notion of &ldquo;do fewer things, do them well.&rdquo; There&rsquo;s not much else to it. While this philosophy is straightforward, it&rsquo;s the way Greg McKeown presents and reinforces this message that makes the book truly compelling.</p>
+
+<p>Having Essentialism in physical form proved invaluable. I filled the margins with notes, worked through exercises alongside the text, and took the time to fully absorb the material as I progressed.</p>
+
+<p>Essentialism is not a new concept, but the key takeaway is the author&rsquo;s focus on truly internalizing the message. &ldquo;Focus on things that matter, trim the excess&rdquo; is a simple motto to remember, yet challenging to implement. Throughout my life, I&rsquo;ve adopted many of essentialist practices in one form or another, from guarding my calendar to learning to say &ldquo;no&rdquo; to prioritizing essential projects. However, over time, clutter inevitably creeps in.</p>
+
+<p>McKeown wisely focuses on routines that support the essentialist lifestyle, emphasizing the importance of dedicated time for reevaluation and recentering. He suggests establishing routines that prevent slipping into the frantic &ldquo;onto the next thing&rdquo; mentality so prevalent in the modern corporate world.</p>
+
+<p>An analogy that particularly resonated with me is the closet metaphor. While you can declutter your closet once, it will eventually refill with clothes you don&rsquo;t need. To keep your closet tidy, you need to have a regular time to reevauate your outfits, know where the nearest donation center is, how to get there, and what hours is it open. Similarly, McKeown provides methodologies to regularly reevaluate our priorities, supporting the rigorous process of regularly discarding the non-essential.</p>
+
+<p>Essentialism extensively focuses on routines, practices, and exercises. The edition I read includes a &ldquo;21-day Essentialism Challenge,&rdquo; a helpful list of concrete activities corresponding to each chapter. While some prompts, like &ldquo;take a nap&rdquo; or &ldquo;play with a child for 10 minutes&rdquo; are a bit silly (where am I supposed to find a child on a Tuesday, Greg?), many steps effectively reinforce and integrate the material into your daily life, such as &ldquo;design your ideal calendar,&rdquo; &ldquo;practice saying no gracefully,&rdquo; or &ldquo;schedule a personal offsite.&rdquo;</p>
+
+<p>The latter suggestion, scheduling a personal offsite, left a significant impression on me. It&rsquo;s time dedicated to strategizing around your personal and professional goals. While I occasionally reflect on my career and life, McKeown elevates this practice into a ritual – a full day focused on self-reflection, planning, and deliberate action.</p>
+
+<p><a href="https://amzn.to/3QUpyyb">Essentialism</a> is a helfpul book that prompts the reader to think about the routines one can put in place to change the way we approach life. It&rsquo;s a reminder that less can indeed be more, and that by focusing on what truly matters, we can create a life of greater purpose, meaning, and fulfillment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Thoughts, Energy, Attention]]></title>
@@ -328,66 +351,6 @@ email in a morning, and wait for a response!</p>
 <p>I wrap up around 5 pm, and make a point not to work past that. I swap out my work laptop for my own (even if I&rsquo;m not planning to use it), and stow it away for the night. Disassembling my setup paired with showering and changing into house clothes creates a solid dividing line between work and home.</p>
 
 <p>Cooking dinner together and evening activities follow, but that&rsquo;s a story for another time. Stay healthy and productive!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Google Drive on Linux with rclone]]></title>
-    <link href="http://www.rosipov.com/blog/google-drive-on-linux-with-rclone/"/>
-    <updated>2019-06-23T15:00:00+08:00</updated>
-    <id>http://www.rosipov.com/blog/google-drive-on-linux-with-rclone</id>
-    <content type="html"><![CDATA[<p>Recently Dropbox hit me with the <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">following announcement</a>:</p>
-
-<blockquote><p>Basic users have a three device limit as of March 2019.</p></blockquote>
-
-<p>Being the &ldquo;basic&rdquo; user, and relying on Dropbox across multiple machines, I got unreasonably upset (&ldquo;How dare you deny me free access to your service?!&rdquo;) and started looking for a replacement.</p>
-
-<p>I already store quite a lot of things in Google Drive, so it seemed like a no brainer: I migrated all my machines to Google Drive overnight. There was but only one problem: Google Drive has official clients for Windows and Mac, but there&rsquo;s nothing when it comes to Linux.</p>
-
-<p>I found the Internets to be surprisingly sparse on the subject, and I had to try multiple solutions and spent more time than I&rsquo;d like researching options.</p>
-
-<p>The best solution for me turned out to be <code>rclone</code>, which mounts Google Drive as a directory. It requires <code>rclone</code> service to be constantly running in order to access the data, which is a plus for me - I&rsquo;ve accidentally killed Dropbox daemon in the past and had to deal with conflicts in my files.</p>
-
-<p>Install <code>rclone</code> (<a href="https://rclone.org/install/">instructions</a>):</p>
-
-<pre><code>curl https://rclone.org/install.sh | sudo bash
-</code></pre>
-
-<p>From then on, <a href="https://rclone.org/drive/">rclone website some documentation</a> when it comes to the setup. I found it somewhat difficult to parse, so here it is paraphrased:</p>
-
-<p>Launch <code>rclone config</code> and follow the prompts:</p>
-
-<ul>
-<li><code>n) New remote</code></li>
-<li><code>name&gt; remote</code></li>
-<li>Type of storage to configure: <code>Google Drive</code></li>
-<li>Leave <code>client_id&gt;</code> and <code>client_secret&gt;</code> blank</li>
-<li>Scope: <code>1 \ Full access to all files</code></li>
-<li>Leave <code>root_folder_id&gt;</code> and <code>service_account_file&gt;</code> blank</li>
-<li>Use auto config? <code>y</code></li>
-<li>Configure this as a team drive? <code>n</code></li>
-<li>Is this OK? <code>y</code></li>
-</ul>
-
-
-<p>From here on, you can interact with your Google Drive by running <code>rclone</code> commands (e.g. <code>rclone ls remote:</code> to list top level files). But I am more interested in a continuous running service and <code>mount</code> is what I need:</p>
-
-<pre><code>rclone mount remote: $HOME/Drive
-</code></pre>
-
-<p>Now my Google Drive is accessible at <code>~/Drive</code>. All that&rsquo;s left is to make sure the directory is mounted on startup.</p>
-
-<p>For Ubuntu/Debian, I added the following line to <code>/etc/rc.local</code> (before <code>exit 0</code>, and you need <code>sudo</code> access to edit the file):</p>
-
-<pre><code>rclone mount remote: $HOME/Drive
-</code></pre>
-
-<p>For my i3 setup, all I needed was to add the following to <code>~/.config/i3/config</code>:</p>
-
-<pre><code>exec rclone mount remote: $HOME/Drive
-</code></pre>
-
-<p>It&rsquo;s been working without an issue for a couple of weeks now - and my migration from Dropbox turned out to be somewhat painless and quick.</p>
 ]]></content>
   </entry>
   

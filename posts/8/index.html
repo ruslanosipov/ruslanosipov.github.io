@@ -127,6 +127,432 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
+        
+           | <a href="/blog/making-a-packing-spreadsheet/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/making-a-packing-spreadsheet/" itemprop="url">Making a packing spreadsheet</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
+
+<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
+
+<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
+
+<h2>Final Result</h2>
+
+<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
+
+<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
+
+<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
+
+<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
+
+<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
+
+<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
+
+<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
+
+<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
+
+<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
+
+<h2>The Technical Details</h2>
+
+<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
+
+<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
+
+<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
+
+<pre><code>=ArrayFormula(
+ IF(
+   NOT(ISBLANK($B2)),
+   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
+   IF(
+     NOT(ISBLANK($C2)),
+     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
+     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
+   )
+  )
+)
+</code></pre>
+
+<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
+
+<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
+
+<pre><code>=ArrayFormula(
+     SUM(
+       $I2:INDIRECT(
+         CONCATENATE(
+           "$I",
+           ROW() + IF(
+             NOT(ISBLANK($B2)),
+             MATCH(FALSE, ISBLANK($B3:$B), 0),
+             MATCH(FALSE, ISBLANK($C3:$C), 0)
+           ) - 1
+         )
+       )
+     )
+</code></pre>
+
+<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
+
+<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
+
+<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
+
+<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
+
+<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
+
+<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
+
+<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T10:00:00-05:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2018</time>
+        
+           | <a href="/blog/my-vimrc-annotated/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/my-vimrc-annotated/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/my-vimrc-annotated/" itemprop="url">My .vimrc, annotated</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
+
+<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
+
+set nocompatible  " Required for many plugins, ensures it's not compatible with 
+                  " Vi, which nobody uses at this point.
+filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
+</code></pre>
+
+<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
+
+<pre><code>" Required Vundle setup.
+set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=$GOROOT/misc/vim
+call vundle#rc()
+
+" =&gt; Vundle plugins ------------------------------------------------------- {{{1
+
+Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
+
+" Colorschemes:
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'ajh17/Spacegray.vim.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'squarefrog/tomorrow-night.vim'
+Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
+
+" Language/tool integration and support:
+Plugin 'burnettk/vim-angular'
+Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'motemen/git-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic.git'  " Syntax checker.
+Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
+
+" Quality of life:
+Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
+Plugin 'ciaranm/detectindent'      " Automatically detect indent.
+Plugin 'ervandew/supertab'         " Smarter autocompletion.
+Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
+Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
+Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
+Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
+Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
+Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
+Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
+Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
+Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
+Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
+
+" New features:
+Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
+Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
+Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
+Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
+
+if v:version &gt; 703
+  Plugin 'SirVer/ultisnips'        " Intricate snippets.
+  Plugin 'chrisbra/vim-diff-enhanced'
+endif
+
+" =&gt; Plugins configuration ------------------------------------------------ {{{1
+
+" NERDTree: auto close if last window.
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Force Gundo preview to the bottom.
+let g:gundo_preview_bottom = 1
+
+" Map Gundo.
+nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
+
+" DetectIndent: Enable and configure.
+augroup detectindent
+  autocmd!
+  autocmd BufReadPost * :DetectIndent
+augroup END
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
+" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
+let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
+let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
+let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
+let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
+let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
+
+" VimWiki: default location.
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Dropbox/wiki',
+  \ 'template_path': '$HOME/Dropbox/wiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+" Map Tagbar.
+nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
+
+" Synastic configuration.
+let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
+let g:syntastic_html_checkers = ['']
+let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
+let g:syntastic_javascript_gjslint_args = '--strict'
+let g:syntastic_python_checkers = ['gpylint']
+</code></pre>
+
+<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
+
+<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
+
+<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
+
+syntax on
+
+" Indentation settings.
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" Disable backups and .swp files.
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Semicolon is too long to type.
+nnoremap ; :
+vnoremap ; :
+
+" Map leader key.
+let mapleader = "\&lt;Space&gt;"
+
+" Use system clipboard.
+set clipboard=unnamedplus
+
+" Enable wild menu (tab command autocompletion).
+set wildmenu
+set wildmode=list:longest,full
+
+" Don't complain about unsaved files when switching buffers.
+set hidden
+
+" Make soft line breaks much better looking.
+if v:version &gt; 703
+  set breakindent
+endif
+
+" Pretty soft break character.
+let &amp;showbreak='↳ '
+
+" =&gt; Looks ---------------------------------------------------------------- {{{1
+
+set background=dark
+colorscheme spacegray
+
+" Set terminal window title and set it back on exit.
+set title
+let &amp;titleold = getcwd()
+
+" Shorten press ENTER to continue messages.
+set shortmess=atI
+
+" Show last command.
+set showcmd
+
+" Highlight cursor line.
+set cursorline
+
+" Ruler (line, column and % at the right bottom).
+set ruler
+
+" Display line numbers if terminal is wide enough.
+if &amp;co &gt; 80
+  set number
+endif
+
+" Soft word wrap.
+set linebreak
+
+" Prettier display of long lines of text.
+set display+=lastline
+
+" Always show statusline.
+set laststatus=2
+
+" =&gt; Movement and search -------------------------------------------------- {{{1
+
+" Ignore case when searching.
+set ignorecase
+set smartcase
+
+" Fast split navigation.
+nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
+nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
+nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
+nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
+
+" Absolute movement for word-wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+" =&gt; Misc ----------------------------------------------------------------- {{{1
+
+" Use Unix as the standart file type.
+set ffs=unix,dos,mac
+
+" Ignore compiled files.
+set wildignore=*.o,*~,*.pyc,*.pyo
+
+" Ignore virtualenv directory.
+set wildignore+=env
+
+" Fold using {{{n, where n is fold level
+set foldmethod=marker
+
+" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
+
+" Ignore mouse (in GVIM).
+set mouse=c
+
+" Fix backspace behavior in GVIM.
+set bs=2
+
+" NERDTree arrows in Windows.
+if has("win32") || has("win64") || has("win32unix")
+  let g:NERDTreeDirArrows = 0
+endif
+
+" Increase lower status bar height in diff mode.
+if &amp;diff
+  set cmdheight=2
+endif
+
+" Unfold all files by default.
+au BufRead * normal zR
+</code></pre>
+
+<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
+
+<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
+
+" Trim trailing whitespace in the file.
+command TrimWhitespace %s/\s\+$//e
+
+" Command to close current buffer without closing the window.
+command Bd :bp | :sp | :bn | :bd
+
+" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
+
+nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
+nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
+nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
+nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
+nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
+</code></pre>
+
+<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-11-14T10:00:00-05:00"  data-updated="true" itemprop="datePublished dateCreated">14 Nov 2017</time>
         
            | <a href="/blog/automating-octopress-publishing/#disqus_thread" itemprop="discussionUrl"
@@ -453,216 +879,6 @@ eyJoaXN0b3J5IjpbMTY3OTE1ODIzNl19
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-08-04T17:33:16+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 4 Aug 2017</time>
-        
-           | <a href="/blog/desktop-notifications-from-chrome-secure-shell/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/desktop-notifications-from-chrome-secure-shell/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/desktop-notifications-from-chrome-secure-shell/" itemprop="url">Desktop notifications from Chrome Secure Shell</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>For the past year or two I&rsquo;ve been working in the cloud. I use Chrome <a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en">Secure Shell</a> to connect to my machines, and it works rather well. In fact, I moved away from my work Linux/Mac laptops towards an <a href="http://amzn.to/2hv68Ck">HP Chromebook</a>, which fullfilled both requirements I had: a browser and a terminal. One thing I missed about a Linux machine though is lack of <code>notify-send</code>-like functionality, especially when working with long-running builds.</p>
-
-<p>Yesterday I pinged hterm team for assistance with this matter, and turns out recent release of Secure Shell supports Chrome desktop notifications! Furthermore, two amazing engineers (thanks Andrew and Mike!) crafted an <a href="https://chromium-review.googlesource.com/c/601549/3/hterm/etc/hterm-notify.sh">hterm-notify</a> script, which propagates notifications to Chrome, and by extent to desktop!</p>
-
-<p>I made a few tiny changes, mainly since I don&rsquo;t use <code>screen</code>, and tmux sets my <code>$TERM</code> to <code>screen-256color</code> for some reason:</p>
-
-<pre><code>#!/bin/sh
-# Copyright 2017 The Chromium OS Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file.
-
-# Write an error message and exit.
-# Usage: &lt;message&gt;
-die() {
-  echo "ERROR: $*"
-  exit 1
-}
-
-# Send a notification.
-# Usage: [title] [body]
-notify() {
-  local title="${1-}" body="${2-}"
-
-  case ${TERM-} in
-  screen*)  # This one's really tmux
-    printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "${title}" "${body}"
-    ;;
-  *)        # This one's plain hterm
-    printf '\e]777;notify;%s;%s\a' "${title}" "${body}"
-    ;;
-  esac
-}
-
-# Write tool usage and exit.
-# Usage: [error message]
-usage() {
-  if [ $# -gt 0 ]; then
-    exec 1&gt;&amp;2
-  fi
-  cat &lt;&lt;EOF
-Usage: hterm-notify [options] &lt;title&gt; [body]
-
-Send a notification to hterm.
-
-Notes:
-- The title should not have a semi-colon in it.
-- Neither field should have escape sequences in them.
-  Best to stick to plain text.
-EOF
-
-  if [ $# -gt 0 ]; then
-    echo
-    die "$@"
-  else
-    exit 0
-  fi
-}
-
-main() {
-  set -e
-
-  while [ $# -gt 0 ]; do
-    case $1 in
-    -h|--help)
-      usage
-      ;;
-    -*)
-      usage "Unknown option: $1"
-      ;;
-    *)
-      break
-      ;;
-    esac
-  done
-
-  if [ $# -eq 0 ]; then
-    die "Missing message to send"
-  fi
-  if [ $# -gt 2 ]; then
-    usage "Too many arguments"
-  fi
-
-  notify "$@"
-}
-main "$@"
-</code></pre>
-
-<p>Throwing this in as <code>~/bin/notify</code> (not forgetting to <code>chmod +x</code> and having <code>~/bin</code> in the <code>$PATH</code>) I can get a notification when a particular long running command is complete:</p>
-
-<pre><code>sleep 30 &amp;&amp; notify Hooray "The sleep's done!"
-</code></pre>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-05-09T08:00:00+00:00"  data-updated="true" itemprop="datePublished dateCreated"> 9 May 2017</time>
-        
-           | <a href="/blog/journey-of-a-friend/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/journey-of-a-friend/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/journey-of-a-friend/" itemprop="url">Journey of a friend</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p><em>A close friend of mine has a story similar to mine. She wanted to share it for a while now, and I&rsquo;m humbled she chose my blog as a medium for telling her inspiring story to the strangers on the Internet:</em></p>
-
-<p><img src="/images/posts/friends-trip-plane.jpg" title="At Narita Airport, Japan." ></p>
-
-<p>I can&rsquo;t count the number of times I have attempted to tell this story on paper. It all started 8 months ago when my then-husband, let&rsquo;s call him Carl, told me that he no longer loved me and was in love with someone else. There are a few moments in life that seem to happen in slow motion and this was one of them. Until then, my life had been being Carl&rsquo;s wife and in the blink of an eye, I had to figure out who I was in a world without Carl. I forced myself to write every thoughts I had, dark, depressed, once a day but it didn&rsquo;t stick. I bought various domain names hoping that it would give me the final push to start writing all this down but all the sites remained &ldquo;under construction&rdquo;. So here is my final attempt to write this up, organize my thoughts and hopefully let someone going through this know that they are not alone. How did I get here? Well funny you should ask, pull up a chair and listen to my tale.</p>
-
-<p>Carl and I met when we were 22 and 18 respectively. It was far from love at first sight but he intrigued me. I had just got out of an unhealthy relationship and wanted something different and Carl was that, unapologetically himself. Up until then, I had always felt pressure to conform to the idea of who others wanted me to be and meeting Carl, who let&rsquo;s be honest was a straight nerd, was surprisingly refreshing and attractive. We dated for 5 years before getting married. We struggled with money throughout the first years of our relationship so when the opportunity to make more at a job I was unqualified for presented itself, we jumped at the chance. We packed our bags and moved for my job. Thus started the beginning of the end. I was so focused on keeping said job that I overworked, became a ball of nerves and lost all desires to do anything outside of work. While I struggled with the demand of the job, Carl found refuge with his younger, funner coworkers. We started living separate lives, which eventually led up to the fateful day when my husband told me that he loved someone else.</p>
-
-<p>I will not bore you with the details of my attempts to become a stable, contributing member of society. It included a lot of sleepless night, Nutella for dinner, and lies. I would smile everyday as I got to work, joked with co-workers and call family members and friends to discuss everything and anything when deep down all I wanted to do was to crawl in a dark place and wallow in my sadness. This period led to a lot of physical and mental changes. I lost 20 pounds in 2 months due to stress but the vain person in me was happy to see myself get skinny. Mentally, I had to come clean to my family and explain to them how I became the first divorced person in a deeply catholic family. I created a smaller, more dependable community of friends, most of them divorced or separated who could provide me with a different perspective. I had to admit to my manager that I could not continue work as is. Maintaining the lies became exhausting and emotionally draining. One had to give and after a heart to heart with my manager, I decided to cash out all my vacation hours and head out to Southeast Asia for a month.</p>
-
-<p>Prior to Southeast Asia, I had never vacationed alone. For the first time in my life, I was in charge of my itinerary and my own entertainment. It was overwhelming. After discussing the trip with veteran solo travelers, I only purchased one ticket. All I knew was my departing and arrival date from and to the US. I arrived at my first stop, Ho Chi Minh City, at midnight on a blazing hot night. The bustle of the city took me aback and made me question the trip in its entirety. I was running away and I knew it. I have always thought of myself as a strong person but dealing with this separation made me feel like a scared kid. Just as I was going through this mental exercise, my cab driver hit a motorcyclist and the impact broke one of his side view mirrors. The driver angrily got out of the car and argued with the individual he had just hit. They spoke in Vietnamese for what felt like hours and came back without explanations. At that point, I was sure that this entire trip was a mistake and if I had spoken the language, I would have asked the driver to turn and drop me back at the airport.</p>
-
-<p>The rest of the drive to the hotel was much calmer with the occasional surprise looks from locals seeing a black tourist through a taxi window at midnight. Blame it on stress, jet lag or even regret but for the first time in months I slept for more than 4 hours. Somewhat invigorated by the night of sleep, I decided to venture into the city to find food. After multiple failed attempts to cross one of the main traffic arteries, I gave up and sat down miserably looking at a bowl of pho from a restaurant located in the same block as my hotel. The Ho Chi Minh City traffic had won once again. I sat by a window seat, staring into the street, dreading the rest of this Southeast Asia trip. To travel Asia required an adventure spirit and it only took me 2 days to recognize that this was not one of my hidden talents. I told myself, only half believing it, that my second stop might be different but deep down, I knew I was on my way to yet another disappointing time.</p>
-
-<p><img src="/images/posts/friends-trip-sleep.png" title="Screenshot of sleep activity during the trip." ></p>
-
-<p>Bangkok was a life changing stop for my trip and myself as a person. I had contacted a Turkish-based traveler on CouchSurfing visiting Bangkok during the same time. I was excited to meet up with someone that could understand the struggles of being in an unfamiliar country. This guy learned English by watching American sitcoms but did not let his basic knowledge of English or his lack of Thai stop him. It led to some interesting conversations about the meaning of &ldquo;Netflix and Chill&rdquo; and other American colloquialisms. Seeing him tackle the challenges of navigating a foreign city showed me what my journey could look like. Not only did he help me see the wonders of being open to the world, but he also inadvertently started my process of self love. Let me explain. To avoid having to carry a heavy suitcase and pay airline fees, I limited my wardrobe to whatever could fit in a carry-on backpack. As a relatively fashion-focused person, this decision was uncomfortable. With that in mind and the unforgiving sun, I was either dripped in sweat or looking like a lost 1920s explorer. Having someone still think that I looked good in those conditions did wonders for my broken self esteem. We spend 4 adventures filled days and parted ways. We still talk to each other and I am grateful to have encountered him so early on during my trip. I finally embraced the lack of structure and decided to thrive through it. Remember this word &ldquo;Thrive&rdquo;, it will come back later on in this story.</p>
-
-<p><img src="/images/posts/friends-trip-construction.jpg" title="Temple in Bangkok." ></p>
-
-<p>After Bangkok, I headed to Chiang Mai for the Lantern Festival. Given my positive experience with CouchSurfing, I decided to continue using it  to meet locals and travelers throughout my stops. I used all the lessons learned in Bangkok and forced myself to open up to people. I had a heart wrenching conversation with an American girl trying to find herself in the world despite familial and societal pressures. We quickly bonded and within minutes were sharing our deepest darkest fears. In addition to looking differently at people, I started focusing on things that made me happy. I took a Thai cooking class, a skill I desperately lacked in, and learned Muay Thai. With each new activity I undertook, I felt a change inside of me. I was slowly starting to fall in love with myself.</p>
-
-<p><img src="/images/posts/friends-trip-market.jpg" title="Cooking class in Chiang Mai." ></p>
-
-<p>Next stop: Singapore. A few coworkers happened to be there around the same time and I had always been intrigued by the country. I experienced the country&rsquo;s renowned cleanliness, mix of cultures and wide array of food options. It was in Singapore that I learned another fact about myself: I loved meeting new people. I struck conversations with random people in elevators, buses or hotels. Not having an itinerary turned out to be a blessing. I ended up extending my time in Singapore and enjoyed some retail therapy from one of the cities&#8217; amazing malls.</p>
-
-<p>My goal for this trip was not only self discovery but also to be fully emerged in each country’s history and culture. So that meant that I purposely landed in each new locations not knowing anything about religious beliefs, language and social norms. It worked in my favor up until I arrived in Kuala Lumpur. On my first day in the country, I had planned to follow my typical plan and visit the national and art museums to learn about Malaysian culture. Unfortunately, I arrived during yellow and red shirt protests. All local attractions were closed and I ended up smack in  a protest. While I am sure I was never in any real danger, being stuck in the middle of a screaming and upset group of people was scary. I took refuge in a nearby mall and ended up being stranded there for 4 hours. No taxis or Ubers wanted to come to my location due to road closures and fears of property damages. With each hour, I got more and more scared and worried. When I was finally able to get to my hotel, I made arrangements to leave the day after to go to Cambodia. I am hoping to go back to KL and get a chance to see all the city has to offer.</p>
-
-<p>After my failure in Malaysia, I landed in Siem Reap defeated. Cambodia was breathtaking. It was the first time that I saw real poverty and luxury in the same location. It was in Siem Reap that I realized how small my problems really were. I saw and talked to people struggling to afford day to day life and here I was suffering from a broken heart. Siem Reap helped me refocus and gave me a different perspective. It wasn&rsquo;t about what my problems were but how I approached them. I was not as powerless as I thought I was. I could make the choice to not let my situations impact me and move forward. There, I met some of the most life-loving individuals. As we were exchanging travel stories and tips, we all realized that we were into the same type of music. One of the members of the group ran to his hotel room and brought back his turntables. We had an impromptu dance party in the middle of Siem Reap. I sang and danced my heart away to familiar songs in a an unfamiliar land with unfamiliar people. At that time, I realized that I was happy. For the first time in months, there were no hidden emotions behind my smile, it was pure happiness and I never wanted it to end.</p>
-
-<p>I went to Angkor Wat at sunrise and felt lost and transported to a different world visiting all the cultural sites of the country. The Tuol Seng prison and the lives lost there forced me to put my life into perspective. I realized the following facts that I knew deep down but up until then was unwilling to accept: 1) I was getting divorced, 2) I was deeply hurt that I wasn&rsquo;t enough for my husband , 3) I still loved Carl and needed to respect his choice, 4) This was not the end for me. Weirdly, coming to these realizations made me calmer. I knew what I had to do. I had to use the remaining days of this trip to try to discover as much as I could about myself.</p>
-
-<p><img src="/images/posts/friends-trip-skyline.jpg" title="Sunrise at Angkor Wat, Siem Reap." ></p>
-
-<p>Along with self discovery and adventure-filled days came the not-so fun ones. Thanksgiving day landed while I was in Phnom Penh. As an immigrant, Thanksgiving meant spending time with Carl&rsquo;s family. Up until Thanksgiving day, I thought about Carl during my trip but never more than &ldquo;Carl would have loved eating this, or visiting this area or enjoyed talking with this individual&rdquo;. But as I was staring at my plate of mashed potatoes and turkey, I not only felt a overwhelming sense of loss but also felt shame. Only a few hours prior, I was reveling in the country&rsquo;s history and congratulating myself in having a fresh new perspective on life. I could not finish my plate and walked back to my hotel room beaten. For the first time since I started on this adventure, I was happy that I was traveling alone. I spent the rest of my day watching TV locked in my hotel room.</p>
-
-<p>After 3 weeks on the road, I headed back to Vietnam for my last week abroad. For convenience, I reserved a room in the same hotel I had checked at the beginning of this trip. I suddenly realized that the person who checked in 3 weeks ago was not the person who was walking in. I couldn&rsquo;t put my finger on what it was specifically but I felt more confident and more at peace with myself. A former coworker traveling in Ho Chi Minh City at the same time reached out and we connected for dinner. His first words to me were &ldquo;&hellip; so, what is going on, where is your husband?&rdquo; We hadn&rsquo;t seen each other for 4 years and apparently, my social media accounts had become a &ldquo;Eat, Pray, Love&rdquo; tribute. I explained my current situation, no longer ashamed of the fact that I had a failed marriage, and we traded travel stories. He had not left his hotel room until our meeting because he was overwhelmed by the city, especially the traffic. I can&rsquo;t put into words how satisfying it was for me to be able to teach him how to cross the road. I fondly remembered my old self, seating defeated in front of a bowl of pho. I couldn&rsquo;t have engineered a better end to 4 wonderful weeks in paradise.</p>
-
-<p><img src="/images/posts/friends-trip-boat.jpg" title="On the way to floating market in Can Tho, Vietnam." ></p>
-
-<p>Of course I glanced over many more experiences, people and locations visited. It would take days to write it all. I came back to the US on a high that I knew would not last but I was determined to keep it as long as possible. I had felt true happiness and connected with new people for the first time in 7 months. I was accepted even after I showed my true, deeply flawed self, but most importantly, I met myself. I discovered the foundations of who I was, what made me smile, happy and tick. I realized that I could survive, not just survive, I could thrive in a foreign environment and to commemorate it, I tattooed “Thrive” on my shoulder to always remind myself of that feeling. Told you that word was going to come back.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -686,6 +902,10 @@ main "$@"
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
+    
+    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
+    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -701,10 +921,6 @@ main "$@"
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
-    
-    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
-    
-    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
     
   </div>
 </section>

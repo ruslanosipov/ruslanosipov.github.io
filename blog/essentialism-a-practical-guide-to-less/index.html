@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Elegant Mutt setup for use with Gmail - Ruslan Osipov</title>
+  <title>Essentialism: A Practical Guide to Less - Ruslan Osipov</title>
   <meta name="author" content="Ruslan Osipov">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/">
+  <link rel="canonical" href="http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Ruslan Osipov" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/">
-  <meta property="og:title" content="Elegant Mutt setup for use with Gmail - Ruslan Osipov">
+  <meta property="og:url" content="http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/">
+  <meta property="og:title" content="Essentialism: A Practical Guide to Less - Ruslan Osipov">
   
 
   <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T21:33:55+00:00"  data-updated="true" itemprop="datePublished dateCreated">28 May 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-11-24T12:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">24 Nov 2023</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://www.rosipov.com">Comments</a>
@@ -132,96 +132,28 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Elegant Mutt setup for use with Gmail
+        Essentialism: A Practical Guide to Less
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>I have been using Mutt for a while now. Wouldn&rsquo;t say that it saves my time, but
-nor does it extend the amount of time I spend reading email. For me, the best
-part about Mutt is that it lets me use text editor of my choice - Vim.
-Everything else - keyboard shortcuts, minimalist design, and simplicity -
-already exists in Gmail.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve thoroughly enjoyed <a href="https://amzn.to/3QUpyyb">Essentialism</a>, a book that encapsulates the simple yet powerful notion of &ldquo;do fewer things, do them well.&rdquo; There&rsquo;s not much else to it. While this philosophy is straightforward, it&rsquo;s the way Greg McKeown presents and reinforces this message that makes the book truly compelling.</p>
 
-<p>I found configuration below to work really well for my needs: all of the
-important for me Gmail features are translated. Here&rsquo;s my <code>.muttrc</code> file:</p>
+<p>Having Essentialism in physical form proved invaluable. I filled the margins with notes, worked through exercises alongside the text, and took the time to fully absorb the material as I progressed.</p>
 
-<pre><code>bind editor &lt;space&gt; noop
-set alias_file        = '~/.mutt/aliases.txt'
-set copy              = no
-set display_filter    = '$HOME/.mutt/aliases.sh'
-set edit_headers
-set editor            = "vim +/^$ ++1"
-set folder            = "imaps://imap.gmail.com/"
-set hostname          = "gmail.com"
-set imap_check_subscribed
-set imap_pass         = "$PASSWORD"
-set imap_user         = "$USERNAME"
-set mail_check        = 5
-set move              = no
-set postponed         = "+[Gmail]/Drafts"
-set spoolfile         = "+INBOX"
-set text_flowed       = yes
-unset imap_passive
-unset record
+<p>Essentialism is not a new concept, but the key takeaway is the author&rsquo;s focus on truly internalizing the message. &ldquo;Focus on things that matter, trim the excess&rdquo; is a simple motto to remember, yet challenging to implement. Throughout my life, I&rsquo;ve adopted many of essentialist practices in one form or another, from guarding my calendar to learning to say &ldquo;no&rdquo; to prioritizing essential projects. However, over time, clutter inevitably creeps in.</p>
 
-# Gmail-style keyboard shortcuts
-macro index ga "&lt;change-folder&gt;=[Gmail]/All Mail&lt;enter&gt;" "Go to all mail"
-macro index gd "&lt;change-folder&gt;=[Gmail]/Drafts&lt;enter&gt;" "Go to drafts"
-macro index gi "&lt;change-folder&gt;=INBOX&lt;enter&gt;" "Go to inbox"
-macro index gs "&lt;change-folder&gt;=[Gmail]/Starred&lt;enter&gt;" "Go to starred messages"
-macro index gt "&lt;change-folder&gt;=[Gmail]/Trash&lt;enter&gt;" "Go to trash"
-macro index,pager d "&lt;save-message&gt;=[Gmail]/Trash&lt;enter&gt;&lt;enter&gt;" "Trash"
-macro index,pager y "&lt;save-message&gt;=[Gmail]/All Mail&lt;enter&gt;&lt;enter&gt;" "Archive"
+<p>McKeown wisely focuses on routines that support the essentialist lifestyle, emphasizing the importance of dedicated time for reevaluation and recentering. He suggests establishing routines that prevent slipping into the frantic &ldquo;onto the next thing&rdquo; mentality so prevalent in the modern corporate world.</p>
 
-source $alias_file
-</code></pre>
+<p>An analogy that particularly resonated with me is the closet metaphor. While you can declutter your closet once, it will eventually refill with clothes you don&rsquo;t need. To keep your closet tidy, you need to have a regular time to reevauate your outfits, know where the nearest donation center is, how to get there, and what hours is it open. Similarly, McKeown provides methodologies to regularly reevaluate our priorities, supporting the rigorous process of regularly discarding the non-essential.</p>
 
-<p>It is quite self-explanatory, and includes such nice features as:</p>
+<p>Essentialism extensively focuses on routines, practices, and exercises. The edition I read includes a &ldquo;21-day Essentialism Challenge,&rdquo; a helpful list of concrete activities corresponding to each chapter. While some prompts, like &ldquo;take a nap&rdquo; or &ldquo;play with a child for 10 minutes&rdquo; are a bit silly (where am I supposed to find a child on a Tuesday, Greg?), many steps effectively reinforce and integrate the material into your daily life, such as &ldquo;design your ideal calendar,&rdquo; &ldquo;practice saying no gracefully,&rdquo; or &ldquo;schedule a personal offsite.&rdquo;</p>
 
-<ul>
-<li>Automatically adding addresses from read emails to address book (see
-below).</li>
-<li>Using vim as a text editor, with an ability to edit message
-headers/recipients from within vim.</li>
-<li>Ability to access all the default Gmail folders: All mail, Drafts, Inbox,
-Starred, Trash.</li>
-<li>Key bindings to delete and archive messages bound to <code>d</code> and <code>y</code>
-respectfully (I am a huge fun of a zero-mail inbox).</li>
-</ul>
+<p>The latter suggestion, scheduling a personal offsite, left a significant impression on me. It&rsquo;s time dedicated to strategizing around your personal and professional goals. While I occasionally reflect on my career and life, McKeown elevates this practice into a ritual – a full day focused on self-reflection, planning, and deliberate action.</p>
 
-
-<p>You might also want to have your password encrypted by GPG as opposed to
-leaving it in plain text in your <code>.muttrc</code> file. You can read how to do this
-here: <a href="http://www.rosipov.com/blog/using-mutt-with-gpg/">Using Mutt with GPG</a>.</p>
-
-<p>As you may have noticed, <code>.muttrc</code> above sets <code>display_filter</code> to
-<code>$HOME/.mutt/aliases.sh</code>. This script is being executed every time you read an
-email, and it collects email address to <code>$HOME/.mutt/aliases.txt</code>. Contents of
-the <code>aliases.sh</code> are below:</p>
-
-<pre><code>#!/bin/sh
-
-MESSAGE=$(cat)
-
-NEWALIAS=$(echo "${MESSAGE}" | grep ^"From: " | sed s/[\,\"\']//g | awk '{$1=""; if (NF == 3) {print "alias" $0;} else if (NF == 2) {print "alias" $0 $0;} else if (NF &gt; 3) {print "alias", tolower($(NF-1))"-"tolower($2) $0;}}')
-
-
-if grep -Fxq "$NEWALIAS" $HOME/.mutt/aliases.txt; then
-    :
-else
-    echo "$NEWALIAS" &gt;&gt; $HOME/.mutt/aliases.txt
-fi
-
-echo "${MESSAGE}"
-</code></pre>
-
-<p><em>Source: <a href="http://wcaleb.org/blog/mutt-tips">W. Caleb McDaniel</a>.</em></p>
-
-<p>This script will create <code>aliases.txt</code> file containing email addresses for
-search and auto completion of email-addresses.</p>
+<p><a href="https://amzn.to/3QUpyyb">Essentialism</a> is a helfpul book that prompts the reader to think about the routines one can put in place to change the way we approach life. It&rsquo;s a reminder that less can indeed be more, and that by focusing on what truly matters, we can create a life of greater purpose, meaning, and fulfillment.</p>
 </div>
 
 
@@ -245,13 +177,13 @@ search and auto completion of email-addresses.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-28T21:33:55+00:00"  data-updated="true" itemprop="datePublished dateCreated">28 May 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2023-11-24T12:00:00-08:00"  data-updated="true" itemprop="datePublished dateCreated">24 Nov 2023</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cli/'>cli</a>, <a class='category' href='/blog/categories/productivity/'>productivity</a>
+    <a class='category' href='/blog/categories/productivity/'>productivity</a>, <a class='category' href='/blog/categories/reviews/'>reviews</a>, <a class='category' href='/blog/categories/work/'>work</a>
   
 </span>
 
@@ -268,10 +200,8 @@ search and auto completion of email-addresses.</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/using-mutt-with-gpg/" title="Previous Post: Using Mutt with GPG">&laquo; Using Mutt with GPG</a></li>
+            <li class="previous"><a href="/blog/better-inbox-zero/" title="Previous Post: Better inbox zero">&laquo; Better inbox zero</a></li>
             
-            
-            <li class="next"><a href="/blog/python-ignored-context-manager/" title="Next Post: Python: "ignored" context manager">Python: &#8220;ignored&#8221; context manager &raquo;</a></li>
             
           </ul>
         
@@ -296,7 +226,7 @@ search and auto completion of email-addresses.</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
+    <a class="list-group-item active" href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
     
     <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
     
@@ -378,8 +308,8 @@ search and auto completion of email-addresses.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/';
-        var disqus_url = 'http://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/';
+        var disqus_identifier = 'http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/';
+        var disqus_url = 'http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/';
         var disqus_script = 'embed.js';
       
     (function () {

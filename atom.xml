@@ -4,7 +4,7 @@
   <title><![CDATA[Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-27T08:41:24-07:00</updated>
+  <updated>2023-11-24T13:24:08-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Essentialism: A Practical Guide to Less]]></title>
+    <link href="http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/"/>
+    <updated>2023-11-24T12:00:00-08:00</updated>
+    <id>http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve thoroughly enjoyed <a href="https://amzn.to/3QUpyyb">Essentialism</a>, a book that encapsulates the simple yet powerful notion of &ldquo;do fewer things, do them well.&rdquo; There&rsquo;s not much else to it. While this philosophy is straightforward, it&rsquo;s the way Greg McKeown presents and reinforces this message that makes the book truly compelling.</p>
+
+<p>Having Essentialism in physical form proved invaluable. I filled the margins with notes, worked through exercises alongside the text, and took the time to fully absorb the material as I progressed.</p>
+
+<p>Essentialism is not a new concept, but the key takeaway is the author&rsquo;s focus on truly internalizing the message. &ldquo;Focus on things that matter, trim the excess&rdquo; is a simple motto to remember, yet challenging to implement. Throughout my life, I&rsquo;ve adopted many of essentialist practices in one form or another, from guarding my calendar to learning to say &ldquo;no&rdquo; to prioritizing essential projects. However, over time, clutter inevitably creeps in.</p>
+
+<p>McKeown wisely focuses on routines that support the essentialist lifestyle, emphasizing the importance of dedicated time for reevaluation and recentering. He suggests establishing routines that prevent slipping into the frantic &ldquo;onto the next thing&rdquo; mentality so prevalent in the modern corporate world.</p>
+
+<p>An analogy that particularly resonated with me is the closet metaphor. While you can declutter your closet once, it will eventually refill with clothes you don&rsquo;t need. To keep your closet tidy, you need to have a regular time to reevauate your outfits, know where the nearest donation center is, how to get there, and what hours is it open. Similarly, McKeown provides methodologies to regularly reevaluate our priorities, supporting the rigorous process of regularly discarding the non-essential.</p>
+
+<p>Essentialism extensively focuses on routines, practices, and exercises. The edition I read includes a &ldquo;21-day Essentialism Challenge,&rdquo; a helpful list of concrete activities corresponding to each chapter. While some prompts, like &ldquo;take a nap&rdquo; or &ldquo;play with a child for 10 minutes&rdquo; are a bit silly (where am I supposed to find a child on a Tuesday, Greg?), many steps effectively reinforce and integrate the material into your daily life, such as &ldquo;design your ideal calendar,&rdquo; &ldquo;practice saying no gracefully,&rdquo; or &ldquo;schedule a personal offsite.&rdquo;</p>
+
+<p>The latter suggestion, scheduling a personal offsite, left a significant impression on me. It&rsquo;s time dedicated to strategizing around your personal and professional goals. While I occasionally reflect on my career and life, McKeown elevates this practice into a ritual – a full day focused on self-reflection, planning, and deliberate action.</p>
+
+<p><a href="https://amzn.to/3QUpyyb">Essentialism</a> is a helfpul book that prompts the reader to think about the routines one can put in place to change the way we approach life. It&rsquo;s a reminder that less can indeed be more, and that by focusing on what truly matters, we can create a life of greater purpose, meaning, and fulfillment.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Better inbox zero]]></title>
+    <link href="http://www.rosipov.com/blog/better-inbox-zero/"/>
+    <updated>2023-10-07T16:00:00-07:00</updated>
+    <id>http://www.rosipov.com/blog/better-inbox-zero</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been a dedicated inbox zero user for over a decade now - I even <a href="https://www.rosipov.com/blog/zero-mail-inbox/">wrote about</a> it back in 2014! Time passed, and the nature of my work changed too.</p>
+
+<p>Salient points:</p>
+
+<ul>
+<li>Number of emails, track via GMail Zen spreadsheet</li>
+<li>Talk about different mindsets</li>
+<li>Take corp screenshot</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Static websites rule!]]></title>
@@ -39,7 +80,7 @@
   <entry>
     <title type="html"><![CDATA[Sifu and a state of flow]]></title>
     <link href="http://www.rosipov.com/blog/sifu-and-a-state-of-flow/"/>
-    <updated>2023-07-24T07:00:00-07:00</updated>
+    <updated>2023-07-24T08:00:00-07:00</updated>
     <id>http://www.rosipov.com/blog/sifu-and-a-state-of-flow</id>
     <content type="html"><![CDATA[<p>It&rsquo;s not a hot take that I really like Soulsbourne video games: games like Dark Souls, Sekiro, Elden Ring. There are many reasons behind my appreciation for the titles: fascinating lore delivery mechanisms, selfless multiplayer cooperation, or thought provoking art direction.</p>
 
@@ -1555,130 +1596,6 @@ far.</p>
 <p>Yet, this work style is effective for me, and is not a solution for my peers.</p>
 
 <p>Since reading <a href="https://hbr.org/2019/03/the-feedback-fallacy">&ldquo;The Feedback Fallacy&rdquo;</a>, I started focusing on the outcomes I like, as opposed to qualities I believe are valuable. Where before I would say &ldquo;Great comms on project X!&rdquo;, now I focus on specifics: &ldquo;I know what you&rsquo;re up to on project X, which helps me communicate with stakeholder Y and plan resources for the project Z&rdquo;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Take a pause before that email]]></title>
-    <link href="http://www.rosipov.com/blog/take-a-pause-before-that-email/"/>
-    <updated>2021-03-28T11:12:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/take-a-pause-before-that-email</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m not an ill tempered person, and it takes quite a lot to get me riled up. In
-the pandemic however getting frustrated has been oh so much easier!</p>
-
-<p>For once, there are less face to face interactions, which makes me feel removed
-from whomever I&rsquo;m talking to. The interactions that happen over video chat feel
-a lot less personal, and despite regular deliberately scheduled 1:1 time it&rsquo;s
-harder to connect with colleagues on a personal level.</p>
-
-<p>Then there&rsquo;s the lack of water cooler interactions between meetings. A colleague
-of mine correctly pointed out that before the era of video chat meetings, we&rsquo;d
-have the time to decompress and process content between meetings with those
-micro-interactions. Having just a minute or two &ldquo;off the record&rdquo; after a large
-call helps process, frame, and align prior interaction. And just sharing a laugh
-or being able to say &ldquo;well that was stressful&rdquo; helps reduce the inevitable daily
-stress buildup.</p>
-
-<p>Finally, all of the above is true for everyone else - and we&rsquo;re already in a
-melting pot of individuals with different communication styles. People are
-getting frustrated, making other people even more frustrated. It&rsquo;s a frustration
-chain reaction!</p>
-
-<p>All of this led to me into a cycle of sending some snappy responses, feeling
-terrible after time would pass, setting up time to profusely apologize face to
-face, and wowing to never overreact to work stress sources again&hellip; Until the
-next encounter that is. It all culminated with me getting entirely too
-frustrated between 8:00 and 8:05 am last Thursday and taking a day just to
-decompress.</p>
-
-<p>And that reminded of something I&rsquo;ve learned years ago, and I something I would
-practice with rigour - until the background frustration level rose that is.</p>
-
-<p>Early in my career I&rsquo;ve been taught to cool down before sending that angry ping
-or an email &ndash; type it up, leave it in my drafts - come back to it an hour or
-two later.</p>
-
-<p>In 9 out of 10 cases I end up deleting the message feeling relieved that an
-incoherent stream of hatred never saw the light of day. Most of the time when
-I&rsquo;m angry I don&rsquo;t really have a goal I&rsquo;m trying to accomplish (other than inform
-all the parties involved of my feelings), and that&rsquo;s not a great basis for
-professional communication.</p>
-
-<p>In the remaining case, I would end up completely rewriting that email to remove
-the hostile tone and focus on the source of the issue instead. There are
-problems that are worth addressing with candor &ndash; but candor is too often
-conflated for the lack of tact.</p>
-
-<p>And it&rsquo;s hard to take a break at work - because there are often so many things
-to do, and so little time to do them. Which makes taking a minute to breather
-feel like a waste of time, when it&rsquo;s one of the most productive things you can
-do in the long run.</p>
-
-<p>So here I am, putting these thoughts into writing to remember to take a break
-before initiating aggressive communications &ndash; hopefully the more I think about
-this, the easier it gets to remember to pause, self-assess, and disconnect.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[On mentorship]]></title>
-    <link href="http://www.rosipov.com/blog/on-mentorship/"/>
-    <updated>2021-03-27T05:08:00-07:00</updated>
-    <id>http://www.rosipov.com/blog/on-mentorship</id>
-    <content type="html"><![CDATA[<p>A couple of months ago I had a conversation with a fellow employee &ndash; let&rsquo;s call
-him Balgruuf &ndash; who decided to quit the grind and become a career coach.
-Shortly after I&rsquo;ve witnessed them interact with our mutual acquaintance &ndash;
-Farengar &ndash; who was in a difficult spot in their career. Balgruuf was
-enthusiastically instructing on what are the exact steps Farengar must take, and
-in what order. It generally felt like Balgruuf had this whole career thing
-figured out, and Farengar just stumbled along. Needless to say, Farengar quickly
-changed the topic.</p>
-
-<p>I haven&rsquo;t stopped thinking about mentorship since that day. In the 10 or so
-years of my career so far, I&rsquo;ve had a number of mentors - both formal and
-informal. I also get the opportunity to mentor people around me &ndash; both sides of
-the relationship really fascinate me.</p>
-
-<p>I&rsquo;ve had some mentors who worked really well for me - and some who didn&rsquo;t. I
-also had more different level of success with mentoring people myself. And one
-of the defining factors in a successful experience was this: people conflate
-mentorship with giving advice &ndash; two different, but oh-so-close feeling things.
-Let me elaborate on the difference with a tangentially related example.</p>
-
-<p>Sometimes my wife comes home and shares frustrations that inevitably arise after
-a long day at work. There&rsquo;s little to no room for my input, because she needs
-somebody to just listen, or maybe a rubber duck to talk at. And sometimes my
-better half wants to hear my thoughts on the subject. Needing to vent and asking
-for advice are two completely distinct scenarios in this case.</p>
-
-<p>Just like in my home life, sometimes people come looking for an advice. But more
-often than not, they&rsquo;re looking for mentorship.</p>
-
-<p>Giving advice is prescriptive, while mentorship is more nuanced, and takes more
-finesse from both parties.</p>
-
-<p>In <a href="https://amzn.to/2NYlWPb">Relationomics</a>, Randy Ross discusses a role that
-relationships play in personal growth. He talks about the harmful &ldquo;self help&rdquo;
-culture which discounts the value of human element in self-development.</p>
-
-<p>This is the gap where mentorship fits in. There&rsquo;s one huge &ldquo;but&rdquo; though, and
-that&rsquo;s the fact that the person needs to be ready for the specific feedback they
-might be getting.</p>
-
-<p>Mentor is there to guide the internal conversation, encourage insight, and
-suggest a direction. Mentor is there to identify when someone who&rsquo;s being
-mentored is heading in a completely wrong direction, or not addressing the
-elephant in the room.</p>
-
-<p>In fact, I&rsquo;ve been noticing a trend at Google to avoid trying to use the word
-&ldquo;mentorship&rdquo; overall, to avoid the go-to advice slinging attitude of your
-everyday Balgruuf. And it&rsquo;s been a helpful trend - since framing mentorship
-relationship around guidance and reminding mentors to let those who are mentored
-to drive the growth is crucial for healthy peer to peer learning.</p>
-
-<p>Even if so-called mentor has some aspect of life completely figured out for
-themselves, the person who&rsquo;s mentored must drive the whole journey. Otherwise
-there&rsquo;s really no room for growth in that relationship.</p>
 ]]></content>
   </entry>
   

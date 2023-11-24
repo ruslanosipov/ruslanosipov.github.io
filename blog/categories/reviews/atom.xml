@@ -4,7 +4,7 @@
   <title><![CDATA[Category: reviews | Ruslan Osipov]]></title>
   <link href="http://www.rosipov.com/blog/categories/reviews/atom.xml" rel="self"/>
   <link href="http://www.rosipov.com/"/>
-  <updated>2023-07-27T08:41:24-07:00</updated>
+  <updated>2023-11-24T13:24:08-08:00</updated>
   <id>http://www.rosipov.com/</id>
   <author>
     <name><![CDATA[Ruslan Osipov]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Essentialism: A Practical Guide to Less]]></title>
+    <link href="http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less/"/>
+    <updated>2023-11-24T12:00:00-08:00</updated>
+    <id>http://www.rosipov.com/blog/essentialism-a-practical-guide-to-less</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve thoroughly enjoyed <a href="https://amzn.to/3QUpyyb">Essentialism</a>, a book that encapsulates the simple yet powerful notion of &ldquo;do fewer things, do them well.&rdquo; There&rsquo;s not much else to it. While this philosophy is straightforward, it&rsquo;s the way Greg McKeown presents and reinforces this message that makes the book truly compelling.</p>
+
+<p>Having Essentialism in physical form proved invaluable. I filled the margins with notes, worked through exercises alongside the text, and took the time to fully absorb the material as I progressed.</p>
+
+<p>Essentialism is not a new concept, but the key takeaway is the author&rsquo;s focus on truly internalizing the message. &ldquo;Focus on things that matter, trim the excess&rdquo; is a simple motto to remember, yet challenging to implement. Throughout my life, I&rsquo;ve adopted many of essentialist practices in one form or another, from guarding my calendar to learning to say &ldquo;no&rdquo; to prioritizing essential projects. However, over time, clutter inevitably creeps in.</p>
+
+<p>McKeown wisely focuses on routines that support the essentialist lifestyle, emphasizing the importance of dedicated time for reevaluation and recentering. He suggests establishing routines that prevent slipping into the frantic &ldquo;onto the next thing&rdquo; mentality so prevalent in the modern corporate world.</p>
+
+<p>An analogy that particularly resonated with me is the closet metaphor. While you can declutter your closet once, it will eventually refill with clothes you don&rsquo;t need. To keep your closet tidy, you need to have a regular time to reevauate your outfits, know where the nearest donation center is, how to get there, and what hours is it open. Similarly, McKeown provides methodologies to regularly reevaluate our priorities, supporting the rigorous process of regularly discarding the non-essential.</p>
+
+<p>Essentialism extensively focuses on routines, practices, and exercises. The edition I read includes a &ldquo;21-day Essentialism Challenge,&rdquo; a helpful list of concrete activities corresponding to each chapter. While some prompts, like &ldquo;take a nap&rdquo; or &ldquo;play with a child for 10 minutes&rdquo; are a bit silly (where am I supposed to find a child on a Tuesday, Greg?), many steps effectively reinforce and integrate the material into your daily life, such as &ldquo;design your ideal calendar,&rdquo; &ldquo;practice saying no gracefully,&rdquo; or &ldquo;schedule a personal offsite.&rdquo;</p>
+
+<p>The latter suggestion, scheduling a personal offsite, left a significant impression on me. It&rsquo;s time dedicated to strategizing around your personal and professional goals. While I occasionally reflect on my career and life, McKeown elevates this practice into a ritual – a full day focused on self-reflection, planning, and deliberate action.</p>
+
+<p><a href="https://amzn.to/3QUpyyb">Essentialism</a> is a helfpul book that prompts the reader to think about the routines one can put in place to change the way we approach life. It&rsquo;s a reminder that less can indeed be more, and that by focusing on what truly matters, we can create a life of greater purpose, meaning, and fulfillment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vortex Core 40% keyboard]]></title>
@@ -240,54 +263,6 @@ expert. I found it best to scan through the content and seek out interesting
 bits of information. Beginners, however, might be completely overwhelmed. While
 advanced and intermediate Pythonistas will get the most out of this book, it
 will probably be too hard (and painful) to read to be of real value.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Steve Krug's "Don't Make Me Think"]]></title>
-    <link href="http://www.rosipov.com/blog/steve-krugs-dont-make-me-think/"/>
-    <updated>2014-06-17T03:42:51+00:00</updated>
-    <id>http://www.rosipov.com/blog/steve-krugs-dont-make-me-think</id>
-    <content type="html"><![CDATA[<p>Today I received in the mail a copy of Steve Krug&rsquo;s
-&ldquo;<a href="http://amzn.to/1xCNOm4">Don&rsquo;t Make Me Think, Revisited: A Common Sense Approach To Web And Mobile Usability</a>&rdquo;
-(oh, that&rsquo;s a long name). I went through the whole book only in under a few
-hours, and I am so glad I&rsquo;ve read it. It&rsquo;s a very quick read, but the book is
-full of concrete and valuable tips and advice about usability.</p>
-
-<p>&ldquo;Don&rsquo;t Make Me Think&rdquo; contains practical advice on a large number of topics:
-web and mobile usability, design, and writing for the web. The advice can be
-easily used and incorporated into your daily workflow; and the author provides
-concrete guidelines for applying his tips in the real world.</p>
-
-<p>The biggest thing I&rsquo;ve learned from this book (and want to apply in practice)
-is individual usability testing. I actually performed my first usability test
-just three days ago, just before reading &ldquo;Don&rsquo;t Make Me Think&rdquo;, after I found
-that Donald Norman&rsquo;s masterpiece mentioned observing user interactions with
-your product (I&rsquo;ll get to the similarities between two of these books in a
-moment).</p>
-
-<p>I asked two of my colleagues, one after another, to visit a website I was
-working on, and I silently watched them navigate through it. They had never
-seen the website before, and the results were very shocking to me: they ignored
-the things most obvious to me, but attempted to click through things which are
-not even meant to be clicked. I carefully wrote down all of my findings, and
-delivered the patches with enhancements to improve the biggest areas of
-struggle these particular users had faced.</p>
-
-<p>Usability testing turned out to be invaluable: it pointed out actions that I,
-as a developer, did not anticipate, and highlighted parts of the system ignored
-by the users. I now plan to run usability tests regularly, grabbing colleagues
-from the hallway, and asking them to use my application for a few minutes.</p>
-
-<p>Steve Krug&rsquo;s book is very much like <a href="http://www.rosipov.com/blog/the-design-of-everyday-things/">&ldquo;The Design Of Everyday Things&rdquo;</a>, but
-stripped from the extended theoretical part. The book references Norman&rsquo;s work
-quite a lot, and seems to be heavily influenced by it. It focuses on practical
-aspects of designing easy to use and understandable user interfaces. It
-successfully explains why you should be thoughtful of user experience,
-accessibility, and understanding the way users think. I would recommend reading
-this book after reading Donald Norman&rsquo;s masterpiece first, since it provides
-you with the reasoning behind many decisions Steve Krug makes throughout his
-book.</p>
 ]]></content>
   </entry>
   

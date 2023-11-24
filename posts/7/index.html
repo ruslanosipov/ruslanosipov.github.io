@@ -127,6 +127,145 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-27T23:28:37+00:00"  data-updated="true" itemprop="datePublished dateCreated">27 Dec 2018</time>
+        
+           | <a href="/blog/sane-vim-defaults-from-neovim/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/sane-vim-defaults-from-neovim/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/sane-vim-defaults-from-neovim/" itemprop="url">Sane Vim defaults (from Neovim)</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Vim comes with a set of often outdated and counter-intuitive defaults. Vim has been around for around 30 years, and it only makes sense that many defaults did not age well.</p>
+
+<p>Neovim addresses this issue by being shipped with many default options tweaked for modern editing experience. If you can&rsquo;t or don&rsquo;t want to use Neovim - I highly recommend setting some these defaults in your <code>.vimrc</code>:</p>
+
+<pre><code>if !has('nvim')
+  set nocompatible
+  syntax on
+
+  set autoindent
+  set autoread
+  set backspace=indent,eol,start
+  set belloff=all
+  set complete-=i
+  set display=lastline
+  set formatoptions=tcqj
+  set history=10000
+  set incsearch
+  set laststatus=2
+  set ruler
+  set sessionoptions-=options
+  set showcmd
+  set sidescroll=1
+  set smarttab
+  set ttimeoutlen=50
+  set ttyfast
+  set viminfo+=!
+  set wildmenu
+endif
+</code></pre>
+
+<p>The defaults above enable some of the nicer editor features, like <code>autoindent</code> (respecting existing indentation), <code>incsearch</code> (search as you type), or <code>wildmenu</code> (enhanced command-line completion). The defaults also smooth out some historical artifacts, like unintuitive backspace behavior. Keep in mind, this breaks compatibility with some older Vim versions (but it&rsquo;s unlikely to be a problem for most if not all users).</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-26T21:02:24+00:00"  data-updated="true" itemprop="datePublished dateCreated">26 Dec 2018</time>
+        
+           | <a href="/blog/status-bar-color-in-vim-terminal-mode/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://www.rosipov.com/blog/status-bar-color-in-vim-terminal-mode/">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/status-bar-color-in-vim-terminal-mode/" itemprop="url">Status bar color in Vim terminal mode</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>If you&rsquo;re using a custom color scheme (why wouldn&rsquo;t you?) in conjunction with a terminal mode in Vim (again, why wouldn&rsquo;t you?), you may have noticed that the terminal status bar has no respect for your color scheme.</p>
+
+<p>Run <code>:term</code>, and you&rsquo;ll be greeted to the default status bar:</p>
+
+<p><img src="/images/posts/vim-terminal-mode-default-colors.png" title="Screenshot of the default terminal mode status line." ></p>
+
+<p>Since terminal mode is still in beta in Vim 8.1, we have to manually set the highlighting groups. It&rsquo;ll require a bit of digging.</p>
+
+<p>Navigate to the directory containing your current color scheme. Depending on the plugin manager, the color schemes are located in different places. On Linux, default color schemes often live in <code>/usr/share/vim/vimcurrent/colors</code>. In this example, I&rsquo;m using PaperColor scheme, and I have it installed using vim-plug in <code>~/.vim/plugged/papercolor-theme</code>, and <code>colors/PaperColor.vim</code> is the file we&rsquo;re looking for.</p>
+
+<p>Search for <code>StatusLine</code> and <code>StatusLineNC</code> (tip: you can do a whole word search in Vim by running <code>/\&lt;StatusLine\&gt;</code>), and note the values used (you might have to jump through a few variables if the color scheme author decided to be fancy). You&rsquo;re interested in <code>ctermbg</code>, <code>ctermfg</code>, <code>guibg</code>, and <code>guifg</code>.</p>
+
+<p>You might find something like this:</p>
+
+<pre><code>hi StatusLine ctermbg=24 ctermfg=254 guibg=#004f87 guifg=#e4e4e4
+hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
+</code></pre>
+
+<p>Copy those lines to your <code>~/.vimrc</code>. Change <code>StatusLine</code> to <code>StatusLineTerm</code>, and change <code>StatusLineNC</code> to <code>StatusLineTermNC</code>:</p>
+
+<pre><code>" Manually set the status line color.
+hi StatusLineTerm ctermbg=24 ctermfg=254 guibg=#004f87 guifg=#e4e4e4
+hi StatusLineTermNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
+</code></pre>
+
+<p>Reload <code>~/.vimrc</code> (<code>:w | so %</code>), and the terminal mode status line should have the same colors as your color scheme:</p>
+
+<p><img src="/images/posts/vim-terminal-mode-correct-colors.png" title="Screenshot of the terminal mode status line with corrected colors." ></p>
+
+<p>Above, <code>hi</code> is a shorthand for <code>highlight</code>, which is used to define highlight group colors. <code>StatusLineTerm</code> and <code>StatusLineTermNC</code> define the highlight groups for terminal mode status line (in active and inactive windows respectively). Options <code>ctermbg</code> and <code>guibg</code> define the background color, and <code>ctermfg</code> and <code>guifg</code> are responsible for the foreground (text) color.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-12-25T12:00:00+08:00"  data-updated="true" itemprop="datePublished dateCreated">25 Dec 2018</time>
         
            | <a href="/blog/my-book-has-been-published/#disqus_thread" itemprop="discussionUrl"
@@ -273,432 +412,6 @@ endif
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-03-26T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated">26 Mar 2018</time>
-        
-           | <a href="/blog/making-a-packing-spreadsheet/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/making-a-packing-spreadsheet/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/making-a-packing-spreadsheet/" itemprop="url">Making a packing spreadsheet</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Being the unique person I am, I love traveling. Oftentimes I end up getting deep into trying to optimize my packing methods. There are dozens of tools online designed to help with this exact thing (services like <a href="http://lighterpack.com">Lighterpack</a> or <a href="http://geargrams.com">GearGrams</a>). But, being handy with code, I decided to dabble in the subject on my own.</p>
-
-<p>One of the most important things in packing is the overall weight of the pack, and I always want to know what type of things are the heaviest. I also want to be able to run random queries on my data, whatever it is that I&rsquo;m trying to learn. I want to have an inventory of items (backpacks, clothes, storage solutions) which I can plug in and out of a spreadsheet to see how the resulting picture changes on the go. Working with software as my day job, I’d also like for the solution to be automated whenever possible.</p>
-
-<p>Google Spreadsheets turned out to be the perfect solution, providing the ability to quickly sum up the weight of my things and output insights about the data.</p>
-
-<h2>Final Result</h2>
-
-<p>Here&rsquo;s a <a href="https://docs.google.com/spreadsheets/d/1qDhMoVmmTroM-eN0MZIU2PzE5YucsyPhbuPZPDGhemM/edit#">link to the spreadsheet</a>, I encourage the reader to copy and play around with in anyway you see fit.</p>
-
-<p>Here’s the final result for a multi-day trip I will have for this year. As you can see, my pack weighs around 3 kilograms or a bit over 6 freedom units (not including water). My recently purchased Nintendo Switch is the heaviest item (and it’s worth every gram as it makes flying tolerable), but clothes take up most of the weight:</p>
-
-<p><img src="/images/posts/packing-spreadsheet.png" title="A screenshot of a packing spreadsheet." ></p>
-
-<p>I use indentation levels to show that some items are contained within other items. This also lets me calculate the absolute and relative weights of a whole container with everything inside of it (see fields labeled “Container” and “Percentage”).</p>
-
-<p>The “Weight” and the “Breakdown” fields indicate absolute and relative item weight respectively, which accounts for quantity of the item (quantity defaults to 1 if not explicitly set). Weight-related fields are color coded from lightest items in green to heaviest items in red.</p>
-
-<p>Categories are used to group items and execute queries on the data and learn insights like these:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-weight-chart.png" title="A chart representing the weight of each category of items relative to a weight of the whole pack." ></p>
-
-<p>There’s a separate sheet where I enter item names, categories, and weights, which I then use to automatically populate values above and autofill item names in the primary sheet:</p>
-
-<p><img src="/images/posts/packing-spreadsheet-inventory.png" title="A screenshot of an inventory tab of the packing spreadsheet." ></p>
-
-<h2>The Technical Details</h2>
-
-<p>I haven’t worked with Google Spreadsheets (or Excel for that matter) a lot in the past, but with an access to clear documentation (and a hundred of web searches later) it was straightforward to get the hang of the it.</p>
-
-<p>I started off by manually populating the final result sheet, manually adjusting formulas for Container/Percentage cells, as I had no idea how I would detect the indentation yet. I like when things look pretty, so I applied conditional formatting rules right away, and the looks of the sheet really haven’t changed throughout the process.</p>
-
-<p>Next, I created an inventory sheet, which I wanted to use as a source of data in the resulting sheet. A few Google searches and some trial &amp; error resulted in a lookup formula:</p>
-
-<pre><code>=ArrayFormula(
- IF(
-   NOT(ISBLANK($B2)),
-   INDEX(InventoryCategories, MATCH($B2, InventoryItems, 0)),
-   IF(
-     NOT(ISBLANK($C2)),
-     INDEX(InventoryCategories, MATCH($C2, InventoryItems, 0)),
-     INDEX(InventoryCategories, MATCH($D2, InventoryItems, 0))
-   )
-  )
-)
-</code></pre>
-
-<p><code>ArrayFormula</code> is necessary in order to create arrays on the fly without printing intermediate results in the spreadsheet. <code>InventoryItems</code> and <code>InventoryCategories</code> are named ranges referring to item names and categories in the inventory sheet. <code>MATCH</code> finds an index of a first occurrence of the item name in the sheet, and retrieves corresponding category name. An item weight is retrieved by the exact same principle.</p>
-
-<p>Trying to find the container weight took a lot more time, and resulted in a lot more headache. Solution for handling indentation in Google Spreadsheets wasn’t as elegant as I would have hoped for, but it got the job done:</p>
-
-<pre><code>=ArrayFormula(
-     SUM(
-       $I2:INDIRECT(
-         CONCATENATE(
-           "$I",
-           ROW() + IF(
-             NOT(ISBLANK($B2)),
-             MATCH(FALSE, ISBLANK($B3:$B), 0),
-             MATCH(FALSE, ISBLANK($C3:$C), 0)
-           ) - 1
-         )
-       )
-     )
-</code></pre>
-
-<p>The formula above finds the first non-empty cell in a column. It starts searching from the next row (for example, for an item on a second row, we look at the third row and below). After it knows which row first non-empty cell is in, the formula turns it into a string (column $I contains item weights) and use it as an upper bound of a sum of the weights. Finished formula is a bit longer (it adds sugar to only display the number when needed), and if you’re interested - you can look it up in the spreadsheet.</p>
-
-<p><img src="/images/posts/packing-spreadsheet-indentation.png" title="A screenshot used for explaining indentation logic." ></p>
-
-<p>For example, in the screenshot above, the formula will start looking at cells in a column right after the &ldquo;Packing cube&rdquo;. As soon as it finds a non-empty cell (&ldquo;Nintendo Switch case&rdquo;), the formula will determine this row to be an upper boundary. The formula then will sum weights starting with a &ldquo;Packing cube&rdquo; row, and up to but not including &ldquo;Nintendo Switch case&rdquo; row.</p>
-
-<p>The rest involved many small tweaks, adding pretty colors, hiding N/A errors and zeroes, and trying to find the perfect shade for column borders.</p>
-
-<p>And, since you made it this far, here’s how the numbers above look in the real world:</p>
-
-<p><img src="/images/posts/cleveland-trip-backpack-on-off.png" title="Side by side pictures of a packed backpack: open and closed." ></p>
-
-<p>Hopefully you found this useful, or at least somewhat entertaining. There’s a lot of room for improvement, and I aimed to provide a framework and a few basic ideas for building a spreadsheet to accommodate one’s twisted ultralight needs.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-02-21T10:00:00-05:00"  data-updated="true" itemprop="datePublished dateCreated">21 Feb 2018</time>
-        
-           | <a href="/blog/my-vimrc-annotated/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://www.rosipov.com/blog/my-vimrc-annotated/">Comments</a>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/my-vimrc-annotated/" itemprop="url">My .vimrc, annotated</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve been using Vim for anywhere between 5 and 10 years, and my <code>.vimrc</code> is all grown up.  I use  <code>{{{1</code> to annotate folds in my <code>.vimrc</code>, and use <code>zM</code> to close all folds and <code>zR</code> to open all folds (<code>zc</code>, <code>zo</code>, and <code>za</code> respectively close, open, and toggle individual folds). The <code>---</code> lines are simply cosmetic.</p>
-
-<pre><code>" =&gt; Pre-load ------------------------------------------------------------- {{{1
-
-set nocompatible  " Required for many plugins, ensures it's not compatible with 
-                  " Vi, which nobody uses at this point.
-filetype plugin indent on  " Great answer: https://vi.stackexchange.com/a/10125
-</code></pre>
-
-<p><a href="https://github.com/VundleVim/Vundle.vim">Vundle</a> is downright fantastic plugin manager. It allows one to install plugins with <code>:PluginInstall</code> and upgrade plugins with <code>:PluginUpdate</code>. Simple, easy, reliable. Of course you&rsquo;ll need to <a href="https://github.com/VundleVim/Vundle.vim#quick-start">have Vundle installed</a>, which I normally have as a git submodule.</p>
-
-<pre><code>" Required Vundle setup.
-set runtimepath+=~/.vim/bundle/vundle
-set runtimepath+=$GOROOT/misc/vim
-call vundle#rc()
-
-" =&gt; Vundle plugins ------------------------------------------------------- {{{1
-
-Plugin 'gmarik/vundle' " The Vundle itself, to keep itself updated.
-
-" Colorschemes:
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'ajh17/Spacegray.vim.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'squarefrog/tomorrow-night.vim'
-Plugin 'vim-scripts/ScrollColors'  " Allows scrolling through colorschemes.
-
-" Language/tool integration and support:
-Plugin 'burnettk/vim-angular'
-Plugin 'fatih/vim-go'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mileszs/ack.vim'
-Plugin 'motemen/git-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic.git'  " Syntax checker.
-Plugin 'tpope/vim-fugitive.git'    " Even better Git support.
-
-" Quality of life:
-Plugin 'EinfachToll/DidYouMean'    " For typos during opening files.
-Plugin 'ciaranm/detectindent'      " Automatically detect indent.
-Plugin 'ervandew/supertab'         " Smarter autocompletion.
-Plugin 'junegunn/goyo.vim'         " A plugin for writing prose.
-Plugin 'majutsushi/tagbar'         " List tags in a sidebar.
-Plugin 'scrooloose/nerdtree'       " A directory tree in a sidebar.
-Plugin 'tomtom/tcomment_vim'       " Easy comment blocks with &lt;Leader&gt;cc.
-Plugin 'tpope/vim-abolish'         " Extended abbreviation/substition.
-Plugin 'tpope/vim-repeat'          " Intelligent repeat with '.'
-Plugin 'tpope/vim-surround'        " Work with pairs of quotes/anything.
-Plugin 'tpope/vim-unimpaired.git'  " Handy bracket mappings.
-Plugin 'tpope/vim-vinegar'         " Enhanced directory browser.
-Plugin 'vim-scripts/DirDiff.vim'   " Directory level diff.
-
-" New features:
-Plugin 'Lokaltog/vim-easymotion'   " Easy navigation with &lt;Leader&gt;&lt;Leader&gt;w.
-Plugin 'kien/ctrlp.vim'            " Hit &lt;C&gt;p for a list of files/buffers.
-Plugin 'vim-scripts/Gundo.git'     " Intelligent undo tree.
-Plugin 'vim-scripts/vimwiki'       " A personal local Wiki.
-
-if v:version &gt; 703
-  Plugin 'SirVer/ultisnips'        " Intricate snippets.
-  Plugin 'chrisbra/vim-diff-enhanced'
-endif
-
-" =&gt; Plugins configuration ------------------------------------------------ {{{1
-
-" NERDTree: auto close if last window.
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
-" Force Gundo preview to the bottom.
-let g:gundo_preview_bottom = 1
-
-" Map Gundo.
-nnoremap &lt;F5&gt; :GundoToggle&lt;cr&gt;
-
-" DetectIndent: Enable and configure.
-augroup detectindent
-  autocmd!
-  autocmd BufReadPost * :DetectIndent
-augroup END
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
-
-" UltiSnips: Compatibility with YouCompleteMe via SuperTab.
-let g:ycm_key_list_select_completion = ['&lt;C-n&gt;', '&lt;Down&gt;']
-let g:ycm_key_list_previous_completion = ['&lt;C-p&gt;', '&lt;Up&gt;']
-let g:SuperTabDefaultCompletionType = '&lt;C-n&gt;'
-let g:UltiSnipsExpandTrigger = "&lt;tab&gt;"
-let g:UltiSnipsJumpForwardTrigger = "&lt;tab&gt;"
-let g:UltiSnipsJumpBackwardTrigger = "&lt;s-tab&gt;"
-
-" VimWiki: default location.
-let g:vimwiki_list = [{
-  \ 'path': '$HOME/Dropbox/wiki',
-  \ 'template_path': '$HOME/Dropbox/wiki/templates',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.html'}]
-
-" Map Tagbar.
-nnoremap &lt;F8&gt; :TagbarToggle&lt;cr&gt;
-
-" Synastic configuration.
-let g:syntastic_always_populate_loc_list = 1  " Make :lnext work.
-let g:syntastic_html_checkers = ['']
-let g:syntastic_javascript_checkers = ['gjslint', 'jshint']
-let g:syntastic_javascript_gjslint_args = '--strict'
-let g:syntastic_python_checkers = ['gpylint']
-</code></pre>
-
-<p>Most plugins above change slightly change daily Vim workflow: the way one navigates files, replaying actions, working with snippets, minor tweaks to editing - and I highly recommend at least skimming through README of plugins you&rsquo;re interested in so you can incorporate the changes in your workflow.</p>
-
-<p>I have a set of simple defaults I use everywhere, major changes being changing <code>:</code> to <code>;</code> and moving my leader key to a spacebar. Everything else are tiny quality of life tweaks.</p>
-
-<pre><code>" =&gt; Editing -------------------------------------------------------------- {{{1
-
-syntax on
-
-" Indentation settings.
-set autoindent
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-" Disable backups and .swp files.
-set nobackup
-set noswapfile
-set nowritebackup
-
-" Semicolon is too long to type.
-nnoremap ; :
-vnoremap ; :
-
-" Map leader key.
-let mapleader = "\&lt;Space&gt;"
-
-" Use system clipboard.
-set clipboard=unnamedplus
-
-" Enable wild menu (tab command autocompletion).
-set wildmenu
-set wildmode=list:longest,full
-
-" Don't complain about unsaved files when switching buffers.
-set hidden
-
-" Make soft line breaks much better looking.
-if v:version &gt; 703
-  set breakindent
-endif
-
-" Pretty soft break character.
-let &amp;showbreak='↳ '
-
-" =&gt; Looks ---------------------------------------------------------------- {{{1
-
-set background=dark
-colorscheme spacegray
-
-" Set terminal window title and set it back on exit.
-set title
-let &amp;titleold = getcwd()
-
-" Shorten press ENTER to continue messages.
-set shortmess=atI
-
-" Show last command.
-set showcmd
-
-" Highlight cursor line.
-set cursorline
-
-" Ruler (line, column and % at the right bottom).
-set ruler
-
-" Display line numbers if terminal is wide enough.
-if &amp;co &gt; 80
-  set number
-endif
-
-" Soft word wrap.
-set linebreak
-
-" Prettier display of long lines of text.
-set display+=lastline
-
-" Always show statusline.
-set laststatus=2
-
-" =&gt; Movement and search -------------------------------------------------- {{{1
-
-" Ignore case when searching.
-set ignorecase
-set smartcase
-
-" Fast split navigation.
-nnoremap &lt;C-j&gt; &lt;C-W&gt;&lt;C-J&gt;
-nnoremap &lt;C-k&gt; &lt;C-W&gt;&lt;C-K&gt;
-nnoremap &lt;C-l&gt; &lt;C-W&gt;&lt;C-L&gt;
-nnoremap &lt;C-h&gt; &lt;C-W&gt;&lt;C-H&gt;
-
-" Absolute movement for word-wrapped lines.
-nnoremap j gj
-nnoremap k gk
-
-" =&gt; Misc ----------------------------------------------------------------- {{{1
-
-" Use Unix as the standart file type.
-set ffs=unix,dos,mac
-
-" Ignore compiled files.
-set wildignore=*.o,*~,*.pyc,*.pyo
-
-" Ignore virtualenv directory.
-set wildignore+=env
-
-" Fold using {{{n, where n is fold level
-set foldmethod=marker
-
-" =&gt; Fixes and hacks ------------------------------------------------------ {{{1
-
-" Ignore mouse (in GVIM).
-set mouse=c
-
-" Fix backspace behavior in GVIM.
-set bs=2
-
-" NERDTree arrows in Windows.
-if has("win32") || has("win64") || has("win32unix")
-  let g:NERDTreeDirArrows = 0
-endif
-
-" Increase lower status bar height in diff mode.
-if &amp;diff
-  set cmdheight=2
-endif
-
-" Unfold all files by default.
-au BufRead * normal zR
-</code></pre>
-
-<p>I have some custom commands and shortcuts I&rsquo;m using, but not too many. I find that I mostly just forget to use shortcuts I make, and I end up deleting lines from this section regularly.</p>
-
-<pre><code>" =&gt; Custom commands ------------------------------------------------------ {{{1
-
-" Trim trailing whitespace in the file.
-command TrimWhitespace %s/\s\+$//e
-
-" Command to close current buffer without closing the window.
-command Bd :bp | :sp | :bn | :bd
-
-" =&gt; Leader shortcuts ----------------------------------------------------- {{{1
-
-nnoremap &lt;Leader&gt;] &lt;C-]&gt;          " Jump to ctags tag definition.
-nnoremap &lt;Leader&gt;p :CtrlP&lt;cr&gt;     " Fuzzy complete for files.
-nnoremap &lt;Leader&gt;t :CtrlPTag&lt;cr&gt;  " Fuzzy complete for tags.
-nnoremap &lt;Leader&gt;r :redraw!&lt;cr&gt;   " Redraw the screen (for visual glitches).
-nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
-</code></pre>
-
-<p>Hope you find this useful and take away a few bits and pieces for your own workflow.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -722,6 +435,10 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/essentialism-a-practical-guide-to-less/">Essentialism: A Practical Guide to Less</a>
+    
+    <a class="list-group-item " href="/blog/better-inbox-zero/">Better inbox zero</a>
+    
     <a class="list-group-item " href="/blog/static-websites-rule/">Static websites rule!</a>
     
     <a class="list-group-item " href="/blog/sifu-and-a-state-of-flow/">Sifu and a state of flow</a>
@@ -737,10 +454,6 @@ nnoremap &lt;Leader&gt;w :w&lt;cr&gt;         " Write a file.
     <a class="list-group-item " href="/blog/exercising-online-privacy-rights/">Exercising online privacy rights</a>
     
     <a class="list-group-item " href="/blog/experience-with-financial-planners/">Experience with financial planners</a>
-    
-    <a class="list-group-item " href="/blog/journaling-for-work-life-balance/">Journaling for work-life balance</a>
-    
-    <a class="list-group-item " href="/blog/communicating-via-snippets/">Communicating via snippets</a>
     
   </div>
 </section>
