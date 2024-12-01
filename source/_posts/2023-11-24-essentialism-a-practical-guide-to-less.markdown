@@ -21,4 +21,8 @@ The latter suggestion, scheduling a personal offsite, left a significant impress
 
 [Essentialism][1] is a helfpul book that prompts the reader to think about the routines one can put in place to change the way we approach life. It's a reminder that less can indeed be more, and that by focusing on what truly matters, we can create a life of greater purpose, meaning, and fulfillment.
 
+---
+
+This is a test.
+
 [1]: https://amzn.to/3QUpyyb
