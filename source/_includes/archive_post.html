@@ -1,8 +1,0 @@
-{% capture category %}{{ post.categories | size }}{% endcapture %}
-<li>
-  <a href="{{ root_url }}{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
-  <span class="meta text-muted">
-    {% include post/date.html %}{{ time }}
-    {% include post/categories.html %}
-  </span>
-</li>

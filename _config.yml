@@ -1,19 +1,74 @@
-# ----------------------- #
-#      Main Configs       #
-# ----------------------- #
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-url: http://www.rosipov.com
-title: "Ruslan Osipov"
-subtitle: "Thoughts on software development"
-author: "Ruslan Osipov"
-simple_search: https://www.google.com/search
-description: Ruslan's blog, a grab bag of notes on technology, travel, productivity, finance, and everything in between. I write about what's exciting to me in the moment.
+title: Ruslan Osipov
+email: ""
+description: Notes on technology, travel, productivity, finance, and everything in between.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.rosipov.com"
+# twitter_username: jekyllrb
+# github_username:  jekyll
 
-date_format: "%e %b %Y"
+# Build settings
+theme: minima
 
-subscribe_rss: /atom.xml
-subscribe_email:
-email: ruslan@rosipov.com
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-category-pages
+
+sass:
+  quiet_deps: true  # Minima theme generates SASS warnings, silence them.
+
+paginate: 5
+paginate_path: "posts/:num/"
+
+feed:
+  path: /atom.xml  # Compatible with Octopress path.
+
+disqus:
+  shortname: rosipov
+
+google_analytics: UA-48506044-1
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+permalink: /blog/:title/
 
 defaults:
   -
@@ -21,76 +76,6 @@ defaults:
       path: ""
       type: "posts"
     values:
-      author: "Ruslan Osipov"
-      comments: true
       layout: "post"
 
-# ----------------------- #
-#    Jekyll & Plugins     #
-# ----------------------- #
-
-root: /
-permalink: /blog/:title/
-source: source
-destination: public
-plugins: plugins
-code_dir: downloads/code
-category_dir: blog/categories
-markdown: rdiscount
-rdiscount:
-  extensions:
-    - autolink
-    - footnotes
-    - smart
-highlighter: pygments
-future: false
-
-paginate: 5
-paginate_path: "posts/:num"
-recent_posts: 10
-excerpt_link: "Read on &rarr;"
-excerpt_separator: "<!--more-->"
-
-titlecase: false
-
-default_asides:
-- asides/recent_posts.html
-- custom/asides/about.html
-# - asides/github.html
-# - asides/delicious.html
-# - asides/pinboard.html
-# - asides/googleplus.html
-
-# blog_index_asides:
-# post_asides:
-# page_asides:
-
-# ----------------------- #
-#   3rd Party Settings    #
-# ----------------------- #
-
-github_user: ruslanosipov
-github_repo_count: 0
-github_show_profile_link: true
-github_skip_forks: true
-
-twitter_user:
-twitter_tweet_button: false
-
-google_plus_one: false
-google_plus_one_size: medium
-googleplus_user:
-googleplus_hidden: true
-
-pinboard_user:
-pinboard_count: 3
-
-delicious_user:
-delicious_count: 3
-
-disqus_short_name: rosipov
-disqus_show_comment_count: true
-
-google_analytics_tracking_id: UA-48506044-1
-
-facebook_like: false
+category_path: categories
