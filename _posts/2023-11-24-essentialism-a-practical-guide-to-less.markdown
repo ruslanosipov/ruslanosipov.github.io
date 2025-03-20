@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Essentialism: A Practical Guide to Less"
 date: 2023-11-24 12:00:00 -0800
 categories: [Reviews, Productivity, Work]
