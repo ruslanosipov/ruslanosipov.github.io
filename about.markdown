@@ -8,18 +8,26 @@ My name is Ruslan Osipov and I live in San Diego, California. I am a software en
 
 I've now published two editions of my book - [Mastering Vim](https://amzn.to/2EfGaN5), pick it up and let me know what you think!
 
-<div style="margin-bottom: 1em;">
+<div>
   <a href="https://amzn.to/2EfGaN5" target="blank">
-     <img alt="A picture of Mastering Vim book cover."
-          src="/images/mastering-vim.png"
-          title="A picture of Mastering Vim book cover."
-          width="262px" />
-  </a>
-  <a href="https://amzn.to/2EfGaN5" style="margin-left: 1em;" target="blank">
     <img alt="A picture of Mastering Vim, second edition book cover."
          src="/images/mastering-vim-2e.jpg"
-         title="A picture of Mastering Vim, second edition book cover."
-         width="262px" />
+         title="Mastering Vim, second edition."
+         class="book-cover"
+         style="margin-right: 1em; margin-bottom: 1em;" />
+  </a>
+  <a href="https://amzn.to/4ipuuYj" target="blank">
+    <img alt="A book cover of Mastering Vim in Japanese."
+         src="/images/mastering-vim-jp.jpg"
+         title="Mastering Vim, Japanese translation."
+         class="book-cover"
+         style="margin-right: 1em; margin-bottom: 1em;" />
+  </a>
+  <a href="https://amzn.to/2EfGaN5" target="blank">
+     <img alt="A picture of Mastering Vim book cover."
+          src="/images/mastering-vim.jpg"
+          title="Mastering Vim, first edition."
+          class="book-cover" />
   </a>
 </div>
 

@@ -16,3 +16,7 @@
 .text-muted {
   color: #828282;
 }
+
+img.book-cover {
+  height: 280px;
+}
