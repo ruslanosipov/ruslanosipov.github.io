@@ -14,8 +14,6 @@ Here's a screenshot of the sheet we use for tracking allocation within our portf
 
 ![Screenshot of my portofolio allocation spreadsheet.](/images/posts/finance-spreadsheet-allocation.png)
 
-It allows me to set targets and see our current distributions: we care about stocks vs bonds split as well as US vs international market. It's simple, manual, but has been working well for us. Just like with our investment philosophy, simple truly is better than complex (thanks, [PEP 20](https://peps.python.org/pep-0020/)).
-
-Over the years I tried more complex and "smart" solutions, but nothing beats a simple spreadsheet like this one.
+It allows me to set targets and see our current distributions: we care about stocks vs bonds split as well as US vs international market. It's simple, manual, but has been working well for us. Over the years I tried more complex and "smart" solutions, but nothing beats this spreadsheet. Just like with our investment philosophy, simple truly is better than complex (thanks, [PEP 20](https://peps.python.org/pep-0020/)).
 
 I extracted the allocation sheet from our mega-spreadsheet: feel free to [copy Ruslan's Allocation Sheet](https://docs.google.com/spreadsheets/d/1wZikRE07AZP6oWrPP1RAIdQI2zKcEqsBqOVJX_1pO-I/copy){:target="_blank"} and tinker with it to your liking.
