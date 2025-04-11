@@ -190,7 +190,7 @@ an eye opening experience.
 
 Turns out I really don't need much stuff to enjoy life.
 
-[1]: http://www.rosipov.com/blog/urban-prius-living/
+[1]: https://rosipov.com/blog/urban-prius-living/
 [2]: http://amzn.to/1Pj5kpe
 [3]: http://amzn.to/1Pj5BbN
 [4]: http://amzn.to/1meZgWz

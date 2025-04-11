@@ -79,4 +79,4 @@ don't have the best process for combing through the "Eliminate" quadrant.
 I know many people are a lot more comfortable letting unimportant things quietly
 fall through the cracks, and there's nothing wrong with that.
 
-[1]: https://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/
+[1]: https://rosipov.com/blog/why-i-threw-away-my-to-do-list/

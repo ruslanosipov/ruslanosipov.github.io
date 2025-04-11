@@ -56,7 +56,7 @@ How a mountain in the background is a machine from the prior world. How the wate
 
 In earlier games, I had explanations ready for everything odd occurring in the world. I've been slowly making an effort to make the world more mysterious, more unexplainable, and more weird. This seems to be the key to running a successful Numenera game, and I'm still trying to find the balance between a consistent, but weird world characters live in.
 
-[1]: https://www.rosipov.com/blog/numenera-for-dnd-players
+[1]: https://rosipov.com/blog/numenera-for-dnd-players
 [2]: https://rpg.stackexchange.com/questions/tagged/numenera
 [3]: https://amzn.to/36FZvmV
 [4]: https://amzn.to/2AbgeSx

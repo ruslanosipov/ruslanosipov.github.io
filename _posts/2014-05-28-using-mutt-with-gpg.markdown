@@ -26,4 +26,4 @@ Next, open your `~/.muttrc` file and add following line:
 Again, replace `$ACCOUNT` with the same account alias you specified earlier.
 Now you don't have to re-enter your password every time you start Mutt.
 
-[1]: http://www.rosipov.com/blog/gpg-usage/
+[1]: https://rosipov.com/blog/gpg-usage/

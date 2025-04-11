@@ -84,4 +84,4 @@ When both sides of the belt are in place, fold the rear seat, push in down with
 your body weight, and tighten the belt.
 
 [1]: http://amzn.to/1NvY78S
-[2]: http://www.rosipov.com/blog/urban-prius-living
+[2]: https://rosipov.com/blog/urban-prius-living

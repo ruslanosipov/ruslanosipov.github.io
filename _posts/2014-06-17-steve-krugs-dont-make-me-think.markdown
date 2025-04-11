@@ -46,4 +46,4 @@ you with the reasoning behind many decisions Steve Krug makes throughout his
 book.
 
 [1]: http://amzn.to/1xCNOm4
-[2]: http://www.rosipov.com/blog/the-design-of-everyday-things/
+[2]: https://rosipov.com/blog/the-design-of-everyday-things/

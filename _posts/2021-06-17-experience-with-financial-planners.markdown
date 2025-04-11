@@ -47,5 +47,5 @@ The United States has a fiduciary system that's supposedly requires a planner to
 
 If you've done a lot of your own research (and especially if you haven't) -- it certainly wouldn't hurt to talk to professional and review your decisions. Someone who has an idea of what they're doing can go a long way in making sure you're not heading down the wrong path -- and if you are -- you're doing it with full awareness of the trade offs you're making. Just be mindful of pitfalls when doing so.
 
-[1]: https://www.rosipov.com/blog/accessing-retirement-funds-early/
+[1]: https://rosipov.com/blog/accessing-retirement-funds-early/
 [2]: https://www.youtube.com/watch?v=gvZSpET11ZY

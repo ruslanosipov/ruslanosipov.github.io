@@ -141,7 +141,7 @@ You may want to head over to GitHub and grab a version from here:
 
 [1]: https://github.com/ruslanosipov/dotfiles
 [2]: http://ctags.sourceforge.net/
-[3]: http://www.rosipov.com/blog/using-vim-for-writing-code/
+[3]: https://rosipov.com/blog/using-vim-for-writing-code/
 [4]: http://www.vim.org/scripts/script.php?script_id=625
 [5]: http://www.vim.org/scripts/script.php?script_id=1488
 [6]: http://www.vim.org/scripts/script.php?script_id=3526

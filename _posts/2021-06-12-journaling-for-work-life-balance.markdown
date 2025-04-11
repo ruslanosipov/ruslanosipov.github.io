@@ -22,7 +22,7 @@ Another technique I picked up from the bullet journal keeps me from getting over
 
 And this is where the [aforementioned snippets][1] come in. At the end of the week, all I have to do is go through the weekly set of notes, and transcribe noteworthy bullet points. That's the time I take to look back at my week, migrate tasks I choose to revisit at a later date, or cross off tasks I choose not to do.
 
-[1]: https://www.rosipov.com/blog/communicating-via-snippets/
-[2]: https://www.rosipov.com/blog/why-i-threw-away-my-to-do-list/
+[1]: https://rosipov.com/blog/communicating-via-snippets/
+[2]: https://rosipov.com/blog/why-i-threw-away-my-to-do-list/
 [3]: https://bulletjournal.com/pages/learn
-[4]: https://www.rosipov.com/blog/living-at-work/
+[4]: https://rosipov.com/blog/living-at-work/

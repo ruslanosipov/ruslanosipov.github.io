@@ -191,7 +191,7 @@ We merge the `master` branch into `source` using `ours` merge strategy (effectiv
 
 All in all migrating to Jekyll has been a great experience, which is a testament to Jekyll community's dedication to thorough documentation. Knowing that Jekyll is a mature, maintained, and documented project, and that GitHub Pages infrastructure is reliable and supported, provides a sense of stability. I hope this results in Jekyll and GitHub Pages becoming a (reasonably) future-proof platform for my blog. But let's check back in in 10 years - see you in 2035?
 
-[1]: https://www.rosipov.com/blog/abandoning-wordpress-for-octopress/
-[2]: https://www.rosipov.com/blog/static-websites-rule/
+[1]: https://rosipov.com/blog/abandoning-wordpress-for-octopress/
+[2]: https://rosipov.com/blog/static-websites-rule/
 [3]: https://github.com/field-theory/jekyll-category-pages
 [4]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll

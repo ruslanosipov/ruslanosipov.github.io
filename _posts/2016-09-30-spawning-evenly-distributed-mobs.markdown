@@ -59,4 +59,4 @@ from the sequence with even distribution.
 I incorporated logic above into the room generation code, accounted for
 duplicates, and ended up with decent distribution results.
 
-[0]: http://www.rosipov.com/blog/randomly-generated-dungeons/
+[0]: https://rosipov.com/blog/randomly-generated-dungeons/

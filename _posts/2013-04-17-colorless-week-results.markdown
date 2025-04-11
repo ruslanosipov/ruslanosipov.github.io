@@ -35,4 +35,4 @@ prompt. But I do turn syntax highlight off once in a while - it allows you to
 see problems from new angle and work more efficiently at finding a solution.
 Try it and see for yourself!
 
-[1]: http://www.rosipov.com/blog/a-week-without-colorful-prompt/
+[1]: https://rosipov.com/blog/a-week-without-colorful-prompt/

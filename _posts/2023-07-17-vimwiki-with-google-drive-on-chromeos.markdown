@@ -58,6 +58,6 @@ Next thing you know, I'm finally able to access the generated web version of my 
 
 ![Screenshot of an HTML version of Vimwiki.](/images/posts/vimwiki-web-view.png)
 
-[1]: https://www.rosipov.com/blog/personal-wiki-with-vimwiki/
+[1]: https://rosipov.com/blog/personal-wiki-with-vimwiki/
 [2]: https://github.com/vimwiki/vimwiki
-[3]: https://www.rosipov.com/blog/cross-platform-vim-plug-setup/
+[3]: https://rosipov.com/blog/cross-platform-vim-plug-setup/

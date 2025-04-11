@@ -57,7 +57,7 @@ It is quite self-explanatory, and includes such nice features as:
 
 You might also want to have your password encrypted by GPG as opposed to
 leaving it in plain text in your `.muttrc` file. You can read how to do this
-here: [Using Mutt with GPG](http://www.rosipov.com/blog/using-mutt-with-gpg/).
+here: [Using Mutt with GPG](https://rosipov.com/blog/using-mutt-with-gpg/).
 
 As you may have noticed, `.muttrc` above sets `display_filter` to
 `$HOME/.mutt/aliases.sh`. This script is being executed every time you read an

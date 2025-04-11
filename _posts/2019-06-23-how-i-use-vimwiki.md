@@ -32,5 +32,5 @@ I also really like creating in-depth documentation on topics when researching so
 
 Incoherent rambling aside, I'm hoping this post will spark some ideas about how to set up and use your own personal wiki.
 
-[0]: https://www.rosipov.com/blog/personal-wiki-with-vimwiki/
-[1]: https://www.rosipov.com/blog/google-drive-on-linux-with-rclone/
+[0]: https://rosipov.com/blog/personal-wiki-with-vimwiki/
+[1]: https://rosipov.com/blog/google-drive-on-linux-with-rclone/

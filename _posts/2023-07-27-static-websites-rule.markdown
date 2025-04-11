@@ -10,7 +10,7 @@ If this is new to you - static website is just what it sounds like - static HTML
 
 I think static websites are cool and aren't used nearly enough, especially for websites that are, well, static. Think to the last website you've visited to read something - maybe a news site, or maybe a blog. Now did it take at least a couple of seconds for them to load? Likely. Did their server have to waste unnecessary cycles putting together a page for you? Most definitely. Now, contrast this with your experience with a static website like this one. Here's the result from [pagespeed.web.dev][1] for this page:
 
-![A screenshot with page speed test for www.rosipov.com (this website). It displays: first contentful paint: 0.8 s; largest contentful paint: 0.9 s; total blocking time: 0 ms; cumulative layout shift: 0.007; speed index: 0.7 s.](/images/posts/rosipov-page-speed-test.png)
+![A screenshot with page speed test for rosipov.com (this website). It displays: first contentful paint: 0.8 s; largest contentful paint: 0.9 s; total blocking time: 0 ms; cumulative layout shift: 0.007; speed index: 0.7 s.](/images/posts/rosipov-page-speed-test.png)
 
 Every render complete in under a second, and I didn't have to put in any work into optimizing my website.
 

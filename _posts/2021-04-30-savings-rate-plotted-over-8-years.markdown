@@ -62,4 +62,4 @@ My wife and I earn 7 times more than I did when I was a sole breadwinner. Our jo
 
 There's no real purpose to this post other than sharing my journey. Hope you found something of interest!
 
-[1]: https://www.rosipov.com/blog/living-in-a-car-for-5000-miles/
+[1]: https://rosipov.com/blog/living-in-a-car-for-5000-miles/

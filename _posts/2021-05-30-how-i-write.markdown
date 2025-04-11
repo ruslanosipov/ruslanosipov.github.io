@@ -101,4 +101,4 @@ It often helps to read things out loud too: anything you can do to change up the
 And finally it's ready to be published: ta-da! This method hasn't failed me yet, be it for writing [Mastering Vim][1], technical design docs at Google, or blog posts like this one. Fingers crossed it'll continue working well for me.
 
 [1]: https://amzn.to/3fRV1OV
-[2]: https://www.rosipov.com/blog/fire-in-a-developing-economy/
+[2]: https://rosipov.com/blog/fire-in-a-developing-economy/

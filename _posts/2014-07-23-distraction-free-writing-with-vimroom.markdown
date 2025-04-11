@@ -33,4 +33,4 @@ backslash `\` character by default).
 GitHub link: <https://github.com/mikewest/vimroom>.
 
 [1]: http://projects.mikewest.org/vimroom/
-[2]: http://www.rosipov.com/blog/vim-pathogen-and-git-submodules/
+[2]: https://rosipov.com/blog/vim-pathogen-and-git-submodules/

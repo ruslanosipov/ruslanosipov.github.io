@@ -30,4 +30,4 @@ I wouldn't have blinked an eye flooding this blog with unfiltered thoughts, pers
 
 So here it is, the first post I wrote purely for fun! I'm still taking a light editing pass on it, and drastically cutting it down in size - I'm not a savage! But unlike in my usual writing, there's no clear value I'm providing or a skill I'm trying to teach - and that's a huge step for me. Feels good!
 
-[1]: https://www.rosipov.com/blog/my-book-has-been-published/
+[1]: https://rosipov.com/blog/my-book-has-been-published/
