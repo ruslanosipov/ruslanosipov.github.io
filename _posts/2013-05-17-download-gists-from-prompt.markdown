@@ -18,7 +18,7 @@ quickly download your gists ([Gist on Github][1]).
 
     #!/usr/bin/env python
 
-    # Ruslan Osipov <ruslan@rosipov.com>
+    # Ruslan Osipov
     # Usage: shgist keywords
     # Description: Gists downloader
 
