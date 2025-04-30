@@ -1,7 +1,7 @@
 ---
 title: "Back up your digital life"
 date: 2025-03-20 10:15:00 -0800
-categories: [Productivity, Gadgets]
+categories: [Productivity, Technology]
 ---
 
 Our digital life increasingly exists primarily in the cloud. Documents, photos, emails, passwords: all of this resides in the cloud. And be it One Drive, iCloud, Google Drive, or Dropbox - you don't really own any of it.

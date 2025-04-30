@@ -1,6 +1,6 @@
 ---
 title: Why I threw away my "To Do" list
-categories: [Notes and rants]
+categories: [Productivity]
 date: 2014-06-07 19:11:54+00:00
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Making a packing spreadsheet
-categories: [Life, Programming, Travel]
+categories: [Programming, Travel]
 date: 2018-03-26 08-00-00 -0800
 ---
 

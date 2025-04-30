@@ -1,7 +1,7 @@
 ---
 title: "Writing for fun"
 date: 2020-11-11 02:13:17 +0000
-categories: [Life]
+categories: [Writing]
 ---
 
 I've had this blog since 2012, and I'm only now getting close to my 100th post. All because I'm a perfectionist, which sure as hell didn't make me a better writer.

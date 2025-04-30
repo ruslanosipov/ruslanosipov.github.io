@@ -1,6 +1,6 @@
 ---
 title: Why should you learn to touch type?
-categories: [Notes and rants]
+categories: [Writing, Productivity]
 date: 2014-05-31 19:33:15+00:00
 ---
 

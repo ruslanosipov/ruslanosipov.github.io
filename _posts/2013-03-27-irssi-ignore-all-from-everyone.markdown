@@ -1,6 +1,6 @@
 ---
 title: IRSSI - ignore all from everyone
-categories: [Notes and rants, CLI]
+categories: [CLI]
 date: 2013-03-27 15:37:10+00:00
 tags: [irssi]
 ---

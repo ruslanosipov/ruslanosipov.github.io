@@ -1,7 +1,7 @@
 ---
 title: "How I use Vimwiki"
 date: 2019-06-23 17:00:00 -0800
-categories: [Vim]
+categories: [Vim, Technology]
 ---
 
 I've been [using Vimwiki for 5 years][0], on and off. There's a multi year gap in between, some entries are back to back for months on end, while some notes are quarters apart.

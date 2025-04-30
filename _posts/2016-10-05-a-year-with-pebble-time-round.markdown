@@ -1,7 +1,7 @@
 ---
 title: "A year with Pebble Time Round"
 date: 2016-10-05 11:12:59 -0700
-categories: [Gadgets]
+categories: [Technology]
 ---
 
 _Disclaimer: This post was **not** endorsed by Pebble, nor I am affiliated with

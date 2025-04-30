@@ -1,7 +1,7 @@
 ---
 title: "Exercising online privacy rights"
 date: 2021-07-19 14:19:41 -0700
-categories: [Life]
+categories: [Technology]
 ---
 
 Following Europe's 2016 General Data Protection Regulation (GDPR), California passed its own California Consumer Privacy Act (CCPA) in 2020. I won't pretend to understand the intricacies of the law or the differences between the two, but from what I understand this gives you the right to know exactly what data of yours do businesses use, and request that this information is to not be sold or to be deleted.

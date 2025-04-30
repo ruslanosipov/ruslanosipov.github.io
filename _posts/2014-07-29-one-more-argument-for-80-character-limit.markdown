@@ -1,7 +1,7 @@
 ---
 title: "One more argument for 80 character limit"
 date: 2014-07-29 23:00:04 -0700
-categories: [Notes and rants, Programming]
+categories: [Programming]
 ---
 
 Limiting code to 80 (or 100 or 120) characters per line. It's a well-known

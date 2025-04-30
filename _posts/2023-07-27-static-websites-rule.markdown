@@ -1,7 +1,7 @@
 ---
 title: "Static websites rule!"
 date: 2023-07-27 08:00:00 -0700
-categories: [Programming]
+categories: [Programming, Technology]
 ---
 
 I hope you've noticed that navigating to this page was quick (let's hope that the Internet Gods are kind to me, and nothing stood in the way of you accessing this page). In fact, most pages on my blog - hopefully including this one - should render in under a second. I didn't put any work into optimizing this site, and it's not a boast, nor is it a technological marvel - this is just a good old fashioned static website.

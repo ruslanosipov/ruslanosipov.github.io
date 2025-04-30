@@ -1,7 +1,7 @@
 ---
 title: "Journaling for work-life balance"
 date: 2021-06-12 13:32:48 -0700
-categories: [Work]
+categories: [Writing, Work]
 ---
 
 When writing about [snippets at Google][1] earlier this week, I omitted a fairly important bit: how lists and journaling help me create distance between work and life. This became especially [relevant in the pandemic][4], as I had to work with my therapist on being able to mentally disconnect.

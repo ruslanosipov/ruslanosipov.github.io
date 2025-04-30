@@ -1,7 +1,7 @@
 ---
 title: "How much does writing a book earn?"
 date: 2021-04-07 18:30:00 -0700
-categories: [Writing]
+categories: [Writing, Finance]
 ---
 
 I write about Vim -- a modal text editor -- [a lot][4]. In fact, in early 2018
