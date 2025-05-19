@@ -4,7 +4,7 @@ date: 2025-05-19 07:00:00 -0700
 categories: [Technology]
 ---
 
-Staying on the theme of [nostalgia](https://rosipov.com/blog/nostalgia-for-the-old-web/), I'd like to talk about small web communities. This post is a part of [IndieWeb blog carnival](https://thoughts.uncountable.uk/may-2025-indieweb-carnival-small-web-communities/) - an alternative form of independent, personally curated content aggregation on a specific topic. And honestly, I think that's a pretty neat idea, a throwback in itself to how we used to discover cool stuff.
+Staying on the theme of [nostalgia](https://rosipov.com/blog/nostalgia-for-the-old-web/), I'd like to talk about small web communities. This post is a part of [IndieWeb blog carnival](https://thoughts.uncountable.uk/may-2025-indieweb-carnival-small-web-communities/) - an alternative form of independent, personally curated content aggregation on a specific topic. I think that's a pretty neat idea, a throwback in itself to how I used to discover cool stuff. This month's carnival is [hosted by Chris Shaw](https://thoughts.uncountable.uk/may-2025-indieweb-carnival-small-web-communities/).
 
 The fact that "small web communities" is a nostalgic topic for me should speak volumes about how I engage with the web today – or perhaps, how I *don't* in the same way. But let me start at the beginning.
 
