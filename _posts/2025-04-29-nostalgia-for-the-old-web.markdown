@@ -8,10 +8,9 @@ I grew up on the Internet throughout the 2000s. I went to school, played Dungeon
 
 I didn't speak English back then, and it was Russian speaking forums for me all the way. I'm not sure about now, but back then Runet (yup, that's Russian Internet) infrastructure was lagging behind the English speaking world - dial-up was more prevalent, which informed the type of content that was popular. So my experience in the 2000s is probably reminiscent of someone's experience in US in the 90s. Either way, it was the time only the nerdy kids were online.
 
-<img alt="A picture of Mastering Vim, second edition book cover."
+<img alt="AI-generated image of what my computer looked like in 2000s."
      src="/images/posts/my-computer-in-2000s.jpg"
      title="I don't have any pictures, but my computer looked largely like this. Don't zoom in, or you'll see early AI generated nightmare."
-     alt="AI-generated image of what my computer looked like in 2000s."
      style="max-height: 400px;" />
 
 This internet was a very different landscape from the Internet of today, with giant spaces like Facebook or Reddit. Back then, the communities were smaller, more tight-knit, and you'd know frequent posters. You'd know what troubles them, you'd know what their interests are - those were real people (or other kids, I guess), and you could really feel their existence on the other side of the screen.
