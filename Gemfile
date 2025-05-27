@@ -18,6 +18,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"  # RSS feed.
   gem "jekyll-paginate", "~> 1.1.0"  # Homepage pagination.
   gem "jekyll-category-pages"  # Category pages.
+  gem "jekyll-redirect-from"  # Redirects.
   gem "slugify"  # Category pages.
   gem "jekyll-sitemap" # Sitemap
 end
