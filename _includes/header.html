@@ -20,7 +20,12 @@
           <a class="page-link" href="/blog/about/">About</a>
           <a class="page-link" href="/blog/categories/">Categories</a>
           <a class="page-link" href="/blog/archive/">Archive</a>
-          <a class="page-link" href="{{ "/atom.xml" | relative_url }}">RSS</a>
+          <a class="page-link" href="{{ "/atom.xml" | relative_url }}">
+            <img src="{{ '/images/rss.png' | relative_url }}"
+                 alt="RSS feed icon for {{ category_name }}"
+                 style="width: 16px; height: 16px; margin-top: -2px; border: 0; border-radius: 0;">
+            RSS
+          </a>
         </div>
       </nav>
     {%- endif -%}
