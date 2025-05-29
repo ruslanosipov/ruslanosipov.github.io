@@ -59,4 +59,4 @@ defaults:
     values:
       layout: "post"
 
-category_path: categories
+category_path: blog/categories
