@@ -4,6 +4,15 @@ layout: default
 
 <div>
   <h1>Category: {{ page.title }}</h1>
+  <p>
+    Subscribe via
+    <a href="{{ root_url }}/blog/categories/{{ page.title | slugify }}.xml" target="_blank">
+      <img src="{{ '/images/rss.png' | relative_url }}"
+           alt="RSS feed icon for {{ category_name }}"
+           style="width: 16px; height: 16px; vertical-align: middle; border: 0; border-radius: 0;">
+      RSS
+    </a>.
+  </p>
 
   <ul class="post-list">
     {%- for post in page.posts -%}

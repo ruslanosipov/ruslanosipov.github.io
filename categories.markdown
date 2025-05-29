@@ -17,7 +17,12 @@ I write on any topic that interests me, so my blog isn't limited to a single top
   <ul>
     {% for category in category_names %}
       <li>
-        <a href="{{ root_url }}/{{ site.category_path }}/{{ category | slugify }}">{{ category }}</a> ({{ site.categories[category].size }})
+        <a href="{{ root_url }}/{{ site.category_path }}/{{ category | slugify }}">{{ category }}  ({{ site.categories[category].size }})</a>
+        <a href="{{ root_url }}/blog/categories/{{ category | slugify }}.xml" target="_blank" title="RSS feed for {{ category }} category">
+          <img src="{{ '/images/rss.png' | relative_url }}"
+               alt="RSS feed icon for {{ category_name }}"
+               style="width: 16px; height: 16px; vertical-align: middle; border: 0; border-radius: 0;">
+        </a>
       </li>
     {% endfor %}
   </ul>
