@@ -1,3 +1,5 @@
+/** Polaroid-like borders around images. */
+
 .page-content img {
     border-radius: 0.3em;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
@@ -21,6 +23,8 @@ img.book-cover {
   height: 280px;
 }
 
+/** Reply by email. */
+
 .button {
   padding: 4px;
   font-size: 0.9em;
@@ -32,4 +36,34 @@ img.book-cover {
 .button:hover {
   background-color: #e0e0e0;
   text-decoration: none;
+}
+
+/** Comments. */
+
+.comment-separator {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.comment-list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+.comment {
+  margin-bottom: 1em;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 0.7em;
+}
+.comment-meta {
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+  color: #666;
+}
+.comment-author b {
+  font-weight: bold;
+}
+.comment-content p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }

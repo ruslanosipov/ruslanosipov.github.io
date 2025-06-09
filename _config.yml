@@ -38,8 +38,7 @@ paginate_path: "posts/:num/"
 feed:
   path: /atom.xml  # Compatible with Octopress path.
 
-disqus:
-  shortname: rosipov
+disqus_export_path: _data/disqus-export-2025-06-09.xml
 
 google_analytics: UA-48506044-1
 

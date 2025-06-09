@@ -24,15 +24,48 @@ layout: default
     {{ content }}
   </div>
 
-  <div>
-    <a href="mailto:{{ site.email }}?subject=Re: {{ page.title }}"
-       class="button">✍️ Reply by email</a>
-    or publicly comment via Disqus:
-  </div>
+  {% if page.comments and page.comments.size > 0 %}
+    <hr class="comment-separator">
+    <div id="comments">
+      <h2 class="comments-title">
+        {{ page.comments.size }} read-only comment{% if page.comments.size > 1 %}s{% endif %}
+      </h2>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+      <p>
+        These are the read-only comments I've exported from Disqus (which I no
+        longer use). If you'd like to share your thoughts about this article,
+        you can
+        <a href="mailto:{{ site.email }}?subject=Re: {{ page.title }}"
+           class="button">✍️ Reply by email</a>.
+      </p>
+
+      <ol class="comment-list">
+        {% for comment in page.comments %}
+          <li class="comment">
+            <article class="comment-body">
+              <footer class="comment-meta">
+                <div class="comment-author vcard">
+                  <b class="fn">{{ comment.author | escape }}</b>
+                  |
+                  <time datetime="{{ comment.date | date_to_xmlschema }}">
+                    {{ comment.date | date: "%B %d, %Y" }}
+                  </time>
+                </div>
+              </footer>
+              <div class="comment-content">
+                {{ comment.message }}
+              </div>
+            </article>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% else %}
+    <div>
+      <a href="mailto:{{ site.email }}?subject=Re: {{ page.title }}"
+         class="button">✍️ Reply by email</a>
+    </div>
+  {% endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
