@@ -24,6 +24,12 @@ layout: default
     {{ content }}
   </div>
 
+  <div>
+    <a href="mailto:{{ site.email }}?subject=Re: {{ page.title }}"
+       class="button">✍️ Reply by email</a>
+    or publicly comment via Disqus:
+  </div>
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
