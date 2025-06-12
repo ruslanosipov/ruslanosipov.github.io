@@ -1,6 +1,6 @@
 ---
 title: "Goodbye Disqus, hello reply by email"
-date: 2025-06-12 07:00:00 -0700
+date: 2025-06-16 07:00:00 -0700
 categories: [Writing, Programming]
 ---
 
