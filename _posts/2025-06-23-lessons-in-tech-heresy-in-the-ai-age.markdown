@@ -21,6 +21,10 @@ To my mom, the computer was technology, but to me it was an environment. Oh, and
 
 This takes me to how I find myself engaging with sophisticated AI as well. These models are massive, trained on enormous data sets (which also speaks to the level of curation possible with such large data sets), and even the developers of said models sometimes struggle to explain why a model produced certain output. Interacting with these models through carefully crafted prompts and parameters sometimes feels like a ritual. Do I really need all these instructions? I don't know, but better include them to be safe. When an AI model produces the response you actually need, it can feel less like a direct result of skillful prompting, but more like a gift from the benevolent machine spirit.
 
+To bolster my nerd credentials, here's the Adeptus Mechanicus purity seal on my monitor, which keep the machine spirit pleased and data flowing well over HDMI:
+
+![Adeptus Mechanicus purity seal stapled to a monitor.](/images/posts/adeptus-mechanicus-purity-seal.jpg)
+
 The Adeptus Mechanicus believe innovation is an insult to their deity, and everything that can be invented is already somewhere in the universe, waiting to be found. Yes, creating something original, is, in fact, an act of tech-heresy.
 
 The reliance on massive, foundational AI models, trained on vast swathes of data available online makes me think of the Adeptus Mechanicus thesis that innovation is in itself an act of tech-heresy. The models regurgitate existing information, with a promise that everything of value has already been created, and the model can combine this knowledge for you in a way to fit your needs. While I haven't read it, I've been told in [Vernor Vinge's sci-fi novel A Fire Upon the Deep](https://en.wikipedia.org/wiki/A_Fire_Upon_the_Deep) there is no new code being written, and the job of a software engineer is replaced by the job of a code archaeologist, whose work consists of finding existing code which already solves the problem. We might be moving in that direction.
@@ -36,5 +40,10 @@ This aligns with a growing consensus on successful and ethical integration of AI
 > "A computer can never be held accountable, therefore a computer must never make a management decision." - IBM training manual, 1979
 
 This is where we risk our own kind of tech-heresy. It happens when we start treating AI as an infallible oracle rather than the powerful, deeply flawed, and sometimes an outright weird tool. The threats aren't science fiction anymore; they're the real-world risks of algorithmic biases getting baked into government policies, a complete lack of accountability when things go wrong, and the potential for some truly catastrophic, unexplainable errors.
+
+<img alt="You're the one person this article is written for."
+     src="/images/posts/warhammer-ai-venn-diagram.png"
+     title="You're the one person this article is written for."
+     style="max-height: 300px;" />
 
 Despite all the incense-burning, it seems like the Adeptus Mechanicus had the right idea. There's a pact to be made with the machine: technology is a force that extends our reach, not one that replaces our grasp. The fundamental choice here isn't about what the newly powerful AI tools can do. It's about what we, the humans, choose to use them for. After all, someone has to be in charge, and the computer is a pretty terrible candidate for the job.
