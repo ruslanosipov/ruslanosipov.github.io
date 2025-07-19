@@ -1,7 +1,7 @@
 ---
 title: "My experience with minimalism"
 date: 2015-07-18 12:54:36 -0700
-categories: [Life]
+categories: [Philosophy]
 ---
 
 Minimalism was always appealing to me. The philosophy of not having more than

@@ -1,7 +1,7 @@
 ---
 title: "I love bad coffee and hate algorithms"
 date: 2025-06-02 07:00:00 -0700
-categories: [Life, Technology]
+categories: [Philosophy, Technology]
 ---
 
 I love bad coffee.

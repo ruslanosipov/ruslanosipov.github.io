@@ -1,7 +1,7 @@
 ---
 title: "Reflections on my paternity leave"
 date: 2025-04-22 12:30:00 -0700
-categories: [Life, Work]
+categories: [Philosophy, Work]
 ---
 
 Google provides generous parental leave, and I've been able to take three months to spend at home with my newborn. I even have some more time I can take once my wife returns to work! For residents of the Land of the Free, it's a lovely glimpse into having a social support net and worker protection. Could you imagine?

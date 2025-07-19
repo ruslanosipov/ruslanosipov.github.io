@@ -1,7 +1,7 @@
 ---
 title: "In defense of quality"
 date: 2025-07-07 07:00:00 -0700
-categories: [Life, Productivity]
+categories: [Philosophy, Productivity]
 ---
 
 The Internet whispers a constant message: you should be doing more. I remembered a video I stumbled upon a while back. Some productivity influencer, barely old enough to grow a mustache, was detailing their morning routine. They were up at 3 am, of course. By the time the sun rose, they'd read an entire book, run ten miles, and meditated on a mountaintop while simultaneously coding a new killer app, all fueled by a kale smoothie that cost more than my lunch.
