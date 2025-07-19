@@ -16,7 +16,7 @@ I'm taking you through this preamble for a reason: I'm not particularly well edu
 
 And it hit me. The quiet, persistent anxiety that hums beneath every opinion I hold. Despite my disdain for the academic institution, I've internalized one of its worst dogmas: that any belief not reducible to a peer-reviewed study is fundamentally illegitimate.
 
-!["Hail science!"](/images/posts/future-cult-of-science.webp)
+!["Hail science!"](/images/posts/futurama-cult-of-science.webp)
 
 Yeah, I'm a technocratic totalitarian on the inside, worshipping science - turns out I am the [tech-priest](/blog/lessons-in-tech-heresy-in-the-ai-age/). A blind faith that a world is a complex machine, every aspect of which can be optimized, figured out, and rationalized. In a temple of technocratic totalitarianism being wrong is a "humiliating sin", and ultimate act of heresy. And being a devout follower of my faith, a zealot, I fell into shying away from holding strong opinions.
 
