@@ -1,6 +1,6 @@
 ---
 title: "Opinions in the age of technocratic totalitarianism"
-date: 2025-07-14 07:00:00 -0700
+date: 2025-07-21 07:00:00 -0700
 categories: [Writing]
 ---
 
