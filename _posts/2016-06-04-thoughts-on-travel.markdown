@@ -1,7 +1,7 @@
 ---
 title: "Thoughts on travel"
 date: 2016-06-04 18:11:00 -0700
-categories: [Life, Travel]
+categories: [Travel]
 ---
 
 I like traveling. I've been living on the road on and off for the past half a year, traveling across the US. This whole time I live in my car, and quite frankly, I enjoy it.

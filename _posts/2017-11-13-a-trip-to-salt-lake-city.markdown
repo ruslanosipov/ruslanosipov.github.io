@@ -1,7 +1,7 @@
 ---
 title: "A trip to Salt Lake City"
 date: 2017-11-13 10:00:00 -0500
-categories: [Life, Travel]
+categories: [Travel]
 ---
 
 _This article is a collaboration between my partner and I._

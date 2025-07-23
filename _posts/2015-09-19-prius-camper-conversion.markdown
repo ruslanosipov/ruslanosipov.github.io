@@ -1,7 +1,7 @@
 ---
 title: "Prius camper conversion"
 date: 2015-09-19 12:50:01 -0700
-categories: [Life, Travel]
+categories: [Travel]
 ---
 
 As requested, I took some detailed pictures of the

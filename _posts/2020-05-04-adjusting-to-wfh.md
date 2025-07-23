@@ -1,7 +1,7 @@
 ---
 title: "Adjusting to working from home"
 date: 2020-05-04 09:00:00 -0800
-categories: [Life, Productivity, Work]
+categories: [Productivity, Work]
 ---
 
 Like many, I moved to working from home during the COVID-19 pandemic. Parts of California enacted shelter-in-place order back in March, and it's been over a month and a half since then. I briefly worked from home back in 2013 as a freelancer - and I really got the whole work/life balance thing wrong. So this time around I've decided to approach remote work with a plan.
