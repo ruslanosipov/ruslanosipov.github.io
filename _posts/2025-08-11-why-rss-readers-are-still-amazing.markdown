@@ -1,6 +1,6 @@
 ---
 title: "Why RSS readers are still amazing"
-date: 2025-08-04 07:00:00 -0700
+date: 2025-08-11 07:00:00 -0700
 categories: [Technology]
 ---
 
