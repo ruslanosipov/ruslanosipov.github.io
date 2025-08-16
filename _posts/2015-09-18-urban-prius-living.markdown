@@ -1,7 +1,7 @@
 ---
 title: "Urban Prius living"
 date: 2015-09-18 12:55:00 -0700
-categories: [Life, Travel]
+categories: [Travel]
 ---
 
 Not so long ago I stumbled upon a blog titled ["Hotel Prius"][11], and I loved
