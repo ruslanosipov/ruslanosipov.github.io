@@ -58,3 +58,5 @@ Wikis.
     let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
 
 Download it from the GitHub: <https://github.com/vimwiki/vimwiki>.
+
+_September 2025 update: 11 years later, I'm still using Vimwiki. See [Vimwiki: 11 years later](/blog/vimwiki-11-years-later/)._

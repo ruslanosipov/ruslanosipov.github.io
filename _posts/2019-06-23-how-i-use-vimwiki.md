@@ -32,5 +32,7 @@ I also really like creating in-depth documentation on topics when researching so
 
 Incoherent rambling aside, I'm hoping this post will spark some ideas about how to set up and use your own personal wiki.
 
+_September 2025 update: 6 years later, I'm still using Vimwiki. See [Vimwiki: 11 years later](/blog/vimwiki-11-years-later/)._
+
 [0]: https://rosipov.com/blog/personal-wiki-with-vimwiki/
 [1]: https://rosipov.com/blog/google-drive-on-linux-with-rclone/
