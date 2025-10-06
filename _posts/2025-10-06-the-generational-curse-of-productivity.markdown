@@ -18,6 +18,8 @@ The Silicon Valley mindset didn’t help. There’s this ever-present push to be
 
 I spent many evenings and weekends reading self-improvement or programming books (which is reflected in the content of my blog about a decade ago) or taking classes. I tried to get really good at my hobbies, so that I don’t waste time stagnating. No time to waste.
 
+![Smell the flowers (credit: https://www.instagram.com/shencomix/).](/images/posts/smell-the-flowers.jpg)
+
 You see, there are negative aspects to believing that hard work is the only measure of “goodness”, because ever since I was a kid sitting down, relaxing, and not doing much was frowned upon. Oh, don’t get me wrong - I got to play plenty, but the play had to be enriching, useful, and valuable to my growth as an individual. Otherwise it’s “grumble-grumble” and “we’re going to throw away this computer some day”.
 
 I find myself taking these beliefs into adulthood. Despite much self-work (a patient, loving, and caring companion helps), I still sometimes find myself worried that I’m not being productive, or doing the right thing.
