@@ -1,6 +1,6 @@
 ---
 title: "I bought a keyboard for my phone"
-date: 2025-12-07 07:00:00 -0700
+date: 2025-12-08 07:00:00 -0700
 categories: [Technology, Reviews]
 ---
 
