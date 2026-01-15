@@ -20,6 +20,8 @@ Ok, let’s find if this lines up with what [NY Fed says](https://www.newyorkfed
 
 Oh, what’s that number next to “unemployment”? Uh-oh. Underemployment accounts for people working in a job which does not require a bachelor degree. This means that a computer engineering graduate is working a tech job, while an art history major takes up work in a fast food restaurant. And all of a sudden, the picture shifts. 17% of computer engineering majors were underemployed, while a whopping 46.9% of art history graduates weren’t utilizing their degree.
 
+![](/images/posts/unemployment-and-underemployment-by-major.png)
+
 This article is one of many, which cherry-picked data from the NY Fed and made outrageous claims. Further, the data is from 2023, which the article above mentions near the end, in passing. That’s a pretty relevant bit, for an article written in 2025, isn’t it?
 
 For me this brought up a question of digital hygiene and how the headlines I see affect us.
