@@ -21,3 +21,7 @@ Moreover, I'm excited to take it with me on a vacation, or maybe even a quick tr
 I picked up [ProtoArc XK04](https://amzn.to/3Kk4O3s), which has been working out pretty great - it easily pairs to my phone, the keys feel fine enough, and the build doesn't feel flimsy or cheap. In fact, it's a little heavier than I expected, which makes for a nicer typing experience (but it's still light enough to carry around).
 
 I'll follow-up in six month to year to see if that's just a gimmick purchase. Or maybe I end up drafting up my next book using this thing - we'll just have to see.
+
+----
+
+Update from Jan 15 2026: [I shouldn't have bought that keyboard](/blog/i-shouldnt-have-bought-that-keyboard/).
