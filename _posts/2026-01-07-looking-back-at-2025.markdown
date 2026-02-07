@@ -1,7 +1,7 @@
 ---
 title: "Looking back at 2025"
 date: 2026-01-07 07:00:00 -0700
-categories: [Retrospectives]
+categories: [Retrospectives, Parenthood]
 ---
 
 2025 was a crazy year - a good kind of crazy for once.

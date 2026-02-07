@@ -1,7 +1,7 @@
 ---
 title: "Dad guide to buying baby stuff"
 date: 2025-09-08 07:00:00 -0700
-categories: [Finance]
+categories: [Finance, Parenthood]
 ---
 
 Hi there. This is an email-to-a-friend turned into a blog post for posterity. I added affiliate links to Amazon (an occasional click pays for website expenses), but in most cases you can find all of this baby stuff for much cheaper at a second-hand store. Except for diapers, of course.
