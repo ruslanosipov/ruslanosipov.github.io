@@ -1,6 +1,6 @@
 ---
 title: "Writing code by hand is dead"
-date: 2026-03-11 20:00:00 -0800
+date: 2026-03-11 20:00:00 -0700
 categories: [Technology]
 ---
 
